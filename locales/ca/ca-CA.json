@@ -1,0 +1,12 @@
+{
+  "welcome": "bonees",
+  "selectLang": "Escull l'idioma",
+  "nav": {
+    "home": "Inici",
+    "shows": "Espectacles",
+    "workshops": "Tallers",
+    "performances": "Animacions",
+    "about": "Filipersones",
+    "contact": "Contacte"
+  }
+}
