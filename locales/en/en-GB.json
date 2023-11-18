@@ -1,0 +1,12 @@
+{
+  "welcome": "wallcom",
+  "selectLang": "Select language",
+  "nav": {
+    "home": "Home",
+    "shows": "Shows",
+    "workshops": "Workshops",
+    "performances": "Performances",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

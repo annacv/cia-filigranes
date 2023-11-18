@@ -1,0 +1,12 @@
+{
+  "welcome": "aloha",
+  "selectLang": "Escoge el idioma",
+  "nav": {
+    "home": "Inicio",
+    "shows": "Espectáculos",
+    "workshops": "Talleres",
+    "performances": "Animaciones",
+    "about": "Filipersonas",
+    "contact": "Contacto"
+  }
+}
