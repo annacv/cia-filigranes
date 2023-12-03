@@ -1,28 +1,37 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <NuxtLinkLocale :to="('/')">{{ $t('nav.home') }}</NuxtLinkLocale>
+  <nav role="navigation">
+    <ul class="navbar__menu-list">
+      <li class="navbar__menu-item">
+        <NuxtLinkLocale :to="('/')">
+          {{ getLocale('home', 'routes') }}
+        </NuxtLinkLocale>
       </li>
-      <li>
-        <NuxtLink :to="localePath('/espectacles')">{{ $t('nav.shows') }}</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink :to="localePath('/tallers')">{{ $t('nav.workshops') }}</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink :to="localePath('/animacions')">{{ $t('nav.performances') }}</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink :to="localePath('/filipersones')">{{ $t('nav.about') }}</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink :to="localePath('/contacte')">{{ $t('nav.contact') }}</NuxtLink>
-      </li>
+      <component :is="route.children ? 'ul':'li'"
+        v-for="(route, index) in routes"
+        :key="index"
+        class="navbar__menu-item"
+      >
+        <NuxtLinkLocale :to="route.name">
+          {{ getLocale(route.name, 'routes') }}
+        </NuxtLinkLocale>
+        
+        <template v-if="route.children">
+          <li v-for="(child, index) in route.children"
+            :key="index"
+          >
+          <NuxtLinkLocale :to="(`/${route.name}/${child}`)">
+          {{ getLocale(child, 'routes') }}
+          </NuxtLinkLocale>
+          </li>
+        </template>
+      </component>
     </ul>
   </nav>
 </template>
 
 <script setup lang="ts">
-const localePath = useLocalePath();
+  import { getLocale } from '../composables/use-i18n-utils.composable'
+  import { ROUTES_INDEX } from '../constants/constants'
+
+  const routes = ROUTES_INDEX;
 </script>
