@@ -1,0 +1,3 @@
+<template>
+  taller circ
+</template>

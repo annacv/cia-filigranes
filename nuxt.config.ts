@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { routePages, localeObjects } from "./locales/index";
 
 export default defineNuxtConfig({
   app: {
@@ -16,18 +17,17 @@ export default defineNuxtConfig({
   },
   css: ["@/assets/scss/main.scss"],
   devtools: { enabled: true },
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
   i18n: {
     baseUrl: "http://localhost:3000",
-    locales: [
-      { code: "ca", iso: "ca-CA", name: "Català", dir: "ltr", file: 'ca/ca-CA.json' },
-      { code: "es", iso: "es-ES", name: "Castellano", dir: "ltr", file: 'es/es-ES.json' },
-      { code: "en", iso: "en-GB", name: "English", dir: "ltr", file: 'en/en-GB.json' },
-    ],
+    locales: localeObjects,
+    customRoutes: 'config',
+    pages: routePages,
     lazy: true,
     langDir: "locales",
     strategy: "prefix_except_default",
     defaultLocale: "ca",
+    // TODO: Check if this can be enabled/disabled by users https://i18n.nuxtjs.org/guide/browser-language-detection
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
