@@ -11,18 +11,12 @@
       </template>
     </Head>
     <Body>
-      Layout default
-      <header>
-        Header
-        <NavMenu/>
-        <LangSwitcher />
-      </header>
-
-      <main>
+      <TheHeader role="banner"/>
+      <main role="main">
         main
         <slot/>
       </main>
-      <footer>Footer</footer>
+      <footer role="contentinfo">Footer</footer>
     </Body>
   </Html>
 </template>
