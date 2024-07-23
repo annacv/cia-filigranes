@@ -1,6 +1,5 @@
 <template>
   <main>
-    <div class="per-posar-algo">Animacions</div>
-    <div class="per-posar-algo-més">Uili Li Uili Li</div>
+    <div class="per-posar-algo">{{ $t("routes.animacions") }}</div>
   </main>
 </template>

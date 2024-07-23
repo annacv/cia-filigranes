@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(['toggle'])
+  const emit = defineEmits(['toggle'])
 </script>
 
 <style lang="scss">
