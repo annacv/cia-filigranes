@@ -1,15 +1,42 @@
 <template>
-  <header role="banner" class="grid grid-cols-12 bg-cardinal pt-6 pb-6">
+  <header role="banner" class="grid grid-cols-12 gap-4 bg-cardinal pt-6 pb-6">
     <NuxtLinkLocale :to="('/')" class="col-start-2 col-span-3">
       <CiaLogo />
     </NuxtLinkLocale>
     <div class="flex items-center col-start-11 justify-self-end gap-4">
-      <TheBurger @toggle="isOpen = !isOpen"/>
+      <TheBurger :isOpen="isOpen" @toggle="toggleSideNav"/>
     </div>
-    <SideNav v-if="isOpen" @toggle="isOpen = !isOpen"/>
+    <div class="w-full h-full">
+      <Transition name="slide-side">
+        <SideNav v-if="isOpen" @toggle="toggleSideNav" />
+      </Transition>
+      <div
+        v-if="isOpen"
+        class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
+        @click="toggleSideNav"
+      />
+    </div>
   </header>
 </template>
 
 <script setup lang="ts">
-  const isOpen = ref(false);
+import { ref } from 'vue';
+
+const isOpen = ref(false);
+
+const toggleSideNav = () => {
+  isOpen.value = !isOpen.value;
+};
 </script>
+
+<style lang="scss">
+  .slide-side-enter-active,
+  .slide-side-leave-active {
+    transition: 0.3s ease-out;
+  }
+
+  .slide-side-enter-from,
+  .slide-side-leave-to {
+    transform: translateX(100%);
+  }
+</style>
