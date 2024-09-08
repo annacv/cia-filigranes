@@ -21,7 +21,7 @@
         class="navbar__menu-item"
         :class="{ 'expanded pb-2': isExpanded(index) }"
       >
-        <div class="flex flex-row py-4 gap-8 justify-between">
+        <div class="flex flex-row py-4 gap-8 justify-start items-baseline">
           <NuxtLinkLocale
             :to="route.name"
             @click="emit('toggle')"
@@ -33,7 +33,7 @@
           <button
             v-if="route.children"
             @click="toggleChildren(index)"
-            class="hover:opacity-75"
+            class="hover:opacity-75 text-xl"
           >
             {{ isExpanded(index) ? '-' : '+' }}
           </button>
