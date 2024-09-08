@@ -2,33 +2,21 @@
   <div class="burger">
     <div
       aria-label="menu"
-      class="burger__toggle hover:opacity-75"
+      class="block relative hover:opacity-75 h-1/2 w-6 z-[1] cursor-pointer indent-[100%] content-['']"
       role="button"
       @click="emit('toggle')"
     >
       <div
-        :class="{
-          'burger__bar': true,
-          'burger__bar--1': true,
-          'rotate-45': isOpen
-        }"
-        class="bg-white"
+        :class="{'burger__bar--1': isOpen}"
+        class="burger__bar"
       ></div>
       <div
-        :class="{
-          'burger__bar': true,
-          'burger__bar--2': true,
-          'opacity-0': isOpen
-        }"
-        class="bg-white"
+        :class="{'burger__bar--2': isOpen}"
+        class="burger__bar"
       ></div>
       <div
-        :class="{
-          'burger__bar': true,
-          'burger__bar--3': true,
-          '-rotate-45': isOpen
-        }"
-        class="bg-white"
+        :class="{'burger__bar--3 hidden': isOpen}"
+        class="burger__bar"
       ></div>
     </div>
   </div>
@@ -43,35 +31,15 @@ const props = defineProps({
 
 <style lang="scss">
 .burger {
-  &__toggle {
-    display: block;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    width: 1.5rem;
-    height: 50%;
-    text-indent: 100%;
-    content: '';
-  }
-
   &__bar {
+    @apply bg-white mb-1 w-full h-[0.1875rem] rounded-sm;
     transition: transform 0.3s, opacity 0.3s;
-    margin-bottom: 0.25rem;
-    border-radius: 0.125rem;
-    width: 100%;
-    height: 0.1875rem;
 
-    /* Custom classes for toggled state */
-    &.rotate-45 {
-      transform: rotate(45deg);
+    &--1 {
+      transform: rotate(-45deg) translateY(4px);
     }
-
-    &.opacity-0 {
-      opacity: 0;
-    }
-
-    &.-rotate-45 {
-      transform: rotate(-45deg);
+    &--2 {
+      transform: rotate(45deg) translate(-1px, -5px);
     }
   }
 }

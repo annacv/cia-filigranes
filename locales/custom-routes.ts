@@ -28,23 +28,23 @@ export const routePages: CustomRoutePages = {
   },
   'espectacles/desencaixats': {
     ca: '/espectacles/desencaixats',
-    es: '/espectaculos/desencaixats',
-    en: '/shows/desencaixats'
+    en: '/shows/desencaixats',
+    es: '/espectaculos/desencajados'
   },
   'espectacles/freak-frac': {
     ca: '/espectacles/freak-frac',
-    es: '/espectaculos/freak-frac',
-    en: '/shows/freak-frac'
+    en: '/shows/freak-frac',
+    es: '/espectaculos/freak-frac'
   },
   'espectacles/circ-makutu': {
     ca: '/espectacles/circ-makutu',
-    es: '/espectaculos/circo-makutu',
-    en: '/shows/makutu-circus'
+    en: '/shows/makutu-circus',
+    es: '/espectaculos/circo-makutu'
   },
   'espectacles/circ-trinxeta': {
     ca: '/espectacles/circ-trinxeta',
-    es: '/espectaculos/circo-trinxeta',
-    en: '/shows/trinxeta-circus'
+    en: '/shows/trinxeta-circus',
+    es: '/espectaculos/circo-trinxeta'
   },
   tallers: {
     ca: '/tallers',
@@ -53,28 +53,28 @@ export const routePages: CustomRoutePages = {
   },
   'tallers/bombolles-sabo': {
     ca: '/tallers/bombolles-sabo',
-    es: '/talleres/burbujas-jabon',
-    en: '/workshops/soap-bubbles'
+    en: '/workshops/soap-bubbles',
+    es: '/talleres/burbujas-jabon'
   },
   'tallers/circ': {
     ca: '/tallers/circ',
-    es: '/talleres/circo',
-    en: '/workshops/circus'
+    en: '/workshops/circus',
+    es: '/talleres/circo'
   },
   'tallers/pallassos': {
     ca: '/tallers/pallassos',
-    es: '/talleres/payasos',
-    en: '/workshops/clowns'
+    en: '/workshops/clowns',
+    es: '/talleres/payasos'
   },
   'tallers/maquillatge': {
     ca: '/tallers/maquillatge',
-    es: '/talleres/maquillaje',
-    en: '/workshops/makeup'
+    en: '/workshops/makeup',
+    es: '/talleres/maquillaje'
   },
   'tallers/enginys-aigua': {
     ca: '/tallers/enginys-aigua',
-    es: '/talleres/ingenios-agua',
-    en: '/workshops/water-tricks'
+    en: '/workshops/water-tricks',
+    es: '/talleres/ingenios-agua'
   },
   animacions: {
     ca: '/animacions',

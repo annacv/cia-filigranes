@@ -1,12 +1,12 @@
 <template>
   <nav role="navigation">
-    <ul>
-      <li class="navbar__menu-item text-white">
+    <ul class="navbar">
+      <li class="navbar__menu-item">
         <div class="flex py-4">
           <NuxtLinkLocale
             :to="'/'"
             @click="emit('toggle')"
-            class="hover:border-b-2 hover:border-opacity-75 border-white pb-1"
+            class="navbar__menu-item--link"
             :class="{ 'border-b-2': isRouteActive('/') }"
           >
             {{ getLocale('home', 'routes') }}
@@ -18,14 +18,14 @@
         :is="route.children ? 'ul' : 'li'"
         v-for="(route, index) in routes"
         :key="index"
-        class="navbar__menu-item text-white"
+        class="navbar__menu-item"
         :class="{ 'expanded pb-2': isExpanded(index) }"
       >
         <div class="flex flex-row py-4 gap-8 justify-between">
           <NuxtLinkLocale
             :to="route.name"
             @click="emit('toggle')"
-            class="hover:border-b-2 hover:border-opacity-75 border-white pb-1"
+            class="navbar__menu-item--link"
             :class="{ 'border-b-2': isRouteActive(`/${route.name}`) }"
           >
             {{ getLocale(route.name, 'routes') }}
@@ -49,7 +49,7 @@
               <NuxtLinkLocale
                 :to="`/${route.name}/${child}`"
                 @click="emit('toggle')"
-                class="hover:border-b-2 hover:border-opacity-75 border-white pb-1"
+                class="navbar__menu-item--link"
                 :class="{ 'border-b-2': isRouteActive(`/${route.name}/${child}`) }"
               >
                 {{ getLocale(child, 'routes') }}
@@ -71,13 +71,13 @@ import { ROUTES_INDEX } from '../constants/constants';
 const emit = defineEmits(['toggle']);
 const routes = ROUTES_INDEX;
 const route = useRoute();
+const localePath = useLocalePath();
 
-// Function to check if a link is active
 const isRouteActive = (path: string) => {
   if (path === '/') {
-    return route.path === '/';
+    return route.path === localePath('/');
   }
-  return route.path.startsWith(path) && route.path !== '/';
+  return route.path.startsWith(localePath(path)) && route.path !== '/';
 };
 
 // State object to keep track of which items are expanded
@@ -93,14 +93,18 @@ const isExpanded = (index: number) => {
 </script>
 
 <style scoped lang="scss">
-.navbar__menu-item {
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
-  max-height: 4rem; // Default max-height when collapsed
-}
-
-.navbar__menu-item.expanded {
-  max-height: 28rem; // Large enough to fit content
+.navbar {
+  &__menu-item {
+    @apply overflow-hidden text-white;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    max-height: 4rem; // Default max-height when collapsed
+    &.expanded {
+      max-height: 28rem; // Large enough to fit content
+    }
+    &--link {
+      @apply hover:border-b-2 hover:border-opacity-50 border-white pb-1;
+    }
+  }
 }
 
 .fade-slide-enter-active,
