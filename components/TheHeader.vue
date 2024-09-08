@@ -32,7 +32,7 @@ const toggleSideNav = () => {
 <style lang="scss">
   .slide-side-enter-active,
   .slide-side-leave-active {
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
   }
 
   .slide-side-enter-from,

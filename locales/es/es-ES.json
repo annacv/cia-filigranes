@@ -3,7 +3,7 @@
   "selectLang": "Escoge el idioma",
   "routes": {
     "home": "Inicio",
-    "shows": "Espectáculos",
+    "espectacles": "Espectáculos",
     "circ-filixic": "El Circo Filixic",
     "circ-filirates": "El Circo Filiratas",
     "desencaixats": "Desencajados",
@@ -24,6 +24,6 @@
     "trinxeta": "Trinxeta",
     "performances": "Animaciones",
     "about": "Filipersonas",
-    "contact": "Contacto"
+    "contacte": "Contacto"
   }
 }
