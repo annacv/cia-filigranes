@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     rootId: "ciafiligranes",
   },
   css: ["@/assets/scss/main.scss"],
-  devtools: { enabled: true },
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
   i18n: {
     baseUrl: "http://localhost:3000",
@@ -27,7 +26,6 @@ export default defineNuxtConfig({
     langDir: "locales",
     strategy: "prefix_except_default",
     defaultLocale: "ca",
-    // TODO: Check if this can be enabled/disabled by users https://i18n.nuxtjs.org/guide/browser-language-detection
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
