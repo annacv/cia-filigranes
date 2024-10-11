@@ -1,5 +1,7 @@
 <template>
-  <div ref="cover" class="hero-cover" :class="{ 'soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
+  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }"></div>
+  <div ref="cover" class="hero-cover"
+    :class="{ 'soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
     <div class="hero-cover__text-box">
       <slot></slot>
     </div>
@@ -13,9 +15,15 @@ const cover = ref();
 const isScrolled = ref(false);
 const isFixed = ref(false);
 const hasSoftLight = ref(false);
+const coverHeight = ref(0); 
 
 onMounted(() => {
   const coverImage = cover.value;
+
+  if (coverImage) {
+    coverHeight.value = coverImage.offsetHeight;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const intersectionRatio = entry.intersectionRatio;
