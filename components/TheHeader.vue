@@ -1,20 +1,17 @@
 <template>
-  <header role="banner" class="grid grid-cols-12 gap-4 bg-cardinal pt-6 pb-6">
-    <NuxtLinkLocale :to="('/')" class="col-start-2 2xl:col-start-3 col-span-3">
+  <header role="banner" class="grid grid-cols-12 gap-4 bg-transparent pt-6 pb-6 fixed w-full z-[10]">
+    <NuxtLinkLocale :to="('/')" class="col-start-2 3xl:col-start-3 col-span-3">
       <CiaLogo />
     </NuxtLinkLocale>
-    <div class="flex items-center col-start-11 2xl:col-start-10 justify-self-end gap-4">
-      <TheBurger :isOpen="isOpen" @toggle="toggleSideNav"/>
+    <div class="flex items-center col-start-11 3xl:col-start-10 justify-self-end gap-4">
+      <TheBurger :isOpen="isOpen" @toggle="toggleSideNav" />
     </div>
     <div class="w-full h-full">
       <Transition name="slide-side">
         <SideNav v-if="isOpen" @toggle="toggleSideNav" />
       </Transition>
-      <div
-        v-if="isOpen"
-        class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
-        @click="toggleSideNav"
-      />
+      <div v-if="isOpen" class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
+        @click="toggleSideNav" />
     </div>
   </header>
 </template>
@@ -30,13 +27,13 @@ const toggleSideNav = () => {
 </script>
 
 <style lang="scss">
-  .slide-side-enter-active,
-  .slide-side-leave-active {
-    transition: 0.5s ease-out;
-  }
+.slide-side-enter-active,
+.slide-side-leave-active {
+  transition: 0.5s ease-out;
+}
 
-  .slide-side-enter-from,
-  .slide-side-leave-to {
-    transform: translateX(100%);
-  }
+.slide-side-enter-from,
+.slide-side-leave-to {
+  transform: translateX(100%);
+}
 </style>
