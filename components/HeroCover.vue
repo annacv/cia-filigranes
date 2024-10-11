@@ -1,9 +1,12 @@
 <template>
-  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }"></div>
+  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }">
+    <slot name="placeholder"></slot>
+  </div>
   <div ref="cover" class="hero-cover"
     :class="{ 'soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
-    <div class="hero-cover__text-box">
-      <slot></slot>
+    <div class="absolute right-[2%] transition-[top] duration-[1000]"
+      :class="[isScrolled ? 'top-[22%]' : 'top-[9%]', isFixed ? 'opacity-0 transition-[opacity] duration-[500]' : 'opacity-1']">
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -15,13 +18,13 @@ const cover = ref();
 const isScrolled = ref(false);
 const isFixed = ref(false);
 const hasSoftLight = ref(false);
-const coverHeight = ref(0); 
+const coverHeight = ref(0);
 
 onMounted(() => {
   const coverImage = cover.value;
 
   if (coverImage) {
-    coverHeight.value = coverImage.offsetHeight;
+    coverHeight.value = coverImage.offsetHeight - (window.innerHeight * 0.31);
   }
 
   const observer = new IntersectionObserver((entries) => {
@@ -86,13 +89,5 @@ onMounted(() => {
   top: -62vh;
   left: 0;
   width: 100%;
-}
-
-.hero-cover__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
 }
 </style>
