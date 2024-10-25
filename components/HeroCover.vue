@@ -1,16 +1,3 @@
-<template>
-  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }">
-    <slot name="placeholder"></slot>
-  </div>
-  <div ref="cover" class="hero-cover"
-    :class="{ 'soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
-    <div class="absolute right-[2%] transition-[top] duration-[1000]"
-      :class="[isScrolled ? 'top-[22%]' : 'top-[9%]', isFixed ? 'opacity-0 transition-[opacity] duration-[500]' : 'opacity-1']">
-      <slot name="content"></slot>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
@@ -24,7 +11,7 @@ onMounted(() => {
   const coverImage = cover.value;
 
   if (coverImage) {
-    coverHeight.value = coverImage.offsetHeight - (window.innerHeight * 0.31);
+    coverHeight.value = coverImage.offsetHeight;
   }
 
   const observer = new IntersectionObserver((entries) => {
@@ -36,11 +23,12 @@ onMounted(() => {
         hasSoftLight.value = true;
       }
 
-      if (intersectionRatio <= 0.35985347628593445) {
+      console.log(intersectionRatio);
+
+      if (intersectionRatio <= 0.20) {
         isFixed.value = true;
         hasSoftLight.value = false;
       }
-
     });
   }, {
     threshold: Array.from({ length: 101 }, (_, i) => i / 100),
@@ -57,36 +45,50 @@ onMounted(() => {
 });
 </script>
 
+<template>
+  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }"
+    class="relative hero-placeholder bg-blend-hard-light grid grid-cols-12 flex">
+    <div class="col-start-2 col-span-12 transition-[opacity] flex">
+      <slot name="placeholder"></slot>
+    </div>
+  </div>
+  <div ref="cover" class="hero-cover bg-blend-hard-light grid grid-cols-12 content-center"
+    :class="{ 'bg-blend-soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
+    <div class="col-start-8 col-span-4 place-self-end transition-[opacity]"
+      :class="isScrolled ? 'opacity-0' : 'opacity-1'">
+      <slot name="content"></slot>
+    </div>
+  </div>
+</template>
+
 <style lang="scss">
+.hero-placeholder,
 .hero-cover {
-  position: relative;
-  height: 95vh;
-  background-position: center 20%;
-  background-blend-mode: hard-light;
-  //background-blend-mode: soft-light;
-  // background-image: url(../assets/images/007.jpg);
-  // background-image: linear-gradient(to right bottom,
-  //     rgba(200, 13, 13, 0.2),
-  //     rgba(188, 27, 54, 0.2)),
-  //   url(../assets/images/007.jpg);
-  background-image: linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url(/_nuxt/assets/images/007.JPG);
+  height: 100vh;
   background-size: cover;
-  transition: clip-path 1s ease, background-blend-mode 0.5s ease;
   z-index: 9;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
 
-.soft-light {
-  background-blend-mode: soft-light;
+.hero-placeholder {
+  background-position: center 62%;
+  background-image: linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url(/_nuxt/assets/images/007.JPG);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.hero-cover {
+  background-position: center 20%;
+  transition: clip-path 1s ease, background-blend-mode 0.5s ease;
+  background-image: linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url(/_nuxt/assets/images/007.JPG);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
 }
 
 .scrolled-cover {
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 75%);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
 }
 
 .fixed-cover {
   position: fixed;
-  top: -62vh;
+  top: -81vh;
   left: 0;
   width: 100%;
 }

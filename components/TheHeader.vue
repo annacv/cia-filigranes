@@ -3,7 +3,7 @@
     <NuxtLinkLocale :to="('/')" class="col-start-2 3xl:col-start-3 col-span-3">
       <CiaLogo />
     </NuxtLinkLocale>
-    <div class="flex items-center col-start-11 3xl:col-start-10 justify-self-end gap-4">
+    <div class="flex items-start col-start-11 3xl:col-start-10 justify-self-end gap-4">
       <TheBurger :isOpen="isOpen" @toggle="toggleSideNav" />
     </div>
     <div class="w-full h-full">
