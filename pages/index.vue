@@ -1,24 +1,15 @@
 <template>
-  <div class="fili">
-    companyia
-    <span class="fili__cia w-full">filigranes</span>
-  </div>
-  <div class="fili_i18n-test">
-    {{ $t("welcome") }}
-    això és la home
+  <div class="min-h-screen p-4">
+    <div class="mb-4 p-4 bg-gray-100 rounded">
+      <span>companyia</span>
+      <span class="text-red-500 w-full block">filigranes</span>
+    </div>
+    <div class="font-bold p-4">
+      {{ $t("welcome") }}
+      <span class="block">això és la home</span>
+    </div>
   </div>
 </template>
-
-<style lang="scss">
-.fili {
-  background-color: var(--main-bg-color) !important;
-
-  &__cia {
-    color: red;
-  }
-
-  &__i18n-test {
-    font-weight: bold;
-  }
-}
-</style>
+<script setup>
+// Component logic goes here
+</script>
