@@ -84,8 +84,7 @@ watch(isAtTop, (newVal) => {
 </script>
 
 <template>
-  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }">
-    <!-- Spacer for fixed cover -->
+  <div v-if="isFixed" class="h-[110px]">
   </div>
   <div
     ref="cover"
@@ -99,7 +98,8 @@ watch(isAtTop, (newVal) => {
     :class="{ 'h-[110px] fixed w-full top-0 left-0': isFixed }"
   >
     <div
-      class="col-start-8 col-span-4 place-self-end transition-all duration-500"
+      v-if="!isFixed"
+      class="col-start-8 col-span-4 place-self-end transition-opacity duration-500"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
       <slot name="content"></slot>

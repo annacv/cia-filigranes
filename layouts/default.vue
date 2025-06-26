@@ -35,12 +35,3 @@ const head = useLocaleHead({
 })
 const htmlAttrs = computed(() => head.value.htmlAttrs!)
 </script>
-
-<style lang="scss">
-html,
-body,
-#ciafiligranes,
-main {
-  background-color: black;
-}
-</style>
