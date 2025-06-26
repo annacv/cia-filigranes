@@ -11,7 +11,7 @@
     <TheHeader />
     <HeroCover>
       <template v-slot:content>
-        <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 2xl:w-[748px] 3xl:w-[800px]" />
+        <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 3xl:w-[748px]" />
       </template>
     </HeroCover>
     <main role="main" class="grid grid-cols-12 gap-4 pt-6 pb-6 min-w-full w-full min-h-screen h-full">

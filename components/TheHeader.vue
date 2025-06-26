@@ -1,5 +1,5 @@
 <template>
-  <header role="banner" class="grid grid-cols-12 gap-4 bg-transparent pt-6 pb-6 fixed w-full z-[10]">
+  <header role="banner" class="grid grid-cols-12 gap-4 bg-transparent pt-6 pb-6 fixed w-full z-[100]">
     <NuxtLinkLocale :to="('/')" class="col-start-2 3xl:col-start-3 col-span-3">
       <CiaLogo />
     </NuxtLinkLocale>
