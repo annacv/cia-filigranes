@@ -8,7 +8,6 @@ const hasSoftLight = ref(false);
 const coverHeight = ref(0);
 const isAtTop = ref(true);
 
-const finalClipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
 const initialClipPath = 'polygon(0 0, 100% 0, 100% 86%, 0% 100%)';
 const scrolledClipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
 const fixedClipPath = 'polygon(0 0, 100% 0, 100% 110px, 0% 110px)';
@@ -84,13 +83,14 @@ watch(isAtTop, (newVal) => {
   </div>
   <div
     ref="cover"
-    class="hero-cover bg-blend-hard-light grid grid-cols-12 content-center"
-    :class="{
-      'bg-blend-soft-light': hasSoftLight,
-      'scrolled-cover': isScrolled,
-      'fixed-cover': isFixed,
-      'at-top': isAtTop
+    class="z-10 h-screen bg-blend-hard-light grid grid-cols-12 content-center bg-cover bg-center transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    :style="{
+      backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url('/_nuxt/assets/images/007.JPG')`,
+      clipPath: isFixed ? fixedClipPath : isScrolled ? scrolledClipPath : isAtTop ? initialClipPath : scrolledClipPath,
+      backgroundPosition: isFixed ? 'center center' : 'center 20%',
+      backgroundBlendMode: hasSoftLight ? 'soft-light' : 'hard-light'
     }"
+    :class="{ 'h-[110px] fixed w-full top-0 left-0': isFixed }"
   >
     <div
       class="col-start-8 col-span-4 place-self-end transition-all duration-500"
@@ -101,56 +101,11 @@ watch(isAtTop, (newVal) => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.hero-cover {
-  height: 100vh;
-  background-size: cover;
-  z-index: 9;
-  background-position: center 20%;
-  transition:
-    clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background-blend-mode 0.5s ease,
-    background-position 0.5s ease;
-  background-image:
-    linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)),
-    url('/_nuxt/assets/images/007.JPG');
-
-  // Initial state (top of page)
-  clip-path: v-bind('initialClipPath');
-
-  // When scrolled down
-  &.scrolled-cover {
-    clip-path: v-bind('scrolledClipPath');
-  }
-
-  // When fixed at top
-  &.fixed-cover {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 124px;
-    clip-path: v-bind('fixedClipPath');
-    background-position: center center;
-  }
-
-  // When back at top
-  &.at-top {
-    clip-path: v-bind('initialClipPath');
-  }
-}
-
+<style scoped>
 /* Ensure smooth transitions */
 * {
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Optional: Add reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .hero-cover {
-    transition: none;
-  }
 }
 </style>
