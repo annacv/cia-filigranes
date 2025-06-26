@@ -7,6 +7,11 @@ const isFixed = ref(false);
 const hasSoftLight = ref(false);
 const coverHeight = ref(0);
 
+const finalClipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
+const initialClipPath = 'polygon(0 0, 100% 0, 100% 80%, 0% 100%)';
+const scrolledClipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
+const fixedClipPath = 'polygon(0 0, 100% 0, 100% 124px, 0% 124px)';
+
 onMounted(() => {
   const coverImage = cover.value;
 
@@ -46,11 +51,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }"
-    class="relative hero-placeholder bg-blend-hard-light grid grid-cols-12 flex">
-    <div class="col-start-2 col-span-12 transition-[opacity] flex">
-      <slot name="placeholder"></slot>
-    </div>
+  <div v-if="isFixed" :style="{ height: coverHeight + 'px' }">
+  <!--  Spacer for fixed cover -->
   </div>
   <div ref="cover" class="hero-cover bg-blend-hard-light grid grid-cols-12 content-center"
     :class="{ 'bg-blend-soft-light': hasSoftLight, 'scrolled-cover': isScrolled, 'fixed-cover': isFixed }">
@@ -69,27 +71,39 @@ onMounted(() => {
   z-index: 9;
 }
 
-.hero-placeholder {
-  background-position: center 62%;
-  background-image: linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url(/_nuxt/assets/images/007.JPG);
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-}
-
 .hero-cover {
   background-position: center 20%;
-  transition: clip-path 1s ease, background-blend-mode 0.5s ease;
-  background-image: linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url(/_nuxt/assets/images/007.JPG);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
+  transition: clip-path 0.5s ease, background-blend-mode 0.5s ease;
+  background-image:
+    linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)),
+    url('/_nuxt/assets/images/007.JPG');
+  clip-path: v-bind('isFixed ? fixedClipPath : isScrolled ? scrolledClipPath : initialClipPath');
+
+  &.scrolled-cover {
+    clip-path: v-bind('scrolledClipPath');
+  }
+
+  &.fixed-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 124px;
+    clip-path: v-bind('fixedClipPath');
+  }
 }
 
-.scrolled-cover {
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+/* Ensure smooth transitions */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.fixed-cover {
-  position: fixed;
-  top: -81vh;
-  left: 0;
-  width: 100%;
+/* Optional: Add reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-cover {
+    transition: none;
+  }
 }
 </style>
