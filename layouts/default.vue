@@ -10,10 +10,6 @@
   <Body>
     <TheHeader />
     <HeroCover>
-      <template v-slot:placeholder>
-        <VintAnysBrand
-          class="self-end transform -scale-x-100 w-[200px] lg:w-[348px] xl:w-[500px] 2xl:w-[648px] 3xl:w-[700px]" />
-      </template>
       <template v-slot:content>
         <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 2xl:w-[748px] 3xl:w-[800px]" />
       </template>
