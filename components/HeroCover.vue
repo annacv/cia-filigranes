@@ -12,6 +12,12 @@ const initialClipPath = 'polygon(0 0, 100% 0, 100% 86%, 0% 100%)';
 const scrolledClipPath = 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
 const fixedClipPath = 'polygon(0 0, 100% 0, 100% 110px, 0% 110px)';
 
+const currentClipPath = computed(() => {
+  if (isFixed.value) return fixedClipPath;
+  if (isScrolled.value) return scrolledClipPath;
+  return isAtTop.value ? initialClipPath : scrolledClipPath;
+});
+
 function updateCoverState(intersectionRatio: number) {
   if (isAtTop.value) {
     isFixed.value = false;
@@ -86,7 +92,7 @@ watch(isAtTop, (newVal) => {
     class="z-10 h-screen bg-blend-hard-light grid grid-cols-12 content-center bg-cover bg-center transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url('/_nuxt/assets/images/007.JPG')`,
-      clipPath: isFixed ? fixedClipPath : isScrolled ? scrolledClipPath : isAtTop ? initialClipPath : scrolledClipPath,
+      clipPath: currentClipPath,
       backgroundPosition: isFixed ? 'center center' : 'center 20%',
       backgroundBlendMode: hasSoftLight ? 'soft-light' : 'hard-light'
     }"
