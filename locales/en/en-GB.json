@@ -1,11 +1,11 @@
 {
   "title": "Companyia Filigranes",
   "home": {
+    "description": "Welcome to the Filigranes Clown's Company website! Find shows, workshops and awesome performances.",
     "hero": {
       "alt": "Image of the show 20 Years are nothing"
     }
   },
-  "welcome": "welcome",
   "selectLang": "Select a language",
   "routes": {
     "home": "Home",
