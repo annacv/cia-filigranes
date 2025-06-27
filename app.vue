@@ -34,3 +34,7 @@ nuxtApp.hook('page:finish', () => {
   </Body>
   </Html>
 </template>
+
+<style>
+@import '@/tailwindcss/index.css';
+</style>
