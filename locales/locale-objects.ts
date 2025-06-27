@@ -1,4 +1,4 @@
-import { LocaleObject } from "@nuxtjs/i18n/dist/runtime/composables";
+import type { LocaleObject } from "@nuxtjs/i18n";
 
 export const localeObjects: LocaleObject[] = [
   { code: "ca", language: "ca-CA", name: "Català", dir: "ltr", file: 'ca/ca-CA.json' },

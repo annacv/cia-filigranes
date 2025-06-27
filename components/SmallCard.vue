@@ -24,12 +24,12 @@
 						<p class="card__price-only">Only</p>
 						<p class="card__price-value">$297</p>
 					</div>
-					<a href="#popup" class="btn btn--white">Book now!</a>
+					<a href="" class="btn btn--white">Book now!</a>
 				</div>
 			</div>
 		</div>
 	</div>
-</div></template>
+</template>
 
 <style lang="scss">
 $color-primary-light: #c80d0d;
@@ -122,7 +122,7 @@ $color-black: #000;
 
 		&--3 {
 			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
-				url(../assets/images/053.jpg.jpg);
+				url(../assets/images/desktop/053.JPG);
 		}
 	}
 
@@ -241,7 +241,7 @@ $color-black: #000;
 		// FRONT SIDE STYLING
 		&__cta {
 			position: relative;
-			top: 0%;
+			top: 0;
 			left: 0;
 			transform: translate(0);
 			width: 100%;
