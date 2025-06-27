@@ -112,12 +112,12 @@ $color-black: #000;
 
 		&--1 {
 			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
-				url(../assets/images/051.jpg);
+				url(../assets/images/desktop/051.JPG);
 		}
 
 		&--2 {
 			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
-				url(../assets/images/005.jpg);
+				url(../assets/images/desktop/005.JPG);
 		}
 
 		&--3 {

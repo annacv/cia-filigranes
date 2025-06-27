@@ -18,8 +18,8 @@
       @click="changeLocale(lang.code as LocaleCode)"
     >
       <span class="text-white text-sm">{{ lang.code }}</span>
-      <span 
-        class="bg-white h-1 w-1 rounded-full mt-1" 
+      <span
+        class="bg-white h-1 w-1 rounded-full mt-1"
         :class="isSelected(lang.code) ? 'opacity-100' : 'opacity-20 hover:opacity-100'"
       ></span>
     </button>
@@ -40,7 +40,7 @@ interface LocaleObject {
   code: LocaleCode;
   name: string;
   file?: string;
-  iso?: string;
+  language?: string;
   [key: string]: any; // For any additional properties
 }
 

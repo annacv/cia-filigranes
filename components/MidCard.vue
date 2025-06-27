@@ -38,7 +38,7 @@ $color-black: #000;
 
 .mid-card {
   position: relative;
-  background: url(../assets/images/035.jpg);
+  background: url(../assets/images/desktop/035.JPG);
   background-size: cover;
   background-position: right center;
   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
@@ -141,7 +141,7 @@ $color-black: #000;
 // OPTION 2:
 .mid-card-2 {
   position: relative;
-  background: url(../assets/images/035.jpg);
+  background: url(../assets/images/desktop/035.JPG);
   background-size: cover;
   background-position: right center;
   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
