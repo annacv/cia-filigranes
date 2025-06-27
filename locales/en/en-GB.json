@@ -1,4 +1,10 @@
 {
+  "title": "Companyia Filigranes",
+  "home": {
+    "hero": {
+      "alt": "Image of the show 20 Years are nothing"
+    }
+  },
   "welcome": "welcome",
   "selectLang": "Select a language",
   "routes": {

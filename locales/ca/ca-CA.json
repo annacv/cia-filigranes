@@ -1,4 +1,10 @@
 {
+  "title": "Companyia Filigranes",
+  "home": {
+    "hero": {
+      "alt": "Imatge de l'espectacle 20 anys no són res"
+    }
+  },
   "welcome": "benvingudes",
   "selectLang": "Escull l'idioma",
   "routes": {
