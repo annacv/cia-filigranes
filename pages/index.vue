@@ -36,7 +36,9 @@ const imageUrl = computed(() => {
   <div class="h-full">
     <HeroCover :image-url="imageUrl" :alt="t('home.hero.alt')">
       <template #content>
-        <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 3xl:w-[748px]"/>
+        <NuxtLinkLocale :to="'/espectacles/vint-anys'">
+          <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 3xl:w-[748px]"/>
+        </NuxtLinkLocale>
       </template>
     </HeroCover>
     <MainContent>
