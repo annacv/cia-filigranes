@@ -15,10 +15,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "fade", mode: "out-in" },
     rootId: "ciafiligranes",
   },
-
-  css: ["@/assets/scss/main.scss"],
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@nuxtjs/device"],
-
   i18n: {
     baseUrl: "http://localhost:3000",
     locales: localeObjects,
@@ -31,6 +28,5 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
-
-  compatibilityDate: "2025-06-26",
+  compatibilityDate: "2025-06-27",
 });
