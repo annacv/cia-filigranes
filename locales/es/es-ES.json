@@ -1,4 +1,10 @@
 {
+  "title": "Compañía Filigranes",
+  "home": {
+    "hero": {
+      "alt": "Imagen del espectáculo 20 años no son nada"
+    }
+  },
   "welcome": "bienvenida",
   "selectLang": "Escoge el idioma",
   "routes": {
