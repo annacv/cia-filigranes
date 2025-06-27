@@ -1,7 +1,23 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
+const { isMobile } = useDevice()
 const isScrolled = ref(false)
+
+const mobileHeight = '110px';
+const desktopHeight = '210px';
+const deviceFixedHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
+
+const initialClipPath = 'polygon(0 0, 100% 0, 100% 86%, 0% 100%)'
+const fixedClipPath = `polygon(0 0, 100% 0, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`
+
+const currentClipPath = computed(() =>
+  isScrolled.value ? fixedClipPath : initialClipPath
+)
+
+const currentHeight = computed(() =>
+  isScrolled.value ? deviceFixedHeight.value : '100vh'
+)
 
 function onScroll() {
   isScrolled.value = window.scrollY > 0
@@ -15,20 +31,10 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
 })
-
-const initialClipPath = 'polygon(0 0, 100% 0, 100% 86%, 0% 100%)'
-const fixedClipPath = 'polygon(0 0, 100% 0, 100% 110px, 0% 110px)'
-
-const currentClipPath = computed(() =>
-  isScrolled.value ? fixedClipPath : initialClipPath
-)
-const currentHeight = computed(() =>
-  isScrolled.value ? '110px' : '100vh'
-)
 </script>
 
 <template>
-  <div v-if="isScrolled" class="h-[110px] bg-black"></div>
+  <div v-if="isScrolled" class="h-[110px] lg:h-[210px] bg-black"></div>
   <div
     class="sticky top-0 w-full z-10 bg-cover bg-center grid grid-cols-12 items-center shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
