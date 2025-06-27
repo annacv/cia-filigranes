@@ -1,11 +1,11 @@
 {
   "title": "Compañía Filigranes",
   "home": {
+    "description": "¡Bienvenidas a web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a tu medida.",
     "hero": {
       "alt": "Imagen del espectáculo 20 años no son nada"
     }
   },
-  "welcome": "bienvenida",
   "selectLang": "Escoge el idioma",
   "routes": {
     "home": "Inicio",
