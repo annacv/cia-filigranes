@@ -37,25 +37,22 @@ const imageUrl = computed(() => {
     <HeroCover :image-url="imageUrl" :alt="t('home.hero.alt')">
       <template #content>
         <NuxtLinkLocale :to="'/espectacles/vint-anys'">
-          <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 3xl:w-[748px]"/>
+          <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[600px] 2xl:w-[748px]"/>
         </NuxtLinkLocale>
       </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>
-        <div class="mb-4 p-4 bg-gray-100 rounded">
-          <span>companyia</span>
-          <span class="text-red-500 w-full block">filigranes</span>
-        </div>
-        <div class="font-bold p-4">
-          <span class="block">això és la home</span>
-        </div>
-      </template>
-      <template #full-grid>
-        <LazyMidCard class="col-start-1 col-span-12"/>
       </template>
       <template #unwrapped>
-        <LazyHighlightContent/>
+        <LazyHighlightContent
+          :title="t('routes.espectacles')"
+          css-classes="highlight-content--1"
+        >
+          <template #content>
+            <LazySmallCard/>
+          </template>
+        </LazyHighlightContent>
       </template>
     </MainContent>
   </div>

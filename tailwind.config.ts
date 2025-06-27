@@ -18,9 +18,9 @@ const config: Config = {
         'grey-dark-3': '#333'
       },
       backgroundImage: {
-        highlightPrimary: 'linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark))',
-        highlightSecondary: 'linear-gradient(to right bottom, var(--color-secondary-light), var(--color-secondary-dark))',
-        highlightTertiary: 'linear-gradient(to right bottom, var(--color-tertiary-light), var(--color-tertiary-dark))',
+        'highlight-primary': 'linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark))',
+        'highlight-secondary': 'linear-gradient(to right bottom, var(--color-secondary-light), var(--color-secondary-dark))',
+        'highlight-tertiary': 'linear-gradient(to right bottom, var(--color-tertiary-light), var(--color-tertiary-dark))',
       },
       skew: {
         '7': '7deg',
