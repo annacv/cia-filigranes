@@ -19,16 +19,15 @@ const mobileHeight = '110px';
 const desktopHeight = '210px';
 const deviceFixedHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
 
-const initialClipPath = 'polygon(0 0, 100% 0, 100% 86%, 0% 100%)'
+const mobileClip = '90%';
+const desktopClip = '86%';
+const deviceClip = computed(() => isMobile ? mobileClip : desktopClip);
+
+const initialClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceClip.value}, 0% 100%)`);
 const fixedClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`)
 
-const currentClipPath = computed(() =>
-  isScrolled.value ? fixedClipPath.value : initialClipPath
-)
-
-const currentHeight = computed(() =>
-  isScrolled.value ? deviceFixedHeight.value : '100vh'
-)
+const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
+const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100vh')
 
 function onScroll() {
   isScrolled.value = window.scrollY > 0
@@ -51,7 +50,7 @@ onBeforeUnmount(() => {
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url('${imageUrl}')`,
-      backgroundPosition: isScrolled ? 'center center' : 'center 20%',
+      backgroundPosition: isScrolled ? 'center center' : 'center 30%',
       clipPath: currentClipPath,
       height: currentHeight,
       backgroundSize: 'cover',
