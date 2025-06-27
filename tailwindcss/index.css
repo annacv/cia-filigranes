@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-light: #c80d0d;
+    --color-primary-dark: #bc1b36;
+    --color-secondary-light: #01aedd;
+    --color-secondary-dark: #2998ff;
+    --color-tertiary-light: #5643fa;
+    --color-tertiary-dark: #193950;
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+    --color-grey-dark-1: #999;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #333;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .grid-layout {
+    @apply grid grid-cols-12 gap-4 pt-6 pb-6;
+  }
+  .layout-cols {
+    @apply col-start-2 3xl:col-start-3 col-span-10 3xl:col-span-8;
+  }
+  .highlight-content--1 {
+    @apply highlight-primary h-[75vh] -skew-y-7 mt-[30rem];
+    & > * {
+      @apply skew-y-7;
+    }
+  }
+  .highlight-content--2 {
+    @apply highlight-secondary h-[75vh] skew-y-7 mt-[30rem];
+    & > * {
+      @apply -skew-y-7;
+    }
+  }
+  .highlight-content--3 {
+    @apply highlight-tertiary h-[105vh] -skew-y-7 mt-[30rem];
+    & > * {
+      @apply skew-y-7;
+    }
+  }
+}
