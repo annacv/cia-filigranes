@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   },
 
   css: ["@/assets/scss/main.scss"],
-  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@nuxtjs/device"],
 
   i18n: {
     baseUrl: "http://localhost:3000",

@@ -10,9 +10,9 @@
     "lint": "eslint --ext .ts,.js,.vue src"
   },
   "dependencies": {
+    "@nuxtjs/device": "^3.2.4",
     "@nuxtjs/i18n": "^8.0.0-rc.14",
     "@unhead/vue": "1.8.0",
-    "@vueuse/core": "^13.4.0",
     "nuxt": "3.16.0",
     "vue": "^3.4.21",
     "vue-i18n": "^9.9.1",
