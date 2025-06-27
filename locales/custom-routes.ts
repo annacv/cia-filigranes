@@ -1,4 +1,4 @@
-import { CustomRoutePages } from "@nuxtjs/i18n/dist/module"
+import type { CustomRoutePages } from "@nuxtjs/i18n";
 
 export const routePages: CustomRoutePages = {
   espectacles: {
