@@ -1,33 +1,41 @@
 {
-  "title": "Companyia Filigranes",
-  "home": {
-    "description": "Welcome to the Filigranes Clown's Company website! Find shows, workshops and awesome performances.",
-    "hero": {
-      "alt": "Image of the show 20 Years are nothing"
+    "title": "Filigranes Company",
+    "home": {
+      "description": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
+      "hero": {
+        "alt": "Image of the show 20 years is nothing"
+      }
+    },
+    "routes": {
+      "home": "Home",
+      "espectacles": "Shows",
+      "circ-filixic": "El circ filixic",
+      "freak-frac": "Germans Freak Frac Parade",
+      "plis-plas": "Plis plas",
+      "vint-anys": "20 Years is Nothing",
+      "circ-makutu": "Makutu's Little Circus",
+      "circ-trinxeta": "Trinxat no Tremola",
+      "tallers": "Workshops",
+      "bombolles-sabo": "Soap bubbles",
+      "circ": "Circus",
+      "pallassos": "Clowns",
+      "maquillatge": "Makeup",
+      "enginys-aigua": "Water devices",
+      "animacions": "Animations",
+      "filipersones": "Filipersones",
+      "makutu": "Makutu",
+      "trinxeta": "Trinxeta",
+      "contacte": "Contact"
+    },
+    "button": {
+      "dossier": "Dossier",
+      "info": "More info"
+    },
+    "selectLang": "Choose language",
+    "commonAlt": "Image of {title}",
+    "shows": {},
+    "workshops": {},
+    "performances": {
+      "title": "Performances à la carte"
     }
-  },
-  "selectLang": "Select a language",
-  "routes": {
-    "home": "Home",
-    "espectacles": "Shows",
-    "circ-filixic": "The Filixic Circus",
-    "circ-filirates": "The Filirats Circus",
-    "desencaixats": "Unboxed",
-    "freak-frac": "Freak Frac Brothers Parades",
-    "plis-plas": "Plis plas",
-    "vint-anys": "20 Years are nothing",
-    "circ-makutu": "Makutu's Little Circus",
-    "circ-trinxeta": "Trinxat Doesn't Tremble",
-    "tallers": "Workshops",
-    "bombolles-sabo": "Soap Bubbles",
-    "circ": "Circus",
-    "pallassos": "Clowns",
-    "maquillatge": "Maquillatge",
-    "enginys-aigua": "Water Tricks",
-    "animacions": "Performances",
-    "filipersones": "About",
-    "makutu": "Makutu",
-    "trinxeta": "Trinxeta",
-    "contacte": "Contact"
   }
-}
