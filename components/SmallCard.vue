@@ -1,261 +1,103 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { getImageUrl } from "~/composables/use-get-image-url.composable";
+
+const props = defineProps({
+  cardType: {
+    type: String,
+    required: true
+  },
+  imageName: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+});
+
+const { t } = useI18n()
+const { isDesktop } = useDevice()
+const imageSrc = getImageUrl(props.imageName).value;
+
+const bgColor = computed(() => props.cardType === 'performance' ? 'bg-tertiary-500/40' : props.cardType === 'show' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+
+const isFlipped = ref(false);
+const toggleFlip = () => {
+  isFlipped.value = !isFlipped.value;
+};
+</script>
+
 <template>
-	<div class="small-card">
-		<div class="card">
-			<div class="card__side card__side--front">
-				<div class="card__picture card__picture--1">
-					&nbsp;
-				</div>
-				<h4 class="card__heading">
-					<span class="card__heading-span card__heading-span--1">The Sea Explorer</span>
-				</h4>
-				<div class="card__details">
-					<ul>
-						<li>3 day tours</li>
-						<li>Up to 30 people</li>
-						<li>2 tour guides</li>
-						<li>Sleep in cozy hotels</li>
-						<li>Difficulty: easy</li>
-					</ul>
-				</div>
-			</div>
-			<div class="card__side card__side--back card__side--back-1">
-				<div class="card__cta">
-					<div class="card__price-box">
-						<p class="card__price-only">Only</p>
-						<p class="card__price-value">$297</p>
-					</div>
-					<a href="" class="btn btn--white">Book now!</a>
-				</div>
-			</div>
-		</div>
-	</div>
+  <ClientOnly>
+  <div
+    class="relative overflow-hidden h-[298px] 2xl:h-[350px]"
+    :class="cardType === 'performance' ? 'w-[350px] 2xl:w-[700px]' : 'w-[298px] 2xl:w-[350px]'"
+    @mouseenter="toggleFlip"
+    @mouseleave="toggleFlip"
+  >
+    <div
+      class="w-full h-full transition-transform duration-800 ease-in-out"
+      :class="{ 'rotate-y-180': isFlipped && isDesktop }"
+      style="transform-style: preserve-3d;"
+    >
+      <!-- Img for card front and back -->
+      <img
+        class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-all duration-700"
+        :class="isFlipped
+          ? 'brightness-125 saturate-150'
+          : 'brightness-75 saturate-100'"
+        :src="imageSrc"
+        :alt="t('commonAlt', {title: title})"
+        loading="lazy"
+        draggable="false"
+      />
+
+      <!-- Front -->
+      <div class="card-face backface-hidden z-10">
+        <div
+          v-if="!isFlipped"
+          class="absolute inset-0 pointer-events-none transition-all duration-700"
+          :class="bgColor"
+        ></div>
+        <div class="absolute inset-0  bg-gradient-to-r from-black/25 to-black/15 pointer-events-none"></div>
+        <h3 class="absolute bottom-4 left-4 max-w-[274px] 2xl:max-w-[326px] text-3xl text-left">
+          <span class="font-grotesk font-bold uppercase text-white wrap-break-word">
+            {{ title }}
+          </span>
+        </h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-face backface-hidden rotate-y-180 z-20 flex items-end justify-center p-4">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/35 to-black/25 pointer-events-none"></div>
+        <div class="relative w-[90%] text-center">
+          <div class="flex gap-4 justify-center">
+            <a
+              href="#"
+              class="inline-block px-8 py-4 text-gray-800 bg-white  hover:bg-gray-100 transition-colors"
+              @click.prevent="toggleFlip"
+            >
+              {{ t('button.dossier') }}
+            </a>
+            <a
+              href="#"
+              class="inline-block px-8 py-4 text-gray-800 bg-white  hover:bg-gray-100 transition-colors"
+              @click.prevent="toggleFlip"
+            >
+              {{ t('button.info') }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </ClientOnly>
 </template>
 
-<style lang="scss">
-$color-primary-light: #c80d0d;
-$color-primary-dark: #bc1b36;
-$color-secondary-light: #01aedd;
-$color-secondary-dark: #193950;
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #5643fa;
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
-
-$color-grey-dark: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
-
-$color-white: #fff;
-$color-black: #000;
-
-.small-card {
-
-	// FUNCTIONALITY
-	perspective: 150rem;
-	-moz-perspective: 150rem;
-	position: relative;
-	height: 52rem;
-
-	&__side {
-		height: 52rem;
-		transition: all .8s ease;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		border-radius: 3px;
-		overflow: hidden;
-		box-shadow: 0 1.5rem 4rem rgba(#000, .15);
-
-		&--front {
-			background-color: #fff;
-		}
-
-		&--back {
-			transform: rotateY(180deg);
-
-			&-1 {
-				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-			}
-
-			&-2 {
-				background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-			}
-
-			&-3 {
-				background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
-			}
-		}
-	}
-
-
-	&:hover &__side--front {
-		transform: rotateY(-180deg);
-	}
-
-	&:hover &__side--back {
-		transform: rotateY(0);
-	}
-
-
-	// FRONT SIDE STYLING
-	&__picture {
-		background-size: cover;
-		height: 23rem;
-		background-blend-mode: screen;
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-
-		&--1 {
-			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
-				url(../assets/images/desktop/051.JPG);
-		}
-
-		&--2 {
-			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
-				url(../assets/images/desktop/005.JPG);
-		}
-
-		&--3 {
-			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
-				url(../assets/images/desktop/053.JPG);
-		}
-	}
-
-	&__heading {
-		font-size: 2.8rem;
-		font-weight: 300;
-		text-transform: uppercase;
-		text-align: right;
-		color: $color-white;
-		position: absolute;
-		top: 12rem;
-		right: 2rem;
-		width: 75%;
-
-	}
-
-	&__heading-span {
-		padding: 1rem 1.5rem;
-		-webkit-box-decoration-break: clone;
-		box-decoration-break: clone;
-
-		&--1 {
-			background-image: linear-gradient(to right bottom,
-					rgba($color-secondary-light, .85),
-					rgba($color-secondary-dark, .85));
-		}
-
-		&--2 {
-			background-image: linear-gradient(to right bottom,
-					rgba($color-primary-light, .85),
-					rgba($color-primary-dark, .85));
-		}
-
-		&--3 {
-			background-image: linear-gradient(to right bottom,
-					rgba($color-tertiary-light, .85),
-					rgba($color-tertiary-dark, .85));
-		}
-	}
-
-	&__details {
-		padding: 3rem;
-
-		ul {
-			list-style: none;
-			width: 80%;
-			margin: 0 auto;
-
-			li {
-				text-align: center;
-				font-size: 1.5rem;
-				padding: 1rem;
-
-				&:not(:last-child) {
-					border-bottom: 1px solid $color-grey-light-2;
-				}
-			}
-		}
-	}
-
-	// FRONT SIDE STYLING
-	&__cta {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 90%;
-		text-align: center;
-	}
-
-	&__price-box {
-		text-align: center;
-		color: $color-white;
-		margin-bottom: 8rem;
-	}
-
-	&__price-only {
-		font-size: 1.4rem;
-		text-transform: uppercase;
-	}
-
-	&__price-value {
-		font-size: 6rem;
-		font-weight: 100;
-	}
-
-	//@include respond(tab-port) {
-	@media only screen and (max-width: 56.25em),
-	only screen and (hover: none) {
-
-		height: auto;
-		border-radius: 3px;
-		background-color: $color-white;
-		box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
-		&__side {
-			height: auto;
-			position: relative;
-			box-shadow: none;
-
-			&--back {
-				transform: rotateY(0);
-				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-			}
-		}
-
-		&:hover &__side--front {
-			transform: rotateY(0);
-		}
-
-
-		&__details {
-			padding: 1rem 3rem;
-		}
-
-		// FRONT SIDE STYLING
-		&__cta {
-			position: relative;
-			top: 0;
-			left: 0;
-			transform: translate(0);
-			width: 100%;
-			padding: 7rem 4rem 4rem 4rem;
-		}
-
-		&__price-box {
-			margin-bottom: 3rem;
-		}
-
-		&__price-value {
-			font-size: 4rem;
-		}
-	}
-
+<style scoped>
+.card-face {
+  @apply absolute w-full h-full top-0 left-0  overflow-hidden;
 }
 </style>

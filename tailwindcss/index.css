@@ -4,17 +4,19 @@
 
 @layer base {
   :root {
-    --color-primary-light: #c80d0d;
-    --color-primary-dark: #bc1b36;
-    --color-secondary-light: #01aedd;
-    --color-secondary-dark: #2998ff;
-    --color-tertiary-light: #5643fa;
-    --color-tertiary-dark: #193950;
-    --color-grey-light-1: #f7f7f7;
-    --color-grey-light-2: #eee;
-    --color-grey-dark-1: #999;
-    --color-grey-dark-2: #777;
-    --color-grey-dark-3: #333;
+    --color-primary-300: #f6b1bd;
+    --color-primary-500: #c80d0d;
+    --color-primary-700: #bc1b36;
+    --color-secondary-500: #01aedd;
+    --color-secondary-700: #2998ff;
+    --color-tertiary-500: #5643fa;
+    --color-tertiary-700: #193950;
+    --color-neutral-100: #f7f7f7;
+    --color-neutral-200: #eee;
+    --color-neutral-400: #999;
+    --color-neutral-600: #777;
+    --color-neutral-800: #333;
+    --color-neutral-900: #25272c;
   }
 }
 
@@ -22,36 +24,47 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .transition-transform {
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .wrap-break-word {
+    overflow-wrap: break-word;
   }
 }
 
 @layer components {
   .grid-layout {
-    @apply grid grid-cols-12 gap-4 pt-6 pb-6;
+    @apply grid grid-cols-12 gap-4 p-4;
   }
   .layout-cols {
     @apply col-start-2 2xl:col-start-3 col-span-10 2xl:col-span-8;
   }
   .highlight-content--1 {
-    @apply bg-highlight-primary min-h-[75vh] -skew-y-7 py-14;
+    @apply bg-highlight-primary -skew-y-6;
     & > * {
-      @apply skew-y-7;
+      @apply skew-y-6;
     }
   }
   .highlight-content--2 {
-    @apply bg-highlight-secondary min-h-[75vh] skew-y-7 py-14;
+    @apply bg-highlight-secondary skew-y-6;
     & > * {
-      @apply -skew-y-7;
+      @apply -skew-y-6;
     }
   }
   .highlight-content--3 {
-    @apply bg-highlight-tertiary min-h-[105vh] -skew-y-7 py-14;
+    @apply bg-highlight-tertiary -skew-y-6;
     & > * {
-      @apply skew-y-7;
+      @apply skew-y-6;
     }
   }
 }
