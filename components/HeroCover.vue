@@ -1,22 +1,28 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import {getImageUrl} from "~/composables/use-get-image-url.composable";
 
 const props = defineProps({
-  imageUrl: {
-    type: String,
-    required: true
-  },
   alt: {
     type: String,
     default: ''
-  }
+  },
+  imageName: {
+    type: String,
+    required: true
+  },
+  imageRoute: {
+    type: String as PropType<ImageRoute>,
+    required: true
+  },
 })
 
 const { isMobile } = useDevice()
 const isScrolled = ref(false)
+const imageUrl = getImageUrl(props.imageName, props.imageRoute);
 
-const mobileHeight = '110px';
-const desktopHeight = '210px';
+const mobileHeight = '92px';
+const desktopHeight = '92px';
 const deviceFixedHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
 
 const mobileClip = '90%';
@@ -27,7 +33,7 @@ const initialClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceClip.v
 const fixedClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`)
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
-const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100vh')
+const currentHeight = computed(() => isScrolled.value ? '100px' : '100vh')
 
 function onScroll() {
   isScrolled.value = window.scrollY > 0
@@ -49,7 +55,7 @@ onBeforeUnmount(() => {
     class="sticky top-0 w-full z-10 bg-cover bg-center grid grid-cols-12 items-center shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
-      backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 72%), rgb(14 2 4 / 66%)), url('${imageUrl}')`,
+      backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66)), url('${imageUrl}')`,
       backgroundPosition: isScrolled ? 'center center' : 'center 30%',
       clipPath: currentClipPath,
       height: currentHeight,

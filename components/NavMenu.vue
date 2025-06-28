@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { getLocale } from '../composables/use-i18n-utils.composable';
+import { useRoute } from 'vue-router';
+import { ROUTES_INDEX } from '../constants';
+
+const emit = defineEmits(['toggle']);
+const routes = ROUTES_INDEX;
+const route = useRoute();
+const localePath = useLocalePath();
+
+const isRouteActive = (path: string) => {
+  if (path === '/') {
+    return route.path === localePath('/');
+  }
+  return route.path.startsWith(localePath(path)) && route.path !== '/';
+};
+
+// State object to keep track of which items are expanded
+const expandedItems = ref<Record<number, boolean>>({});
+
+const toggleChildren = (index: number) => {
+  expandedItems.value[index] = !expandedItems.value[index];
+};
+
+const isExpanded = (index: number) => {
+  return expandedItems.value[index];
+};
+</script>
+
 <template>
   <nav role="navigation">
     <ul class="navbar">
@@ -12,7 +42,7 @@
             {{ getLocale('home', 'routes') }}
           </NuxtLinkLocale>
         </div>
-        
+
       </li>
       <component
         :is="route.children ? 'ul' : 'li'"
@@ -61,36 +91,6 @@
     </ul>
   </nav>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue';
-import { getLocale } from '../composables/use-i18n-utils.composable';
-import { useRoute } from 'vue-router';
-import { ROUTES_INDEX } from '../constants/constants';
-
-const emit = defineEmits(['toggle']);
-const routes = ROUTES_INDEX;
-const route = useRoute();
-const localePath = useLocalePath();
-
-const isRouteActive = (path: string) => {
-  if (path === '/') {
-    return route.path === localePath('/');
-  }
-  return route.path.startsWith(localePath(path)) && route.path !== '/';
-};
-
-// State object to keep track of which items are expanded
-const expandedItems = ref<Record<number, boolean>>({});
-
-const toggleChildren = (index: number) => {
-  expandedItems.value[index] = !expandedItems.value[index];
-};
-
-const isExpanded = (index: number) => {
-  return expandedItems.value[index];
-};
-</script>
 
 <style scoped lang="scss">
 .navbar {

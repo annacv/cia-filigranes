@@ -1,35 +1,41 @@
 {
-  "title": "Compañía Filigranes",
-  "home": {
-    "description": "¡Bienvenidas a web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a tu medida.",
-    "hero": {
-      "alt": "Imagen del espectáculo 20 años no son nada"
+      "title": "Compañía Filigranes",
+      "home": {
+        "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
+        "hero": {
+          "alt": "Imagen del espectáculo 20 años no son nada"
+        }
+      },
+      "routes": {
+        "home": "Inicio",
+        "espectacles": "Espectáculos",
+        "circ-filixic": "El circ filixic",
+        "freak-frac": "Pasacalles Hermanos Freak Frac",
+        "plis-plas": "Plis plas",
+        "vint-anys": "20 Años no son nada",
+        "circ-makutu": "El Pequeño Circo de Makutu",
+        "circ-trinxeta": "Trinxat no Tremola",
+        "tallers": "Talleres",
+        "bombolles-sabo": "Burbujas de jabón",
+        "circ": "Circo",
+        "pallassos": "Payasos",
+        "maquillatge": "Maquillaje",
+        "enginys-aigua": "Ingenios de agua",
+        "animacions": "Animaciones",
+        "filipersones": "Filipersones",
+        "makutu": "Makutu",
+        "trinxeta": "Trinxeta",
+        "contacte": "Contacto"
+      },
+      "button": {
+        "dossier": "Dossier",
+        "info": "Más info"
+      },
+      "selectLang": "Elige idioma",
+      "commonAlt": "Imagen de {title}",
+      "shows": {},
+      "workshops": {},
+      "performances": {
+        "title": "Animaciones a la carta"
+      }
     }
-  },
-  "selectLang": "Escoge el idioma",
-  "routes": {
-    "home": "Inicio",
-    "espectacles": "Espectáculos",
-    "circ-filixic": "El Circo Filixic",
-    "circ-filirates": "El Circo Filiratas",
-    "desencaixats": "Desencajados",
-    "freak-frac": "Cercavila Germans Freak Frac",
-    "plis-plas": "Plis plas",
-    "vint-anys": "20 Años no son nada",
-    "circ-makutu": "El Pequeño Circo de Makutu",
-    "circ-trinxeta": "Trinxat No Tiembla",
-    "tallers": "Talleres",
-    "bombolles-sabo": "Pompas de jabón",
-    "circ": "Circo",
-    "pallassos": "Payasos",
-    "maquillatge": "Maquillage",
-    "enginys-aigua": "Enginys d'aigua",
-    "animacions": "Animaciones",
-    "filipersones": "Filipersonas",
-    "makutu": "Makutu",
-    "trinxeta": "Trinxeta",
-    "performances": "Animaciones",
-    "about": "Filipersonas",
-    "contacte": "Contacto"
-  }
-}

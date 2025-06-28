@@ -8,23 +8,32 @@ const props = defineProps({
   title: {
     type: String,
     required: true
+  },
+  titleClasses: {
+    type: String,
+    required: true
   }
 })
 
-const { t } = useI18n()
+const capital = computed(() => props.title.slice(0,1))
+const title = computed(() => props.title.slice(1))
 </script>
 
 <template>
-  <section class="pt-24">
+  <section>
     <div class="grid-layout">
       <div class="layout-cols">
-        <h2 class="text-4xl font-bold -skew-y-6 uppercase">
-          {{ title }}
+        <h2
+          class="flex text-4xl 2xl:text-6xl font-sans"
+          :class="titleClasses"
+        >
+          <span class="font-black">{{ capital }}</span>
+          <span class="font-thin">{{ title }}</span>
         </h2>
       </div>
     </div>
-    <div :class="cssClasses">
-      <div class="grid-layout">
+    <div :class="[cssClasses, 'py-10 2xl:py-24']">
+      <div class="grid-layout justify-center">
         <div class="layout-cols">
           <slot name="content"></slot>
         </div>

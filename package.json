@@ -7,13 +7,16 @@
     "generate": "nuxt generate",
     "preview": "NODE_OPTIONS='--no-deprecation' nuxt preview",
     "postinstall": "NODE_OPTIONS='--no-deprecation' nuxt prepare",
-    "lint": "eslint --ext .ts,.js,.vue src"
+    "lint": "eslint --ext .ts,.js,.vue"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.11.4",
     "@nuxtjs/device": "^3.2.4",
     "@nuxtjs/i18n": "^8.0.0-rc.14",
     "@unhead/vue": "1.8.0",
+    "@vueuse/core": "^13.4.0",
     "nuxt": "3.16.0",
+    "nuxt-svgo": "^4.2.2",
     "vue": "^3.4.21",
     "vue-i18n": "^9.9.1",
     "vue-router": "^4.5.0"

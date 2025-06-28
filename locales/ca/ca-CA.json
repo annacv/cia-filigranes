@@ -6,13 +6,10 @@
       "alt": "Imatge de l'espectacle 20 anys no són res"
     }
   },
-  "selectLang": "Escull l'idioma",
   "routes": {
     "home": "Inici",
     "espectacles": "Espectacles",
     "circ-filixic": "El circ filixic",
-    "circ-filirates": "El Circ Filirates",
-    "desencaixats": "Desencaixats",
     "freak-frac": "Cercavila Germans Freak Frac",
     "plis-plas": "Plis plas",
     "vint-anys": "20 Anys no són res",
@@ -29,5 +26,16 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacte"
+  },
+  "button": {
+    "dossier": "Dossier",
+    "info": "Més info"
+  },
+  "selectLang": "Escull l'idioma",
+  "commonAlt": "Imatge de {title}",
+  "shows": {},
+  "workshops": {},
+  "performances": {
+    "title": "Animacions a la carta"
   }
 }
