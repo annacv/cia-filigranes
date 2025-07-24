@@ -37,28 +37,35 @@
 
 @layer components {
   .grid-layout {
-    @apply grid grid-cols-12 gap-4 p-4;
+    @apply grid grid-cols-6 xl:grid-cols-12 gap-0 xl:gap-5 px-5 py-3 xl:py-5;
   }
   .layout-cols {
-    @apply col-start-2 2xl:col-start-3 col-span-10 2xl:col-span-8;
+    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-10;
   }
   .highlight-content--1 {
-    @apply bg-highlight-primary -skew-y-6;
+    @apply bg-highlight-primary -skew-y-3;
     & > * {
-      @apply skew-y-6;
+      @apply skew-y-3;
     }
   }
   .highlight-content--2 {
-    @apply bg-highlight-secondary skew-y-6;
+    @apply bg-highlight-secondary -skew-y-3;
     & > * {
-      @apply -skew-y-6;
+      @apply skew-y-3;
     }
   }
   .highlight-content--3 {
-    @apply bg-highlight-tertiary -skew-y-6;
+    @apply bg-highlight-tertiary -skew-y-3;
     & > * {
-      @apply skew-y-6;
+      @apply skew-y-3;
     }
+  }
+
+  .sliding-panel__button {
+    @apply absolute top-0 z-[2] pointer-events-none opacity-0 transition-all duration-500 ease-in-out flex items-center justify-center;
+  }
+  .sliding-panel__scroll > * {
+    @apply flex-none;
   }
 
   /* Base Neutral Button */

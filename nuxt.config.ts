@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "nuxt-svgo",
   ],
+  svgo: {
+    svgoConfig: {},
+  },
   fonts: {
     defaults: {
       weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],

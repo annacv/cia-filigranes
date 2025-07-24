@@ -9,10 +9,9 @@ const props = withDefaults(defineProps<{
   buttonClass?: string | object | any[]
   iconClass?: string | object | any[]
 }>(), {
-  buttonClass: 'rounded-full hover:bg-neutral-100/10 h-6 w-6',
-  iconClass: 'text-white',
-  scrollFactor: 0.8,
-  resetOnContentChange: true
+  buttonClass: 'rounded-full h-6 w-6',
+  iconClass: 'text-white hover:text-white/50',
+  scrollFactor: 1
 })
 
 const { isMobile } = useDevice()
@@ -28,11 +27,11 @@ function updateScrollPosition() {
   }
 }
 
-const debouncedUpdateScroll = useDebounceFn(updateScrollPosition, 50)
+const debouncedUpdateScroll = useDebounceFn(updateScrollPosition, 100)
 
 function scrollTo(scrollValue: number) {
   scrollContainerRef.value?.scrollBy({
-    left: scrollValue * (isMobile ? 1.1 : props.scrollFactor),
+    left: scrollValue * props.scrollFactor,
     behavior: 'smooth',
   })
 }
@@ -62,11 +61,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    class="sliding-panel flex items-center no-wrap relative py-8"
-    :class="{'sliding-panel-at-start' : isScrollAtStart, 'sliding-panel-at-end' : isScrollAtEnd }"
-  >
+  <div class="sliding-panel flex items-center no-wrap relative py-4 xl:py-6 -mr-5 md:mr-0">
     <button
+      v-if="!isMobile"
       class="sliding-panel__button sliding-panel-button-left right-8"
       :class="[
         buttonClass,
@@ -86,6 +83,7 @@ onBeforeUnmount(() => {
       <slot />
     </div>
     <button
+      v-if="!isMobile"
       class="sliding-panel__button sliding-panel-button-right right-0"
       :class="[
         buttonClass,
@@ -93,17 +91,7 @@ onBeforeUnmount(() => {
       ]"
       @click="scrollRight"
     >
-      <ArrowRight class="text-white" />
+      <ArrowRight :class="iconClass" />
     </button>
   </div>
 </template>
-
-<style lang="css">
-.sliding-panel__button {
-  @apply absolute top-0 z-[2] pointer-events-none opacity-0 transition-all duration-200 ease-in-out flex items-center justify-center;
-}
-
-.sliding-panel__scroll > * {
-  @apply flex-none;
-}
-</style>

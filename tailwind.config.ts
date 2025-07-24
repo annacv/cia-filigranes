@@ -19,7 +19,6 @@ const config: Config = {
       fontFamily: {
         sans: ['IBM Plex Sans', 'sans-serif'],
         mono: ['IBM Plex Mono', 'monospace'],
-        alternate: ['REM', 'sans-serif'],
         grotesk: ['Archivo Black', 'sans-serif']
       },
       colors: {

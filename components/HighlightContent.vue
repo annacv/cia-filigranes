@@ -15,24 +15,18 @@ const props = defineProps({
   }
 })
 
-const capital = computed(() => props.title.slice(0,1))
-const title = computed(() => props.title.slice(1))
 </script>
 
 <template>
   <section>
     <div class="grid-layout">
       <div class="layout-cols">
-        <h2
-          class="flex text-4xl 2xl:text-6xl font-sans"
-          :class="titleClasses"
-        >
-          <span class="font-black">{{ capital }}</span>
-          <span class="font-thin">{{ title }}</span>
+        <h2 class="flex text-xl md:text-2xl lg:text-4xl font-sans font-thin" :class="titleClasses">
+          {{ title }}
         </h2>
       </div>
     </div>
-    <div :class="[cssClasses, 'py-10 2xl:py-24']">
+    <div :class="[cssClasses, 'py-2 lg:py-4']">
       <div class="grid-layout justify-center">
         <div class="layout-cols">
           <slot name="content"></slot>

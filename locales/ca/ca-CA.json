@@ -4,6 +4,11 @@
     "description": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
       "alt": "Imatge de l'espectacle 20 anys no són res"
+    },
+    "hire-fili": {
+      "alt": "Imatge de l'espectacle 20 anys no són res",
+      "title": "Contractacions",
+      "description": "Si vols contractar algun dels nostres serveis, escriu-nos un email a {email}, o truca’ns al {phone}"
     }
   },
   "routes": {
@@ -33,6 +38,18 @@
   },
   "selectLang": "Escull l'idioma",
   "commonAlt": "Imatge de {title}",
+  "footer": {
+    "design": {
+      "text": "Disseny i desenvolupament web:"
+    },
+    "foto": {
+      "text": "Fotografia:"
+    },
+    "legal": {
+      "advice": "Avís legal",
+      "privacy": "Política de privacitat"
+    }
+  },
   "shows": {},
   "workshops": {},
   "performances": {
