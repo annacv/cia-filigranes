@@ -4,6 +4,11 @@
       "description": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
       "hero": {
         "alt": "Image of the show 20 years is nothing"
+      },
+      "hire-fili": {
+        "alt": "Image of the show 20 years is nothing",
+        "title": "Hiring",
+        "description": "If you want to hire any of our services, write us an email at {email}, or call us at {phone}"
       }
     },
     "routes": {
@@ -33,6 +38,18 @@
     },
     "selectLang": "Choose language",
     "commonAlt": "Image of {title}",
+    "footer": {
+      "design": {
+        "text": "Web design and development:"
+      },
+      "foto": {
+        "text": "Photography:"
+      },
+      "legal": {
+        "advice": "Legal notice",
+        "privacy": "Privacy policy"
+      }
+    },
     "shows": {},
     "workshops": {},
     "performances": {

@@ -4,6 +4,11 @@
         "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
         "hero": {
           "alt": "Imagen del espectáculo 20 años no son nada"
+        },
+        "hire-fili": {
+          "alt": "Imagen del espectáculo 20 años no son nada",
+          "title": "Contrataciones",
+          "description": "Si quieres contratar alguno de nuestros servicios, escríbenos un email a {email}, o llámanos al {phone}"
         }
       },
       "routes": {
@@ -33,6 +38,18 @@
       },
       "selectLang": "Elige idioma",
       "commonAlt": "Imagen de {title}",
+      "footer": {
+        "design": {
+          "text": "Diseño y desarrollo web:"
+        },
+        "foto": {
+          "text": "Fotografía:"
+        },
+        "legal": {
+          "advice": "Aviso legal",
+          "privacy": "Política de privacidad"
+        }
+      },
       "shows": {},
       "workshops": {},
       "performances": {
