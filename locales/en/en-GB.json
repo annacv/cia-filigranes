@@ -5,10 +5,9 @@
       "hero": {
         "alt": "Image of the show 20 years is nothing"
       },
-      "hire-fili": {
-        "alt": "Image of the show 20 years is nothing",
-        "title": "Hiring",
-        "description": "If you want to hire any of our services, write us an email at {email}, or call us at {phone}"
+      "hire": {
+        "title": "Do you want to hire any of our services?",
+        "description": "Write us an email at {email}, or call us at {phone}"
       }
     },
     "routes": {
@@ -50,7 +49,37 @@
         "privacy": "Privacy policy"
       }
     },
-    "shows": {},
+    "shows": {
+      "hire": {
+        "title": "Do you want to hire the show?",
+        "description": "Write us an email at {email}, or call us at {phone}"
+      },
+      "vint-anys": {
+        "abstract": [
+          {
+            "paragraph": "Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity."
+          }
+        ],
+        "list": [
+          {
+            "title": "20 years is nothing",
+            "description": "Clown show for all audiences, with constant tricks and mischief."
+          },
+          {
+            "title": "Show duration",
+            "description": "50 minutes"
+          }
+        ],
+        "synopsis": [
+          {
+            "paragraph": "Makutu and Trinxeta combine different circus disciplines with clowning, using elements from everyday life that come to life in a very peculiar way: taking us from the past to the present and the future."
+          },
+          {
+            "paragraph": "In a gesture of irony and at the same time affection towards the passage of time, the Filigranes Company makes a living, incisive and sincere self-portrait of two clowns who have grown up and made each other."
+          }
+        ]
+      }
+    },
     "workshops": {},
     "performances": {
       "title": "Performances à la carte"

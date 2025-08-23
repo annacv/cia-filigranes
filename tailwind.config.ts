@@ -46,6 +46,11 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    'text-primary-500', 'border-primary-500',
+    'text-secondary-500', 'border-secondary-500',
+    'text-tertiary-500', 'border-tertiary-500',
+  ],
 }
 
 export default config

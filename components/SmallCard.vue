@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { ImageRoute } from "~/composables/use-get-image-url.composable";
+import type { ImageRoute, CardLink } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import { useI18n } from "vue-i18n";
-
-// TODO: All types in one file source
-export type CardLink = {
-  target: string;
-  href: string;
-}
 
 const props = defineProps({
   cardType: {

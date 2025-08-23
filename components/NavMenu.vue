@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { getLocale } from '../composables/use-i18n-utils.composable';
+import { useI18nUtils } from '../composables/use-i18n-utils.composable';
 import { useRoute } from 'vue-router';
 import { ROUTES_INDEX } from '../constants';
 
@@ -8,6 +8,7 @@ const emit = defineEmits(['toggle']);
 const routes = ROUTES_INDEX;
 const route = useRoute();
 const localePath = useLocalePath();
+const { getLocale } = useI18nUtils();
 
 const isRouteActive = (path: string) => {
   if (path === '/') {
