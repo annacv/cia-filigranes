@@ -27,14 +27,12 @@ const linkProps = computed(() =>
       download: props.download,
       href: props.href,
       rel: 'noopener noreferrer',
-      target: props.target,
-      title: props.text
+      target: props.target
     }
     : {
       alt: props.text,
       to: props.href,
-      target: props.target,
-      title: props.text
+      target: props.target
     }
 )
 </script>
@@ -44,9 +42,8 @@ const linkProps = computed(() =>
     :is="componentType"
     :type="isDownload ? 'application/pdf' : 'text/html'"
     v-bind="linkProps"
-    class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal"
+    class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal gap-2 w-max"
     :class="[paddingClass, buttonClass]"
-    :title="text"
     role="button"
     @click="onClick"
   >

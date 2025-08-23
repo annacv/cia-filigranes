@@ -33,6 +33,15 @@
   .wrap-break-word {
     overflow-wrap: break-word;
   }
+  .text-lg, .text-xl {
+    @apply leading-[2.6rem];
+  }
+  .text-base {
+    @apply leading-[1.8rem];
+  }
+  .text-sm {
+    @apply leading-[1.4rem];
+  }
 }
 
 @layer components {
@@ -49,9 +58,9 @@
     }
   }
   .highlight-content--2 {
-    @apply bg-highlight-secondary -skew-y-3;
+    @apply bg-highlight-secondary skew-y-3;
     & > * {
-      @apply skew-y-3;
+      @apply -skew-y-3;
     }
   }
   .highlight-content--3 {

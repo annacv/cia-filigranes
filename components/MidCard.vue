@@ -1,189 +1,78 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import type { ImageRoute, CardLink, CardImage } from "~/types";
+import { getImageUrl } from "~/composables/use-get-image-url.composable";
+
+const props = defineProps({
+  cardType: {
+    type: String,
+    required: true
+  },
+  images: {
+    type: Array as PropType<CardImage[]>,
+    required: true
+  },
+  link: {
+    type: Object as PropType<CardLink>,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  }
+});
+
+const { t } = useI18n()
+
+const bgColor = computed(() => props.cardType === 'performance' ? 'bg-tertiary-500/40' : props.cardType === 'show' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+
+const hoveredImageIndex = ref<number | null>(null);
+
+const setImageHover = (index: number) => {
+  hoveredImageIndex.value = index;
+};
+
+const clearImageHover = () => {
+  hoveredImageIndex.value = null;
+};
+
+const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
+  return getImageUrl(imageName, imageRoute).value;
+}
+//:class="`w-[${298*images.length}px] sm:w-[${320*images.length}px] xl:w-[${360*images.length}px] 2xl:w-[${420*images.length}px]`"
+</script>
+
 <template>
-  <div class="mid-card">
-    <div class="mid-card__content h-[400px] desktop:min-h-[600px]">
-      <div class="mid-card__text-wrapper">
-        >MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD
-        >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD >MID
-        CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD>MID CARD
-      </div>
+  <ClientOnly>
+    <div class="relative h-[298px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]">
+      <NuxtLinkLocale
+        :to="link.href"
+        class="flex gap-1 w-full h-full transition-all duration-800 ease-in-out"
+      >
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          class="relative aspect-square overflow-hidden"
+          @mouseenter="setImageHover(index)"
+          @mouseleave="clearImageHover"
+        >
+          <img
+            class="w-full h-full object-cover object-center pointer-events-none transition-all duration-700"
+            :class="hoveredImageIndex === index
+            ? 'brightness-110 saturate-110 scale-105'
+            : 'brightness-70 saturate-100 scale-100'"
+            :src="setImageSrc(image.imageName, image.imageRoute)"
+            :alt="t('commonAlt', {title: title})"
+            loading="lazy"
+            draggable="false"
+          />
+          <div
+            v-if="hoveredImageIndex !== index"
+            class="absolute inset-0 pointer-events-none transition-all duration-700"
+            :class="bgColor"
+          ></div>
+        </div>
+      </NuxtLinkLocale>
     </div>
-  </div>
+  </ClientOnly>
 </template>
-
-<style lang="scss">
-$color-primary-light: #c80d0d;
-$color-primary-dark: #bc1b36;
-$color-secondary-light: #01aedd;
-$color-secondary-dark: #2998ff;
-$color-tertiary-light: #5643fa;
-$color-tertiary-dark: #193950;
-
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
-
-$color-grey-dark: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
-
-$color-white: #fff;
-$color-black: #000;
-
-
-// WE CAN CREATE DIFFERENT MID CARD POLYGONS TO SUIT DIFFERENT CONTENT NEEDS; FOR EXAMPLE DISTINGUISHING BETWEEN SHOWS AND WORSHOPS
-
-.mid-card {
-  position: relative;
-  background: url(../assets/images/desktop/035.JPG);
-  background-size: cover;
-  background-position: right center;
-  box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-
-  /* Custom clipping area */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid white;
-    /* Equivalent to $color-white */
-    clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 5rem;
-  }
-
-  &__text-wrapper {
-    width: 60%;
-    height: 100%;
-    clip-path: polygon(0 0, 76% 0, 60% 100%, 0 100%);
-  }
-}
-
-
-// // OPTION 1
-// .mid-card-1 {
-//   position: relative;
-//   background: url(../assets/images/035.jpg);
-//   background-size: cover;
-//   background-position: right center;
-//   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
-//   overflow: hidden;
-
-//   /* Inverted vertically */
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(255, 255, 255, 1);
-//     /* Equivalent to $color-white */
-//     clip-path: polygon(0 100%, 50% 100%, 100% 0, 0% 0);
-//     z-index: 1;
-//     pointer-events: none;
-//   }
-
-//   &__content {
-//     position: relative;
-//     z-index: 2;
-//     width: 50%;
-//     padding: 6rem;
-//   }
-// }
-
-// .mid-card-3 {
-//   position: relative;
-//   background: url(../assets/images/035.jpg);
-//   background-size: cover;
-//   background-position: right center;
-//   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
-//   overflow: hidden;
-
-//   /* Inverted direction */
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(255, 255, 255, 1); /* Equivalent to $color-white */
-//     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 0);
-//     z-index: 1;
-//     pointer-events: none;
-//   }
-
-//   &__content {
-//     position: relative;
-//     z-index: 2;
-//     width: 50%;
-//     padding: 6rem;
-//   }
-// }
-
-
-// OPTION 2:
-.mid-card-2 {
-  position: relative;
-  background: url(../assets/images/desktop/035.JPG);
-  background-size: cover;
-  background-position: right center;
-  box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-
-  /* Create a pseudo-element for the white background */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    /* Equivalent to $color-white */
-    clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 2;
-    width: 50%;
-    padding: 6rem;
-  }
-}
-
-
-// LINEAR GRADIENT FIRST OPTION
-// .mid-card {
-//   background-image: linear-gradient(105deg,
-//       rgba($color-white, 1) 0%,
-//       rgba($color-white, .9) 50%,
-//       transparent 50%),
-//     url(../assets/images/035.jpg);
-//   background-size: 100%; // cover
-//   background-position: right center;
-//   box-shadow: 0 0.05rem 0.25rem rgba($color-black, .15);
-
-//   &__content {
-//     width: 50%;
-//     padding: 6rem;
-//   }
-// }</style>

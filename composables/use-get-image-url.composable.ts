@@ -1,8 +1,7 @@
 import { computed } from "vue";
 import type { ComputedRef } from "vue";
+import type { ImageRoute } from "~/types";
 import { GLOB_IMPORTS } from "~/constants";
-
-export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte'
 
 const mobileMap: Record<ImageRoute, Record<string, string>> = {
   '': GLOB_IMPORTS.mobileImages,

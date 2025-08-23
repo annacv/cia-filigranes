@@ -27,7 +27,7 @@ nuxtApp.hook('page:finish', () => {
       <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
     </template>
   </Head>
-  <Body>
+  <Body class="antialiased">
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

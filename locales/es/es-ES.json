@@ -5,10 +5,9 @@
         "hero": {
           "alt": "Imagen del espectáculo 20 años no son nada"
         },
-        "hire-fili": {
-          "alt": "Imagen del espectáculo 20 años no son nada",
-          "title": "Contrataciones",
-          "description": "Si quieres contratar alguno de nuestros servicios, escríbenos un email a {email}, o llámanos al {phone}"
+        "hire": {
+          "title": "¿Quieres contratar alguno de nuestros servicios?",
+          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
         }
       },
       "routes": {
@@ -50,7 +49,37 @@
           "privacy": "Política de privacidad"
         }
       },
-      "shows": {},
+      "shows": {
+        "hire": {
+          "title": "¿Quieres contratar el espectáculo?",
+          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+        },
+        "vint-anys": {
+          "abstract": [
+            {
+              "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
+            }
+          ],
+          "list": [
+            {
+              "title": "20 años no son nada",
+              "description": "Espectáculo de payasos para todos los públicos, con trucos y travesuras constantes."
+            },
+            {
+              "title": "Duración del espectáculo",
+              "description": "50 minutos"
+            }
+          ],
+          "synopsis": [
+            {
+              "paragraph": "Makutu y Trinxeta combinan diferentes disciplinas del circo con el clown, utilizando elementos de la vida cotidiana que cobran vida de una manera muy peculiar: trasladándonos del pasado al presente y al futuro."
+            },
+            {
+              "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
+            }
+          ]
+        }
+      },
       "workshops": {},
       "performances": {
         "title": "Animaciones a la carta"
