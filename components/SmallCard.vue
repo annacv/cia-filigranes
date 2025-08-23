@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import type { ImageRoute } from "~/composables/use-get-image-url.composable";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import { useI18n } from "vue-i18n";
 
 // TODO: All types in one file source
 export type CardLink = {

@@ -38,7 +38,7 @@ $color-black: #000;
 
 .mid-card {
   position: relative;
-  background: url(../assets/images/desktop/035.JPG);
+  background: url(../assets/images/desktop/espectacles/espectacles_vint-anys.webp);
   background-size: cover;
   background-position: right center;
   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.15);

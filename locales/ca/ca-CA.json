@@ -50,7 +50,33 @@
       "privacy": "Política de privacitat"
     }
   },
-  "shows": {},
+  "shows": {
+    "vint-anys": {
+      "summaryAbstract": [
+        {
+          "paragraph": "En un gest d’ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s’han fet l’un a l’altre."
+        },
+        {
+          "paragraph": "En Makutu i en Trinxeta combinen diferents disciplines del circ amb el clown, utilitzant elements de la vida quotidiana que prenen vida d’una manera ben peculiar: traslladant-nos del passat al present, i al futur."
+        }
+      ],
+      "summaryItems": [
+        {
+          "title": "20 anys no són res",
+          "description": "Espectacle de pallassos per a tots els públics, amb trucs i entremaliadures constants."
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
+      "sinopsi": [
+        {
+          "paragraph": "Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. La il·lusió, la fraternitat i el pas del temps adquireixen una força especial, així com les relacions humanes, les competències i les complicitats."
+        }
+      ]
+    }
+  },
   "workshops": {},
   "performances": {
     "title": "Animacions a la carta"

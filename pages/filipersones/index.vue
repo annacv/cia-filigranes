@@ -1,6 +1,10 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <main>
-    <div class="per-posar-algo">{{ $t("routes.filipersones") }}</div>
+    <div class="per-posar-algo">{{ t("routes.filipersones") }}</div>
     <div class="per-posar-algo-més">Uili Li Uili Li</div>
   </main>
 </template>

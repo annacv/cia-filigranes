@@ -44,7 +44,7 @@ const linkProps = computed(() =>
     :is="componentType"
     :type="isDownload ? 'application/pdf' : 'text/html'"
     v-bind="linkProps"
-    class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal"
+    class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal gap-2 w-min"
     :class="[paddingClass, buttonClass]"
     :title="text"
     role="button"

@@ -2,7 +2,9 @@
 import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
 import type { CardLink } from "~/components/SmallCard.vue";
 
-const { t, locale } = useI18n()
+const { t, tm, rt, locale } = useI18n()
+const {getTranslatedList} = useI18nUtils()
+
 useHead({
   meta: [
     { name: 'description', content: t('home.description') }
@@ -22,6 +24,14 @@ const getLink = (route: string, item?: string): CardLink => {
     href: page[locale.value as 'ca' | 'es' | 'en']
   }
 }
+
+const summaryAbstract = getTranslatedList('shows.vint-anys.summaryAbstract', ['paragraph'])
+const summaryItems = getTranslatedList('shows.vint-anys.summaryItems', ['title', 'description'])
+
+const summaryButton = {
+  download: 'CiaFiligranes-vint-anys-ca.pdf',
+  href: '/downloads/CiaFiligranes-vint-anys-ca.pdf',
+}
 </script>
 
 <template>
@@ -35,6 +45,11 @@ const getLink = (route: string, item?: string): CardLink => {
     </HeroCover>
     <MainContent>
       <template #wrapped>
+        <Summary
+          :abstract="summaryAbstract"
+          :items="summaryItems"
+          :button="summaryButton"
+        />
       </template>
       <template #unwrapped>
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
@@ -62,11 +77,11 @@ const getLink = (route: string, item?: string): CardLink => {
 
           <HighlightContent
             :title="t('routes.tallers')"
-            titleClasses="-skew-y-3"
+            titleClasses="skew-y-3 justify-end"
             css-classes="highlight-content--2"
           >
             <template #content>
-              <SlidingPanel :showButtons="true" class="-skew-y-3">
+              <SlidingPanel :showButtons="true" class="skew-y-3">
               <ul class="flex w-full gap-1">
                 <li v-for="(item, index) in workshops!.children" :key="index">
                   <SmallCard
