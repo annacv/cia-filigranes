@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useI18nUtils } from '../composables/use-i18n-utils.composable';
+import { useI18nUtils } from '~/composables/use-i18n-utils.composable';
 import { useRoute } from 'vue-router';
-import { ROUTES_INDEX } from '../constants';
+import { ROUTES_INDEX } from '~/constants';
 
 const emit = defineEmits(['toggle']);
 const routes = ROUTES_INDEX;
