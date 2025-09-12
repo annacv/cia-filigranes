@@ -18,7 +18,7 @@ const slots = useSlots()
 const hasTextSlot = computed(() => !!slots.text)
 const paddingClass = computed(() => (hasTextSlot.value ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
 const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
-const componentType = computed(() => (isDownload.value ? 'a' : NuxtLink))
+const componentType = computed(() => (isDownload.value ? 'a' as const : NuxtLink))
 
 const linkProps = computed(() =>
   isDownload.value
