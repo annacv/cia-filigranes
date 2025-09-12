@@ -39,7 +39,6 @@ const clearImageHover = () => {
 const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
   return getImageUrl(imageName, imageRoute).value;
 }
-//:class="`w-[${298*images.length}px] sm:w-[${320*images.length}px] xl:w-[${360*images.length}px] 2xl:w-[${420*images.length}px]`"
 </script>
 
 <template>
