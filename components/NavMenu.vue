@@ -43,7 +43,6 @@ const isExpanded = (index: number) => {
             {{ getLocale('home', 'routes') }}
           </NuxtLinkLocale>
         </div>
-
       </li>
       <component
         :is="route.children ? 'ul' : 'li'"
