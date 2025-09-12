@@ -4,7 +4,7 @@ import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
 import ArrowRight from "assets/icons/arrow-right.svg";
 import { useI18n } from "vue-i18n";
 import type { CardLink } from "~/types";
-import {reorderItems} from "~/utils/reorder-items";
+import { reorderItems } from "~/utils/reorder-items";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -73,9 +73,7 @@ const getLink = (route: string, item?: string): CardLink => {
   <div class="h-full">
     <HeroCover image-name="hero_cover" image-route="" :alt="t('home.hero.alt')">
       <template #content>
-        <NuxtLinkLocale :to="'/espectacles/vint-anys'">
-          <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] hover:opacity-85"/>
-        </NuxtLinkLocale>
+        <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px]"/>
       </template>
     </HeroCover>
     <MainContent>
@@ -114,7 +112,8 @@ const getLink = (route: string, item?: string): CardLink => {
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightContent
             :title="t('routes.espectacles')"
-            titleClasses="-skew-y-3"
+            contentLink="/espectacles"
+            titleClasses="-skew-y-3 hover:text-primary-700"
             css-classes="highlight-content--1"
             isCurrentContent
           >
@@ -137,7 +136,8 @@ const getLink = (route: string, item?: string): CardLink => {
 
           <HighlightContent
             :title="t('routes.tallers')"
-            titleClasses="skew-y-3 justify-end"
+            contentLink="/tallers"
+            titleClasses="skew-y-3 justify-end hover:text-secondary-700"
             css-classes="highlight-content--2"
           >
             <template #content>
@@ -159,7 +159,8 @@ const getLink = (route: string, item?: string): CardLink => {
 
           <HighlightContent
             :title="t('routes.animacions')"
-            titleClasses="-skew-y-3"
+            contentLink="/animacions"
+            titleClasses="-skew-y-3 hover:text-tertiary-700"
             css-classes="highlight-content--3"
           >
             <template #content>

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import type { ImageRoute, CardLink } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
+import { useI18n } from "vue-i18n";
 
 const props = defineProps({
   cardType: {
