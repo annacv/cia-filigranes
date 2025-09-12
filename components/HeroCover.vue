@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
+import type { ImageRoute } from "~/types";
 
 const props = defineProps({
   alt: {
