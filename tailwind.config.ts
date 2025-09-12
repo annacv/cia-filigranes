@@ -29,7 +29,7 @@ const config: Config = {
         'secondary-700': '#2998ff',
         'tertiary-500': '#5643fa',
         'tertiary-700': '#193950',
-        'quaternary-300': '#fff9b3',
+        'quaternary-300': '#fdf48f',
         'quaternary-500': '#fbdd0b',
         'neutral-100': '#f7f7f7',
         'neutral-200': '#eee',
