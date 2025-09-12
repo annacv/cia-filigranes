@@ -19,18 +19,13 @@ export const useI18nUtils = () => {
    * @param keys - The keys to translate for each item in the list.
    * @returns An array of translated items.
    */
-  const getTranslatedList = <T extends Record<string, unknown>>(keyPath: string, keys: (keyof T)[]): Array<Partial<T>> => {
-    const rawItems = tm(keyPath)
+  const getTranslatedList = (keyPath: string, keys: string[]) => {
+    const rawItems = (tm(keyPath))
     if (!Array.isArray(rawItems)) return []
-    return rawItems.map((item: T) => {
-      const translatedItem: Partial<T> = {}
+    return rawItems.map((item: Record<string, any>) => {
+      const translatedItem: Record<string, any> = {}
       for (const key of keys) {
-        const value = item[key]
-        if (typeof value === 'string') {
-          translatedItem[key] = rt(value) as T[keyof T]
-        } else {
-          translatedItem[key] = '' as T[keyof T]
-        }
+        translatedItem[key] = item[key] ? rt(item[key]) : ''
       }
       return translatedItem
     })
