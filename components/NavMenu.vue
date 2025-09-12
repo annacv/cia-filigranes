@@ -63,7 +63,7 @@ const isExpanded = (index: number) => {
           <button
             v-if="route.children"
             @click="toggleChildren(index)"
-            class="hover:opacity-75 text-xl"
+            class="hover:opacity-75 text-xl !leading-[1.75rem]"
           >
             {{ isExpanded(index) ? '-' : '+' }}
           </button>
