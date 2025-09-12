@@ -3,6 +3,11 @@
  */
 
 /**
+ * Supported locale codes for internationalization
+ */
+export type LocaleCode = 'ca' | 'es' | 'en';
+
+/**
  * Image route types for asset organization
  */
 export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte'
