@@ -1,35 +1,87 @@
 {
-  "title": "Compañía Filigranes",
-  "home": {
-    "hero": {
-      "alt": "Imagen del espectáculo 20 años no son nada"
+      "title": "Compañía Filigranes",
+      "home": {
+        "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
+        "hero": {
+          "alt": "Imagen del espectáculo 20 años no son nada"
+        },
+        "hire": {
+          "title": "¿Quieres contratar alguno de nuestros servicios?",
+          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+        }
+      },
+      "routes": {
+        "home": "Inicio",
+        "espectacles": "Espectáculos",
+        "circ-filixic": "El circ filixic",
+        "freak-frac": "Pasacalles Hermanos Freak Frac",
+        "plis-plas": "Plis plas",
+        "vint-anys": "20 Años no son nada",
+        "circ-makutu": "El Pequeño Circo de Makutu",
+        "circ-trinxeta": "Trinxat no Tremola",
+        "tallers": "Talleres",
+        "bombolles-sabo": "Burbujas de jabón",
+        "circ": "Circo",
+        "pallassos": "Payasos",
+        "maquillatge": "Maquillaje",
+        "enginys-aigua": "Ingenios de agua",
+        "animacions": "Animaciones",
+        "filipersones": "Filipersones",
+        "makutu": "Makutu",
+        "trinxeta": "Trinxeta",
+        "contacte": "Contacto"
+      },
+      "button": {
+        "dossier": "Dossier",
+        "info": "Más info"
+      },
+      "selectLang": "Elige idioma",
+      "commonAlt": "Imagen de {title}",
+      "footer": {
+        "design": {
+          "text": "Diseño y desarrollo web:"
+        },
+        "foto": {
+          "text": "Fotografía:"
+        },
+        "legal": {
+          "advice": "Aviso legal",
+          "privacy": "Política de privacidad"
+        }
+      },
+      "shows": {
+        "hire": {
+          "title": "¿Quieres contratar el espectáculo?",
+          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+        },
+        "vint-anys": {
+          "abstract": [
+            {
+              "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
+            }
+          ],
+          "list": [
+            {
+              "title": "20 años no son nada",
+              "description": "Espectáculo de payasos para todos los públicos, con trucos y travesuras constantes."
+            },
+            {
+              "title": "Duración del espectáculo",
+              "description": "50 minutos"
+            }
+          ],
+          "synopsis": [
+            {
+              "paragraph": "Makutu y Trinxeta combinan diferentes disciplinas del circo con el clown, utilizando elementos de la vida cotidiana que cobran vida de una manera muy peculiar: trasladándonos del pasado al presente y al futuro."
+            },
+            {
+              "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
+            }
+          ]
+        }
+      },
+      "workshops": {},
+      "performances": {
+        "title": "Animaciones a la carta"
+      }
     }
-  },
-  "welcome": "bienvenida",
-  "selectLang": "Escoge el idioma",
-  "routes": {
-    "home": "Inicio",
-    "espectacles": "Espectáculos",
-    "circ-filixic": "El Circo Filixic",
-    "circ-filirates": "El Circo Filiratas",
-    "desencaixats": "Desencajados",
-    "freak-frac": "Cercavila Germans Freak Frac",
-    "plis-plas": "Plis plas",
-    "vint-anys": "20 Años no son nada",
-    "circ-makutu": "El Pequeño Circo de Makutu",
-    "circ-trinxeta": "Trinxat No Tiembla",
-    "tallers": "Talleres",
-    "bombolles-sabo": "Pompas de jabón",
-    "circ": "Circo",
-    "pallassos": "Payasos",
-    "maquillatge": "Maquillage",
-    "enginys-aigua": "Enginys d'aigua",
-    "animacions": "Animaciones",
-    "filipersones": "Filipersonas",
-    "makutu": "Makutu",
-    "trinxeta": "Trinxeta",
-    "performances": "Animaciones",
-    "about": "Filipersonas",
-    "contacte": "Contacto"
-  }
-}
