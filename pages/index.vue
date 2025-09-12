@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
-import type { CardLink } from "~/components/SmallCard.vue";
 import ArrowRight from "assets/icons/arrow-right.svg";
+import { useI18n } from "vue-i18n";
+import type { CardLink } from "~/types";
+import {reorderItems} from "~/utils/reorder-items";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -49,6 +51,11 @@ const getButton = computed(() => {
     download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
+});
+
+const showItems = computed(() => {
+  if (!shows?.children) return [];
+  return reorderItems(shows.children, 0);
 });
 
 const getLink = (route: string, item?: string): CardLink => {
@@ -109,11 +116,12 @@ const getLink = (route: string, item?: string): CardLink => {
             :title="t('routes.espectacles')"
             titleClasses="-skew-y-3"
             css-classes="highlight-content--1"
+            isCurrentContent
           >
               <template #content>
                 <SlidingPanel :showButtons="true" class="-skew-y-3">
                   <ul class="flex w-full gap-1">
-                    <li v-for="(item, index) in shows!.children" :key="index">
+                    <li v-for="(item, index) in showItems" :key="index">
                       <SmallCard
                         card-type="show"
                         :title="t(`routes.${item}`)"
