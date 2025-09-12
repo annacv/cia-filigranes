@@ -12,7 +12,9 @@ const head = useLocaleHead({
 const htmlAttrs = computed(() => head.value.htmlAttrs!)
 
 nuxtApp.hook('page:finish', () => {
-  window.scrollTo(0, 0)
+  if (import.meta.client) {
+    window.scrollTo(0, 0)
+  }
 })
 </script>
 
