@@ -1,3 +1,34 @@
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useSwitchLocalePath } from '#imports';
+import type { LocaleCode } from "~/types";
+
+interface LocaleObject {
+  code: LocaleCode;
+  name: string;
+  file?: string;
+  language?: string;
+  [key: string]: any;
+}
+
+const { locale, locales, t } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+const router = useRouter();
+const selected = ref<LocaleCode>(locale.value as LocaleCode);
+const isSelected = (code: string) => code === selected.value;
+
+const ariaLabel = computed(() => t('selectLang'));
+
+function changeLocale(code: LocaleCode) {
+  selected.value = code;
+  const path = switchLocalePath(code);
+  if (path) {
+    router.push({ path });
+  }
+}
+</script>
+
 <template>
   <div
     v-if="Array.isArray(locales) && locales.length > 0"
@@ -25,40 +56,3 @@
     </button>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
-import { useSwitchLocalePath } from '#imports';
-
-// Define the locale type
-type LocaleCode = 'ca' | 'es' | 'en';
-
-// Define the locale object interface
-interface LocaleObject {
-  code: LocaleCode;
-  name: string;
-  file?: string;
-  language?: string;
-  [key: string]: any; // For any additional properties
-}
-
-const { locale, locales, t } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
-const router = useRouter();
-const selected = ref<LocaleCode>(locale.value as LocaleCode);
-
-// Computed property for the translated label
-const ariaLabel = computed(() => t('selectLang'));
-
-const isSelected = (code: string) => code === selected.value;
-
-function changeLocale(code: LocaleCode) {
-  selected.value = code;
-  const path = switchLocalePath(code);
-  if (path) {
-    router.push({ path });
-  }
-}
-</script>

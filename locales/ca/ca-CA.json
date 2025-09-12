@@ -1,18 +1,19 @@
 {
   "title": "Companyia Filigranes",
   "home": {
+    "description": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
       "alt": "Imatge de l'espectacle 20 anys no són res"
+    },
+    "hire": {
+      "title": "Vols contractar algun dels nostres serveis?",
+      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
     }
   },
-  "welcome": "benvingudes",
-  "selectLang": "Escull l'idioma",
   "routes": {
     "home": "Inici",
     "espectacles": "Espectacles",
     "circ-filixic": "El circ filixic",
-    "circ-filirates": "El Circ Filirates",
-    "desencaixats": "Desencaixats",
     "freak-frac": "Cercavila Germans Freak Frac",
     "plis-plas": "Plis plas",
     "vint-anys": "20 Anys no són res",
@@ -29,5 +30,58 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacte"
+  },
+  "button": {
+    "dossier": "Dossier",
+    "info": "Més info"
+  },
+  "selectLang": "Escull l'idioma",
+  "commonAlt": "Imatge de {title}",
+  "footer": {
+    "design": {
+      "text": "Disseny i desenvolupament web:"
+    },
+    "foto": {
+      "text": "Fotografia:"
+    },
+    "legal": {
+      "advice": "Avís legal",
+      "privacy": "Política de privadesa"
+    }
+  },
+  "shows": {
+    "hire": {
+      "title": "Vols contractar l'espectacle?",
+      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+    },
+    "vint-anys": {
+      "abstract": [
+        {
+          "paragraph": "Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. La il·lusió, la fraternitat i el pas del temps adquireixen una força especial, així com les relacions humanes, les competències i les complicitats."
+        }
+      ],
+      "list": [
+        {
+          "title": "20 anys no són res",
+          "description": "Espectacle de pallassos per a tots els públics, amb trucs i entremaliadures constants."
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "En Makutu i en Trinxeta combinen diferents disciplines del circ amb el clown, utilitzant elements de la vida quotidiana que prenen vida d’una manera ben peculiar: traslladant-nos del passat al present i al futur."
+        },
+        {
+          "paragraph": "En un gest d’ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s’han fet l’un a l’altre."
+        }
+      ]
+    }
+  },
+  "workshops": {},
+  "performances": {
+    "title": "Animacions a la carta"
   }
 }

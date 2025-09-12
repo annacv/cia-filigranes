@@ -16,20 +16,10 @@ export const routePages: CustomRoutePages = {
     en: '/shows/filixic-circus',
     es: '/espectaculos/circo-filixic'
   },
-  'espectacles/circ-filirates': {
-    ca: '/espectacles/circ-filirates',
-    en: '/shows/filirates-circus',
-    es: '/espectaculos/circo-filiratas'
-  },
   'espectacles/plis-plas': {
     ca: '/espectacles/plis-plas',
     en: '/shows/plis-plas',
     es: '/espectaculos/plis-plas'
-  },
-  'espectacles/desencaixats': {
-    ca: '/espectacles/desencaixats',
-    en: '/shows/desencaixats',
-    es: '/espectaculos/desencajados'
   },
   'espectacles/freak-frac': {
     ca: '/espectacles/freak-frac',
