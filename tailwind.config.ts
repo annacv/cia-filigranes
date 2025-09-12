@@ -1,7 +1,14 @@
 import type { Config } from 'tailwindcss/types/config'
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{js,ts,vue}'],
+  content: [
+    './index.html',
+    './pages/**/*.vue',
+    './components/**/*.vue',
+    './layouts/**/*.vue',
+    './composables/**/*.{js,ts}',
+    './plugins/**/*.{js,ts}',
+  ],
   theme: {
     extend: {
       perspective: {
