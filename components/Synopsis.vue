@@ -66,7 +66,7 @@ const toggleHover = () => {
     >
       <p
         class="text-base lg:text-xl"
-        :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5 2xl:line-clamp-4'">
+        :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
         <span
           v-for="item in showFullContent ? synopsis : synopsis.slice(0, 1)"
           :key="item.paragraph"
