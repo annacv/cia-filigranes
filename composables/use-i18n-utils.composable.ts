@@ -25,7 +25,12 @@ export const useI18nUtils = () => {
     return rawItems.map((item: T) => {
       const translatedItem: Partial<T> = {}
       for (const key of keys) {
-        translatedItem[key] = item[key] ? rt(item[key] as string) as T[keyof T] : '' as T[keyof T]
+        const value = item[key]
+        if (typeof value === 'string') {
+          translatedItem[key] = rt(value) as T[keyof T]
+        } else {
+          translatedItem[key] = '' as T[keyof T]
+        }
       }
       return translatedItem
     })
