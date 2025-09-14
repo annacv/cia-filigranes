@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
-import ArrowRight from "assets/icons/arrow-right.svg";
 import { useI18n } from "vue-i18n";
 import type { CardLink } from "~/types";
 import { reorderItems } from "~/utils/reorder-items";
@@ -91,24 +90,11 @@ const getLink = (route: string, item?: string): CardLink => {
           image-route="espectacles"
           bg-color="bg-primary-500"
           :alt="t('home.hero.alt')"
-        >
-          <template #extra-left-content>
-            <FiliButton
-              class="mt-4"
-              href="/espectacles/vint-anys"
-              buttonClass="button-outline-primary self-start"
-              :text="t('button.info')"
-              target="_top"
-            >
-              <template #text>
-                {{ t('button.info') }}
-              </template>
-              <template #icon-right>
-                <ArrowRight class="arrow-right self-end"/>
-              </template>
-            </FiliButton>
-          </template>
-        </Synopsis>
+          :info-button="{
+            href: '/espectacles/vint-anys',
+            class: 'button-outline-primary'
+          }"
+        />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightContent
             :title="t('routes.espectacles')"
@@ -170,7 +156,7 @@ const getLink = (route: string, item?: string): CardLink => {
                     {{ t('performances.title') }}
                   </h3>
                 </div>
-                <SlidingPanel :showButtons="true" class="-skew-y-3">
+                <SlidingPanel class="-skew-y-3">
                   <MidCard
                     card-type="performance"
                     :title="t('performances.title')"
