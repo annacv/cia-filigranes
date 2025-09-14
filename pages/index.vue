@@ -46,7 +46,7 @@ const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
 const items = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
 
-const getButton = computed(() => {
+const getSummaryButton = computed(() => {
   return {
     download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
@@ -81,7 +81,7 @@ const getLink = (route: string, item?: string): CardLink => {
         <Summary
           :abstract="abstract"
           :items="items"
-          :button="getButton"
+          :button="getSummaryButton"
         />
       </template>
       <template #unwrapped>
