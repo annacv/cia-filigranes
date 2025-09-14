@@ -56,6 +56,12 @@
   .layout-cols {
     @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-10;
   }
+  .layout-cols--to-right {
+    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-12;
+  }
+  .layout-cols--to-left {
+    @apply col-start-1 col-span-6 xl:col-start-1 xl:col-span-10;
+  }
   .highlight-content--1 {
     @apply bg-highlight-primary -skew-y-3;
     & > * {
