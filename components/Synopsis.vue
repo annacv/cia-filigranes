@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
 import type { ImageRoute } from "~/types";
+import ArrowRight from "assets/icons/arrow-right.svg";
+import ArrowDown from "assets/icons/arrow-down.svg";
 
 const props = defineProps({
   alt: {
@@ -36,15 +38,24 @@ const props = defineProps({
   title: {
     type: String,
     required: false
+  },
+  infoButton: {
+    type: Object,
+    default: () => null
+  },
+  dossierButton: {
+    type: Object,
+    default: () => null
   }
 })
 
 const { isMobile } = useDevice()
+const { t } = useI18n()
 const isHovered = ref(false)
 const imageUrl = getImageUrl(props.imageName, props.imageRoute);
 
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
-const reversedClipPath = 'polygon(0 100%, 50% 100%, 100% 0, 0 0)';
+const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
 
 const getColors = computed(() => props.bgColor ? `${props.bgColor} text-neutral-100` : 'bg-neutral-0 text-neutral-900')
@@ -78,7 +89,37 @@ const toggleHover = () => {
             {{ item.paragraph }}
           </span>
         </p>
-        <slot name="extra-left-content"></slot>
+
+        <div v-if="infoButton || dossierButton" class="flex mt-4 gap-4">
+          <FiliButton
+            v-if="infoButton"
+            :href="infoButton.href"
+            :buttonClass="`${infoButton.class} self-start`"
+            :text="t('button.info')"
+            target="_top"
+          >
+            <template #text>
+              {{ t('button.info') }}
+            </template>
+            <template #icon-right>
+              <ArrowRight class="arrow-right self-end"/>
+            </template>
+          </FiliButton>
+          <FiliButton
+            v-if="dossierButton"
+            :href="dossierButton.href"
+            buttonClass="button-outline-neutral self-start"
+            :text="t('button.dossier')"
+            :download="dossierButton.download"
+          >
+            <template #text>
+              {{ t('button.dossier') }}
+            </template>
+            <template #icon-right>
+              <ArrowDown class="arrow-down self-end"/>
+            </template>
+          </FiliButton>
+        </div>
       </div>
       <div
         class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
