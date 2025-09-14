@@ -36,7 +36,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
     class="mt-24 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66)), url('${imageUrl}')`,
-      backgroundPosition: 'center 80%',
+      backgroundPosition: 'center center',
       clipPath: deviceClipPath,
       height: deviceHeight,
     }"
