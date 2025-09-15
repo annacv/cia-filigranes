@@ -127,8 +127,6 @@ const synopsisItems = computed(() => [
         <HireFili
           :title="t('shows.hire.title')"
           description="shows.hire.description"
-          color="primary"
-          isOutlined
         />
       </template>
     </MainContent>
