@@ -172,8 +172,6 @@ const getLink = (route: string, item?: string): CardLink => {
         <HireFili
           :title="t('home.hire.title')"
           description="home.hire.description"
-          color="primary"
-          isOutlined
         />
       </template>
     </MainContent>
