@@ -24,7 +24,7 @@ const props = defineProps({
 
 const { t } = useI18n()
 
-const bgColor = computed(() => props.cardType === 'performance' ? 'bg-tertiary-500/40' : props.cardType === 'show' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+const bgColor = computed(() => props.cardType === 'animacions' ? 'bg-tertiary-500/40' : props.cardType === 'espectacles' ? 'bg-primary-700/40': 'bg-secondary-700/40');
 
 const hoveredImageIndex = ref<number | null>(null);
 
