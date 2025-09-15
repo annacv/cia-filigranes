@@ -8,6 +8,14 @@
 export type LocaleCode = 'ca' | 'es' | 'en';
 
 /**
+ * Route item configuration
+ */
+export type RouteItem = {
+  name: string;
+  children?: string[];
+}
+
+/**
  * Image route types for asset organization
  */
 export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte'
