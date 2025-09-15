@@ -1,7 +1,7 @@
 {
   "title": "Filigranes Company",
   "home": {
-    "description": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
+    "metaDescription": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
     "hero": {
       "alt": "Image of the show 20 years is nothing"
     },
@@ -49,6 +49,7 @@
     }
   },
   "shows": {
+    "metaDescription": "Discover the thrilling clown and circus shows of the Filigranes Company.",
     "commonAlt": "Image of the show {title}",
     "claimTitle": "Ready to experience emotions and be surprised?",
     "claim": "Come enjoy the thrilling rhythm of Filigranes Company shows!",
