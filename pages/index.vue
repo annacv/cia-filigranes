@@ -123,11 +123,11 @@ const getLink = (route: string, item?: string): CardLink => {
           <HighlightContent
             :title="t('routes.tallers')"
             contentLink="/tallers"
-            titleClasses="skew-y-3 justify-end hover:text-secondary-700"
+            titleClasses="-skew-y-3 hover:text-secondary-700"
             css-classes="highlight-content--2"
           >
             <template #content>
-              <SlidingPanel :showButtons="true" class="skew-y-3">
+              <SlidingPanel :showButtons="true" class="-skew-y-3">
               <ul class="flex w-full gap-1">
                 <li v-for="(item, index) in workshops!.children" :key="index">
                   <SmallCard
