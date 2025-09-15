@@ -9,7 +9,7 @@ const { getTranslatedList } = useI18nUtils()
 
 useHead({
   meta: [
-    { name: 'description', content: t('shows.description') }
+    { name: 'description', content: t('shows.metaDescription') }
   ]
 })
 

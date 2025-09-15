@@ -1,7 +1,7 @@
 {
   "title": "Compañía Filigranes",
   "home": {
-    "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
+    "metaDescription": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
     "hero": {
       "alt": "Imagen del espectáculo 20 años no son nada"
     },
@@ -49,6 +49,7 @@
     }
   },
   "shows": {
+    "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
     "commonAlt": "Imagen del espectáculo {title}",
     "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
     "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
