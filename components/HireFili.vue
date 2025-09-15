@@ -16,11 +16,11 @@ const props = defineProps({
 <template>
   <div class="grid-layout bg-quaternary-500">
     <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 text-base md:text-lg">
-      <h2 class="font-bold color-black">
+      <h2 class="font-bold text-black">
         {{ title }}
       </h2>
       <i18n-t
-        class="color-black"
+        class="text-black"
         tag="p"
         scope="global"
         :keypath="description"
