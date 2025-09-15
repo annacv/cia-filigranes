@@ -24,7 +24,7 @@ const synopsisItems = computed(() => {
         imageRoute: 'espectacles' as ImageRoute,
       },
       bgColor: 'bg-primary-500',
-      alt: t(`shows.commonAlt`, {title: show}),
+      alt: t(`shows.commonAlt`, {title: t(`routes.${show}`)}),
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
