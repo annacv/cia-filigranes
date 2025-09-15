@@ -31,7 +31,7 @@ const synopsisItems = computed(() => {
           href: `/espectacles/${show}`,
           class: 'button-outline-primary'
         },
-        dossierButton: {
+        downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,
           href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
         }

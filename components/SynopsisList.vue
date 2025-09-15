@@ -23,7 +23,7 @@ const props = defineProps({
           href: string
           class: string
         }
-        dossierButton: {
+        downloadButton: {
           href: string
           download: string
         }
@@ -52,7 +52,7 @@ const props = defineProps({
       :title="item.title"
       :is-reversed="(index + 1) % 2 === 0"
       :info-button="item.buttons.infoButton"
-      :dossier-button="item.buttons.dossierButton"
+      :download-button="item.buttons.downloadButton"
     />
   </div>
 </template>
