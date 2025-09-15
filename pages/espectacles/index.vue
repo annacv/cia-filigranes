@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
+import type { ImageRoute } from "~/types";
+import { getItemsByRoute } from "~/utils/";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -11,104 +13,32 @@ useHead({
   ]
 })
 
-const synopsisItems = computed(() => [
-  {
-    synopsis: getTranslatedList('shows.vint-anys.synopsis', ['paragraph']),
-    imageName: 'espectacles_vint-anys',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('home.hero.alt'),
-    title: t('routes.vint-anys'),
-    infoButton: {
-      href: '/espectacles/vint-anys',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
+const shows = getItemsByRoute('espectacles');
+
+const synopsisItems = computed(() => {
+  return shows?.children!.map((show) => {
+    return {
+      description: getTranslatedList(`shows.${show}.synopsis`, ['paragraph']),
+      image: {
+        imageName: `espectacles_${show}`,
+        imageRoute: 'espectacles' as ImageRoute,
+      },
+      bgColor: 'bg-primary-500',
+      alt: t(`shows.commonAlt`, {title: show}),
+      title: t(`routes.${show}`),
+      buttons: {
+        infoButton: {
+          href: `/espectacles/${show}`,
+          class: 'button-outline-primary'
+        },
+        dossierButton: {
+          download: `CiaFiligranes-${show}-${locale.value}.pdf`,
+          href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
+        }
+      }
     }
-  },
-  {
-    synopsis: getTranslatedList('shows.plis-plas.synopsis', ['paragraph']),
-    imageName: 'espectacles_plis-plas',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('shows.plis-plas.alt'),
-    title: t('routes.plis-plas'),
-    infoButton: {
-      href: '/espectacles/plis-plas',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-plis-plas-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-plis-plas-${locale.value}.pdf`,
-    }
-  },
-  {
-    synopsis: getTranslatedList('shows.circ-filixic.synopsis', ['paragraph']),
-    imageName: 'espectacles_circ-filixic',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('shows.circ-filixic.alt'),
-    title: t('routes.circ-filixic'),
-    infoButton: {
-      href: '/espectacles/circ-filixic',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-circ-filixic-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-circ-filixic-${locale.value}.pdf`,
-    }
-  },
-  {
-    synopsis: getTranslatedList('shows.circ-makutu.synopsis', ['paragraph']),
-    imageName: 'espectacles_circ-makutu',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('shows.circ-makutu.alt'),
-    title: t('routes.circ-makutu'),
-    infoButton: {
-      href: '/espectacles/circ-makutu',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-circ-makutu-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-circ-makutu-${locale.value}.pdf`,
-    }
-  },
-  {
-    synopsis: getTranslatedList('shows.circ-trinxeta.synopsis', ['paragraph']),
-    imageName: 'espectacles_circ-trinxeta',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('shows.circ-trinxeta.alt'),
-    title: t('routes.circ-trinxeta'),
-    infoButton: {
-      href: '/espectacles/circ-trinxeta',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
-    }
-  },
-  {
-    synopsis: getTranslatedList('shows.freak-frac.synopsis', ['paragraph']),
-    imageName: 'espectacles_freak-frac',
-    imageRoute: 'espectacles',
-    bgColor: 'bg-primary-500',
-    alt: t('shows.freak-frac.alt'),
-    title: t('routes.freak-frac'),
-    infoButton: {
-      href: '/espectacles/freak-frac',
-      class: 'button-outline-primary'
-    },
-    dossierButton: {
-      download: `CiaFiligranes-freak-frac-${locale.value}.pdf`,
-      href: `/downloads/CiaFiligranes-freak-frac-${locale.value}.pdf`,
-    }
-  }
-]);
+  })
+})
 </script>
 
 <template>
@@ -122,8 +52,16 @@ const synopsisItems = computed(() => [
     </HeroCover>
     <MainContent>
       <template #unwrapped>
-        <SynopsisList :items="synopsisItems" />
-        <HeroFooter image-name="espectacles_hero" image-route="espectacles" :alt="t('shows.hero.alt')" />
+        <SynopsisList
+          :claim="t('shows.claim')"
+          :claimTitle="t('shows.claimTitle')"
+          :items="synopsisItems"
+        />
+        <HeroFooter
+          image-name="espectacles_hero"
+          image-route="espectacles"
+          :alt="t('shows.hero.alt')" 
+        />
         <HireFili
           :title="t('shows.hire.title')"
           description="shows.hire.description"

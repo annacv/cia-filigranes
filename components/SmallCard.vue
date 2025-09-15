@@ -1,20 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { ImageRoute, CardLink } from "~/types";
+import type { CardLink, CardType, CardImage } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps({
   cardType: {
-    type: String,
+    type: String as PropType<CardType>,
     required: true
   },
-  imageName: {
-    type: String,
-    required: true
-  },
-  imageRoute: {
-    type: String as PropType<ImageRoute>,
+  image: {
+    type: Object as PropType<CardImage>,
     required: true
   },
   link: {
@@ -28,9 +24,10 @@ const props = defineProps({
 });
 
 const { t } = useI18n()
+const imageSrc = getImageUrl(props.image.imageName, props.image.imageRoute);
 
-const bgColor = computed(() => props.cardType === 'performance' ? 'bg-tertiary-500/40' : props.cardType === 'show' ? 'bg-primary-700/40': 'bg-secondary-700/40');
-const imageSrc = getImageUrl(props.imageName, props.imageRoute);
+const bgColor = computed(() => props.cardType === 'animacions' ? 'bg-tertiary-500/40' : props.cardType === 'espectacles' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+const imageAlt = computed(() => props.cardType === 'animacions' ? t('performances.commonAlt') : props.cardType === 'espectacles' ? t('shows.commonAlt', {title: props.title}) : t('workshops.commonAlt', {title: props.title}));
 
 const isHovered = ref(false);
 const toggleHover = () => {
@@ -42,7 +39,7 @@ const toggleHover = () => {
   <ClientOnly>
   <div
     class="relative"
-    :class="cardType === 'performance'
+    :class="cardType === 'animacions'
   ? 'w-[298px] sm:w-[320px] xl:w-[720px] 2xl:w-[720px] h-[298px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]'
   : 'w-[298px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square'"
     @mouseenter="toggleHover"
@@ -58,7 +55,7 @@ const toggleHover = () => {
           ? 'brightness-110 saturate-110 w-[105%] h-[105%]'
           : 'brightness-70 saturate-100 w-full h-full'"
         :src="imageSrc"
-        :alt="t('commonAlt', {title: title})"
+        :alt="imageAlt"
         loading="lazy"
         draggable="false"
       />

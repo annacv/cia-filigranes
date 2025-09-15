@@ -1,87 +1,152 @@
 {
-      "title": "Compañía Filigranes",
-      "home": {
-        "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
-        "hero": {
-          "alt": "Imagen del espectáculo 20 años no son nada"
-        },
-        "hire": {
-          "title": "¿Quieres contratar alguno de nuestros servicios?",
-          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
-        }
-      },
-      "routes": {
-        "home": "Inicio",
-        "espectacles": "Espectáculos",
-        "circ-filixic": "El circ filixic",
-        "freak-frac": "Pasacalles Hermanos Freak Frac",
-        "plis-plas": "Plis plas",
-        "vint-anys": "20 Años no son nada",
-        "circ-makutu": "El Pequeño Circo de Makutu",
-        "circ-trinxeta": "Trinxat no Tremola",
-        "tallers": "Talleres",
-        "bombolles-sabo": "Burbujas de jabón",
-        "circ": "Circo",
-        "pallassos": "Payasos",
-        "maquillatge": "Maquillaje",
-        "enginys-aigua": "Ingenios de agua",
-        "animacions": "Animaciones",
-        "filipersones": "Filipersones",
-        "makutu": "Makutu",
-        "trinxeta": "Trinxeta",
-        "contacte": "Contacto"
-      },
-      "button": {
-        "dossier": "Dossier",
-        "info": "Más info"
-      },
-      "selectLang": "Elige idioma",
-      "commonAlt": "Imagen de {title}",
-      "footer": {
-        "design": {
-          "text": "Diseño y desarrollo web:"
-        },
-        "foto": {
-          "text": "Fotografía:"
-        },
-        "legal": {
-          "advice": "Aviso legal",
-          "privacy": "Política de privacidad"
-        }
-      },
-      "shows": {
-        "hire": {
-          "title": "¿Quieres contratar el espectáculo?",
-          "description": "Escríbenos un email a {email}, o llámanos al {phone}"
-        },
-        "vint-anys": {
-          "abstract": [
-            {
-              "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
-            }
-          ],
-          "list": [
-            {
-              "title": "20 años no son nada",
-              "description": "Espectáculo de payasos para todos los públicos, con trucos y travesuras constantes."
-            },
-            {
-              "title": "Duración del espectáculo",
-              "description": "50 minutos"
-            }
-          ],
-          "synopsis": [
-            {
-              "paragraph": "Makutu y Trinxeta combinan diferentes disciplinas del circo con el clown, utilizando elementos de la vida cotidiana que cobran vida de una manera muy peculiar: trasladándonos del pasado al presente y al futuro."
-            },
-            {
-              "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
-            }
-          ]
-        }
-      },
-      "workshops": {},
-      "performances": {
-        "title": "Animaciones a la carta"
-      }
+  "title": "Compañía Filigranes",
+  "home": {
+    "description": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
+    "hero": {
+      "alt": "Imagen del espectáculo 20 años no son nada"
+    },
+    "hire": {
+      "title": "¿Quieres contratar alguno de nuestros servicios?",
+      "description": "Escríbenos un email a {email}, o llámanos al {phone}"
     }
+  },
+  "routes": {
+    "home": "Inicio",
+    "espectacles": "Espectáculos",
+    "circ-filixic": "El circ filixic",
+    "freak-frac": "Hermanos Freak Frac",
+    "plis-plas": "Plis plas",
+    "vint-anys": "20 Años no son nada",
+    "circ-makutu": "El Pequeño Circo de Makutu",
+    "circ-trinxeta": "Trinxat no Tremola",
+    "tallers": "Talleres",
+    "bombolles-sabo": "Burbujas de jabón",
+    "circ": "Circo",
+    "pallassos": "Payasos",
+    "maquillatge": "Maquillaje",
+    "enginys-aigua": "Ingenios de agua",
+    "animacions": "Animaciones",
+    "filipersones": "Filipersones",
+    "makutu": "Makutu",
+    "trinxeta": "Trinxeta",
+    "contacte": "Contacto"
+  },
+  "button": {
+    "dossier": "Dosier",
+    "info": "Más info"
+  },
+  "selectLang": "Elige idioma",
+  "footer": {
+    "design": {
+      "text": "Diseño y desarrollo web:"
+    },
+    "foto": {
+      "text": "Fotografía:"
+    },
+    "legal": {
+      "advice": "Aviso legal",
+      "privacy": "Política de privacidad"
+    }
+  },
+  "shows": {
+    "commonAlt": "Imagen del espectáculo {title}",
+    "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
+    "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
+    "hero": {
+      "title": "Espectáculos de payasos y circo para todas las edades",
+      "alt": "Imagen de un espectáculo de la Cia.Filigranes"
+    },
+    "hire": {
+      "title": "¿Quieres contratar alguno de nuestros espectáculos?",
+      "titleSingle": "¿Quieres contratar el espectáculo?",
+      "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "vint-anys": {
+      "abstract": [
+        {
+          "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
+        }
+      ],
+      "list": [
+        {
+          "title": "20 años no son nada",
+          "description": "Espectáculo de payasos para todos los públicos, con trucos y travesuras constantes."
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "Makutu y Trinxeta combinan diferentes disciplinas del circo con el clown, utilizando elementos de la vida cotidiana que cobran vida de una manera muy peculiar: trasladándonos del pasado al presente y al futuro."
+        },
+        {
+          "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
+        }
+      ]
+    },
+    "plis-plas": {
+      "alt": "Imagen del espectáculo Plis Plas",
+      "synopsis": [
+        {
+          "paragraph": "Plis Plas es un espectáculo donde Toti y Makutu no paran de hacerse la \"puñeta\": se enfadan a troche y moche, pero la amistad siempre termina prevaleciendo."
+        },
+        {
+          "paragraph": "Con una silla, un embudo o un cubo nos harán, con su toque personal, gags clásicos combinados con malabares y música en directo."
+        }
+      ]
+    },
+    "circ-filixic": {
+      "alt": "Imagen del espectáculo el Circ Filixic",
+      "synopsis": [
+        {
+          "paragraph": "¡¡¡ Bienvenidas y bienvenidos !!!! Al Circo Filixic: uno de los circos más pequeños del mundo!!!! El Sr.Makutu, presentador del histórico “Circo Filigranes” sale a la pista con otro payaso: ¡¡el gran Trinxeta!!"
+        },
+        {
+          "paragraph": "Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo."
+        }
+      ]
+    },
+    "circ-makutu": {
+      "alt": "Imagen del espectáculo El Pequeño Circo de Makutu",
+      "synopsis": [
+        {
+          "paragraph": "En un pueblo pequeñito, entre montañas, llegó un circo menudito e increíble, con sus carruajes, sus caravanas y..."
+        },
+        {
+          "paragraph": "¡...una serie de artistas que tendremos que descubrir entre todos y todas!"
+        }
+      ]
+    },
+    "circ-trinxeta": {
+      "alt": "Imagen del espectáculo Trinxat No Tiembla",
+      "synopsis": [
+        {
+          "paragraph": "A Trinxeta le encanta viajar y conocer nuevos mundos, además le gusta el cielo de noche y observar las estrellas. Él ya está decidido, quiere hacer un vuelo galáctico por los diferentes planetas."
+        },
+        {
+          "paragraph": "¿Os animáis a hacer un viaje lleno de sorpresas? ¡Pues vamos!"
+        }
+      ]
+    },
+    "freak-frac": {
+      "alt": "Imagen del espectáculo Hermanos Freak Frac",
+      "synopsis": [
+        {
+          "paragraph": "¡¡¡Atención!!! ¡¡Ya llegan!! Siento el ritmo de la música que me hace mover..."
+        },
+        {
+          "paragraph": "¡¡Oh!! ¡Qué personajes más altos! ¡Se les ve llegar de lejos! ¡Mira los músicos cómo siguen al Directore! De los instrumentos surgen las notas que se encaraman por callejones y plazas..."
+        }
+      ]
+    }
+  },
+  "workshops": {
+    "commonAlt": "Imagen del taller {title}"
+  },
+  "performances": {
+    "commonAlt": "Imagen de animaciones a la carta",
+    "title": "Animaciones a la carta"
+  }
+}

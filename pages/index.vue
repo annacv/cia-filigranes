@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
+import { LOCALE_ROUTES, PERFORMANCES_IMG } from "~/constants";
 import { useI18n } from "vue-i18n";
-import type { CardLink } from "~/types";
-import { reorderItems } from "~/utils/reorder-items";
+import type { CardLink, CardImage, ImageRoute } from "~/types";
+import { getItemsByRoute, reorderItems } from "~/utils/";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -14,35 +14,8 @@ useHead({
   ]
 })
 
-const routes = ROUTES_INDEX;
-const shows = routes.find(route => route.name === 'espectacles');
-const workshops = routes.find(route => route.name === 'tallers');
-
-const performancesImages = [
-  {
-    imageName: 'animacions_foc',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_forner',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_domador',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_cuiners',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_torpede',
-    imageRoute: 'animacions' as const
-  }
-]
-
 const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
-const items = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
+const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
 
 const getSummaryButton = computed(() => {
@@ -51,6 +24,9 @@ const getSummaryButton = computed(() => {
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
 });
+
+const shows = getItemsByRoute('espectacles');
+const workshops = getItemsByRoute('tallers');
 
 const showItems = computed(() => {
   if (!shows?.children) return [];
@@ -66,6 +42,13 @@ const getLink = (route: string, item?: string): CardLink => {
     href: page[locale.value as 'ca' | 'es' | 'en']
   }
 }
+
+const getImage = (route: string, item?: string): CardImage => {
+  return {
+    imageName: `${route}_${item}`,
+    imageRoute: route as ImageRoute
+  }
+}
 </script>
 
 <template>
@@ -79,15 +62,14 @@ const getLink = (route: string, item?: string): CardLink => {
       <template #wrapped>
         <Summary
           :abstract="abstract"
-          :items="items"
+          :items="summaryItems"
           :button="getSummaryButton"
         />
       </template>
       <template #unwrapped>
         <Synopsis
-          :synopsis="synopsis"
-          image-name='espectacles_vint-anys'
-          image-route="espectacles"
+          :description="synopsis"
+          :image="getImage('espectacles', 'vint-anys')"
           bg-color="bg-primary-500"
           :alt="t('home.hero.alt')"
           :info-button="{
@@ -104,14 +86,13 @@ const getLink = (route: string, item?: string): CardLink => {
             isCurrentContent
           >
               <template #content>
-                <SlidingPanel :showButtons="true" class="-skew-y-3">
+                <SlidingPanel class="-skew-y-3">
                   <ul class="flex w-full gap-1">
                     <li v-for="(item, index) in showItems" :key="index">
                       <SmallCard
-                        card-type="show"
+                        card-type="espectacles"
                         :title="t(`routes.${item}`)"
-                        :image-name="`espectacles_${item}`"
-                        image-route="espectacles"
+                        :image="getImage('espectacles', item)"
                         :link="getLink(shows!.name,item)"
                       />
                     </li>
@@ -123,18 +104,17 @@ const getLink = (route: string, item?: string): CardLink => {
           <HighlightContent
             :title="t('routes.tallers')"
             contentLink="/tallers"
-            titleClasses="-skew-y-3 hover:text-secondary-700"
+            titleClasses="-skew-y-3 hover:text-secondary-500"
             css-classes="highlight-content--2"
           >
             <template #content>
-              <SlidingPanel :showButtons="true" class="-skew-y-3">
+              <SlidingPanel class="-skew-y-3">
               <ul class="flex w-full gap-1">
                 <li v-for="(item, index) in workshops!.children" :key="index">
                   <SmallCard
-                    card-type="workshop"
+                    card-type="tallers"
                     :title="t(`routes.${item}`)"
-                    :image-name="`tallers_${item}`"
-                    image-route="tallers"
+                    :image="getImage('tallers', item)"
                     :link="getLink(workshops!.name,item)"
                   />
                 </li>
@@ -158,9 +138,9 @@ const getLink = (route: string, item?: string): CardLink => {
                 </div>
                 <SlidingPanel class="-skew-y-3">
                   <MidCard
-                    card-type="performance"
+                    card-type="animacions"
                     :title="t('performances.title')"
-                    :images="performancesImages"
+                    :images="PERFORMANCES_IMG"
                     :link="getLink('animacions')"
                   />
                 </SlidingPanel>

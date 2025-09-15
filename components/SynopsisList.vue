@@ -1,26 +1,32 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import type { ImageRoute } from "~/types";
+import type { CardImage } from "~/types";
 
 const { t } = useI18n()
 
 const props = defineProps({
+  claim: {
+    type: String,
+  },
+  claimTitle: {
+    type: String,
+  },
   items: {
     type: Array as () => Array<{
-      synopsis: Array<Record<string, any>>
-      imageName: string
-      imageRoute: string
+      description: Array<Record<string, any>>
+      image: CardImage
       bgColor: string
       alt: string
       title: string
-      isReversed?: boolean
-      infoButton: {
-        href: string
-        class: string
-      }
-      dossierButton: {
-        href: string
-        download: string
+      buttons: {
+        infoButton: {
+          href: string
+          class: string
+        }
+        dossierButton: {
+          href: string
+          download: string
+        }
       }
     }>,
     required: true,
@@ -30,19 +36,23 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col mt-20">
+    <div class="grid-layout mb-20">
+      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl">
+        {{ claimTitle }} <br> {{ claim }}
+      </h2>
+    </div>
     <Synopsis
       v-for="(item, index) in items"
       :key="index"
-      :synopsis="item.synopsis"
-      :image-name="item.imageName"
-      :image-route="item.imageRoute as ImageRoute"
+      :description="item.description"
+      :image="item.image"
       :bg-color="item.bgColor"
       :alt="item.alt"
       :title="item.title"
       :is-reversed="(index + 1) % 2 === 0"
-      :info-button="item.infoButton"
-      :dossier-button="item.dossierButton"
+      :info-button="item.buttons.infoButton"
+      :dossier-button="item.buttons.dossierButton"
     />
   </div>
 </template>

@@ -36,7 +36,6 @@
     "info": "Més info"
   },
   "selectLang": "Escull l'idioma",
-  "commonAlt": "Imatge de {title}",
   "footer": {
     "design": {
       "text": "Disseny i desenvolupament web:"
@@ -50,7 +49,9 @@
     }
   },
   "shows": {
-    "description": "Descobreix els espectacles trepidants de pallassos i circ de la Compayia Filigranes.",
+    "commonAlt": "Imatge de l'espectacle {title}",
+    "claimTitle": "A punt per viure emocions i deixar-te sorprendre?",
+    "claim": "Vine a gaudir del ritme trepidant dels espectacles de la Compayia Filigranes!",
     "hero": {
       "title": "Espectacles de pallassos i circ per a totes les edats",
       "alt": "Imatge d'un espectacle de la Cia.Filigranes"
@@ -141,8 +142,11 @@
       ]
     }
   },
-  "workshops": {},
+  "workshops": {
+    "commonAlt": "Imatge del taller {title}"
+  },
   "performances": {
+    "commonAlt": "Imatge d'animacions a la carta",
     "title": "Animacions a la carta"
   }
 }

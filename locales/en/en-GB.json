@@ -1,87 +1,152 @@
 {
-    "title": "Filigranes Company",
-    "home": {
-      "description": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
-      "hero": {
-        "alt": "Image of the show 20 years is nothing"
-      },
-      "hire": {
-        "title": "Do you want to hire any of our services?",
-        "description": "Write us an email at {email}, or call us at {phone}"
-      }
+  "title": "Filigranes Company",
+  "home": {
+    "description": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
+    "hero": {
+      "alt": "Image of the show 20 years is nothing"
     },
-    "routes": {
-      "home": "Home",
-      "espectacles": "Shows",
-      "circ-filixic": "El circ filixic",
-      "freak-frac": "Germans Freak Frac Parade",
-      "plis-plas": "Plis plas",
-      "vint-anys": "20 Years is Nothing",
-      "circ-makutu": "Makutu's Little Circus",
-      "circ-trinxeta": "Trinxat no Tremola",
-      "tallers": "Workshops",
-      "bombolles-sabo": "Soap bubbles",
-      "circ": "Circus",
-      "pallassos": "Clowns",
-      "maquillatge": "Makeup",
-      "enginys-aigua": "Water devices",
-      "animacions": "Animations",
-      "filipersones": "Filipersones",
-      "makutu": "Makutu",
-      "trinxeta": "Trinxeta",
-      "contacte": "Contact"
-    },
-    "button": {
-      "dossier": "Dossier",
-      "info": "More info"
-    },
-    "selectLang": "Choose language",
-    "commonAlt": "Image of {title}",
-    "footer": {
-      "design": {
-        "text": "Web design and development:"
-      },
-      "foto": {
-        "text": "Photography:"
-      },
-      "legal": {
-        "advice": "Legal notice",
-        "privacy": "Privacy policy"
-      }
-    },
-    "shows": {
-      "hire": {
-        "title": "Do you want to hire the show?",
-        "description": "Write us an email at {email}, or call us at {phone}"
-      },
-      "vint-anys": {
-        "abstract": [
-          {
-            "paragraph": "Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity."
-          }
-        ],
-        "list": [
-          {
-            "title": "20 years is nothing",
-            "description": "Clown show for all audiences, with constant tricks and mischief."
-          },
-          {
-            "title": "Show duration",
-            "description": "50 minutes"
-          }
-        ],
-        "synopsis": [
-          {
-            "paragraph": "Makutu and Trinxeta combine different circus disciplines with clowning, using elements from everyday life that come to life in a very peculiar way: taking us from the past to the present and the future."
-          },
-          {
-            "paragraph": "In a gesture of irony and at the same time affection towards the passage of time, the Filigranes Company makes a living, incisive and sincere self-portrait of two clowns who have grown up and made each other."
-          }
-        ]
-      }
-    },
-    "workshops": {},
-    "performances": {
-      "title": "Performances à la carte"
+    "hire": {
+      "title": "Do you want to hire any of our services?",
+      "description": "Write us an email at {email}, or call us at {phone}"
     }
+  },
+  "routes": {
+    "home": "Home",
+    "espectacles": "Shows",
+    "circ-filixic": "El circ filixic",
+    "freak-frac": "Germans Freak Frac Parade",
+    "plis-plas": "Plis plas",
+    "vint-anys": "20 Years is Nothing",
+    "circ-makutu": "Makutu's Little Circus",
+    "circ-trinxeta": "Trinxat doesn't Tremble",
+    "tallers": "Workshops",
+    "bombolles-sabo": "Soap bubbles",
+    "circ": "Circus",
+    "pallassos": "Clowns",
+    "maquillatge": "Makeup",
+    "enginys-aigua": "Water devices",
+    "animacions": "Animations",
+    "filipersones": "Filipersones",
+    "makutu": "Makutu",
+    "trinxeta": "Trinxeta",
+    "contacte": "Contact"
+  },
+  "button": {
+    "dossier": "Dossier",
+    "info": "More info"
+  },
+  "selectLang": "Choose language",
+  "footer": {
+    "design": {
+      "text": "Web design and development:"
+    },
+    "foto": {
+      "text": "Photography:"
+    },
+    "legal": {
+      "advice": "Legal notice",
+      "privacy": "Privacy policy"
+    }
+  },
+  "shows": {
+    "commonAlt": "Image of the show {title}",
+    "claimTitle": "Ready to experience emotions and be surprised?",
+    "claim": "Come enjoy the thrilling rhythm of Filigranes Company shows!",
+    "hero": {
+      "title": "Clown and circus shows for all ages",
+      "alt": "Image of a Filigranes Company show"
+    },
+    "hire": {
+      "title": "Do you want to hire any of our shows?",
+      "titleSingle": "Do you want to hire the show?",
+      "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "vint-anys": {
+      "abstract": [
+        {
+          "paragraph": "Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity."
+        }
+      ],
+      "list": [
+        {
+          "title": "20 years is nothing",
+          "description": "Clown show for all audiences, with constant tricks and mischief."
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "Makutu and Trinxeta combine different circus disciplines with clowning, using elements from everyday life that come to life in a very peculiar way: taking us from the past to the present and the future."
+        },
+        {
+          "paragraph": "In a gesture of irony and at the same time affection towards the passage of time, the Filigranes Company makes a living, incisive and sincere self-portrait of two clowns who have grown up and made each other."
+        }
+      ]
+    },
+    "plis-plas": {
+      "alt": "Image of the Plis Plas show",
+      "synopsis": [
+        {
+          "paragraph": "Plis Plas is a show where Toti and Makutu do not stop making the \"knuckle\": they are angry by hook or by crook, but friendship always ends up prevailing."
+        },
+        {
+          "paragraph": "With a chair, a funnel or a bucket will make us, with its personal touch, classic gags combined with juggling and live music."
+        }
+      ]
+    },
+    "circ-filixic": {
+      "alt": "Image of The Filixic Circus show",
+      "synopsis": [
+        {
+          "paragraph": "Welcome everyone !!!! Come on into The Filixic Circus: one of the smallest circuses in the world! Mr.Makutu, head of the historic \"Filigranes Circus\" goes to the track with another clown: the great Trinxeta!!"
+        },
+        {
+          "paragraph": "A story full of surprises, work of clowns, where different disciplines of the circus world are merged."
+        }
+      ]
+    },
+    "circ-makutu": {
+      "alt": "Image of the Makutu's Little Circus show",
+      "synopsis": [
+        {
+          "paragraph": "In an small village, between mountains, came an incredible circus, with their carriages, their caravans and..."
+        },
+        {
+          "paragraph": "...an amount of artists that we will have to discover together!"
+        }
+      ]
+    },
+    "circ-trinxeta": {
+      "alt": "Image of the Trinxat doesn't Tremble show",
+      "synopsis": [
+        {
+          "paragraph": "Trinxeta loves to travel and discover new worlds, he also likes the night sky and observing the stars. He is already determined, he wants to make a galactic flight through the different planets."
+        },
+        {
+          "paragraph": "Do you dare to take a trip full of surprises? Well here we go!"
+        }
+      ]
+    },
+    "freak-frac": {
+      "alt": "Image of The Freak-Frac Brothers show",
+      "synopsis": [
+        {
+          "paragraph": "Attention!!! Here they are! I feel the rhythm of the music that makes me move..."
+        },
+        {
+          "paragraph": "Oh!! They're so tall! You can see them coming from far away! Look how the musicians follow the Directore! From the instruments, well cleaned, the notes flow through streets and squares..."
+        }
+      ]
+    }
+  },
+  "workshops": {
+    "commonAlt": "Image of the {title} workshop"
+  },
+  "performances": {
+    "commonAlt": "Image of custom animations",
+    "title": "Custom animations"
   }
+}
