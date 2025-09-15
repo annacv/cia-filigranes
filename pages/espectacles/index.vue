@@ -17,6 +17,8 @@ const shows = getItemsByRoute('espectacles');
 
 const synopsisItems = computed(() => {
   return shows?.children?.map((show) => {
+    const title = t(`routes.${show}`)
+
     return {
       description: getTranslatedList(`shows.${show}.synopsis`, ['paragraph']),
       image: {
@@ -24,7 +26,7 @@ const synopsisItems = computed(() => {
         imageRoute: 'espectacles' as ImageRoute,
       },
       bgColor: 'bg-primary-500',
-      alt: t(`shows.commonAlt`, {title: t(`routes.${show}`)}),
+      alt: t(`shows.commonAlt`, {title: title}),
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
@@ -60,7 +62,7 @@ const synopsisItems = computed(() => {
         <HeroFooter
           image-name="espectacles_hero"
           image-route="espectacles"
-          :alt="t('shows.hero.alt')" 
+          :alt="t('shows.hero.alt')"
         />
         <HireFili
           :title="t('shows.hire.title')"
