@@ -16,7 +16,7 @@ useHead({
 const shows = getItemsByRoute('espectacles');
 
 const synopsisItems = computed(() => {
-  return shows?.children!.map((show) => {
+  return shows?.children?.map((show) => {
     return {
       description: getTranslatedList(`shows.${show}.synopsis`, ['paragraph']),
       image: {
@@ -37,7 +37,7 @@ const synopsisItems = computed(() => {
         }
       }
     }
-  })
+  }) || []
 })
 </script>
 
