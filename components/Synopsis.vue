@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import type { ImageRoute } from "~/types";
+import type { CardImage } from "~/types";
 import ArrowRight from "assets/icons/arrow-right.svg";
 import ArrowDown from "assets/icons/arrow-down.svg";
 
@@ -14,12 +14,8 @@ const props = defineProps({
     type: String,
     required: false
   },
-  imageName: {
-    type: String,
-    required: true
-  },
-  imageRoute: {
-    type: String as PropType<ImageRoute>,
+  image: {
+    type: Object as PropType<CardImage>,
     required: true
   },
   isReversed: {
@@ -30,7 +26,7 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  synopsis: {
+  description: {
     type: Array as () => Record<string, any>[],
     required: true,
     default: () => []
@@ -43,7 +39,7 @@ const props = defineProps({
     type: Object,
     default: () => null
   },
-  dossierButton: {
+  downloadButton: {
     type: Object,
     default: () => null
   }
@@ -52,7 +48,7 @@ const props = defineProps({
 const { isMobile } = useDevice()
 const { t } = useI18n()
 const isHovered = ref(false)
-const imageUrl = getImageUrl(props.imageName, props.imageRoute);
+const imageUrl = getImageUrl(props.image.imageName, props.image.imageRoute);
 
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';
@@ -83,14 +79,14 @@ const toggleHover = () => {
           class="text-lg lg:text-xl"
           :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
           <span
-            v-for="item in showFullContent ? synopsis : synopsis.slice(0, 1)"
+            v-for="item in showFullContent ? description : description.slice(0, 1)"
             :key="item.paragraph"
           >
             {{ item.paragraph }}
           </span>
         </p>
 
-        <div v-if="infoButton || dossierButton" class="flex mt-4 gap-4">
+        <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
           <FiliButton
             v-if="infoButton"
             :href="infoButton.href"
@@ -106,11 +102,11 @@ const toggleHover = () => {
             </template>
           </FiliButton>
           <FiliButton
-            v-if="dossierButton"
-            :href="dossierButton.href"
+            v-if="downloadButton"
+            :href="downloadButton.href"
             buttonClass="button-outline-neutral self-start"
             :text="t('button.dossier')"
-            :download="dossierButton.download"
+            :download="downloadButton.download"
           >
             <template #text>
               {{ t('button.dossier') }}

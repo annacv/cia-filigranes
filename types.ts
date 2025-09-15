@@ -13,6 +13,11 @@ export type LocaleCode = 'ca' | 'es' | 'en';
 export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte'
 
 /**
+ * Card type for the Filigranes project
+ */
+export type CardType = 'animacions' | 'espectacles' | 'tallers';
+
+/**
  * Card link configuration
  */
 export type CardLink = {
