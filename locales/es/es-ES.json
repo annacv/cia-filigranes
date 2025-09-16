@@ -146,11 +146,11 @@
   "workshops": {
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
-    "claimTitle": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
-    "claim": "Cursos, monográficos, o talleres de temporada...",
+    "claimTitle": "Cursos, monográficos, o talleres de temporada...",
+    "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {
-      "title": "¡Estimula el artista que llevas dentro con los talleres de la Cia.Filigranes!",
-      "alt": "Imagen de un taller de la Cia.Filigranes"
+      "title": "¡Talleres que estimulan el artista que llevas dentro!",
+      "alt": "Imagen del Taller de Circo de la Cia.Filigranes"
     },
     "hire": {
       "title": "¿Quieres contratar alguno de nuestros talleres?",
