@@ -67,7 +67,7 @@ const toggleHover = () => {
     @mouseenter="toggleHover"
     @mouseleave="toggleHover"
   >
-    <<div :class="[
+    <div :class="[
       'flex flex-col md:flex-row gap-0 xl:gap-5',
       isReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
     >
