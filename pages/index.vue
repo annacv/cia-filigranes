@@ -1,57 +1,32 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ROUTES_INDEX, LOCALE_ROUTES } from "~/constants";
-import ArrowRight from "assets/icons/arrow-right.svg";
+import { LOCALE_ROUTES, PERFORMANCES_IMG } from "~/constants";
 import { useI18n } from "vue-i18n";
-import type { CardLink } from "~/types";
-import {reorderItems} from "~/utils/reorder-items";
+import type { CardLink, CardImage, ImageRoute } from "~/types";
+import { getItemsByRoute, reorderItems } from "~/utils/";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 
 useHead({
   meta: [
-    { name: 'description', content: t('home.description') }
+    { name: 'description', content: t('home.metaDescription') }
   ]
 })
 
-const routes = ROUTES_INDEX;
-const shows = routes.find(route => route.name === 'espectacles');
-const workshops = routes.find(route => route.name === 'tallers');
-
-const performancesImages = [
-  {
-    imageName: 'animacions_foc',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_forner',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_domador',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_cuiners',
-    imageRoute: 'animacions' as const
-  },
-  {
-    imageName: 'animacions_torpede',
-    imageRoute: 'animacions' as const
-  }
-]
-
 const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
-const items = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
+const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
 
-const getButton = computed(() => {
+const getSummaryButton = computed(() => {
   return {
     download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
 });
+
+const shows = getItemsByRoute('espectacles');
+const workshops = getItemsByRoute('tallers');
 
 const showItems = computed(() => {
   if (!shows?.children) return [];
@@ -67,66 +42,57 @@ const getLink = (route: string, item?: string): CardLink => {
     href: page[locale.value as 'ca' | 'es' | 'en']
   }
 }
+
+const getImage = (route: string, item?: string): CardImage => {
+  return {
+    imageName: `${route}_${item}`,
+    imageRoute: route as ImageRoute
+  }
+}
 </script>
 
 <template>
   <div class="h-full">
     <HeroCover image-name="hero_cover" image-route="" :alt="t('home.hero.alt')">
       <template #content>
-        <NuxtLinkLocale :to="'/espectacles/vint-anys'">
-          <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] hover:opacity-85"/>
-        </NuxtLinkLocale>
+        <VintAnysBrand class="w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px]"/>
       </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary
           :abstract="abstract"
-          :items="items"
-          :button="getButton"
+          :items="summaryItems"
+          :button="getSummaryButton"
         />
       </template>
       <template #unwrapped>
         <Synopsis
-          :synopsis="synopsis"
-          image-name='espectacles_vint-anys'
-          image-route="espectacles"
+          :description="synopsis"
+          :image="getImage('espectacles', 'vint-anys')"
           bg-color="bg-primary-500"
           :alt="t('home.hero.alt')"
-        >
-          <template #extra-left-content>
-            <FiliButton
-              class="mt-4"
-              href="/espectacles/vint-anys"
-              buttonClass="button-outline-primary self-start"
-              :text="t('button.info')"
-              target="_top"
-            >
-              <template #text>
-                {{ t('button.info') }}
-              </template>
-              <template #icon-right>
-                <ArrowRight class="arrow-right self-end"/>
-              </template>
-            </FiliButton>
-          </template>
-        </Synopsis>
+          :info-button="{
+            href: '/espectacles/vint-anys',
+            class: 'button-outline-primary'
+          }"
+        />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightContent
             :title="t('routes.espectacles')"
-            titleClasses="-skew-y-3"
+            contentLink="/espectacles"
+            titleClasses="-skew-y-3 hover:text-primary-700"
             css-classes="highlight-content--1"
             isCurrentContent
           >
               <template #content>
-                <SlidingPanel :showButtons="true" class="-skew-y-3">
+                <SlidingPanel class="-skew-y-3">
                   <ul class="flex w-full gap-1">
                     <li v-for="(item, index) in showItems" :key="index">
                       <SmallCard
-                        card-type="show"
+                        card-type="espectacles"
                         :title="t(`routes.${item}`)"
-                        :image-name="`espectacles_${item}`"
-                        image-route="espectacles"
+                        :image="getImage('espectacles', item)"
                         :link="getLink(shows!.name,item)"
                       />
                     </li>
@@ -137,18 +103,18 @@ const getLink = (route: string, item?: string): CardLink => {
 
           <HighlightContent
             :title="t('routes.tallers')"
-            titleClasses="skew-y-3 justify-end"
+            contentLink="/tallers"
+            titleClasses="-skew-y-3 hover:text-secondary-500"
             css-classes="highlight-content--2"
           >
             <template #content>
-              <SlidingPanel :showButtons="true" class="skew-y-3">
+              <SlidingPanel class="-skew-y-3">
               <ul class="flex w-full gap-1">
                 <li v-for="(item, index) in workshops!.children" :key="index">
                   <SmallCard
-                    card-type="workshop"
+                    card-type="tallers"
                     :title="t(`routes.${item}`)"
-                    :image-name="`tallers_${item}`"
-                    image-route="tallers"
+                    :image="getImage('tallers', item)"
                     :link="getLink(workshops!.name,item)"
                   />
                 </li>
@@ -159,7 +125,8 @@ const getLink = (route: string, item?: string): CardLink => {
 
           <HighlightContent
             :title="t('routes.animacions')"
-            titleClasses="-skew-y-3"
+            contentLink="/animacions"
+            titleClasses="-skew-y-3 hover:text-tertiary-700"
             css-classes="highlight-content--3"
           >
             <template #content>
@@ -169,11 +136,11 @@ const getLink = (route: string, item?: string): CardLink => {
                     {{ t('performances.title') }}
                   </h3>
                 </div>
-                <SlidingPanel :showButtons="true" class="-skew-y-3">
+                <SlidingPanel class="-skew-y-3">
                   <MidCard
-                    card-type="performance"
+                    card-type="animacions"
                     :title="t('performances.title')"
-                    :images="performancesImages"
+                    :images="PERFORMANCES_IMG"
                     :link="getLink('animacions')"
                   />
                 </SlidingPanel>
@@ -185,8 +152,6 @@ const getLink = (route: string, item?: string): CardLink => {
         <HireFili
           :title="t('home.hire.title')"
           description="home.hire.description"
-          color="primary"
-          isOutlined
         />
       </template>
     </MainContent>

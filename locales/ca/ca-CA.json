@@ -1,7 +1,7 @@
 {
   "title": "Companyia Filigranes",
   "home": {
-    "description": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
+    "metaDescription": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
       "alt": "Imatge de l'espectacle 20 anys no són res"
     },
@@ -36,7 +36,6 @@
     "info": "Més info"
   },
   "selectLang": "Escull l'idioma",
-  "commonAlt": "Imatge de {title}",
   "footer": {
     "design": {
       "text": "Disseny i desenvolupament web:"
@@ -50,8 +49,17 @@
     }
   },
   "shows": {
+    "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Compayia Filigranes.",
+    "commonAlt": "Imatge de l'espectacle {title}",
+    "claimTitle": "A punt per viure emocions i deixar-te sorprendre?",
+    "claim": "Vine a gaudir del ritme trepidant dels espectacles de la Compayia Filigranes!",
+    "hero": {
+      "title": "Espectacles de pallassos i circ per a totes les edats",
+      "alt": "Imatge d'un espectacle de la Cia.Filigranes"
+    },
     "hire": {
-      "title": "Vols contractar l'espectacle?",
+      "title": "Vols contractar algun dels nostres espectacles?",
+      "titleSingle": "Vols contractar l'espectacle?",
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
     },
     "vint-anys": {
@@ -78,10 +86,68 @@
           "paragraph": "En un gest d’ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s’han fet l’un a l’altre."
         }
       ]
+    },
+    "plis-plas": {
+      "alt": "Imatge de l'espectacle Plis Plas",
+      "synopsis": [
+        {
+          "paragraph": "Plis Plas és un espectacle on el Toti i el Makutu no paren de fer-se la “punyeta”: s'enfaden a tort i a dret, però l’amistat sempre acaba prevalent."
+        },
+        {
+          "paragraph": "Amb una cadira, un embut o una galleda ens faran, amb el seu toc personal, gags clàssics combinats amb malabars i música en directe."
+        }
+      ]
+    },
+    "circ-filixic": {
+      "alt": "Imatge de l'espectacle el Circ Filixic",
+      "synopsis": [
+        {
+          "paragraph": "Benvinguts i benvingudes al Circ Filixic! Un dels circs més petits del món!!!! El Sr.Makutu, presentador de l'històric “Circ Filigranes” surt a la pista amb un altre pallasso: el gran Trinxeta!!"
+        },
+        {
+          "paragraph": "Una història plena de sorpreses, obra de pallassos, on es fusionen diferents disciplines del món del circ."
+        }
+      ]
+    },
+    "circ-makutu": {
+      "alt": "Imatge de l'espectacle el Petit Circ de Makutu",
+      "synopsis": [
+        {
+          "paragraph": "En un poble petitet, entre muntanyes, va arribar un circ menut i increïble, amb els seus carruatges, les seves caravanes i..."
+        },
+        {
+          "paragraph": "...un seguit d'artistes que haurem de descobrir entre tots i totes!"
+        }
+      ]
+    },
+    "circ-trinxeta": {
+      "alt": "Imatge de l'espectacle Trinxat no Tremola",
+      "synopsis": [
+        {
+          "paragraph": "Al Trinxeta li encanta viatjar i conèixer nous móns, a més li agrada el cel de nit i observar les estrelles. Ell ja està decidit, vol fer un vol galàctic pels diferents planetes."
+        },
+        {
+          "paragraph": "Us animeu a fer un viatge ple de sorpreses? Doncs som-hi!"
+        }
+      ]
+    },
+    "freak-frac": {
+      "alt": "Imatge de l'espectacle Cercavila Germans Freak Frac",
+      "synopsis": [
+        {
+          "paragraph": "Atenció!!! Ja arriben!! Sento el ritme de la música que em fa moure..."
+        },
+        {
+          "paragraph": "Oh!! Quins personatges més alts! Se'ls veu arribar d'un tros lluny! Guaita, els músics, com segueixen al Directore! Dels instruments sorgeixen les notes que s'enfilen per carrerons i places..."
+        }
+      ]
     }
   },
-  "workshops": {},
+  "workshops": {
+    "commonAlt": "Imatge del taller {title}"
+  },
   "performances": {
+    "commonAlt": "Imatge d'animacions a la carta",
     "title": "Animacions a la carta"
   }
 }
