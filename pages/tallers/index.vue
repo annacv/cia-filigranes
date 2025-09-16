@@ -31,7 +31,7 @@ const synopsisItems = computed(() => {
       buttons: {
         infoButton: {
           href: `/tallers/${workshop}`,
-          class: 'button-outline-primary'
+          class: 'button-outline-secondary'
         },
         downloadButton: {
           download: `CiaFiligranes-${workshop}-${locale.value}.pdf`,
