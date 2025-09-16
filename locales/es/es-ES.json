@@ -144,9 +144,87 @@
     }
   },
   "workshops": {
-    "commonAlt": "Imagen del taller {title}"
+    "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
+    "commonAlt": "Imagen del taller {title}",
+    "claimTitle": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
+    "claim": "Cursos, monográficos, o talleres de temporada...",
+    "hero": {
+      "title": "¡Estimula el artista que llevas dentro con los talleres de la Cia.Filigranes!",
+      "alt": "Imagen de un taller de la Cia.Filigranes"
+    },
+    "hire": {
+      "title": "¿Quieres contratar alguno de nuestros talleres?",
+      "titleSingle": "¿Quieres contratar el taller?",
+      "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "circ": {
+      "abstract": [
+        {
+          "paragraph": " "
+        }
+      ],
+      "list": [
+        {
+          "title": "Taller de Circo",
+          "description": " "
+        },
+        {
+          "title": " ",
+          "description": " "
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "¡La pasión por el circo nos mueve a abrir sus puertas de par en par! Queremos compartir esta pasión con vosotras y hacer posible que os acerquéis de una forma didáctica y divertida."
+        },
+        {
+          "paragraph": "Con este taller conoceréis de primera mano las diversas técnicas y disciplinas del mundo del circo."
+        }
+      ]
+    },
+    "bombolles-sabo": {
+      "synopsis": [
+        {
+          "paragraph": "¡¡¿Como es posible?!! ¡¡Una burbuja de jabón más grande que tu cabeza!! ¿Quieres hacerla con tus propias manos?"
+        },
+        {
+          "paragraph": "¡Lo llenaremos todo de burbujas de jabón de diferentes tamaños! ¡Las haremos bailar y volar! Anímate a descubrir esta técnica tan peculiar."
+        }
+      ]
+    },
+    "pallassos": {
+      "synopsis": [
+        {
+          "paragraph": "¡Os presentamos la nariz roja! Con ella nos adentraremos en el mundo de los payasos, en el humor, la inocencia y la generosidad."
+        },
+        {
+          "paragraph": "Aprenderemos a mirar con esta nariz, a utilizar la máscara corporal ¡y buscaremos nuestro personaje!"
+        }
+      ]
+    },
+    "maquillatge": {
+      "synopsis": [
+        {
+          "paragraph": "¡El arte facial de fantasía nos permite crear un personaje propio y único!"
+        },
+        {
+          "paragraph": "La piel se convertirá en nuestra propia máscara y nos ayudará a estimular la imaginación. Así pues, cuando finaliza... ¡sólo hay que observar las caras y entrar en el personaje!"
+        }
+      ]
+    },
+    "enginys-aigua": {
+      "synopsis": [
+        {
+          "paragraph": "¡Pocas cosas hay tan divertidas como jugar con el agua!! ¡Con ella nos refrescaremos y aprenderemos a la vez!"
+        },
+        {
+          "paragraph": "Disfrutaremos de un itinerario con diferentes estaciones, donde grandes y pequeños irán pasando mientras ponen en práctica sus destrezas de una manera muy divertida."
+        }
+      ]
+    }
   },
   "performances": {
+    "metaDescription": "Animaciones a la carta. Se adaptan a diferentes temáticas, ideales para amenizar convenciones, encuentros y todo tipo de eventos.",
     "commonAlt": "Imagen de animaciones a la carta",
     "title": "Animaciones a la carta"
   }
