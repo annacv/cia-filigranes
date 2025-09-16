@@ -9,55 +9,32 @@ const props = defineProps({
   description: {
     type: String,
     required: true
-  },
-  color: {
-    type: String,
-    required: true
-  },
-  isOutlined: {
-    type: Boolean,
-    default: false
   }
 });
-
-const textColor = computed(() => {
-  return props.isOutlined ? `text-${props.color}-500` : 'text-white'
-})
-
-const bgColor = computed(() => {
-  return props.isOutlined ? `bg-white` : `bg-${props.color}-500`
-})
-
 </script>
 
 <template>
-  <div
-    class="grid-layout"
-    :class="bgColor"
-  >
+  <div class="grid-layout bg-quaternary-500">
     <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 text-base md:text-lg">
-      <h2
-        :class="textColor"
-        class="font-bold">
+      <h2 class="font-bold text-black">
         {{ title }}
       </h2>
       <i18n-t
+        class="text-black"
         tag="p"
         scope="global"
         :keypath="description"
       >
         <template #email>
           <a
-            :class="textColor"
             class="font-bold hover:opacity-80"
             :href="`mailto:${CONTACT.email}`"
           >
-              {{ CONTACT.email }}
+            {{ CONTACT.email }}
           </a>
         </template>
         <template #phone>
           <a
-            :class="textColor"
             class="font-bold hover:opacity-80 whitespace-nowrap"
             :href="`tel:${CONTACT.phones.albert}`"
           >

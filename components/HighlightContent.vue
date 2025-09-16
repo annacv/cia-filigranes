@@ -1,9 +1,12 @@
 <script setup lang="ts">
-
 const props = defineProps({
   cssClasses: {
     type: String,
     default: 'highlight-content--1'
+  },
+  contentLink: {
+    type: String,
+    required: true
   },
   isCurrentContent: {
     type: Boolean,
@@ -27,14 +30,16 @@ const title = computed(() => props.title.slice(1))
   <section>
     <div class="grid-layout">
       <div class="layout-cols">
-        <h2 class="flex text-2xl lg:text-4xl font-sans" :class="titleClasses">
-          <span
-            v-if="isCurrentContent"
-            class="font-thin mr-2">+
-          </span>
-          <span class="font-black">{{ capital }}</span>
-          <span class="font-thin">{{ title }}</span>
-        </h2>
+        <NuxtLinkLocale :to="contentLink">
+          <h2 class="flex text-2xl lg:text-4xl font-sans" :class="titleClasses">
+            <span
+              v-if="isCurrentContent"
+              class="font-thin mr-2">+
+            </span>
+            <span class="font-black">{{ capital }}</span>
+            <span class="font-thin">{{ title }}</span>
+          </h2>
+        </NuxtLinkLocale>
       </div>
     </div>
     <div :class="[cssClasses, 'py-2 lg:py-4']">

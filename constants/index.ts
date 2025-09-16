@@ -164,6 +164,29 @@ export const GLOB_IMPORTS = {
   }) as Record<string, string>
 };
 
+export const PERFORMANCES_IMG = [
+  {
+    imageName: 'animacions_foc',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_forner',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_domador',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_cuiners',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_torpede',
+    imageRoute: 'animacions' as const
+  }
+]
+
 export const CONTACT = {
     "email": "ciafiligranes@gmail.com",
     "adress": "c/ St. Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { ImageRoute, CardLink, CardImage } from "~/types";
+import type { ImageRoute, CardLink, CardImage, CardType } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
 
 const props = defineProps({
   cardType: {
-    type: String,
+    type: String as PropType<CardType>,
     required: true
   },
   images: {
@@ -24,7 +24,7 @@ const props = defineProps({
 
 const { t } = useI18n()
 
-const bgColor = computed(() => props.cardType === 'performance' ? 'bg-tertiary-500/40' : props.cardType === 'show' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+const bgColor = computed(() => props.cardType === 'animacions' ? 'bg-tertiary-500/40' : props.cardType === 'espectacles' ? 'bg-primary-700/40': 'bg-secondary-700/40');
 
 const hoveredImageIndex = ref<number | null>(null);
 
@@ -61,7 +61,7 @@ const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
             ? 'brightness-110 saturate-110 scale-105'
             : 'brightness-70 saturate-100 scale-100'"
             :src="setImageSrc(image.imageName, image.imageRoute)"
-            :alt="t('commonAlt', {title: title})"
+            :alt="t('performances.commonAlt')"
             loading="lazy"
             draggable="false"
           />
