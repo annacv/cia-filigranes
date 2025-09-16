@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
     }"
   >
     <!-- Added img tag for Accessibility for screen readers -->
-    <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="true" />
+    <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
     <div
       class="col-start-1 col-span-6 xl:col-start-8 xl:col-span-4 2xl:col-start-8 justify-self-end transition-opacity duration-500"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
