@@ -146,10 +146,10 @@
   "workshops": {
     "metaDescription": "Tallers per a totes les edats: de circ, de pallassos, de maquillatge, d'enginys d'aigua, de bombolles de sabó...",
     "commonAlt": "Imatge del taller {title}",
-    "claimTitle": "Tallers per a persones menudes i adultes que volen aprendre i divertir-se!",
-    "claim": "Cursos, monogràfics, o tallers de temporada...",
+    "claimTitle": "Cursos, monogràfics, o tallers de temporada...",
+    "claim": "Tallers per a persones menudes i adultes que volen aprendre i divertir-se!",
     "hero": {
-      "title": "Estimula l'artista que duus a dins amb els tallers de la Cia.Filigranes!",
+      "title": "Tallers que estimulen l'artista que duus a dins!",
       "alt": "Imatge del Taller de Circ de la Cia.Filigranes"
     },
     "hire": {
