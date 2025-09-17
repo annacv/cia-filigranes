@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { computed } from 'vue'
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import type { ImageRoute } from "~/types";
+import { useGetColor } from "~/composables/use-get-color.composable";
+import { useScroll } from "~/composables/use-scroll.composable";
+import type { ImageRoute, ContentType } from "~/types";
 
 const props = defineProps({
   alt: {
@@ -16,11 +18,16 @@ const props = defineProps({
     type: String as PropType<ImageRoute>,
     required: true
   },
+  contentType: {
+    type: String as PropType<ContentType>,
+    default: 'shows'
+  }
 })
 
 const { isMobile } = useDevice()
-const isScrolled = ref(false)
+const { isScrolled } = useScroll()
 const imageUrl = getImageUrl(props.imageName, props.imageRoute);
+const { gradientOverlayValue } = useGetColor(props.contentType);
 
 const mobileHeight = '72px';
 const desktopHeight = '87px';
@@ -35,19 +42,6 @@ const fixedClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceFixedHei
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
 const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100vh')
-
-function onScroll() {
-  isScrolled.value = window.scrollY > 0
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true })
-  onScroll()
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll)
-})
 </script>
 
 <template>
@@ -56,7 +50,7 @@ onBeforeUnmount(() => {
     class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid grid-cols-6 xl:grid-cols-12 items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
-      backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66)), url('${imageUrl}')`,
+        backgroundImage: `linear-gradient(to right bottom, ${props.contentType ? gradientOverlayValue : 'var(--gradient-overlay-primary)'}), url('${imageUrl}')`,
       backgroundPosition: isScrolled ? 'center center' : 'center 30%',
       clipPath: currentClipPath,
       height: currentHeight
