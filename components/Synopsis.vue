@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import type { CardImage } from "~/types";
+import { useGetColor } from "~/composables/use-get-color.composable";
+import type { CardImage, ContentType } from "~/types";
 import ArrowRight from "assets/icons/arrow-right.svg";
 import ArrowDown from "assets/icons/arrow-down.svg";
 
@@ -10,8 +11,8 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  bgColor: {
-    type: String,
+  contentType: {
+    type: String as PropType<ContentType>,
     required: false
   },
   image: {
@@ -54,7 +55,15 @@ const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
 
-const getColors = computed(() => props.bgColor ? `${props.bgColor} text-neutral-100` : 'bg-neutral-0 text-neutral-900')
+// Use useGetColor composable if contentType is defined, otherwise use default classes
+const { bgColorClass, gradientOverlayValue } = props.contentType ? useGetColor(props.contentType) : { bgColorClass: computed(() => ''), gradientOverlayValue: computed(() => '') };
+
+const getColors = computed(() => {
+  if (props.contentType) {
+    return `${bgColorClass.value} text-neutral-100`;
+  }
+  return 'bg-neutral-0 text-neutral-900';
+})
 
 const toggleHover = () => {
   isHovered.value = !isHovered.value;
@@ -123,7 +132,7 @@ const toggleHover = () => {
           isHovered || isMobile ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
         :style="{
-          backgroundImage: `linear-gradient(to right bottom, rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66)), url('${imageUrl}')`,
+          backgroundImage: `linear-gradient(to right bottom, ${props.contentType ? gradientOverlayValue : 'var(--gradient-overlay-primary)'}), url('${imageUrl}')`,
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : currentClipPath
         }"
