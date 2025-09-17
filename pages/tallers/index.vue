@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
-import type { ImageRoute } from "~/types";
+import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/";
+import { useGetImageAlt } from "~/composables/use-get-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -25,8 +26,8 @@ const synopsisItems = computed(() => {
         imageName: `tallers_${workshop}`,
         imageRoute: 'tallers' as ImageRoute,
       },
-      bgColor: 'bg-secondary-500',
-      alt: t(`workshops.commonAlt`, {title: title}),
+      contentType: 'workshops' as ContentType,
+      alt: useGetImageAlt('workshops', title).value,
       title: t(`routes.${workshop}`),
       buttons: {
         infoButton: {
@@ -45,7 +46,12 @@ const synopsisItems = computed(() => {
 
 <template>
   <div class="h-full">
-    <HeroCover image-name="tallers_hero" image-route="tallers" :alt="t('workshops.hero.alt')">
+    <HeroCover
+      image-name="tallers_hero"
+      image-route="tallers"
+      :alt="t('workshops.hero.alt')"
+      content-type="workshops"
+    >
       <template #content>
         <h1 class="p-5 font-grotesk uppercase text-white text-3xl md:text-5xl lg:text-6xl w-[300px] md:w-[448px] lg:w-[552px]">
           {{ t('workshops.hero.title') }}
@@ -63,6 +69,7 @@ const synopsisItems = computed(() => {
           image-name="tallers_footer"
           image-route="tallers"
           :alt="t('workshops.hero.alt')"
+          content-type="workshops"
         />
         <HireFili
           :title="t('workshops.hire.title')"
