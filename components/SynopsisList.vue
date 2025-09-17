@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CardImage } from "~/types";
+import type { CardImage, ContentType } from "~/types";
 
 const props = defineProps({
   claim: {
@@ -12,7 +12,7 @@ const props = defineProps({
     type: Array as () => Array<{
       description: Array<Record<string, any>>
       image: CardImage
-      bgColor: string
+      contentType: ContentType
       alt: string
       title: string
       buttons: {
@@ -35,7 +35,7 @@ const props = defineProps({
 <template>
   <div class="flex flex-col mt-20">
     <div class="grid-layout mb-20">
-      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl">
+      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl xl:w-[90%]">
         {{ claimTitle }} <br> {{ claim }}
       </h2>
     </div>
@@ -44,7 +44,7 @@ const props = defineProps({
       :key="index"
       :description="item.description"
       :image="item.image"
-      :bg-color="item.bgColor"
+      :content-type="item.contentType"
       :alt="item.alt"
       :title="item.title"
       :is-reversed="(index + 1) % 2 === 0"
