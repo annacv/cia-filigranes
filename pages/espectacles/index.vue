@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
-import type { ImageRoute } from "~/types";
+import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/";
+import { useGetImageAlt } from "~/composables/use-get-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -25,8 +26,8 @@ const synopsisItems = computed(() => {
         imageName: `espectacles_${show}`,
         imageRoute: 'espectacles' as ImageRoute,
       },
-      bgColor: 'bg-primary-500',
-      alt: t(`shows.commonAlt`, {title: title}),
+      contentType: 'shows' as ContentType,
+      alt: useGetImageAlt('shows', title).value,
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
