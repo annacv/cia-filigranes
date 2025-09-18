@@ -70,7 +70,7 @@ const getImage = (route: string, item?: string): CardImage => {
         <Synopsis
           :description="synopsis"
           :image="getImage('espectacles', 'vint-anys')"
-          bg-color="bg-primary-500"
+          content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{
             href: '/espectacles/vint-anys',
@@ -90,7 +90,7 @@ const getImage = (route: string, item?: string): CardImage => {
                   <ul class="flex w-full gap-1">
                     <li v-for="(item, index) in showItems" :key="index">
                       <SmallCard
-                        card-type="espectacles"
+                        content-type="shows"
                         :title="t(`routes.${item}`)"
                         :image="getImage('espectacles', item)"
                         :link="getLink(shows!.name,item)"
@@ -112,7 +112,7 @@ const getImage = (route: string, item?: string): CardImage => {
               <ul class="flex w-full gap-1">
                 <li v-for="(item, index) in workshops!.children" :key="index">
                   <SmallCard
-                    card-type="tallers"
+                    content-type="workshops"
                     :title="t(`routes.${item}`)"
                     :image="getImage('tallers', item)"
                     :link="getLink(workshops!.name,item)"
@@ -138,7 +138,7 @@ const getImage = (route: string, item?: string): CardImage => {
                 </div>
                 <SlidingPanel class="-skew-y-3">
                   <MidCard
-                    card-type="animacions"
+                    content-type="performances"
                     :title="t('performances.title')"
                     :images="PERFORMANCES_IMG"
                     :link="getLink('animacions')"

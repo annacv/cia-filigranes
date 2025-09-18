@@ -22,7 +22,6 @@ export default defineNuxtConfig({
       styles: ['normal', 'italic'],
     },
     families: [
-      { name: 'REM', provider: 'google' },
       { name: 'IBM Plex Sans', provider: 'google' },
       { name: 'IBM Plex Mono', provider: 'google' },
       { name: 'Archivo Black', provider: 'google' }

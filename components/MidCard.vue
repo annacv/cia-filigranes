@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { ImageRoute, CardLink, CardImage, CardType } from "~/types";
+import { ref, computed } from 'vue';
+import type { ImageRoute, CardLink, CardImage, ContentType } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
+import { useGetColor } from "~/composables/use-get-color.composable";
+import { useGetImageAlt } from "~/composables/use-get-image-alt.composable";
 
 const props = defineProps({
-  cardType: {
-    type: String as PropType<CardType>,
+  contentType: {
+    type: String as PropType<ContentType>,
     required: true
   },
   images: {
@@ -23,8 +25,9 @@ const props = defineProps({
 });
 
 const { t } = useI18n()
-
-const bgColor = computed(() => props.cardType === 'animacions' ? 'bg-tertiary-500/40' : props.cardType === 'espectacles' ? 'bg-primary-700/40': 'bg-secondary-700/40');
+const { gradientColorClass } = useGetColor(props.contentType);
+const { getImageAlt } = useGetImageAlt(props.contentType);
+const imageAlt = computed(() => getImageAlt(props.title));
 
 const hoveredImageIndex = ref<number | null>(null);
 
@@ -61,14 +64,14 @@ const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
             ? 'brightness-110 saturate-110 scale-105'
             : 'brightness-70 saturate-100 scale-100'"
             :src="setImageSrc(image.imageName, image.imageRoute)"
-            :alt="t('performances.commonAlt')"
+            :alt="imageAlt"
             loading="lazy"
             draggable="false"
           />
           <div
             v-if="hoveredImageIndex !== index"
             class="absolute inset-0 pointer-events-none transition-all duration-700"
-            :class="bgColor"
+            :class="gradientColorClass"
           ></div>
         </div>
       </NuxtLinkLocale>
