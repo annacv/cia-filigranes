@@ -2,7 +2,7 @@ import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import type { ContentType } from "~/types";
 
-export function useGetColor(contentType: ContentType): {
+export function useGetColor(contentType: ContentType | undefined): {
   bgColorClass: ComputedRef<string>;
   gradientColorClass: ComputedRef<string>;
   gradientOverlayValue: ComputedRef<string>;
@@ -12,7 +12,9 @@ export function useGetColor(contentType: ContentType): {
       ? 'bg-tertiary-500' 
       : contentType === 'shows' 
         ? 'bg-primary-500'
-        : 'bg-secondary-500'
+        : contentType === 'workshops'
+          ? 'bg-secondary-500'
+          : ''
   );
 
   const gradientColorClass = computed(() => 
@@ -28,7 +30,9 @@ export function useGetColor(contentType: ContentType): {
       ? 'var(--gradient-overlay-tertiary)' 
       : contentType === 'shows' 
         ? 'var(--gradient-overlay-primary)'
-        : 'var(--gradient-overlay-secondary)'
+        : contentType === 'workshops'
+          ? 'var(--gradient-overlay-secondary)'
+          : 'var(--gradient-overlay-primary)'
   );
 
   return {

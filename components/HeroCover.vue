@@ -50,7 +50,7 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
     class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid grid-cols-6 xl:grid-cols-12 items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
-        backgroundImage: `linear-gradient(to right bottom, ${props.contentType ? gradientOverlayValue : 'var(--gradient-overlay-primary)'}), url('${imageUrl}')`,
+        backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
       backgroundPosition: isScrolled ? 'center center' : 'center 30%',
       clipPath: currentClipPath,
       height: currentHeight

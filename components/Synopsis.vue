@@ -50,13 +50,11 @@ const { isMobile } = useDevice()
 const { t } = useI18n()
 const isHovered = ref(false)
 const imageUrl = getImageUrl(props.image.imageName, props.image.imageRoute);
+const { bgColorClass, gradientOverlayValue } = useGetColor(props.contentType);
 
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
-
-// Use useGetColor composable if contentType is defined, otherwise use default classes
-const { bgColorClass, gradientOverlayValue } = props.contentType ? useGetColor(props.contentType) : { bgColorClass: computed(() => ''), gradientOverlayValue: computed(() => '') };
 
 const getColors = computed(() => {
   if (props.contentType) {
@@ -132,7 +130,7 @@ const toggleHover = () => {
           isHovered || isMobile ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
         :style="{
-          backgroundImage: `linear-gradient(to right bottom, ${props.contentType ? gradientOverlayValue : 'var(--gradient-overlay-primary)'}), url('${imageUrl}')`,
+          backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : currentClipPath
         }"
