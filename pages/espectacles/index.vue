@@ -7,6 +7,7 @@ import { useGetImageAlt } from "~/composables/use-get-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
+const { getImageAlt } = useGetImageAlt('shows');
 
 useHead({
   meta: [
@@ -27,7 +28,7 @@ const synopsisItems = computed(() => {
         imageRoute: 'espectacles' as ImageRoute,
       },
       contentType: 'shows' as ContentType,
-      alt: useGetImageAlt('shows', title).value,
+      alt: getImageAlt(title),
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {

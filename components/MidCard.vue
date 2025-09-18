@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import type { ImageRoute, CardLink, CardImage, ContentType } from "~/types";
 import { getImageUrl } from "~/composables/use-get-image-url.composable";
 import { useGetColor } from "~/composables/use-get-color.composable";
@@ -26,7 +26,8 @@ const props = defineProps({
 
 const { t } = useI18n()
 const { gradientColorClass } = useGetColor(props.contentType);
-const imageAlt = useGetImageAlt(props.contentType, props.title);
+const { getImageAlt } = useGetImageAlt(props.contentType);
+const imageAlt = computed(() => getImageAlt(props.title));
 
 const hoveredImageIndex = ref<number | null>(null);
 
