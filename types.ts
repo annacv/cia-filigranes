@@ -17,13 +17,15 @@ export type RouteItem = {
 
 /**
  * Image route types for asset organization
+ * Set in ca to match the image route in the assets' folder
  */
 export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte'
 
 /**
- * Card type for the Filigranes project
+ * Content type for the Filigranes project
+ * Set in en to match the content type in the translations
  */
-export type CardType = 'animacions' | 'espectacles' | 'tallers';
+export type ContentType = 'performances' | 'shows' | 'workshops';
 
 /**
  * Card link configuration

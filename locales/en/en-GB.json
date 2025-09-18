@@ -24,9 +24,9 @@
     "circ": "Circus",
     "pallassos": "Clowns",
     "maquillatge": "Makeup",
-    "enginys-aigua": "Water devices",
+    "enginys-aigua": "Water tricks",
     "animacions": "Animations",
-    "filipersones": "Filipersones",
+    "filipersones": "Filipeople",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contact"
@@ -144,9 +144,87 @@
     }
   },
   "workshops": {
-    "commonAlt": "Image of the {title} workshop"
+    "metaDescription": "Workshops for all ages: circus, clowns, makeup, water tricks, soap bubbles...",
+    "commonAlt": "Image of the {title} workshop",
+    "claimTitle": "Courses, monographs, or seasonal workshops...",
+    "claim": "Workshops for little and adult people who want to learn and have fun!",
+    "hero": {
+      "title": "Workshops that stimulate the artist within you!",
+      "alt": "Image of the Filigranes Company Circus Workshop"
+    },
+    "hire": {
+      "title": "Do you want to hire any of our workshops?",
+      "titleSingle": "Do you want to hire the workshop?",
+      "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "circ": {
+      "abstract": [
+        {
+          "paragraph": " "
+        }
+      ],
+      "list": [
+        {
+          "title": "Circus Workshop",
+          "description": " "
+        },
+        {
+          "title": " ",
+          "description": " "
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "Our passion for circus arises us to open its doors widely! We want to share this passion with you and give you the chance to get in touch with it in a fun and educational way."
+        },
+        {
+          "paragraph": "In this workshop you will be able to try various techniques and disciplines of the circus world."
+        }
+      ]
+    },
+    "bombolles-sabo": {
+      "synopsis": [
+        {
+          "paragraph": "How is it possible?! A soap bubble bigger than your head! Do you want to do it with your own hands?"
+        },
+        {
+          "paragraph": "We'll fill all with soap bubbles of different sizes! We'll make you dance and fly! Come and discover this so peculiar and creative technique."
+        }
+      ]
+    },
+    "pallassos": {
+      "synopsis": [
+        {
+          "paragraph": "We introduce you the red nose! With it we will enter into the world of clowns, in humor, innocence and generosity."
+        },
+        {
+          "paragraph": "We will learn to look with this nose, to use the body mask and build our own amusing character!"
+        }
+      ]
+    },
+    "maquillatge": {
+      "synopsis": [
+        {
+          "paragraph": "The facial art of fantasy allows us to create our own and unique character!"
+        },
+        {
+          "paragraph": "The skin will become our own mask and will help us to stimulate the imagination. So, when it ends... just look at the faces and get into the character!"
+        }
+      ]
+    },
+    "enginys-aigua": {
+      "synopsis": [
+        {
+          "paragraph": "Few things are as fun as playing with water! We will refresh and learn at the same time!"
+        },
+        {
+          "paragraph": "We will enjoy an itinerary with different stations, where youngsters and children will go through while practicing their skills in a funny way."
+        }
+      ]
+    }
   },
   "performances": {
+    "metaDescription": "Custom animations. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
     "commonAlt": "Image of custom animations",
     "title": "Custom animations"
   }
