@@ -1,11 +1,11 @@
-import { computed } from "vue";
-import type { ComputedRef } from "vue";
 import type { ContentType } from "~/types";
 
-export function useGetImageAlt(contentType: ContentType, title?: string): ComputedRef<string> {
+export function useGetImageAlt(contentType: ContentType): {
+  getImageAlt: (title?: string) => string;
+} {
   const { t } = useI18n();
   
-  return computed(() => {
+  const getImageAlt = (title?: string) => {
     switch (contentType) {
       case 'performances':
         return t('performances.commonAlt');
@@ -16,5 +16,9 @@ export function useGetImageAlt(contentType: ContentType, title?: string): Comput
       default:
         return '';
     }
-  });
+  };
+
+  return {
+    getImageAlt
+  };
 }
