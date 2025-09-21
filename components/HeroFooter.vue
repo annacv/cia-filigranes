@@ -30,7 +30,7 @@ const imageUrl = getImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useGetColor(props.contentType);
 
 const mobileHeight = '400px';
-const desktopHeight = '900px';
+const desktopHeight = '800px';
 const deviceHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
 
 const mobileClip = '6%';
