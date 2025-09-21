@@ -10,9 +10,9 @@ function onScroll() {
   const scrollTop = window.scrollY
   const windowHeight = window.innerHeight
   const documentHeight = document.documentElement.scrollHeight
-  
+
   isScrolled.value = scrollTop > 0
-  hasReachedBottom.value = scrollTop + windowHeight >= documentHeight - 400
+  hasReachedBottom.value = scrollTop + windowHeight >= documentHeight - 500
 }
 
 export function useScroll() {

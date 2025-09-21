@@ -35,7 +35,7 @@ const props = defineProps({
 <template>
   <div class="flex flex-col mt-20">
     <div class="grid-layout mb-20">
-      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl xl:w-[90%]">
+      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl 2xl:w-[90%]">
         {{ claimTitle }} <br> {{ claim }}
       </h2>
     </div>
