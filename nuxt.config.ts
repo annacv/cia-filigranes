@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/device",
     "@nuxt/fonts",
     "nuxt-svgo",
+    "@nuxt/scripts",
   ],
   svgo: {
     svgoConfig: {},
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     defaultLocale: "ca",
     detectBrowserLanguage: false,
-    vueI18n: "./i18n.config.ts",
+    vueI18n: "./i18n.config.ts"
   },
   compatibilityDate: "2025-06-27",
 });

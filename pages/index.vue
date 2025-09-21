@@ -3,7 +3,8 @@ import { computed } from 'vue';
 import { LOCALE_ROUTES, PERFORMANCES_IMG } from "~/constants";
 import { useI18n } from "vue-i18n";
 import type { CardLink, CardImage, ImageRoute } from "~/types";
-import { getItemsByRoute, reorderItems } from "~/utils/";
+import { getItemsByRoute } from "~/utils/items-by-route";
+import { reorderItems } from "~/utils/reorder-items";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
