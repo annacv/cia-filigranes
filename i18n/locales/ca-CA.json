@@ -33,7 +33,8 @@
   },
   "button": {
     "dossier": "Dossier",
-    "info": "Més info"
+    "info": "Més info",
+    "fullShow": "Veure l'espectacle sencer"
   },
   "selectLang": "Escull l'idioma",
   "footer": {
@@ -63,6 +64,7 @@
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
     },
     "vint-anys": {
+      "metaDescription": "20 anys no són res - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. Un espectacle emotiu que combina humor, malabars i música en directe.",
       "abstract": [
         {
           "paragraph": "Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. La il·lusió, la fraternitat i el pas del temps adquireixen una força especial, així com les relacions humanes, les competències i les complicitats."
@@ -84,6 +86,58 @@
         },
         {
           "paragraph": "En un gest d’ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s’han fet l’un a l’altre."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 2h. Desmuntatge: 1h."
+        },
+        {
+          "title": "Mides",
+          "description": "Exterior mínima: 9,5m x 6m. Teatre mínima: 8m x 6m. Exterior o teatre ideal: 11m x 8m."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escena i pista circular. Carpa darrera escena per exterior."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros in·nalàmbrics."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "20 anys no són res",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallassos",
+          "description": "Jordi Torrens i Albert Pérez"
+        },
+        {
+          "title": "Direcció",
+          "description": "Walter Velázquez"
+        },
+        {
+          "title": "Tècnic de llums i so",
+          "description": "Franc Pascual"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Fotografia",
+          "description": "Gerard Banyó"
+        },
+        {
+          "title": "Disseny gràfic",
+          "description": "Anna Condal"
         }
       ]
     },

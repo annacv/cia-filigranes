@@ -33,7 +33,8 @@
   },
   "button": {
     "dossier": "Dosier",
-    "info": "Más info"
+    "info": "Más info",
+    "fullShow": "Ver todo el espectáculo"
   },
   "selectLang": "Elige idioma",
   "footer": {
@@ -63,6 +64,7 @@
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
     },
     "vint-anys": {
+      "metaDescription": "20 años no son nada - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. Un espectáculo emotivo que combina humor, malabares y música en directo.",
       "abstract": [
         {
           "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
@@ -84,6 +86,62 @@
         },
         {
           "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Tiempo de montaje: 2h. Tiempo de desmontaje: 1h."
+        },
+        {
+          "title": "Medidas",
+          "description": "Exterior mínima: 9,5m x 6m. Teatro mínima: 8m x 6m. Exterior o teatro ideal: 11m x 8m."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escena y pista circular. Carpa detrás del escenario para exterior."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 2 micros inalámbricos."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Título",
+          "description": "20 años no son nada"
+        },
+        {
+          "title": "Compañía",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payasos",
+          "description": "Jordi Torrens y Albert Pérez"
+        },
+        {
+          "title": "Dirección",
+          "description": "Walter Velázquez"
+        },
+        {
+          "title": "Técnico de luces y sonido",
+          "description": "Franc Pascual"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Fotografía",
+          "description": "Gerard Banyó"
+        },
+        {
+          "title": "Diseño gráfico",
+          "description": "Anna Condal"
         }
       ]
     },
