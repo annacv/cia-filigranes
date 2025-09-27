@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import { useGetColor } from "~/composables/use-get-color.composable";
+import { useImageUrl } from "~/composables/use-image-url.composable";
+import { useColor } from "~/composables/use-color.composable";
 import type { CardImage, ContentType } from "~/types";
 import ArrowRight from "assets/icons/arrow-right.svg";
 import ArrowDown from "assets/icons/arrow-down.svg";
@@ -49,8 +49,8 @@ const props = defineProps({
 const { isMobile } = useDevice()
 const { t } = useI18n()
 const isHovered = ref(false)
-const imageUrl = getImageUrl(props.image.imageName, props.image.imageRoute);
-const { bgColorClass, gradientOverlayValue } = useGetColor(props.contentType);
+const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
+const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
 
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';

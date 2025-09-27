@@ -3,7 +3,7 @@ import { NuxtLink } from "#components";
 import { useSlots } from 'vue'
 
 const props = withDefaults(defineProps<{
-  href: string
+  href?: string
   download?: string
   target?: string
   buttonClass?: string | object | any[]
@@ -18,9 +18,9 @@ const slots = useSlots()
 const hasTextSlot = computed(() => !!slots.text)
 const paddingClass = computed(() => (hasTextSlot.value ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
 const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
-const componentType = computed(() => (isDownload.value ? 'a' as const : NuxtLink))
+const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLink : 'button'))
 
-const linkProps = computed(() =>
+const buttonProps = computed(() =>
   isDownload.value
     ? {
       alt: props.text,
@@ -29,10 +29,14 @@ const linkProps = computed(() =>
       rel: 'noopener noreferrer',
       target: props.target
     }
-    : {
+    : !isDownload.value && props.href ? 
+    {
       alt: props.text,
       to: props.href,
       target: props.target
+    }
+    : {
+      alt: props.text
     }
 )
 </script>
@@ -41,7 +45,7 @@ const linkProps = computed(() =>
   <component
     :is="componentType"
     :type="isDownload ? 'application/pdf' : 'text/html'"
-    v-bind="linkProps"
+    v-bind="buttonProps"
     class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal gap-2 w-max"
     :class="[paddingClass, buttonClass]"
     role="button"

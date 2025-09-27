@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { getImageUrl } from "~/composables/use-get-image-url.composable";
-import { useGetColor } from "~/composables/use-get-color.composable";
+import { useImageUrl } from "~/composables/use-image-url.composable";
+import { useColor } from "~/composables/use-color.composable";
 import { useScroll } from "~/composables/use-scroll.composable";
 import type { ImageRoute, ContentType } from "~/types";
 
@@ -26,8 +26,8 @@ const props = defineProps({
 
 const { isMobile } = useDevice()
 const { isScrolled } = useScroll()
-const imageUrl = getImageUrl(props.imageName, props.imageRoute);
-const { gradientOverlayValue } = useGetColor(props.contentType);
+const imageUrl = useImageUrl(props.imageName, props.imageRoute);
+const { gradientOverlayValue } = useColor(props.contentType);
 
 const mobileHeight = '72px';
 const desktopHeight = '87px';
