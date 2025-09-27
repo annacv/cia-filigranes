@@ -2,7 +2,10 @@
 import { computed } from 'vue';
 import { useI18n } from "vue-i18n";
 import { getItemsByRoute } from "~/utils/items-by-route";
+import { reorderItems } from "~/utils/reorder-items";
+import { getImageByRoute } from "~/utils/image-by-route";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
+
 
 const props = defineProps({
 	reorderIndex: {
@@ -17,7 +20,7 @@ const shows = getItemsByRoute('espectacles');
 
 const showItems = computed(() => {
   if (!shows?.children) return [];
-	if (props.reorderIndex) return reorderItems(shows.children, props.reorderIndex);
+	if (props.reorderIndex !== undefined) return reorderItems(shows.children, props.reorderIndex);
   return shows.children;
 });
 </script>

@@ -15,7 +15,7 @@ const props = defineProps({
 const { t } = useI18n()
 
 const performancesItems = computed(() => {
-	if (props.reorderIndex) return reorderItems(PERFORMANCES_IMG, props.reorderIndex);
+	if (props.reorderIndex !== undefined) return reorderItems(PERFORMANCES_IMG, props.reorderIndex);
   return PERFORMANCES_IMG;
 });
 </script>

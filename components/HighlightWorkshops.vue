@@ -2,6 +2,8 @@
 import { computed } from 'vue';
 import { LOCALE_ROUTES } from "~/constants";
 import { useI18n } from "vue-i18n";
+import { getItemsByRoute } from "~/utils/items-by-route";
+import { reorderItems } from "~/utils/reorder-items";
 import type { CardLink, CardImage, ImageRoute } from "~/types";
 
 const { t, locale } = useI18n()
@@ -17,7 +19,7 @@ const workshops = getItemsByRoute('tallers');
 
 const workshopItems = computed(() => {
   if (!workshops?.children) return [];
-  if (props.reorderIndex) return reorderItems(workshops.children, props.reorderIndex);
+  if (props.reorderIndex !== undefined) return reorderItems(workshops.children, props.reorderIndex);
   return workshops.children;
 });
 
