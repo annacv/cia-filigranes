@@ -43,9 +43,7 @@ const closeVideo = () => {
       :alt="t('home.hero.alt')"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl w-[300px] md:w-[448px] lg:w-[552px]">
-          {{ t('routes.vint-anys') }}
-        </h1>
+        <VintAnysBrand class="-scale-x-100 w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px]"/>
       </template>
       </HeroCover>
     <MainContent>

@@ -108,7 +108,7 @@
         },
         {
           "title": "Llum i so",
-          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros in·nalàmbrics."
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros sense fils."
         }
       ],
       "artCard": [
@@ -143,7 +143,22 @@
       ]
     },
     "plis-plas": {
-      "alt": "Imatge de l'espectacle Plis Plas",
+      "metaDescription": "Plis Plas - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Amb una cadira, un embut o una galleda, en Makutu i en Trinxeta ens faran gaudir d'un estira i arronsa constant, combinant gags clàssics amb malabars i música en directe.",
+      "abstract": [
+        {
+          "paragraph": "La clau d'aquesta obra és un joc constant d'estira i arronsa, que dona lloc a una relació impregnada de fantasia, semblant al món real en el que viuen els nens/es, alhora entranyable i conflictiva. Entre el Clown (Makutu) i l'August (Toti) hi ha una relació on s'equilibren curosament la rivalitat i la complicitat."
+        }
+      ],
+      "list": [
+        {
+          "title": "Plis Plas",
+          "description": "Espectacle de pallassos pensat per a un públic familiar, participatiu, amb trucs i entremaliadures constants."
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Plis Plas és un espectacle on el Toti i el Makutu no paren de fer-se la “punyeta”: s'enfaden a tort i a dret, però l’amistat sempre acaba prevalent."
@@ -151,10 +166,97 @@
         {
           "paragraph": "Amb una cadira, un embut o una galleda ens faran, amb el seu toc personal, gags clàssics combinats amb malabars i música en directe."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 1h 30min. Desmuntatge: 45min."
+        },
+        {
+          "title": "Mides",
+          "description": "Espai mínim: 6m (ample) x 8m (fons). Superfície plana."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escenari rodó i pista semicircular, exterior o sala."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros sense fils."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Plis Plas",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallassos",
+          "description": "Jordi Torrens i Albert Pérez"
+        },
+        {
+          "title": "Direcció General",
+          "description": "Carles Grau"
+        },
+        {
+          "title": "Ajudant de Direcció",
+          "description": "Montserrat Morera"
+        },
+        {
+          "title": "Dramatúrgia",
+          "description": "Carles Grau i Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Marina Díaz"
+        },
+        {
+          "title": "Arranjaments musicals",
+          "description": "Marc Monzó"
+        },
+        {
+          "title": "Assessorament amb malabars",
+          "description": "Cristhian Uroz"
+        },
+        {
+          "title": "Tècnic de llums i so",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Tonet Amorós i Cia.Filigranes"
+        },
+        {
+          "title": "Fotografia",
+          "description": "Gerard Banyó"
+        },
+        {
+          "title": "Disseny gràfic",
+          "description": "Anna Condal"
+        }
       ]
     },
     "circ-filixic": {
-      "alt": "Imatge de l'espectacle el Circ Filixic",
+      "metaDescription": "Circ Filixic - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu i en Trinxeta ens faran gaudir d'un dels circs més petits del món. Una història plena de sorpreses, obra de pallassos, on es fusionen diferents disciplines del món del circ.",
+      "abstract": [
+        {
+          "paragraph": "Aquests dos pallassos experimentats ens sorprendran amb un espectacle amb diversos números recuperats de l'històric Circ Filigranes. El Monocicle Giravolt; l'Ale-hop Hula-hop; o els fantàstics malabaristes The Tal Kual Brothers, amb el seu número reconegut internacionalment amb el nom de Xiguagua: amb passing de maces i un espatarrant final damunt les boles d'equilibri!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Circ Filixic",
+          "description": "Companyia Filigranes, 2017"
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "60 minuts"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Benvinguts i benvingudes al Circ Filixic! Un dels circs més petits del món!!!! El Sr.Makutu, presentador de l'històric “Circ Filigranes” surt a la pista amb un altre pallasso: el gran Trinxeta!!"
@@ -162,10 +264,77 @@
         {
           "paragraph": "Una història plena de sorpreses, obra de pallassos, on es fusionen diferents disciplines del món del circ."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "60 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 1h 30min. Desmuntatge: 45min."
+        },
+        {
+          "title": "Mides",
+          "description": "Espai mínim: 6m (ample) x 8m (fons)."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escenari i pista semicircular."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros sense fils."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "El Circ Filixic",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallassos",
+          "description": "Jordi Torrens i Albert Pérez"
+        },
+        {
+          "title": "Direcció General i Dramatúrgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Tècnic de llums i so",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia.Filigranes"
+        },
+        {
+          "title": "Fotografia",
+          "description": "Marta Garcia"
+        }
       ]
     },
     "circ-makutu": {
-      "alt": "Imatge de l'espectacle el Petit Circ de Makutu",
+      "metaDescription": "Circ Makutu - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu ens farà vibrar amb un munt d'artistes que haurem de descobrir entre tots i totes!",
+      "abstract": [
+        {
+          "paragraph": "En aquesta història, Makutu ens endinsa en el món del circ i amb la participació del públic assistent, podrem veure de més a prop diferents disciplines circenses, amb l'humor com a principal protagonista. Vet aquí un gos, vet aquí un gat, i aquest conte s'ha acabat."
+        }
+      ],
+      "list": [
+        {
+          "title": "El Petit Circ de Makutu",
+          "description": "Companyia Filigranes, 2019"
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "En un poble petitet, entre muntanyes, va arribar un circ menut i increïble, amb els seus carruatges, les seves caravanes i..."
@@ -173,10 +342,73 @@
         {
           "paragraph": "...un seguit d'artistes que haurem de descobrir entre tots i totes!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 1h 30min. Desmuntatge: 1h."
+        },
+        {
+          "title": "Mides",
+          "description": "Espai mínim: 3m (ample) x 3m (fons). Superfície plana."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escenari i pista semicircular."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 1 micro sense fil."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "El Petit Circ de Makutu",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallasso",
+          "description": "Albert Pérez"
+        },
+        {
+          "title": "Direcció General i Dramatúrgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Tècnic de llums i so",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia.Filigranes"
+        }
       ]
     },
     "circ-trinxeta": {
-      "alt": "Imatge de l'espectacle Trinxat no Tremola",
+      "metaDescription": "Circ Trinxeta - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Trinxeta ens farà volar amb un viatge galàctic pels diferents planetes ple de sorpreses.",
+      "abstract": [
+        {
+          "paragraph": "En Trinxeta ens convida a fer un viatge per tota la nostra galàxia i conèixer nous móns. Poc a poc descobrirem els secrets de cada planeta, tot jugant amb diferents tècniques de circ, fins a tornar a la terra."
+        }
+      ],
+      "list": [
+        {
+          "title": "Trinxat no Tremola",
+          "description": "Companyia Filigranes, 2019"
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Al Trinxeta li encanta viatjar i conèixer nous móns, a més li agrada el cel de nit i observar les estrelles. Ell ja està decidit, vol fer un vol galàctic pels diferents planetes."
@@ -184,16 +416,123 @@
         {
           "paragraph": "Us animeu a fer un viatge ple de sorpreses? Doncs som-hi!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 1h 30min. Desmuntatge: 1h."
+        },
+        {
+          "title": "Mides",
+          "description": "Espai mínim: 3m (ample) x 3m (fons). Superfície plana."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escenari i pista semicircular."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 1 micro sense fil."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Trinxat no Tremola",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallasso",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "Direcció General i Dramatúrgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Tècnic de llums i so",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia.Filigranes"
+        }
       ]
     },
     "freak-frac": {
-      "alt": "Imatge de l'espectacle Cercavila Germans Freak Frac",
+      "metaDescription": "Cercavila Germans Freak Frac - Espectacle itinerant de pallassos i circ per a totes les edats de la Companyia Filigranes. Els Germans Freak Frac ens faran gaudir d'una bona estonaamb sorpreses, xanquers, malabars i música en directe.",
+      "abstract": [
+        {
+          "paragraph": "Espectacle itinerant amb músics en viu (saxo i/o percussió) i els nostres increïbles xanquers. Ens captivaran amb els seus ritmes en moviment constant! Diferents parades amb rutines de malabars, com maces i diàbolos, salt de corda... acompanyats sempre de música. Ideal per amenitzar fires, mercats, rues... on la interacció amb el públic és el primordial."
+        }
+      ],
+      "list": [
+        {
+          "title": "Cercavila Germans Freak Frac",
+          "description": "Companyia Filigranes i Associació de Circ Tub d'Assaig 7'70, 2013."
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "Durada mínima de 60 minuts"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Atenció!!! Ja arriben!! Sento el ritme de la música que em fa moure..."
         },
         {
           "paragraph": "Oh!! Quins personatges més alts! Se'ls veu arribar d'un tros lluny! Guaita, els músics, com segueixen al Directore! Dels instruments sorgeixen les notes que s'enfilen per carrerons i places..."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "Durada mínima de 60 minuts."
+        },
+        {
+          "title": "Temps de preparació",
+          "description": "1h 30min."
+        },
+        {
+          "title": "Espai",
+          "description": "Espectacle itinerant de carrer, adaptable a interior."
+        },
+        {
+          "title": "*",
+          "description": "Possibilitat de variació de la durada de la cercavila, en funció de l’espai i del nombre de sortides."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Cercavila Germans Freak Frac",
+          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+        },
+        {
+          "title": "Els Xanquers",
+          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández i Victor Sánchez"
+        },
+        {
+          "title": "Els Músics",
+          "description": "Victor Sánchez (SAXO), Jordi Torrens (BOMBO), Remy Geoffroy (CAIXA), Tyle Michael Fernández (SAXO i/o CLARINET)"
+        },
+        {
+          "title": "Direcció General",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+        },
+        {
+          "title": "*",
+          "description": "Possibilitat de variació del nombre d’actors"
         }
       ]
     }
