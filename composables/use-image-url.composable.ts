@@ -25,7 +25,7 @@ const desktopMap: Record<ImageRoute, Record<string, string>> = {
  * @param {ImageRoute} route - The route where the image is allocated in the assets' folder.
  * @returns {string | undefined} The resolved image URL or undefined if not found.
  */
-export function getImageUrl(imageName: string, route: ImageRoute): ComputedRef<string | undefined> {
+export function useImageUrl(imageName: string, route: ImageRoute): ComputedRef<string | undefined> {
   const { isMobile } = useDevice();
   const imageMap = isMobile ? mobileMap : desktopMap;
   const images = imageMap[route] || {};
