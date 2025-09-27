@@ -1,3 +1,103 @@
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+import { getImageByRoute } from "~/utils/image-by-route";
+
+const { t, locale } = useI18n();
+const { getTranslatedList } = useI18nUtils()
+
+useHead({
+  meta: [
+    { name: 'description', content: t('shows.vint-anys.metaDescription') }
+  ]
+})
+
+const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
+const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
+const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
+const techCard = getTranslatedList('shows.vint-anys.techCard', ['title', 'description'])
+const artCard = getTranslatedList('shows.vint-anys.artCard', ['title', 'description'])
+
+const summaryButton = computed(() => {
+  return {
+    download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
+    href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
+  }
+});
+
+const openIframeModal = () => {
+  console.log('opened')
+}
+</script>
+
 <template>
-  20 annys
+  <HeroCover
+    image-name="espectacles_vint-anys-4"
+    image-route="espectacles"
+    :alt="t('home.hero.alt')"
+    >
+    <template #content>
+      <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl w-[300px] md:w-[448px] lg:w-[552px]">
+        {{ t('routes.vint-anys') }}
+      </h1>
+    </template>
+    </HeroCover>
+  <MainContent>
+    <template #wrapped>
+      <Summary
+        :abstract="abstract"
+        :items="summaryItems"
+        :button="summaryButton"
+      />
+      <div class="pt-2 pb-12 lg:pt-4 lg:pb-24">
+        <YoutubePlayer video-id="TBbBS05njec" />
+        <FiliButton
+          class="mt-1"
+          buttonClass="text-neutral-900 rounded-none border-t-0 border-x-0 !p-1 hover:border-black justify-self-end"
+          :text="t('button.fullShow')"
+          @click="openIframeModal"
+        >
+          <template #text>
+            {{ t('button.fullShow') }}
+          </template>
+        </FiliButton>
+      </div>
+    </template>
+    <template #unwrapped>
+      <Synopsis
+        :description="synopsis"
+        :image="getImageByRoute('espectacles', 'vint-anys-3')"
+        content-type="shows"
+        :alt="t('home.hero.alt')"
+        show-full-content
+      />
+      <DataSheet
+        :techCard="techCard"
+        :artCard="artCard"
+        :image="getImageByRoute('espectacles', 'vint-anys-2')"
+        :alt="t('home.hero.alt')"
+        isReversed
+      />
+      <HireFili
+        class="py-12"
+        :title="t('shows.hire.titleSingle')"
+        description="shows.hire.description"
+        textColor="text-white"
+        bgColor="bg-primary-500"
+      />
+      <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
+        <HighlightShows :reorderIndex="0"/>
+        <HighlightWorkshops />
+        <HighlightPerformances />
+      </div>
+    </template>
+  </MainContent>
+  <HeroFooter
+    image-name="hero_footer"
+    image-route=""
+    :alt="t('home.hero.alt')"
+  />
+  <HireFili
+    :title="t('home.hire.title')"
+    description="home.hire.description"
+  />
 </template>

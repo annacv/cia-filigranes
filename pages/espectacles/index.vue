@@ -3,11 +3,11 @@ import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/items-by-route";
-import { useGetImageAlt } from "~/composables/use-get-image-alt.composable";
+import { useImageAlt } from "~/composables/use-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
-const { getImageAlt } = useGetImageAlt('shows');
+const { imageAlt: getImageAlt } = useImageAlt('shows');
 
 useHead({
   meta: [
