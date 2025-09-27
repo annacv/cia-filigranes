@@ -11,7 +11,7 @@ export function reorderItems<T>(array: T[], position: number): T[] {
   if (position === array.length - 1) return [...array];
 
   const beforePosition = array.slice(0, position);
-  const itemAtPosition = array[position];
+  const itemAtPosition = array[position]!;
   const afterPosition = array.slice(position + 1);
 
   return [...afterPosition, ...beforePosition, itemAtPosition];
