@@ -34,7 +34,8 @@
   "button": {
     "dossier": "Dosier",
     "info": "Más info",
-    "fullShow": "Ver todo el espectáculo"
+    "fullShow": "Ver todo el espectáculo",
+    "playVideo": "Haz clic para ver el video"
   },
   "selectLang": "Elige idioma",
   "footer": {

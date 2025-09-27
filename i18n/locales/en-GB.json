@@ -34,7 +34,8 @@
   "button": {
     "dossier": "Dossier",
     "info": "More info",
-    "fullShow": "Watch the full show"
+    "fullShow": "Watch the full show",
+    "playVideo": "Click to watch the video"
   },
   "selectLang": "Choose language",
   "footer": {
