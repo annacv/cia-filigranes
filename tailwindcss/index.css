@@ -102,10 +102,10 @@
 
   /* Primary Outline Button */
   .button-outline-primary {
-    @apply border-primary-500 text-primary-500;
+    @apply border-primary-700 text-primary-700;
   }
   .button-outline-primary:hover {
-    @apply bg-primary-500 text-white;
+    @apply bg-primary-700 text-white;
   }
 
   /* Secondary Outline Button */
@@ -118,10 +118,10 @@
 
   /* Tertiary Outline Button */
   .button-outline-tertiary {
-    @apply border border-tertiary-500 text-tertiary-500;
+    @apply border border-tertiary-700 text-tertiary-700;
   }
   .button-outline-tertiary:hover {
-    @apply bg-tertiary-500 text-white;
+    @apply bg-tertiary-700 text-white;
   }
 
   /* Button Arrows */
