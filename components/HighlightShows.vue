@@ -6,7 +6,6 @@ import { reorderItems } from "~/utils/reorder-items";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
 
-
 const props = defineProps({
 	reorderIndex: {
 		type: Number,

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
+import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
@@ -74,7 +75,7 @@ const summaryButton = computed(() => {
           bgColor="bg-primary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows :reorderIndex="5"/>
+          <HighlightShows :reorderIndex="getItemIndex('espectacles', 'freak-frac')" />
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>

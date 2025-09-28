@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
+import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -51,7 +52,7 @@ const summaryButton = computed(() => {
           }"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows :reorderIndex="0"/>
+          <HighlightShows :reorderIndex="getItemIndex('espectacles', 'vint-anys')" />
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>
