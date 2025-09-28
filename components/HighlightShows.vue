@@ -6,8 +6,11 @@ import { reorderItems } from "~/utils/reorder-items";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
 
-
 const props = defineProps({
+	isCurrentContent: {
+		type: Boolean,
+		default: false
+	},
 	reorderIndex: {
 		type: Number,
 		required: false
@@ -31,7 +34,7 @@ const showItems = computed(() => {
     contentLink="/espectacles"
     titleClasses="-skew-y-3 hover:text-primary-700"
     css-classes="highlight-content--1"
-    isCurrentContent
+    :isCurrentContent="isCurrentContent"
   >
     <template #content>
 			<SlidingPanel class="-skew-y-3">

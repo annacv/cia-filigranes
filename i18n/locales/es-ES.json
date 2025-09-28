@@ -259,7 +259,7 @@
       ],
       "synopsis": [
         {
-          "paragraph": "¡¡¡ Bienvenidas y bienvenidos !!!! Al Circo Filixic: uno de los circos más pequeños del mundo!!!! El Sr.Makutu, presentador del histórico "Circo Filigranes" sale a la pista con otro payaso: ¡¡el gran Trinxeta!!"
+          "paragraph": "¡¡¡ Bienvenidas y bienvenidos !!!! Al Circo Filixic: uno de los circos más pequeños del mundo!!!! El Sr.Makutu, presentador del histórico \"Circo Filigranes\" sale a la pista con otro payaso: ¡¡el gran Trinxeta!!"
         },
         {
           "paragraph": "Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo."
@@ -540,6 +540,7 @@
   "workshops": {
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
+    "commonTitle": "Taller de {title}",
     "claimTitle": "Cursos, monográficos, o talleres de temporada...",
     "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {
@@ -552,19 +553,15 @@
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
     },
     "circ": {
+      "metaDescription": "Taller de Circo - Taller para todas las edades de la Compañía Filigranes. Con este taller podréis conocer de primera mano las diversas técnicas y disciplinas del mundo del circo.",
       "abstract": [
         {
-          "paragraph": " "
+          "paragraph": "El aprendizaje de las diversas disciplinas circenses ayuda a desarrollar la psicomotricidad, la coordinación y descoordinación, y la agilidad mental. Siguiendo las pautas marcadas por los talleristas las participantes podrán experimentar y elegir la técnica que más les motive."
         }
       ],
       "list": [
         {
-          "title": "Taller de Circo",
-          "description": " "
-        },
-        {
-          "title": " ",
-          "description": " "
+          "title": "* El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -574,9 +571,78 @@
         {
           "paragraph": "Con este taller conoceréis de primera mano las diversas técnicas y disciplinas del mundo del circo."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Espacio",
+          "description": "Taller recomendado para un espacio exterior amplio, con suelo firme y plano. En caso de realizarse en el interior, se requiere una altura mínima de 3 metros."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Es necesario un punto de luz para el equipo de sonido."
+        },
+        {
+          "title": "Recomendaciones",
+          "description": "Se recomienda llevar ropa cómoda, preferiblemente chándal y zapatillas."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Circo",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Malabares",
+          "description": "Práctica con mazas, diábolo, palos y platos chinos, boleies, bolas..."
+        },
+        {
+          "title": "Equilibrios",
+          "description": "Bola de equilibrio, monociclo, \"rulos\", zancos y cable (funambulismo)..."
+        }
       ]
     },
     "bombolles-sabo": {
+      "metaDescription": "Taller de Burbujas de Jabón - Taller para todas las edades de la Compañía Filigranes. Con este taller podréis conocer de primera mano la técnica de las burbujas de jabón.",
+      "abstract": [
+        {
+          "paragraph": "Aprenderemos a preparar la mezcla idónea y cómo utilizar diferentes aparatos para conseguir increíbles burbujas en constante movimiento! Nos adentraremos en un mundo de formas y colores que aprenderemos a manipular según nuestro deseo!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Taller de temporada."
+        },
+        {
+          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Espacio",
+          "description": "Taller de temporada, se recomienda realizarlo en el exterior."
+        },
+        {
+          "title": "Punto de agua",
+          "description": "Es necesario un punto de agua al lado (preferiblemente con manguera)."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Es necesario un punto de luz para el equipo de sonido."
+        },
+        {
+          "title": "Recomendaciones",
+          "description": "Utilizar ropa cómoda y calzado que se pueda mojar."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Burbujas de Jabón",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "description": "Los/las talleristas harán demostraciones y nos guiarán en el aprendizaje del arte de hacer burbujas mediante diversos aparatos en contacto con agua y jabón."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "¡¡¿Como es posible?!! ¡¡Una burbuja de jabón más grande que tu cabeza!! ¿Quieres hacerla con tus propias manos?"
@@ -587,6 +653,17 @@
       ]
     },
     "pallassos": {
+      "metaDescription": "Taller de Payasos - Taller para todas las edades de la Compañía Filigranes. Os presentamos la nariz roja! Con ella nos adentraremos en el mundo de los payasos, en el humor, la inocencia y la generosidad.",
+      "abstract": [
+        {
+          "paragraph": "Aprenderemos técnicas teatrales para desarrollar la expresión corporal, la consciencia del espacio y la comunicación individual y grupal. Y pondremos en práctica técnicas que nos ayudarán a aumentar la autoestima y a perder la vergüenza y el miedo a expresarse en público."
+        }
+      ],
+      "list": [
+        {
+          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "¡Os presentamos la nariz roja! Con ella nos adentraremos en el mundo de los payasos, en el humor, la inocencia y la generosidad."
@@ -594,9 +671,43 @@
         {
           "paragraph": "Aprenderemos a mirar con esta nariz, a utilizar la máscara corporal ¡y buscaremos nuestro personaje!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Materiales",
+          "description": "Todos los materiales serán facilitados por la Compañía Filigranes."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Es necesario un punto de luz para el equipo de sonido."
+        },
+        {
+          "title": "Recomendaciones",
+          "description": "Se recomienda llevar ropa cómoda, preferiblemente chándal y zapatillas."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Payasos",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "description": "A cada participante se le entregará una nariz roja, que se podrá llevar a casa. Nos divertiremos mediante juegos y dinámicas participativas, donde descubriremos el payaso que llevamos dentro!"
+        }
       ]
     },
     "maquillatge": {
+      "metaDescription": "Taller de Maquillaje - Taller para todas las edades de la Compañía Filigranes. Con este taller podréis conocer de primera mano la técnica del maquillaje.",
+      "abstract": [
+        {
+          "paragraph": "Con este taller pondremos a vuestra disposición todo un conjunto de técnicas de maquillaje de fantasía: con pincel, esponja, dedos..."
+        }
+      ],
+      "list": [
+        {
+          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "¡El arte facial de fantasía nos permite crear un personaje propio y único!"
@@ -604,15 +715,79 @@
         {
           "paragraph": "La piel se convertirá en nuestra propia máscara y nos ayudará a estimular la imaginación. Así pues, cuando finaliza... ¡sólo hay que observar las caras y entrar en el personaje!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Materiales",
+          "description": "Las pinturas y todo el material necesario serán facilitados por la Compañía Filigranes. Siempre utilizaremos pinturas adecuadas para poder tener contacto con la piel."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Es necesario un punto de luz para el equipo de sonido."
+        },
+        {
+          "title": "A tener en cuenta",
+          "description": "Las pinturas serán aplicadas total o parcialmente por las talleristas, en función de la edad de los y las participantes."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Maquillaje",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "description": "Con la ayuda de los y las nuestras talleristas, niños y niñas crearán su propio esbozo y personaje. Todas juntas, escogeremos los colores y aprenderemos cuáles son las técnicas más adecuadas para cada caso."
+        }
       ]
     },
     "enginys-aigua": {
+      "metaDescription": "Taller de Ingenios de Agua - Taller para todas las edades de la Compañía Filigranes. Con este taller aprenderemos a utilizar el agua para crear diferentes ingenios: bolas, boleies, bolas de jabón, etc.",
+      "abstract": [
+        {
+          "paragraph": "Este taller tan refrescante dará la opción de hacer girar una rueda de molino, crear una cascada de agua, jugar con contrapesos, imaginar el trabajo que requiere sacar agua de un pozo..."
+        }
+      ],
+      "list": [
+        {
+          "title": "Taller de temporada."
+        },
+        {
+          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "¡¡Pocas cosas hay tan divertidas como jugar con el agua!! ¡Con ella nos refrescaremos y aprenderemos a la vez!"
         },
         {
           "paragraph": "Disfrutaremos de un itinerario con diferentes estaciones, donde grandes y pequeños irán pasando mientras ponen en práctica sus destrezas de una manera muy divertida."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Espacio",
+          "description": "Taller de temporada, se recomienda realizarlo en el exterior."
+        },
+        {
+          "title": "Punto de agua",
+          "description": "Es necesario un punto de agua al lado (preferiblemente con manguera)."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Es necesario un punto de luz para el equipo de sonido."
+        },
+        {
+          "title": "Recomendaciones",
+          "description": "Utilizar ropa cómoda y calzado que se pueda mojar."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Ingenios de Agua",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "description": "Las estructuras de madera combinadas con elementos reciclados, crearán consciencia a grandes y pequeños/as de la importancia del reciclaje y el aprovechamiento del agua."
         }
       ]
     }

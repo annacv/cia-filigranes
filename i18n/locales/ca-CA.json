@@ -540,8 +540,9 @@
   "workshops": {
     "metaDescription": "Tallers per a totes les edats: de circ, de pallassos, de maquillatge, d'enginys d'aigua, de bombolles de sabó...",
     "commonAlt": "Imatge del taller {title}",
+    "commonTitle": "Taller de {title}",
     "claimTitle": "Cursos, monogràfics, o tallers de temporada...",
-    "claim": "Tallers per a persones menudes i adultes que volen aprendre i divertir-se!",
+    "claim": "Tallers per a grans i menudes que volen aprendre i divertir-se!",
     "hero": {
       "title": "Tallers que estimulen l'artista que duus a dins!",
       "alt": "Imatge del Taller de Circ de la Cia.Filigranes"
@@ -552,19 +553,16 @@
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
     },
     "circ": {
+      "metaDescription": "Taller de Circ - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller podreu conèixer de primera mà les diverses tècniques i disciplines del món del circ.",
       "abstract": [
         {
-          "paragraph": " "
+          "paragraph": "L'aprenentatge de les diverses disciplines circenses ajuda a desenvolupar la psico-motricitat, la coordinació i descoordinació, i l'agilitat mental. Seguint les pautes marcades pels talleristes les participants podran experimentar i triar la tècnica que més els motivi."
         }
       ],
       "list": [
         {
-          "title": "Taller de Circ",
-          "description": " "
-        },
-        {
-          "title": " ",
-          "description": " "
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "synopsis": [
@@ -574,9 +572,77 @@
         {
           "paragraph": "Amb aquest taller podreu conèixer de primera mà les diverses tècniques i disciplines del món del circ."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Espai",
+          "description": "Taller recomanat per a un espai exterior ampli, amb sòl ferm i pla. En cas de realitzar-se a l'interior, es requereix una alçada mínima de 3 metres."
+        },
+        {
+          "title": "Llum i so",
+          "description": "És necessari un punt de llum per a l'equip de so."
+        },
+        {
+          "title": "Recomanacions",
+          "description": "Es recomana dur roba còmoda, preferiblement xandall i bambes."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Circ",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Malabars",
+          "description": "Pràctica amb maces, diàbolo, pals i plats xinesos, boleies, boles..."
+        },
+        {
+          "title": "Equilibris",
+          "description": "Bola d'equilibri, monocicle, “rulos”, xanques i cable (funambulisme)..."
+        }
       ]
     },
     "bombolles-sabo": {
+      "metaDescription": "Taller de Bombolles de Sabó - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller podreu conèixer de primera mà la tècnica de les bombolles de sabó.",
+      "abstract": [
+        {
+          "paragraph": "Aprendrem a preparar la mescla idònia i com utilitzar diferents aparells per tal d'aconseguir increïbles bombolles en constant moviment! Ens endinsarem en un món de formes i colors que aprendrem a manipular segons el nostre desig!"
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Espai",
+          "description": "Taller de temporada, es recomana realitzar-lo a l’exterior."
+        },
+        {
+          "title": "Punt d'aigua",
+          "description": "És necessari un punt d'aigua al costat (preferiblement amb mànega)."
+        },
+        {
+          "title": "Llum i so",
+          "description": "És necessari un punt de llum per a l'equip de so."
+        },
+        {
+          "title": "Recomanacions",
+          "description": "Utilitzar roba còmoda i calçat que es pugui mullar."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Bombolles de Sabó",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "*",
+          "description": "Els/les talleristes faran demostracions i ens guiaran en l'aprenentatge de l’art de fer bombolles mitjançant diversos aparells en contacte amb aigua i sabó."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Com és possible?!! Una bombolla de sabó més gran que el teu cap!! Vols fer-ne amb les teves pròpies mans?"
@@ -587,6 +653,18 @@
       ]
     },
     "pallassos": {
+      "metaDescription": "Taller de Pallassos - Taller per a totes les edats de la Companyia Filigranes. Us presentem el nas vermell! Amb ell ens endinsarem en el món dels pallassos, en l'humor, la innocència i la generositat.",
+      "abstract": [
+        {
+          "paragraph": "Aprendrem tècniques teatrals per tal de desenvolupar l'expressió corporal, la consciència de l'espai i la comunicació individual i grupal. I posarem en pràctica tècniques que ens ajudaran a augmentar l'autoestima i a perdre la vergonya i la por a expressar-se en públic."
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Us presentem el nas vermell! Amb ell ens endinsarem en el món dels pallassos, en l'humor, la innocència i la generositat."
@@ -594,9 +672,45 @@
         {
           "paragraph": "Aprendrem a mirar amb aquest nas, a utilitzar la màscara corporal i buscarem el nostre personatge!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Materials",
+          "description": "Tots els materials seran facilitats per la Companyia Filigranes."
+        },
+        {
+          "title": "Llum i so",
+          "description": "És necessari un punt de llum per a l'equip de so."
+        },
+        {
+          "title": "Recomanacions",
+          "description": "Es recomana dur roba còmoda, preferiblement xandall i bambes."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Pallassos",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "*",
+          "description": "A cada participant se li entregarà un nas vermell, que es podrà emportar a casa. Ens divertirem mitjançant jocs i dinàmiques participatives, on descobrirem el pallasso que duem a dins!"
+        }
       ]
     },
     "maquillatge": {
+      "metaDescription": "Taller de Maquillatge - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller podreu conèixer de primera mà la tècnica del maquillatge.",
+      "abstract": [
+        {
+          "paragraph": "Amb aquest taller posarem al vostre abast tot un seguit de tècniques de maquillatge de fantasia: amb pinzell, esponja, dits..."
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "L'art facial de fantasia ens permet crear un personatge propi i únic!"
@@ -604,15 +718,79 @@
         {
           "paragraph": "La pell es convertirà en la nostra pròpia màscara i ens ajudarà a estimular la imaginació. Així doncs, quan finalitza... només cal observar les cares i entrar en el personatge!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Materials",
+          "description": "Les pintures i tot el material necessari seran facilitats per la Companyia Filigranes. Sempre utilitzarem pintures adequades per poder tenir contacte amb la pell."
+        },
+        {
+          "title": "Llum i so",
+          "description": "És necessari un punt de llum per a l'equip de so."
+        },
+        {
+          "title": "A tenir en compte",
+          "description": "Les pintures seran aplicades total o parcialment per les talleristes, en funció de l'edat dels i les participants."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Maquillatge",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "*",
+          "description": "Amb l'ajuda dels i les nostres talleristes, nens i nenes crearan el seu propi esbós i personatge. Totes juntes, escollirem els colors i aprendrem quines són les tècniques més adients per a cada cas."
+        }
       ]
     },
     "enginys-aigua": {
+      "metaDescription": "Taller d'Enginys d'aigua - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller aprendrem a utilitzar l'aigua per a crear diferents enginys: boles, boleies, boles de sabó, etc.",
+      "abstract": [
+        {
+          "paragraph": "Aquest taller tant refrescant donarà l’opció de fer girar una roda de molí, crear una cascada d’aigua, jugar amb contrapesos, imaginar-se la feina que requereix treure aigua d’un pou..."
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Poques coses hi ha tant divertides com jugar amb l'aigua!! Amb ella ens refrescarem i aprendrem alhora!"
         },
         {
           "paragraph": "Gaudirem d'un itinerari amb diferents estacions, on grans i petites aniran passant mentre posen en pràctica les seves destreses d'una manera ben divertida."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Espai",
+          "description": "Taller de temporada, es recomana realitzar-lo a l’exterior."
+        },
+        {
+          "title": "Punt d'aigua",
+          "description": "És necessari un punt d'aigua al costat (preferiblement amb mànega)."
+        },
+        {
+          "title": "Llum i so",
+          "description": "És necessari un punt de llum per a l'equip de so."
+        },
+        {
+          "title": "Recomanacions",
+          "description": "Utilitzar roba còmoda i calçat que es pugui mullar."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller d'Enginys d'aigua",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "*",
+          "description": "Les estructures de fusta combinades amb elements reciclats, crearan consciència a grans i petits/es de la importància del reciclatge i l’aprofitament de l’aigua."
         }
       ]
     }

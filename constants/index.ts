@@ -5,14 +5,14 @@ export const ROUTES_INDEX = [
   },
   {
     name: "tallers",
-    children: ['bombolles-sabo', 'maquillatge', 'circ', 'pallassos', 'enginys-aigua']
+    children: ['circ', 'bombolles-sabo', 'pallassos', 'maquillatge', 'enginys-aigua']
   },
   {
     name: "animacions"
   },
   {
     name: "filipersones",
-    children: ['makutu', 'trinxeta']
+    children: ['trinxeta', 'makutu']
   },
   {
     name: "contacte"
