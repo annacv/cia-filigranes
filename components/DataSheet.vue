@@ -37,18 +37,11 @@ const { isMobile } = useDevice()
 const { t } = useI18n()
 const isHovered = ref(false)
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
-const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
+const { gradientOverlayValue } = useColor(props.contentType);
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
 const currentClipPath       = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
-
-const getColors = computed(() => {
-  if (props.contentType) {
-    return `${bgColorClass.value} text-neutral-100`;
-  }
-  return 'bg-neutral-0 text-neutral-900';
-})
 
 const toggleHover = () => {
   isHovered.value = !isHovered.value;
@@ -57,7 +50,7 @@ const toggleHover = () => {
 
 <template>
   <div
-    :class="`p-0 grid-layout ${getColors}`"
+    class="p-0 grid-layout bg-neutral-0 text-neutral-900"
     @mouseenter="toggleHover"
     @mouseleave="toggleHover"
   >

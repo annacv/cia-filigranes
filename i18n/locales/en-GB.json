@@ -552,51 +552,161 @@
       "description": "Write us an email at {email}, or call us at {phone}"
     },
     "circ": {
+      "metaDescription": "Circus Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand about the various techniques and disciplines of the circus world.",
       "abstract": [
         {
-          "paragraph": " "
+          "paragraph": "Learning various circus disciplines helps develop psychomotor skills, coordination and dis-coordination, and mental agility. Following the guidelines set by the workshop leaders, participants will be able to experiment and choose the technique that motivates them most."
         }
       ],
       "list": [
         {
-          "title": "Circus Workshop",
-          "description": " "
-        },
-        {
-          "title": " ",
-          "description": " "
+          "title": "* The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
         {
-          "paragraph": "Our passion for circus arises us to open its doors widely! We want to share this passion with you and give you the chance to get in touch with it in a fun and educational way."
+          "paragraph": "Our passion for circus moves us to open its doors wide! We want to share this passion with you and make it possible for you to approach it in a didactic and fun way."
         },
         {
-          "paragraph": "In this workshop you will be able to try various techniques and disciplines of the circus world."
+          "paragraph": "With this workshop you will be able to learn first-hand about the various techniques and disciplines of the circus world."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Space",
+          "description": "Workshop recommended for a large outdoor space, with firm and flat ground. If held indoors, a minimum height of 3 meters is required."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "It is recommended to wear comfortable clothes, preferably tracksuit and sneakers."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Circus Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Juggling",
+          "description": "Practice with clubs, diabolo, Chinese plates, devil sticks, balls..."
+        },
+        {
+          "title": "Balance",
+          "description": "Balance ball, unicycle, \"rollers\", stilts and tightrope (funambulism)..."
         }
       ]
     },
     "bombolles-sabo": {
+      "metaDescription": "Soap Bubbles Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand the technique of soap bubbles.",
+      "abstract": [
+        {
+          "paragraph": "We will learn to prepare the ideal mixture and how to use different devices to achieve incredible bubbles in constant movement! We will immerse ourselves in a world of shapes and colors that we will learn to manipulate according to our desire!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Seasonal workshop."
+        },
+        {
+          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Space",
+          "description": "Seasonal workshop, it is recommended to hold it outdoors."
+        },
+        {
+          "title": "Water point",
+          "description": "A water point nearby is necessary (preferably with a hose)."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "Use comfortable clothes and footwear that can get wet."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Soap Bubbles Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "description": "The workshop leaders will make demonstrations and guide us in learning the art of making bubbles using various devices in contact with water and soap."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "How is it possible?! A soap bubble bigger than your head! Do you want to do it with your own hands?"
         },
         {
-          "paragraph": "We'll fill all with soap bubbles of different sizes! We'll make you dance and fly! Come and discover this so peculiar and creative technique."
+          "paragraph": "We'll fill everything with soap bubbles of different sizes! We'll make them dance and fly! Dare to discover this so peculiar technique."
         }
       ]
     },
     "pallassos": {
+      "metaDescription": "Clowns Workshop - Workshop for all ages by the Filigranes Company. We present you the red nose! With it we will enter the world of clowns, humor, innocence and generosity.",
+      "abstract": [
+        {
+          "paragraph": "We will learn theatrical techniques to develop body expression, spatial awareness and individual and group communication. And we will put into practice techniques that will help us increase self-esteem and lose shyness and fear of expressing ourselves in public."
+        }
+      ],
+      "list": [
+        {
+          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+        }
+      ],
       "synopsis": [
         {
-          "paragraph": "We introduce you the red nose! With it we will enter into the world of clowns, in humor, innocence and generosity."
+          "paragraph": "We present you the red nose! With it we will enter the world of clowns, humor, innocence and generosity."
         },
         {
-          "paragraph": "We will learn to look with this nose, to use the body mask and build our own amusing character!"
+          "paragraph": "We will learn to look with this nose, to use the body mask and look for our character!"
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Materials",
+          "description": "All materials will be provided by the Filigranes Company."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "It is recommended to wear comfortable clothes, preferably tracksuit and sneakers."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Clowns Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "description": "Each participant will be given a red nose, which they can take home. We will have fun through games and participatory dynamics, where we will discover the clown we carry inside!"
         }
       ]
     },
     "maquillatge": {
+      "metaDescription": "Makeup Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand the technique of makeup.",
+      "abstract": [
+        {
+          "paragraph": "With this workshop we will put at your disposal a whole set of fantasy makeup techniques: with brush, sponge, fingers..."
+        }
+      ],
+      "list": [
+        {
+          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "The facial art of fantasy allows us to create our own and unique character!"
@@ -604,15 +714,79 @@
         {
           "paragraph": "The skin will become our own mask and will help us to stimulate the imagination. So, when it ends... just look at the faces and get into the character!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Materials",
+          "description": "The paints and all necessary material will be provided by the Filigranes Company. We will always use paints suitable for skin contact."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "To consider",
+          "description": "The paints will be applied totally or partially by the workshop leaders, depending on the age of the participants."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Makeup Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "description": "With the help of our workshop leaders, children will create their own sketch and character. All together, we will choose the colors and learn what are the most appropriate techniques for each case."
+        }
       ]
     },
     "enginys-aigua": {
+      "metaDescription": "Water Tricks Workshop - Workshop for all ages by the Filigranes Company. With this workshop we will learn to use water to create different tricks: balls, devil sticks, soap bubbles, etc.",
+      "abstract": [
+        {
+          "paragraph": "This refreshing workshop will give the option to spin a mill wheel, create a waterfall, play with counterweights, imagine the work required to get water from a well..."
+        }
+      ],
+      "list": [
+        {
+          "title": "Seasonal workshop."
+        },
+        {
+          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Few things are as fun as playing with water! We will refresh and learn at the same time!"
         },
         {
-          "paragraph": "We will enjoy an itinerary with different stations, where youngsters and children will go through while practicing their skills in a funny way."
+          "paragraph": "We will enjoy an itinerary with different stations, where adults and children will go through while practicing their skills in a very fun way."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Space",
+          "description": "Seasonal workshop, it is recommended to hold it outdoors."
+        },
+        {
+          "title": "Water point",
+          "description": "A water point nearby is necessary (preferably with a hose)."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "Use comfortable clothes and footwear that can get wet."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Water Tricks Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "description": "Wooden structures combined with recycled elements will create awareness in adults and children about the importance of recycling and water conservation."
         }
       ]
     }

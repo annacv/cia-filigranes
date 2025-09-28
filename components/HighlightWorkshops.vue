@@ -9,6 +9,10 @@ import type { CardLink, CardImage, ImageRoute } from "~/types";
 const { t, locale } = useI18n()
 
 const props = defineProps({
+  isCurrentContent: {
+    type: Boolean,
+    default: false
+  },
   reorderIndex: {
     type: Number,
     required: false
@@ -47,6 +51,7 @@ const getImage = (route: string, item?: string): CardImage => {
 		contentLink="/tallers"
 		titleClasses="-skew-y-3 hover:text-secondary-500"
 		css-classes="highlight-content--2"
+		:isCurrentContent="isCurrentContent"
 	>
 		<template #content>
 			<SlidingPanel class="-skew-y-3">
