@@ -540,6 +540,7 @@
   "workshops": {
     "metaDescription": "Workshops for all ages: circus, clowns, makeup, water tricks, soap bubbles...",
     "commonAlt": "Image of the {title} workshop",
+    "commonTitle": "Workshop of {title}",
     "claimTitle": "Courses, monographs, or seasonal workshops...",
     "claim": "Workshops for little and adult people who want to learn and have fun!",
     "hero": {

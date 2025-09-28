@@ -561,7 +561,8 @@
       ],
       "list": [
         {
-          "title": "* El nombre de talleristes pot variar en funció del volum de participants."
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "synopsis": [
@@ -610,10 +611,8 @@
       ],
       "list": [
         {
-          "title": "Taller de temporada."
-        },
-        {
-          "title": "* El nombre de talleristes pot variar en funció del volum de participants."
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "techCard": [
@@ -640,6 +639,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Els/les talleristes faran demostracions i ens guiaran en l'aprenentatge de l’art de fer bombolles mitjançant diversos aparells en contacte amb aigua i sabó."
         }
       ],
@@ -661,7 +661,8 @@
       ],
       "list": [
         {
-          "title": "* El nombre de talleristes pot variar en funció del volum de participants."
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "synopsis": [
@@ -692,6 +693,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "A cada participant se li entregarà un nas vermell, que es podrà emportar a casa. Ens divertirem mitjançant jocs i dinàmiques participatives, on descobrirem el pallasso que duem a dins!"
         }
       ]
@@ -705,7 +707,8 @@
       ],
       "list": [
         {
-          "title": "* El nombre de talleristes pot variar en funció del volum de participants."
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "synopsis": [
@@ -736,6 +739,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Amb l'ajuda dels i les nostres talleristes, nens i nenes crearan el seu propi esbós i personatge. Totes juntes, escollirem els colors i aprendrem quines són les tècniques més adients per a cada cas."
         }
       ]
@@ -749,10 +753,8 @@
       ],
       "list": [
         {
-          "title": "Taller de temporada."
-        },
-        {
-          "title": "* El nombre de talleristes pot variar en funció del volum de participants."
+          "title": "*",
+          "description": "El nombre de talleristes pot variar en funció del volum de participants."
         }
       ],
       "synopsis": [
@@ -787,6 +789,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Les estructures de fusta combinades amb elements reciclats, crearan consciència a grans i petits/es de la importància del reciclatge i l’aprofitament de l’aigua."
         }
       ]

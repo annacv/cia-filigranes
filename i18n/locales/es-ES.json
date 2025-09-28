@@ -540,6 +540,7 @@
   "workshops": {
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
+    "commonTitle": "Taller de {title}",
     "claimTitle": "Cursos, monográficos, o talleres de temporada...",
     "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {
