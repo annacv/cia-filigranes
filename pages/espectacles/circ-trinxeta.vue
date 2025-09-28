@@ -35,7 +35,7 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('circ-trinxeta')"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl w-[300px] md:w-[448px] lg:w-[552px]">
+        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl">
           {{ t('routes.circ-trinxeta') }}
         </h1>
       </template>
