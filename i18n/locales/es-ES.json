@@ -96,7 +96,7 @@
         },
         {
           "title": "Montaje y desmontaje",
-          "description": "Tiempo de montaje: 2h. Tiempo de desmontaje: 1h."
+          "description": "Montaje: 2h. Desmontaje: 1h."
         },
         {
           "title": "Medidas",
@@ -113,11 +113,7 @@
       ],
       "artCard": [
         {
-          "title": "Título",
-          "description": "20 años no son nada"
-        },
-        {
-          "title": "Compañía",
+          "title": "20 años no son nada",
           "description": "Cia. Filigranes"
         },
         {
@@ -147,6 +143,22 @@
       ]
     },
     "plis-plas": {
+      "metaDescription": "Plis Plas - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Con una silla, un embudo o un cubo, Makutu y Trinxeta nos harán disfrutar de un tira y afloja constante, combinando gags clásicos con malabares y música en directo.",
+      "abstract": [
+        {
+          "paragraph": "La clave de esta obra es un juego constante de tira y afloja, que da lugar a una relación impregnada de fantasía, similar al mundo real en el que viven los niños/as, a la vez entrañable y conflictiva. Entre el Clown (Makutu) y el August (Toti) hay una relación donde se equilibran cuidadosamente la rivalidad y la complicidad."
+        }
+      ],
+      "list": [
+        {
+          "title": "Plis Plas",
+          "description": "Espectáculo de payasos pensado para un público familiar, participativo, con trucos y travesuras constantes."
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Plis Plas es un espectáculo donde Toti y Makutu no paran de hacerse la \"puñeta\": se enfadan a troche y moche, pero la amistad siempre termina prevaleciendo."
@@ -154,19 +166,175 @@
         {
           "paragraph": "Con una silla, un embudo o un cubo nos harán, con su toque personal, gags clásicos combinados con malabares y música en directo."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje: 1h 30min. Desmontaje: 45min."
+        },
+        {
+          "title": "Medidas",
+          "description": "Espacio mínimo: 6m (ancho) x 8m (fondo). Superficie plana."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escenario redondo y pista semicircular, exterior o sala."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 2 micros inalámbricos."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Plis Plas",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payasos",
+          "description": "Jordi Torrens y Albert Pérez"
+        },
+        {
+          "title": "Dirección General",
+          "description": "Carles Grau"
+        },
+        {
+          "title": "Ayudante de Dirección",
+          "description": "Montserrat Morera"
+        },
+        {
+          "title": "Dramaturgia",
+          "description": "Carles Grau y Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Marina Díaz"
+        },
+        {
+          "title": "Arreglos musicales",
+          "description": "Marc Monzó"
+        },
+        {
+          "title": "Asesoramiento con malabares",
+          "description": "Cristhian Uroz"
+        },
+        {
+          "title": "Técnico de luces y sonido",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Tonet Amorós y Cia.Filigranes"
+        },
+        {
+          "title": "Fotografía",
+          "description": "Gerard Banyó"
+        },
+        {
+          "title": "Diseño gráfico",
+          "description": "Anna Condal"
+        }
       ]
     },
     "circ-filixic": {
+      "metaDescription": "Circ Filixic - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu y Trinxeta nos harán disfrutar de uno de los circos más pequeños del mundo. Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo.",
+      "abstract": [
+        {
+          "paragraph": "Estos dos payasos experimentados nos sorprenderán con un espectáculo con diversos números recuperados del histórico Circo Filigranes. El Monociclo Giravolt; el Ale-hop Hula-hop; o los fantásticos malabaristas The Tal Kual Brothers, con su número reconocido internacionalmente con el nombre de Xiguagua: ¡con passing de mazas y un final espectacular encima de las bolas de equilibrio!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Circ Filixic",
+          "description": "Compañía Filigranes, 2017"
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "60 minutos"
+        }
+      ],
       "synopsis": [
         {
-          "paragraph": "¡¡¡ Bienvenidas y bienvenidos !!!! Al Circo Filixic: uno de los circos más pequeños del mundo!!!! El Sr.Makutu, presentador del histórico “Circo Filigranes” sale a la pista con otro payaso: ¡¡el gran Trinxeta!!"
+          "paragraph": "¡¡¡ Bienvenidas y bienvenidos !!!! Al Circo Filixic: uno de los circos más pequeños del mundo!!!! El Sr.Makutu, presentador del histórico "Circo Filigranes" sale a la pista con otro payaso: ¡¡el gran Trinxeta!!"
         },
         {
           "paragraph": "Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "60 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje: 1h 30min. Desmontaje: 45min."
+        },
+        {
+          "title": "Medidas",
+          "description": "Espacio mínimo: 6m (ancho) x 8m (fondo)."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escenario y pista semicircular."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 2 micros inalámbricos."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "El Circ Filixic",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payasos",
+          "description": "Jordi Torrens y Albert Pérez"
+        },
+        {
+          "title": "Dirección General y Dramaturgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Técnico de luces y sonido",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia.Filigranes"
+        },
+        {
+          "title": "Fotografía",
+          "description": "Marta Garcia"
+        }
       ]
     },
     "circ-makutu": {
+      "metaDescription": "Circ Makutu - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu nos hará vibrar con un montón de artistas que tendremos que descubrir entre todos y todas!",
+      "abstract": [
+        {
+          "paragraph": "En esta historia, Makutu nos adentra en el mundo del circo y con la participación del público asistente, podremos ver de cerca diferentes disciplinas circenses, con el humor como protagonista principal. Aquí está un perro, aquí está un gato, y este cuento se ha acabado."
+        }
+      ],
+      "list": [
+        {
+          "title": "El Pequeño Circo de Makutu",
+          "description": "Compañía Filigranes, 2019"
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "En un pueblo pequeñito, entre montañas, llegó un circo menudito e increíble, con sus carruajes, sus caravanas y..."
@@ -174,9 +342,73 @@
         {
           "paragraph": "¡...una serie de artistas que tendremos que descubrir entre todos y todas!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje: 1h 30min. Desmontaje: 1h."
+        },
+        {
+          "title": "Medidas",
+          "description": "Espacio mínimo: 3m (ancho) x 3m (fondo). Superficie plana."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escenario y pista semicircular."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 1 micro inalámbrico."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "El Pequeño Circo de Makutu",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payaso",
+          "description": "Albert Pérez"
+        },
+        {
+          "title": "Dirección General y Dramaturgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Técnico de luces y sonido",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia.Filigranes"
+        }
       ]
     },
     "circ-trinxeta": {
+      "metaDescription": "Circ Trinxeta - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Trinxeta nos hará volar con un viaje galáctico por los diferentes planetas lleno de sorpresas.",
+      "abstract": [
+        {
+          "paragraph": "Trinxeta nos invita a hacer un viaje por toda nuestra galaxia y conocer nuevos mundos. Poco a poco descubriremos los secretos de cada planeta, todo jugando con diferentes técnicas de circo, hasta volver a la tierra."
+        }
+      ],
+      "list": [
+        {
+          "title": "Trinxat no Tremola",
+          "description": "Compañía Filigranes, 2019"
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "A Trinxeta le encanta viajar y conocer nuevos mundos, además le gusta el cielo de noche y observar las estrellas. Él ya está decidido, quiere hacer un vuelo galáctico por los diferentes planetas."
@@ -184,15 +416,123 @@
         {
           "paragraph": "¿Os animáis a hacer un viaje lleno de sorpresas? ¡Pues vamos!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje: 1h 30min. Desmontaje: 1h."
+        },
+        {
+          "title": "Medidas",
+          "description": "Espacio mínimo: 3m (ancho) x 3m (fondo). Superficie plana."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escenario y pista semicircular."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 1 micro inalámbrico."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Trinxat no Tremola",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payaso",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "Dirección General y Dramaturgia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Técnico de luces y sonido",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia.Filigranes"
+        }
       ]
     },
     "freak-frac": {
+      "metaDescription": "Cercavila Hermanos Freak Frac - Espectáculo itinerante de payasos y circo para todas las edades de la Compañía Filigranes. Los Hermanos Freak Frac nos harán disfrutar de un buen rato con sorpresas, zancos, malabares y música en directo.",
+      "abstract": [
+        {
+          "paragraph": "Espectáculo itinerante con músicos en vivo (saxo y/o percusión) y nuestros increíbles zanqueros. ¡Nos cautivarán con sus ritmos en movimiento constante! Diferentes paradas con rutinas de malabares, como mazas y diábolos, salto de cuerda... siempre acompañados de música. Ideal para amenizar ferias, mercados, desfiles... donde la interacción con el público es primordial."
+        }
+      ],
+      "list": [
+        {
+          "title": "Cercavila Hermanos Freak Frac",
+          "description": "Compañía Filigranes y Asociación de Circo Tub d'Assaig 7'70, 2013."
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "Duración mínima de 60 minutos"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "¡¡¡Atención!!! ¡¡Ya llegan!! Siento el ritmo de la música que me hace mover..."
         },
         {
           "paragraph": "¡¡Oh!! ¡Qué personajes más altos! ¡Se les ve llegar de lejos! ¡Mira los músicos cómo siguen al Directore! De los instrumentos surgen las notas que se encaraman por callejones y plazas..."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "Duración mínima de 60 minutos."
+        },
+        {
+          "title": "Tiempo de preparación",
+          "description": "1h 30min."
+        },
+        {
+          "title": "Espacio",
+          "description": "Espectáculo itinerante de calle, adaptable a interior."
+        },
+        {
+          "title": "*",
+          "description": "Posibilidad de variación de la duración de la cercavila, en función del espacio y del número de salidas."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Cercavila Hermanos Freak Frac",
+          "description": "Cia. Filigranes y Asociación de Circo Tub d'Assaig 7'70"
+        },
+        {
+          "title": "Los Zanqueros",
+          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández y Victor Sánchez"
+        },
+        {
+          "title": "Los Músicos",
+          "description": "Victor Sánchez (SAXO), Jordi Torrens (BOMBO), Remy Geoffroy (CAJA), Tyle Michael Fernández (SAXO y/o CLARINETE)"
+        },
+        {
+          "title": "Dirección General",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Cia. Filigranes y Asociación de Circo Tub d'Assaig 7'70"
+        },
+        {
+          "title": "*",
+          "description": "Posibilidad de variación del número de actores"
         }
       ]
     }

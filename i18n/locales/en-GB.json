@@ -65,7 +65,7 @@
       "description": "Write us an email at {email}, or call us at {phone}"
     },
     "vint-anys": {
-      "metaDescription": "20 years is nothing. Clown and circus show for all ages. Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity.",
+      "metaDescription": "20 years is nothing - Clown and circus show for all ages by the Filigranes Company. Two inseparable companions remember and stage their 20 years of career on stage. An emotional show that combines humor, juggling and live music.",
       "abstract": [
         {
           "paragraph": "Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity."
@@ -96,7 +96,7 @@
         },
         {
           "title": "Setup and breakdown",
-          "description": "Setup time: 2h. Breakdown time: 1h."
+          "description": "Setup: 2h. Breakdown: 1h."
         },
         {
           "title": "Dimensions",
@@ -113,11 +113,7 @@
       ],
       "artCard": [
         {
-          "title": "Title",
-          "description": "20 years is nothing"
-        },
-        {
-          "title": "Company",
+          "title": "20 years is nothing",
           "description": "Filigranes Company"
         },
         {
@@ -147,6 +143,22 @@
       ]
     },
     "plis-plas": {
+      "metaDescription": "Plis Plas - Clown and circus show for all ages by the Filigranes Company. With a chair, a funnel or a bucket, Makutu and Trinxeta will make us enjoy a constant tug-of-war, combining classic gags with juggling and live music.",
+      "abstract": [
+        {
+          "paragraph": "The key to this work is a constant game of tug-of-war, which gives rise to a relationship impregnated with fantasy, similar to the real world in which children live, at the same time endearing and conflicting. Between the Clown (Makutu) and the August (Toti) there is a relationship where rivalry and complicity are carefully balanced."
+        }
+      ],
+      "list": [
+        {
+          "title": "Plis Plas",
+          "description": "Clown show designed for a family audience, participatory, with constant tricks and mischief."
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Plis Plas is a show where Toti and Makutu do not stop making the \"knuckle\": they are angry by hook or by crook, but friendship always ends up prevailing."
@@ -154,9 +166,97 @@
         {
           "paragraph": "With a chair, a funnel or a bucket will make us, with its personal touch, classic gags combined with juggling and live music."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "50 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup: 1h 30min. Breakdown: 45min."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Minimum space: 6m (width) x 8m (depth). Flat surface."
+        },
+        {
+          "title": "Scenography",
+          "description": "Round backdrop and semicircular stage, outdoor or indoor."
+        },
+        {
+          "title": "Light and sound",
+          "description": "250v power outlet at stage level for 1000 watt sound equipment and 2 wireless microphones."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Plis Plas",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clowns",
+          "description": "Jordi Torrens and Albert Pérez"
+        },
+        {
+          "title": "General Direction",
+          "description": "Carles Grau"
+        },
+        {
+          "title": "Assistant Director",
+          "description": "Montserrat Morera"
+        },
+        {
+          "title": "Dramaturgy",
+          "description": "Carles Grau and Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Marina Díaz"
+        },
+        {
+          "title": "Musical arrangements",
+          "description": "Marc Monzó"
+        },
+        {
+          "title": "Juggling consultation",
+          "description": "Cristhian Uroz"
+        },
+        {
+          "title": "Light and sound technician",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Scenography",
+          "description": "Tonet Amorós and Filigranes Company"
+        },
+        {
+          "title": "Photography",
+          "description": "Gerard Banyó"
+        },
+        {
+          "title": "Graphic design",
+          "description": "Anna Condal"
+        }
       ]
     },
     "circ-filixic": {
+      "metaDescription": "Circ Filixic - Clown and circus show for all ages by the Filigranes Company. Makutu and Trinxeta will make us enjoy one of the smallest circuses in the world. A story full of surprises, clown work, where different disciplines from the circus world are fused.",
+      "abstract": [
+        {
+          "paragraph": "These two experienced clowns will surprise us with a show with various numbers recovered from the historic Filigranes Circus. The Spinning Monocycle; the Ale-hop Hula-hop; or the fantastic jugglers The Tal Kual Brothers, with their internationally recognized number with the name Xiguagua: with club passing and a spectacular finale on balance balls!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Circ Filixic",
+          "description": "Filigranes Company, 2017"
+        },
+        {
+          "title": "Show duration",
+          "description": "60 minutes"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Welcome everyone !!!! Come on into The Filixic Circus: one of the smallest circuses in the world! Mr.Makutu, head of the historic \"Filigranes Circus\" goes to the track with another clown: the great Trinxeta!!"
@@ -164,9 +264,77 @@
         {
           "paragraph": "A story full of surprises, work of clowns, where different disciplines of the circus world are merged."
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "60 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup: 1h 30min. Breakdown: 45min."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Minimum space: 6m (width) x 8m (depth)."
+        },
+        {
+          "title": "Scenography",
+          "description": "Backdrop and semicircular stage."
+        },
+        {
+          "title": "Light and sound",
+          "description": "250v power outlet at stage level for 1000 watt sound equipment and 2 wireless microphones."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "El Circ Filixic",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clowns",
+          "description": "Jordi Torrens and Albert Pérez"
+        },
+        {
+          "title": "General Direction and Dramaturgy",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Light and sound technician",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Scenography",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Photography",
+          "description": "Marta Garcia"
+        }
       ]
     },
     "circ-makutu": {
+      "metaDescription": "Circ Makutu - Clown and circus show for all ages by the Filigranes Company. Makutu will make us vibrate with a bunch of artists that we will have to discover together!",
+      "abstract": [
+        {
+          "paragraph": "In this story, Makutu takes us into the world of circus and with the participation of the attending audience, we will be able to see different circus disciplines up close, with humor as the main protagonist. Here's a dog, here's a cat, and this tale is over."
+        }
+      ],
+      "list": [
+        {
+          "title": "Makutu's Little Circus",
+          "description": "Filigranes Company, 2019"
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "In an small village, between mountains, came an incredible circus, with their carriages, their caravans and..."
@@ -174,9 +342,73 @@
         {
           "paragraph": "...an amount of artists that we will have to discover together!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "50 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup: 1h 30min. Breakdown: 1h."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Minimum space: 3m (width) x 3m (depth). Flat surface."
+        },
+        {
+          "title": "Scenography",
+          "description": "Backdrop and semicircular stage."
+        },
+        {
+          "title": "Light and sound",
+          "description": "250v power outlet at stage level for 1000 watt sound equipment and 1 wireless microphone."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Makutu's Little Circus",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clown",
+          "description": "Albert Pérez"
+        },
+        {
+          "title": "General Direction and Dramaturgy",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Light and sound technician",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Scenography",
+          "description": "Filigranes Company"
+        }
       ]
     },
     "circ-trinxeta": {
+      "metaDescription": "Circ Trinxeta - Clown and circus show for all ages by the Filigranes Company. Trinxeta will make us fly with a galactic journey through different planets full of surprises.",
+      "abstract": [
+        {
+          "paragraph": "Trinxeta invites us to take a journey through our entire galaxy and discover new worlds. Little by little we will discover the secrets of each planet, all while playing with different circus techniques, until we return to earth."
+        }
+      ],
+      "list": [
+        {
+          "title": "Trinxat doesn't Tremble",
+          "description": "Filigranes Company, 2019"
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Trinxeta loves to travel and discover new worlds, he also likes the night sky and observing the stars. He is already determined, he wants to make a galactic flight through the different planets."
@@ -184,15 +416,123 @@
         {
           "paragraph": "Do you dare to take a trip full of surprises? Well here we go!"
         }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "50 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup: 1h 30min. Breakdown: 1h."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Minimum space: 3m (width) x 3m (depth). Flat surface."
+        },
+        {
+          "title": "Scenography",
+          "description": "Backdrop and semicircular stage."
+        },
+        {
+          "title": "Light and sound",
+          "description": "250v power outlet at stage level for 1000 watt sound equipment and 1 wireless microphone."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Trinxat doesn't Tremble",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clown",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "General Direction and Dramaturgy",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Light and sound technician",
+          "description": "Gerard Mora"
+        },
+        {
+          "title": "Scenography",
+          "description": "Filigranes Company"
+        }
       ]
     },
     "freak-frac": {
+      "metaDescription": "Germans Freak Frac Parade - Itinerant clown and circus show for all ages by the Filigranes Company. The Freak Frac Brothers will make us enjoy a good time with surprises, stilt walkers, juggling and live music.",
+      "abstract": [
+        {
+          "paragraph": "Itinerant show with live musicians (saxophone and/or percussion) and our incredible stilt walkers. They will captivate us with their rhythms in constant movement! Different stops with juggling routines, like clubs and diabolos, rope jumping... always accompanied by music. Ideal for enlivening fairs, markets, parades... where interaction with the audience is paramount."
+        }
+      ],
+      "list": [
+        {
+          "title": "Germans Freak Frac Parade",
+          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association, 2013."
+        },
+        {
+          "title": "Show duration",
+          "description": "Minimum duration of 60 minutes"
+        }
+      ],
       "synopsis": [
         {
           "paragraph": "Attention!!! Here they are! I feel the rhythm of the music that makes me move..."
         },
         {
           "paragraph": "Oh!! They're so tall! You can see them coming from far away! Look how the musicians follow the Directore! From the instruments, well cleaned, the notes flow through streets and squares..."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "Minimum duration of 60 minutes."
+        },
+        {
+          "title": "Preparation time",
+          "description": "1h 30min."
+        },
+        {
+          "title": "Space",
+          "description": "Itinerant street show, adaptable to indoor."
+        },
+        {
+          "title": "*",
+          "description": "Possibility of varying the duration of the parade, depending on the space and the number of exits."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Germans Freak Frac Parade",
+          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association"
+        },
+        {
+          "title": "The Stilt Walkers",
+          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández and Victor Sánchez"
+        },
+        {
+          "title": "The Musicians",
+          "description": "Victor Sánchez (SAXOPHONE), Jordi Torrens (BASS DRUM), Remy Geoffroy (SNARE DRUM), Tyle Michael Fernández (SAXOPHONE and/or CLARINET)"
+        },
+        {
+          "title": "General Direction",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association"
+        },
+        {
+          "title": "*",
+          "description": "Possibility of varying the number of actors"
         }
       ]
     }
