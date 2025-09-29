@@ -74,8 +74,8 @@ const summaryButton = computed(() => {
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightWorkshops isCurrentContent :reorderIndex="getItemIndex('tallers', 'enginys-aigua')" />
-          <HighlightShows />
-          <HighlightPerformances />
+          <HighlightShows :reorder-index="3" />
+          <HighlightPerformances :reorder-index="3" />
         </div>
       </template>
     </MainContent>

@@ -74,8 +74,8 @@ const summaryButton = computed(() => {
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightWorkshops isCurrentContent :reorderIndex="getItemIndex('tallers', 'pallassos')" />
-          <HighlightShows />
-          <HighlightPerformances />
+          <HighlightShows :reorder-index="1" />
+          <HighlightPerformances :reorder-index="1" />
         </div>
       </template>
     </MainContent>
