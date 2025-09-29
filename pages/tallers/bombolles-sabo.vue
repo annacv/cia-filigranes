@@ -36,7 +36,7 @@ const summaryButton = computed(() => {
       content-type="workshops"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl w-[300px] md:w-[448px] lg:w-[552px]">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl w-[300px] md:w-[448px] lg:w-[552px]">
           {{ t('workshops.commonTitle', { title: t('routes.bombolles-sabo') }) }}
         </h1>
       </template>

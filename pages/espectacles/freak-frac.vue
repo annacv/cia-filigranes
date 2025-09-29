@@ -35,7 +35,7 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('freak-frac')"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('routes.freak-frac') }}
         </h1>
       </template>
