@@ -71,7 +71,7 @@ const summaryButton = computed(() => {
           bgColor="bg-primary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows :reorderIndex="getItemIndex('espectacles', 'circ-trinxeta')" />
+          <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'circ-trinxeta')" />
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>
