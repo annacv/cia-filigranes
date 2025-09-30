@@ -36,7 +36,7 @@ const summaryButton = computed(() => {
       content-type="workshops"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl w-[300px] md:w-[448px] lg:w-[552px]">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('workshops.commonTitle', { title: t('routes.enginys-aigua') }) }}
         </h1>
       </template>
@@ -74,8 +74,8 @@ const summaryButton = computed(() => {
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightWorkshops isCurrentContent :reorderIndex="getItemIndex('tallers', 'enginys-aigua')" />
-          <HighlightShows />
-          <HighlightPerformances />
+          <HighlightShows :reorder-index="3" />
+          <HighlightPerformances :reorder-index="3" />
         </div>
       </template>
     </MainContent>

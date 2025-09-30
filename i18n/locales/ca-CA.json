@@ -798,6 +798,81 @@
   "performances": {
     "metaDescription": "Animacions a la carta. S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events.",
     "commonAlt": "Imatge d'animacions a la carta",
-    "title": "Animacions a la carta"
+    "title": "Animacions a la carta",
+    "hire": {
+      "title": "Vols el teu espectacle a mida?",
+      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+    },
+    "abstract": [
+      {
+        "paragraph": "Una infinitat de personatges caracteritzats a mida s'interrelacionaran amb el públic. Aquests autèntics camaleons de l'escena realitzen diferents accions i trucs amb l'humor sempre present: trucs malabars, disfresses, màgia, música, accions sorpressives, rutines d'humor i jocs participatius. Desvetllaran la seva identitat des de l'inici o en un moment determinat."
+      }
+    ],
+    "list": [
+      {
+        "title": "Animacions a la carta",
+        "description": "S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events."
+      },
+      {
+        "title": "Durada de l'espectacle",
+        "description": "Durada mínima: 60 minuts"
+      }
+    ],
+    "synopsis": [
+      {
+        "paragraph": "Cuiners, forners, cambrers, bombers, jardiners en tàndem, dones de la neteja, circ d’època... I també xanquers, monociclistes, bola d'equilibri o bé malabaristes de foc."
+      },
+      {
+        "paragraph": "Tant presenten activitats organitzades com interactúen amb el públic, adequant el vestuari i la caracterització."
+      }
+    ],
+    "techCard": [
+      {
+        "title": "Espai",
+        "description": "Tant en espai delimitat com en moviment."
+      },
+      {
+        "title": "Temps de muntatge",
+        "description": "30 minuts"
+      },
+      {
+        "title": "Temps de desmuntatge",
+        "description": "30 minuts"
+      },
+      {
+        "title": "Presa de llum i escenografia",
+        "description": "A convenir"
+      },
+      {
+        "title": "Equip de so i micros innal·làmbrics",
+        "description": "A convenir"
+      }
+    ],
+    "artCard": [
+      {
+        "title": "Actors",
+        "description": "Jordi Torrens i Albert Pérez (possibilitat d'un llistat més ampli)"
+      },
+      {
+        "title": "Direcció General",
+        "description": "Companyia Filigranes"
+      },
+      {
+        "title": "Dramatúrgia",
+        "description": "Companyia Filigranes"
+      },
+      {
+        "title": "Direcció Musical",
+        "description": "Companyia Filigranes"
+      },
+      {
+        "title": "Escenografia i Vestuari",
+        "description": "Companyia Filigranes"
+      },
+      {
+        "title": "*",
+        "description": "El número de personatges varia en funció del volum esperat de públic assistent."
+      }
+    ]
   }
 }

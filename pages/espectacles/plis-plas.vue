@@ -35,7 +35,7 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('plis-plas')"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-right text-white text-5xl md:text-6xl lg:text-8xl">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-right text-white text-5xl md:text-6xl lg:text-8xl">
           {{ t('routes.plis-plas') }}
         </h1>
       </template>
@@ -76,8 +76,8 @@ const summaryButton = computed(() => {
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'plis-plas')" />
-          <HighlightWorkshops />
-          <HighlightPerformances />
+          <HighlightWorkshops :reorder-index="1" />
+          <HighlightPerformances :reorder-index="1" />
         </div>
       </template>
     </MainContent>

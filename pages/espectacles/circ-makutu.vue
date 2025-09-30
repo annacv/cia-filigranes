@@ -35,7 +35,7 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('circ-makutu')"
       >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-8xl">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('routes.circ-makutu') }}
         </h1>
       </template>
@@ -71,9 +71,9 @@ const summaryButton = computed(() => {
           bgColor="bg-primary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows :reorderIndex="getItemIndex('espectacles', 'circ-makutu')" />
-          <HighlightWorkshops />
-          <HighlightPerformances />
+          <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'circ-makutu')" />
+          <HighlightWorkshops :reorder-index="3" />
+          <HighlightPerformances :reorder-index="3" />
         </div>
       </template>
     </MainContent>
