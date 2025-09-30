@@ -795,6 +795,81 @@
   "performances": {
     "metaDescription": "Custom animations. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
     "commonAlt": "Image of custom animations",
-    "title": "Custom animations"
+    "title": "Custom animations",
+    "hire": {
+      "title": "Do you want your custom show?",
+      "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "abstract": [
+      {
+        "paragraph": "An infinity of characters characterized to measure will interrelate with the public. These authentic chameleons of the scene perform different actions and tricks with humor always present: juggling tricks, disguises, magic, music, surprising actions, humor routines and participatory games. They will reveal their identity from the beginning or at a certain moment."
+      }
+    ],
+    "list": [
+      {
+        "title": "Custom animations",
+        "description": "They adapt to different themes, ideal for enlivening conventions, meetings and all types of events."
+      },
+      {
+        "title": "Show duration",
+        "description": "Minimum duration: 60 minutes"
+      }
+    ],
+    "synopsis": [
+      {
+        "paragraph": "Cooks, bakers, waiters, firefighters, tandem gardeners, cleaning women, period circus... And also stilt walkers, unicyclists, balance ball or fire jugglers."
+      },
+      {
+        "paragraph": "They both present organized activities and interact with the public, adapting the costume and characterization."
+      }
+    ],
+    "techCard": [
+      {
+        "title": "Space",
+        "description": "Both in delimited space and in movement."
+      },
+      {
+        "title": "Setup time",
+        "description": "30 minutes"
+      },
+      {
+        "title": "Breakdown time",
+        "description": "30 minutes"
+      },
+      {
+        "title": "Light and scenography",
+        "description": "To be agreed"
+      },
+      {
+        "title": "Sound equipment and wireless microphones",
+        "description": "To be agreed"
+      }
+    ],
+    "artCard": [
+      {
+        "title": "Actors",
+        "description": "Jordi Torrens and Albert Pérez (possibility of a broader list)"
+      },
+      {
+        "title": "General Direction",
+        "description": "Filigranes Company"
+      },
+      {
+        "title": "Dramaturgy",
+        "description": "Filigranes Company"
+      },
+      {
+        "title": "Musical Direction",
+        "description": "Filigranes Company"
+      },
+      {
+        "title": "Scenography and Costumes",
+        "description": "Filigranes Company"
+      },
+      {
+        "title": "*",
+        "description": "The number of characters varies depending on the expected volume of attending audience."
+      }
+    ]
   }
 }
