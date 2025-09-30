@@ -33,7 +33,6 @@ export default defineNuxtConfig({
     locales: localeObjects,
     customRoutes: 'config',
     pages: routePages,
-    lazy: true,
     langDir: "locales",
     strategy: "prefix_except_default",
     defaultLocale: "ca",
