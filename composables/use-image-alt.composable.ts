@@ -13,6 +13,8 @@ export function useImageAlt(contentType: ContentType): {
         return t('shows.commonAlt', { title: title || '' });
       case 'workshops':
         return t('workshops.commonAlt', { title: title || '' });
+      case 'filipersones':
+        return t('filipersones.commonAlt', { title: title || '' });
       default:
         return '';
     }
