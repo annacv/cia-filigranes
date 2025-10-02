@@ -51,6 +51,7 @@ const props = defineProps({
         </li>
       </ul>
       <FiliButton
+        v-if="button"
         :href="button.href"
         buttonClass="button-outline-neutral self-end"
         :text="t('button.dossier')"

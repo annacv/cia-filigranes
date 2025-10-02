@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
 

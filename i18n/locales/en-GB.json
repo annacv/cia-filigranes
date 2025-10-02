@@ -871,5 +871,129 @@
         "description": "The number of characters varies depending on the expected volume of attending audience."
       }
     ]
+  },
+  "filipersones": {
+    "metaDescription": "We founded the Filigranes Company in 2004. We are a group linked to performing arts, mainly with the circus world and the fascinating world of clowns. Our main task is the creation and production of shows.",
+    "commonAlt": "Image of {title}",
+    "hero": {
+      "subtitle": "Makutu and Trinxeta"
+    },
+    "claimTitle": "We fill streets and theaters with humor, magic and emotion.",
+    "claim": "Get to know the Filigranes Company and let yourself be captivated by the world of clowns and circus!",
+    "knowMoreTitle": "Makutu and Trinxeta in detail:",
+    "knowMore": "The origins of our passion for performing arts",
+    "origins": [
+      {
+        "paragraph": "The Filigranes Company is made up of Jordi Torrens (Trinxeta) and Albert Pérez (Makutu) as clown actors. Since 1996 we have been performing together in different initiatives related to performing arts, mainly with the circus world and the fascinating world of clowns."
+      }
+    ],
+    "history": [
+      {
+        "paragraph": "In 2004 we founded the Filigranes Company. Since then, our main task has been the creation and production of shows, such as: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\"..."
+      },
+      {
+        "paragraph": "Currently we are accompanied by Walter Velázquez (director/dramaturg) and Francesc Pascual (sound and lighting technician). We have also worked with Mago Manu (artistic director) and Carles Grau (director/dramaturg)."
+      }
+    ],
+    "background": [
+      {
+        "paragraph": "In addition to having performed in a wide range of Festes Majors, theaters, Festivals, Galas, Circus Cabarets..., they actively participate in other initiatives: They are trainers and founding members of the Terrassa Circus Association Tub d'Assaig 7'70; and members of the Association of Circus Professionals of Catalonia and Clowns Without Borders."
+      }
+    ],
+    "stories": [
+      {
+        "title": "Background",
+        "description": "Alternatiu X {'·'} Sàtirs {'·'} Pallass{'@'}s Perillass{'@'}s {'·'} S3 de Riure {'·'} La Cremallera Teatre {'·'} Comediants."
+      },
+      {
+        "title": "Collaborations",
+        "description": "Tub d'Assaig 7'70 {'·'} Associació Pallass{'@'}s Art i Efecte {'·'} Cia. Improvisto's {'·'} Pallassos Sense Fronteres {'·'} Fundació La Roda {'·'} Ca l'Estruch {'·'} Associació de Professionals del Circ de Catalunya {'·'} Punt Clown {'·'} Cia. Albert Vinyes {'·'} Els Comediants"
+      }
+    ],
+    "prices": [
+      {
+        "title": "Awards",
+        "description": "Company winner of the Estrena't Clown Cabaret 2025 {'·'} Zirkòlika Award 2012 for the best project for the projection of circus with the Terrassa Circus Association Tub d'Assaig 7'70."
+      }
+    ],
+    "scenariosLeft": [
+      {
+        "title": "Stages and festivals",
+        "description": "Performances in different countries of Latin America {'·'} International Clown Festival of Xirivella (2010) {'·'} Cabaret of the Year. Circ Mitenes (Cultural Center of Terrassa, 2011) {'·'} Circ i Modernisme (Circ Raluy Tent, 2012 and 2013) {'·'} Street Circus Fair of La Bisbal de l'Empordà (2013) {'·'} MART. Cabaret of lies (Alegria Theater, Performing Arts Center of Terrassa, 2013) {'·'} Circus, Clown and Performing Arts Festivals of Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala for Clowns Without Borders (Vela de Ca l'Estruch de Sabadell, 2018) {'·'} International Clown Festival of Cornellà del Llobregat 2018 {'·'} Cric and Calldeclowns Circus Festivals 2019 {'·'} Clowns for Freedom {'·'} Calders Healthy {'·'} Festes Majors and theaters throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna 2019 {'·'} Circus Day in Breda (different editions) {'·'}"
+      }
+    ],
+    "scenariosRight": [
+      {
+        "description": "Festa Major de la Mercè (Barcelona) 2019 and 2020 with Clowns Without Borders {'·'} Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc (2020 and 2021), different editions of World Circus Day {'·'} Curtcirckit Festival of Montgat 2022 {'·'} Children's Shows Cycle St. Joan de les Abadesses 2022 {'·'} Modernist Fair of Terrassa 2022 {'·'} Clown Fair of Vilanova de Muga 2022 {'·'} Creixendo Festival 2022 {'·'} Circus Festival of Terrassa (different editions) {'·'} Parades {'·'} Christmas fairs and educational centers of different towns {'·'} Art's Festival of Almoster 2023 {'·'} Clown Show of Cubelles 2023 {'·'} circus workshops with the Education Service of the Terrassa City Council {'·'} the Sports Council of Bages and for many other entities {'·'} City Councils and educational centers {'·'} Christmas Programming at the Gradeta of Tub d'Assaig 2024 {'·'} Estrena't Clown Cabaret 2025 {'·'} Matinees for the whole family at the Pepita Casanellas Hall of the Civic Center Casa del Rellotge of Barcelona 2025 {'·'} Street Shows Show of Olivella 2025 {'·'} Central Event of Mulla't for multiple sclerosis 2025 {'·'} Al Ras Petit Festival at Konvent 2025 {'·'} Catalunya Aixeca el teló Gala 2025 at the Gran Teatre del Liceu of Barcelona {'·'} Clownic Festival of Torrelles de Foix 2025..."
+      }
+    ],
+    "makutu": {
+      "metaDescription": "Albert (Makutu) has performed throughout Catalonia and Spain; and also in Latin America: in Guatemala, Mexico, Nicaragua, Brazil, Argentina, Uruguay, Bolivia, Peru... Currently he is a member of the Filigranes Company (2004) and the Tub d'Assaig 7'70 Circus Association. He works as a trainer and also practices disciplines related to the circus world, such as juggling, object manipulation, balance ball or stilts.",
+      "hero": {
+        "subtitle": "- Albert -"
+      },
+      "claimTitle": "Live!",
+      "claim": "Makutu's Little Circus",
+      "abstract": [
+        {
+          "paragraph": "Currently Albert is a member of the Filigranes Company (2004) and the Tub d'Assaig 7'70 Circus Association. He works as a trainer and also practices disciplines related to the circus world, such as juggling, object manipulation, balance ball or stilts."
+        }
+      ],
+      "list": [
+        {
+          "title": "Albert Pérez",
+          "description": "He has performed throughout Catalonia and Spain; and also in Latin America: in Guatemala, Mexico, Nicaragua, Brazil, Argentina, Uruguay, Bolivia, Peru..."
+        }
+      ],
+      "intro": [
+        {
+          "paragraph": "Graduated in Social Education, Albert was born in Terrassa in 1977. He began to be interested in the circus world at 16, although from a very young age he had already stepped on some stage performing musical and theatrical performances. He attended the Terrassa Music Conservatory until he was 14, where he learned solfeggio and guitar."
+        }
+      ],
+      "background": [
+        {
+          "paragraph": "Later he combined his training with participation in various companies. He took numerous clown courses: at the \"El Timbal\" acting school (with Merche Ochoa), at the \"Rogelio Rivel Circus School\" (with Joan Armengol); and others with Manu Aizpuru, Wálter Velázquez and Moshe Cohen."
+        }
+      ],
+      "learningPath": [
+        {
+          "paragraph": "He also trained in Buenos Aires, where he spent two seasons of six months: he attended the \"Circo Criollo\" school, taking a mime course with Alberto Ivern, and at the \"Teatro del Absurdo Palermo. In 2015 he took the circus didactics and pedagogy course by Patrick Pinchón."
+        }
+      ]
+    },
+    "trinxeta": {
+      "metaDescription": "Jordi (Trinxeta) has collaborated as a freelancer with other companies, including Comediants and Clowns Without Borders. Currently he is a member of the Filigranes Company (2004) and the Tub d'Assaig 7'70 Circus Association. He dedicates part of his time to conducting specific workshops as a teacher, his specialty being clown, object manipulation, unicycle and fire juggling.",
+      "hero": {
+        "subtitle": "- Jordi -"
+      },
+      "claimTitle": "Live!",
+      "claim": "Trinxat doesn't Tremble",
+      "abstract": [
+        {
+          "paragraph": "Currently Jordi is a member of the Filigranes Company (2004) and the Tub d'Assaig 7'70 Circus Association. He dedicates part of his time to conducting specific workshops as a teacher, his specialty being clown, object manipulation, unicycle and fire juggling."
+        }
+      ],
+      "list": [
+        {
+          "title": "Jordi Torrens",
+          "description": "He has collaborated as a freelancer with other companies, including Comediants and Clowns Without Borders."
+        }
+      ],
+      "intro": [
+        {
+          "paragraph": "Jordi was born in Terrassa (Barcelona) in 1975. From a very young age he has been linked to the popular culture of his city. Until he was 15 he was part of the Esbart Dansaire, Diables de Terrassa, and also of the Minyons de Terrassa casteller group. In 1991 he began to link with street theater collectives, clowns and circus."
+        }
+      ],
+      "learningPath": [
+        {
+          "paragraph": "Jordi has always given great importance to his training and that is why he has been under the direction of recognized clown masters both nationally and internationally, such as Manu Aizpuru, Moshe Cohen, Walter Velázquez, Patrick Pinchón (circus didactics and pedagogy course), or Loco Brusca (\"El cuerpo creativo\")."
+        }
+      ],
+      "background": [
+        {
+          "paragraph": "Very soon he created two characters: \"Trinxat Tremola\", a clumsy clown with whom he performs on small stages, circus conventions and cabarets for adults; and \"Trinxoff\", sharp and white-faced. It is during these years that he also collaborates as a freelancer with other companies, including Comediants (2008). In 2010 he participated with Clowns Without Borders on an expedition to Lebanon."
+        }
+      ]
+    }
   }
 }
