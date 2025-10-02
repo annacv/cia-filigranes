@@ -66,7 +66,7 @@ const makutuAlt = getImageAlt('makutu')
           :description="learningPath"
           :image="getImageByRoute('filipersones', 'makutu_3')"
           content-type="shows"
-          alt="makutuAlt"
+          :alt="makutuAlt"
           show-full-content
         />
         <ClaimTitle
