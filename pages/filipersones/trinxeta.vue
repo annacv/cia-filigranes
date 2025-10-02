@@ -8,7 +8,7 @@ const { imageAlt: getImageAlt } = useImageAlt('filipersones');
 
 useHead({
   meta: [
-    { name: 'description', content: t('performances.metaDescription') }
+    { name: 'description', content: t('filipersones.trinxeta.metaDescription') }
   ]
 })
 const abstract = getTranslatedList('filipersones.trinxeta.abstract', ['paragraph'])
