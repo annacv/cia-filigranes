@@ -50,7 +50,7 @@ const props = defineProps({
       :title="item.title"
       :is-reversed="(index + 1) % 2 === 0"
       :info-button="item.buttons.infoButton"
-      :download-button="item.buttons.downloadButton || undefined"
+      :download-button="item.buttons.downloadButton"
     />
   </div>
 </template>
