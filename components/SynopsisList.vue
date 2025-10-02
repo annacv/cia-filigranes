@@ -4,9 +4,11 @@ import type { CardImage, ContentType } from "~/types";
 const props = defineProps({
   claim: {
     type: String,
+    required: true
   },
   claimTitle: {
     type: String,
+    required: true
   },
   items: {
     type: Array as () => Array<{
@@ -20,7 +22,7 @@ const props = defineProps({
           href: string
           class: string
         }
-        downloadButton: {
+        downloadButton?: {
           href: string
           download: string
         }
@@ -34,11 +36,10 @@ const props = defineProps({
 
 <template>
   <div class="flex flex-col mt-20">
-    <div class="grid-layout mb-20">
-      <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl 2xl:w-[90%]">
-        {{ claimTitle }} <br> {{ claim }}
-      </h2>
-    </div>
+    <ClaimTitle
+      :claim="claim"
+      :claim-title="claimTitle"
+    />
     <Synopsis
       v-for="(item, index) in items"
       :key="index"

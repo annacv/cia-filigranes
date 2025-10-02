@@ -874,5 +874,129 @@
         "description": "El número de personatges varia en funció del volum esperat de públic assistent."
       }
     ]
+  },
+  "filipersones": {
+    "metaDescription": "La Companyia Filigranes la vam fundar el 2004. Som un grup vinculat amb les arts escèniques, principalment amb el món del circ i amb l'apassionant món dels pallassos i pallasses. La nostra tasca principal és la creació i producció d'espectacles.",
+    "commonAlt": "Imatge de {title}",
+    "hero": {
+      "subtitle": "Makutu i Trinxeta"
+    },
+    "claimTitle": "Omplim carrers, i teatres amb humor, màgia i emoció.",
+    "claim": "Coneix la Companyia Filigranes i deixa't captivar pel món dels pallassos i del circ!",
+    "knowMoreTitle": "Makutu i Trinxeta al detall:",
+    "knowMore": "Els origens de la nostra passió per les arts escèniques",
+    "origins": [
+      {
+        "paragraph": "La Cia.Filigranes la integrem Jordi Torrens (Trinxeta) i Albert Pérez (Makutu) com a actors clown. Des del 1996 que actuem plegats en diferents iniciatives relacionades amb les arts escèniques, principalment amb el món del circ i amb l'apassionant món dels pallassos i pallasses."
+      }
+    ],
+    "history": [
+      {
+        "paragraph": "Al 2004 vam fundar la Companyia Filigranes. Des d'aleshores, la nostra tasca principal ha estat la creació i producció d'espectacles, com: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\"..."
+      },
+      {
+        "paragraph": "Actualment ens acompanyen Walter Velázquez (director/dramaturg) i Francesc Pascual (tècnic de so i il·luminació). També hem treballat amb Mago Manu (director artístic) i Carles Grau (director/dramaturg)."
+      }
+    ],
+    "background": [
+      {
+        "paragraph": "A banda d'haver actuat en un ventall ampli de Festes Majors, teatres, Festivals, Gales, Cabarets de Circ...,participen activament en d’altres iniciatives: Són formadors i membres fundadors de l’Associació de Circ de Terrassa Tub d’Assaig 7’70; i membres de l’Associació de Professionals de Circ de Catalunya i de Pallassos Sense Fronteres."
+      }
+    ],
+    "stories": [
+      {
+        "title": "Antecedents",
+        "description": "Alternatiu X {'·'} Sàtirs {'·'} Pallass{'@'}s Perillass{'@'}s {'·'} S3 de Riure {'·'} La Cremallera Teatre {'·'} Comediants."
+      },
+      {
+        "title": "Col·laboracions",
+        "description": "Tub d'Assaig 7'70 {'·'} Associació Pallass{'@'}s Art i Efecte {'·'} Cia. Improvisto's {'·'} Pallassos Sense Fronteres {'·'} Fundació La Roda {'·'} Ca l'Estruch {'·'} Associació de Professionals del Circ de Catalunya {'·'} Punt Clown {'·'} Cia. Albert Vinyes {'·'} Els Comediants"
+      }
+    ],
+    "prices": [
+      {
+        "title": "Premis",
+        "description": "Companyia guanyadora de l'Estrena't Clown Cabaret 2025 {'·'} Premi Zirkòlika 2012 al millor projecte per la projecció del circ amb l'Associació de Circ de Terrassa Tub d'Assaig 7'70."
+      }
+    ],
+    "scenariosLeft": [
+      {
+        "title": "Escenaris i festivals",
+        "description": "Actuacions a diferents països d'Amèrica llatina {'·'} Festival Internacional de pallassos de Xirivella (2010) {'·'} Cabaret de l'Any. Circ Mitenes (Centre Cultural de Terrassa, 2011) {'·'} Circ i Modernisme (Carpa del Circ Raluy, 2012 i 2013) {'·'} Fira de Circ al carrer de La Bisbal de l'Empordà (2013) {'·'} MART. Cabaret de la mentida (Teatre Alegria, Centre d'Arts Escèniques de Terrassa, 2013) {'·'} Festivals de Circ, Pallassos i Arts Escèniques d'Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala per Pallassos Sense Fronteres (Vela de Ca l'Estruch de Sabadell, 2018) {'·'} Festival Internacional de Pallass{'@'}s de Cornellà del Llobregat 2018 {'·'} Festivals del Circ Cric i Calldeclowns 2019 {'·'} Pallass{'@'}s per la Llibertat {'·'} Calders Saludable {'·'} Festes Majors i teatres per tota Catalunya, Estat Espanyol i Andorra {'·'} Festival familiar de Santa Susanna 2019 {'·'} Dia del Circ a Breda (diferents edicions) {'·'}"
+      }
+    ],
+    "scenariosRight": [
+      {
+        "description": "Festa Major de la Mercè (Barcelona) 2019 i 2020 amb Pallassos Sense Fronteres {'·'} Festival Circdanya (diferents edicions) {'·'} Viu el Teatre al Turó Parc (2020 i 2021), diferents edicions del dia mundial del circ {'·'} Festival Curtcirckit de Montgat 2022 {'·'} Cicle espectacles infantils St. joan de les Abadesses 2022 {'·'} Fira Modernista de Terrassa 2022 {'·'} Fira del Clown Vilanova de Muga 2022 {'·'} Festival Creixendo 2022 {'·'} Festival de circ de Terrassa (diferents edicions) {'·'} Cavalcades {'·'} fires de Nadal i centres educatius de diferents poblacions {'·'} Festival Art's d'Almoster 2023 {'·'} Mostra de Pallasses i Pallassos de Cubelles 2023 {'·'} tallers de circ amb el Servei d'Educació de l'Ajuntament de Terrassa {'·'} el Consell esportiu del Bages i per moltes altres entitats {'·'} Ajuntaments i centre educatius {'·'} Programació de Nadal a la Gradeta de Tub d'Assaig 2024 {'·'} Estrena't Clown Cabaret 2025 {'·'} Matinals per a tota la família a la Sala Pepita Casanellas del Centre Cívic Casa del Rellotge de Barcelona 2025 {'·'} Mostra d'espectacles al carrer d'Olivella 2025 {'·'} Acte Central del Mulla't per l'esclerosis múltiple 2025 {'·'} Al Ras Petit Festival al Konvent 2025 {'·'} Gala Catalunya Aixeca el teló 2025 al Gran Teatre del Liceu de Barcelona {'·'} Festival Clownic de Torrelles de Foix 2025..."
+      }
+    ],
+    "makutu": {
+      "metaDescription": "L'Albert (Makutu) ha actuat arreu de Catalunya i l'Estat Espanyol; i també a l'Amèrica Llatina: a Guatemala, Mèxic, Nicaragua, Brasil, Argentina, Uruguay, Bolivia, Perú… Actualment és membre de la Companyia Filigranes (2004) i de l'Associació de Circ Tub d'Assaig 7'70. Exerceix com a formador i també practica disciplines vinculades amb el món del circ, com els malabars, la manipulació d'objectes, la bola d'equilibris o les xanques.",
+      "hero": {
+        "subtitle": "- Albert -"
+      },
+      "claimTitle": "En directe!",
+      "claim": "El Petit Circ de Makutu",
+      "abstract": [
+        {
+          "paragraph": "Actualment l'Albert és membre de la Companyia Filigranes (2004) i de l'Associació de Circ Tub d'Assaig 7'70. Exerceix com a formador i també practica disciplines vinculades amb el món del circ, com els malabars, la manipulació d'objectes, la bola d'equilibris o les xanques."
+        }
+      ],
+      "list": [
+        {
+          "title": "Albert Pérez",
+          "description": "Ha actuat arreu de Catalunya i l'Estat Espanyol; i també a l'Amèrica Llatina: a Guatemala, Mèxic, Nicaragua, Brasil, Argentina, Uruguay, Bolivia, Perú…"
+        }
+      ],
+      "intro": [
+        {
+          "paragraph": "Diplomat en Educació Social, l'Albert neix a Terrassa el 1977. Comença a interessar-se pel món del Circ als 16 anys, tot i que de ben petitet ja havia trepitjat algún escenari realitzant representacions musicals i teatrals. Assisteix al Conservatori de Música de Terrassa fins als 14 anys, on aprèn solfeig i guitarra."
+        }
+      ],
+      "background": [
+        {
+          "paragraph": "Més endavant combina la seva formació amb la participació en diverses companyies. Realitza nombrosos cursos de clown: a l'escola d'interpretació «El Timbal» (amb Merche Ochoa), a «l'Escola de Circ Rogelio Rivel» (amb Joan Armengol); i d'altres amb Manu Aizpuru, Wálter Velázquez i Moshe Cohen."
+        }
+      ],
+      "learningPath": [
+        {
+          "paragraph": "També s'ha format a Buenos Aires, on ha passat dues temporades de sis mesos: ha assistit a l'escola de «Circo Criollo», realitzant un curs de mim amb Alberto Ivern, i al «Teatro del Absurdo Palermo. Al 2015 realitza el curs de didàctica i pedagogia del circ de Patrick Pinchón."
+        }
+      ]
+    },
+    "trinxeta": {
+      "metaDescription": "En Jordi (Trinxeta) ha col·laborat com a freelance amb d'altres companyies, entre elles Comediants i Pallassos Sense Fronteres. Actualment és membre de la Companyia Filigranes (2004) i de l'Associació de Circ Tub d'Assaig 7'70. Dedica part del seu temps a la realització de tallers específics exercint com a docent, sent la seva especialitat el clown, la manipulació d'objectes, el monocicle i els malabars de foc.",
+      "hero": {
+        "subtitle": "- Jordi -"
+      },
+      "claimTitle": "En directe!",
+      "claim": "Trinxat no Tremola",
+      "abstract": [
+        {
+          "paragraph": "Actualment en Jordi és membre de la Companyia Filigranes (2004) i de l'Associació de Circ Tub d'Assaig 7'70. Dedica part del seu temps a la realització de tallers específics exercint com a docent, sent la seva especialitat el clown, la manipulació d'objectes, el monocicle i els malabars de foc."
+        }
+      ],
+      "list": [
+        {
+          "title": "Jordi Torrens",
+          "description": "Ha col·laborat com a freelance amb d'altres companyies, entre elles Comediants i Pallassos Sense Fronteres."
+        }
+      ],
+      "intro": [
+        {
+          "paragraph": "En Jordi va néixer a Terrassa (Barcelona) l’any 1975. Des de ben petit ha estat lligat a la cultura popular de la seva ciutat. Fins als 15 anys formà part de l’Esbart Dansaire, Diables de Terrassa, i també de la colla castellera Minyons de Terrassa. Al 1991 comença a vincular-se a col·lectius de teatre al carrer, pallassos i circ."
+        }
+      ],
+      "learningPath": [
+        {
+          "paragraph": "En Jordi sempre ha donat molta importància a la seva formació i és per aquest motiu que s'ha posat sota la direcció de reconeguts mestres clown tant a nivell nacional com internacional, com són Manu Aizpuru, Moshe Cohen, Walter Velázquez, Patrick Pinchón (curs didàctica i pedagogia del circ), o Loco Brusca (“El cuerpo creativo”)."
+        }
+      ],
+      "background": [
+        {
+          "paragraph": "Ben aviat crea dos personatges: en «Trinxat Tremola», un pallasso abufonat amb el qual actúa en petits escenaris, convencions de circ i cabarets per a adults; i «Trinxoff», punxagut i carablanca. És durant aquests anys que també col·labora com a freelance amb d'altres companyies, entre elles Comediants (2008). Al 2010 participa amb Pallassos Sense Fronteres en una expedició al Líban."
+        }
+      ]
+    }
   }
 }
