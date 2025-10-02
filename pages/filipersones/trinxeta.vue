@@ -66,7 +66,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           :description="background"
           :image="getImageByRoute('filipersones', 'trinxeta_3')"
           content-type="shows"
-          alt="trinxetaAlt"
+          :alt="trinxetaAlt"
           show-full-content
         />
         <ClaimTitle
