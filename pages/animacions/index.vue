@@ -13,12 +13,11 @@ useHead({
 })
 
 const abstract = getTranslatedList('performances.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('performances.list', ['title', 'description'])
 const synopsis = getTranslatedList('performances.synopsis', ['paragraph'])
 const techCard = getTranslatedList('performances.techCard', ['title', 'description'])
 const artCard = getTranslatedList('performances.artCard', ['title', 'description'])
 
-const summaryButton = computed(() => {
+const synopsisButton = computed(() => {
   return {
     download: `CiaFiligranes-animacions-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-animacions-${locale.value}.pdf`,
@@ -34,26 +33,32 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('animacions')"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl lg:max-w-[543px]">
+        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-3xl md:text-5xl lg:text-6xl lg:max-w-[543px]">
           {{ t('performances.title') }}
         </h1>
       </template>
     </HeroCover>
     <MainContent>
-      <template #wrapped>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
-      </template>
       <template #unwrapped>
+        <ClaimTitle
+          :claim="t('performances.claim')"
+          :claim-title="t('performances.claimTitle')"
+        />
         <Synopsis
-          :description="synopsis"
+          :description="abstract"
           :image="getImageByRoute('animacions', 'cuiners')"
           content-type="performances"
           :alt="getImageAlt('animacions')"
           show-full-content
+          :downloadButton="synopsisButton"
+        />
+        <Synopsis
+          :description="synopsis"
+          :image="getImageByRoute('animacions', 'forner')"
+          content-type="performances"
+          :alt="getImageAlt('animacions')"
+          show-full-content
+          isReversed
         />
         <DataSheet
           :techCard="techCard"

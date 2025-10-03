@@ -795,6 +795,8 @@
   "performances": {
     "metaDescription": "Custom animations. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
     "commonAlt": "Image of custom animations",
+    "claimTitle": "An infinity of characters characterized to measure will interrelate with the public.",
+    "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events!",
     "title": "Custom animations",
     "hire": {
       "title": "Do you want your custom show?",
@@ -802,17 +804,7 @@
     },
     "abstract": [
       {
-        "paragraph": "An infinity of characters characterized to measure will interrelate with the public. These authentic chameleons of the scene perform different actions and tricks with humor always present: juggling tricks, disguises, magic, music, surprising actions, humor routines and participatory games. They will reveal their identity from the beginning or at a certain moment."
-      }
-    ],
-    "list": [
-      {
-        "title": "Custom animations",
-        "description": "They adapt to different themes, ideal for enlivening conventions, meetings and all types of events."
-      },
-      {
-        "title": "Show duration",
-        "description": "Minimum duration: 60 minutes"
+        "paragraph": "These authentic chameleons of the scene perform different actions and tricks with humor always present: juggling tricks, disguises, magic, music, surprising actions, humor routines and participatory games. They will reveal their identity from the beginning or at a certain moment."
       }
     ],
     "synopsis": [
@@ -824,6 +816,10 @@
       }
     ],
     "techCard": [
+      {
+        "title": "Duration",
+        "description": "Minimum duration: 60 minutes"
+      },
       {
         "title": "Space",
         "description": "Both in delimited space and in movement."
@@ -851,11 +847,7 @@
         "description": "Jordi Torrens and Albert Pérez (possibility of a broader list)"
       },
       {
-        "title": "General Direction",
-        "description": "Filigranes Company"
-      },
-      {
-        "title": "Dramaturgy",
+        "title": "General Direction and Dramaturgy",
         "description": "Filigranes Company"
       },
       {
@@ -865,6 +857,10 @@
       {
         "title": "Scenography and Costumes",
         "description": "Filigranes Company"
+      },
+      {
+        "title": "*",
+        "description": "The custom animations adapt to different themes."
       },
       {
         "title": "*",
