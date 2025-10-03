@@ -795,6 +795,8 @@
   "performances": {
     "metaDescription": "Animaciones a la carta. Se adaptan a diferentes temáticas, ideales para amenizar convenciones, encuentros y todo tipo de eventos.",
     "commonAlt": "Imagen de animaciones a la carta",
+    "claimTitle": "Una infinidad de personajes caracterizados a medida se interrelacionarán con el público.",
+    "claim": "¡Ideales para amenizar cumpleaños, convenciones, encuentros y todo tipo de eventos!",
     "title": "Animaciones a la carta",
     "hire": {
       "title": "¿Quieres tu espectáculo a medida?",
@@ -802,17 +804,7 @@
     },
     "abstract": [
       {
-        "paragraph": "Una infinidad de personajes caracterizados a medida se interrelacionarán con el público. Estos auténticos camaleones de la escena realizan diferentes acciones y trucos con el humor siempre presente: trucos malabares, disfraces, magia, música, acciones sorpresivas, rutinas de humor y juegos participativos. Desvelarán su identidad desde el inicio o en un momento determinado."
-      }
-    ],
-    "list": [
-      {
-        "title": "Animaciones a la carta",
-        "description": "Se adaptan a diferentes temáticas, ideales para amenizar convenciones, encuentros y todo tipo de eventos."
-      },
-      {
-        "title": "Duración del espectáculo",
-        "description": "Duración mínima: 60 minutos"
+        "paragraph": "Estos auténticos camaleones de la escena realizan diferentes acciones y trucos con el humor siempre presente: trucos malabares, disfraces, magia, música, acciones sorpresivas, rutinas de humor y juegos participativos. Desvelarán su identidad desde el inicio o en un momento determinado."
       }
     ],
     "synopsis": [
@@ -824,6 +816,10 @@
       }
     ],
     "techCard": [
+      {
+        "title": "Duración",
+        "description": "Duración mínima: 60 minutos"
+      },
       {
         "title": "Espacio",
         "description": "Tanto en espacio delimitado como en movimiento."
@@ -851,11 +847,7 @@
         "description": "Jordi Torrens y Albert Pérez (posibilidad de un listado más amplio)"
       },
       {
-        "title": "Dirección General",
-        "description": "Compañía Filigranes"
-      },
-      {
-        "title": "Dramaturgia",
+        "title": "Dirección General y Dramaturgia",
         "description": "Compañía Filigranes"
       },
       {
@@ -865,6 +857,10 @@
       {
         "title": "Escenografía y Vestuario",
         "description": "Compañía Filigranes"
+      },
+      {
+        "title": "*",
+        "description": "Las animaciones se adaptan a diferentes temáticas."
       },
       {
         "title": "*",

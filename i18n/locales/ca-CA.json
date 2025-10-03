@@ -798,6 +798,8 @@
   "performances": {
     "metaDescription": "Animacions a la carta. S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events.",
     "commonAlt": "Imatge d'animacions a la carta",
+    "claimTitle": "Una infinitat de personatges caracteritzats a mida s'interrelacionaran amb el públic.",
+    "claim": "Ideals per amenitzar aniversaris, convencions, trobades i tot tipus d'esdeveniments!",
     "title": "Animacions a la carta",
     "hire": {
       "title": "Vols el teu espectacle a mida?",
@@ -805,17 +807,7 @@
     },
     "abstract": [
       {
-        "paragraph": "Una infinitat de personatges caracteritzats a mida s'interrelacionaran amb el públic. Aquests autèntics camaleons de l'escena realitzen diferents accions i trucs amb l'humor sempre present: trucs malabars, disfresses, màgia, música, accions sorpressives, rutines d'humor i jocs participatius. Desvetllaran la seva identitat des de l'inici o en un moment determinat."
-      }
-    ],
-    "list": [
-      {
-        "title": "Animacions a la carta",
-        "description": "S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events."
-      },
-      {
-        "title": "Durada de l'espectacle",
-        "description": "Durada mínima: 60 minuts"
+        "paragraph": "Aquests autèntics camaleons de l'escena realitzen diferents accions i trucs amb l'humor sempre present: trucs malabars, disfresses, màgia, música, accions sorpressives, rutines d'humor i jocs participatius. Desvetllaran la seva identitat des de l'inici o en un moment determinat."
       }
     ],
     "synopsis": [
@@ -827,6 +819,10 @@
       }
     ],
     "techCard": [
+      {
+        "title": "Durada",
+        "description": "Durada mínima: 60 minuts"
+      },
       {
         "title": "Espai",
         "description": "Tant en espai delimitat com en moviment."
@@ -854,11 +850,7 @@
         "description": "Jordi Torrens i Albert Pérez (possibilitat d'un llistat més ampli)"
       },
       {
-        "title": "Direcció General",
-        "description": "Companyia Filigranes"
-      },
-      {
-        "title": "Dramatúrgia",
+        "title": "Direcció General i Dramatúrgia",
         "description": "Companyia Filigranes"
       },
       {
@@ -868,6 +860,10 @@
       {
         "title": "Escenografia i Vestuari",
         "description": "Companyia Filigranes"
+      },
+      {
+        "title": "*",
+        "description": "Les animacions s'adapten a diferents temàtiques."
       },
       {
         "title": "*",
