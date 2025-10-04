@@ -23,6 +23,7 @@
     --gradient-overlay-primary: rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66);
     --gradient-overlay-secondary: rgb(92 41 120 / 0.72), rgb(73 26 99 / 0.66);
     --gradient-overlay-tertiary: rgb(227 41 6 / 0.72), rgb(203 35 3 / 0.66);
+    --gradient-overlay-quaternary: rgb(251 221 11 / 0.72), rgb(253 244 143 / 0.66);
 
     /* Line height values */
     --line-height-sm: 1.4rem;

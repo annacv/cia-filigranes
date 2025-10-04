@@ -49,6 +49,7 @@ const config: Config = {
         'highlight-primary': 'linear-gradient(to right bottom, var(--color-primary-500), var(--color-primary-700))',
         'highlight-secondary': 'linear-gradient(to right bottom, var(--color-secondary-500), var(--color-secondary-700))',
         'highlight-tertiary': 'linear-gradient(to right bottom, var(--color-tertiary-500), var(--color-tertiary-700))',
+        'highlight-quaternary': 'linear-gradient(to right bottom, var(--color-quaternary-500), var(--color-quaternary-300))',
       }
     },
   },
@@ -57,6 +58,7 @@ const config: Config = {
     'text-primary-500', 'border-primary-500',
     'text-secondary-500', 'border-secondary-500',
     'text-tertiary-500', 'border-tertiary-500',
+    'text-quaternary-500', 'border-quaternary-500',
   ],
 }
 
