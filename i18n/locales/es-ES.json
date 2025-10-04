@@ -10,6 +10,7 @@
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
     }
   },
+  "commonAlt": "Imagen de la Compañía Filigranes",
   "routes": {
     "home": "Inicio",
     "espectacles": "Espectáculos",
@@ -991,5 +992,18 @@
         }
       ]
     }
+  },
+  "contact": {
+    "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
+    "hero": {
+      "title": "¡Contacto directo! para consultas, contrataciones y encuentros"
+    },
+    "rrss": {
+      "title": "Y si quieres charlar un poco, o ver dónde actuamos próximamente...",
+      "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también podrás visionar grandes momentos de nuestros espectáculos en nuestra Filitele."
+    },
+    "map": {
+      "title": "Mapa de ubicación de la Compañía Filigranes"
+    }  
   }
 }

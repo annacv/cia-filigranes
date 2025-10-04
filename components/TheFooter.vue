@@ -1,27 +1,9 @@
 <script setup lang="ts">
-  import { RRSS, CONTACT } from "~/constants";
+  import { CONTACT } from "~/constants";
   import CiaBrand from "~/components/CiaBrand.vue";
-  import FacebookIcon from "~/assets/icons/facebook.svg";
-  import InstagramIcon from "~/assets/icons/instagram.svg";
-  import YoutubeIcon from "~/assets/icons/youtube.svg";
-  import LinkedinIcon from "~/assets/icons/linkedin.svg";
 
   const { t } = useI18n()
   const { isMobileOrTablet } = useDevice()
-
-  const socialIcons = {
-    facebook: FacebookIcon,
-    instagram: InstagramIcon,
-    youtube: YoutubeIcon,
-    linkedin: LinkedinIcon
-  }
-
-  const getIcon = (url: string) => {
-    const platform = Object.keys(socialIcons).find(platform =>
-      url.includes(platform)
-    )
-    return platform ? socialIcons[platform as keyof typeof socialIcons] : null
-  }
 
 </script>
 <template>
