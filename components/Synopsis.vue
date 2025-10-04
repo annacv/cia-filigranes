@@ -23,13 +23,17 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  isFullReversed: {
+    type: Boolean,
+    default: false
+  },
   showFullContent: {
     type: Boolean,
     default: false
   },
   description: {
     type: Array as () => Record<string, any>[],
-    required: true,
+    required: false,
     default: () => []
   },
   title: {
@@ -52,13 +56,17 @@ const isHovered = ref(false)
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
 
-const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0, 100% 0)';
-const reversedClipPath = 'polygon(0 100%, 80% 100%, 96% 0, 0 0)';
-const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
+const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0%, 100% 0%)';
+const reversedClipPath = 'polygon(0% 100%, 80% 100%, 96% 0%, 0% 0%)';
+const fullReversedClipPath = 'polygon(0% 100%, 96% 100%, 80% 0%, 0% 0%)';
+const currentClipPath = computed(() => props.isReversed ? reversedClipPath : props.isFullReversed ? fullReversedClipPath : initialClipPath)
 
 const getColors = computed(() => {
-  if (props.contentType) {
+  if (props.contentType && props.contentType !== 'contact') {
     return `${bgColorClass.value} text-neutral-100`;
+  }
+  if (props.contentType === 'contact') {
+    return `${bgColorClass.value} text-neutral-900`
   }
   return 'bg-neutral-0 text-neutral-900';
 })
@@ -76,54 +84,57 @@ const toggleHover = () => {
   >
     <div :class="[
       'flex flex-col md:flex-row gap-0 xl:gap-5',
-      isReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
+      isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
     >
-      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 p-5 lg:py-20 2xl:py-36">
-        <h2 v-if="title" class="font-grotesk uppercase text-3xl lg:text-5xl">
-          {{ title }}
-        </h2>
-        <p
-          class="text-lg lg:text-xl"
-          :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
-          <span
-            v-for="item in showFullContent ? description : description.slice(0, 1)"
-            :key="item.paragraph"
-          >
-            {{ item.paragraph }}
-          </span>
-        </p>
+      <slot name="content">
+        <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 p-5 lg:py-20 2xl:py-36">
+            <h2 v-if="title" class="font-grotesk uppercase text-3xl lg:text-5xl">
+              {{ title }}
+            </h2>
+            <p
+              v-if="description"
+              class="text-lg lg:text-xl"
+              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
+              <span
+                v-for="item in showFullContent ? description : description.slice(0, 1)"
+                :key="item.paragraph"
+              >
+                {{ item.paragraph }}
+              </span>
+            </p>
 
-        <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
-          <FiliButton
-            v-if="infoButton"
-            :href="infoButton.href"
-            :buttonClass="`${infoButton.class} self-start`"
-            :text="t('button.info')"
-            target="_top"
-          >
-            <template #text>
-              {{ t('button.info') }}
-            </template>
-            <template #icon-right>
-              <ArrowRight class="arrow-right self-end"/>
-            </template>
-          </FiliButton>
-          <FiliButton
-            v-if="downloadButton"
-            :href="downloadButton.href"
-            buttonClass="button-outline-neutral self-start"
-            :text="t('button.dossier')"
-            :download="downloadButton.download"
-          >
-            <template #text>
-              {{ t('button.dossier') }}
-            </template>
-            <template #icon-right>
-              <ArrowDown class="arrow-down self-end"/>
-            </template>
-          </FiliButton>
+          <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
+            <FiliButton
+              v-if="infoButton"
+              :href="infoButton.href"
+              :buttonClass="`${infoButton.class} self-start`"
+              :text="t('button.info')"
+              target="_top"
+            >
+              <template #text>
+                {{ t('button.info') }}
+              </template>
+              <template #icon-right>
+                <ArrowRight class="arrow-right self-end"/>
+              </template>
+            </FiliButton>
+            <FiliButton
+              v-if="downloadButton"
+              :href="downloadButton.href"
+              buttonClass="button-outline-neutral self-start"
+              :text="t('button.dossier')"
+              :download="downloadButton.download"
+            >
+              <template #text>
+                {{ t('button.dossier') }}
+              </template>
+              <template #icon-right>
+                <ArrowDown class="arrow-down self-end"/>
+              </template>
+            </FiliButton>
+          </div>
         </div>
-      </div>
+      </slot>
       <div
         class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[

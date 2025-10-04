@@ -105,6 +105,7 @@ const filipersonesItems = computed(() => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          isFullReversed
         />
         <SynopsisList
           class="mt-20"
