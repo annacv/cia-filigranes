@@ -31,16 +31,7 @@
   >
     <div class="grid-layout bg-black text-white text-center text-sm">
       <div class="layout-cols flex flex-wrap flex-row items-center justify-center gap-2 xl:gap-4 py-12">
-        <ul class="flex flex-row justify-center gap-2 xl:gap-4">
-          <li v-for="(item, index) in RRSS" :key="index">
-            <a :href="item" target="_blank" rel="noopener noreferrer">
-              <Component
-                :is="getIcon(item)"
-                class="!w-5 !h-5 !mb-0 hover:opacity-80"
-              />
-            </a>
-          </li>
-        </ul>
+        <SocialMedia />
         <b class="md:px-1">·</b>
         <a
           class="hover:opacity-80"
