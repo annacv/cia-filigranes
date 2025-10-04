@@ -70,7 +70,6 @@ const makutuAlt = getImageAlt('makutu')
           show-full-content
         />
         <ClaimTitle
-          class="mt-20"
           :claim="t('filipersones.makutu.claim')"
           :claim-title="t('filipersones.makutu.claimTitle')"
         />

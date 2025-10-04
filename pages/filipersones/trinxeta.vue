@@ -70,7 +70,6 @@ const trinxetaAlt = getImageAlt('trinxeta')
           show-full-content
         />
         <ClaimTitle
-          class="mt-20"
           :claim="t('filipersones.trinxeta.claim')"
           :claim-title="t('filipersones.trinxeta.claimTitle')"
         />

@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid-layout mb-20">
+  <div class="grid-layout my-20">
     <h2 class="layout-cols font-light text-neutral-800 text-3xl lg:text-5xl 2xl:w-[90%]">
       {{ claimTitle }} <br> {{ claim }}
     </h2>
