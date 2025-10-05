@@ -95,7 +95,7 @@ const synopsis = getTranslatedList('contact.synopsis', ['paragraph'])
             <p class="text-lg lg:text-xl">
               {{ t('contact.rrss.description') }}
             </p>
-            <SocialMedia />
+            <SocialMedia size="w-7 h-7" gap="gap-4 xl:gap-6" />
           </div> 
         </template>
         </Synopsis>
