@@ -19,7 +19,7 @@ const synopsis = getTranslatedList('contact.synopsis', ['paragraph'])
 </script>
 
 <template>
-  <div class="h-full">
+  <div class="h-full bg-black">
     <HeroCover
       image-name="contacte_hero"
       image-route="contacte"
@@ -27,7 +27,7 @@ const synopsis = getTranslatedList('contact.synopsis', ['paragraph'])
       :alt="getImageAlt()"
     >
       <template #content>
-        <div class="px-5 lg:px-0 font-grotesk uppercase text-white lg:max-w-[543px]">
+        <div class="px-5 lg:px-0 font-grotesk uppercase text-black lg:max-w-[543px]">
           <h1 class="text-4xl md:text-5xl lg:text-6xl">
             {{ t('contact.hero.title') }}
           </h1>
