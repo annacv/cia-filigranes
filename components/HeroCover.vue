@@ -37,15 +37,15 @@ const mobileClip = '94%';
 const desktopClip = '86%';
 const deviceClip = computed(() => isMobile ? mobileClip : desktopClip);
 
-const initialClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceClip.value}, 0% 100%)`);
-const fixedClipPath = computed(() => `polygon(0 0, 100% 0, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`)
+const initialClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceClip.value}, 0% 100%)`);
+const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`)
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
-const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100vh')
+const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh')
 </script>
 
 <template>
-  <div v-if="isScrolled" class="h-[110px] lg:h-[210px] bg-black"></div>
+  <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"></div>
   <div
     class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid grid-cols-6 xl:grid-cols-12 items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
