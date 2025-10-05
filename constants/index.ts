@@ -197,10 +197,10 @@ export const CONTACT = {
     }
   }
 
- export const RRSS = {
-  // "twitter": "https://twitter.com/ciafiligranes",
-  "instagram": "https://www.instagram.com/cia.filigranes/",
-  "facebook": "https://www.facebook.com/Cia-Filigranes-204888372926384/",
-  "youtube": "https://www.youtube.com/channel/UCaH3Bb7VIiuzwy51TyyKzpg",
-  "linkedin": "https://www.linkedin.com/in/ciafiligranes"
- }
+ export const RRSS = [
+  // { platform: "twitter", url: "https://twitter.com/ciafiligranes" },
+  { platform: "instagram", url: "https://www.instagram.com/cia.filigranes/" },
+  { platform: "facebook", url: "https://www.facebook.com/Cia-Filigranes-204888372926384/" },
+  { platform: "youtube", url: "https://www.youtube.com/channel/UCaH3Bb7VIiuzwy51TyyKzpg" },
+  { platform: "linkedin", url: "https://www.linkedin.com/in/ciafiligranes" }
+ ]

@@ -14,7 +14,9 @@ export function useColor(contentType: ContentType | undefined): {
         ? 'bg-primary-500'
         : contentType === 'workshops'
           ? 'bg-secondary-500'
-          : ''
+          : contentType === 'contact'
+            ? 'bg-quaternary-500'
+            : ''
   );
 
   const gradientColorClass = computed(() => 
@@ -22,7 +24,11 @@ export function useColor(contentType: ContentType | undefined): {
       ? 'bg-tertiary-500/40' 
       : contentType === 'shows' 
         ? 'bg-primary-700/40'
-        : 'bg-secondary-700/40'
+        : contentType === 'workshops'
+          ? 'bg-secondary-700/40'
+          : contentType === 'contact'
+            ? 'bg-quaternary-500/40'
+            : ''
   );
 
   const gradientOverlayValue = computed(() => 
@@ -32,6 +38,8 @@ export function useColor(contentType: ContentType | undefined): {
         ? 'var(--gradient-overlay-primary)'
         : contentType === 'workshops'
           ? 'var(--gradient-overlay-secondary)'
+          : contentType === 'contact'
+            ? 'var(--gradient-overlay-quaternary)'
           : 'var(--gradient-overlay-primary)'
   );
 

@@ -70,7 +70,6 @@ const makutuAlt = getImageAlt('makutu')
           show-full-content
         />
         <ClaimTitle
-          class="mt-20"
           :claim="t('filipersones.makutu.claim')"
           :claim-title="t('filipersones.makutu.claimTitle')"
         />
@@ -79,7 +78,10 @@ const makutuAlt = getImageAlt('makutu')
           :image="getImageByRoute('espectacles', 'circ-makutu')"
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
-          show-full-content
+          :info-button="{
+            href: '/espectacles/circ-makutu',
+            class: 'button-outline-primary'
+          }"
           isReversed
         />
         <HireFili

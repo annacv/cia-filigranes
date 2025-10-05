@@ -83,6 +83,7 @@ const synopsisButton = computed(() => {
     <HeroFooter
       image-name="animacions_domador"
       image-route="animacions"
+      content-type="performances"
       :alt="getImageAlt('animacions')"
     />
     <HireFili

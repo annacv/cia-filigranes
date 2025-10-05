@@ -25,7 +25,7 @@ export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contac
  * Content type for the Filigranes project
  * Set in en to match the content type in the translations
  */
-export type ContentType = 'performances' | 'shows' | 'workshops' | 'filipersones';
+export type ContentType = 'performances' | 'shows' | 'workshops' | 'filipersones' | 'contact';
 
 /**
  * Card link configuration

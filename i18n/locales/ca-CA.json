@@ -10,6 +10,7 @@
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
     }
   },
+  "commonAlt": "Imatge de la Companyia Filigranes",
   "routes": {
     "home": "Inici",
     "espectacles": "Espectacles",
@@ -798,7 +799,7 @@
   "performances": {
     "metaDescription": "Animacions a la carta. S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events.",
     "commonAlt": "Imatge d'animacions a la carta",
-    "claimTitle": "Una infinitat de personatges caracteritzats a mida s'interrelacionaran amb el públic.",
+    "claimTitle": "Una infinitat de personatges interactuaran amb el públic.",
     "claim": "Ideals per amenitzar aniversaris, convencions, trobades i tot tipus d'esdeveniments!",
     "title": "Animacions a la carta",
     "hire": {
@@ -994,5 +995,22 @@
         }
       ]
     }
+  },
+  "contact": {
+    "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
+    "hero": {
+      "title": "Contacte directe!",
+      "subtitle": "Per a consultes, contractacions i trobades"
+    },
+    "info": {
+      "title": "Info de contacte"
+    },
+    "rrss": {
+      "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
+      "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també podràs visionar grans moments dels nostres espectacles a la nostra Filitele."
+    },
+    "map": {
+      "title": "Mapa de ubicació de la Companyia Filigranes"
+    }  
   }
 }

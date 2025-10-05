@@ -23,6 +23,7 @@
     --gradient-overlay-primary: rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66);
     --gradient-overlay-secondary: rgb(92 41 120 / 0.72), rgb(73 26 99 / 0.66);
     --gradient-overlay-tertiary: rgb(227 41 6 / 0.72), rgb(203 35 3 / 0.66);
+    --gradient-overlay-quaternary: rgb(251 221 11 / 0.72), rgb(253 244 143 / 0.66);
 
     /* Line height values */
     --line-height-sm: 1.4rem;
@@ -61,10 +62,10 @@
     @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-10;
   }
   .layout-cols--to-right {
-    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-12;
+    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-11;
   }
   .layout-cols--to-left {
-    @apply col-start-1 col-span-6 xl:col-start-1 xl:col-span-10;
+    @apply col-start-1 col-span-6 xl:col-start-1 xl:col-span-11;
   }
   .highlight-content--1 {
     @apply bg-highlight-primary -skew-y-3;

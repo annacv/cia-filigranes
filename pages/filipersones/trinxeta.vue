@@ -70,7 +70,6 @@ const trinxetaAlt = getImageAlt('trinxeta')
           show-full-content
         />
         <ClaimTitle
-          class="mt-20"
           :claim="t('filipersones.trinxeta.claim')"
           :claim-title="t('filipersones.trinxeta.claimTitle')"
         />
@@ -79,7 +78,10 @@ const trinxetaAlt = getImageAlt('trinxeta')
           :image="getImageByRoute('espectacles', 'circ-trinxeta')"
           content-type="shows"
           :alt="getImageAlt('circ-trinxeta')"
-          show-full-content
+          :info-button="{
+            href: '/espectacles/circ-trinxeta',
+            class: 'button-outline-primary'
+          }"
           isReversed
         />
         <HireFili

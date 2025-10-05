@@ -1,10 +1,10 @@
 <template>
-  <header role="banner" class="grid-layout bg-transparent fixed w-full z-[100]">
+  <header role="banner" class="grid-layout fixed w-full z-[100]" :class="backgroundColor">
     <NuxtLinkLocale :to="('/')" class="col-start-1 col-span-3 xl:col-start-2 xl:col-span-2">
-      <CiaLogo class="w-[174px] hover:opacity-85"/>
+      <CiaLogo :color="logoColor" class="w-[174px] hover:opacity-85"/>
     </NuxtLinkLocale>
     <div class="flex items-start col-start-6 xl:col-start-11 col-span-1 xl:col-span-1 justify-self-end">
-      <TheBurger :isOpen="isOpen" @toggle="toggleSideNav" />
+      <TheBurger :isOpen="isOpen" :color="burgerColor" @toggle="toggleSideNav" />
     </div>
     <div class="w-full h-full">
       <Transition name="slide-side">
@@ -18,6 +18,21 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
+const props = defineProps({
+  logoColor: {
+    type: String,
+    default: '#fff'
+  },
+  burgerColor: {
+    type: String,
+    default: '#fff'
+  },
+  backgroundColor: {
+    type: String,
+    default: 'bg-transparent'
+  }
+});
 
 const isOpen = ref(false);
 

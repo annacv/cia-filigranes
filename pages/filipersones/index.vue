@@ -28,7 +28,7 @@ const filipersonesItems = computed(() => {
     const title = t(`routes.${filipersona}`)
 
     return {
-      description: getTranslatedList(`filipersones.${filipersona}.synopsis`, ['paragraph']),
+      description: getTranslatedList(`filipersones.${filipersona}.intro`, ['paragraph']),
       image: {
         imageName: `filipersones_${filipersona}_1`,
         imageRoute: 'filipersones' as ImageRoute,
@@ -105,9 +105,9 @@ const filipersonesItems = computed(() => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          isFullReversed
         />
         <SynopsisList
-          class="mt-20"
           :items="filipersonesItems"
           :claim="t('filipersones.knowMore')"
           :claim-title="t('filipersones.knowMoreTitle')"
