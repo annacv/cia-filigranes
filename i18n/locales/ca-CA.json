@@ -999,7 +999,11 @@
   "contact": {
     "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
     "hero": {
-      "title": "Contacte directe! per a consultes, contractacions i trobades"
+      "title": "Contacte directe!",
+      "subtitle": "Per a consultes, contractacions i trobades"
+    },
+    "info": {
+      "title": "Info de contacte"
     },
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
