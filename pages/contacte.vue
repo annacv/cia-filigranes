@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeUnmount } from 'vue'
 import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
@@ -15,6 +16,15 @@ useHead({
 })
 
 const synopsis = getTranslatedList('contact.synopsis', ['paragraph'])
+
+// Set the header background color for this page
+const { setHeaderBackgroundColor, resetHeaderColor } = useHeader()
+setHeaderBackgroundColor('bg-black')
+
+// Reset the background color when leaving this page to prevent other pages inherit it
+onBeforeUnmount(() => {
+  resetHeaderColor()
+})
 
 </script>
 
