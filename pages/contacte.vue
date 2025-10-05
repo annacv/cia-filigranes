@@ -64,10 +64,10 @@ onBeforeUnmount(() => {
                 <a class="flex gap-2 items-end" :href="`mailto:${CONTACT.email}`">
                   <ArrowRightIcon /><span class="hover:opacity-80">{{ CONTACT.email }}</span>
                 </a>
-                <a class="flex gap-2 items-end" :href="`mailto:${CONTACT.phones.albert}`"> 
+                <a class="flex gap-2 items-end" :href="`tel:${CONTACT.phones.albert}`"> 
                   <ArrowRightIcon />Albert: <span class="hover:opacity-80">{{ CONTACT.phones.albert }}</span>
                 </a>
-                <a class="flex gap-2 items-end" :href="`mailto:${CONTACT.phones.jordi}`">   
+                <a class="flex gap-2 items-end" :href="`tel:${CONTACT.phones.jordi}`">   
                   <ArrowRightIcon />Jordi: <span class="hover:opacity-80">{{ CONTACT.phones.jordi }}</span>
                 </a>
               </div>
