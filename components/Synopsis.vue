@@ -59,7 +59,7 @@ const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0%, 100% 0%)';
 const reversedClipPath = 'polygon(0% 100%, 80% 100%, 96% 0%, 0% 0%)';
 const fullReversedClipPath = 'polygon(0% 100%, 96% 100%, 80% 0%, 0% 0%)';
-const currentClipPath = computed(() => props.isReversed ? reversedClipPath : props.isFullReversed ? fullReversedClipPath : initialClipPath)
+const currentClipPath = computed(() => props.isFullReversed ? fullReversedClipPath : props.isReversed ? reversedClipPath : initialClipPath)
 
 const getColors = computed(() => {
   if (props.contentType && props.contentType !== 'contact') {
