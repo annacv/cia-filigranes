@@ -15,8 +15,6 @@ useHead({
   ]
 })
 
-const synopsis = getTranslatedList('contact.synopsis', ['paragraph'])
-
 // Set the header background color for this page
 const { setHeaderBackgroundColor, resetHeaderColor } = useHeader()
 setHeaderBackgroundColor('bg-black')
@@ -90,7 +88,6 @@ onBeforeUnmount(() => {
           </template>
         </Synopsis>
         <Synopsis
-          :description="synopsis"
           :image="getImageByRoute('contacte', 'hero')"
           content-type="contact"
           :alt="getImageAlt()"
