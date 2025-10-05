@@ -78,7 +78,10 @@ const makutuAlt = getImageAlt('makutu')
           :image="getImageByRoute('espectacles', 'circ-makutu')"
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
-          show-full-content
+          :info-button="{
+            href: '/espectacles/circ-makutu',
+            class: 'button-outline-primary'
+          }"
           isReversed
         />
         <HireFili
