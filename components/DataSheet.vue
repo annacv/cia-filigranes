@@ -124,7 +124,7 @@ const toggleHover = () => {
         <FiliButton
           v-if="extraContent"
           class="mt-1"
-          buttonClass="text-primary-500 border-primary-500 rounded-none border-t-0 border-x-0 !p-1 hover:text-primary-300 hover:border-primary-300 justify-self-end"
+          buttonClass="text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
           :text="buttonText"
           @click="emit('viewMore')"
         >

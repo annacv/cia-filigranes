@@ -1,24 +1,23 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick, watch, type ComponentPublicInstance } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from "vue-i18n";
+import { useElementSize } from '@vueuse/core';
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
+
+const showMoreContent = ref(false);
+const dataSheetRef = ref<HTMLElement | null>(null);
 
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
+const { height: initialDataSheetHeight } = useElementSize(dataSheetRef);
 
 useHead({
   meta: [
     { name: 'description', content: t('filipersones.metaDescription') }
   ]
 })
-
-const showMoreContent = ref(false);
-const dataSheetRef = ref<ComponentPublicInstance<{ $el: HTMLElement }> | null>(null);
-const initialDataSheetHeight = ref<number>(0);
-const isDataSheetHeightMeasured = ref(false);
-let mutationObserver: MutationObserver | null = null;
 
 const origins = getTranslatedList('filipersones.origins', ['paragraph'])
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
@@ -56,91 +55,12 @@ const filipersonesItems = computed(() => {
   }) || []
 })
 
-const currentScenariosRight = computed(() => 
-showMoreContent.value ? scenariosRight2 : scenariosRight1
-);
-
-const currentScenariosLeft = computed(() => 
-  showMoreContent.value ? scenariosLeft2 : scenariosLeft1
-);
-
-const measureDataSheetHeight = async () => {
-  if (!dataSheetRef.value || isDataSheetHeightMeasured.value) return;
-
-  // Wait for the component to be fully rendered
-  await nextTick();
-  // Use requestAnimationFrame to ensure DOM is fully painted
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  
-  const height = dataSheetRef.value?.$el?.offsetHeight;
-  if (height > 0) {
-    initialDataSheetHeight.value = height;
-    isDataSheetHeightMeasured.value = true;
-  }
-};
-
-const setupMutationObserver = () => {
-  if (!dataSheetRef.value || mutationObserver) return;
-
-  const targetElement = dataSheetRef.value.$el || dataSheetRef.value;
-  if (!targetElement) return;
-
-  mutationObserver = new MutationObserver(() => {
-    // Use requestAnimationFrame to ensure DOM changes are complete
-    requestAnimationFrame(() => {
-      const newHeight = dataSheetRef.value?.$el?.offsetHeight;
-      if (newHeight && newHeight > initialDataSheetHeight.value) {
-        initialDataSheetHeight.value = newHeight;
-      }
-    });
-  });
-
-  mutationObserver.observe(targetElement, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['style', 'class']
-  });
-};
-
-const cleanupMutationObserver = () => {
-  if (mutationObserver) {
-    mutationObserver.disconnect();
-    mutationObserver = null;
-  }
-};
+const currentScenariosRight = computed(() => showMoreContent.value ? scenariosRight2 : scenariosRight1);
+const currentScenariosLeft = computed(() => showMoreContent.value ? scenariosLeft2 : scenariosLeft1);
 
 const showMore = () => {
   showMoreContent.value = !showMoreContent.value;
 };
-
-// Measure height on mount and when content changes
-onMounted(async () => {
-  // Measure after initial render
-  await nextTick();
-  await measureDataSheetHeight();
-  
-  // Set up mutation observer for dynamic content changes
-  setupMutationObserver();
-});
-
-// Cleanup mutation observer on unmount
-onUnmounted(() => {
-  cleanupMutationObserver();
-});
-
-// Watch for content changes and re-measure if needed
-watch(showMoreContent, () => {
-  if (isDataSheetHeightMeasured.value) {
-    // Re-measure after content change using requestAnimationFrame
-    requestAnimationFrame(() => {
-      const newHeight = dataSheetRef.value?.$el?.offsetHeight;
-      if (newHeight && newHeight > initialDataSheetHeight.value) {
-        initialDataSheetHeight.value = newHeight;
-      }
-    });
-  }
-});
 </script>
 
 <template>
@@ -206,7 +126,7 @@ watch(showMoreContent, () => {
           :showMore="showMoreContent"
           @viewMore="showMore"
           isReversed
-          :style="isDataSheetHeightMeasured ? { minHeight: `${initialDataSheetHeight}px` } : {}"
+          :style="initialDataSheetHeight > 0 ? { minHeight: `${initialDataSheetHeight}px` } : {}"
         />
         <Synopsis
           :description="background"
