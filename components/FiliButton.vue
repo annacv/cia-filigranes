@@ -52,7 +52,9 @@ const buttonProps = computed(() =>
     @click="onClick"
   >
     <slot name="icon-left" />
-    <slot name="text" />
+    <slot name="text">
+      {{ text }}
+    </slot>
     <slot name="icon-right" />
   </component>
 </template>

@@ -127,11 +127,7 @@ const toggleHover = () => {
           buttonClass="text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
           :text="buttonText"
           @click="emit('viewMore')"
-        >
-          <template #text>
-            {{ buttonText }}
-          </template>
-        </FiliButton>
+        />
       </div>
     </div>
   </div>

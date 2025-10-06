@@ -11,7 +11,7 @@ const dataSheetRef = ref<HTMLElement | null>(null);
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
-const { height: initialDataSheetHeight } = useElementSize(dataSheetRef);
+const { height: dataSheetHeight } = useElementSize(dataSheetRef);
 
 useHead({
   meta: [
@@ -57,7 +57,7 @@ const filipersonesItems = computed(() => {
 
 const currentScenariosRight = computed(() => showMoreContent.value ? scenariosRight2 : scenariosRight1);
 const currentScenariosLeft = computed(() => showMoreContent.value ? scenariosLeft2 : scenariosLeft1);
-const dataSheetStyle = computed(() => initialDataSheetHeight.value > 0 ? { minHeight: `${initialDataSheetHeight.value}px` } : {});
+const dataSheetStyle = computed(() => dataSheetHeight.value > 0 ? { minHeight: `${dataSheetHeight.value}px` } : {});
 
 const showMore = () => {
   showMoreContent.value = !showMoreContent.value;
