@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, computed, onMounted, nextTick, watch } from 'vue';
 import { useI18n } from "vue-i18n";
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
@@ -12,6 +13,11 @@ useHead({
     { name: 'description', content: t('filipersones.metaDescription') }
   ]
 })
+
+const showMoreContent = ref(false);
+const dataSheetRef = ref<any>();
+const initialDataSheetHeight = ref<number>(0);
+const isDataSheetHeightMeasured = ref(false);
 
 const origins = getTranslatedList('filipersones.origins', ['paragraph'])
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
@@ -48,6 +54,53 @@ const filipersonesItems = computed(() => {
     }
   }) || []
 })
+
+const currentScenariosRight = computed(() => 
+showMoreContent.value ? scenariosRight2 : scenariosRight1
+);
+
+const currentScenariosLeft = computed(() => 
+  showMoreContent.value ? scenariosLeft2 : scenariosLeft1
+);
+
+const measureDataSheetHeight = async () => {
+  if (!dataSheetRef.value || isDataSheetHeightMeasured.value) return;
+
+  // Wait for the component to be fully rendered
+  await nextTick();
+  await new Promise(resolve => setTimeout(resolve, 100)); // Small delay to ensure content is rendered
+  
+  const height = dataSheetRef.value.$el?.offsetHeight || dataSheetRef.value.offsetHeight;
+  if (height > 0) {
+    initialDataSheetHeight.value = height;
+    isDataSheetHeightMeasured.value = true;
+  }
+};
+
+const showMore = () => {
+  showMoreContent.value = !showMoreContent.value;
+};
+
+// Measure height on mount and when content changes
+onMounted(() => {
+  // Measure after initial render
+  setTimeout(() => {
+    measureDataSheetHeight();
+  }, 200);
+});
+
+// Watch for content changes and re-measure if needed
+watch(showMoreContent, () => {
+  if (isDataSheetHeightMeasured.value) {
+    // Re-measure after content change
+    setTimeout(() => {
+      const newHeight = dataSheetRef.value?.$el?.offsetHeight || dataSheetRef.value?.offsetHeight;
+      if (newHeight > initialDataSheetHeight.value) {
+        initialDataSheetHeight.value = newHeight;
+      }
+    }, 100);
+  }
+});
 </script>
 
 <template>
@@ -104,17 +157,16 @@ const filipersonesItems = computed(() => {
           show-full-content
         />
         <DataSheet
-          :techCard="scenariosRight1"
-          :artCard="scenariosLeft1"
+          ref="dataSheetRef"
+          :techCard="currentScenariosRight"
+          :artCard="currentScenariosLeft"
           :image="getImageByRoute('filipersones', 'filigranes_5')"
           :alt="t('shows.hero.alt')"
+          extraContent
+          :showMore="showMoreContent"
+          @viewMore="showMore"
           isReversed
-        />
-        <DataSheet
-          :techCard="scenariosRight2"
-          :artCard="scenariosLeft2"
-          :image="getImageByRoute('filipersones', 'filigranes_5')"
-          :alt="t('shows.hero.alt')"
+          :style="isDataSheetHeightMeasured ? { minHeight: `${initialDataSheetHeight}px` } : {}"
         />
         <Synopsis
           :description="background"
