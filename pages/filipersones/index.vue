@@ -14,12 +14,15 @@ useHead({
 })
 
 const origins = getTranslatedList('filipersones.origins', ['paragraph'])
-const history = getTranslatedList('filipersones.history', ['paragraph'])
-const background = getTranslatedList('filipersones.background', ['paragraph'])
-const stories = getTranslatedList('filipersones.stories', ['title', 'description'])
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
-const scenariosLeft = getTranslatedList('filipersones.scenariosLeft', ['title', 'description'])
-const scenariosRight = getTranslatedList('filipersones.scenariosRight', ['title', 'description'])
+const stories = getTranslatedList('filipersones.stories', ['title', 'description'])
+const history = getTranslatedList('filipersones.history', ['paragraph'])
+const filiFriends = getTranslatedList('filipersones.filiFriends', ['paragraph'])
+const scenariosRight1 = getTranslatedList('filipersones.scenariosRight1', ['title', 'description'])
+const scenariosLeft1 = getTranslatedList('filipersones.scenariosLeft1', ['title', 'description'])
+const scenariosRight2 = getTranslatedList('filipersones.scenariosRight2', ['title', 'description'])
+const scenariosLeft2 = getTranslatedList('filipersones.scenariosLeft2', ['title', 'description'])
+const background = getTranslatedList('filipersones.background', ['paragraph'])
 
 const filipersones = getItemsByRoute('filipersones');
 
@@ -93,15 +96,29 @@ const filipersonesItems = computed(() => {
           show-full-content
           isReversed
         />
-        <DataSheet
-          :techCard="scenariosRight"
-          :artCard="scenariosLeft"
+        <Synopsis
+          :description="filiFriends"
           :image="getImageByRoute('filipersones', 'filigranes_4')"
+          content-type="shows"
+          :alt="t('shows.hero.alt')"
+          show-full-content
+        />
+        <DataSheet
+          :techCard="scenariosRight1"
+          :artCard="scenariosLeft1"
+          :image="getImageByRoute('filipersones', 'filigranes_5')"
+          :alt="t('shows.hero.alt')"
+          isReversed
+        />
+        <DataSheet
+          :techCard="scenariosRight2"
+          :artCard="scenariosLeft2"
+          :image="getImageByRoute('filipersones', 'filigranes_5')"
           :alt="t('shows.hero.alt')"
         />
         <Synopsis
           :description="background"
-          :image="getImageByRoute('filipersones', 'filigranes_5')"
+          :image="getImageByRoute('filipersones', 'filigranes_6')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
