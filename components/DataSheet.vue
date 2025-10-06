@@ -51,7 +51,9 @@ const { gradientOverlayValue } = useColor(props.contentType);
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
-const currentClipPath       = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
+const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
+
+const buttonText = computed(() => props.showMore ? t('button.goBack') : t('button.viewMore'))
 
 const toggleHover = () => {
   isHovered.value = !isHovered.value;
@@ -122,12 +124,12 @@ const toggleHover = () => {
         <FiliButton
           v-if="extraContent"
           class="mt-1"
-          buttonClass="text-primary-500 border-primary-500 rounded-none border-t-0 border-x-0 !p-1 hover:text-primary-700 hover:border-primary-500 justify-self-end"
-          :text="t('button.fullShow')"
+          buttonClass="text-primary-500 border-primary-500 rounded-none border-t-0 border-x-0 !p-1 hover:text-primary-300 hover:border-primary-300 justify-self-end"
+          :text="buttonText"
           @click="emit('viewMore')"
         >
           <template #text>
-            {{ showMore ? t('button.goBack') : t('button.viewMore') }}
+            {{ buttonText }}
           </template>
         </FiliButton>
       </div>

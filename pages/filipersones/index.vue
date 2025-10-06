@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted, nextTick, watch, type ComponentPublicInstance } from 'vue';
 import { useI18n } from "vue-i18n";
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
@@ -15,9 +15,10 @@ useHead({
 })
 
 const showMoreContent = ref(false);
-const dataSheetRef = ref<any>();
+const dataSheetRef = ref<ComponentPublicInstance<{ $el: HTMLElement }> | null>(null);
 const initialDataSheetHeight = ref<number>(0);
 const isDataSheetHeightMeasured = ref(false);
+let mutationObserver: MutationObserver | null = null;
 
 const origins = getTranslatedList('filipersones.origins', ['paragraph'])
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
@@ -68,12 +69,44 @@ const measureDataSheetHeight = async () => {
 
   // Wait for the component to be fully rendered
   await nextTick();
-  await new Promise(resolve => setTimeout(resolve, 100)); // Small delay to ensure content is rendered
+  // Use requestAnimationFrame to ensure DOM is fully painted
+  await new Promise(resolve => requestAnimationFrame(resolve));
   
-  const height = dataSheetRef.value.$el?.offsetHeight || dataSheetRef.value.offsetHeight;
+  const height = dataSheetRef.value?.$el?.offsetHeight;
   if (height > 0) {
     initialDataSheetHeight.value = height;
     isDataSheetHeightMeasured.value = true;
+  }
+};
+
+const setupMutationObserver = () => {
+  if (!dataSheetRef.value || mutationObserver) return;
+
+  const targetElement = dataSheetRef.value.$el || dataSheetRef.value;
+  if (!targetElement) return;
+
+  mutationObserver = new MutationObserver(() => {
+    // Use requestAnimationFrame to ensure DOM changes are complete
+    requestAnimationFrame(() => {
+      const newHeight = dataSheetRef.value?.$el?.offsetHeight;
+      if (newHeight && newHeight > initialDataSheetHeight.value) {
+        initialDataSheetHeight.value = newHeight;
+      }
+    });
+  });
+
+  mutationObserver.observe(targetElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style', 'class']
+  });
+};
+
+const cleanupMutationObserver = () => {
+  if (mutationObserver) {
+    mutationObserver.disconnect();
+    mutationObserver = null;
   }
 };
 
@@ -82,23 +115,30 @@ const showMore = () => {
 };
 
 // Measure height on mount and when content changes
-onMounted(() => {
+onMounted(async () => {
   // Measure after initial render
-  setTimeout(() => {
-    measureDataSheetHeight();
-  }, 200);
+  await nextTick();
+  await measureDataSheetHeight();
+  
+  // Set up mutation observer for dynamic content changes
+  setupMutationObserver();
+});
+
+// Cleanup mutation observer on unmount
+onUnmounted(() => {
+  cleanupMutationObserver();
 });
 
 // Watch for content changes and re-measure if needed
 watch(showMoreContent, () => {
   if (isDataSheetHeightMeasured.value) {
-    // Re-measure after content change
-    setTimeout(() => {
-      const newHeight = dataSheetRef.value?.$el?.offsetHeight || dataSheetRef.value?.offsetHeight;
-      if (newHeight > initialDataSheetHeight.value) {
+    // Re-measure after content change using requestAnimationFrame
+    requestAnimationFrame(() => {
+      const newHeight = dataSheetRef.value?.$el?.offsetHeight;
+      if (newHeight && newHeight > initialDataSheetHeight.value) {
         initialDataSheetHeight.value = newHeight;
       }
-    }, 100);
+    });
   }
 });
 </script>
