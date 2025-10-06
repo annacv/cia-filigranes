@@ -36,7 +36,9 @@
     "dossier": "Dossier",
     "info": "More info",
     "fullShow": "Watch the full show",
-    "playVideo": "Click to watch the video"
+    "playVideo": "Click to watch the video",
+    "viewMore": "View more",
+    "goBack": "Go back"
   },
   "selectLang": "Choose language",
   "footer": {
@@ -918,26 +920,22 @@
     "scenariosLeft1": [
       {
         "title": "Stages and festivals",
-        "description": "International Clown Festival of Xirivella, 2010 {'·'} Cabaret of the Year. Circ Mitenes at the Cultural Center, Terrassa, 2011 {'·'} Circ i Modernisme at the Circ Raluy Tent, 2012 and 2013 {'·'} Street Circus Fair of La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret of lies at the Alegria Theater, Terrassa, 2013 {'·'} Festivals of Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'}"
+        "description": "International Clown Festival of Xirivella, 2010 {'·'} Cabaret of the Year. Circ Mitenes at the Cultural Center, Terrassa, 2011 {'·'} Circ i Modernisme at the Circ Raluy Tent, 2012 and 2013 {'·'} Street Circus Fair of La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret of lies at the Alegria Theater, Terrassa, 2013 {'·'} Festivals of Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala for Clowns Without Borders at the Vela de Ca l'Estruch, Sabadell, 2018 {'·'}"
       }
     ],
     "scenariosRight1": [
       {
-        "description": "Gala for Clowns Without Borders at the Vela de Ca l'Estruch, Sabadell, 2018 {'·'} International Clown Festival of Cornellà del Llobregat, 2018 {'·'} Cric and Calldeclowns Circus Festivals, 2019 {'·'} Clowns for Freedom {'·'} Festes Majors, itinerant theaters and educational centers throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna, 2019 {'·'} Circus Day in Breda (different editions) {'·'} Festa Major de la Mercè with Clowns Without Borders, 2019 and 2020 {'·'}"
-      },
-      {
-        "title": "*"
+        "description": "Gala for Clowns Without Borders at the Vela de Ca l'Estruch, Sabadell, 2018 {'·'} International Clown Festival of Cornellà del Llobregat, 2018 {'·'} Cric and Calldeclowns Circus Festivals, 2019 {'·'} Clowns for Freedom {'·'} Festes Majors, itinerant theaters and educational centers throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna, 2019 {'·'} Circus Day in Breda (different editions) {'·'} Festa Major de la Mercè with Clowns Without Borders, 2019 and 2020 {'·'} Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc, 2020 and 2021) {'·'} World Circus Day (different editions) {'·'}"
       }
     ],
     "scenariosLeft2": [
       {
-        "title": "*",
-        "description": "Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc, 2020 and 2021) {'·'} World Circus Day (different editions) {'·'} Curtcirckit Festival of Montgat, 2012 {'·'} Children's Shows Cycle St. Joan de les Abadesses, 2022 {'·'} Modernist Fair of Terrassa, 2022 {'·'} Creixendo Festival, 2022 {'·'} Circus Festival of Terrassa (different editions) {'·'} Art's Festival of Almoster, 2023 {'·'} Clown Show of Cubelles, 2023 {'·'}"
+        "description": "Curtcirckit Festival of Montgat, 2012 {'·'} Children's Shows Cycle St. Joan de les Abadesses, 2022 {'·'} Modernist Fair of Terrassa, 2022 {'·'} Creixendo Festival, 2022 {'·'} Circus Festival of Terrassa (different editions) {'·'} Art's Festival of Almoster, 2023 {'·'} Clown Show of Cubelles, 2023 {'·'} Circus workshops with the Education Service of the Terrassa City Council, the Sports Council of Bages and for many other entities, City Councils and educational centers {'·'}"
       }
     ],
     "scenariosRight2": [
       {
-        "description": "Circus workshops with the Education Service of the Terrassa City Council, the Sports Council of Bages and for many other entities, City Councils and educational centers {'·'} Christmas Programming at the Gradeta of Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinees at the Pepita Casanellas Hall, 2025 {'·'} Street Shows Show of Olivella, 2025 {'·'} Central Event of Mulla't for multiple sclerosis, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Catalunya Aixeca el teló Gala 2025 at the Gran Teatre del Liceu, Barcelona {'·'} Clownic Festival of Torrelles de Foix, 2025..."
+        "description": "Christmas Programming at the Gradeta of Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinees at the Pepita Casanellas Hall, 2025 {'·'} Street Shows Show of Olivella, 2025 {'·'} Central Event of Mulla't for multiple sclerosis, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Catalunya Aixeca el teló Gala 2025 at the Gran Teatre del Liceu, Barcelona {'·'} Clownic Festival of Torrelles de Foix, 2025..."
       }
     ],
     "makutu": {

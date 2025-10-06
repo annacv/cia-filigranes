@@ -36,7 +36,9 @@
     "dossier": "Dossier",
     "info": "Més info",
     "fullShow": "Veure l'espectacle sencer",
-    "playVideo": "Fes clic per veure el video"
+    "playVideo": "Fes clic per veure el video",
+    "viewMore": "Veure'n més",
+    "goBack": "Tornar enrera"
   },
   "selectLang": "Escull l'idioma",
   "footer": {
@@ -886,7 +888,7 @@
     ],
     "filiFriends": [
       {
-        "paragraph": "Actualment ens acompanyen Walter Velázquez (director/dramaturg) i Francesc Pascual (tècnic de so i il·luminació). També hem treballat amb Mago Manu (director artístic) i Carles Grau (director/dramaturg)."
+        "paragraph": "Actualment ens acompanyen els nostres estimats Walter Velázquez com a director i dramaturg, i Francesc Pascual com a tècnic de so i il·luminació. També hem treballat amb Mago Manu com a director artístic, i amb Carles Grau com a director i dramaturg."
       }
     ],
     "background": [
@@ -913,26 +915,22 @@
     "scenariosLeft1": [
       {
         "title": "Escenaris i festivals",
-        "description": "Festival Internacional de pallassos de Xirivella, 2010 {'·'} Cabaret de l'Any. Circ Mitenes al Centre Cultural, Terrassa, 2011 {'·'} Circ i Modernisme a la Carpa del Circ Raluy, 2012 i 2013 {'·'} Fira de Circ al carrer de La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret de la mentida al Teatre Alegria, Terrassa, 2013 {'·'} Festivals d'Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'}"
+        "description": "Festival Internacional de pallassos de Xirivella, 2010 {'·'} Cabaret de l'Any. Circ Mitenes al Centre Cultural, Terrassa, 2011 {'·'} Circ i Modernisme a la Carpa del Circ Raluy, 2012 i 2013 {'·'} Fira de Circ al carrer de La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret de la mentida al Teatre Alegria, Terrassa, 2013 {'·'} Festivals d'Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala per Pallassos Sense Fronteres a la Vela de Ca l'Estruch, Sabadell, 2018 {'·'}"
       }
     ],
     "scenariosRight1": [
       {
-        "description": "Gala per Pallassos Sense Fronteres a la Vela de Ca l'Estruch, Sabadell, 2018 {'·'} Festival Internacional de Pallass{'@'}s de Cornellà del Llobregat, 2018 {'·'} Festivals del Circ Cric i Calldeclowns, 2019 {'·'} Pallass{'@'}s per la Llibertat {'·'} Festes Majors, teatres itinerants i centres educatius per tota Catalunya, Estat Espanyol i Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Dia del Circ a Breda (diferents edicions) {'·'} Festa Major de la Mercè amb Pallassos Sense Fronteres, 2019 i 2020 {'·'}"
-      },
-      {
-        "title": "*"
+        "description": "Festival Internacional de Pallass{'@'}s de Cornellà del Llobregat, 2018 {'·'} Festivals del Circ Cric i Calldeclowns, 2019 {'·'} Pallass{'@'}s per la Llibertat {'·'} Festes Majors, teatres itinerants i centres educatius per tota Catalunya, Estat Espanyol i Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Dia del Circ a Breda (diferents edicions) {'·'} Festa Major de la Mercè amb Pallassos Sense Fronteres, 2019 i 2020 {'·'} Festival Circdanya (diferents edicions) {'·'} Viu el Teatre al Turó Parc, 2020 i 2021) {'·'} Dia mundial del circ (diferents edicions) {'·'}"
       }
     ],
     "scenariosLeft2": [
       {
-        "title": "*",
-        "description": "Festival Circdanya (diferents edicions) {'·'} Viu el Teatre al Turó Parc, 2020 i 2021) {'·'} Dia mundial del circ (diferents edicions) {'·'} Festival Curtcirckit de Montgat, 2012 {'·'} Cicle espectacles infantils St. Joan de les Abadesses, 2022 {'·'} Fira Modernista de Terrassa, 2022 {'·'} Festival Creixendo, 2022 {'·'} Festival de circ de Terrassa (diferents edicions) {'·'} Festival Art's d'Almoster, 2023 {'·'} Mostra de Pallasses i Pallassos de Cubelles, 2023 {'·'}"
+        "description": "Festival Curtcirckit de Montgat, 2012 {'·'} Cicle espectacles infantils St. Joan de les Abadesses, 2022 {'·'} Fira Modernista de Terrassa, 2022 {'·'} Festival Creixendo, 2022 {'·'} Festival de circ de Terrassa (diferents edicions) {'·'} Festival Art's d'Almoster, 2023 {'·'} Mostra de Pallasses i Pallassos de Cubelles, 2023 {'·'} Tallers de circ amb el Servei d'Educació de l'Ajuntament de Terrassa, el Consell esportiu del Bages i per moltes altres entitats, Ajuntaments i centres educatius {'·'}"
       }
     ],
     "scenariosRight2": [
       {
-        "description": "Tallers de circ amb el Servei d'Educació de l'Ajuntament de Terrassa, el Consell esportiu del Bages i per moltes altres entitats, Ajuntaments i centres educatius {'·'} Programació de Nadal a la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinals a la Sala Pepita Casanellas, 2025 {'·'} Mostra d'espectacles al carrer d'Olivella, 2025 {'·'} Acte Central del Mulla't per l'esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 al Gran Teatre del Liceu, Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
+        "description": "Programació de Nadal a la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinals a la Sala Pepita Casanellas, 2025 {'·'} Mostra d'espectacles al carrer d'Olivella, 2025 {'·'} Acte Central del Mulla't per l'esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 al Gran Teatre del Liceu, Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
       }
     ],
     "makutu": {

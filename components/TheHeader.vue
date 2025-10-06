@@ -1,5 +1,9 @@
 <template>
-  <header role="banner" class="grid-layout fixed w-full z-[100]" :class="backgroundColor">
+  <header 
+    role="banner" 
+    class="grid-layout fixed w-full z-[100]" 
+    :style="{ backgroundColor: backgroundColor }"
+  >
     <NuxtLinkLocale :to="('/')" class="col-start-1 col-span-3 xl:col-start-2 xl:col-span-2">
       <CiaLogo :color="logoColor" class="w-[174px] hover:opacity-85"/>
     </NuxtLinkLocale>

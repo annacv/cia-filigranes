@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount } from 'vue'
+import { onBeforeUnmount, ref, watch } from 'vue'
 import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
@@ -19,9 +19,36 @@ useHead({
 const { setHeaderBackgroundColor, resetHeaderColor } = useHeader()
 setHeaderBackgroundColor('bg-black')
 
+// Track if this is a language switch vs actual navigation
+const isLanguageSwitch = ref(false)
+let timeoutId: NodeJS.Timeout | null = null
+
+// Watch for locale changes to detect language switching
+watch(locale, () => {
+  isLanguageSwitch.value = true
+  // Clear any existing timeout
+  if (timeoutId) {
+    clearTimeout(timeoutId)
+  }
+  // Reset the flag after a short delay
+  timeoutId = setTimeout(() => {
+    isLanguageSwitch.value = false
+    timeoutId = null
+  }, 100)
+})
+
 // Reset the background color when leaving this page to prevent other pages inherit it
+// But only if it's not a language switch
 onBeforeUnmount(() => {
-  resetHeaderColor()
+  // Clear any pending timeout to prevent memory leaks
+  if (timeoutId) {
+    clearTimeout(timeoutId)
+    timeoutId = null
+  }
+  
+  if (!isLanguageSwitch.value) {
+    resetHeaderColor()
+  }
 })
 
 </script>

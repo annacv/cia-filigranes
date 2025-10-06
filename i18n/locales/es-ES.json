@@ -36,7 +36,9 @@
     "dossier": "Dosier",
     "info": "Más info",
     "fullShow": "Ver todo el espectáculo",
-    "playVideo": "Haz clic para ver el video"
+    "playVideo": "Haz clic para ver el video",
+    "viewMore": "Ver más",
+    "goBack": "Volver atrás"
   },
   "selectLang": "Elige idioma",
   "footer": {
@@ -918,26 +920,22 @@
     "scenariosLeft1": [
       {
         "title": "Escenarios y festivales",
-        "description": "Festival Internacional de payasos de Xirivella, 2010 {'·'} Cabaret del Año. Circ Mitenes en el Centro Cultural, Terrassa, 2011 {'·'} Circ i Modernisme en la Carpa del Circ Raluy, 2012 y 2013 {'·'} Feria de Circo en la calle de La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret de la mentira en el Teatro Alegria, Terrassa, 2013 {'·'} Festivales de Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'}"
+        "description": "Festival Internacional de payasos de Xirivella, 2010 {'·'} Cabaret del Año. Circ Mitenes en el Centro Cultural, Terrassa, 2011 {'·'} Circ i Modernisme en la Carpa del Circ Raluy, 2012 y 2013 {'·'} Feria de Circo en la calle de La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret de la mentira en el Teatro Alegria, Terrassa, 2013 {'·'} Festivales de Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala por Payasos Sin Fronteras en la Vela de Ca l'Estruch, Sabadell, 2018 {'·'}"
       }
     ],
     "scenariosRight1": [
       {
-        "description": "Gala por Payasos Sin Fronteras en la Vela de Ca l'Estruch, Sabadell, 2018 {'·'} Festival Internacional de Payasos de Cornellà del Llobregat, 2018 {'·'} Festivales del Circo Cric y Calldeclowns, 2019 {'·'} Payasos por la Libertad {'·'} Fiestas Mayores, teatros itinerantes y centros educativos por toda Cataluña, España y Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Día del Circo en Breda (diferentes ediciones) {'·'} Fiesta Mayor de la Mercè con Payasos Sin Fronteras, 2019 y 2020 {'·'}"
-      },
-      {
-        "title": "*"
+        "description": "Gala por Payasos Sin Fronteras en la Vela de Ca l'Estruch, Sabadell, 2018 {'·'} Festival Internacional de Payasos de Cornellà del Llobregat, 2018 {'·'} Festivales del Circo Cric y Calldeclowns, 2019 {'·'} Payasos por la Libertad {'·'} Fiestas Mayores, teatros itinerantes y centros educativos por toda Cataluña, España y Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Día del Circo en Breda (diferentes ediciones) {'·'} Fiesta Mayor de la Mercè con Payasos Sin Fronteras, 2019 y 2020 {'·'} Festival Circdanya (diferentes ediciones) {'·'} Viu el Teatre en Turó Parc, 2020 y 2021) {'·'} Día mundial del circo (diferentes ediciones) {'·'}"
       }
     ],
     "scenariosLeft2": [
       {
-        "title": "*",
-        "description": "Festival Circdanya (diferentes ediciones) {'·'} Viu el Teatre en Turó Parc, 2020 y 2021) {'·'} Día mundial del circo (diferentes ediciones) {'·'} Festival Curtcirckit de Montgat, 2012 {'·'} Ciclo espectáculos infantiles St. Joan de les Abadesses, 2022 {'·'} Feria Modernista de Terrassa, 2022 {'·'} Festival Creixendo, 2022 {'·'} Festival de circo de Terrassa (diferentes ediciones) {'·'} Festival Art's de Almoster, 2023 {'·'} Muestra de Payasas y Payasos de Cubelles, 2023 {'·'}"
+        "description": "Festival Curtcirckit de Montgat, 2012 {'·'} Ciclo espectáculos infantiles St. Joan de les Abadesses, 2022 {'·'} Feria Modernista de Terrassa, 2022 {'·'} Festival Creixendo, 2022 {'·'} Festival de circo de Terrassa (diferentes ediciones) {'·'} Festival Art's de Almoster, 2023 {'·'} Muestra de Payasas y Payasos de Cubelles, 2023 {'·'} Talleres de circo con el Servicio de Educación del Ayuntamiento de Terrassa, el Consejo deportivo del Bages y por muchas otras entidades, Ayuntamientos y centros educativos {'·'}"
       }
     ],
     "scenariosRight2": [
       {
-        "description": "Talleres de circo con el Servicio de Educación del Ayuntamiento de Terrassa, el Consejo deportivo del Bages y por muchas otras entidades, Ayuntamientos y centros educativos {'·'} Programación de Navidad en la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinales en la Sala Pepita Casanellas, 2025 {'·'} Muestra de espectáculos en la calle de Olivella, 2025 {'·'} Acto Central del Mulla't por la esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival en Konvent, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 en el Gran Teatre del Liceu de Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
+        "description": "Programación de Navidad en la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinales en la Sala Pepita Casanellas, 2025 {'·'} Muestra de espectáculos en la calle de Olivella, 2025 {'·'} Acto Central del Mulla't por la esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival en Konvent, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 en el Gran Teatre del Liceu de Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
       }
     ],
     "makutu": {

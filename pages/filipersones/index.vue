@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue';
 import { useI18n } from "vue-i18n";
+import { useElementSize } from '@vueuse/core';
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
+
+const showMoreContent = ref(false);
+const dataSheetRef = ref<HTMLElement | null>(null);
 
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
+const { height: dataSheetHeight } = useElementSize(dataSheetRef);
 
 useHead({
   meta: [
@@ -48,6 +54,14 @@ const filipersonesItems = computed(() => {
     }
   }) || []
 })
+
+const currentScenariosRight = computed(() => showMoreContent.value ? scenariosRight2 : scenariosRight1);
+const currentScenariosLeft = computed(() => showMoreContent.value ? scenariosLeft2 : scenariosLeft1);
+const dataSheetStyle = computed(() => dataSheetHeight.value > 0 ? { minHeight: `${dataSheetHeight.value}px` } : {});
+
+const showMore = () => {
+  showMoreContent.value = !showMoreContent.value;
+};
 </script>
 
 <template>
@@ -104,17 +118,16 @@ const filipersonesItems = computed(() => {
           show-full-content
         />
         <DataSheet
-          :techCard="scenariosRight1"
-          :artCard="scenariosLeft1"
+          ref="dataSheetRef"
+          :techCard="currentScenariosRight"
+          :artCard="currentScenariosLeft"
           :image="getImageByRoute('filipersones', 'filigranes_5')"
           :alt="t('shows.hero.alt')"
+          extraContent
+          :showMore="showMoreContent"
+          @viewMore="showMore"
           isReversed
-        />
-        <DataSheet
-          :techCard="scenariosRight2"
-          :artCard="scenariosLeft2"
-          :image="getImageByRoute('filipersones', 'filigranes_5')"
-          :alt="t('shows.hero.alt')"
+          :style="dataSheetStyle"
         />
         <Synopsis
           :description="background"
