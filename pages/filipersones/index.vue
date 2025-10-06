@@ -57,6 +57,7 @@ const filipersonesItems = computed(() => {
 
 const currentScenariosRight = computed(() => showMoreContent.value ? scenariosRight2 : scenariosRight1);
 const currentScenariosLeft = computed(() => showMoreContent.value ? scenariosLeft2 : scenariosLeft1);
+const dataSheetStyle = computed(() => initialDataSheetHeight.value > 0 ? { minHeight: `${initialDataSheetHeight.value}px` } : {});
 
 const showMore = () => {
   showMoreContent.value = !showMoreContent.value;
@@ -126,7 +127,7 @@ const showMore = () => {
           :showMore="showMoreContent"
           @viewMore="showMore"
           isReversed
-          :style="initialDataSheetHeight > 0 ? { minHeight: `${initialDataSheetHeight}px` } : {}"
+          :style="dataSheetStyle"
         />
         <Synopsis
           :description="background"
