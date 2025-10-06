@@ -886,8 +886,10 @@
     ],
     "history": [
       {
-        "paragraph": "In 2004 we founded the Filigranes Company. Since then, our main task has been the creation and production of shows, such as: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\"..."
-      },
+        "paragraph": "In 2004 we founded the Filigranes Company. Since then, our main task has been the creation and production of shows: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\"..."
+      }
+    ],
+    "filiFriends": [
       {
         "paragraph": "Currently we are accompanied by Walter Velázquez (director/dramaturg) and Francesc Pascual (sound and lighting technician). We have also worked with Mago Manu (artistic director) and Carles Grau (director/dramaturg)."
       }
@@ -913,15 +915,29 @@
         "description": "Company winner of the Estrena't Clown Cabaret 2025 {'·'} Zirkòlika Award 2012 for the best project for the projection of circus with the Terrassa Circus Association Tub d'Assaig 7'70."
       }
     ],
-    "scenariosLeft": [
+    "scenariosLeft1": [
       {
         "title": "Stages and festivals",
-        "description": "Performances in different countries of Latin America {'·'} International Clown Festival of Xirivella (2010) {'·'} Cabaret of the Year. Circ Mitenes (Cultural Center of Terrassa, 2011) {'·'} Circ i Modernisme (Circ Raluy Tent, 2012 and 2013) {'·'} Street Circus Fair of La Bisbal de l'Empordà (2013) {'·'} MART. Cabaret of lies (Alegria Theater, Performing Arts Center of Terrassa, 2013) {'·'} Circus, Clown and Performing Arts Festivals of Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'} Gala for Clowns Without Borders (Vela de Ca l'Estruch de Sabadell, 2018) {'·'} International Clown Festival of Cornellà del Llobregat 2018 {'·'} Cric and Calldeclowns Circus Festivals 2019 {'·'} Clowns for Freedom {'·'} Calders Healthy {'·'} Festes Majors and theaters throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna 2019 {'·'} Circus Day in Breda (different editions) {'·'}"
+        "description": "International Clown Festival of Xirivella, 2010 {'·'} Cabaret of the Year. Circ Mitenes at the Cultural Center, Terrassa, 2011 {'·'} Circ i Modernisme at the Circ Raluy Tent, 2012 and 2013 {'·'} Street Circus Fair of La Bisbal de l'Empordà, 2013 {'·'} MART. Cabaret of lies at the Alegria Theater, Terrassa, 2013 {'·'} Festivals of Alpicat, Buuuf, Desplaça't, 6 Continentes, Fitkam, Vilanova de Muga {'·'}"
       }
     ],
-    "scenariosRight": [
+    "scenariosRight1": [
       {
-        "description": "Festa Major de la Mercè (Barcelona) 2019 and 2020 with Clowns Without Borders {'·'} Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc (2020 and 2021), different editions of World Circus Day {'·'} Curtcirckit Festival of Montgat 2022 {'·'} Children's Shows Cycle St. Joan de les Abadesses 2022 {'·'} Modernist Fair of Terrassa 2022 {'·'} Clown Fair of Vilanova de Muga 2022 {'·'} Creixendo Festival 2022 {'·'} Circus Festival of Terrassa (different editions) {'·'} Parades {'·'} Christmas fairs and educational centers of different towns {'·'} Art's Festival of Almoster 2023 {'·'} Clown Show of Cubelles 2023 {'·'} circus workshops with the Education Service of the Terrassa City Council {'·'} the Sports Council of Bages and for many other entities {'·'} City Councils and educational centers {'·'} Christmas Programming at the Gradeta of Tub d'Assaig 2024 {'·'} Estrena't Clown Cabaret 2025 {'·'} Matinees for the whole family at the Pepita Casanellas Hall of the Civic Center Casa del Rellotge of Barcelona 2025 {'·'} Street Shows Show of Olivella 2025 {'·'} Central Event of Mulla't for multiple sclerosis 2025 {'·'} Al Ras Petit Festival at Konvent 2025 {'·'} Catalunya Aixeca el teló Gala 2025 at the Gran Teatre del Liceu of Barcelona {'·'} Clownic Festival of Torrelles de Foix 2025..."
+        "description": "Gala for Clowns Without Borders at the Vela de Ca l'Estruch, Sabadell, 2018 {'·'} International Clown Festival of Cornellà del Llobregat, 2018 {'·'} Cric and Calldeclowns Circus Festivals, 2019 {'·'} Clowns for Freedom {'·'} Festes Majors, itinerant theaters and educational centers throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna, 2019 {'·'} Circus Day in Breda (different editions) {'·'} Festa Major de la Mercè with Clowns Without Borders, 2019 and 2020 {'·'}"
+      },
+      {
+        "title": "*"
+      }
+    ],
+    "scenariosLeft2": [
+      {
+        "title": "*",
+        "description": "Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc, 2020 and 2021) {'·'} World Circus Day (different editions) {'·'} Curtcirckit Festival of Montgat, 2012 {'·'} Children's Shows Cycle St. Joan de les Abadesses, 2022 {'·'} Modernist Fair of Terrassa, 2022 {'·'} Creixendo Festival, 2022 {'·'} Circus Festival of Terrassa (different editions) {'·'} Art's Festival of Almoster, 2023 {'·'} Clown Show of Cubelles, 2023 {'·'}"
+      }
+    ],
+    "scenariosRight2": [
+      {
+        "description": "Circus workshops with the Education Service of the Terrassa City Council, the Sports Council of Bages and for many other entities, City Councils and educational centers {'·'} Christmas Programming at the Gradeta of Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinees at the Pepita Casanellas Hall, 2025 {'·'} Street Shows Show of Olivella, 2025 {'·'} Central Event of Mulla't for multiple sclerosis, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Catalunya Aixeca el teló Gala 2025 at the Gran Teatre del Liceu, Barcelona {'·'} Clownic Festival of Torrelles de Foix, 2025..."
       }
     ],
     "makutu": {
