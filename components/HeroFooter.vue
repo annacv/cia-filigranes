@@ -41,7 +41,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
 
 <template>
   <div
-    class="mt-24 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    class="mt-10 md:mt-20 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="hasReachedBottom ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
