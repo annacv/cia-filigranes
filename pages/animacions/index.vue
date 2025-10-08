@@ -33,9 +33,14 @@ const synopsisButton = computed(() => {
       :alt="getImageAlt('animacions')"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-3xl md:text-5xl lg:text-6xl lg:max-w-[543px]">
-          {{ t('performances.title') }}
-        </h1>
+        <div class="px-5 lg:px-0 font-grotesk uppercase text-white lg:max-w-[543px]">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl">
+            {{ t('performances.title') }}
+          </h1>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl">
+            {{ t('performances.subtitle') }}
+          </h2>
+        </div>
       </template>
     </HeroCover>
     <MainContent>
@@ -59,6 +64,7 @@ const synopsisButton = computed(() => {
           :alt="getImageAlt('animacions')"
           show-full-content
           isReversed
+          shouldClip
         />
         <DataSheet
           :techCard="techCard"

@@ -613,10 +613,8 @@
       ],
       "list": [
         {
-          "title": "Seasonal workshop."
-        },
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "techCard": [
@@ -637,13 +635,54 @@
           "description": "Use comfortable clothes and footwear that can get wet."
         }
       ],
+      "synopsis": [
+        {
+          "paragraph": "We present you the red nose! With it we will enter the world of clowns, humor, innocence and generosity."
+        },
+        {
+          "paragraph": "We will learn to look with this nose, to use the body mask and look for our character!"
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Space",
+          "description": "Seasonal workshop, it is recommended to hold it outdoors."
+        },
+        {
+          "title": "Water point",
+          "description": "A water point nearby is necessary (preferable with a hose)."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "Use comfortable clothes and footwear that can get wet."
+        }
+      ],
       "artCard": [
         {
           "title": "Soap Bubbles Workshop",
           "description": "Filigranes Company"
         },
         {
+          "title": "*",
           "description": "The workshop leaders will make demonstrations and guide us in learning the art of making bubbles using various devices in contact with water and soap."
+        }
+      ]
+    },
+    "pallassos": {
+      "metaDescription": "Clowns Workshop - Workshop for all ages by the Filigranes Company. We present you the red nose! With it we will enter the world of clowns, humor, innocence and generosity.",
+      "abstract": [
+        {
+          "paragraph": "We will learn theatrical techniques to develop body expression, spatial awareness and individual and group communication. And we will put into practice techniques that will help us increase self-esteem and lose shyness and fear of expressing ourselves in public."
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -664,7 +703,8 @@
       ],
       "list": [
         {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -752,10 +792,8 @@
       ],
       "list": [
         {
-          "title": "Seasonal workshop."
-        },
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -800,7 +838,8 @@
     "commonAlt": "Image of custom animations",
     "claimTitle": "An infinity of characters characterized to measure will interrelate with the public.",
     "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events!",
-    "title": "Custom animations",
+    "title": "Animations",
+    "subtitle": "à la carte",
     "hire": {
       "title": "Do you want your custom show?",
       "description": "Write us an email at {email}, or call us at {phone}"

@@ -32,7 +32,7 @@
     <div class="grid-layout bg-neutral-900 py-6">
       <div class="layout-cols text-white m-auto flex flex-col xl:flex-row xl:justify-between w-full items-center gap-1 gap-y-4">
         <div class="flex flex-col xl:flex-row xl:flex-wrap justify-center items-center gap-1 gap-y-4 text-center text-xs">
-          <p class="flex items-center gap-1 font-bold mb-2 md:mb-0">
+          <p class="flex items-center gap-1 font-bold mb-2 md:mb-0 xl:text-xs text-sm">
             <CiaBrand class="text-white !w-8 !h-auto pr-1" />
             Companyia Filigranes, 2025
           </p>
