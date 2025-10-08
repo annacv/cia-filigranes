@@ -68,6 +68,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
+          shouldClip
         />
         <ClaimTitle
           :claim="t('filipersones.trinxeta.claim')"

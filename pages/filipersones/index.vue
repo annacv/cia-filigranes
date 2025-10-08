@@ -94,6 +94,7 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          shouldClip
         />
         <DataSheet
           :techCard="prices"
@@ -101,6 +102,7 @@ const showMore = () => {
           :image="getImageByRoute('filipersones', 'filigranes_2')"
           :alt="t('shows.hero.alt')"
           isReversed
+          shouldClip
         />
         <Synopsis
           :description="history"
@@ -116,6 +118,7 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          shouldClip
         />
         <DataSheet
           ref="dataSheetRef"
@@ -128,6 +131,7 @@ const showMore = () => {
           @viewMore="showMore"
           isReversed
           :style="dataSheetStyle"
+          shouldClip
         />
         <Synopsis
           :description="background"
@@ -136,6 +140,7 @@ const showMore = () => {
           :alt="t('shows.hero.alt')"
           show-full-content
           isFullReversed
+          shouldClip
         />
         <SynopsisList
           :items="filipersonesItems"

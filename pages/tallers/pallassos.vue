@@ -56,6 +56,7 @@ const summaryButton = computed(() => {
           content-type="workshops"
           :alt="getImageAlt('pallassos')"
           show-full-content
+          should-clip
         />
         <DataSheet
           :techCard="techCard"

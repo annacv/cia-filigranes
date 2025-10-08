@@ -81,6 +81,7 @@ const closeVideo = () => {
           content-type="shows"
           :alt="t('home.hero.alt')"
           show-full-content
+          should-clip
         />
         <DataSheet
           :techCard="techCard"

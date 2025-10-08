@@ -68,6 +68,7 @@ const makutuAlt = getImageAlt('makutu')
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
+          shouldClip
         />
         <ClaimTitle
           :claim="t('filipersones.makutu.claim')"

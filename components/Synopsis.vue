@@ -47,6 +47,10 @@ const props = defineProps({
   downloadButton: {
     type: Object,
     default: () => null
+  },
+  shouldClip: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -59,6 +63,8 @@ const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0%, 100% 0%)';
 const reversedClipPath = 'polygon(0% 100%, 80% 100%, 96% 0%, 0% 0%)';
 const fullReversedClipPath = 'polygon(0% 100%, 96% 100%, 80% 0%, 0% 0%)';
+const mobileClip = computed(() => props.shouldClip ? 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)' : 'none');
+
 const currentClipPath = computed(() => props.isFullReversed ? fullReversedClipPath : props.isReversed ? reversedClipPath : initialClipPath)
 
 const getColors = computed(() => {
@@ -79,6 +85,7 @@ const toggleHover = () => {
 <template>
   <div
     :class="`p-0 grid-layout ${getColors}`"
+    :style="{ clipPath: isMobile ? mobileClip : 'none'}"
     @mouseenter="toggleHover"
     @mouseleave="toggleHover"
   >
@@ -86,9 +93,9 @@ const toggleHover = () => {
       'flex flex-col md:flex-row gap-0 xl:gap-5',
       isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
     >
-      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 p-5 lg:py-20 2xl:py-36">
+      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
         <slot name="content">
-          <h2 v-if="title" class="font-grotesk uppercase text-3xl lg:text-5xl">
+          <h2 v-if="title" class="font-grotesk uppercase text-4xl lg:text-5xl">
             {{ title }}
           </h2>
           <p

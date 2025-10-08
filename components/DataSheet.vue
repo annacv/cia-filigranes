@@ -51,6 +51,8 @@ const { gradientOverlayValue } = useColor(props.contentType);
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
+const mobileClip = 'polygon(0% 0%, 50% 10%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)'
+
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
 
 const buttonText = computed(() => props.showMore ? t('button.goBack') : t('button.viewMore'))
@@ -66,8 +68,8 @@ const toggleHover = () => {
     @mouseenter="toggleHover"
     @mouseleave="toggleHover"
   >
-    <div class="layout-cols flex gap-5">
-      <div class="flex flex-col gap-5 w-[20%] p-4 pr-0 lg:py-12 2xl:py-24">
+    <div class="layout-cols flex md:gap-5 flex-col md:flex-row">
+      <div class="flex flex-col gap-5 w-full md:w-[20%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24">
         <Transition
           name="fade"
           mode="out-in"
@@ -89,20 +91,20 @@ const toggleHover = () => {
       </div>
     
       <div
-        class="w-[55%] h-min-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="w-full md:w-[55%] h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
           isHovered || isMobile ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
         :style="{
           backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
           backgroundPosition: 'center center',
-          clipPath: isMobile ? 'none' : currentClipPath
+          clipPath: isMobile ? mobileClip : currentClipPath
         }"
       >
         <!-- Added img tag for Accessibility for screen readers -->
         <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
       </div>
-      <div class="flex flex-col justify-between gap-5 w-[24%] py-4 lg:py-12 2xl:py-24">
+      <div class="flex flex-col justify-between gap-5 w-full md:w-[24%] px-5 md:px-0 pb-5 md:py-4 lg:py-12 2xl:py-24">
         <Transition
           name="fade"
           mode="out-in"

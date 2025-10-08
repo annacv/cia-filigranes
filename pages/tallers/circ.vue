@@ -56,6 +56,7 @@ const summaryButton = computed(() => {
           content-type="workshops"
           :alt="getImageAlt('circ')"
           show-full-content
+          should-clip
         />
         <DataSheet
           :techCard="techCard"

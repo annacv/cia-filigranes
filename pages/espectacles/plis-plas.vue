@@ -59,6 +59,7 @@ const summaryButton = computed(() => {
           content-type="shows"
           :alt="getImageAlt('plis-plas')"
           show-full-content
+          should-clip
         />
         <DataSheet
           :techCard="techCard"
@@ -73,6 +74,7 @@ const summaryButton = computed(() => {
           description="shows.hire.description"
           textColor="text-white"
           bgColor="bg-primary-500"
+          shouldClip
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'plis-plas')" />
