@@ -38,7 +38,8 @@
     "fullShow": "Watch the full show",
     "playVideo": "Click to watch the video",
     "viewMore": "View more",
-    "goBack": "Go back"
+    "goBack": "Go back",
+    "goHome": "Go to home"
   },
   "selectLang": "Choose language",
   "footer": {
@@ -52,6 +53,10 @@
       "advice": "Legal notice",
       "privacy": "Privacy policy"
     }
+  },
+  "404": {
+    "title": "Oops!",
+    "description": "The page you're looking for doesn't exist..."
   },
   "shows": {
     "metaDescription": "Discover the thrilling clown and circus shows of the Filigranes Company.",

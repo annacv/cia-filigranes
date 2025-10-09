@@ -38,7 +38,8 @@
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",
-    "goBack": "Tornar enrera"
+    "goBack": "Tornar enrera",
+    "goHome": "Ves a l'inici"
   },
   "selectLang": "Escull l'idioma",
   "footer": {
@@ -52,6 +53,10 @@
       "advice": "Avís legal",
       "privacy": "Política de privadesa"
     }
+  },
+  "404": {
+    "title": "Uiuiui!",
+    "description": "La pàgina que estàs buscant no existeix..."
   },
   "shows": {
     "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Compayia Filigranes.",
