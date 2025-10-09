@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
+import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
 import type { CardImage, ContentType } from "~/types";
 
 const props = defineProps({
@@ -43,30 +44,40 @@ const props = defineProps({
 
 const emit = defineEmits(['viewMore'])
 
+const isHovered = ref(false)
+const componentRef = ref<HTMLElement>()
+const imageRef = ref<HTMLElement>()
+
 const { isMobile } = useDevice()
 const { t } = useI18n()
-const isHovered = ref(false)
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
+const { isVisibleAt80Percent, setupIntersectionObserver } = useIntersection80()
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
 const mobileClip = 'polygon(0% 0%, 50% 10%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)'
 
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
-
 const buttonText = computed(() => props.showMore ? t('button.goBack') : t('button.viewMore'))
 
-const toggleHover = () => {
-  isHovered.value = !isHovered.value;
-};
+const hoverState = computed(() => isMobile ? isVisibleAt80Percent.value : isHovered.value)
+const toggleHover = () => isHovered.value = !isHovered.value;
+
+// Setup intersection observer reactively when ref becomes available
+watchEffect(() => {
+  if (imageRef.value) {
+    setupIntersectionObserver(imageRef);
+  }
+});
 </script>
 
 <template>
   <div
+    ref="componentRef"
     class="p-0 grid-layout bg-neutral-0 text-neutral-900"
-    @mouseenter="toggleHover"
-    @mouseleave="toggleHover"
+    @mouseenter="toggleHover()"
+    @mouseleave="toggleHover()"
   >
     <div class="layout-cols flex md:gap-5 flex-col md:flex-row">
       <div class="flex flex-col gap-5 w-full md:w-[20%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24">
@@ -91,9 +102,10 @@ const toggleHover = () => {
       </div>
     
       <div
+        ref="imageRef"
         class="w-full md:w-[55%] h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
-          isHovered || isMobile ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
+          hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
         :style="{
           backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,

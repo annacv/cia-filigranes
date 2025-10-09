@@ -19,7 +19,10 @@ export function useIntersection80() {
           }
         }
       },
-      { threshold: [0, 0.8, 1] }
+      { 
+        threshold: [0, 0.3, 1],
+        rootMargin: '0px 0px -5% 0px' // Add some margin to account for clip-path
+      }
     )
     cleanup = stop
   }

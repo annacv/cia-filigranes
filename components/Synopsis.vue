@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
+import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
 import type { CardImage, ContentType } from "~/types";
 import ArrowRight from "assets/icons/arrow-right.svg";
 import ArrowDown from "assets/icons/arrow-down.svg";
@@ -54,17 +55,21 @@ const props = defineProps({
   }
 })
 
+const isHovered = ref(false)
+const componentRef = ref<HTMLElement>()
+const imageRef = ref<HTMLElement>()
+
 const { isMobile } = useDevice()
 const { t } = useI18n()
-const isHovered = ref(false)
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
+const { isVisibleAt80Percent, setupIntersectionObserver } = useIntersection80()
 
 const initialClipPath = 'polygon(100% 100%, 4% 100%, 20% 0%, 100% 0%)';
 const reversedClipPath = 'polygon(0% 100%, 80% 100%, 96% 0%, 0% 0%)';
 const fullReversedClipPath = 'polygon(0% 100%, 96% 100%, 80% 0%, 0% 0%)';
-const mobileClip = computed(() => props.shouldClip ? 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)' : 'none');
 
+const mobileClip = computed(() => props.shouldClip ? 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)' : 'none');
 const currentClipPath = computed(() => props.isFullReversed ? fullReversedClipPath : props.isReversed ? reversedClipPath : initialClipPath)
 
 const getColors = computed(() => {
@@ -77,17 +82,24 @@ const getColors = computed(() => {
   return 'bg-neutral-0 text-neutral-900';
 })
 
-const toggleHover = () => {
-  isHovered.value = !isHovered.value;
-};
+const hoverState = computed(() => isMobile ? isVisibleAt80Percent.value : isHovered.value)
+const toggleHover = () => isHovered.value = !isHovered.value;
+
+// Setup intersection observer reactively when ref becomes available
+watchEffect(() => {
+  if (imageRef.value) {
+    setupIntersectionObserver(imageRef);
+  }
+});
 </script>
 
 <template>
   <div
+    ref="componentRef"
     :class="`p-0 grid-layout ${getColors}`"
     :style="{ clipPath: isMobile ? mobileClip : 'none'}"
-    @mouseenter="toggleHover"
-    @mouseleave="toggleHover"
+    @mouseenter="toggleHover()"
+    @mouseleave="toggleHover()"
   >
     <div :class="[
       'flex flex-col md:flex-row gap-0 xl:gap-5',
@@ -143,9 +155,10 @@ const toggleHover = () => {
         </div>
       </div>
       <div
+        ref="imageRef"
         class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
-          isHovered || isMobile ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
+          hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
         :style="{
           backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
