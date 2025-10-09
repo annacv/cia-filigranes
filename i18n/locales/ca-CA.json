@@ -795,7 +795,8 @@
     "commonAlt": "Imatge d'animacions a la carta",
     "claimTitle": "Una infinitat de personatges interactuaran amb el públic.",
     "claim": "Ideals per amenitzar aniversaris, convencions, trobades i tot tipus d'esdeveniments!",
-    "title": "Animacions a la carta",
+    "title": "Animacions",
+    "subtitle": "a la carta",
     "hire": {
       "title": "Vols el teu espectacle a mida?",
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"

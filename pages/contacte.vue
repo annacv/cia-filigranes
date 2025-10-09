@@ -6,7 +6,6 @@ import { CONTACT } from "~/constants";
 import ArrowRightIcon from "assets/icons/arrow-right.svg";
 
 const { t, locale } = useI18n();
-const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('contact');
 
 useHead({
@@ -63,10 +62,10 @@ onBeforeUnmount(() => {
     >
       <template #content>
         <div class="px-5 lg:px-0 font-grotesk uppercase text-black lg:max-w-[543px]">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl">
+          <h1 class="text-5xl lg:text-6xl">
             {{ t('contact.hero.title') }}
           </h1>
-          <h2 class="text-4xl md:text-5xl lg:text-5xl">
+          <h2 class="text-3xl md:text-5xl lg:text-5xl">
             {{ t('contact.hero.subtitle') }}
           </h2>
         </div>

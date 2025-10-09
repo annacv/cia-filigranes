@@ -59,6 +59,7 @@ const summaryButton = computed(() => {
           content-type="shows"
           :alt="getImageAlt('freak-frac')"
           show-full-content
+          should-clip
         />
         <DataSheet
           :techCard="techCard"

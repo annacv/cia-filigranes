@@ -613,10 +613,8 @@
       ],
       "list": [
         {
-          "title": "Taller de temporada."
-        },
-        {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "techCard": [
@@ -637,21 +635,22 @@
           "description": "Utilizar ropa cómoda y calzado que se pueda mojar."
         }
       ],
-      "artCard": [
-        {
-          "title": "Taller de Burbujas de Jabón",
-          "description": "Cia. Filigranes"
-        },
-        {
-          "description": "Los/las talleristas harán demostraciones y nos guiarán en el aprendizaje del arte de hacer burbujas mediante diversos aparatos en contacto con agua y jabón."
-        }
-      ],
       "synopsis": [
         {
           "paragraph": "¡¡¿Como es posible?!! ¡¡Una burbuja de jabón más grande que tu cabeza!! ¿Quieres hacerla con tus propias manos?"
         },
         {
           "paragraph": "¡Lo llenaremos todo de burbujas de jabón de diferentes tamaños! ¡Las haremos bailar y volar! Anímate a descubrir esta técnica tan peculiar."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Taller de Burbujas de Jabón",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "*",
+          "description": "Los/las talleristas harán demostraciones y nos guiarán en el aprendizaje del arte de hacer burbujas mediante diversos aparatos en contacto con agua y jabón."
         }
       ]
     },
@@ -664,7 +663,8 @@
       ],
       "list": [
         {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -752,10 +752,8 @@
       ],
       "list": [
         {
-          "title": "Taller de temporada."
-        },
-        {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -800,7 +798,8 @@
     "commonAlt": "Imagen de animaciones a la carta",
     "claimTitle": "Una infinidad de personajes caracterizados a medida se interrelacionarán con el público.",
     "claim": "¡Ideales para amenizar cumpleaños, convenciones, encuentros y todo tipo de eventos!",
-    "title": "Animaciones a la carta",
+    "title": "Animaciones",
+    "subtitle": "a la carta",
     "hire": {
       "title": "¿Quieres tu espectáculo a medida?",
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"

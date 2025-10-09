@@ -8,6 +8,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 const showMoreContent = ref(false);
 const dataSheetRef = ref<HTMLElement | null>(null);
 
+const { isMobile } = useDevice();
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
@@ -94,6 +95,7 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          shouldClip
         />
         <DataSheet
           :techCard="prices"
@@ -101,6 +103,7 @@ const showMore = () => {
           :image="getImageByRoute('filipersones', 'filigranes_2')"
           :alt="t('shows.hero.alt')"
           isReversed
+          shouldClip
         />
         <Synopsis
           :description="history"
@@ -116,6 +119,7 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
+          shouldClip
         />
         <DataSheet
           ref="dataSheetRef"
@@ -128,6 +132,8 @@ const showMore = () => {
           @viewMore="showMore"
           isReversed
           :style="dataSheetStyle"
+          shouldClip
+          :hideImage="isMobile"
         />
         <Synopsis
           :description="background"
@@ -136,6 +142,7 @@ const showMore = () => {
           :alt="t('shows.hero.alt')"
           show-full-content
           isFullReversed
+          shouldClip
         />
         <SynopsisList
           :items="filipersonesItems"

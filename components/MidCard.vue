@@ -24,23 +24,30 @@ const props = defineProps({
   }
 });
 
-const { t } = useI18n()
+const touchedImageIndex = ref<number | null>(null)
+
+const { isMobile } = useDevice()
 const { gradientColorClass } = useColor(props.contentType);
 const { imageAlt: getImageAlt } = useImageAlt(props.contentType);
+
 const imageAlt = computed(() => getImageAlt(props.title));
-
-const hoveredImageIndex = ref<number | null>(null);
-
-const setImageHover = (index: number) => {
-  hoveredImageIndex.value = index;
-};
-
-const clearImageHover = () => {
-  hoveredImageIndex.value = null;
-};
 
 const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
   return useImageUrl(imageName, imageRoute).value;
+}
+
+const handleImageTouchStart = (index: number) => {
+  if (isMobile) {
+    touchedImageIndex.value = index
+  }
+}
+
+const handleImageTouchEnd = () => {
+  if (isMobile) {
+    requestAnimationFrame(() => {
+      touchedImageIndex.value = null
+    })
+  }
 }
 </script>
 
@@ -54,24 +61,28 @@ const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
         <div
           v-for="(image, index) in images"
           :key="index"
-          class="relative aspect-square overflow-hidden"
-          @mouseenter="setImageHover(index)"
-          @mouseleave="clearImageHover"
+          class="relative aspect-square overflow-hidden group/image"
+          @touchstart="handleImageTouchStart(index)"
+          @touchend="handleImageTouchEnd"
         >
           <img
-            class="w-full h-full object-cover object-center pointer-events-none transition-all duration-700"
-            :class="hoveredImageIndex === index
-            ? 'brightness-110 saturate-110 scale-105'
-            : 'brightness-70 saturate-100 scale-100'"
+            class="w-full h-full object-cover object-center pointer-events-none transition-all duration-700 brightness-70 saturate-100 scale-100"
+            :class="isMobile 
+              ? (touchedImageIndex === index ? 'brightness-110 saturate-110 scale-105' : 'brightness-70 saturate-100 scale-100')
+              : 'group-hover/image:brightness-110 group-hover/image:saturate-110 group-hover/image:scale-105'"
             :src="setImageSrc(image.imageName, image.imageRoute)"
             :alt="imageAlt"
             loading="lazy"
             draggable="false"
           />
           <div
-            v-if="hoveredImageIndex !== index"
             class="absolute inset-0 pointer-events-none transition-all duration-700"
-            :class="gradientColorClass"
+            :class="[
+              gradientColorClass,
+              isMobile 
+                ? (touchedImageIndex === index ? 'opacity-0' : 'opacity-100')
+                : 'group-hover/image:opacity-0'
+            ]"
           ></div>
         </div>
       </NuxtLinkLocale>

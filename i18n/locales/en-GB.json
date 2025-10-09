@@ -613,10 +613,8 @@
       ],
       "list": [
         {
-          "title": "Seasonal workshop."
-        },
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "techCard": [
@@ -637,21 +635,22 @@
           "description": "Use comfortable clothes and footwear that can get wet."
         }
       ],
-      "artCard": [
-        {
-          "title": "Soap Bubbles Workshop",
-          "description": "Filigranes Company"
-        },
-        {
-          "description": "The workshop leaders will make demonstrations and guide us in learning the art of making bubbles using various devices in contact with water and soap."
-        }
-      ],
       "synopsis": [
         {
           "paragraph": "How is it possible?! A soap bubble bigger than your head! Do you want to do it with your own hands?"
         },
         {
           "paragraph": "We'll fill everything with soap bubbles of different sizes! We'll make them dance and fly! Dare to discover this so peculiar technique."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Soap Bubbles Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "*",
+          "description": "The workshop leaders will make demonstrations and guide us in learning the art of making bubbles using various devices in contact with water and soap."
         }
       ]
     },
@@ -664,7 +663,8 @@
       ],
       "list": [
         {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -673,6 +673,52 @@
         },
         {
           "paragraph": "We will learn to look with this nose, to use the body mask and look for our character!"
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Materials",
+          "description": "All materials will be provided by the Filigranes Company."
+        },
+        {
+          "title": "Light and sound",
+          "description": "A power point is needed for the sound equipment."
+        },
+        {
+          "title": "Recommendations",
+          "description": "It is recommended to wear comfortable clothes, preferably tracksuit and sneakers."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Clowns Workshop",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "*",
+          "description": "Each participant will be given a red nose, which they can take home. We will have fun through games and participatory dynamics, where we will discover the clown we carry inside!"
+        }
+      ]
+    },
+    "maquillatge": {
+      "metaDescription": "Makeup Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand the technique of makeup.",
+      "abstract": [
+        {
+          "paragraph": "With this workshop we will put at your disposal a whole set of fantasy makeup techniques: with brush, sponge, fingers..."
+        }
+      ],
+      "list": [
+        {
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "The facial art of fantasy allows us to create our own and unique character!"
+        },
+        {
+          "paragraph": "The skin will become our own mask and will help us to stimulate the imagination. So, when it ends... just look at the faces and get into the character!"
         }
       ],
       "techCard": [
@@ -752,10 +798,8 @@
       ],
       "list": [
         {
-          "title": "Seasonal workshop."
-        },
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -800,7 +844,8 @@
     "commonAlt": "Image of custom animations",
     "claimTitle": "An infinity of characters characterized to measure will interrelate with the public.",
     "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events!",
-    "title": "Custom animations",
+    "title": "Animations",
+    "subtitle": "à la carte",
     "hire": {
       "title": "Do you want your custom show?",
       "description": "Write us an email at {email}, or call us at {phone}"

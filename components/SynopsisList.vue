@@ -35,7 +35,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col mb-20">
+  <div class="flex flex-col md:mb-20">
     <ClaimTitle
       :claim="claim"
       :claim-title="claimTitle"
