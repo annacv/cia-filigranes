@@ -8,6 +8,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 const showMoreContent = ref(false);
 const dataSheetRef = ref<HTMLElement | null>(null);
 
+const { isMobile } = useDevice();
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const { imageAlt: getImageAlt } = useImageAlt('filipersones');
@@ -132,6 +133,7 @@ const showMore = () => {
           isReversed
           :style="dataSheetStyle"
           shouldClip
+          :hideImage="isMobile"
         />
         <Synopsis
           :description="background"

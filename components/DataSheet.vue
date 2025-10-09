@@ -40,6 +40,10 @@ const props = defineProps({
     required: true,
     default: () => []
   },
+  hideImage: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const emit = defineEmits(['viewMore'])
@@ -79,8 +83,11 @@ watchEffect(() => {
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >
-    <div class="layout-cols flex md:gap-5 flex-col md:flex-row">
-      <div class="flex flex-col gap-5 w-full md:w-[20%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24">
+    <div class="layout-cols flex md:gap-5 flex-col md:flex-row h-full">
+      <div
+        class="flex flex-col gap-5 w-full md:w-[20%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24"
+        :class="{ 'pb-0 md:pb-0': hideImage }"
+      >
         <Transition
           name="fade"
           mode="out-in"
@@ -102,6 +109,7 @@ watchEffect(() => {
       </div>
     
       <div
+        v-if="!hideImage"
         ref="imageRef"
         class="w-full md:w-[55%] h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
@@ -116,7 +124,10 @@ watchEffect(() => {
         <!-- Added img tag for Accessibility for screen readers -->
         <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
       </div>
-      <div class="flex flex-col justify-between gap-5 w-full md:w-[24%] px-5 md:px-0 pb-5 md:py-4 lg:py-12 2xl:py-24">
+      <div
+        class="flex flex-col justify-between w-full md:w-[24%] px-5 md:pl-0 pb-5 md:py-4 lg:py-12 2xl:py-24"
+        :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
+        >
         <Transition
           name="fade"
           mode="out-in"
@@ -128,7 +139,8 @@ watchEffect(() => {
             <li
               v-for="item in techCard"
               :key="item.title"
-              class="flex flex-col gap-2 text-sm lg:text-base"
+              class="flex flex-col text-sm lg:text-base"
+              :class="{ 'gap-2': !hideImage }"
             >
               <p class="font-bold">{{ item.title }}</p>
               <p class="font-light">{{ item.description }}</p>
@@ -138,7 +150,7 @@ watchEffect(() => {
         <FiliButton
           v-if="extraContent"
           class="mt-1"
-          buttonClass="text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
+          buttonClass="text-sm md:text-base text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
           :text="buttonText"
           @click="emit('viewMore')"
         />
