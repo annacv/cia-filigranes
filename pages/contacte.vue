@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { onBeforeUnmount, ref, watch } from 'vue'
 import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
 import ArrowRightIcon from "assets/icons/arrow-right.svg";
 
-const { t, locale } = useI18n();
-const { imageAlt: getImageAlt } = useImageAlt('contact');
+// Set header background color for this page
+definePageMeta({
+  headerBackgroundColor: '#000'
+})
+
+const { t } = useI18n();
 
 useHead({
   meta: [
@@ -14,42 +17,8 @@ useHead({
   ]
 })
 
-// Set the header background color for this page
-const { setHeaderBackgroundColor, resetHeaderColor } = useHeader()
-setHeaderBackgroundColor('bg-black')
-
-// Track if this is a language switch vs actual navigation
-const isLanguageSwitch = ref(false)
-let timeoutId: NodeJS.Timeout | null = null
-
-// Watch for locale changes to detect language switching
-watch(locale, () => {
-  isLanguageSwitch.value = true
-  // Clear any existing timeout
-  if (timeoutId) {
-    clearTimeout(timeoutId)
-  }
-  // Reset the flag after a short delay
-  timeoutId = setTimeout(() => {
-    isLanguageSwitch.value = false
-    timeoutId = null
-  }, 100)
-})
-
-// Reset the background color when leaving this page to prevent other pages inherit it
-// But only if it's not a language switch
-onBeforeUnmount(() => {
-  // Clear any pending timeout to prevent memory leaks
-  if (timeoutId) {
-    clearTimeout(timeoutId)
-    timeoutId = null
-  }
-  
-  if (!isLanguageSwitch.value) {
-    resetHeaderColor()
-  }
-})
-
+const { imageAlt: getImageAlt } = useImageAlt('contact');
+const { canLoadGoogleMaps, acceptAll, openModal } = useCookies();
 </script>
 
 <template>
@@ -97,15 +66,33 @@ onBeforeUnmount(() => {
               </div>
               
               <div class="flex flex-col items-start gap-2">
-                <iframe
-                  :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5970.133862969208!2d2.0127018!3d41.56779600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a492c3e2155299%3A0x4d072d8f6b4f6768!2sCia%20Filigranes!5e0!3m2!1s${locale}!2s${locale}!4v1759615126607!5m2!1s${locale}!2s${locale}&lang=${locale}`"
-                  class="w-full h-full aspect-video"
-                  style="border:0;"
-                  allowfullscreen
-                  loading="lazy"
-                  :title="t('contact.map.title')"
+                <Transition
+                  enter-active-class="transition-all duration-500 ease-out"
+                  enter-from-class="opacity-0 transform scale-95"
+                  enter-to-class="opacity-100 transform scale-100"
+                  leave-active-class="transition-all duration-300 ease-in"
+                  leave-from-class="opacity-100 transform scale-100"
+                  leave-to-class="opacity-0 transform scale-95"
+                  mode="out-in"
                 >
-                </iframe>
+                  <div v-if="canLoadGoogleMaps" key="map" class="w-full">
+                    <iframe
+                      :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5970.133862969208!2d2.0127018!3d41.56779600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a492c3e2155299%3A0x4d072d8f6b4f6768!2sCia%20Filigranes!5e0!3m2!1s${locale}!2s${locale}!4v1759615126607!5m2!1s${locale}!2s${locale}&lang=${locale}`"
+                      class="w-full h-full aspect-video"
+                      style="border:0;"
+                      allowfullscreen
+                      loading="lazy"
+                      :title="t('contact.map.title')"
+                    >
+                    </iframe>
+                  </div>
+                  <div v-else key="placeholder" class="w-full">
+                    <ConsentPlaceholder
+                      :title="t('consent.map.title')"
+                      :description="t('consent.map.consentRequired')"
+                    />
+                  </div>
+                </Transition>
                 <a class="flex gap-2 items-end hover:opacity-80 text-sm" :href="CONTACT.adressHref">
                   {{ CONTACT.adress }}
                 </a>

@@ -1,5 +1,8 @@
 {
   "title": "Compañía Filigranes",
+  "modal": {
+    "close": "Cerrar"
+  },
   "home": {
     "metaDescription": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
     "hero": {
@@ -38,7 +41,8 @@
     "fullShow": "Ver todo el espectáculo",
     "playVideo": "Haz clic para ver el video",
     "viewMore": "Ver más",
-    "goBack": "Volver atrás"
+    "goBack": "Volver atrás",
+    "goHome": "Ir al inicio"
   },
   "selectLang": "Elige idioma",
   "footer": {
@@ -50,8 +54,12 @@
     },
     "legal": {
       "advice": "Aviso legal",
-      "privacy": "Política de privacidad"
+      "cookies": "Política de cookies"
     }
+  },
+  "404": {
+    "title": "¡Ups!",
+    "description": "La página que estás buscando no existe..."
   },
   "shows": {
     "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
@@ -1018,9 +1026,231 @@
     "rrss": {
       "title": "Y si quieres charlar un poco, o ver dónde actuamos próximamente...",
       "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también podrás visionar grandes momentos de nuestros espectáculos en nuestra Filitele."
-    },
+    } 
+  },
+  "consent": {
     "map": {
-      "title": "Mapa de ubicación de la Compañía Filigranes"
-    }  
+      "title": "Mapa de la ubicació de la Cia. Filigranes",
+      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+    },
+    "youtube": {
+      "title": "Video de l'espectacle",
+      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+    },
+    "manageCookies": "Gestionar cookies",
+    "acceptCookies": "Acceptar cookies"
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "metaDescription": "Política de cookies de Cia Filigranes. Información sobre el uso de cookies en nuestro sitio web.",
+    "sections": [
+      {
+        "key": "objective",
+        "title": "Objetivo",
+        "description": "La Compañía Filigranes utiliza cookies para guardar las preferencias de idioma. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
+      },
+      {
+        "key": "acceptance",
+        "title": "Aceptación de la política de cookies",
+        "description": "El uso continuado del sitio web después de mostrarse el banner de cookies y la configuración o acción positiva sobre este supone la aceptación de nuestra política de cookies. Si la usuaria decide bloquear o desactivar las cookies, puede hacerlo a través de las opciones del navegador, pero esta decisión puede limitar algunas funcionalidades."
+      },
+      {
+        "key": "whatIs",
+        "title": "¿Qué es una cookie?",
+        "description": "Una cookie es un pequeño archivo de texto que se almacena en el navegador de la usuaria cuando visita un sitio web, para guardar información temporal o para mantener configuraciones específicas y preferencias."
+      }
+    ],
+    "types": {
+      "title": "Tipos de cookies que existen",
+      "list": [
+        {
+          "key": "technical",
+          "title": "Cookies técnicas (esenciales):",
+          "description": "Necesarias para el funcionamiento básico del sitio, como cookies de preferencia de idioma, identificación de sesión y otras funciones técnicas."
+        },
+        {
+          "key": "personalization",
+          "title": "Cookies de personalización:",
+          "description": "Permiten recordar preferencias específicas como el idioma seleccionado o configuración del visual."
+        },
+        {
+          "key": "analytics",
+          "title": "Cookies de análisis:",
+          "description": "Permiten recopilar información anónima sobre cómo interactúa la usuaria con el sitio para mejorar la experiencia. No utilizamos Google Analytics ni otras herramientas de análisis que generen cookies."
+        },
+        {
+          "key": "thirdParty",
+          "title": "Cookies de terceros:",
+          "description": "Utilizamos cookies de YouTube solo si se activa la reproducción de vídeos embebidos. Estas son gestionadas por Google/YouTube y se desactivan por defecto hasta la aceptación."
+        }
+      ]
+    },
+    "currentCookies": {
+      "title": "Cookies utilizadas actualmente",
+      "table": {
+        "headers": [
+          { "key": "name", "label": "Nombre" },
+          { "key": "purpose", "label": "Finalidad" },
+          { "key": "responsible", "label": "Responsable" },
+          { "key": "duration", "label": "Duración" }
+        ],
+        "rows": [
+          {
+            "name": "i18n_redirected",
+            "purpose": "Preferencia de idioma",
+            "responsible": "First-party (nosotros)",
+            "duration": "Persistente"
+          },
+          {
+            "name": "YouTube",
+            "purpose": "Preferencias de reproducción de vídeos",
+            "responsible": "Google/YouTube",
+            "duration": "Sesión (si se activan)"
+          }
+        ],
+        "note": "Otras cookies o herramientas de análisis no son utilizadas."
+      }
+    },
+    "selfHosted": {
+      "title": "Fuentes auto-hospedadas",
+      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
+    },
+    "disable": {
+      "title": "Cómo desactivar o bloquear las cookies",
+      "description": "La usuaria puede configurar su navegador para gestionar y desactivar las cookies. Hay que saber que la desactivación puede afectar el funcionamiento óptimo del sitio.",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647?hl=es"
+        },
+        {
+          "name": "Internet Explorer",
+          "url": "https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-web"
+        },
+        {
+          "name": "Safari iPhone, iPad e iPod touch y Safari para Mac",
+          "url": "https://support.apple.com/es-es/HT201265"
+        }
+      ]
+    },
+    "additional": {
+      "title": "Información adicional",
+      "description": "Al acceder a ciertos servicios externos como Google Maps, que utilizan iframes, pueden establecerse cookies propias de estos terceros no controladas directamente por nosotros."
+    },
+    "banner": {
+      "description": "Solo utilizamos cookies para almacenar tus preferencias de idioma y mejorar tu experiencia de navegación.",
+      "accept": "Aceptar todas",
+      "reject": "Rechazar",
+      "customize": "Personalizar",
+      "moreInfo": "Más información"
+    },
+    "modal": {
+      "title": "Configuración de cookies",
+      "description": "Puedes activar o desactivar las diferentes categorías de cookies según tus preferencias.",
+      "essential": {
+        "title": "Cookies esenciales",
+        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen la preferencia de idioma que recuerda tu selección.",
+        "required": "Obligatorias"
+      },
+      "functional": {
+        "title": "Cookies funcionales",
+        "description": "Permiten ver el mapa de Google Maps, reproducir los vídeos de los espectáculos y mejoran la funcionalidad del sitio web. Sin ellas, verás un mensaje en lugar del mapa y de los vídeos.",
+        "optional": "Opcionales"
+      },
+      "save": "Guardar preferencias",
+      "acceptAll": "Aceptar todas",
+      "rejectAll": "Rechazar todas"
+    }
+  },
+    "avis-legal": {
+      "title": "Aviso legal",
+      "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
+    "sections": [
+      {
+        "key": "titular",
+        "title": "Información del Titular",
+        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{at}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
+      },
+      {
+        "key": "condicions",
+        "title": "Condiciones de acceso y uso",
+        "description": "Toda persona que acceda a este sitio web asume el papel de usuaria y se compromete a la observancia y al cumplimiento riguroso de las disposiciones aquí indicadas, así como de cualquier otra disposición legal que fuera aplicable. Las responsables del sitio web se reservan el derecho de modificar, sin necesidad de aviso previo, cualquier tipo de información que pudiera aparecer en el sitio web, entendiéndose como suficiente su publicación en este mismo sitio."
+      },
+      {
+        "key": "codi-conducta",
+        "title": "Código de conducta",
+        "description": "Las responsables del sitio web se encuentran adheridas al Código de Conducta Tipo de la Asociación de Profesionales de Circo de Cataluña."
+      },
+      {
+        "key": "propietat",
+        "title": "Propiedad intelectual e industrial",
+        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{at}gmail.com."
+      },
+      {
+        "key": "continguts",
+        "title": "Contenidos",
+        "description": "Este sitio web tiene como finalidad facilitar el conocimiento de las actividades y servicios de la Compañía Filigranes. Esta se reserva el derecho de modificar los contenidos y la presentación del sitio en cualquier momento y sin aviso previo."
+      },
+      {
+        "key": "enllacos",
+        "title": "Enlaces",
+        "description": "Los enlaces disponibles tienen como único objetivo facilitar el acceso a otras fuentes de información relacionadas. El sitio web puede contener hipervínculos a páginas de terceros sobre las cuales la Compañía Filigranes no ejerce ningún control. No se garantiza ni asume ninguna responsabilidad sobre la exactitud o actualización de las informaciones que se ofrecen. En caso de detectar contenidos que contravengan la legislación o el orden público, la Compañía Filigranes procederá a su retirada inmediata."
+      },
+      {
+        "key": "exclusio",
+        "title": "Exclusión de garantías y responsabilidad",
+        "description": "Las responsables del sitio web se eximen de cualquier tipo de responsabilidad derivada de contenidos introducidos por terceros, así como de interrupciones del servicio o problemas técnicos internos o externos. No se responde tampoco por los contenidos publicados por terceros en foros, redes sociales u otros medios externos asociados."
+      },
+      {
+        "key": "privacitat",
+        "title": "Privacidad y protección de datos personales",
+        "description": "Los datos personales que se puedan facilitar mediante correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. Este sitio web no recopila datos personales mediante formularios, quedando a criterio de la persona usuaria contactar o no por los canales disponibles."
+      },
+      {
+        "key": "llei",
+        "title": "Ley aplicable y jurisdicción",
+        "description": "Para la resolución de todas las controversias o cuestiones relacionadas con este sitio web, resulta aplicable la legislación española. Las partes se someten expresamente a los Juzgados y Tribunales de Barcelona (España)."
+      },
+      {
+        "key": "actualitzacio",
+        "title": "Fecha de la última actualización:",
+        "description": "10 de octubre de 2025."
+      }
+    ],
+    "cookies": {
+      "title": "Cookies",
+      "description": "Este sitio web utiliza cookies para asegurar su correcto funcionamiento y mejorar la experiencia de navegación. Las cookies son pequeños archivos que se almacenan en el navegador de la persona usuaria y permiten recordar determinadas preferencias. Ninguna de las cookies empleadas permite acceder a datos personales o al contenido de tu dispositivo.",
+      "categories": [
+        {
+          "key": "essencials",
+          "title": "Esenciales (necesarias para el funcionamiento del sitio):",
+          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas."
+        },
+        {
+          "key": "funcionals",
+          "title": "Funcionales",
+          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Por defecto, la configuración del web mantiene las cookies de YouTube desactivadas hasta que la usuaria las acepta."
+        },
+        {
+          "key": "deshabilitades",
+          "title": "Deshabilitadas por defecto / No utilizadas:",
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+        },
+        {
+          "key": "servei-extern",
+          "title": "Servicio externo con posible emisión de cookies:",
+          "description": "Google Maps (third-party, Google): si se accede al mapa incrustado, Google puede instalar cookies asociadas a su servicio."
+        },
+        {
+          "key": "gestio",
+          "title": "Gestión de cookies:",
+          "description": "La persona usuaria puede configurar su navegador para rechazar o suprimir cookies. Sin embargo, si se desactivan las cookies esenciales, el sitio puede no funcionar correctamente. Puedes consultar las opciones de ayuda de tu navegador para obtener más información sobre cómo gestionarlas."
+        }
+      ]
+    }
   }
 }

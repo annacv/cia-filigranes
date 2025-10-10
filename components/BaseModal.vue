@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import CrossIcon from "assets/icons/cross.svg";
 
+const { t } = useI18n()
+
 interface Props {
   isOpen: boolean
   closeOnOverlay?: boolean
@@ -78,10 +80,10 @@ watch(() => props.isOpen, (isOpen) => {
         >
           <button
             @click="closeModal"
-            class="absolute top-4 right-4 z-10 w-8 h-8 bg-black/20 hover:opacity-75 rounded-full flex items-center justify-center transition-colors duration-200"
-            aria-label="Close modal"
+            class="absolute top-4 right-4 z-10 w-8 h-8 bg-black/50 hover:opacity-75 rounded-full flex items-center justify-center transition-colors duration-200"
+            :aria-label="t('modal.close')"
           >
-            <CrossIcon class="!w-5 !h-5 text-white" />
+            <CrossIcon class="!w-5 !h-5 text-white !mb-0" />
           </button>
           
           <div class="overflow-auto max-h-[90dvh]">

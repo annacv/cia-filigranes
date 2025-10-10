@@ -62,8 +62,8 @@ const handleImageTouchEnd = () => {
           v-for="(image, index) in images"
           :key="index"
           class="relative aspect-square overflow-hidden group/image"
-          @touchstart="handleImageTouchStart(index)"
-          @touchend="handleImageTouchEnd"
+          @touchstart.passive="handleImageTouchStart(index)"
+          @touchend.passive="handleImageTouchEnd"
         >
           <img
             class="w-full h-full object-cover object-center pointer-events-none transition-all duration-700 brightness-70 saturate-100 scale-100"

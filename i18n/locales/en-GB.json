@@ -1,5 +1,8 @@
 {
   "title": "Filigranes Company",
+  "modal": {
+    "close": "Close"
+  },
   "home": {
     "metaDescription": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
     "hero": {
@@ -38,7 +41,8 @@
     "fullShow": "Watch the full show",
     "playVideo": "Click to watch the video",
     "viewMore": "View more",
-    "goBack": "Go back"
+    "goBack": "Go back",
+    "goHome": "Go to home"
   },
   "selectLang": "Choose language",
   "footer": {
@@ -50,8 +54,12 @@
     },
     "legal": {
       "advice": "Legal notice",
-      "privacy": "Privacy policy"
+      "cookies": "Cookie policy"
     }
+  },
+  "404": {
+    "title": "Oops!",
+    "description": "The page you're looking for doesn't exist..."
   },
   "shows": {
     "metaDescription": "Discover the thrilling clown and circus shows of the Filigranes Company.",
@@ -745,50 +753,6 @@
         }
       ]
     },
-    "maquillatge": {
-      "metaDescription": "Makeup Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand the technique of makeup.",
-      "abstract": [
-        {
-          "paragraph": "With this workshop we will put at your disposal a whole set of fantasy makeup techniques: with brush, sponge, fingers..."
-        }
-      ],
-      "list": [
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
-        }
-      ],
-      "synopsis": [
-        {
-          "paragraph": "The facial art of fantasy allows us to create our own and unique character!"
-        },
-        {
-          "paragraph": "The skin will become our own mask and will help us to stimulate the imagination. So, when it ends... just look at the faces and get into the character!"
-        }
-      ],
-      "techCard": [
-        {
-          "title": "Materials",
-          "description": "The paints and all necessary material will be provided by the Filigranes Company. We will always use paints suitable for skin contact."
-        },
-        {
-          "title": "Light and sound",
-          "description": "A power point is needed for the sound equipment."
-        },
-        {
-          "title": "To consider",
-          "description": "The paints will be applied totally or partially by the workshop leaders, depending on the age of the participants."
-        }
-      ],
-      "artCard": [
-        {
-          "title": "Makeup Workshop",
-          "description": "Filigranes Company"
-        },
-        {
-          "description": "With the help of our workshop leaders, children will create their own sketch and character. All together, we will choose the colors and learn what are the most appropriate techniques for each case."
-        }
-      ]
-    },
     "enginys-aigua": {
       "metaDescription": "Water Tricks Workshop - Workshop for all ages by the Filigranes Company. With this workshop we will learn to use water to create different tricks: balls, devil sticks, soap bubbles, etc.",
       "abstract": [
@@ -1064,9 +1028,231 @@
     "rrss": {
       "title": "And if you want to chat a bit, or see where we perform next...",
       "description": "Follow us on social networks and you'll find information about news, schedule, images..., and you can also watch great moments from our shows on our Filitele."
-    },
+    } 
+  },
+  "consent": {
     "map": {
-      "title": "Filigranes Company location map"
-    }  
+      "title": "Filigranes Company location map",
+      "consentRequired": "The map requires accepting functional cookies"
+    },
+    "youtube": {
+      "title": "Show video",
+      "consentRequired": "To play the video, functional cookies must be accepted"
+    },
+    "manageCookies": "Manage cookies",
+    "acceptCookies": "Accept cookies"
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "metaDescription": "Cia Filigranes cookie policy. Information about the use of cookies on our website.",
+    "sections": [
+      {
+        "key": "objective",
+        "title": "Objective",
+        "description": "Cia Filigranes uses cookies to save language preferences. We recognize the importance of complying with current privacy and data protection regulations, especially Spanish law (LSSI and LOPDGDD) and Regulation (EU) 2016/679 (GDPR). This policy describes in detail the use we make of cookies on our website."
+      },
+      {
+        "key": "acceptance",
+        "title": "Acceptance of the cookie policy",
+        "description": "Continued use of the website after the cookie banner is displayed and positive configuration or action on it implies acceptance of our cookie policy. If the user decides to block or disable cookies, they can do so through browser options, but this decision may limit some functionality."
+      },
+      {
+        "key": "whatIs",
+        "title": "What is a cookie?",
+        "description": "A cookie is a small text file that is stored in the user's browser when they visit a website, to save temporary information or to maintain specific settings and preferences."
+      }
+    ],
+    "types": {
+      "title": "Types of cookies that exist",
+      "list": [
+        {
+          "key": "technical",
+          "title": "Technical (essential) cookies:",
+          "description": "Necessary for the basic functioning of the site, such as language preference cookies, session identification and other technical functions."
+        },
+        {
+          "key": "personalization",
+          "title": "Personalization cookies:",
+          "description": "Allow remembering specific preferences such as the selected language or visual configuration."
+        },
+        {
+          "key": "analytics",
+          "title": "Analytics cookies:",
+          "description": "Allow collecting anonymous information about how the user interacts with the site to improve the experience. We do not use Google Analytics or other analytics tools that generate cookies."
+        },
+        {
+          "key": "thirdParty",
+          "title": "Third-party cookies:",
+          "description": "We use YouTube cookies only if embedded video playback is activated. These are managed by Google/YouTube and are disabled by default until acceptance."
+        }
+      ]
+    },
+    "currentCookies": {
+      "title": "Cookies currently used",
+      "table": {
+        "headers": [
+          { "key": "name", "label": "Name" },
+          { "key": "purpose", "label": "Purpose" },
+          { "key": "responsible", "label": "Responsible" },
+          { "key": "duration", "label": "Duration" }
+        ],
+        "rows": [
+          {
+            "name": "i18n_redirected",
+            "purpose": "Language preference",
+            "responsible": "First-party (us)",
+            "duration": "Persistent"
+          },
+          {
+            "name": "YouTube",
+            "purpose": "Video playback preferences",
+            "responsible": "Google/YouTube",
+            "duration": "Session (if activated)"
+          }
+        ],
+        "note": "Other cookies or analytics tools are not used."
+      }
+    },
+    "selfHosted": {
+      "title": "Self-hosted fonts",
+      "description": "We use self-hosted fonts (IBM Plex Sans and Archivo Black) on our server to avoid third-party Google Fonts cookies, thus improving privacy and loading speed."
+    },
+    "disable": {
+      "title": "How to disable or block cookies",
+      "description": "The user can configure their browser to manage and disable cookies. It should be known that disabling may affect the optimal functioning of the site.",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647?hl=en"
+        },
+        {
+          "name": "Internet Explorer",
+          "url": "https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
+        },
+        {
+          "name": "Safari iPhone, iPad and iPod touch and Safari for Mac",
+          "url": "https://support.apple.com/en-us/HT201265"
+        }
+      ]
+    },
+    "additional": {
+      "title": "Additional information",
+      "description": "When accessing certain external services such as Google Maps, which use iframes, cookies from these third parties not directly controlled by us may be set."
+    },
+    "banner": {
+      "description": "We only use cookies to store your language preferences and improve your browsing experience.",
+      "accept": "Accept all",
+      "reject": "Reject",
+      "customize": "Customize",
+      "moreInfo": "More information"
+    },
+    "modal": {
+      "title": "Cookie settings",
+      "description": "You can activate or deactivate the different categories of cookies according to your preferences.",
+      "essential": {
+        "title": "Essential cookies",
+        "description": "Necessary for the basic functioning of the website. Include language preference that remembers your selection.",
+        "required": "Required"
+      },
+      "functional": {
+        "title": "Functional cookies",
+        "description": "Allow viewing the Google Maps, playing show videos and improve website functionality. Without them, you'll see a message instead of the map and videos.",
+        "optional": "Optional"
+      },
+      "save": "Save preferences",
+      "acceptAll": "Accept all",
+      "rejectAll": "Reject all"
+    }
+  },
+    "avis-legal": {
+      "title": "Legal notice",
+      "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
+    "sections": [
+      {
+        "key": "titular",
+        "title": "Information about the Owner",
+        "description": "In accordance with article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, the user is informed that the ownership of this website corresponds to the Filigranes Company, member of the Sociocultural Circus Association of Terrassa Tub d'Assaig 7'70, with address at Sant Leopold street, no. 63, Local 5, 08221 Terrassa (Barcelona), with NIF G-65190431 and email ciafiligranes{at}gmail.com. Its members are registered in the Registry of the Association of Circus Professionals of Catalonia with membership numbers 0397 and 0237."
+      },
+      {
+        "key": "condicions",
+        "title": "Access and use conditions",
+        "description": "Any person who accesses this website assumes the role of user and undertakes to observe and strictly comply with the provisions indicated here, as well as any other applicable legal provision. The website managers reserve the right to modify, without prior notice, any type of information that may appear on the website, with its publication on this same site being considered sufficient."
+      },
+      {
+        "key": "codi-conducta",
+        "title": "Code of conduct",
+        "description": "The website managers are adhered to the Standard Code of Conduct of the Association of Circus Professionals of Catalonia."
+      },
+      {
+        "key": "propietat",
+        "title": "Intellectual and industrial property",
+        "description": "All exploitation rights are reserved. This website is governed by Spanish laws and is protected by national and international legislation on intellectual and industrial property. Total or partial reproduction, use, exploitation, distribution and commercialization requires in any case prior written authorization from the Filigranes Company. Any unauthorized use will be considered a serious breach of intellectual and industrial property rights. The designs, logos, texts or graphics from third parties that may appear on the web belong to their respective owners, these being responsible for any possible controversy about them. To report possible breaches of rights, you can do so via email: ciafiligranes{at}gmail.com."
+      },
+      {
+        "key": "continguts",
+        "title": "Contents",
+        "description": "This website aims to facilitate knowledge of the activities and services of the Filigranes Company. It reserves the right to modify the contents and presentation of the site at any time and without prior notice."
+      },
+      {
+        "key": "enllacos",
+        "title": "Links",
+        "description": "The available links have as their sole objective to facilitate access to other related sources of information. The website may contain hyperlinks to third-party pages over which the Filigranes Company exercises no control. No guarantee is given nor is any responsibility assumed for the accuracy or updating of the information offered. In case of detecting content that contravenes legislation or public order, the Filigranes Company will proceed to its immediate removal."
+      },
+      {
+        "key": "exclusio",
+        "title": "Exclusion of guarantees and liability",
+        "description": "The website managers are exempt from any type of liability derived from content introduced by third parties, as well as service interruptions or internal or external technical problems. No responsibility is also assumed for content published by third parties on forums, social networks or other associated external media."
+      },
+      {
+        "key": "privacitat",
+        "title": "Privacy and protection of personal data",
+        "description": "Personal data that may be provided via email or phone will only be used to manage inquiries or bookings of shows, workshops or animations with the Filigranes Company. This website does not collect personal data through forms, leaving it to the user's discretion to contact or not through the available channels."
+      },
+      {
+        "key": "llei",
+        "title": "Applicable law and jurisdiction",
+        "description": "For the resolution of all controversies or issues related to this website, Spanish legislation is applicable. The parties expressly submit to the Courts and Tribunals of Barcelona (Spain)."
+      },
+      {
+        "key": "actualitzacio",
+        "title": "Date of last update:",
+        "description": "October 10, 2025."
+      }
+    ],
+    "cookies": {
+      "title": "Cookies",
+      "description": "This website uses cookies to ensure its correct functioning and improve the browsing experience. Cookies are small files that are stored in the user's browser and allow certain preferences to be remembered. None of the cookies used allow access to personal data or the content of your device.",
+      "categories": [
+        {
+          "key": "essencials",
+          "title": "Essential (necessary for site operation):",
+          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits."
+        },
+        {
+          "key": "funcionals",
+          "title": "Functional",
+          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. By default, the web configuration keeps YouTube cookies disabled until the user accepts them."
+        },
+        {
+          "key": "deshabilitades",
+          "title": "Disabled by default / Not used:",
+          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
+        },
+        {
+          "key": "servei-extern",
+          "title": "External service with possible cookie emission:",
+          "description": "Google Maps (third-party, Google): if the embedded map is accessed, Google may install cookies associated with its service."
+        },
+        {
+          "key": "gestio",
+          "title": "Cookie management:",
+          "description": "The user can configure their browser to reject or delete cookies. However, if essential cookies are disabled, the site may not function properly. You can consult your browser's help options for more information on how to manage them."
+        }
+      ]
+    }
   }
 }

@@ -36,7 +36,7 @@ const title = computed(() => props.title.slice(1))
               v-if="isCurrentContent"
               class="font-thin mr-2">+
             </span>
-            <span class="font-black">{{ capital }}</span>
+            <span class="font-bold">{{ capital }}</span>
             <span class="font-thin">{{ title }}</span>
           </h2>
         </NuxtLinkLocale>

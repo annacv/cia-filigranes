@@ -1,5 +1,8 @@
 {
   "title": "Companyia Filigranes",
+  "modal": {
+    "close": "Tancar"
+  },
   "home": {
     "metaDescription": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
@@ -38,7 +41,8 @@
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",
-    "goBack": "Tornar enrera"
+    "goBack": "Tornar enrera",
+    "goHome": "Ves a l'inici"
   },
   "selectLang": "Escull l'idioma",
   "footer": {
@@ -50,8 +54,12 @@
     },
     "legal": {
       "advice": "Avís legal",
-      "privacy": "Política de privadesa"
+      "cookies": "Política de cookies"
     }
+  },
+  "404": {
+    "title": "Uiuiui!",
+    "description": "La pàgina que estàs buscant no existeix..."
   },
   "shows": {
     "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Compayia Filigranes.",
@@ -1015,9 +1023,231 @@
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
       "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també podràs visionar grans moments dels nostres espectacles a la nostra Filitele."
-    },
+    }
+  },
+  "consent": {
     "map": {
-      "title": "Mapa de ubicació de la Companyia Filigranes"
-    }  
+      "title": "Mapa de la ubicació de la Cia. Filigranes",
+      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+    },
+    "youtube": {
+      "title": "Video de l'espectacle",
+      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+    },
+    "manageCookies": "Gestionar cookies",
+    "acceptCookies": "Acceptar cookies"
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "metaDescription": "Política de cookies de Cia Filigranes. Informació sobre l'ús de cookies al nostre lloc web.",
+    "sections": [
+      {
+        "key": "objective",
+        "title": "Objectiu",
+        "description": "La Companyia Filigranes utilitza cookies per desar les preferències d'idioma. Reconeixem la importància de complir la normativa vigent en matèria de privacitat i protecció de dades, especialment la llei espanyola (LSSI i LOPDGDD) i el Reglament (UE) 2016/679 (RGPD). Aquesta política descriu amb detall l'ús que fem de les cookies al nostre lloc web."
+      },
+      {
+        "key": "acceptance",
+        "title": "Acceptació de la política de cookies",
+        "description": "L'ús continuat del lloc web després de mostrar-se el banner de cookies i la configuració o acció positiva sobre aquest suposa l'acceptació de la nostra política de cookies. Si la usuària decideix bloquejar o desactivar les cookies, pot fer-ho a través de les opcions del navegador, però aquesta decisió pot limitar algunes funcionalitats."
+      },
+      {
+        "key": "whatIs",
+        "title": "Què és una cookie?",
+        "description": "Una cookie és un petit fitxer de text que s'emmagatzema al navegador de l'usuària quan visita un lloc web, per guardar informació temporal o per mantenir configuracions específiques i preferències."
+      }
+    ],
+    "types": {
+      "title": "Tipus de cookies que existeixen",
+      "list": [
+        {
+          "key": "technical",
+          "title": "Cookies tècniques (essencials):",
+          "description": "Necessàries per al funcionament bàsic del lloc, com ara cookies de preferència d'idioma, identificació de sessió i altres funcions tècniques."
+        },
+        {
+          "key": "personalization",
+          "title": "Cookies de personalització:",
+          "description": "Permeten recordar preferències específiques com l'idioma seleccionat o configuració del visual."
+        },
+        {
+          "key": "analytics",
+          "title": "Cookies d'anàlisi:",
+          "description": "Permeten recollir informació anònima sobre com interactua la usuària amb el lloc per millorar l'experiència. No utilitzem Google Analytics ni altres eines d'anàlisi que generin cookies."
+        },
+        {
+          "key": "thirdParty",
+          "title": "Cookies de tercers:",
+          "description": "Utilitzem cookies de YouTube només si s'activa la reproducció de vídeos embeguts. Aquestes són gestionades per Google/YouTube i es desactiven per defecte fins a l'acceptació."
+        }
+      ]
+    },
+    "currentCookies": {
+      "title": "Cookies utilitzades actualment",
+      "table": {
+        "headers": [
+          { "key": "name", "label": "Nom" },
+          { "key": "purpose", "label": "Finalitat" },
+          { "key": "responsible", "label": "Responsable" },
+          { "key": "duration", "label": "Durada" }
+        ],
+        "rows": [
+          {
+            "name": "i18n_redirected",
+            "purpose": "Preferència d'idioma",
+            "responsible": "First-party (nosaltres)",
+            "duration": "Persistent"
+          },
+          {
+            "name": "YouTube",
+            "purpose": "Preferències de reproducció de vídeos",
+            "responsible": "Google/YouTube",
+            "duration": "Session (si s'activen)"
+          }
+        ],
+        "note": "Altres cookies o eines d'anàlisi no són utilitzades."
+      }
+    },
+    "selfHosted": {
+      "title": "Fonts auto-hospedades",
+      "description": "Utilitzem fonts auto-hospedades (IBM Plex Sans i Archivo Black) al nostre servidor per evitar cookies de tercers de Google Fonts, millorant així la privacitat i la velocitat de càrrega."
+    },
+    "disable": {
+      "title": "Com desactivar o bloquejar les cookies",
+      "description": "La usuària pot configurar el seu navegador per gestionar i desactivar les cookies. Cal saber que la desactivació pot afectar el funcionament òptim del lloc.",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647?hl=ca"
+        },
+        {
+          "name": "Internet Explorer",
+          "url": "https://support.microsoft.com/ca-ca/help/17442/windows-internet-explorer-delete-manage-cookies"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/ca/kb/activa-i-desactiva-les-galetes-que-les-pagines-web"
+        },
+        {
+          "name": "Safari iPhone, iPad i iPod touch i Safari per Mac",
+          "url": "https://support.apple.com/ca-ca/HT201265"
+        }
+      ]
+    },
+    "additional": {
+      "title": "Informació addicional",
+      "description": "En accedir a certs serveis externs com Google Maps, que utilitzen iframes, poden establir-se cookies pròpies d'aquests tercers no controlades directament per nosaltres."
+    },
+    "banner": {
+      "description": "Només utilitzem cookies per desar les teves preferències d'idioma i millorar la teva experiència de navegació.",
+      "accept": "Acceptar totes",
+      "reject": "Rebutjar",
+      "customize": "Personalitzar",
+      "moreInfo": "Més informació"
+    },
+    "modal": {
+      "title": "Configuració de cookies",
+      "description": "Pots activar o desactivar les diferents categories de cookies segons les teves preferències.",
+      "essential": {
+        "title": "Cookies essencials",
+        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen la preferència d'idioma que recorda la teva selecció.",
+        "required": "Obligatòries"
+      },
+      "functional": {
+        "title": "Cookies funcionals",
+        "description": "Permeten veure el mapa de la ubicació de la seu de la Cia.Filigranes (Google Maps), reproduir els vídeos dels espectacles i milloren la funcionalitat del lloc web. Sense elles, veuràs un missatge en lloc del mapa i dels vídeos.",
+        "optional": "Opcionals"
+      },
+      "save": "Desar preferències",
+      "acceptAll": "Acceptar totes",
+      "rejectAll": "Rebutjar totes"
+    }
+  },
+    "avis-legal": {
+      "title": "Avís legal",
+      "metaDescription": "Avís legal de Cia Filigranes. Informació sobre la titularitat del lloc web, condicions d'ús, propietat intel·lectual i política de cookies.",
+    "sections": [
+      {
+        "key": "titular",
+        "title": "Informació del Titular",
+        "description": "A l'efecte de l'article 10 de la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i del Comerç Electrònic, s'informa la persona usuària que la titularitat d'aquest lloc web correspon a la Companyia Filigranes, membre de l'Associació Sociocultural de Circ de Terrassa Tub d'Assaig 7'70, amb domicili al carrer Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), amb NIF G-65190431 i correu electrònic ciafiligranes{at}gmail.com. Els seus membres estan inscrits en el Registre de l'Associació de Professionals de Circ de Catalunya amb els números de socis 0397 i 0237."
+      },
+      {
+        "key": "condicions",
+        "title": "Condicions d'accés i ús",
+        "description": "Tota persona que accedeixi a aquest lloc web assumeix el paper d'usuària i es compromet a l'observança i al compliment rigorós de les disposicions aquí indicades, així com de qualsevol altra disposició legal que fos aplicable. Les responsables del lloc web es reserven el dret de modificar, sense necessitat d'avís previ, qualsevol tipus d'informació que pogués aparèixer en el lloc web, entenent-se com a suficient la seva publicació en aquest mateix lloc."
+      },
+      {
+        "key": "codi-conducta",
+        "title": "Codi de conducta",
+        "description": "Les responsables del lloc web es troben adherides al Codi de Conducta Tipus de l'Associació de Professionals de Circ de Catalunya."
+      },
+      {
+        "key": "propietat",
+        "title": "Propietat intel·lectual i industrial",
+        "description": "Queden reservats tots els drets d'explotació. Aquest lloc web es regeix per les lleis espanyoles i està protegit per la legislació nacional i internacional sobre propietat intel·lectual i industrial. La reproducció total o parcial, ús, explotació, distribució i comercialització requereix en tot cas l'autorització escrita prèvia de la Companyia Filigranes. Qualsevol ús no autoritzat serà considerat un incompliment greu dels drets de propietat intel·lectual i industrial. Els dissenys, logotips, textos o gràfics aliens que puguin aparèixer al web pertanyen als seus respectius propietaris, sent aquests els responsables de qualsevol possible controvèrsia sobre ells. Per comunicar possibles incompliments de drets, pots fer-ho mitjançant el correu electrònic: ciafiligranes{at}gmail.com."
+      },
+      {
+        "key": "continguts",
+        "title": "Continguts",
+        "description": "Aquest lloc web té com a finalitat facilitar el coneixement de les activitats i serveis de la Companyia Filigranes. Aquesta es reserva el dret de modificar els continguts i la presentació del lloc en qualsevol moment i sense avís previ."
+      },
+      {
+        "key": "enllacos",
+        "title": "Enllaços",
+        "description": "Els enllaços disponibles tenen com a únic objectiu facilitar l'accés a altres fonts d'informació relacionades. El lloc web pot contenir hipervincles a pàgines de tercers sobre les quals la Companyia Filigranes no exerceix cap control. No es garanteix ni assumeix cap responsabilitat sobre l'exactitud o actualització de les informacions que s'hi ofereixen. En cas de detectar continguts que contravinguin la legislació o l'ordre públic, la Companyia Filigranes procedirà a la seva retirada immediata."
+      },
+      {
+        "key": "exclusio",
+        "title": "Exclusió de garanties i responsabilitat",
+        "description": "Les responsables del lloc web s'eximeixen de qualsevol tipus de responsabilitat derivada de continguts introduïts per tercers, així com d'interrupcions del servei o problemes tècnics interns o externs. No es respon tampoc pels continguts publicats per tercers en fòrums, xarxes socials o altres mitjans externs associats."
+      },
+      {
+        "key": "privacitat",
+        "title": "Privacitat i protecció de dades personals",
+        "description": "Les dades personals que es puguin facilitar mitjançant correu electrònic o telèfon només s'utilitzaran per gestionar consultes o contractacions d'espectacles, tallers o animacions amb la Companyia Filigranes. Aquest lloc web no recopila dades personals mitjançant formularis, quedant a criteri de la persona usuària contactar o no pels canals disponibles."
+      },
+      {
+        "key": "llei",
+        "title": "Llei aplicable i jurisdicció",
+        "description": "Per a la resolució de totes les controvèrsies o qüestions relacionades amb aquest lloc web, resulta aplicable la legislació espanyola. Les parts se sotmeten expressament als Jutjats i Tribunals de Barcelona (Espanya)."
+      },
+      {
+        "key": "actualitzacio",
+        "title": "Data de la darrera actualització:",
+        "description": "10 d'octubre de 2025."
+      }
+    ],
+    "cookies": {
+      "title": "Cookies",
+      "description": "Aquest lloc web utilitza cookies per assegurar el seu correcte funcionament i millorar l'experiència de navegació. Les cookies són petits fitxers que s'emmagatzemen en el navegador de la persona usuària i permeten recordar determinades preferències. Cap de les cookies emprades permet accedir a dades personals o al contingut del teu dispositiu.",
+      "categories": [
+        {
+          "key": "essencials",
+          "title": "Essencials (necessàries per al funcionament del lloc):",
+          "description": "Cookie de preferència d'idioma (first-party): emmagatzema l'idioma seleccionat (català, castellà, anglès) per mantenir-lo en futures visites."
+        },
+        {
+          "key": "funcionals",
+          "title": "Funcionals",
+          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos. Inclou cookies per a preferències de reproducció. Per defecte, la configuració del web manté les cookies de YouTube desactivades fins que l'usuària les accepta."
+        },
+        {
+          "key": "deshabilitades",
+          "title": "Deshabilitades per defecte / No utilitzades:",
+          "description": "No es recullen dades mitjançant Google Analytics ni eines similars. No hi ha píxels de seguiment ni cookies publicitàries. No s'utilitza localStorage ni sessionStorage amb finalitats de seguiment. Les tipografies (IBM Plex Sans i Archivo Black) estan auto-hospedades al nostre servidor per evitar cookies de tercers de Google Fonts."
+        },
+        {
+          "key": "servei-extern",
+          "title": "Servei extern amb possible emissió de cookies:",
+          "description": "Google Maps (third-party, Google): si s'accedeix al mapa incrustat, Google pot instal·lar cookies associades al seu servei."
+        },
+        {
+          "key": "gestio",
+          "title": "Gestió de cookies:",
+          "description": "La persona usuària pot configurar el seu navegador per rebutjar o suprimir cookies. Tanmateix, si es desactiven les cookies essencials, el lloc pot no funcionar correctament. Pots consultar les opcions d'ajuda del teu navegador per obtenir més informació sobre com gestionar-les."
+        }
+      ]
+    }
   }
 }

@@ -25,8 +25,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['IBM Plex Sans', 'sans-serif'],
-        mono: ['IBM Plex Mono', 'monospace'],
         grotesk: ['Archivo Black', 'sans-serif']
+      },
+      fontWeight: {
+        thin: '100',
+        light: '300',
+        normal: '400',
+        semibold: '600',
+        bold: '700'
       },
       colors: {
         'primary-300': '#f6b1bd',

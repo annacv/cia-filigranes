@@ -90,5 +90,15 @@ export const routePages: CustomRoutePages = {
     ca: '/contacte',
     en: '/contact',
     es: '/contacto'
+  },
+  'avis-legal': {
+    ca: '/avis-legal',
+    en: '/legal-notice',
+    es: '/aviso-legal'
+  },
+  'politica-cookies': {
+    ca: '/politica-cookies',
+    en: '/cookie-policy',
+    es: '/politica-cookies'
   }
 }
