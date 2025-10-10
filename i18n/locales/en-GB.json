@@ -753,50 +753,6 @@
         }
       ]
     },
-    "maquillatge": {
-      "metaDescription": "Makeup Workshop - Workshop for all ages by the Filigranes Company. With this workshop you will be able to learn first-hand the technique of makeup.",
-      "abstract": [
-        {
-          "paragraph": "With this workshop we will put at your disposal a whole set of fantasy makeup techniques: with brush, sponge, fingers..."
-        }
-      ],
-      "list": [
-        {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
-        }
-      ],
-      "synopsis": [
-        {
-          "paragraph": "The facial art of fantasy allows us to create our own and unique character!"
-        },
-        {
-          "paragraph": "The skin will become our own mask and will help us to stimulate the imagination. So, when it ends... just look at the faces and get into the character!"
-        }
-      ],
-      "techCard": [
-        {
-          "title": "Materials",
-          "description": "The paints and all necessary material will be provided by the Filigranes Company. We will always use paints suitable for skin contact."
-        },
-        {
-          "title": "Light and sound",
-          "description": "A power point is needed for the sound equipment."
-        },
-        {
-          "title": "To consider",
-          "description": "The paints will be applied totally or partially by the workshop leaders, depending on the age of the participants."
-        }
-      ],
-      "artCard": [
-        {
-          "title": "Makeup Workshop",
-          "description": "Filigranes Company"
-        },
-        {
-          "description": "With the help of our workshop leaders, children will create their own sketch and character. All together, we will choose the colors and learn what are the most appropriate techniques for each case."
-        }
-      ]
-    },
     "enginys-aigua": {
       "metaDescription": "Water Tricks Workshop - Workshop for all ages by the Filigranes Company. With this workshop we will learn to use water to create different tricks: balls, devil sticks, soap bubbles, etc.",
       "abstract": [
@@ -1210,6 +1166,93 @@
       "save": "Save preferences",
       "acceptAll": "Accept all",
       "rejectAll": "Reject all"
+    }
+  },
+    "avis-legal": {
+      "title": "Legal notice",
+      "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
+    "sections": [
+      {
+        "key": "titular",
+        "title": "Information about the Owner",
+        "description": "In accordance with article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, the user is informed that the ownership of this website corresponds to the Filigranes Company, member of the Sociocultural Circus Association of Terrassa Tub d'Assaig 7'70, with address at Sant Leopold street, no. 63, Local 5, 08221 Terrassa (Barcelona), with NIF G-65190431 and email ciafiligranes{at}gmail.com. Its members are registered in the Registry of the Association of Circus Professionals of Catalonia with membership numbers 0397 and 0237."
+      },
+      {
+        "key": "condicions",
+        "title": "Access and use conditions",
+        "description": "Any person who accesses this website assumes the role of user and undertakes to observe and strictly comply with the provisions indicated here, as well as any other applicable legal provision. The website managers reserve the right to modify, without prior notice, any type of information that may appear on the website, with its publication on this same site being considered sufficient."
+      },
+      {
+        "key": "codi-conducta",
+        "title": "Code of conduct",
+        "description": "The website managers are adhered to the Standard Code of Conduct of the Association of Circus Professionals of Catalonia."
+      },
+      {
+        "key": "propietat",
+        "title": "Intellectual and industrial property",
+        "description": "All exploitation rights are reserved. This website is governed by Spanish laws and is protected by national and international legislation on intellectual and industrial property. Total or partial reproduction, use, exploitation, distribution and commercialization requires in any case prior written authorization from the Filigranes Company. Any unauthorized use will be considered a serious breach of intellectual and industrial property rights. The designs, logos, texts or graphics from third parties that may appear on the web belong to their respective owners, these being responsible for any possible controversy about them. To report possible breaches of rights, you can do so via email: ciafiligranes{at}gmail.com."
+      },
+      {
+        "key": "continguts",
+        "title": "Contents",
+        "description": "This website aims to facilitate knowledge of the activities and services of the Filigranes Company. It reserves the right to modify the contents and presentation of the site at any time and without prior notice."
+      },
+      {
+        "key": "enllacos",
+        "title": "Links",
+        "description": "The available links have as their sole objective to facilitate access to other related sources of information. The website may contain hyperlinks to third-party pages over which the Filigranes Company exercises no control. No guarantee is given nor is any responsibility assumed for the accuracy or updating of the information offered. In case of detecting content that contravenes legislation or public order, the Filigranes Company will proceed to its immediate removal."
+      },
+      {
+        "key": "exclusio",
+        "title": "Exclusion of guarantees and liability",
+        "description": "The website managers are exempt from any type of liability derived from content introduced by third parties, as well as service interruptions or internal or external technical problems. No responsibility is also assumed for content published by third parties on forums, social networks or other associated external media."
+      },
+      {
+        "key": "privacitat",
+        "title": "Privacy and protection of personal data",
+        "description": "Personal data that may be provided via email or phone will only be used to manage inquiries or bookings of shows, workshops or animations with the Filigranes Company. This website does not collect personal data through forms, leaving it to the user's discretion to contact or not through the available channels."
+      },
+      {
+        "key": "llei",
+        "title": "Applicable law and jurisdiction",
+        "description": "For the resolution of all controversies or issues related to this website, Spanish legislation is applicable. The parties expressly submit to the Courts and Tribunals of Barcelona (Spain)."
+      },
+      {
+        "key": "actualitzacio",
+        "title": "Date of last update:",
+        "description": "October 10, 2025."
+      }
+    ],
+    "cookies": {
+      "title": "Cookies",
+      "description": "This website uses cookies to ensure its correct functioning and improve the browsing experience. Cookies are small files that are stored in the user's browser and allow certain preferences to be remembered. None of the cookies used allow access to personal data or the content of your device.",
+      "categories": [
+        {
+          "key": "essencials",
+          "title": "Essential (necessary for site operation):",
+          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits."
+        },
+        {
+          "key": "funcionals",
+          "title": "Functional",
+          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. By default, the web configuration keeps YouTube cookies disabled until the user accepts them."
+        },
+        {
+          "key": "deshabilitades",
+          "title": "Disabled by default / Not used:",
+          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
+        },
+        {
+          "key": "servei-extern",
+          "title": "External service with possible cookie emission:",
+          "description": "Google Maps (third-party, Google): if the embedded map is accessed, Google may install cookies associated with its service."
+        },
+        {
+          "key": "gestio",
+          "title": "Cookie management:",
+          "description": "The user can configure their browser to reject or delete cookies. However, if essential cookies are disabled, the site may not function properly. You can consult your browser's help options for more information on how to manage them."
+        }
+      ]
     }
   }
 }

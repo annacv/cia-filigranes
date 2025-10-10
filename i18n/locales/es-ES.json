@@ -1165,5 +1165,92 @@
       "acceptAll": "Aceptar todas",
       "rejectAll": "Rechazar todas"
     }
+  },
+    "avis-legal": {
+      "title": "Aviso legal",
+      "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
+    "sections": [
+      {
+        "key": "titular",
+        "title": "Información del Titular",
+        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{at}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
+      },
+      {
+        "key": "condicions",
+        "title": "Condiciones de acceso y uso",
+        "description": "Toda persona que acceda a este sitio web asume el papel de usuaria y se compromete a la observancia y al cumplimiento riguroso de las disposiciones aquí indicadas, así como de cualquier otra disposición legal que fuera aplicable. Las responsables del sitio web se reservan el derecho de modificar, sin necesidad de aviso previo, cualquier tipo de información que pudiera aparecer en el sitio web, entendiéndose como suficiente su publicación en este mismo sitio."
+      },
+      {
+        "key": "codi-conducta",
+        "title": "Código de conducta",
+        "description": "Las responsables del sitio web se encuentran adheridas al Código de Conducta Tipo de la Asociación de Profesionales de Circo de Cataluña."
+      },
+      {
+        "key": "propietat",
+        "title": "Propiedad intelectual e industrial",
+        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{at}gmail.com."
+      },
+      {
+        "key": "continguts",
+        "title": "Contenidos",
+        "description": "Este sitio web tiene como finalidad facilitar el conocimiento de las actividades y servicios de la Compañía Filigranes. Esta se reserva el derecho de modificar los contenidos y la presentación del sitio en cualquier momento y sin aviso previo."
+      },
+      {
+        "key": "enllacos",
+        "title": "Enlaces",
+        "description": "Los enlaces disponibles tienen como único objetivo facilitar el acceso a otras fuentes de información relacionadas. El sitio web puede contener hipervínculos a páginas de terceros sobre las cuales la Compañía Filigranes no ejerce ningún control. No se garantiza ni asume ninguna responsabilidad sobre la exactitud o actualización de las informaciones que se ofrecen. En caso de detectar contenidos que contravengan la legislación o el orden público, la Compañía Filigranes procederá a su retirada inmediata."
+      },
+      {
+        "key": "exclusio",
+        "title": "Exclusión de garantías y responsabilidad",
+        "description": "Las responsables del sitio web se eximen de cualquier tipo de responsabilidad derivada de contenidos introducidos por terceros, así como de interrupciones del servicio o problemas técnicos internos o externos. No se responde tampoco por los contenidos publicados por terceros en foros, redes sociales u otros medios externos asociados."
+      },
+      {
+        "key": "privacitat",
+        "title": "Privacidad y protección de datos personales",
+        "description": "Los datos personales que se puedan facilitar mediante correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. Este sitio web no recopila datos personales mediante formularios, quedando a criterio de la persona usuaria contactar o no por los canales disponibles."
+      },
+      {
+        "key": "llei",
+        "title": "Ley aplicable y jurisdicción",
+        "description": "Para la resolución de todas las controversias o cuestiones relacionadas con este sitio web, resulta aplicable la legislación española. Las partes se someten expresamente a los Juzgados y Tribunales de Barcelona (España)."
+      },
+      {
+        "key": "actualitzacio",
+        "title": "Fecha de la última actualización:",
+        "description": "10 de octubre de 2025."
+      }
+    ],
+    "cookies": {
+      "title": "Cookies",
+      "description": "Este sitio web utiliza cookies para asegurar su correcto funcionamiento y mejorar la experiencia de navegación. Las cookies son pequeños archivos que se almacenan en el navegador de la persona usuaria y permiten recordar determinadas preferencias. Ninguna de las cookies empleadas permite acceder a datos personales o al contenido de tu dispositivo.",
+      "categories": [
+        {
+          "key": "essencials",
+          "title": "Esenciales (necesarias para el funcionamiento del sitio):",
+          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas."
+        },
+        {
+          "key": "funcionals",
+          "title": "Funcionales",
+          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Por defecto, la configuración del web mantiene las cookies de YouTube desactivadas hasta que la usuaria las acepta."
+        },
+        {
+          "key": "deshabilitades",
+          "title": "Deshabilitadas por defecto / No utilizadas:",
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+        },
+        {
+          "key": "servei-extern",
+          "title": "Servicio externo con posible emisión de cookies:",
+          "description": "Google Maps (third-party, Google): si se accede al mapa incrustado, Google puede instalar cookies asociadas a su servicio."
+        },
+        {
+          "key": "gestio",
+          "title": "Gestión de cookies:",
+          "description": "La persona usuaria puede configurar su navegador para rechazar o suprimir cookies. Sin embargo, si se desactivan las cookies esenciales, el sitio puede no funcionar correctamente. Puedes consultar las opciones de ayuda de tu navegador para obtener más información sobre cómo gestionarlas."
+        }
+      ]
+    }
   }
 }
