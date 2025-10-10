@@ -48,7 +48,7 @@
 /* Archivo Black - Regular */
 @font-face {
   font-family: 'Archivo Black';
-  src: url('~/assets/fonts/archivo-black/archivo-black-regular.ttf') format('truetype');
+  src: url('~/assets/fonts/archivo-black/archivo-black-regular.woff2') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
