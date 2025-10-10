@@ -7,7 +7,8 @@ definePageMeta({
   name: 'catch-all',
   path: '/:pathMatch(.*)*',
   meta: {
-    layout: 'error'
+    layout: 'error',
+    headerBackgroundColor: '#c80d0d'
   }
 });
 
@@ -18,8 +19,9 @@ const imageAlt = '404';
 </script>
 
 <template>
-  <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"></div>
-  <MainContent class="bg-primary-500">
+  <div>
+    <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"></div>
+    <MainContent class="bg-primary-500">
     <template #wrapped>
       <div class="flex flex-col items-center justify-center h-full bg-primary-500 pt-6 pb-32">
         <img
@@ -42,14 +44,15 @@ const imageAlt = '404';
           buttonClass="button-outline-primary"
           target="_top"
         >
+          <template #icon-left>
+            <ArrowRight class="arrow-right self-start rotate-180"/>
+          </template>
           <template #text>
             {{ t('button.goHome') }}
-          </template>
-          <template #icon-left>
-            <ArrowRight class="arrow-right self-start mt-0.5 rotate-180"/>
           </template>
         </FiliButton>
       </div>
     </template>
   </MainContent>
+  </div>
 </template>
