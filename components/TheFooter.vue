@@ -66,9 +66,13 @@
         </div>
         <span v-if="isMobileOrTablet">·</span>
         <p class="text-center text-xs">
-          <span class="hover:opacity-80 cursor-pointer">{{ t('footer.legal.advice') }}</span>
+          <NuxtLinkLocale to="/avis-legal" class="hover:opacity-80 cursor-pointer">
+            {{ t('footer.legal.advice') }}
+          </NuxtLinkLocale>
           <b class="px-2">·</b>
-          <span class="hover:opacity-80 cursor-pointer">{{ t('footer.legal.privacy') }}</span>
+          <NuxtLinkLocale to="/politica-cookies" class="hover:opacity-80 cursor-pointer">
+            {{ t('footer.legal.cookies') }}
+          </NuxtLinkLocale>
         </p>
       </div>
     </div>
