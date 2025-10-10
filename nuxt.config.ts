@@ -10,24 +10,15 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/device",
-    "@nuxt/fonts",
     "nuxt-svgo",
     "@nuxt/scripts",
   ],
   svgo: {
     svgoConfig: {},
   },
-  fonts: {
-    defaults: {
-      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      styles: ['normal', 'italic'],
-    },
-    families: [
-      { name: 'IBM Plex Sans', provider: 'google' },
-      { name: 'IBM Plex Mono', provider: 'google' },
-      { name: 'Archivo Black', provider: 'google' }
-    ]
-  },
+  css: [
+    '~/assets/css/fonts.css'
+  ],
   i18n: {
     baseUrl: "http://localhost:3000",
     locales: localeObjects,

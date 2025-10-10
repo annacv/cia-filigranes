@@ -30,10 +30,10 @@ const imageAlt = '404';
           loading="lazy"
           draggable="false"
         />
-        <h1 class="px-4 my-2 text-center text-white font-black uppercase text-6xl lg:text-7xl">
+        <h1 class="px-4 my-2 text-center text-white font-bold uppercase text-6xl lg:text-7xl">
           404
         </h1>
-        <p class="font-black text-center !leading-tight text-lg md:text-xl text-white mb-5"
+        <p class="font-bold text-center !leading-tight text-lg md:text-xl text-white mb-5"
         >{{ t('404.title') }}</p>
         <p class="w-[280px] text-center !leading-tight text-lg md:text-xl text-white mb-5"
         >{{ t('404.description') }}</p>
