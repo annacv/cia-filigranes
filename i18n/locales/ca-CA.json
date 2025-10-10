@@ -1,5 +1,8 @@
 {
   "title": "Companyia Filigranes",
+  "modal": {
+    "close": "Tancar"
+  },
   "home": {
     "metaDescription": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
@@ -51,7 +54,7 @@
     },
     "legal": {
       "advice": "Avís legal",
-      "privacy": "Política de privadesa"
+      "cookies": "Política de cookies"
     }
   },
   "404": {
@@ -1020,9 +1023,144 @@
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
       "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també podràs visionar grans moments dels nostres espectacles a la nostra Filitele."
-    },
+    }
+  },
+  "consent": {
     "map": {
-      "title": "Mapa de ubicació de la Companyia Filigranes"
-    }  
+      "title": "Mapa de la ubicació de la Cia. Filigranes",
+      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+    },
+    "youtube": {
+      "title": "Video de l'espectacle",
+      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+    },
+    "manageCookies": "Gestionar cookies",
+    "acceptCookies": "Acceptar cookies"
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "metaDescription": "Política de cookies de Cia Filigranes. Informació sobre l'ús de cookies al nostre lloc web.",
+    "sections": [
+      {
+        "key": "objective",
+        "title": "Objectiu",
+        "description": "La Companyia Filigranes utilitza cookies per desar les preferències d'idioma. Reconeixem la importància de complir la normativa vigent en matèria de privacitat i protecció de dades, especialment la llei espanyola (LSSI i LOPDGDD) i el Reglament (UE) 2016/679 (RGPD). Aquesta política descriu amb detall l'ús que fem de les cookies al nostre lloc web."
+      },
+      {
+        "key": "acceptance",
+        "title": "Acceptació de la política de cookies",
+        "description": "L'ús continuat del lloc web després de mostrar-se el banner de cookies i la configuració o acció positiva sobre aquest suposa l'acceptació de la nostra política de cookies. Si la usuària decideix bloquejar o desactivar les cookies, pot fer-ho a través de les opcions del navegador, però aquesta decisió pot limitar algunes funcionalitats."
+      },
+      {
+        "key": "whatIs",
+        "title": "Què és una cookie?",
+        "description": "Una cookie és un petit fitxer de text que s'emmagatzema al navegador de l'usuària quan visita un lloc web, per guardar informació temporal o per mantenir configuracions específiques i preferències."
+      }
+    ],
+    "types": {
+      "title": "Tipus de cookies que existeixen",
+      "list": [
+        {
+          "key": "technical",
+          "title": "Cookies tècniques (essencials):",
+          "description": "Necessàries per al funcionament bàsic del lloc, com ara cookies de preferència d'idioma, identificació de sessió i altres funcions tècniques."
+        },
+        {
+          "key": "personalization",
+          "title": "Cookies de personalització:",
+          "description": "Permeten recordar preferències específiques com l'idioma seleccionat o configuració del visual."
+        },
+        {
+          "key": "analytics",
+          "title": "Cookies d'anàlisi:",
+          "description": "Permeten recollir informació anònima sobre com interactua la usuària amb el lloc per millorar l'experiència. No utilitzem Google Analytics ni altres eines d'anàlisi que generin cookies."
+        },
+        {
+          "key": "thirdParty",
+          "title": "Cookies de tercers:",
+          "description": "Utilitzem cookies de YouTube només si s'activa la reproducció de vídeos embeguts. Aquestes són gestionades per Google/YouTube i es desactiven per defecte fins a l'acceptació."
+        }
+      ]
+    },
+    "currentCookies": {
+      "title": "Cookies utilitzades actualment",
+      "table": {
+        "headers": [
+          { "key": "name", "label": "Nom" },
+          { "key": "purpose", "label": "Finalitat" },
+          { "key": "responsible", "label": "Responsable" },
+          { "key": "duration", "label": "Durada" }
+        ],
+        "rows": [
+          {
+            "name": "i18n_redirected",
+            "purpose": "Preferència d'idioma",
+            "responsible": "First-party (nosaltres)",
+            "duration": "Persistent"
+          },
+          {
+            "name": "YouTube",
+            "purpose": "Preferències de reproducció de vídeos",
+            "responsible": "Google/YouTube",
+            "duration": "Session (si s'activen)"
+          }
+        ],
+        "note": "Altres cookies o eines d'anàlisi no són utilitzades."
+      }
+    },
+    "selfHosted": {
+      "title": "Fonts auto-hospedades",
+      "description": "Utilitzem fonts auto-hospedades (IBM Plex Sans i Archivo Black) al nostre servidor per evitar cookies de tercers de Google Fonts, millorant així la privacitat i la velocitat de càrrega."
+    },
+    "disable": {
+      "title": "Com desactivar o bloquejar les cookies",
+      "description": "La usuària pot configurar el seu navegador per gestionar i desactivar les cookies. Cal saber que la desactivació pot afectar el funcionament òptim del lloc.",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647?hl=ca"
+        },
+        {
+          "name": "Internet Explorer",
+          "url": "https://support.microsoft.com/ca-ca/help/17442/windows-internet-explorer-delete-manage-cookies"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/ca/kb/activa-i-desactiva-les-galetes-que-les-pagines-web"
+        },
+        {
+          "name": "Safari iPhone, iPad i iPod touch i Safari per Mac",
+          "url": "https://support.apple.com/ca-ca/HT201265"
+        }
+      ]
+    },
+    "additional": {
+      "title": "Informació addicional",
+      "description": "En accedir a certs serveis externs com Google Maps, que utilitzen iframes, poden establir-se cookies pròpies d'aquests tercers no controlades directament per nosaltres."
+    },
+    "banner": {
+      "description": "Només utilitzem cookies per desar les teves preferències d'idioma i millorar la teva experiència de navegació.",
+      "accept": "Acceptar totes",
+      "reject": "Rebutjar",
+      "customize": "Personalitzar",
+      "moreInfo": "Més informació"
+    },
+    "modal": {
+      "title": "Configuració de cookies",
+      "description": "Pots activar o desactivar les diferents categories de cookies segons les teves preferències.",
+      "essential": {
+        "title": "Cookies essencials",
+        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen la preferència d'idioma que recorda la teva selecció.",
+        "required": "Obligatòries"
+      },
+      "functional": {
+        "title": "Cookies funcionals",
+        "description": "Permeten veure el mapa de la ubicació de la seu de la Cia.Filigranes (Google Maps), reproduir els vídeos dels espectacles i milloren la funcionalitat del lloc web. Sense elles, veuràs un missatge en lloc del mapa i dels vídeos.",
+        "optional": "Opcionals"
+      },
+      "save": "Desar preferències",
+      "acceptAll": "Acceptar totes",
+      "rejectAll": "Rebutjar totes"
+    }
   }
 }

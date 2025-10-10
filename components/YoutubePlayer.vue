@@ -39,7 +39,10 @@ const props = withDefaults(defineProps<YouTubeProps>(), {
   cookies: false,
 })
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+const { canLoadYouTubeWithCookies } = useCookies()
+const effectiveCookies = computed(() => canLoadYouTubeWithCookies.value)
 
 const dynamicPlayerVars = computed(() => ({
   ...props.playerVars,
@@ -49,22 +52,40 @@ const dynamicPlayerVars = computed(() => ({
 
 <template>
   <div class="relative w-full h-auto">
-    <ScriptYouTubePlayer
-      :video-id="videoId"
-      :player-options="{ host: 'https://www.youtube.com' }"
-      :above-the-fold="aboveTheFold"
-      :trigger="trigger"
-      :cookies="cookies"
-      :webp="webp"
-      :player-vars="dynamicPlayerVars"
-      :width="width"
-      :height="height"
-    > 
-      <template #loading>
-        <div class="bg-blue-500 text-white p-5">
-          Loading...
-        </div>
-      </template>
-    </ScriptYouTubePlayer>
+    <Transition
+      enter-active-class="transition-all duration-500 ease-out"
+      enter-from-class="opacity-0 transform scale-95"
+      enter-to-class="opacity-100 transform scale-100"
+      leave-active-class="transition-all duration-300 ease-in"
+      leave-from-class="opacity-100 transform scale-100"
+      leave-to-class="opacity-0 transform scale-95"
+      mode="out-in"
+    >
+      <ScriptYouTubePlayer
+        v-if="canLoadYouTubeWithCookies"
+        key="player"
+        :video-id="videoId"
+        :player-options="{ host: 'https://www.youtube.com' }"
+        :above-the-fold="aboveTheFold"
+        :trigger="trigger"
+        :cookies="effectiveCookies"
+        :webp="webp"
+        :player-vars="dynamicPlayerVars"
+        :width="width"
+        :height="height"
+      > 
+        <template #loading>
+          <div class="bg-blue-500 text-white p-5">
+            Loading...
+          </div>
+        </template>
+      </ScriptYouTubePlayer>
+      <ConsentPlaceholder
+        v-else
+        key="placeholder"
+        :title="t('consent.youtube.title')"
+        :description="t('consent.youtube.consentRequired')"
+      />
+    </Transition>
   </div>
 </template>

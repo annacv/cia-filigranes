@@ -1,5 +1,8 @@
 {
   "title": "Compañía Filigranes",
+  "modal": {
+    "close": "Cerrar"
+  },
   "home": {
     "metaDescription": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
     "hero": {
@@ -51,7 +54,7 @@
     },
     "legal": {
       "advice": "Aviso legal",
-      "privacy": "Política de privacidad"
+      "cookies": "Política de cookies"
     }
   },
   "404": {
@@ -1023,9 +1026,144 @@
     "rrss": {
       "title": "Y si quieres charlar un poco, o ver dónde actuamos próximamente...",
       "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también podrás visionar grandes momentos de nuestros espectáculos en nuestra Filitele."
-    },
+    } 
+  },
+  "consent": {
     "map": {
-      "title": "Mapa de ubicación de la Compañía Filigranes"
-    }  
+      "title": "Mapa de la ubicació de la Cia. Filigranes",
+      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+    },
+    "youtube": {
+      "title": "Video de l'espectacle",
+      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+    },
+    "manageCookies": "Gestionar cookies",
+    "acceptCookies": "Acceptar cookies"
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "metaDescription": "Política de cookies de Cia Filigranes. Información sobre el uso de cookies en nuestro sitio web.",
+    "sections": [
+      {
+        "key": "objective",
+        "title": "Objetivo",
+        "description": "La Compañía Filigranes utiliza cookies para guardar las preferencias de idioma. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
+      },
+      {
+        "key": "acceptance",
+        "title": "Aceptación de la política de cookies",
+        "description": "El uso continuado del sitio web después de mostrarse el banner de cookies y la configuración o acción positiva sobre este supone la aceptación de nuestra política de cookies. Si la usuaria decide bloquear o desactivar las cookies, puede hacerlo a través de las opciones del navegador, pero esta decisión puede limitar algunas funcionalidades."
+      },
+      {
+        "key": "whatIs",
+        "title": "¿Qué es una cookie?",
+        "description": "Una cookie es un pequeño archivo de texto que se almacena en el navegador de la usuaria cuando visita un sitio web, para guardar información temporal o para mantener configuraciones específicas y preferencias."
+      }
+    ],
+    "types": {
+      "title": "Tipos de cookies que existen",
+      "list": [
+        {
+          "key": "technical",
+          "title": "Cookies técnicas (esenciales):",
+          "description": "Necesarias para el funcionamiento básico del sitio, como cookies de preferencia de idioma, identificación de sesión y otras funciones técnicas."
+        },
+        {
+          "key": "personalization",
+          "title": "Cookies de personalización:",
+          "description": "Permiten recordar preferencias específicas como el idioma seleccionado o configuración del visual."
+        },
+        {
+          "key": "analytics",
+          "title": "Cookies de análisis:",
+          "description": "Permiten recopilar información anónima sobre cómo interactúa la usuaria con el sitio para mejorar la experiencia. No utilizamos Google Analytics ni otras herramientas de análisis que generen cookies."
+        },
+        {
+          "key": "thirdParty",
+          "title": "Cookies de terceros:",
+          "description": "Utilizamos cookies de YouTube solo si se activa la reproducción de vídeos embebidos. Estas son gestionadas por Google/YouTube y se desactivan por defecto hasta la aceptación."
+        }
+      ]
+    },
+    "currentCookies": {
+      "title": "Cookies utilizadas actualmente",
+      "table": {
+        "headers": [
+          { "key": "name", "label": "Nombre" },
+          { "key": "purpose", "label": "Finalidad" },
+          { "key": "responsible", "label": "Responsable" },
+          { "key": "duration", "label": "Duración" }
+        ],
+        "rows": [
+          {
+            "name": "i18n_redirected",
+            "purpose": "Preferencia de idioma",
+            "responsible": "First-party (nosotros)",
+            "duration": "Persistente"
+          },
+          {
+            "name": "YouTube",
+            "purpose": "Preferencias de reproducción de vídeos",
+            "responsible": "Google/YouTube",
+            "duration": "Sesión (si se activan)"
+          }
+        ],
+        "note": "Otras cookies o herramientas de análisis no son utilizadas."
+      }
+    },
+    "selfHosted": {
+      "title": "Fuentes auto-hospedadas",
+      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
+    },
+    "disable": {
+      "title": "Cómo desactivar o bloquear las cookies",
+      "description": "La usuaria puede configurar su navegador para gestionar y desactivar las cookies. Hay que saber que la desactivación puede afectar el funcionamiento óptimo del sitio.",
+      "browsers": [
+        {
+          "name": "Google Chrome",
+          "url": "https://support.google.com/chrome/answer/95647?hl=es"
+        },
+        {
+          "name": "Internet Explorer",
+          "url": "https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies"
+        },
+        {
+          "name": "Mozilla Firefox",
+          "url": "https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-web"
+        },
+        {
+          "name": "Safari iPhone, iPad e iPod touch y Safari para Mac",
+          "url": "https://support.apple.com/es-es/HT201265"
+        }
+      ]
+    },
+    "additional": {
+      "title": "Información adicional",
+      "description": "Al acceder a ciertos servicios externos como Google Maps, que utilizan iframes, pueden establecerse cookies propias de estos terceros no controladas directamente por nosotros."
+    },
+    "banner": {
+      "description": "Solo utilizamos cookies para almacenar tus preferencias de idioma y mejorar tu experiencia de navegación.",
+      "accept": "Aceptar todas",
+      "reject": "Rechazar",
+      "customize": "Personalizar",
+      "moreInfo": "Más información"
+    },
+    "modal": {
+      "title": "Configuración de cookies",
+      "description": "Puedes activar o desactivar las diferentes categorías de cookies según tus preferencias.",
+      "essential": {
+        "title": "Cookies esenciales",
+        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen la preferencia de idioma que recuerda tu selección.",
+        "required": "Obligatorias"
+      },
+      "functional": {
+        "title": "Cookies funcionales",
+        "description": "Permiten ver el mapa de Google Maps, reproducir los vídeos de los espectáculos y mejoran la funcionalidad del sitio web. Sin ellas, verás un mensaje en lugar del mapa y de los vídeos.",
+        "optional": "Opcionales"
+      },
+      "save": "Guardar preferencias",
+      "acceptAll": "Aceptar todas",
+      "rejectAll": "Rechazar todas"
+    }
   }
 }
