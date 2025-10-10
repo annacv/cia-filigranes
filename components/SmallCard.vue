@@ -55,8 +55,8 @@ const handleTouchEnd = () => {
     :class="contentType === 'performances'
   ? 'w-[298px] sm:w-[320px] xl:w-[720px] 2xl:w-[720px] h-[298px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]'
   : 'w-[298px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square'"
-  @touchstart="handleTouchStart"
-  @touchend="handleTouchEnd"
+  @touchstart.passive="handleTouchStart"
+  @touchend.passive="handleTouchEnd"
   >
     <NuxtLinkLocale
       :to="link.href"
