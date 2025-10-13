@@ -33,13 +33,13 @@ const summaryButton = computed(() => {
       image-name="espectacles_freak-frac"
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
-      >
+    >
       <template #content>
         <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('routes.freak-frac') }}
         </h1>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary

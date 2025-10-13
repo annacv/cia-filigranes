@@ -102,9 +102,9 @@ watchEffect(() => {
     @mouseleave="toggleHover()"
   >
     <div
-:class="[
-      'flex flex-col md:flex-row gap-0 xl:gap-5',
-      isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
+      :class="[
+        'flex flex-col md:flex-row gap-0 xl:gap-5',
+        isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
     >
       <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
         <slot name="content">

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { CONTACT } from "~/constants";
-  import CiaBrand from "~/components/CiaBrand.vue";
+import { CONTACT } from "~/constants";
+import CiaBrand from "~/components/CiaBrand.vue";
 
-  const { t } = useI18n()
-  const { isMobileOrTablet } = useDevice()
+const { t } = useI18n()
+const { isMobileOrTablet } = useDevice()
 
 </script>
 <template>
@@ -39,12 +39,12 @@
           <b v-if="!isMobileOrTablet" class="px-2">·</b>
           <span>
             {{ t('footer.design.text') }}
-          <a
-            class="cursor-pointer hover:opacity-80"
-            href="https://www.linkedin.com/in/anna-condal-vela/"
-            target="_blank"
-            rel="noopener nofollow"
-          >Anna Condal</a>
+            <a
+              class="cursor-pointer hover:opacity-80"
+              href="https://www.linkedin.com/in/anna-condal-vela/"
+              target="_blank"
+              rel="noopener nofollow"
+            >Anna Condal</a>
           </span>
           <b v-if="!isMobileOrTablet" class="px-1">·</b>
           <span>

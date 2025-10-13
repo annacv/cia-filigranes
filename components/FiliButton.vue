@@ -30,14 +30,14 @@ const buttonProps = computed(() =>
       target: props.target
     }
     : !isDownload.value && props.href ? 
-    {
-      alt: props.text,
-      to: props.href,
-      target: props.target
-    }
-    : {
-      alt: props.text
-    }
+      {
+        alt: props.text,
+        to: props.href,
+        target: props.target
+      }
+      : {
+        alt: props.text
+      }
 )
 </script>
 

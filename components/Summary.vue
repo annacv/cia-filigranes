@@ -46,7 +46,7 @@ const props = defineProps({
             {{ item.title }}
           </p>
           <p class="font-light">
-          {{ item.description }}
+            {{ item.description }}
           </p>
         </li>
       </ul>

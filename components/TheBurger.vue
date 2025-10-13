@@ -3,26 +3,26 @@
     class="flex justify-center rounded-full z-[100]"
     :class="[{'border' : !isOpen }, isOpen ? 'w-[24px] h-[24px] m-1' : 'w-[32px] h-[32px]']"
   >
-  <div
-    aria-label="menu"
-    class="flex flex-col relative justify-between hover:opacity-75 w-4 z-[1] cursor-pointer indent-[100%] content-[''] py-2"
-    :class="isOpen ? 'w-8' : 'w-4'"
-    role="button"
-    @click="emit('toggle')"
-  >
     <div
-      :class="{'burger__bar--1': isOpen}"
-      class="burger__bar"
-    />
-    <div
-      :class="{'burger__bar--2': isOpen}"
-      class="burger__bar"
-    />
-    <div
-      :class="{'burger__bar--3 hidden': isOpen}"
-      class="burger__bar"
-    />
-  </div>
+      aria-label="menu"
+      class="flex flex-col relative justify-between hover:opacity-75 w-4 z-[1] cursor-pointer indent-[100%] content-[''] py-2"
+      :class="isOpen ? 'w-8' : 'w-4'"
+      role="button"
+      @click="emit('toggle')"
+    >
+      <div
+        :class="{'burger__bar--1': isOpen}"
+        class="burger__bar"
+      />
+      <div
+        :class="{'burger__bar--2': isOpen}"
+        class="burger__bar"
+      />
+      <div
+        :class="{'burger__bar--3 hidden': isOpen}"
+        class="burger__bar"
+      />
+    </div>
   </div>
 </template>
 

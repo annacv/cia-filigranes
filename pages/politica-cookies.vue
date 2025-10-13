@@ -132,15 +132,15 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
             </ul>
           </section>
 
-           <section class="mb-8">
-             <h2 class="text-2xl font-semibold text-neutral-800 mb-4">
-               {{ $t('cookies.additional.title') }}
-             </h2>
-             <p class="text-neutral-600">
-               {{ $t('cookies.additional.description') }}
-             </p>
-           </section>
-         </div>
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-800 mb-4">
+              {{ $t('cookies.additional.title') }}
+            </h2>
+            <p class="text-neutral-600">
+              {{ $t('cookies.additional.description') }}
+            </p>
+          </section>
+        </div>
         <FiliButton
           href="/"
           button-class="button-outline-primary"

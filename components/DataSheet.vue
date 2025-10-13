@@ -127,7 +127,7 @@ watchEffect(() => {
       <div
         class="flex flex-col justify-between w-full md:w-[24%] px-5 md:pl-0 pb-5 md:py-4 lg:py-12 2xl:py-24"
         :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
-        >
+      >
         <Transition
           name="fade"
           mode="out-in"

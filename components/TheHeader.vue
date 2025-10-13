@@ -15,7 +15,7 @@
         <SideNav v-if="isOpen" @toggle="toggleSideNav" />
       </Transition>
       <div
-v-if="isOpen" class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
+        v-if="isOpen" class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
         @click="toggleSideNav" />
     </div>
   </header>

@@ -34,13 +34,13 @@ const summaryButton = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('pallassos')"
       content-type="workshops"
-      >
+    >
       <template #content>
         <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('workshops.commonTitle', { title: t('routes.pallassos') }) }}
         </h1>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary

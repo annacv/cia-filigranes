@@ -7,14 +7,14 @@ import { getImageByRoute } from "~/utils/image-by-route";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
 
 const props = defineProps({
-	isCurrentContent: {
-		type: Boolean,
-		default: false
-	},
-	reorderIndex: {
-		type: Number,
-		required: false
-	}
+  isCurrentContent: {
+    type: Boolean,
+    default: false
+  },
+  reorderIndex: {
+    type: Number,
+    required: false
+  }
 })
 
 const { t } = useI18n()
@@ -23,7 +23,7 @@ const shows = getItemsByRoute('espectacles');
 
 const showItems = computed(() => {
   if (!shows?.children) return [];
-	if (props.reorderIndex !== undefined) return reorderItems(shows.children, props.reorderIndex);
+  if (props.reorderIndex !== undefined) return reorderItems(shows.children, props.reorderIndex);
   return shows.children;
 });
 </script>
@@ -37,18 +37,18 @@ const showItems = computed(() => {
     :is-current-content="isCurrentContent"
   >
     <template #content>
-			<SlidingPanel class="-skew-y-3">
-				<ul class="flex w-full gap-1">
-					<li v-for="(item, index) in showItems" :key="index">
-						<SmallCard
-							content-type="shows"
-							:title="t(`routes.${item}`)"
-							:image="getImageByRoute('espectacles', item)"
-							:link="useLinkByRoute(shows!.name, item).value"
-						/>
-					</li>
-				</ul>
-			</SlidingPanel>
+      <SlidingPanel class="-skew-y-3">
+        <ul class="flex w-full gap-1">
+          <li v-for="(item, index) in showItems" :key="index">
+            <SmallCard
+              content-type="shows"
+              :title="t(`routes.${item}`)"
+              :image="getImageByRoute('espectacles', item)"
+              :link="useLinkByRoute(shows!.name, item).value"
+            />
+          </li>
+        </ul>
+      </SlidingPanel>
     </template>
   </HighlightContent>
 </template>

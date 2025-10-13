@@ -33,13 +33,13 @@ const summaryButton = computed(() => {
       image-name="espectacles_circ-filixic"
       image-route="espectacles"
       :alt="getImageAlt('circ-filixic')"
-      >
+    >
       <template #content>
         <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('routes.circ-filixic') }}
         </h1>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary

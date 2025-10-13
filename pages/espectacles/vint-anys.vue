@@ -42,11 +42,11 @@ const closeVideo = () => {
       image-name="espectacles_vint-anys-4"
       image-route="espectacles"
       :alt="t('home.hero.alt')"
-      >
+    >
       <template #content>
         <VintAnysBrand class="-scale-x-100 w-[300px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px]"/>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary
