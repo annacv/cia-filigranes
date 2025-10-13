@@ -60,7 +60,7 @@ const makutuAlt = getImageAlt('makutu')
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
-          isReversed
+          is-reversed
         />
         <Synopsis
           :description="learningPath"
@@ -68,7 +68,7 @@ const makutuAlt = getImageAlt('makutu')
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
-          shouldClip
+          should-clip
         />
         <ClaimTitle
           :claim="t('filipersones.makutu.claim')"
@@ -83,14 +83,14 @@ const makutuAlt = getImageAlt('makutu')
             href: '/espectacles/circ-makutu',
             class: 'button-outline-primary'
           }"
-          isReversed
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
-          textColor="text-white"
-          bgColor="bg-highlight-primary"
+          text-color="text-white"
+          bg-color="bg-highlight-primary"
         />
       </template>
     </MainContent>

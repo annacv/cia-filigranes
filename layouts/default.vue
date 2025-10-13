@@ -9,7 +9,7 @@ const headerBackgroundColor = computed(() => {
 
 <template>
   <TheHeader :background-color="headerBackgroundColor" />
-  <slot></slot>
+  <slot/>
   <TheFooter />
   <CookieBanner v-if="showBanner"/>
   <CookieModal v-if="showModal"/>

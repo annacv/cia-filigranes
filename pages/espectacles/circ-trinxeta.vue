@@ -58,21 +58,21 @@ const summaryButton = computed(() => {
           should-clip
         />
         <DataSheet
-          :techCard="techCard"
-          :artCard="artCard"
+          :tech-card="techCard"
+          :art-card="artCard"
           :image="getImageByRoute('espectacles', 'circ-trinxeta')"
           :alt="getImageAlt('circ-trinxeta')"
-          isReversed
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
-          textColor="text-white"
-          bgColor="bg-primary-500"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'circ-trinxeta')" />
+          <HighlightShows is-current-content :reorder-index="getItemIndex('espectacles', 'circ-trinxeta')" />
           <HighlightWorkshops :reorder-index="4" />
           <HighlightPerformances :reorder-index="4" />
         </div>

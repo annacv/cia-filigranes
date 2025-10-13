@@ -95,15 +95,15 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
-          shouldClip
+          should-clip
         />
         <DataSheet
-          :techCard="prices"
-          :artCard="stories"
+          :tech-card="prices"
+          :art-card="stories"
           :image="getImageByRoute('filipersones', 'filigranes_2')"
           :alt="t('shows.hero.alt')"
-          isReversed
-          shouldClip
+          is-reversed
+          should-clip
         />
         <Synopsis
           :description="history"
@@ -111,7 +111,7 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
-          isReversed
+          is-reversed
         />
         <Synopsis
           :description="filiFriends"
@@ -119,21 +119,21 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
-          shouldClip
+          should-clip
         />
         <DataSheet
           ref="dataSheetRef"
-          :techCard="currentScenariosRight"
-          :artCard="currentScenariosLeft"
+          :tech-card="currentScenariosRight"
+          :art-card="currentScenariosLeft"
           :image="getImageByRoute('filipersones', 'filigranes_5')"
           :alt="t('shows.hero.alt')"
-          extraContent
-          :showMore="showMoreContent"
-          @viewMore="showMore"
-          isReversed
+          extra-content
+          :show-more="showMoreContent"
+          is-reversed
           :style="dataSheetStyle"
-          shouldClip
-          :hideImage="isMobile"
+          should-clip
+          :hide-image="isMobile"
+          @view-more="showMore"
         />
         <Synopsis
           :description="background"
@@ -141,8 +141,8 @@ const showMore = () => {
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
-          isFullReversed
-          shouldClip
+          is-full-reversed
+          should-clip
         />
         <SynopsisList
           :items="filipersonesItems"

@@ -26,7 +26,7 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
 
 <template>
   <div class="h-full">
-    <div :class="isMobile ? 'h-[72px]' : 'h-[87px]'"></div>
+    <div :class="isMobile ? 'h-[72px]' : 'h-[87px]'"/>
     <MainContent class="mb-20">
       <template #wrapped>
         <h1 class="text-3xl uppercase font-grotesk my-10">
@@ -143,7 +143,7 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
          </div>
         <FiliButton
           href="/"
-          buttonClass="button-outline-primary"
+          button-class="button-outline-primary"
           target="_top"
           :text="t('button.goHome')"
         >

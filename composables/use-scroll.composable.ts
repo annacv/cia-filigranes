@@ -12,7 +12,7 @@ const { y: scrollY } = useVueUseScroll(
 const enableScrollDetection = ref(false)
 
 // Enable scroll detection after a delay to ensure hydration is complete
-if (process.client) {
+if (import.meta.client) {
   // Use a longer timeout to ensure hydration is completely finished
   setTimeout(() => {
     enableScrollDetection.value = true

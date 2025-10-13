@@ -8,13 +8,14 @@
       <CiaLogo :color="logoColor" class="w-[174px] hover:opacity-85"/>
     </NuxtLinkLocale>
     <div class="flex items-start col-start-6 xl:col-start-11 col-span-1 xl:col-span-1 justify-self-end">
-      <TheBurger :isOpen="isOpen" :color="burgerColor" @toggle="toggleSideNav" />
+      <TheBurger :is-open="isOpen" :color="burgerColor" @toggle="toggleSideNav" />
     </div>
     <div class="w-full h-full">
       <Transition name="slide-side">
         <SideNav v-if="isOpen" @toggle="toggleSideNav" />
       </Transition>
-      <div v-if="isOpen" class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
+      <div
+v-if="isOpen" class="z-10 backdrop-saturate-150 bg-black/70 w-full h-full fixed top-0 left-0"
         @click="toggleSideNav" />
     </div>
   </header>

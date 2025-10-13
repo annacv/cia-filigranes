@@ -53,7 +53,7 @@ const props = defineProps({
       <FiliButton
         v-if="button"
         :href="button.href"
-        buttonClass="button-outline-neutral self-end"
+        button-class="button-outline-neutral self-end"
         :text="t('button.dossier')"
         :download="button.download"
       >

@@ -13,15 +13,15 @@
     <div
       :class="{'burger__bar--1': isOpen}"
       class="burger__bar"
-    ></div>
+    />
     <div
       :class="{'burger__bar--2': isOpen}"
       class="burger__bar"
-    ></div>
+    />
     <div
       :class="{'burger__bar--3 hidden': isOpen}"
       class="burger__bar"
-    ></div>
+    />
   </div>
   </div>
 </template>

@@ -23,8 +23,8 @@ const performancesItems = computed(() => {
 <template>
   <HighlightContent
 		:title="t('routes.animacions')"
-		contentLink="/animacions"
-		titleClasses="-skew-y-3 hover:text-tertiary-700"
+		content-link="/animacions"
+		title-classes="-skew-y-3 hover:text-tertiary-700"
 		css-classes="highlight-content--3"
 	>
 		<template #content>

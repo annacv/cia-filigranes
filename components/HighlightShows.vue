@@ -31,10 +31,10 @@ const showItems = computed(() => {
 <template>
   <HighlightContent
     :title="t('routes.espectacles')"
-    contentLink="/espectacles"
-    titleClasses="-skew-y-3 hover:text-primary-700"
+    content-link="/espectacles"
+    title-classes="-skew-y-3 hover:text-primary-700"
     css-classes="highlight-content--1"
-    :isCurrentContent="isCurrentContent"
+    :is-current-content="isCurrentContent"
   >
     <template #content>
 			<SlidingPanel class="-skew-y-3">

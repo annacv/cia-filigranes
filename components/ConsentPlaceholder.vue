@@ -9,13 +9,13 @@
     <div class="flex gap-2">
       <FiliButton
         :text="t('consent.manageCookies')"
-        buttonClass="px-3 py-1.5 text-sm !border-0 button-outline-neutral"
-        :onClick="openModal"
+        button-class="px-3 py-1.5 text-sm !border-0 button-outline-neutral"
+        :on-click="openModal"
       />
       <FiliButton
         :text="t('consent.acceptCookies')"
-        buttonClass="px-3 py-1.5 text-sm !border-0 button-outline-primary"
-        :onClick="acceptAll"
+        button-class="px-3 py-1.5 text-sm !border-0 button-outline-primary"
+        :on-click="acceptAll"
       />
     </div>
   </div>

@@ -48,10 +48,10 @@ const getImage = (route: string, item?: string): CardImage => {
 <template>
   <HighlightContent
 		:title="t('routes.tallers')"
-		contentLink="/tallers"
-		titleClasses="-skew-y-3 hover:text-secondary-500"
+		content-link="/tallers"
+		title-classes="-skew-y-3 hover:text-secondary-500"
 		css-classes="highlight-content--2"
-		:isCurrentContent="isCurrentContent"
+		:is-current-content="isCurrentContent"
 	>
 		<template #content>
 			<SlidingPanel class="-skew-y-3">

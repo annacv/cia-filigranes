@@ -74,7 +74,7 @@ const handleImageTouchEnd = () => {
             :alt="imageAlt"
             loading="lazy"
             draggable="false"
-          />
+          >
           <div
             class="absolute inset-0 pointer-events-none transition-all duration-700"
             :class="[
@@ -83,7 +83,7 @@ const handleImageTouchEnd = () => {
                 ? (touchedImageIndex === index ? 'opacity-0' : 'opacity-100')
                 : 'group-hover/image:opacity-0'
             ]"
-          ></div>
+          />
         </div>
       </NuxtLinkLocale>
     </div>

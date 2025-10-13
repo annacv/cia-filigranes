@@ -46,7 +46,7 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
 
 <template>
   <ClientOnly>
-    <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"></div>
+    <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"/>
     <div
       class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid grid-cols-6 xl:grid-cols-12 items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
@@ -58,12 +58,12 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->
-      <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
+      <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       <div
         class="flex justify-end col-start-1 col-span-6 xl:col-start-8 xl:col-span-4 transition-opacity duration-500"
         :class="isScrolled ? 'opacity-0' : 'opacity-100'"
       >
-        <slot name="content"></slot>
+        <slot name="content"/>
       </div>
     </div>
   </ClientOnly>

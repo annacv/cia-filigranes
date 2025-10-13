@@ -71,7 +71,7 @@ const handleTouchEnd = () => {
         :alt="imageAlt"
         loading="lazy"
         draggable="false"
-      />
+      >
 
       <div class="w-full h-full">
         <div
@@ -82,13 +82,13 @@ const handleTouchEnd = () => {
               ? (isTouched ? 'opacity-0' : 'opacity-100')
               : 'group-hover:opacity-0'
           ]"
-        ></div>
+        />
         <!-- Mobile blend mode overlay -->
         <div
           v-if="isMobile"
           class="absolute inset-0 pointer-events-none transition-all duration-700"
           :class="isTouched ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
-        ></div>
+        />
         <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-end gap-4 transition-shadow duration-300'">
           <h3 class="text-2xl xl:text-3xl text-left font-grotesk font-bold uppercase text-white wrap-break-word hyphens-auto leading-7 max-w-[75%] 2xl:max-w-[73%]">
             {{ title }}

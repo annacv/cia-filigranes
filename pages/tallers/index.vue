@@ -63,7 +63,7 @@ const synopsisItems = computed(() => {
       <template #unwrapped>
         <SynopsisList
           :claim="t('workshops.claim')"
-          :claimTitle="t('workshops.claimTitle')"
+          :claim-title="t('workshops.claimTitle')"
           :items="synopsisItems"
         />
         <HeroFooter

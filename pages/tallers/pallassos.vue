@@ -59,22 +59,22 @@ const summaryButton = computed(() => {
           should-clip
         />
         <DataSheet
-          :techCard="techCard"
-          :artCard="artCard"
+          :tech-card="techCard"
+          :art-card="artCard"
           :image="getImageByRoute('tallers', 'pallassos')"
           :alt="getImageAlt('pallassos')"
-          contentType="workshops"
-          isReversed
+          content-type="workshops"
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
-          textColor="text-white"
-          bgColor="bg-secondary-500"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightWorkshops isCurrentContent :reorderIndex="getItemIndex('tallers', 'pallassos')" />
+          <HighlightWorkshops is-current-content :reorder-index="getItemIndex('tallers', 'pallassos')" />
           <HighlightShows :reorder-index="1" />
           <HighlightPerformances :reorder-index="1" />
         </div>
@@ -84,7 +84,7 @@ const summaryButton = computed(() => {
       image-name="tallers_pallassos"
       image-route="tallers"
       :alt="getImageAlt('pallassos')"
-      contentType="workshops"
+      content-type="workshops"
     />
     <HireFili
       :title="t('home.hire.title')"

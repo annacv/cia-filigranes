@@ -36,9 +36,9 @@ const isExpanded = (index: number) => {
         <div class="flex py-4">
           <NuxtLinkLocale
             :to="'/'"
-            @click="emit('toggle')"
             class="navbar__menu-item--link"
             :class="{ 'border-b-2': isRouteActive('/') }"
+            @click="emit('toggle')"
           >
             {{ getLocale('home', 'routes') }}
           </NuxtLinkLocale>
@@ -54,16 +54,16 @@ const isExpanded = (index: number) => {
         <div class="flex flex-row py-4 gap-8 justify-start items-baseline">
           <NuxtLinkLocale
             :to="route.name"
-            @click="emit('toggle')"
             class="navbar__menu-item--link"
             :class="{ 'border-b-2': isRouteActive(`/${route.name}`) }"
+            @click="emit('toggle')"
           >
             {{ getLocale(route.name, 'routes') }}
           </NuxtLinkLocale>
           <button
             v-if="route.children"
-            @click="toggleChildren(index)"
             class="hover:opacity-75 text-xl !leading-[1.75rem]"
+            @click="toggleChildren(index)"
           >
             {{ isExpanded(index) ? '-' : '+' }}
           </button>
@@ -78,9 +78,9 @@ const isExpanded = (index: number) => {
             >
               <NuxtLinkLocale
                 :to="`/${route.name}/${child}`"
-                @click="emit('toggle')"
                 class="navbar__menu-item--link"
                 :class="{ 'border-b-2': isRouteActive(`/${route.name}/${child}`) }"
+                @click="emit('toggle')"
               >
                 {{ getLocale(child, 'routes') }}
               </NuxtLinkLocale>

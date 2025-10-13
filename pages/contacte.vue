@@ -83,8 +83,7 @@ const { canLoadGoogleMaps, acceptAll, openModal } = useCookies();
                       allowfullscreen
                       loading="lazy"
                       :title="t('contact.map.title')"
-                    >
-                    </iframe>
+                    />
                   </div>
                   <div v-else key="placeholder" class="w-full">
                     <ConsentPlaceholder
@@ -105,7 +104,7 @@ const { canLoadGoogleMaps, acceptAll, openModal } = useCookies();
           content-type="contact"
           :alt="getImageAlt()"
           show-full-content
-          isFullReversed
+          is-full-reversed
         >
         <template #content>
           <div class="flex flex-col items-start gap-8 py-5 lg:py-20">

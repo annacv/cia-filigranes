@@ -122,7 +122,7 @@ watchEffect(() => {
         }"
       >
         <!-- Added img tag for Accessibility for screen readers -->
-        <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
+        <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       </div>
       <div
         class="flex flex-col justify-between w-full md:w-[24%] px-5 md:pl-0 pb-5 md:py-4 lg:py-12 2xl:py-24"
@@ -150,7 +150,7 @@ watchEffect(() => {
         <FiliButton
           v-if="extraContent"
           class="mt-1"
-          buttonClass="text-sm md:text-base text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
+          button-class="text-sm md:text-base text-primary-500 border-primary-300 rounded-none border-t-0 border-x-0 !p-1 hover:border-primary-500 justify-self-end"
           :text="buttonText"
           @click="emit('viewMore')"
         />

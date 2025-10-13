@@ -94,18 +94,18 @@ const handleSave = () => {
       <div class="flex flex-col text-sm sm:flex-row gap-3 justify-end">
         <FiliButton
           :text="$t('cookies.modal.rejectAll')"
-          buttonClass="px-3 py-2 leading-normal bg-neutral-100 text-neutral-400 hover:bg-neutral-200"
-          :onClick="rejectAll"
+          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-400 hover:bg-neutral-200"
+          :on-click="rejectAll"
         />
         <FiliButton
           :text="$t('cookies.modal.acceptAll')"
-          buttonClass="px-3 py-2 button-outline-neutral"
-          :onClick="acceptAll"
+          button-class="px-3 py-2 button-outline-neutral"
+          :on-click="acceptAll"
         />
         <FiliButton
           :text="$t('cookies.modal.save')"
-          buttonClass="px-3 py-2 leading-normal bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-          :onClick="handleSave"
+          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+          :on-click="handleSave"
         />
       </div>
     </div>

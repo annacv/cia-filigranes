@@ -39,8 +39,8 @@ defineExpose({
   <div class="video-container relative w-full overflow-hidden bg-gray-900 aspect-video rounded-lg">
     <div class="relative w-full h-full">
       <video
-        class="w-full h-full object-cover"
         ref="videoRef"
+        class="w-full h-full object-cover"
         :src="videoSrc"
         :autoplay="autoplay"
         :muted="muted"
