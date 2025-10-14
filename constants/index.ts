@@ -153,6 +153,16 @@ export const GLOB_IMPORTS = {
     import: 'default',
   }) as Record<string, string>,
 
+  mobileFilipersonesImages: import.meta.glob('~/assets/images/mobile/filipersones/*.webp', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, string>,
+
+  desktopFilipersonesImages: import.meta.glob('~/assets/images/desktop/filipersones/*.webp', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, string>,
+
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
     eager: true,
     import: 'default',
