@@ -32,10 +32,6 @@ const { imageAlt: getImageAlt } = useImageAlt(props.contentType);
 
 const imageAlt = computed(() => getImageAlt(props.title));
 
-const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
-  return useImageUrl(imageName, imageRoute).value;
-}
-
 const handleImageTouchStart = (index: number) => {
   if (isMobile) {
     touchedImageIndex.value = index
@@ -70,7 +66,7 @@ const handleImageTouchEnd = () => {
             :class="isMobile 
               ? (touchedImageIndex === index ? 'brightness-110 saturate-110 scale-105' : 'brightness-70 saturate-100 scale-100')
               : 'group-hover/image:brightness-110 group-hover/image:saturate-110 group-hover/image:scale-105'"
-            :src="setImageSrc(image.imageName, image.imageRoute)"
+            :src="useImageUrl(image.imageName, image.imageRoute).value"
             :alt="imageAlt"
             loading="lazy"
             draggable="false"
