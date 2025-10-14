@@ -43,6 +43,7 @@ const imageAlt = '404';
             href="/"
             button-class="button-outline-primary"
             target="_top"
+            :text="t('button.goHome')"
           >
             <template #icon-left>
               <ArrowRight class="arrow-right self-start rotate-180"/>
