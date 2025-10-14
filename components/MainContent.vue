@@ -5,22 +5,22 @@
       class="grid-layout min-w-full w-full h-full"
     >
       <div class="layout-cols">
-        <slot name="wrapped"></slot>
+        <slot name="wrapped"/>
       </div>
     </div>
     <template v-if="$slots.unwrapped">
-      <slot name="unwrapped"></slot>
+      <slot name="unwrapped"/>
     </template>
     <div
       v-if="$slots.wrappedBottom" 
       class="grid-layout min-w-full w-full h-full"
     >
       <div class="layout-cols">
-        <slot name="wrappedBottom"></slot>
+        <slot name="wrappedBottom"/>
       </div>
     </div>
     <template v-if="$slots.unwrappedBottom">
-      <slot name="unwrappedBottom"></slot>
+      <slot name="unwrappedBottom"/>
     </template>
   </main>
 </template>

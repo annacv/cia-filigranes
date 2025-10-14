@@ -12,7 +12,7 @@ const props = defineProps({
   },
   items: {
     type: Array as () => Array<{
-      description: Array<Record<string, any>>
+      description: Array<Record<string, string>>
       image: CardImage
       contentType: ContentType
       alt: string
@@ -28,8 +28,7 @@ const props = defineProps({
         }
       }
     }>,
-    required: true,
-    default: () => []
+    required: true
   }
 })
 </script>

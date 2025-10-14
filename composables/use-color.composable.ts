@@ -40,7 +40,7 @@ export function useColor(contentType: ContentType | undefined): {
           ? 'var(--gradient-overlay-secondary)'
           : contentType === 'contact'
             ? 'var(--gradient-overlay-quaternary)'
-          : 'var(--gradient-overlay-primary)'
+            : 'var(--gradient-overlay-primary)'
   );
 
   return {

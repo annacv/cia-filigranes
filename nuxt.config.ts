@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/device",
     "nuxt-svgo",
     "@nuxt/scripts",
+    "@nuxt/eslint",
   ],
   svgo: {
     svgoConfig: {},

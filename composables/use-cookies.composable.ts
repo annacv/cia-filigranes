@@ -2,12 +2,12 @@ const showModal = ref(false)
 
 export const useCookies = () => {
   // Only create cookies on client side
-  const cookieConsent = process.client ? useCookie<'accepted' | 'rejected' | 'customized' | null>('cookie-consent', {
+  const cookieConsent = import.meta.client ? useCookie<'accepted' | 'rejected' | 'customized' | null>('cookie-consent', {
     default: () => null,
     maxAge: 60 * 60 * 24 * 365 // 1 year
   }) : ref(null)
 
-  const cookiePreferences = process.client ? useCookie('cookie-preferences', {
+  const cookiePreferences = import.meta.client ? useCookie('cookie-preferences', {
     default: () => ({
       essential: true,
       functional: false
@@ -15,10 +15,10 @@ export const useCookies = () => {
     maxAge: 60 * 60 * 24 * 365 // 1 year
   }) : ref({ essential: true, functional: false })
 
-  const showBanner = computed(() => process.client ? cookieConsent.value === null : false)
+  const showBanner = computed(() => import.meta.client ? cookieConsent.value === null : false)
 
   const canUseFunctionalCookies = computed(() => {
-    if (!process.client) return false
+    if (!import.meta.client) return false
     return cookieConsent.value === 'accepted' || 
            (cookieConsent.value === 'customized' && cookiePreferences.value?.functional === true)
   })

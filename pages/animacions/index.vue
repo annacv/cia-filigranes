@@ -4,7 +4,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('performances');
+const getImageAlt = (title?: string) => useImageAlt('performances', title);
 
 useHead({
   meta: [
@@ -55,7 +55,7 @@ const synopsisButton = computed(() => {
           content-type="performances"
           :alt="getImageAlt('animacions')"
           show-full-content
-          :downloadButton="synopsisButton"
+          :download-button="synopsisButton"
         />
         <Synopsis
           :description="synopsis"
@@ -63,22 +63,22 @@ const synopsisButton = computed(() => {
           content-type="performances"
           :alt="getImageAlt('animacions')"
           show-full-content
-          isReversed
-          shouldClip
+          is-reversed
+          should-clip
         />
         <DataSheet
-          :techCard="techCard"
-          :artCard="artCard"
+          :tech-card="techCard"
+          :art-card="artCard"
           :image="getImageByRoute('animacions', 'torpede')"
           :alt="getImageAlt('animacions')"
-          isReversed
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('performances.hire.title')"
           description="performances.hire.description"
-          textColor="text-white"
-          bgColor="bg-tertiary-500"
+          text-color="text-white"
+          bg-color="bg-tertiary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
           <HighlightShows />

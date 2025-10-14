@@ -6,10 +6,14 @@ const props = withDefaults(defineProps<{
   href?: string
   download?: string
   target?: string
-  buttonClass?: string | object | any[]
+  buttonClass?: string | object | unknown[]
   text: string,
-  onClick?: (event?: MouseEvent) => void
+  onClick?: (_event?: MouseEvent) => void
 }>(), {
+  href: undefined,
+  download: undefined,
+  buttonClass: undefined,
+  onClick: undefined,
   target: '_blank',
 })
 
@@ -30,14 +34,14 @@ const buttonProps = computed(() =>
       target: props.target
     }
     : !isDownload.value && props.href ? 
-    {
-      alt: props.text,
-      to: props.href,
-      target: props.target
-    }
-    : {
-      alt: props.text
-    }
+      {
+        alt: props.text,
+        to: props.href,
+        target: props.target
+      }
+      : {
+        alt: props.text
+      }
 )
 </script>
 

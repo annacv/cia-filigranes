@@ -36,51 +36,51 @@ const isExpanded = (index: number) => {
         <div class="flex py-4">
           <NuxtLinkLocale
             :to="'/'"
-            @click="emit('toggle')"
             class="navbar__menu-item--link"
             :class="{ 'border-b-2': isRouteActive('/') }"
+            @click="emit('toggle')"
           >
             {{ getLocale('home', 'routes') }}
           </NuxtLinkLocale>
         </div>
       </li>
       <component
-        :is="route.children ? 'ul' : 'li'"
-        v-for="(route, index) in routes"
+        :is="routeItem.children ? 'ul' : 'li'"
+        v-for="(routeItem, index) in routes"
         :key="index"
         class="navbar__menu-item"
         :class="{ 'expanded pb-2': isExpanded(index) }"
       >
         <div class="flex flex-row py-4 gap-8 justify-start items-baseline">
           <NuxtLinkLocale
-            :to="route.name"
-            @click="emit('toggle')"
+            :to="routeItem.name"
             class="navbar__menu-item--link"
-            :class="{ 'border-b-2': isRouteActive(`/${route.name}`) }"
+            :class="{ 'border-b-2': isRouteActive(`/${routeItem.name}`) }"
+            @click="emit('toggle')"
           >
-            {{ getLocale(route.name, 'routes') }}
+            {{ getLocale(routeItem.name, 'routes') }}
           </NuxtLinkLocale>
           <button
-            v-if="route.children"
-            @click="toggleChildren(index)"
+            v-if="routeItem.children"
             class="hover:opacity-75 text-xl !leading-[1.75rem]"
+            @click="toggleChildren(index)"
           >
             {{ isExpanded(index) ? '-' : '+' }}
           </button>
         </div>
 
         <Transition name="fade-slide" mode="out-in">
-          <ul v-if="route.children && isExpanded(index)">
+          <ul v-if="routeItem.children && isExpanded(index)">
             <li
-              v-for="(child, childIndex) in route.children"
+              v-for="(child, childIndex) in routeItem.children"
               :key="childIndex"
               class="pl-4 pb-4"
             >
               <NuxtLinkLocale
-                :to="`/${route.name}/${child}`"
-                @click="emit('toggle')"
+                :to="`/${routeItem.name}/${child}`"
                 class="navbar__menu-item--link"
-                :class="{ 'border-b-2': isRouteActive(`/${route.name}/${child}`) }"
+                :class="{ 'border-b-2': isRouteActive(`/${routeItem.name}/${child}`) }"
+                @click="emit('toggle')"
               >
                 {{ getLocale(child, 'routes') }}
               </NuxtLinkLocale>

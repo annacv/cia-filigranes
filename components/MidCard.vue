@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import type { ImageRoute, CardLink, CardImage, ContentType } from "~/types";
+import type { CardLink, CardImage, ContentType } from "~/types";
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useImageAlt } from "~/composables/use-image-alt.composable";
@@ -28,13 +28,7 @@ const touchedImageIndex = ref<number | null>(null)
 
 const { isMobile } = useDevice()
 const { gradientColorClass } = useColor(props.contentType);
-const { imageAlt: getImageAlt } = useImageAlt(props.contentType);
-
-const imageAlt = computed(() => getImageAlt(props.title));
-
-const setImageSrc = (imageName :string, imageRoute: ImageRoute) => {
-  return useImageUrl(imageName, imageRoute).value;
-}
+const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 
 const handleImageTouchStart = (index: number) => {
   if (isMobile) {
@@ -70,11 +64,11 @@ const handleImageTouchEnd = () => {
             :class="isMobile 
               ? (touchedImageIndex === index ? 'brightness-110 saturate-110 scale-105' : 'brightness-70 saturate-100 scale-100')
               : 'group-hover/image:brightness-110 group-hover/image:saturate-110 group-hover/image:scale-105'"
-            :src="setImageSrc(image.imageName, image.imageRoute)"
+            :src="useImageUrl(image.imageName, image.imageRoute).value"
             :alt="imageAlt"
             loading="lazy"
             draggable="false"
-          />
+          >
           <div
             class="absolute inset-0 pointer-events-none transition-all duration-700"
             :class="[
@@ -83,7 +77,7 @@ const handleImageTouchEnd = () => {
                 ? (touchedImageIndex === index ? 'opacity-0' : 'opacity-100')
                 : 'group-hover/image:opacity-0'
             ]"
-          ></div>
+          />
         </div>
       </NuxtLinkLocale>
     </div>

@@ -17,7 +17,7 @@ export const ROUTES_INDEX = [
   {
     name: "contacte"
   }
- ]
+]
 
 export const LOCALE_ROUTES = {
   espectacles: {
@@ -153,6 +153,16 @@ export const GLOB_IMPORTS = {
     import: 'default',
   }) as Record<string, string>,
 
+  mobileFilipersonesImages: import.meta.glob('~/assets/images/mobile/filipersones/*.webp', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, string>,
+
+  desktopFilipersonesImages: import.meta.glob('~/assets/images/desktop/filipersones/*.webp', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, string>,
+
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
     eager: true,
     import: 'default',
@@ -188,19 +198,19 @@ export const PERFORMANCES_IMG = [
 ]
 
 export const CONTACT = {
-    "email": "ciafiligranes@gmail.com",
-    "adress": "c/ St. Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",
-    "adressHref": "https://www.google.com/maps/place/Cia+Filigranes/@41.567796,2.0127018,17z/data=!3m1!4b1!4m6!3m5!1s0x12a492c3e2155299:0x4d072d8f6b4f6768!8m2!3d41.567796!4d2.0127018!16s%2Fg%2F11c5846tgk?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
-    "phones": {
-      "albert": '615 411 652',
-      "jordi": '620 27 25 20'
-    }
+  "email": "ciafiligranes@gmail.com",
+  "adress": "c/ St. Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",
+  "adressHref": "https://www.google.com/maps/place/Cia+Filigranes/@41.567796,2.0127018,17z/data=!3m1!4b1!4m6!3m5!1s0x12a492c3e2155299:0x4d072d8f6b4f6768!8m2!3d41.567796!4d2.0127018!16s%2Fg%2F11c5846tgk?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
+  "phones": {
+    "albert": '615 411 652',
+    "jordi": '620 27 25 20'
   }
+}
 
- export const RRSS = [
+export const RRSS = [
   // { platform: "twitter", url: "https://twitter.com/ciafiligranes" },
   { platform: "instagram", url: "https://www.instagram.com/cia.filigranes/" },
   { platform: "facebook", url: "https://www.facebook.com/Cia-Filigranes-204888372926384/" },
   { platform: "youtube", url: "https://www.youtube.com/channel/UCaH3Bb7VIiuzwy51TyyKzpg" },
   { platform: "linkedin", url: "https://www.linkedin.com/in/ciafiligranes" }
- ]
+]

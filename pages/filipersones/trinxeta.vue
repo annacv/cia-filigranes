@@ -4,7 +4,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('filipersones');
+const getImageAlt = (title?: string) => useImageAlt('filipersones', title);
 
 useHead({
   meta: [
@@ -60,7 +60,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
-          isReversed
+          is-reversed
         />
         <Synopsis
           :description="background"
@@ -68,7 +68,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
-          shouldClip
+          should-clip
         />
         <ClaimTitle
           :claim="t('filipersones.trinxeta.claim')"
@@ -83,14 +83,14 @@ const trinxetaAlt = getImageAlt('trinxeta')
             href: '/espectacles/circ-trinxeta',
             class: 'button-outline-primary'
           }"
-          isReversed
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
-          textColor="text-white"
-          bgColor="bg-highlight-primary"
+          text-color="text-white"
+          bg-color="bg-highlight-primary"
         />
       </template>
     </MainContent>

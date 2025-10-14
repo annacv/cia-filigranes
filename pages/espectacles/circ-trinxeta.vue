@@ -5,7 +5,7 @@ import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('shows');
+const getImageAlt = (title?: string) => useImageAlt('shows', title);
 
 useHead({
   meta: [
@@ -33,13 +33,13 @@ const summaryButton = computed(() => {
       image-name="espectacles_circ-trinxeta"
       image-route="espectacles"
       :alt="getImageAlt('circ-trinxeta')"
-      >
+    >
       <template #content>
         <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('routes.circ-trinxeta') }}
         </h1>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary
@@ -58,21 +58,21 @@ const summaryButton = computed(() => {
           should-clip
         />
         <DataSheet
-          :techCard="techCard"
-          :artCard="artCard"
+          :tech-card="techCard"
+          :art-card="artCard"
           :image="getImageByRoute('espectacles', 'circ-trinxeta')"
           :alt="getImageAlt('circ-trinxeta')"
-          isReversed
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
-          textColor="text-white"
-          bgColor="bg-primary-500"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows isCurrentContent :reorderIndex="getItemIndex('espectacles', 'circ-trinxeta')" />
+          <HighlightShows is-current-content :reorder-index="getItemIndex('espectacles', 'circ-trinxeta')" />
           <HighlightWorkshops :reorder-index="4" />
           <HighlightPerformances :reorder-index="4" />
         </div>

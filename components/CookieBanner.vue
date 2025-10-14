@@ -5,7 +5,6 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
 <template>
   <ClientOnly>
     <Transition
-      v-if="showBanner"
       enter-active-class="transition-all duration-300 ease-out"
       enter-from-class="transform translate-y-full opacity-0"
       enter-to-class="transform translate-y-0 opacity-100"
@@ -14,6 +13,7 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
       leave-to-class="transform translate-y-full opacity-0"
     >
       <div
+        v-if="showBanner"
         class="fixed bottom-0 left-0 right-0 z-20 bg-black/85 backdrop-blur-sm shadow-lg"
       >
         <div class="container mx-auto px-4 py-5">
@@ -32,18 +32,18 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
             <div class="flex flex-col text-sm sm:flex-row gap-2 w-full lg:w-auto">
               <FiliButton
                 :text="$t('cookies.banner.accept')"
-                buttonClass="px-3 py-2 button-outline-neutral"
-                :onClick="acceptAll"
+                button-class="px-3 py-2 button-outline-neutral"
+                :on-click="acceptAll"
               />
               <FiliButton
                 :text="$t('cookies.banner.customize')"
-                buttonClass="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-600"
-                :onClick="openModal"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-600"
+                :on-click="openModal"
               />
               <FiliButton
                 :text="$t('cookies.banner.reject')"
-                buttonClass="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-400"
-                :onClick="rejectAll"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-400"
+                :on-click="rejectAll"
               />
             </div>
           </div>

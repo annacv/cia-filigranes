@@ -21,7 +21,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
 
 <template>
   <div class="h-full">
-    <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"></div>
+    <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"/>
     <MainContent class="mb-20">
       <template #wrapped>
         <h1 class="text-3xl uppercase font-grotesk my-10">
@@ -63,7 +63,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
         
         <FiliButton
           href="/"
-          buttonClass="button-outline-primary"
+          button-class="button-outline-primary"
           target="_top"
           :text="t('button.goHome')"
         >

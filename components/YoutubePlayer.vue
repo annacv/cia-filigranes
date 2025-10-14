@@ -8,7 +8,7 @@ interface PlayerVars {
   end?: number;
   hl?: string;
   playlist?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface YouTubeProps {

@@ -1,3 +1,5 @@
+import type { VueMessageType } from 'vue-i18n'
+
 export const useI18nUtils = () => {
   const { t, tm, rt } = useI18n()
 
@@ -22,10 +24,10 @@ export const useI18nUtils = () => {
   const getTranslatedList = (keyPath: string, keys: string[]) => {
     const rawItems = (tm(keyPath))
     if (!Array.isArray(rawItems)) return []
-    return rawItems.map((item: Record<string, any>) => {
-      const translatedItem: Record<string, any> = {}
+    return rawItems.map((item: Record<string, unknown>) => {
+      const translatedItem: Record<string, unknown> = {}
       for (const key of keys) {
-        translatedItem[key] = item[key] ? rt(item[key]) : ''
+        translatedItem[key] = item[key] ? rt(item[key] as VueMessageType) : ''
       }
       return translatedItem
     })

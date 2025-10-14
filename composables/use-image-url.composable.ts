@@ -9,6 +9,7 @@ const mobileMap: Record<ImageRoute, Record<string, string>> = {
   'tallers': GLOB_IMPORTS.mobileTallerImages,
   'animacions': GLOB_IMPORTS.mobileAnimacionsImages,
   'contacte': GLOB_IMPORTS.mobileContacteImages,
+  'filipersones': GLOB_IMPORTS.mobileFilipersonesImages,
 };
 
 const desktopMap: Record<ImageRoute, Record<string, string>> = {
@@ -17,6 +18,7 @@ const desktopMap: Record<ImageRoute, Record<string, string>> = {
   'tallers': GLOB_IMPORTS.desktopTallerImages,
   'animacions': GLOB_IMPORTS.desktopAnimacionsImages,
   'contacte': GLOB_IMPORTS.desktopContacteImages,
+  'filipersones': GLOB_IMPORTS.desktopFilipersonesImages,
 };
 
 /**

@@ -9,7 +9,7 @@ interface LocaleObject {
   name: string;
   file?: string;
   language?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const { locale, locales, t } = useI18n();
@@ -52,7 +52,7 @@ function changeLocale(code: LocaleCode) {
       <span
         class="bg-white h-1 w-1 rounded-full mt-1"
         :class="isSelected(lang.code) ? 'opacity-100' : 'opacity-20 hover:opacity-100'"
-      ></span>
+      />
     </button>
   </div>
 </template>

@@ -45,7 +45,7 @@ const title = computed(() => props.title.slice(1))
     <div :class="[cssClasses, 'py-2 lg:py-4']">
       <div class="grid-layout justify-center">
         <div class="layout-cols">
-          <slot name="content"></slot>
+          <slot name="content"/>
         </div>
       </div>
     </div>

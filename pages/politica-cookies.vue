@@ -26,7 +26,7 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
 
 <template>
   <div class="h-full">
-    <div :class="isMobile ? 'h-[72px]' : 'h-[87px]'"></div>
+    <div :class="isMobile ? 'h-[72px]' : 'h-[87px]'"/>
     <MainContent class="mb-20">
       <template #wrapped>
         <h1 class="text-3xl uppercase font-grotesk my-10">
@@ -132,18 +132,18 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
             </ul>
           </section>
 
-           <section class="mb-8">
-             <h2 class="text-2xl font-semibold text-neutral-800 mb-4">
-               {{ $t('cookies.additional.title') }}
-             </h2>
-             <p class="text-neutral-600">
-               {{ $t('cookies.additional.description') }}
-             </p>
-           </section>
-         </div>
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-800 mb-4">
+              {{ $t('cookies.additional.title') }}
+            </h2>
+            <p class="text-neutral-600">
+              {{ $t('cookies.additional.description') }}
+            </p>
+          </section>
+        </div>
         <FiliButton
           href="/"
-          buttonClass="button-outline-primary"
+          button-class="button-outline-primary"
           target="_top"
           :text="t('button.goHome')"
         >

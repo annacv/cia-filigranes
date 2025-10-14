@@ -15,7 +15,8 @@ const props = defineProps({
   },
   reorderIndex: {
     type: Number,
-    required: false
+    required: false,
+    default: undefined
   }
 })
 
@@ -47,25 +48,25 @@ const getImage = (route: string, item?: string): CardImage => {
 
 <template>
   <HighlightContent
-		:title="t('routes.tallers')"
-		contentLink="/tallers"
-		titleClasses="-skew-y-3 hover:text-secondary-500"
-		css-classes="highlight-content--2"
-		:isCurrentContent="isCurrentContent"
-	>
-		<template #content>
-			<SlidingPanel class="-skew-y-3">
-			<ul class="flex w-full gap-1">
-				<li v-for="(item, index) in workshopItems" :key="index">
-					<SmallCard
-						content-type="workshops"
-						:title="t(`routes.${item}`)"
-						:image="getImage('tallers', item)"
-						:link="getLink(workshops!.name,item)"
-					/>
-				</li>
-			</ul>
-			</SlidingPanel>
-		</template>
-	</HighlightContent>
+    :title="t('routes.tallers')"
+    content-link="/tallers"
+    title-classes="-skew-y-3 hover:text-secondary-500"
+    css-classes="highlight-content--2"
+    :is-current-content="isCurrentContent"
+  >
+    <template #content>
+      <SlidingPanel class="-skew-y-3">
+        <ul class="flex w-full gap-1">
+          <li v-for="(item, index) in workshopItems" :key="index">
+            <SmallCard
+              content-type="workshops"
+              :title="t(`routes.${item}`)"
+              :image="getImage('tallers', item)"
+              :link="getLink(workshops!.name,item)"
+            />
+          </li>
+        </ul>
+      </SlidingPanel>
+    </template>
+  </HighlightContent>
 </template>

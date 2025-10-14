@@ -5,7 +5,7 @@ import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('workshops');
+const getImageAlt = (title?: string) => useImageAlt('workshops', title);
 
 useHead({
   meta: [
@@ -34,13 +34,13 @@ const summaryButton = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('maquillatge')"
       content-type="workshops"
-      >
+    >
       <template #content>
         <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
           {{ t('workshops.commonTitle', { title: t('routes.maquillatge') }) }}
         </h1>
       </template>
-      </HeroCover>
+    </HeroCover>
     <MainContent>
       <template #wrapped>
         <Summary
@@ -59,22 +59,22 @@ const summaryButton = computed(() => {
           should-clip
         />
         <DataSheet
-          :techCard="techCard"
-          :artCard="artCard"
+          :tech-card="techCard"
+          :art-card="artCard"
           :image="getImageByRoute('tallers', 'maquillatge')"
           :alt="getImageAlt('maquillatge')"
-          contentType="workshops"
-          isReversed
+          content-type="workshops"
+          is-reversed
         />
         <HireFili
           class="py-12"
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
-          textColor="text-white"
-          bgColor="bg-secondary-500"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightWorkshops isCurrentContent :reorderIndex="getItemIndex('tallers', 'maquillatge')" />
+          <HighlightWorkshops is-current-content :reorder-index="getItemIndex('tallers', 'maquillatge')" />
           <HighlightShows :reorder-index="2" />
           <HighlightPerformances :reorder-index="2" />
         </div>
@@ -84,7 +84,7 @@ const summaryButton = computed(() => {
       image-name="tallers_maquillatge"
       image-route="tallers"
       :alt="getImageAlt('maquillatge')"
-      contentType="workshops"
+      content-type="workshops"
     />
     <HireFili
       :title="t('home.hire.title')"

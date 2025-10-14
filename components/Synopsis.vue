@@ -14,7 +14,8 @@ const props = defineProps({
   },
   contentType: {
     type: String as PropType<ContentType>,
-    required: false
+    required: false,
+    default: undefined
   },
   image: {
     type: Object as PropType<CardImage>,
@@ -33,13 +34,14 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, any>[],
+    type: Array as () => Record<string, string>[],
     required: false,
     default: () => []
   },
   title: {
     type: String,
-    required: false
+    required: false,
+    default: ''
   },
   infoButton: {
     type: Object,
@@ -101,9 +103,10 @@ watchEffect(() => {
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >
-    <div :class="[
-      'flex flex-col md:flex-row gap-0 xl:gap-5',
-      isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
+    <div
+      :class="[
+        'flex flex-col md:flex-row gap-0 xl:gap-5',
+        isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
     >
       <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
         <slot name="content">
@@ -127,7 +130,7 @@ watchEffect(() => {
           <FiliButton
             v-if="infoButton"
             :href="infoButton.href"
-            :buttonClass="`${infoButton.class} self-start`"
+            :button-class="`${infoButton.class} self-start`"
             :text="t('button.info')"
             target="_top"
           >
@@ -141,7 +144,7 @@ watchEffect(() => {
           <FiliButton
             v-if="downloadButton"
             :href="downloadButton.href"
-            buttonClass="button-outline-neutral self-start"
+            button-class="button-outline-neutral self-start"
             :text="t('button.dossier')"
             :download="downloadButton.download"
           >
@@ -167,7 +170,7 @@ watchEffect(() => {
         }"
       >
         <!-- Added img tag for Accessibility for screen readers -->
-        <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" />
+        <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       </div>
     </div>
   </div>

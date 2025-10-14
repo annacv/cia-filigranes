@@ -5,14 +5,12 @@ const { t } = useI18n()
 
 const props = defineProps({
   abstract: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   items: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   button: {
     type: Object,
@@ -46,14 +44,14 @@ const props = defineProps({
             {{ item.title }}
           </p>
           <p class="font-light">
-          {{ item.description }}
+            {{ item.description }}
           </p>
         </li>
       </ul>
       <FiliButton
         v-if="button"
         :href="button.href"
-        buttonClass="button-outline-neutral self-end"
+        button-class="button-outline-neutral self-end"
         :text="t('button.dossier')"
         :download="button.download"
       >

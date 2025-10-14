@@ -7,7 +7,7 @@ import { useImageAlt } from "~/composables/use-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('shows');
+const getImageAlt = (title?: string) => useImageAlt('shows', title);
 
 useHead({
   meta: [
@@ -58,7 +58,7 @@ const synopsisItems = computed(() => {
       <template #unwrapped>
         <SynopsisList
           :claim="t('shows.claim')"
-          :claimTitle="t('shows.claimTitle')"
+          :claim-title="t('shows.claimTitle')"
           :items="synopsisItems"
         />
         <HeroFooter
