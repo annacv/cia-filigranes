@@ -4,7 +4,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('filipersones');
+const getImageAlt = (title?: string) => useImageAlt('filipersones', title);
 
 useHead({
   meta: [

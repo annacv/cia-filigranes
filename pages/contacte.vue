@@ -17,7 +17,7 @@ useHead({
   ]
 })
 
-const { imageAlt: getImageAlt } = useImageAlt('contact');
+const getImageAlt = (title?: string) => useImageAlt('contact', title);
 const { canLoadGoogleMaps } = useCookies();
 </script>
 

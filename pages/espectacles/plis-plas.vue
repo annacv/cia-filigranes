@@ -5,7 +5,7 @@ import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('shows');
+const getImageAlt = (title?: string) => useImageAlt('shows', title);
 
 useHead({
   meta: [

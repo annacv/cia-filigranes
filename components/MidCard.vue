@@ -28,9 +28,7 @@ const touchedImageIndex = ref<number | null>(null)
 
 const { isMobile } = useDevice()
 const { gradientColorClass } = useColor(props.contentType);
-const { imageAlt: getImageAlt } = useImageAlt(props.contentType);
-
-const imageAlt = computed(() => getImageAlt(props.title));
+const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 
 const handleImageTouchStart = (index: number) => {
   if (isMobile) {

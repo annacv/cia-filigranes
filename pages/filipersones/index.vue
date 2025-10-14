@@ -11,7 +11,7 @@ const dataSheetRef = ref<HTMLElement | null>(null);
 const { isMobile } = useDevice();
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { imageAlt: getImageAlt } = useImageAlt('filipersones');
+const getImageAlt = (title?: string) => useImageAlt('filipersones', title);
 const { height: dataSheetHeight } = useElementSize(dataSheetRef);
 
 useHead({
