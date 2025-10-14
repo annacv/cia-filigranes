@@ -5,14 +5,12 @@ const { t } = useI18n()
 
 const props = defineProps({
   abstract: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   items: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   button: {
     type: Object,

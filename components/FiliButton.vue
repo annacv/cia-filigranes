@@ -6,10 +6,14 @@ const props = withDefaults(defineProps<{
   href?: string
   download?: string
   target?: string
-  buttonClass?: string | object | any[]
+  buttonClass?: string | object | unknown[]
   text: string,
-  onClick?: (event?: MouseEvent) => void
+  onClick?: (_event?: MouseEvent) => void
 }>(), {
+  href: undefined,
+  download: undefined,
+  buttonClass: undefined,
+  onClick: undefined,
   target: '_blank',
 })
 

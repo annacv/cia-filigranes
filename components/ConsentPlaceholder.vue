@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+import { useCookies } from "~/composables/use-cookies.composable";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+defineProps<Props>();
+
+const { t } = useI18n();
+const { acceptAll, openModal } = useCookies();
+</script>
+
 <template>
   <div class="aspect-video bg-gray-200 flex flex-col items-center justify-center text-gray-600 p-4 gap-2">
     <h3 class="text-sm text-center font-semibold text-neutral-800">
@@ -20,18 +35,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { useCookies } from "~/composables/use-cookies.composable";
-
-interface Props {
-  title: string;
-  description: string;
-}
-
-defineProps<Props>();
-
-const { t } = useI18n();
-const { acceptAll, openModal } = useCookies();
-</script>

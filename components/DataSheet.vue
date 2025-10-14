@@ -12,7 +12,8 @@ const props = defineProps({
   },
   contentType: {
     type: String as PropType<ContentType>,
-    required: false
+    required: false,
+    default: undefined
   },
   extraContent: {
     type: Boolean,
@@ -31,14 +32,12 @@ const props = defineProps({
     default: false
   },
   techCard: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   artCard: {
-    type: Array as () => Record<string, any>[],
-    required: true,
-    default: () => []
+    type: Array as () => Record<string, string>[],
+    required: true
   },
   hideImage: {
     type: Boolean,

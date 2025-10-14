@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const emit = defineEmits(['toggle']);
+const props = defineProps({
+  isOpen: Boolean
+});
+</script>
+
 <template>
   <div
     class="flex justify-center rounded-full z-[100]"
@@ -25,13 +32,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const emit = defineEmits(['toggle']);
-const props = defineProps({
-  isOpen: Boolean
-});
-</script>
 
 <style lang="scss">
 .burger {

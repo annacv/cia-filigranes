@@ -9,7 +9,7 @@ interface LocaleObject {
   name: string;
   file?: string;
   language?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const { locale, locales, t } = useI18n();

@@ -8,7 +8,8 @@ import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
 const props = defineProps({
   reorderIndex: {
     type: Number,
-    required: false
+    required: false,
+    default: undefined
   }
 })
 

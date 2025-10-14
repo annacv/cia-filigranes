@@ -5,7 +5,6 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
 <template>
   <ClientOnly>
     <Transition
-      v-if="showBanner"
       enter-active-class="transition-all duration-300 ease-out"
       enter-from-class="transform translate-y-full opacity-0"
       enter-to-class="transform translate-y-0 opacity-100"
@@ -14,6 +13,7 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
       leave-to-class="transform translate-y-full opacity-0"
     >
       <div
+        v-if="showBanner"
         class="fixed bottom-0 left-0 right-0 z-20 bg-black/85 backdrop-blur-sm shadow-lg"
       >
         <div class="container mx-auto px-4 py-5">

@@ -1,7 +1,7 @@
 import type { ContentType } from "~/types";
 
 export function useImageAlt(contentType: ContentType): {
-  imageAlt: (title?: string) => string;
+  imageAlt: (_title?: string) => string;
 } {
   const { t } = useI18n();
   

@@ -18,7 +18,7 @@ useHead({
 })
 
 const { imageAlt: getImageAlt } = useImageAlt('contact');
-const { canLoadGoogleMaps, acceptAll, openModal } = useCookies();
+const { canLoadGoogleMaps } = useCookies();
 </script>
 
 <template>

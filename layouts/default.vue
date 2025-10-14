@@ -8,9 +8,11 @@ const headerBackgroundColor = computed(() => {
 </script>
 
 <template>
-  <TheHeader :background-color="headerBackgroundColor" />
-  <slot/>
-  <TheFooter />
-  <CookieBanner v-if="showBanner"/>
-  <CookieModal v-if="showModal"/>
+  <div>
+    <TheHeader :background-color="headerBackgroundColor" />
+    <slot/>
+    <TheFooter />
+    <CookieBanner v-if="showBanner"/>
+    <CookieModal v-if="showModal"/>
+  </div>
 </template>

@@ -13,7 +13,8 @@ const props = defineProps({
   },
   reorderIndex: {
     type: Number,
-    required: false
+    required: false,
+    default: undefined
   }
 })
 

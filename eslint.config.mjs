@@ -8,5 +8,16 @@ export default withNuxt({
     "vue/html-indent": ["error", 2],
     "vue/script-indent": ["error", 2, { baseIndent: 0 }],
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
+    "vue/block-order": ["error", {
+      "order": ["script", "template", "style"]
+    }],
+    "no-unused-vars": ["error", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_|^props$"
+    }],
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_|^props$"
+    }]
   },
 });

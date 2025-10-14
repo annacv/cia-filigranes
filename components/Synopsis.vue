@@ -14,7 +14,8 @@ const props = defineProps({
   },
   contentType: {
     type: String as PropType<ContentType>,
-    required: false
+    required: false,
+    default: undefined
   },
   image: {
     type: Object as PropType<CardImage>,
@@ -33,13 +34,14 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, any>[],
+    type: Array as () => Record<string, string>[],
     required: false,
     default: () => []
   },
   title: {
     type: String,
-    required: false
+    required: false,
+    default: ''
   },
   infoButton: {
     type: Object,

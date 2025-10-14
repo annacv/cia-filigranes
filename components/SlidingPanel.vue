@@ -6,8 +6,8 @@ import ArrowLeft from '~/assets/icons/arrow-left.svg'
 
 const props = withDefaults(defineProps<{
   scrollFactor?: number
-  buttonClass?: string | object | any[]
-  iconClass?: string | object | any[]
+  buttonClass?: string | object | unknown[]
+  iconClass?: string | object | unknown[]
 }>(), {
   buttonClass: 'rounded-full h-6 w-6',
   iconClass: 'text-white hover:text-white/50',
