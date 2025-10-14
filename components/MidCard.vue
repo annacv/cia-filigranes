@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import type { ImageRoute, CardLink, CardImage, ContentType } from "~/types";
+import type { CardLink, CardImage, ContentType } from "~/types";
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useImageAlt } from "~/composables/use-image-alt.composable";
