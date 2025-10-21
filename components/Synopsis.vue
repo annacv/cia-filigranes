@@ -34,7 +34,7 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: false,
     default: () => []
   },

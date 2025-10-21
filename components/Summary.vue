@@ -5,11 +5,11 @@ const { t } = useI18n()
 
 const props = defineProps({
   abstract: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: true
   },
   items: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: true
   },
   button: {
