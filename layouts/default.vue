@@ -12,6 +12,7 @@ const headerBackgroundColor = computed(() => {
     <TheHeader :background-color="headerBackgroundColor" />
     <slot/>
     <TheFooter />
+    <ScrollToTop />
     <CookieBanner v-if="showBanner"/>
     <CookieModal v-if="showModal"/>
   </div>

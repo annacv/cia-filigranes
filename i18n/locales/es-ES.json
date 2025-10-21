@@ -42,7 +42,8 @@
     "playVideo": "Haz clic para ver el video",
     "viewMore": "Ver más",
     "goBack": "Volver atrás",
-    "goHome": "Ir al inicio"
+    "goHome": "Ir al inicio",
+    "scrollToTop": "Ir al principio de la página"
   },
   "selectLang": "Elige idioma",
   "footer": {
