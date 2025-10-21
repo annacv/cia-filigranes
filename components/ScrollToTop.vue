@@ -4,10 +4,12 @@ import ArrowDown from "assets/icons/arrow-down.svg";
 const { hasReachedBottom } = useScroll();
 
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  if (window !== undefined) {
+      window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 };
 </script>
 
@@ -22,10 +24,10 @@ const scrollToTop = () => {
   >
     <button
       v-if="hasReachedBottom"
-      @click="scrollToTop"
       class="fixed bottom-[516px] right-5 xl:bottom-96 xl:right-6 z-50 px-4 py-[13.5px] bg-primary-500 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
       :aria-label="$t('button.scrollToTop')"
       type="button"
+      @click="scrollToTop"
     >
       <ArrowDown class="rotate-180 !w-full !h-full text-white" />
     </button>
