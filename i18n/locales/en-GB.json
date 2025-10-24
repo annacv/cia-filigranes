@@ -1084,7 +1084,7 @@
         {
           "key": "thirdParty",
           "title": "Third-party cookies:",
-          "description": "We use YouTube cookies only if embedded video playback is activated. These are managed by Google/YouTube and are disabled by default until acceptance."
+          "description": "We use YouTube cookies only if embedded video playback is activated. We also use Google Maps cookies to display the location map of the Filigranes Company headquarters. These are managed by Google/YouTube and Google respectively, and are disabled by default until acceptance."
         }
       ]
     },
@@ -1108,6 +1108,12 @@
             "name": "YouTube",
             "purpose": "Video playback preferences",
             "responsible": "Google/YouTube",
+            "duration": "Session (if activated)"
+          },
+          {
+            "name": "Google Maps",
+            "purpose": "Location map functionality",
+            "responsible": "Google",
             "duration": "Session (if activated)"
           }
         ],
@@ -1236,7 +1242,7 @@
         {
           "key": "funcionals",
           "title": "Functional",
-          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. By default, the web configuration keeps YouTube cookies disabled until the user accepts them."
+          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. Google Maps (third-party, Google): used to display the location map of the Filigranes Company headquarters. By default, the web configuration keeps YouTube and Google Maps cookies disabled until the user accepts them."
         },
         {
           "key": "deshabilitades",

@@ -1079,7 +1079,7 @@
         {
           "key": "thirdParty",
           "title": "Cookies de tercers:",
-          "description": "Utilitzem cookies de YouTube només si s'activa la reproducció de vídeos embeguts. Aquestes són gestionades per Google/YouTube i es desactiven per defecte fins a l'acceptació."
+          "description": "Utilitzem cookies de YouTube només si s'activa la reproducció de vídeos embeguts. També utilitzem cookies de Google Maps per mostrar el mapa de la ubicació de la seu de la Cia.Filigranes. Aquestes són gestionades per Google/YouTube i Google respectivament, i es desactiven per defecte fins a l'acceptació."
         }
       ]
     },
@@ -1104,6 +1104,12 @@
             "purpose": "Preferències de reproducció de vídeos",
             "responsible": "Google/YouTube",
             "duration": "Session (si s'activen)"
+          },
+          {
+            "name": "Google Maps",
+            "purpose": "Funcionalitat del mapa de ubicació",
+            "responsible": "Google",
+            "duration": "Session (si s'activa)"
           }
         ],
         "note": "Altres cookies o eines d'anàlisi no són utilitzades."
@@ -1231,7 +1237,7 @@
         {
           "key": "funcionals",
           "title": "Funcionals",
-          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos. Inclou cookies per a preferències de reproducció. Per defecte, la configuració del web manté les cookies de YouTube desactivades fins que l'usuària les accepta."
+          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos. Inclou cookies per a preferències de reproducció. Google Maps (third-party, Google): utilitzades per mostrar el mapa de la ubicació de la seu de la Cia.Filigranes. Per defecte, la configuració del web manté les cookies de YouTube i Google Maps desactivades fins que l'usuària les accepta."
         },
         {
           "key": "deshabilitades",

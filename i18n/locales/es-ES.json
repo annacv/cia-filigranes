@@ -1082,7 +1082,7 @@
         {
           "key": "thirdParty",
           "title": "Cookies de terceros:",
-          "description": "Utilizamos cookies de YouTube solo si se activa la reproducción de vídeos embebidos. Estas son gestionadas por Google/YouTube y se desactivan por defecto hasta la aceptación."
+          "description": "Utilizamos cookies de YouTube solo si se activa la reproducción de vídeos embebidos. También utilizamos cookies de Google Maps para mostrar el mapa de la ubicación de la sede de la Cia.Filigranes. Estas son gestionadas por Google/YouTube y Google respectivamente, y se desactivan por defecto hasta la aceptación."
         }
       ]
     },
@@ -1107,6 +1107,12 @@
             "purpose": "Preferencias de reproducción de vídeos",
             "responsible": "Google/YouTube",
             "duration": "Sesión (si se activan)"
+          },
+          {
+            "name": "Google Maps",
+            "purpose": "Funcionalidad del mapa de ubicación",
+            "responsible": "Google",
+            "duration": "Sesión (si se activa)"
           }
         ],
         "note": "Otras cookies o herramientas de análisis no son utilizadas."
@@ -1234,7 +1240,7 @@
         {
           "key": "funcionals",
           "title": "Funcionales",
-          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Por defecto, la configuración del web mantiene las cookies de YouTube desactivadas hasta que la usuaria las acepta."
+          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Google Maps (third-party, Google): utilizadas para mostrar el mapa de la ubicación de la sede de la Cia.Filigranes. Por defecto, la configuración del web mantiene las cookies de YouTube y Google Maps desactivadas hasta que la usuaria las acepta."
         },
         {
           "key": "deshabilitades",
