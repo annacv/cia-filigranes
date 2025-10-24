@@ -33,13 +33,13 @@ const summaryButton = computed(() => {
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
     >
-    <template #content>
-      <CoverTitle
-        :title="t('routes.freak-frac')"
-        title-class="md:max-w-[466px] lg:max-w-[560px]"
-        :slice-end="2"
-      />
-    </template>
+      <template #content>
+        <CoverTitle
+          :title="t('routes.freak-frac')"
+          title-class="md:max-w-[466px] lg:max-w-[560px]"
+          :slice-end="2"
+        />
+      </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>

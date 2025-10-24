@@ -33,13 +33,13 @@ const summaryButton = computed(() => {
       image-route="espectacles"
       :alt="getImageAlt('circ-trinxeta')"
     >
-    <template #content>
-      <CoverTitle
-        :title="t('routes.circ-trinxeta')"
-        title-class="lg:max-w-[548px]"
-        :slice-end="2"
-      />
-    </template>
+      <template #content>
+        <CoverTitle
+          :title="t('routes.circ-trinxeta')"
+          title-class="lg:max-w-[548px]"
+          :slice-end="2"
+        />
+      </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>

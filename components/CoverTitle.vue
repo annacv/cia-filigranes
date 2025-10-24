@@ -17,12 +17,12 @@ const props = defineProps({
 const splitTitle = props.title.split(' ');
 
 const getTitleRows = (splitTitle: string[]) => {
-    const firstRow = splitTitle.slice(0, props.sliceEnd)
-    const secondRow = splitTitle.slice(props.sliceEnd)
-    return {
-        firstRow: firstRow.join(' '),
-        secondRow: secondRow.join(' ')
-    }
+  const firstRow = splitTitle.slice(0, props.sliceEnd)
+  const secondRow = splitTitle.slice(props.sliceEnd)
+  return {
+    firstRow: firstRow.join(' '),
+    secondRow: secondRow.join(' ')
+  }
 }
 
 const titleRows = computed(() => getTitleRows(splitTitle))

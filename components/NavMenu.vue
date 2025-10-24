@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ROUTES_INDEX } from '~/constants';
+import type { RouteItem } from '~/types';
 
 const emit = defineEmits(['toggle']);
 const routes = ROUTES_INDEX;
@@ -24,7 +25,7 @@ const isExpanded = (index: number) => {
   return expandedItems.value[index];
 };
 
-const shouldBeExpanded = (routeItem: any, index: number) => {
+const shouldBeExpanded = (routeItem: RouteItem) => {
   if (!routeItem.children) return false;
   const currentPath = route.path;
   const parentPath = localePath(`/${routeItem.name}`);
