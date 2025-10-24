@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -35,9 +34,11 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('circ-makutu')"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
-          {{ t('routes.circ-makutu') }}
-        </h1>
+        <CoverTitle
+          :title="t('routes.circ-makutu')"
+          title-class="max-w-[282px] md:max-w-[340px] lg:max-w-[408px]"
+          :slice-end="2"
+        />
       </template>
     </HeroCover>
     <MainContent>

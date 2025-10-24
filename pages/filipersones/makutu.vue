@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t } = useI18n();
@@ -29,7 +28,7 @@ const makutuAlt = getImageAlt('makutu')
       :alt="makutuAlt"
     >
       <template #content>
-        <div class="px-5 lg:px-0 font-grotesk uppercase text-white lg:max-w-[543px]">
+        <div class="p-5 font-grotesk uppercase text-white lg:max-w-[543px]">
           <h1 class="text-5xl md:text-6xl lg:text-7xl">
             {{ t('routes.makutu') }}
           </h1>

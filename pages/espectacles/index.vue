@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
 import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/items-by-route";
-import { useImageAlt } from "~/composables/use-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -49,9 +46,7 @@ const synopsisItems = computed(() => {
   <div class="h-full">
     <HeroCover image-name="espectacles_hero" image-route="espectacles" :alt="t('shows.hero.alt')">
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-3xl md:text-5xl lg:text-6xl w-[300px] md:w-[448px] lg:w-[552px]">
-          {{ t('shows.hero.title') }}
-        </h1>
+        <SectionCoverTitle :title="t('shows.hero.title')" />
       </template>
     </HeroCover>
     <MainContent>
@@ -65,6 +60,7 @@ const synopsisItems = computed(() => {
           image-name="espectacles_hero"
           image-route="espectacles"
           :alt="t('shows.hero.alt')"
+          background-position="59% center"
         />
         <HireFili
           :title="t('shows.hire.title')"

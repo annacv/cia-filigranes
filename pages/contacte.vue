@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
 import ArrowRightIcon from "assets/icons/arrow-right.svg";
@@ -30,11 +29,11 @@ const { canLoadGoogleMaps } = useCookies();
       :alt="getImageAlt()"
     >
       <template #content>
-        <div class="px-5 lg:px-0 font-grotesk uppercase text-black lg:max-w-[543px]">
+        <div class="p-5 font-grotesk uppercase text-black max-w-[352px] md:max-w-[442px] lg:max-w-[558px]">
           <h1 class="text-5xl lg:text-6xl">
             {{ t('contact.hero.title') }}
           </h1>
-          <h2 class="text-3xl md:text-5xl lg:text-5xl">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl">
             {{ t('contact.hero.subtitle') }}
           </h2>
         </div>

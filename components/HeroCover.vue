@@ -48,7 +48,7 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
   <ClientOnly>
     <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"/>
     <div
-      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid grid-cols-6 xl:grid-cols-12 items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
         backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
@@ -60,10 +60,12 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
       <!-- Added img tag for Accessibility for screen readers -->
       <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       <div
-        class="flex justify-end col-start-1 col-span-6 xl:col-start-8 xl:col-span-4 transition-opacity duration-500"
+        class="layout-cols transition-opacity duration-500"
         :class="isScrolled ? 'opacity-0' : 'opacity-100'"
       >
-        <slot name="content"/>
+        <div class="flex justify-end">
+          <slot name="content"/>
+        </div>
       </div>
     </div>
   </ClientOnly>

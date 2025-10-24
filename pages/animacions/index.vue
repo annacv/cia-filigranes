@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t, locale } = useI18n();
@@ -33,14 +32,10 @@ const synopsisButton = computed(() => {
       :alt="getImageAlt('animacions')"
     >
       <template #content>
-        <div class="px-5 lg:px-0 font-grotesk uppercase text-white lg:max-w-[543px]">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl">
-            {{ t('performances.title') }}
-          </h1>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl">
-            {{ t('performances.subtitle') }}
-          </h2>
-        </div>
+        <SectionCoverTitle
+          :title="`${t('performances.title')} ${t('performances.subtitle')}`"
+          title-class="max-w-[300px] md:max-w-[392px] lg:max-w-[480px]"
+        />
       </template>
     </HeroCover>
     <MainContent>

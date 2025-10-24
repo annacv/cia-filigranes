@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useI18n } from "vue-i18n";
 import { useElementSize } from '@vueuse/core';
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";
@@ -73,7 +71,7 @@ const showMore = () => {
       :alt="t('shows.hero.alt')"
     >
       <template #content>
-        <div class="px-5 lg:px-0 font-grotesk uppercase text-white lg:max-w-[543px]">
+        <div class="p-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">
           <h1 class="text-4xl md:text-5xl lg:text-6xl">
             {{ t('routes.filipersones') }}
           </h1>

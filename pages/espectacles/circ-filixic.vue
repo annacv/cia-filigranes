@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -34,11 +33,12 @@ const summaryButton = computed(() => {
       image-route="espectacles"
       :alt="getImageAlt('circ-filixic')"
     >
-      <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
-          {{ t('routes.circ-filixic') }}
-        </h1>
-      </template>
+    <template #content>
+      <CoverTitle
+        :title="t('routes.circ-filixic')"
+        :slice-end="2"
+      />
+    </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>
