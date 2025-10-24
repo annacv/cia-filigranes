@@ -89,7 +89,7 @@ const handleSave = () => {
         </div>
       </div>
 
-      <div class="flex flex-col text-sm sm:flex-row gap-3 justify-end">
+      <div class="flex flex-col text-sm xs:flex-row gap-3 justify-end">
         <FiliButton
           :text="$t('cookies.modal.rejectAll')"
           button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-400 hover:bg-neutral-200"
