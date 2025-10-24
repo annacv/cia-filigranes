@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from 'vue'
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
@@ -34,7 +33,7 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: false,
     default: () => []
   },

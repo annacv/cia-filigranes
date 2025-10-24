@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { LOCALE_ROUTES } from "~/constants";
 import { useI18n } from "vue-i18n";
 import { getItemsByRoute } from "~/utils/items-by-route";

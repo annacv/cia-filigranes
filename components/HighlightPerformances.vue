@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { PERFORMANCES_IMG } from "~/constants";
 import { useI18n } from "vue-i18n";
 import { reorderItems } from "~/utils/reorder-items";

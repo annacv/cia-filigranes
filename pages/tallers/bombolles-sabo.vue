@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -25,6 +24,7 @@ const summaryButton = computed(() => {
     href: `/downloads/CiaFiligranes-bombolles-sabo-${locale.value}.pdf`,
   }
 });
+
 </script>
 
 <template>
@@ -36,9 +36,11 @@ const summaryButton = computed(() => {
       content-type="workshops"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
-          {{ t('workshops.commonTitle', { title: t('routes.bombolles-sabo') }) }}
-        </h1>
+        <CoverTitle
+          :title="t('workshops.commonTitle', { title: t('routes.bombolles-sabo') })"
+          title-class="max-w-[372px] md:max-w-[452px] lg:max-w-[542px]"
+          :slice-end="3"
+        />
       </template>
     </HeroCover>
     <MainContent>

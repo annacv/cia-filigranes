@@ -21,6 +21,10 @@ const props = defineProps({
   contentType: {
     type: String as PropType<ContentType>,
     default: 'shows'
+  },
+  backgroundPosition: {
+    type: String,
+    default: 'center center'
   }
 });
 
@@ -45,7 +49,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
     :class="hasReachedBottom ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-      backgroundPosition: 'center center',
+      backgroundPosition: backgroundPosition,
       clipPath: deviceClipPath,
       height: deviceHeight,
     }"

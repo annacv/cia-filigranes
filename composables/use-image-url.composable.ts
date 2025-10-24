@@ -1,4 +1,3 @@
-import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import type { ImageRoute } from "~/types";
 import { GLOB_IMPORTS } from "~/constants";

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
-import { useSlots } from 'vue'
 
 const props = withDefaults(defineProps<{
   href?: string

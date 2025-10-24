@@ -47,7 +47,7 @@ const handleImageTouchEnd = () => {
 
 <template>
   <ClientOnly>
-    <div class="relative h-[298px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]">
+    <div class="relative h-[298px] xs:h-[310px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]">
       <NuxtLinkLocale
         :to="link.href"
         class="flex gap-1 w-full h-full transition-all duration-800 ease-in-out"

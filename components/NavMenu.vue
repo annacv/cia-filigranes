@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useI18nUtils } from '~/composables/use-i18n-utils.composable';
-import { useRoute } from 'vue-router';
 import { ROUTES_INDEX } from '~/constants';
 
 const emit = defineEmits(['toggle']);
@@ -17,7 +14,6 @@ const isRouteActive = (path: string) => {
   return route.path.startsWith(localePath(path)) && route.path !== '/';
 };
 
-// State object to keep track of which items are expanded
 const expandedItems = ref<Record<number, boolean>>({});
 
 const toggleChildren = (index: number) => {
@@ -27,6 +23,29 @@ const toggleChildren = (index: number) => {
 const isExpanded = (index: number) => {
   return expandedItems.value[index];
 };
+
+const shouldBeExpanded = (routeItem: any, index: number) => {
+  if (!routeItem.children) return false;
+  const currentPath = route.path;
+  const parentPath = localePath(`/${routeItem.name}`);
+  return currentPath.startsWith(parentPath) && currentPath !== parentPath;
+};
+
+const updateExpandedState = () => {
+  routes.forEach((routeItem, index) => {
+    if (routeItem.children) {
+      expandedItems.value[index] = shouldBeExpanded(routeItem, index);
+    }
+  });
+};
+
+watch(() => route.path, () => {
+  updateExpandedState();
+}, { immediate: true });
+
+onMounted(() => {
+  updateExpandedState();
+});
 </script>
 
 <template>

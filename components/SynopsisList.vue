@@ -12,7 +12,7 @@ const props = defineProps({
   },
   items: {
     type: Array as () => Array<{
-      description: Array<Record<string, string>>
+      description: Array<Record<string, unknown>>
       image: CardImage
       contentType: ContentType
       alt: string

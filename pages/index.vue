@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -29,7 +27,7 @@ const summaryButton = computed(() => {
   <div class="h-full">
     <HeroCover image-name="hero_cover" image-route="" :alt="t('home.hero.alt')">
       <template #content>
-        <VintAnysBrand class="w-[310px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px]"/>
+        <VintAnysBrand class="w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"/>
       </template>
     </HeroCover>
     <MainContent>
@@ -56,7 +54,12 @@ const summaryButton = computed(() => {
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>
-        <HeroFooter :alt="t('home.hero.alt')" image-name="hero_footer" image-route=""/>
+        <HeroFooter
+          :alt="t('home.hero.alt')"
+          image-name="hero_footer"
+          image-route=""
+          background-position="59% center"
+        />
         <HireFili
           :title="t('home.hire.title')"
           description="home.hire.description"

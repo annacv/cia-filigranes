@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
 import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/items-by-route";
-import { useImageAlt } from "~/composables/use-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
@@ -54,9 +51,10 @@ const synopsisItems = computed(() => {
       content-type="workshops"
     >
       <template #content>
-        <h1 class="p-5 font-grotesk uppercase text-white text-3xl md:text-5xl lg:text-6xl w-[300px] md:w-[448px] lg:w-[552px]">
-          {{ t('workshops.hero.title') }}
-        </h1>
+        <SectionCoverTitle
+          :title="t('workshops.hero.title')"
+          title-class="max-w-[324px] md:max-w-[448px] lg:max-w-[504px]"
+        />
       </template>
     </HeroCover>
     <MainContent>

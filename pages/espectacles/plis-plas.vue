@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -35,9 +34,10 @@ const summaryButton = computed(() => {
       :alt="getImageAlt('plis-plas')"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-right text-white text-5xl md:text-6xl lg:text-8xl">
-          {{ t('routes.plis-plas') }}
-        </h1>
+        <CoverTitle
+          :title="t('routes.plis-plas')"
+          :slice-end="1"
+        />
       </template>
     </HeroCover>
     <MainContent>

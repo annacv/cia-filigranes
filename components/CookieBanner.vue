@@ -29,7 +29,7 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
                 </NuxtLinkLocale>
               </p>
             </div>
-            <div class="flex flex-col text-sm sm:flex-row gap-2 w-full lg:w-auto">
+            <div class="flex flex-col text-sm xs:flex-row gap-2 w-full lg:w-auto">
               <FiliButton
                 :text="$t('cookies.banner.accept')"
                 button-class="px-3 py-2 button-outline-neutral"

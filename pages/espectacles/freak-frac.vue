@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -34,11 +33,13 @@ const summaryButton = computed(() => {
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
     >
-      <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
-          {{ t('routes.freak-frac') }}
-        </h1>
-      </template>
+    <template #content>
+      <CoverTitle
+        :title="t('routes.freak-frac')"
+        title-class="md:max-w-[466px] lg:max-w-[560px]"
+        :slice-end="2"
+      />
+    </template>
     </HeroCover>
     <MainContent>
       <template #wrapped>

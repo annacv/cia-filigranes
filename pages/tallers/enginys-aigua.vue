@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -25,6 +24,14 @@ const summaryButton = computed(() => {
     href: `/downloads/CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
   }
 });
+
+const titleByLang = computed(() => {
+  const title = t('workshops.commonTitle', { title: t('routes.enginys-aigua') })
+  if (locale.value === 'ca') {
+    return title.replace('de ', 'd\'')
+  }
+  return title;
+})
 </script>
 
 <template>
@@ -36,9 +43,11 @@ const summaryButton = computed(() => {
       content-type="workshops"
     >
       <template #content>
-        <h1 class="px-5 lg:px-0 font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl">
-          {{ t('workshops.commonTitle', { title: t('routes.enginys-aigua') }) }}
-        </h1>
+        <CoverTitle
+          :title="titleByLang"
+          title-class="max-w-[332px] md:max-w-[408px] lg:max-w-[488px]"
+          :slice-end="2"
+        />
       </template>
     </HeroCover>
     <MainContent>
