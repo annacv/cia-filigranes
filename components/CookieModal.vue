@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
-
 const { showModal, cookiePreferences, acceptAll, rejectAll, savePreferences, closeModal } = useCookies()
 
 const preferences = ref({

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
-import CoverTitle from "~/components/CoverTitle.vue";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()

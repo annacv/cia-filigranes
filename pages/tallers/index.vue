@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/items-by-route";
-import { useImageAlt } from "~/composables/use-image-alt.composable";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()

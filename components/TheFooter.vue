@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { CONTACT } from "~/constants";
-import CiaBrand from "~/components/CiaBrand.vue";
 
 const { t } = useI18n()
 const { isMobileOrTablet } = useDevice()

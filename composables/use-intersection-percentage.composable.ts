@@ -1,4 +1,4 @@
-import { ref, type Ref, onUnmounted } from 'vue'
+import type { Ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 
 export function useIntersection80() {

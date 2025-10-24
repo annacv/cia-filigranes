@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue';
-import { useI18nUtils } from '~/composables/use-i18n-utils.composable';
-import { useRoute } from 'vue-router';
 import { ROUTES_INDEX } from '~/constants';
 
 const emit = defineEmits(['toggle']);

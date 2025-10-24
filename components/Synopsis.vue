@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from 'vue'
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
