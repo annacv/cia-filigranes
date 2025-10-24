@@ -32,11 +32,11 @@ const props = defineProps({
     default: false
   },
   techCard: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: true
   },
   artCard: {
-    type: Array as () => Record<string, string>[],
+    type: Array as () => Record<string, unknown>[],
     required: true
   },
   hideImage: {
