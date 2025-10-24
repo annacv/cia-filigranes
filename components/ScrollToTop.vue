@@ -4,7 +4,7 @@ import ArrowDown from "assets/icons/arrow-down.svg";
 const { hasReachedBottom } = useScroll();
 
 const scrollToTop = () => {
-  if (window !== undefined) {
+  if (typeof window !== 'undefined') {
       window.scrollTo({
       top: 0,
       behavior: 'smooth'
