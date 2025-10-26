@@ -21,6 +21,10 @@ const props = defineProps({
   contentType: {
     type: String as PropType<ContentType>,
     default: 'shows'
+  },
+  backgroundPosition: {
+    type: String,
+    default: 'center 30%'
   }
 })
 
@@ -52,7 +56,7 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
       :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
         backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-        backgroundPosition: isScrolled ? 'center center' : 'center 30%',
+        backgroundPosition: isScrolled ? 'center center' : backgroundPosition,
         clipPath: currentClipPath,
         height: currentHeight
       }"

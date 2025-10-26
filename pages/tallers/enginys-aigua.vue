@@ -37,7 +37,7 @@ const titleByLang = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="tallers_enginys-aigua"
+      image-name="tallers_enginys-aigua-1"
       image-route="tallers"
       :alt="getImageAlt('enginys-aigua')"
       content-type="workshops"
@@ -70,7 +70,7 @@ const titleByLang = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('tallers', 'enginys-aigua')"
+          :image="getImageByRoute('tallers', 'enginys-aigua-2')"
           :alt="getImageAlt('enginys-aigua')"
           content-type="workshops"
           is-reversed
@@ -90,10 +90,11 @@ const titleByLang = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="tallers_enginys-aigua"
+      image-name="tallers_enginys-aigua-1"
       image-route="tallers"
       :alt="getImageAlt('enginys-aigua')"
       content-type="workshops"
+      background-position="center 100%"
     />
     <HireFili
       :title="t('home.hire.title')"

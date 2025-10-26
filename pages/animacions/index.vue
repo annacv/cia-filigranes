@@ -27,7 +27,7 @@ const synopsisButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="animacions_foc"
+      image-name="animacions_foc_hero"
       image-route="animacions"
       :alt="getImageAlt('animacions')"
     >
@@ -54,7 +54,7 @@ const synopsisButton = computed(() => {
         />
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('animacions', 'forner')"
+          :image="getImageByRoute('animacions', 'caixes')"
           content-type="performances"
           :alt="getImageAlt('animacions')"
           show-full-content

@@ -42,7 +42,7 @@ const { canLoadGoogleMaps } = useCookies();
     <MainContent>
       <template #unwrapped>
         <Synopsis
-          :image="getImageByRoute('contacte', 'hero')"
+          :image="getImageByRoute('contacte', '1')"
           content-type="contact"
           :alt="getImageAlt()"
           show-full-content
@@ -99,7 +99,7 @@ const { canLoadGoogleMaps } = useCookies();
           </template>
         </Synopsis>
         <Synopsis
-          :image="getImageByRoute('contacte', 'hero')"
+          :image="getImageByRoute('contacte', '2')"
           content-type="contact"
           :alt="getImageAlt()"
           show-full-content

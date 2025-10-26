@@ -180,6 +180,10 @@ export const PERFORMANCES_IMG = [
     imageRoute: 'animacions' as const
   },
   {
+    imageName: 'animacions_circ-epoca',
+    imageRoute: 'animacions' as const
+  },
+  {
     imageName: 'animacions_forner',
     imageRoute: 'animacions' as const
   },
@@ -192,7 +196,23 @@ export const PERFORMANCES_IMG = [
     imageRoute: 'animacions' as const
   },
   {
+    imageName: 'animacions_foc-2',
+    imageRoute: 'animacions' as const
+  },
+  {
     imageName: 'animacions_torpede',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_caixes',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_foc-3',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_cuiners-2',
     imageRoute: 'animacions' as const
   }
 ]

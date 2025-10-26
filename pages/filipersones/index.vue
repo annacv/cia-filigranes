@@ -38,7 +38,7 @@ const filipersonesItems = computed(() => {
     return {
       description: getTranslatedList(`filipersones.${filipersona}.intro`, ['paragraph']),
       image: {
-        imageName: `filipersones_${filipersona}_1`,
+        imageName: `filipersones_${filipersona}-1`,
         imageRoute: 'filipersones' as ImageRoute,
       },
       contentType: 'shows' as ContentType,
@@ -67,7 +67,7 @@ const showMore = () => {
   <div class="h-full">
     <HeroCover
       image-name="filipersones_hero"
-      image-route="animacions"
+      image-route="filipersones"
       :alt="t('shows.hero.alt')"
     >
       <template #content>
@@ -89,7 +89,7 @@ const showMore = () => {
         />
         <Synopsis
           :description="origins"
-          :image="getImageByRoute('filipersones', 'filigranes_1')"
+          :image="getImageByRoute('filipersones', 'filigranes-1')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -98,14 +98,14 @@ const showMore = () => {
         <DataSheet
           :tech-card="prices"
           :art-card="stories"
-          :image="getImageByRoute('filipersones', 'filigranes_2')"
+          :image="getImageByRoute('filipersones', 'filigranes-2')"
           :alt="t('shows.hero.alt')"
           is-reversed
           should-clip
         />
         <Synopsis
           :description="history"
-          :image="getImageByRoute('filipersones', 'filigranes_3')"
+          :image="getImageByRoute('filipersones', 'filigranes-3')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -113,7 +113,7 @@ const showMore = () => {
         />
         <Synopsis
           :description="filiFriends"
-          :image="getImageByRoute('filipersones', 'filigranes_4')"
+          :image="getImageByRoute('filipersones', 'filigranes-4')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -123,7 +123,7 @@ const showMore = () => {
           ref="dataSheetRef"
           :tech-card="currentScenariosRight"
           :art-card="currentScenariosLeft"
-          :image="getImageByRoute('filipersones', 'filigranes_5')"
+          :image="getImageByRoute('filipersones', 'filigranes-5')"
           :alt="t('shows.hero.alt')"
           extra-content
           :show-more="showMoreContent"
@@ -135,7 +135,7 @@ const showMore = () => {
         />
         <Synopsis
           :description="background"
-          :image="getImageByRoute('filipersones', 'filigranes_6')"
+          :image="getImageByRoute('filipersones', 'filigranes-6')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -153,6 +153,7 @@ const showMore = () => {
       image-name="filipersones_footer"
       image-route="filipersones"
       :alt="t('shows.hero.alt')"
+      background-position="center 40%"
     />
     <HireFili
       :title="t('home.hire.title')"

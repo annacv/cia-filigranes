@@ -49,6 +49,7 @@ const synopsisItems = computed(() => {
       image-route="tallers"
       :alt="t('workshops.hero.alt')"
       content-type="workshops"
+      background-position="center 0%"
     >
       <template #content>
         <SectionCoverTitle

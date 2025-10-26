@@ -41,7 +41,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'vint-anys')"
+          :image="getImageByRoute('espectacles', 'vint-anys-5')"
           content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{

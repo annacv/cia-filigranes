@@ -44,7 +44,12 @@ const synopsisItems = computed(() => {
 
 <template>
   <div class="h-full">
-    <HeroCover image-name="espectacles_hero" image-route="espectacles" :alt="t('shows.hero.alt')">
+    <HeroCover
+      image-name="espectacles_hero"
+      image-route="espectacles"
+      :alt="t('shows.hero.alt')"
+      background-position="center 40%"
+    >
       <template #content>
         <SectionCoverTitle :title="t('shows.hero.title')" />
       </template>
@@ -57,10 +62,10 @@ const synopsisItems = computed(() => {
           :items="synopsisItems"
         />
         <HeroFooter
-          image-name="espectacles_hero"
+          image-name="espectacles_footer"
           image-route="espectacles"
           :alt="t('shows.hero.alt')"
-          background-position="59% center"
+          background-position="center 30%"
         />
         <HireFili
           :title="t('shows.hire.title')"

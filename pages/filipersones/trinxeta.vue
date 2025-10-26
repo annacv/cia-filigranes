@@ -24,7 +24,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
   <div class="h-full">
     <HeroCover
       image-name="filipersones_trinxeta_hero"
-      image-route="animacions"
+      image-route="filipersones"
       :alt="trinxetaAlt"
     >
       <template #content>
@@ -48,14 +48,14 @@ const trinxetaAlt = getImageAlt('trinxeta')
       <template #unwrapped>
         <Synopsis
           :description="intro"
-          :image="getImageByRoute('filipersones', 'trinxeta_1')"
+          :image="getImageByRoute('filipersones', 'toti')"
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
         />
         <Synopsis
           :description="learningPath"
-          :image="getImageByRoute('filipersones', 'trinxeta_2')"
+          :image="getImageByRoute('filipersones', 'trinxeta-1')"
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
@@ -63,7 +63,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
         />
         <Synopsis
           :description="background"
-          :image="getImageByRoute('filipersones', 'trinxeta_3')"
+          :image="getImageByRoute('filipersones', 'trinxeta-2')"
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
@@ -94,9 +94,10 @@ const trinxetaAlt = getImageAlt('trinxeta')
       </template>
     </MainContent>
     <HeroFooter
-      image-name="trinxeta_footer"
+      image-name="filipersones_trinxeta-3"
       image-route="filipersones"
       :alt="trinxetaAlt"
+      background-position="center 53%"
     />
   </div>
 </template>
