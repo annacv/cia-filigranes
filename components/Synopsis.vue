@@ -11,6 +11,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  backgroundPosition: {
+    type: String,
+    default: 'center center'
+  },
   contentType: {
     type: String as PropType<ContentType>,
     required: false,
@@ -33,7 +37,7 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, unknown>[],
+    type: Array as () => Record<string, PropertyKey>[],
     required: false,
     default: () => []
   },
@@ -164,7 +168,7 @@ watchEffect(() => {
         ]"
         :style="{
           backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-          backgroundPosition: 'center center',
+          backgroundPosition: backgroundPosition,
           clipPath: isMobile ? 'none' : currentClipPath
         }"
       >

@@ -14,7 +14,7 @@ useHead({
 
 const abstract = getTranslatedList('shows.circ-makutu.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('shows.circ-makutu.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph'])
+const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph']) as Record<string, PropertyKey>[]
 const techCard = getTranslatedList('shows.circ-makutu.techCard', ['title', 'description'])
 const artCard = getTranslatedList('shows.circ-makutu.artCard', ['title', 'description'])
 

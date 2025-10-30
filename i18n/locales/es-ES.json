@@ -1018,15 +1018,15 @@
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
     "hero": {
-      "title": "¡Contacto directo!",
-      "subtitle": "Consultas, contrataciones y encuentros"
+      "title": "¡Contáctanos!",
+      "subtitle": "Para consultas, contrataciones y encuentros"
     },
     "info": {
-      "title": "Info de contacto"
+      "title": "Información de contacto"
     },
     "rrss": {
-      "title": "Y si quieres charlar un poco, o ver dónde actuamos próximamente...",
-      "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también podrás visionar grandes momentos de nuestros espectáculos en nuestra Filitele."
+      "title": "Y si quieres chafardear un poco, o ver dónde actuamos próximamente...",
+      "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también ver grandes momentos de nuestros espectáculos."
     } 
   },
   "consent": {

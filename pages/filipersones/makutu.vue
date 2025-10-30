@@ -12,10 +12,10 @@ useHead({
 })
 const abstract = getTranslatedList('filipersones.makutu.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('filipersones.makutu.list', ['title', 'description'])
-const intro = getTranslatedList('filipersones.makutu.intro', ['paragraph'])
-const background = getTranslatedList('filipersones.makutu.background', ['paragraph'])
-const learningPath = getTranslatedList('filipersones.makutu.learningPath', ['paragraph'])
-const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph'])
+const intro = getTranslatedList('filipersones.makutu.intro', ['paragraph']) as Record<string, PropertyKey>[]
+const background = getTranslatedList('filipersones.makutu.background', ['paragraph']) as Record<string, PropertyKey>[]
+const learningPath = getTranslatedList('filipersones.makutu.learningPath', ['paragraph']) as Record<string, PropertyKey>[]
+const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph']) as Record<string, PropertyKey>[]
 const makutuAlt = getImageAlt('makutu')
 
 </script>

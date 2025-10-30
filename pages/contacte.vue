@@ -3,10 +3,10 @@ import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
 import ArrowRightIcon from "assets/icons/arrow-right.svg";
 
-// Set header background color for this page
-definePageMeta({
-  headerBackgroundColor: '#000'
-})
+// // Set header background color for this page
+// definePageMeta({
+//   headerBackgroundColor: '#000'
+// })
 
 const { t } = useI18n();
 
@@ -22,7 +22,8 @@ const { canLoadGoogleMaps } = useCookies();
 
 <template>
   <div class="h-full bg-black">
-    <HeroCover
+    <div class="xs:h-[72px] lg:h-[87px]"></div>
+    <!-- <HeroCover
       image-name="contacte_hero"
       image-route="contacte"
       content-type="contact"
@@ -38,7 +39,7 @@ const { canLoadGoogleMaps } = useCookies();
           </h2>
         </div>
       </template>
-    </HeroCover>
+    </HeroCover> -->
     <MainContent>
       <template #unwrapped>
         <Synopsis
@@ -49,7 +50,7 @@ const { canLoadGoogleMaps } = useCookies();
         >
           <template #content>
             <div class="flex flex-col items-start gap-8">
-              <h2 class="font-grotesk uppercase text-3xl lg:text-5xl">
+              <h2 class="font-grotesk uppercase text-3xl lg:text-4xl">
                 {{ t('contact.info.title') }}
               </h2>
               <div class=" flex flex-col items-start gap-4 font-semibold">

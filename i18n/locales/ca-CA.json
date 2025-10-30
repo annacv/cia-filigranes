@@ -1015,15 +1015,15 @@
   "contact": {
     "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
     "hero": {
-      "title": "Contacte directe!",
-      "subtitle": "Consultes, contractacions i trobades"
+      "title": "Contacta'ns!",
+      "subtitle": "Per a consultes, contractacions i trobades"
     },
     "info": {
-      "title": "Info de contacte"
+      "title": "Informació de contacte"
     },
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
-      "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també podràs visionar grans moments dels nostres espectacles a la nostra Filitele."
+      "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també veure grans moments dels nostres espectacles."
     }
   },
   "consent": {

@@ -18,16 +18,16 @@ useHead({
   ]
 })
 
-const origins = getTranslatedList('filipersones.origins', ['paragraph'])
+const origins = getTranslatedList('filipersones.origins', ['paragraph']) as Record<string, PropertyKey>[]
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
 const stories = getTranslatedList('filipersones.stories', ['title', 'description'])
-const history = getTranslatedList('filipersones.history', ['paragraph'])
-const filiFriends = getTranslatedList('filipersones.filiFriends', ['paragraph'])
+const history = getTranslatedList('filipersones.history', ['paragraph']) as Record<string, PropertyKey>[]
+const filiFriends = getTranslatedList('filipersones.filiFriends', ['paragraph']) as Record<string, PropertyKey>[]
 const scenariosRight1 = getTranslatedList('filipersones.scenariosRight1', ['title', 'description'])
 const scenariosLeft1 = getTranslatedList('filipersones.scenariosLeft1', ['title', 'description'])
 const scenariosRight2 = getTranslatedList('filipersones.scenariosRight2', ['title', 'description'])
 const scenariosLeft2 = getTranslatedList('filipersones.scenariosLeft2', ['title', 'description'])
-const background = getTranslatedList('filipersones.background', ['paragraph'])
+const background = getTranslatedList('filipersones.background', ['paragraph']) as Record<string, PropertyKey>[]
 
 const filipersones = getItemsByRoute('filipersones');
 
@@ -108,6 +108,7 @@ const showMore = () => {
           :image="getImageByRoute('filipersones', 'filigranes-3')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
+          background-position="center 3%"
           show-full-content
           is-reversed
         />
