@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getImageByRoute } from "~/utils/image-by-route";
 import { CONTACT } from "~/constants";
-import ArrowRightIcon from "assets/icons/arrow-right.svg";
+import ArrowRightIcon from "~/assets/icons/arrow-right.svg";
 
 // // Set header background color for this page
 // definePageMeta({
