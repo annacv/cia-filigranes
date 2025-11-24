@@ -54,7 +54,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-filixic')"
+          :image="getImageByRoute('espectacles', 'circ-filixic-3')"
           content-type="shows"
           :alt="getImageAlt('circ-filixic')"
           show-full-content
@@ -82,10 +82,10 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="espectacles_circ-filixic-3"
+      image-name="espectacles_circ-filixic-4"
       image-route="espectacles"
       :alt="getImageAlt('circ-filixic')"
-      background-position="center 85%"
+      background-position="center center"
     />
     <HireFili
       :title="t('home.hire.title')"

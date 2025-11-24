@@ -14,7 +14,7 @@ definePageMeta({
 
 const { t } = useI18n();
 const { isMobile } = useDevice();
-const imageSrc = useImageUrl('espectacles_circ-makutu-1', 'espectacles');
+const imageSrc = useImageUrl('404', '');
 const imageAlt = '404';
 </script>
 

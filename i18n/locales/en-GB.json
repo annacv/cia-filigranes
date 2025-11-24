@@ -395,10 +395,6 @@
           "description": "Filigranes Company"
         },
         {
-          "title": "Light and sound technician",
-          "description": "Gerard Mora"
-        },
-        {
           "title": "Scenography",
           "description": "Filigranes Company"
         }
@@ -467,10 +463,6 @@
         {
           "title": "Costumes",
           "description": "Filigranes Company"
-        },
-        {
-          "title": "Light and sound technician",
-          "description": "Gerard Mora"
         },
         {
           "title": "Scenography",
@@ -573,7 +565,8 @@
       ],
       "list": [
         {
-          "title": "* The number of workshop leaders may vary depending on the volume of participants."
+          "title": "*",
+          "description": "The number of workshop leaders may vary depending on the volume of participants."
         }
       ],
       "synopsis": [
@@ -740,17 +733,18 @@
           "description": "A power point is needed for the sound equipment."
         },
         {
-          "title": "Recommendations",
-          "description": "It is recommended to wear comfortable clothes, preferably tracksuit and sneakers."
+          "title": "Things to keep in mind",
+          "description": "Paints will be applied entirely or partially by the workshop leaders, depending on the participants' ages."
         }
       ],
       "artCard": [
         {
-          "title": "Clowns Workshop",
+          "title": "Makeup Workshop",
           "description": "Filigranes Company"
         },
         {
-          "description": "Each participant will be given a red nose, which they can take home. We will have fun through games and participatory dynamics, where we will discover the clown we carry inside!"
+          "title": "*",
+          "description": "With the help of our workshop leaders, boys and girls will create their own sketch and character. Together we will choose the colors and learn which techniques are most suitable for each case."
         }
       ]
     },
@@ -799,6 +793,7 @@
           "description": "Filigranes Company"
         },
         {
+          "title": "*",
           "description": "Wooden structures combined with recycled elements will create awareness in adults and children about the importance of recycling and water conservation."
         }
       ]

@@ -3,8 +3,8 @@ import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
 import type { CardImage, ContentType } from "~/types";
-import ArrowRight from "assets/icons/arrow-right.svg";
-import ArrowDown from "assets/icons/arrow-down.svg";
+import ArrowRight from "~/assets/icons/arrow-right.svg";
+import ArrowDown from "~/assets/icons/arrow-down.svg";
 
 const props = defineProps({
   alt: {
@@ -37,7 +37,7 @@ const props = defineProps({
     default: false
   },
   description: {
-    type: Array as () => Record<string, PropertyKey>[],
+    type: Array as () => Record<string, unknown>[],
     required: false,
     default: () => []
   },

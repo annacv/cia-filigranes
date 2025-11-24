@@ -1,7 +1,7 @@
 import { computed, readonly, ref } from 'vue'
 import { useScroll as useVueUseScroll } from '@vueuse/core'
 
-const BOTTOM_THRESHOLD = 500
+const BOTTOM_THRESHOLD = 200
 
 // SSR-safe scroll state
 const { y: scrollY } = useVueUseScroll(

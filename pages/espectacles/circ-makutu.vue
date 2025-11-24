@@ -62,7 +62,7 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('espectacles', 'circ-makutu')"
+          :image="getImageByRoute('espectacles', 'circ-makutu-4')"
           :alt="getImageAlt('circ-makutu')"
           is-reversed
         />

@@ -21,7 +21,7 @@ const synopsisItems = computed(() => {
     return {
       description: getTranslatedList(`shows.${show}.synopsis`, ['paragraph']),
       image: {
-        imageName: `espectacles_${show}`,
+        imageName: `espectacles_${show}-3`,
         imageRoute: 'espectacles' as ImageRoute,
       },
       contentType: 'shows' as ContentType,

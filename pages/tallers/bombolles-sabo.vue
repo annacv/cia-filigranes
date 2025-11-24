@@ -54,7 +54,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('tallers', 'bombolles-sabo')"
+          :image="getImageByRoute('tallers', 'bombolles-sabo-4')"
           content-type="workshops"
           :alt="getImageAlt('bombolles-sabo')"
           show-full-content

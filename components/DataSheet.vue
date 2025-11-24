@@ -9,6 +9,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  backgroundPosition: {
+    type: String,
+    default: 'center center'
+  },
   contentType: {
     type: String as PropType<ContentType>,
     required: false,
@@ -83,7 +87,7 @@ watchEffect(() => {
   >
     <div class="layout-cols flex md:gap-5 flex-col md:flex-row h-full">
       <div
-        class="flex flex-col gap-5 w-full md:w-[20%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24"
+        class="flex flex-col gap-5 w-full md:w-[22%] p-5 md:p-4 md:pr-0 lg:py-12 2xl:py-24"
         :class="{ 'pb-0 md:pb-0': hideImage }"
       >
         <Transition
@@ -96,7 +100,7 @@ watchEffect(() => {
           >
             <li
               v-for="item in artCard"
-              :key="item.title"
+              :key="(item.title as string)"
               class="flex flex-col gap-2 text-sm lg:text-base"
             >
               <p class="font-bold">{{ item.title }}</p>
@@ -115,7 +119,7 @@ watchEffect(() => {
         ]"
         :style="{
           backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-          backgroundPosition: 'center center',
+          backgroundPosition: backgroundPosition,
           clipPath: isMobile ? mobileClip : currentClipPath
         }"
       >
@@ -123,7 +127,7 @@ watchEffect(() => {
         <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       </div>
       <div
-        class="flex flex-col justify-between w-full md:w-[24%] px-5 md:pl-0 pb-5 md:py-4 lg:py-12 2xl:py-24"
+        class="flex flex-col justify-between w-full md:w-[22%] px-5 md:pl-0 pb-5 md:py-4 lg:py-12 2xl:py-24"
         :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
       >
         <Transition

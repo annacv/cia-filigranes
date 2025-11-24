@@ -76,13 +76,14 @@ const makutuAlt = getImageAlt('makutu')
         />
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-makutu')"
+          :image="getImageByRoute('espectacles', 'circ-makutu-3')"
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
           :info-button="{
             href: '/espectacles/circ-makutu',
             class: 'button-outline-primary'
           }"
+          background-position="center 30%"
           is-reversed
         />
         <HireFili

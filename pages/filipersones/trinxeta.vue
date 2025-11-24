@@ -75,7 +75,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
         />
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-trinxeta')"
+          :image="getImageByRoute('espectacles', 'circ-trinxeta-3')"
           content-type="shows"
           :alt="getImageAlt('circ-trinxeta')"
           :info-button="{

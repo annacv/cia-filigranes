@@ -56,7 +56,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'freak-frac')"
+          :image="getImageByRoute('espectacles', 'freak-frac-3')"
           content-type="shows"
           :alt="getImageAlt('freak-frac')"
           show-full-content
@@ -84,7 +84,7 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="espectacles_freak-frac-3"
+      image-name="espectacles_freak-frac-4"
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
       background-position="center 30%"

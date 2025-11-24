@@ -55,7 +55,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'plis-plas')"
+          :image="getImageByRoute('espectacles', 'plis-plas-3')"
           content-type="shows"
           :alt="getImageAlt('plis-plas')"
           show-full-content
@@ -64,7 +64,7 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('espectacles', 'plis-plas-3')"
+          :image="getImageByRoute('espectacles', 'plis-plas-4')"
           :alt="getImageAlt('plis-plas')"
           is-reversed
         />

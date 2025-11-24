@@ -188,11 +188,11 @@ export const PERFORMANCES_IMG = [
     imageRoute: 'animacions' as const
   },
   {
-    imageName: 'animacions_domador',
+    imageName: 'animacions_domador-1',
     imageRoute: 'animacions' as const
   },
   {
-    imageName: 'animacions_cuiners',
+    imageName: 'animacions_cuiners-1',
     imageRoute: 'animacions' as const
   },
   {
@@ -200,11 +200,11 @@ export const PERFORMANCES_IMG = [
     imageRoute: 'animacions' as const
   },
   {
-    imageName: 'animacions_torpede',
+    imageName: 'animacions_torpede-1',
     imageRoute: 'animacions' as const
   },
   {
-    imageName: 'animacions_caixes',
+    imageName: 'animacions_caixes-1',
     imageRoute: 'animacions' as const
   },
   {
@@ -219,7 +219,7 @@ export const PERFORMANCES_IMG = [
 
 export const CONTACT = {
   "email": "ciafiligranes@gmail.com",
-  "adress": "c/ St. Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",
+  "adress": "Carrer de Sant Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",
   "adressHref": "https://www.google.com/maps/place/Cia+Filigranes/@41.567796,2.0127018,17z/data=!3m1!4b1!4m6!3m5!1s0x12a492c3e2155299:0x4d072d8f6b4f6768!8m2!3d41.567796!4d2.0127018!16s%2Fg%2F11c5846tgk?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D",
   "phones": {
     "albert": '615 411 652',

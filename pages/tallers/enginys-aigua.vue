@@ -61,7 +61,7 @@ const titleByLang = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('tallers', 'enginys-aigua')"
+          :image="getImageByRoute('tallers', 'enginys-aigua-3')"
           content-type="workshops"
           :alt="getImageAlt('enginys-aigua')"
           show-full-content
@@ -90,11 +90,11 @@ const titleByLang = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="tallers_enginys-aigua-1"
+      image-name="tallers_enginys-aigua-4"
       image-route="tallers"
       :alt="getImageAlt('enginys-aigua')"
       content-type="workshops"
-      background-position="center 100%"
+      background-position="center bottom"
     />
     <HireFili
       :title="t('home.hire.title')"

@@ -395,10 +395,6 @@
           "description": "Cia. Filigranes"
         },
         {
-          "title": "Técnico de luces y sonido",
-          "description": "Gerard Mora"
-        },
-        {
           "title": "Escenografía",
           "description": "Cia.Filigranes"
         }
@@ -467,10 +463,6 @@
         {
           "title": "Vestuario",
           "description": "Cia. Filigranes"
-        },
-        {
-          "title": "Técnico de luces y sonido",
-          "description": "Gerard Mora"
         },
         {
           "title": "Escenografía",
@@ -573,7 +565,8 @@
       ],
       "list": [
         {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -704,6 +697,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "A cada participante se le entregará una nariz roja, que se podrá llevar a casa. Nos divertiremos mediante juegos y dinámicas participativas, donde descubriremos el payaso que llevamos dentro!"
         }
       ]
@@ -717,7 +711,8 @@
       ],
       "list": [
         {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -748,6 +743,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Con la ayuda de los y las nuestras talleristas, niños y niñas crearán su propio esbozo y personaje. Todas juntas, escogeremos los colores y aprenderemos cuáles son las técnicas más adecuadas para cada caso."
         }
       ]
@@ -797,6 +793,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Las estructuras de madera combinadas con elementos reciclados, crearán consciencia a grandes y pequeños/as de la importancia del reciclaje y el aprovechamiento del agua."
         }
       ]

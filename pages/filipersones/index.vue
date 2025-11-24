@@ -132,6 +132,7 @@ const showMore = () => {
           :style="dataSheetStyle"
           should-clip
           :hide-image="isMobile"
+          background-position="center 20%"
           @view-more="showMore"
         />
         <Synopsis
@@ -154,7 +155,7 @@ const showMore = () => {
       image-name="filipersones_footer"
       image-route="filipersones"
       :alt="t('shows.hero.alt')"
-      background-position="center 40%"
+      background-position="center top"
     />
     <HireFili
       :title="t('home.hire.title')"

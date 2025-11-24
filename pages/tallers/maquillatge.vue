@@ -54,7 +54,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('tallers', 'maquillatge')"
+          :image="getImageByRoute('tallers', 'maquillatge-4')"
           content-type="workshops"
           :alt="getImageAlt('maquillatge')"
           show-full-content
@@ -66,6 +66,7 @@ const summaryButton = computed(() => {
           :image="getImageByRoute('tallers', 'maquillatge-2')"
           :alt="getImageAlt('maquillatge')"
           content-type="workshops"
+          background-position="center 30%"
           is-reversed
         />
         <HireFili
@@ -87,7 +88,7 @@ const summaryButton = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('maquillatge')"
       content-type="workshops"
-      background-position="center 23%"
+      background-position="center 35%"
     />
     <HireFili
       :title="t('home.hire.title')"
