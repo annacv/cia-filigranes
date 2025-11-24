@@ -58,7 +58,7 @@ const summaryButton = computed(() => {
           :alt="t('home.hero.alt')"
           image-name="hero_footer"
           image-route=""
-          background-position="center top"
+          background-position="center 30%"
         />
         <HireFili
           :title="t('home.hire.title')"
