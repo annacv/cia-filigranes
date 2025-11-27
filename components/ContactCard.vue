@@ -33,7 +33,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
             leave-to-class="opacity-0 transform scale-95"
             mode="out-in"
           >
-            <div v-if="canLoadGoogleMaps" key="map" class="w-full">
+            <div v-if="canLoadGoogleMaps" key="map" class="w-full h-full">
               <iframe
                 :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5970.133862969208!2d2.0127018!3d41.56779600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a492c3e2155299%3A0x4d072d8f6b4f6768!2sCia%20Filigranes!5e0!3m2!1s${locale.value}!2s${locale.value}!4v1759615126607!5m2!1s${locale.value}!2s${locale.value}&lang=${locale.value}`"
                 class="w-full h-full aspect-video"

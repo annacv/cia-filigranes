@@ -480,7 +480,7 @@
       "list": [
         {
           "title": "Germans Freak Frac Parade",
-          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association, 2013."
+          "description": "Filigranes Company and Tub d'Assaig 7'70, 2013."
         },
         {
           "title": "Show duration",
@@ -516,7 +516,7 @@
       "artCard": [
         {
           "title": "Germans Freak Frac Parade",
-          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association"
+          "description": "Filigranes Company and Tub d'Assaig 7'70"
         },
         {
           "title": "The Stilt Walkers",
@@ -898,7 +898,7 @@
     ],
     "filiFriends": [
       {
-        "paragraph": "Currently we are accompanied by Walter Velázquez (director/dramaturg) and Francesc Pascual (sound and lighting technician). We have also worked with Mago Manu (artistic director) and Carles Grau (director/dramaturg)."
+        "paragraph": "Currently we are accompanied by our beloved Walter Velázquez as director and dramaturg, and Francesc Pascual as sound and lighting technician. We have also worked with Mago Manu as artistic director, and with Carles Grau as director and dramaturg."
       }
     ],
     "background": [
@@ -930,7 +930,7 @@
     ],
     "scenariosRight1": [
       {
-        "description": "Gala for Clowns Without Borders at the Vela de Ca l'Estruch, Sabadell, 2018 {'·'} International Clown Festival of Cornellà del Llobregat, 2018 {'·'} Cric and Calldeclowns Circus Festivals, 2019 {'·'} Clowns for Freedom {'·'} Festes Majors, itinerant theaters and educational centers throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna, 2019 {'·'} Circus Day in Breda (different editions) {'·'} Festa Major de la Mercè with Clowns Without Borders, 2019 and 2020 {'·'} Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc, 2020 and 2021) {'·'} World Circus Day (different editions) {'·'}"
+        "description": "International Clown Festival of Cornellà del Llobregat, 2018 {'·'} Cric and Calldeclowns Circus Festivals, 2019 {'·'} Clowns for Freedom {'·'} Festes Majors, itinerant theaters and educational centers throughout Catalonia, Spain and Andorra {'·'} Family Festival of Santa Susanna, 2019 {'·'} Circus Day in Breda (different editions) {'·'} Festa Major de la Mercè with Clowns Without Borders, 2019 and 2020 {'·'} Circdanya Festival (different editions) {'·'} Viu el Teatre at Turó Parc, 2020 and 2021) {'·'} World Circus Day (different editions) {'·'}"
       }
     ],
     "scenariosLeft2": [
@@ -1019,7 +1019,8 @@
       "subtitle": "For questions, bookings and meetings"
     },
     "info": {
-      "title": "Contact information"
+      "title": "Contact information",
+      "subtitle": "For questions, bookings and meetings"
     },
     "rrss": {
       "title": "And if you want to chat a bit, or see where we perform next...",

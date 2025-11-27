@@ -26,6 +26,7 @@ const getImageAlt = () => useImageAlt('contact');
           content-type="contact"
           :alt="getImageAlt()"
           show-full-content
+          background-position="center 30%"
         >
           <template #content>
             <div class="flex flex-col items-start gap-8 py-5 lg:py-20">

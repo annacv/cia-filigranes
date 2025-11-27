@@ -480,7 +480,7 @@
       "list": [
         {
           "title": "Cercavila Germans Freak Frac",
-          "description": "Companyia Filigranes i Associació de Circ Tub d'Assaig 7'70, 2013."
+          "description": "Companyia Filigranes i Tub d'Assaig 7'70, 2013."
         },
         {
           "title": "Durada de l'espectacle",
@@ -516,7 +516,7 @@
       "artCard": [
         {
           "title": "Cercavila Germans Freak Frac",
-          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes i Tub d'Assaig 7'70"
         },
         {
           "title": "Els Xanquers",
@@ -532,7 +532,7 @@
         },
         {
           "title": "Vestuari",
-          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes i Tub d'Assaig 7'70"
         },
         {
           "title": "*",
@@ -1019,7 +1019,8 @@
       "subtitle": "Per a consultes, contractacions i trobades"
     },
     "info": {
-      "title": "Informació de contacte"
+      "title": "Informació de contacte",
+      "subtitle": "Per a consultes, contractacions i trobades"
     },
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
