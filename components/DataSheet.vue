@@ -99,8 +99,8 @@ watchEffect(() => {
             class="flex flex-col gap-5 w-full"
           >
             <li
-              v-for="item in artCard"
-              :key="(item.title as string)"
+              v-for="(item, index) in artCard"
+              :key="`art-${index}`"
               class="flex flex-col gap-2 text-sm lg:text-base"
             >
               <p class="font-bold">{{ item.title }}</p>
@@ -139,8 +139,8 @@ watchEffect(() => {
             class="flex flex-col gap-5 w-full"
           >
             <li
-              v-for="item in techCard"
-              :key="item.title"
+              v-for="(item, index) in techCard"
+              :key="`tech-${index}`"
               class="flex flex-col text-sm lg:text-base"
               :class="{ 'gap-2': !hideImage }"
             >

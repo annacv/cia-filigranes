@@ -17,8 +17,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
   >
     <div class="flex flex-col md:flex-row gap-0 xl:gap-5 layout-cols--to-left">
       <div
-        class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
-        :class="isMobile ? 'order-2' : 'order-1'"
+        class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] order-1 md:order-0"
         :style="{
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : desktopClip
@@ -36,7 +35,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           >
             <div v-if="canLoadGoogleMaps" key="map" class="w-full h-full">
               <iframe
-                :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5970.133862969208!2d2.0127018!3d41.56779600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a492c3e2155299%3A0x4d072d8f6b4f6768!2sCia%20Filigranes!5e0!3m2!1s${locale.value}!2s${locale.value}!4v1759615126607!5m2!1s${locale.value}!2s${locale.value}&lang=${locale.value}`"
+                :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5970.133862969208!2d2.0127018!3d41.56779600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a492c3e2155299%3A0x4d072d8f6b4f6768!2sCia%20Filigranes!5e0!3m2!1s${locale}!2s${locale}!4v1759615126607!5m2!1s${locale}!2s${locale}&lang=${locale}`"
                 class="w-full h-full aspect-video"
                 style="border:0;"
                 allowfullscreen
@@ -61,7 +60,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           </template>
         </ClientOnly>
       </div>
-      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36">
+      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36 order-0 md:order-1">
         <h2 class="font-grotesk text-4xl lg:text-5xl">
           {{ t('contact.info.title') }}
         </h2>
