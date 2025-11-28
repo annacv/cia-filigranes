@@ -18,7 +18,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
     <div class="flex flex-col md:flex-row gap-0 xl:gap-5 layout-cols--to-left">
       <div
         class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
-        :is="isMobile ? 'order-2' : 'order-1'"
+        :class="isMobile ? 'order-2' : 'order-1'"
         :style="{
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : desktopClip
@@ -73,7 +73,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
             <ArrowRight class="self-end !h-4 !w-4"/><span class="hover:opacity-80">{{ CONTACT.email }}</span>
           </a>
           <a class="flex gap-2 items-center" :href="`tel:${CONTACT.phones.albert}`"> 
-            <ArrowRight class="self-end !h-4 !w-4"/><span class="hover:opacity-80">Albert: {{ CONTACT.phones.albert }}</span>
+            <ArrowRight class="self-end !h-4 !w-4"/>Albert: <span class="hover:opacity-80">{{ CONTACT.phones.albert }}</span>
           </a>
           <a class="flex gap-2 items-center" :href="`tel:${CONTACT.phones.jordi}`">   
             <ArrowRight class="self-end !h-4 !w-4"/>Jordi: <span class="hover:opacity-80">{{ CONTACT.phones.jordi }}</span>
