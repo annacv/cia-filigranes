@@ -12,10 +12,10 @@ useHead({
 })
 const abstract = getTranslatedList('filipersones.makutu.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('filipersones.makutu.list', ['title', 'description'])
-const intro = getTranslatedList('filipersones.makutu.intro', ['paragraph'])
-const background = getTranslatedList('filipersones.makutu.background', ['paragraph'])
-const learningPath = getTranslatedList('filipersones.makutu.learningPath', ['paragraph'])
-const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph'])
+const intro = getTranslatedList('filipersones.makutu.intro', ['paragraph']) as Record<string, PropertyKey>[]
+const background = getTranslatedList('filipersones.makutu.background', ['paragraph']) as Record<string, PropertyKey>[]
+const learningPath = getTranslatedList('filipersones.makutu.learningPath', ['paragraph']) as Record<string, PropertyKey>[]
+const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph']) as Record<string, PropertyKey>[]
 const makutuAlt = getImageAlt('makutu')
 
 </script>
@@ -24,8 +24,9 @@ const makutuAlt = getImageAlt('makutu')
   <div class="h-full">
     <HeroCover
       image-name="filipersones_makutu_hero"
-      image-route="animacions"
+      image-route="filipersones"
       :alt="makutuAlt"
+      background-position="center 10%"
     >
       <template #content>
         <div class="p-5 font-grotesk uppercase text-white lg:max-w-[543px]">
@@ -48,14 +49,14 @@ const makutuAlt = getImageAlt('makutu')
       <template #unwrapped>
         <Synopsis
           :description="intro"
-          :image="getImageByRoute('filipersones', 'makutu_1')"
+          :image="getImageByRoute('filipersones', 'albert')"
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
         />
         <Synopsis
           :description="background"
-          :image="getImageByRoute('filipersones', 'makutu_2')"
+          :image="getImageByRoute('filipersones', 'makutu-1')"
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
@@ -63,7 +64,7 @@ const makutuAlt = getImageAlt('makutu')
         />
         <Synopsis
           :description="learningPath"
-          :image="getImageByRoute('filipersones', 'makutu_3')"
+          :image="getImageByRoute('filipersones', 'makutu-2')"
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
@@ -75,13 +76,14 @@ const makutuAlt = getImageAlt('makutu')
         />
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-makutu')"
+          :image="getImageByRoute('espectacles', 'circ-makutu-3')"
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
           :info-button="{
             href: '/espectacles/circ-makutu',
             class: 'button-outline-primary'
           }"
+          background-position="center 30%"
           is-reversed
         />
         <HireFili
@@ -94,9 +96,10 @@ const makutuAlt = getImageAlt('makutu')
       </template>
     </MainContent>
     <HeroFooter
-      image-name="makutu_footer"
+      image-name="filipersones_makutu-3"
       image-route="filipersones"
       :alt="makutuAlt"
+      background-position="center 0%"
     />
   </div>
 </template>

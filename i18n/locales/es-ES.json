@@ -395,10 +395,6 @@
           "description": "Cia. Filigranes"
         },
         {
-          "title": "Técnico de luces y sonido",
-          "description": "Gerard Mora"
-        },
-        {
           "title": "Escenografía",
           "description": "Cia.Filigranes"
         }
@@ -469,10 +465,6 @@
           "description": "Cia. Filigranes"
         },
         {
-          "title": "Técnico de luces y sonido",
-          "description": "Gerard Mora"
-        },
-        {
           "title": "Escenografía",
           "description": "Cia.Filigranes"
         }
@@ -488,7 +480,7 @@
       "list": [
         {
           "title": "Cercavila Hermanos Freak Frac",
-          "description": "Compañía Filigranes y Asociación de Circo Tub d'Assaig 7'70, 2013."
+          "description": "Compañía Filigranes y Tub d'Assaig 7'70, 2013."
         },
         {
           "title": "Duración del espectáculo",
@@ -524,7 +516,7 @@
       "artCard": [
         {
           "title": "Cercavila Hermanos Freak Frac",
-          "description": "Cia. Filigranes y Asociación de Circo Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes y Tub d'Assaig 7'70"
         },
         {
           "title": "Los Zanqueros",
@@ -573,7 +565,8 @@
       ],
       "list": [
         {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -704,6 +697,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "A cada participante se le entregará una nariz roja, que se podrá llevar a casa. Nos divertiremos mediante juegos y dinámicas participativas, donde descubriremos el payaso que llevamos dentro!"
         }
       ]
@@ -717,7 +711,8 @@
       ],
       "list": [
         {
-          "title": "* El número de talleristas puede variar en función del volumen de participantes."
+          "title": "*",
+          "description": "El número de talleristas puede variar en función del volumen de participantes."
         }
       ],
       "synopsis": [
@@ -748,6 +743,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Con la ayuda de los y las nuestras talleristas, niños y niñas crearán su propio esbozo y personaje. Todas juntas, escogeremos los colores y aprenderemos cuáles son las técnicas más adecuadas para cada caso."
         }
       ]
@@ -797,6 +793,7 @@
           "description": "Cia. Filigranes"
         },
         {
+          "title": "*",
           "description": "Las estructuras de madera combinadas con elementos reciclados, crearán consciencia a grandes y pequeños/as de la importancia del reciclaje y el aprovechamiento del agua."
         }
       ]
@@ -901,7 +898,7 @@
     ],
     "filiFriends": [
       {
-        "paragraph": "Actualmente nos acompañan Walter Velázquez (director/dramaturgo) y Francesc Pascual (técnico de sonido e iluminación). También hemos trabajado con Mago Manu (director artístico) y Carles Grau (director/dramaturgo)."
+        "paragraph": "Actualmente nos acompañan nuestros estimados Walter Velázquez como director y dramaturgo, y Francesc Pascual como técnico de sonido e iluminación. También hemos trabajado con Mago Manu como director artístico, y con Carles Grau como director y dramaturgo."
       }
     ],
     "background": [
@@ -933,7 +930,7 @@
     ],
     "scenariosRight1": [
       {
-        "description": "Gala por Payasos Sin Fronteras en la Vela de Ca l'Estruch, Sabadell, 2018 {'·'} Festival Internacional de Payasos de Cornellà del Llobregat, 2018 {'·'} Festivales del Circo Cric y Calldeclowns, 2019 {'·'} Payasos por la Libertad {'·'} Fiestas Mayores, teatros itinerantes y centros educativos por toda Cataluña, España y Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Día del Circo en Breda (diferentes ediciones) {'·'} Fiesta Mayor de la Mercè con Payasos Sin Fronteras, 2019 y 2020 {'·'} Festival Circdanya (diferentes ediciones) {'·'} Viu el Teatre en Turó Parc, 2020 y 2021) {'·'} Día mundial del circo (diferentes ediciones) {'·'}"
+        "description": "Festival Internacional de Payasos de Cornellà del Llobregat, 2018 {'·'} Festivales del Circo Cric y Calldeclowns, 2019 {'·'} Payasos por la Libertad {'·'} Fiestas Mayores, teatros itinerantes y centros educativos por toda Cataluña, España y Andorra {'·'} Festival familiar de Santa Susanna, 2019 {'·'} Día del Circo en Breda (diferentes ediciones) {'·'} Fiesta Mayor de la Mercè con Payasos Sin Fronteras, 2019 y 2020 {'·'} Festival Circdanya (diferentes ediciones) {'·'} Viu el Teatre al Turó Parc, 2020 y 2021) {'·'} Día mundial del circo (diferentes ediciones) {'·'}"
       }
     ],
     "scenariosLeft2": [
@@ -943,7 +940,7 @@
     ],
     "scenariosRight2": [
       {
-        "description": "Programación de Navidad en la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinales en la Sala Pepita Casanellas, 2025 {'·'} Muestra de espectáculos en la calle de Olivella, 2025 {'·'} Acto Central del Mulla't por la esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival en Konvent, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 en el Gran Teatre del Liceu de Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
+        "description": "Programación de Navidad en la Gradeta de Tub d'Assaig, 2024 {'·'} Estrena't Clown Cabaret, 2025 {'·'} Matinales en la Sala Pepita Casanellas, 2025 {'·'} Muestra de espectáculos en la calle de Olivella, 2025 {'·'} Acto Central del Mulla't por la esclerosis múltiple, 2025 {'·'} Al Ras Petit Festival, 2025 {'·'} Gala Catalunya Aixeca el teló 2025 en el Gran Teatre del Liceu, Barcelona {'·'} Festival Clownic de Torrelles de Foix, 2025..."
       }
     ],
     "makutu": {
@@ -1017,29 +1014,26 @@
   },
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
-    "hero": {
-      "title": "¡Contacto directo!",
-      "subtitle": "Consultas, contrataciones y encuentros"
-    },
     "info": {
-      "title": "Info de contacto"
+      "title": "Información de contacto",
+      "subtitle": "Para consultas, contrataciones y encuentros"
     },
     "rrss": {
-      "title": "Y si quieres charlar un poco, o ver dónde actuamos próximamente...",
-      "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también podrás visionar grandes momentos de nuestros espectáculos en nuestra Filitele."
+      "title": "Y si quieres chafardear un poco, o ver dónde actuamos próximamente...",
+      "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también ver grandes momentos de nuestros espectáculos."
     } 
   },
   "consent": {
     "map": {
-      "title": "Mapa de la ubicació de la Cia. Filigranes",
-      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+      "title": "Mapa de la ubicación de la Cia. Filigranes",
+      "consentRequired": "Para poder ver el mapa se requiere aceptar las cookies funcionales"
     },
     "youtube": {
-      "title": "Video de l'espectacle",
-      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+      "title": "Video del espectáculo",
+      "consentRequired": "Para poder reproducir el vídeo se requiere aceptar las cookies funcionales"
     },
     "manageCookies": "Gestionar cookies",
-    "acceptCookies": "Acceptar cookies"
+    "acceptCookies": "Aceptar cookies"
   },
   "cookies": {
     "title": "Política de Cookies",

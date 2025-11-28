@@ -134,4 +134,8 @@
   .arrow-left {
     @apply w-auto h-3;
   }
+
+  .nuxt-icon {
+    @apply !mb-0;
+  }
 }

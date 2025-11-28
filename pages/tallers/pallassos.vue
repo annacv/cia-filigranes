@@ -29,7 +29,7 @@ const summaryButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="tallers_pallassos"
+      image-name="tallers_pallassos-1"
       image-route="tallers"
       :alt="getImageAlt('pallassos')"
       content-type="workshops"
@@ -52,7 +52,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('tallers', 'pallassos')"
+          :image="getImageByRoute('tallers', 'pallassos-4')"
           content-type="workshops"
           :alt="getImageAlt('pallassos')"
           show-full-content
@@ -61,9 +61,10 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('tallers', 'pallassos')"
+          :image="getImageByRoute('tallers', 'pallassos-2')"
           :alt="getImageAlt('pallassos')"
           content-type="workshops"
+          background-position="center 10%"
           is-reversed
         />
         <HireFili
@@ -81,7 +82,7 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="tallers_pallassos"
+      image-name="tallers_pallassos-3"
       image-route="tallers"
       :alt="getImageAlt('pallassos')"
       content-type="workshops"

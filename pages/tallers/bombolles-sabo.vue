@@ -30,7 +30,7 @@ const summaryButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="tallers_bombolles-sabo"
+      image-name="tallers_bombolles-sabo-1"
       image-route="tallers"
       :alt="getImageAlt('bombolles-sabo')"
       content-type="workshops"
@@ -54,7 +54,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('tallers', 'bombolles-sabo')"
+          :image="getImageByRoute('tallers', 'bombolles-sabo-4')"
           content-type="workshops"
           :alt="getImageAlt('bombolles-sabo')"
           show-full-content
@@ -63,7 +63,7 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('tallers', 'bombolles-sabo')"
+          :image="getImageByRoute('tallers', 'bombolles-sabo-2')"
           :alt="getImageAlt('bombolles-sabo')"
           content-type="workshops"
           is-reversed
@@ -83,10 +83,11 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="tallers_bombolles-sabo"
+      image-name="tallers_bombolles-sabo-3"
       image-route="tallers"
       :alt="getImageAlt('bombolles-sabo')"
       content-type="workshops"
+      background-position="center 0%"
     />
     <HireFili
       :title="t('home.hire.title')"

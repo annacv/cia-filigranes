@@ -14,7 +14,7 @@ useHead({
 
 const abstract = getTranslatedList('shows.circ-makutu.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('shows.circ-makutu.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph'])
+const synopsis = getTranslatedList('shows.circ-makutu.synopsis', ['paragraph']) as Record<string, PropertyKey>[]
 const techCard = getTranslatedList('shows.circ-makutu.techCard', ['title', 'description'])
 const artCard = getTranslatedList('shows.circ-makutu.artCard', ['title', 'description'])
 
@@ -29,9 +29,10 @@ const summaryButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="espectacles_circ-makutu"
+      image-name="espectacles_circ-makutu_hero"
       image-route="espectacles"
       :alt="getImageAlt('circ-makutu')"
+      background-position="center 90%"
     >
       <template #content>
         <CoverTitle
@@ -52,7 +53,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-makutu')"
+          :image="getImageByRoute('espectacles', 'circ-makutu-1')"
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
           show-full-content
@@ -61,7 +62,7 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('espectacles', 'circ-makutu')"
+          :image="getImageByRoute('espectacles', 'circ-makutu-4')"
           :alt="getImageAlt('circ-makutu')"
           is-reversed
         />
@@ -80,7 +81,7 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="espectacles_circ-makutu"
+      image-name="espectacles_circ-makutu-2"
       image-route="espectacles"
       :alt="getImageAlt('circ-makutu')"
     />

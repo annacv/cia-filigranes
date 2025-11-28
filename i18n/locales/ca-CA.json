@@ -480,7 +480,7 @@
       "list": [
         {
           "title": "Cercavila Germans Freak Frac",
-          "description": "Companyia Filigranes i Associació de Circ Tub d'Assaig 7'70, 2013."
+          "description": "Companyia Filigranes i Tub d'Assaig 7'70, 2013."
         },
         {
           "title": "Durada de l'espectacle",
@@ -516,7 +516,7 @@
       "artCard": [
         {
           "title": "Cercavila Germans Freak Frac",
-          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes i Tub d'Assaig 7'70"
         },
         {
           "title": "Els Xanquers",
@@ -532,7 +532,7 @@
         },
         {
           "title": "Vestuari",
-          "description": "Cia. Filigranes i Associació de Circ Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes i Tub d'Assaig 7'70"
         },
         {
           "title": "*",
@@ -1014,16 +1014,13 @@
   },
   "contact": {
     "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
-    "hero": {
-      "title": "Contacte directe!",
-      "subtitle": "Consultes, contractacions i trobades"
-    },
     "info": {
-      "title": "Info de contacte"
+      "title": "Informació de contacte",
+      "subtitle": "Per a consultes, contractacions i trobades"
     },
     "rrss": {
       "title": "I si vols fer una mica el xafarder, o veure on actuem properament...",
-      "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també podràs visionar grans moments dels nostres espectacles a la nostra Filitele."
+      "description": "Segueix-nos a les xarxes socials i trobaràs informació sobre actualitat, agenda, imatges..., i també veure grans moments dels nostres espectacles."
     }
   },
   "consent": {

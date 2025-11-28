@@ -18,16 +18,16 @@ useHead({
   ]
 })
 
-const origins = getTranslatedList('filipersones.origins', ['paragraph'])
+const origins = getTranslatedList('filipersones.origins', ['paragraph']) as Record<string, PropertyKey>[]
 const prices = getTranslatedList('filipersones.prices', ['title', 'description'])
 const stories = getTranslatedList('filipersones.stories', ['title', 'description'])
-const history = getTranslatedList('filipersones.history', ['paragraph'])
-const filiFriends = getTranslatedList('filipersones.filiFriends', ['paragraph'])
+const history = getTranslatedList('filipersones.history', ['paragraph']) as Record<string, PropertyKey>[]
+const filiFriends = getTranslatedList('filipersones.filiFriends', ['paragraph']) as Record<string, PropertyKey>[]
 const scenariosRight1 = getTranslatedList('filipersones.scenariosRight1', ['title', 'description'])
 const scenariosLeft1 = getTranslatedList('filipersones.scenariosLeft1', ['title', 'description'])
 const scenariosRight2 = getTranslatedList('filipersones.scenariosRight2', ['title', 'description'])
 const scenariosLeft2 = getTranslatedList('filipersones.scenariosLeft2', ['title', 'description'])
-const background = getTranslatedList('filipersones.background', ['paragraph'])
+const background = getTranslatedList('filipersones.background', ['paragraph']) as Record<string, PropertyKey>[]
 
 const filipersones = getItemsByRoute('filipersones');
 
@@ -38,7 +38,7 @@ const filipersonesItems = computed(() => {
     return {
       description: getTranslatedList(`filipersones.${filipersona}.intro`, ['paragraph']),
       image: {
-        imageName: `filipersones_${filipersona}_1`,
+        imageName: `filipersones_${filipersona}-1`,
         imageRoute: 'filipersones' as ImageRoute,
       },
       contentType: 'shows' as ContentType,
@@ -67,7 +67,7 @@ const showMore = () => {
   <div class="h-full">
     <HeroCover
       image-name="filipersones_hero"
-      image-route="animacions"
+      image-route="filipersones"
       :alt="t('shows.hero.alt')"
     >
       <template #content>
@@ -89,7 +89,7 @@ const showMore = () => {
         />
         <Synopsis
           :description="origins"
-          :image="getImageByRoute('filipersones', 'filigranes_1')"
+          :image="getImageByRoute('filipersones', 'filigranes-1')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -98,22 +98,23 @@ const showMore = () => {
         <DataSheet
           :tech-card="prices"
           :art-card="stories"
-          :image="getImageByRoute('filipersones', 'filigranes_2')"
+          :image="getImageByRoute('filipersones', 'filigranes-2')"
           :alt="t('shows.hero.alt')"
           is-reversed
           should-clip
         />
         <Synopsis
           :description="history"
-          :image="getImageByRoute('filipersones', 'filigranes_3')"
+          :image="getImageByRoute('filipersones', 'filigranes-3')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
+          background-position="center 3%"
           show-full-content
           is-reversed
         />
         <Synopsis
           :description="filiFriends"
-          :image="getImageByRoute('filipersones', 'filigranes_4')"
+          :image="getImageByRoute('filipersones', 'filigranes-4')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -123,7 +124,7 @@ const showMore = () => {
           ref="dataSheetRef"
           :tech-card="currentScenariosRight"
           :art-card="currentScenariosLeft"
-          :image="getImageByRoute('filipersones', 'filigranes_5')"
+          :image="getImageByRoute('filipersones', 'filigranes-5')"
           :alt="t('shows.hero.alt')"
           extra-content
           :show-more="showMoreContent"
@@ -131,11 +132,12 @@ const showMore = () => {
           :style="dataSheetStyle"
           should-clip
           :hide-image="isMobile"
+          background-position="center 20%"
           @view-more="showMore"
         />
         <Synopsis
           :description="background"
-          :image="getImageByRoute('filipersones', 'filigranes_6')"
+          :image="getImageByRoute('filipersones', 'filigranes-6')"
           content-type="shows"
           :alt="t('shows.hero.alt')"
           show-full-content
@@ -153,6 +155,7 @@ const showMore = () => {
       image-name="filipersones_footer"
       image-route="filipersones"
       :alt="t('shows.hero.alt')"
+      background-position="center top"
     />
     <HireFili
       :title="t('home.hire.title')"

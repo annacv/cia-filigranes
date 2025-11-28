@@ -29,7 +29,7 @@ const summaryButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="espectacles_circ-trinxeta"
+      image-name="espectacles_circ-trinxeta_hero"
       image-route="espectacles"
       :alt="getImageAlt('circ-trinxeta')"
     >
@@ -52,7 +52,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'circ-trinxeta')"
+          :image="getImageByRoute('espectacles', 'circ-trinxeta-4')"
           content-type="shows"
           :alt="getImageAlt('circ-trinxeta')"
           show-full-content
@@ -61,7 +61,7 @@ const summaryButton = computed(() => {
         <DataSheet
           :tech-card="techCard"
           :art-card="artCard"
-          :image="getImageByRoute('espectacles', 'circ-trinxeta')"
+          :image="getImageByRoute('espectacles', 'circ-trinxeta-2')"
           :alt="getImageAlt('circ-trinxeta')"
           is-reversed
         />
@@ -80,9 +80,10 @@ const summaryButton = computed(() => {
       </template>
     </MainContent>
     <HeroFooter
-      image-name="espectacles_circ-trinxeta"
+      image-name="espectacles_circ-trinxeta-1"
       image-route="espectacles"
       :alt="getImageAlt('circ-trinxeta')"
+      background-position="center 100%"
     />
     <HireFili
       :title="t('home.hire.title')"

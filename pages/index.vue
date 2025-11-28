@@ -41,7 +41,7 @@ const summaryButton = computed(() => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'vint-anys')"
+          :image="getImageByRoute('espectacles', 'vint-anys-5')"
           content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{
@@ -58,7 +58,7 @@ const summaryButton = computed(() => {
           :alt="t('home.hero.alt')"
           image-name="hero_footer"
           image-route=""
-          background-position="59% center"
+          background-position="center 30%"
         />
         <HireFili
           :title="t('home.hire.title')"

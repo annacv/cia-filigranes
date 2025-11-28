@@ -76,7 +76,7 @@ const closeVideo = () => {
       <template #unwrapped>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'vint-anys-3')"
+          :image="getImageByRoute('espectacles', 'vint-anys-1')"
           content-type="shows"
           :alt="t('home.hero.alt')"
           show-full-content
