@@ -18,6 +18,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
     <div class="flex flex-col md:flex-row gap-0 xl:gap-5 layout-cols--to-left">
       <div
         class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        :is="isMobile ? 'order-2' : 'order-1'"
         :style="{
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : desktopClip
@@ -60,11 +61,11 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           </template>
         </ClientOnly>
       </div>
-      <div class="w-full lg:w-[50%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
+      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36">
         <h2 class="font-grotesk text-4xl lg:text-5xl">
           {{ t('contact.info.title') }}
         </h2>
-        <p class="text-3xl lg:text-4xl mb-4 max-w-[85%]">
+        <p class="text-3xl lg:text-4xl mb-4">
           {{ t('contact.info.subtitle') }}
         </p>
         <div class=" flex flex-col items-start gap-6 font-semibold">

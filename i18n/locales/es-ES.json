@@ -1014,10 +1014,6 @@
   },
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
-    "hero": {
-      "title": "¡Contáctanos!",
-      "subtitle": "Para consultas, contrataciones y encuentros"
-    },
     "info": {
       "title": "Información de contacto",
       "subtitle": "Para consultas, contrataciones y encuentros"

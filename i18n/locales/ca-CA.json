@@ -1014,10 +1014,6 @@
   },
   "contact": {
     "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
-    "hero": {
-      "title": "Contacta'ns!",
-      "subtitle": "Per a consultes, contractacions i trobades"
-    },
     "info": {
       "title": "Informació de contacte",
       "subtitle": "Per a consultes, contractacions i trobades"
