@@ -6,7 +6,7 @@ definePageMeta({
 })
 
 const { t } = useI18n();
-const isMobile = useDevice();
+const { isMobile } = useDevice();
 const { getTranslatedList } = useI18nUtils();
 
 useHead({
