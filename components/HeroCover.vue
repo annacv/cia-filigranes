@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useImageUrl } from "~/composables/use-image-url.composable";
+import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScroll } from "~/composables/use-scroll.composable";
 import type { ImageRoute, ContentType } from "~/types";
@@ -32,6 +32,26 @@ const { isMobile } = useResponsive()
 const { isScrolled } = useScroll()
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
+
+// Preload images for better performance
+const { mobile: mobileImageUrl, desktop: desktopImageUrl } = getImageUrlsForPreload(props.imageName, props.imageRoute);
+
+useHead({
+  link: [
+    ...(mobileImageUrl ? [{
+      rel: 'preload',
+      as: 'image' as const,
+      href: mobileImageUrl,
+      media: '(max-width: 1023px)'
+    }] : []),
+    ...(desktopImageUrl ? [{
+      rel: 'preload',
+      as: 'image' as const,
+      href: desktopImageUrl,
+      media: '(min-width: 1024px)'
+    }] : [])
+  ]
+});
 
 const mobileHeight = '72px';
 const desktopHeight = '87px';
@@ -72,5 +92,9 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
         </div>
       </div>
     </div>
+    <template #fallback>
+      <!-- Fallback placeholder with same height to prevent layout shift -->
+      <div class="sticky top-0 w-full z-10 bg-black" :style="{ height: '100dvh' }"/>
+    </template>
   </ClientOnly>
 </template>

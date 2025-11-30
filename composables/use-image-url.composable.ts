@@ -21,6 +21,23 @@ const desktopMap: Record<ImageRoute, Record<string, string>> = {
 };
 
 /**
+ * Gets the image URL directly from the image map (non-reactive, for preloading).
+ * @param {string} imageName - The file name, e.g., "avatar-1.jpg"
+ * @param {ImageRoute} route - The route where the image is allocated in the assets' folder.
+ * @param {boolean} isMobile - Whether to get mobile or desktop version.
+ * @returns {string | undefined} The resolved image URL or undefined if not found.
+ */
+function getImageUrlDirect(imageName: string, route: ImageRoute, isMobile: boolean): string | undefined {
+  const imageMap = isMobile ? mobileMap : desktopMap;
+  const images = imageMap[route] || {};
+  const imageKey = Object.keys(images).find(path => path.includes(`/${imageName}.webp`));
+  if (!imageKey) {
+    return undefined;
+  }
+  return images[imageKey];
+}
+
+/**
  * Returns the image URL for a given image name.
  * @param {string} imageName - The file name, e.g., "avatar-1.jpg"
  * @param {ImageRoute} route - The route where the image is allocated in the assets' folder.
@@ -39,4 +56,17 @@ export function useImageUrl(imageName: string, route: ImageRoute): ComputedRef<s
     }
     return images.value[imageKey];
   });
+}
+
+/**
+ * Gets both mobile and desktop image URLs for preloading.
+ * @param {string} imageName - The file name, e.g., "avatar-1.jpg"
+ * @param {ImageRoute} route - The route where the image is allocated in the assets' folder.
+ * @returns {{ mobile: string | undefined, desktop: string | undefined }} Object with mobile and desktop URLs.
+ */
+export function getImageUrlsForPreload(imageName: string, route: ImageRoute): { mobile: string | undefined, desktop: string | undefined } {
+  return {
+    mobile: getImageUrlDirect(imageName, route, true),
+    desktop: getImageUrlDirect(imageName, route, false)
+  };
 }
