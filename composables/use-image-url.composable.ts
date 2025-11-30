@@ -27,16 +27,16 @@ const desktopMap: Record<ImageRoute, Record<string, string>> = {
  * @returns {string | undefined} The resolved image URL or undefined if not found.
  */
 export function useImageUrl(imageName: string, route: ImageRoute): ComputedRef<string | undefined> {
-  const { isMobile } = useDevice();
-  const imageMap = isMobile ? mobileMap : desktopMap;
-  const images = imageMap[route] || {};
+  const { isMobile } = useResponsive();
+  const imageMap = computed(() => isMobile.value ? mobileMap : desktopMap);
+  const images = computed(() => imageMap.value[route] || {});
 
   return computed(() => {
-    const imageKey = Object.keys(images).find(path => path.includes(`/${imageName}.webp`));
+    const imageKey = Object.keys(images.value).find(path => path.includes(`/${imageName}.webp`));
     if (!imageKey) {
-      console.warn(`Image ${imageName} not found in:`, Object.keys(images));
+      console.warn(`Image ${imageName} not found in:`, Object.keys(images.value));
       return undefined;
     }
-    return images[imageKey];
+    return images.value[imageKey];
   });
 }

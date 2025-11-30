@@ -28,21 +28,21 @@ const props = defineProps({
   }
 })
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const { isScrolled } = useScroll()
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
 const mobileHeight = '72px';
 const desktopHeight = '87px';
-const deviceFixedHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
+const deviceFixedHeight = computed(() => isMobile.value ? mobileHeight : desktopHeight);
 
 const mobileClip = '94%';
 const desktopClip = '86%';
-const deviceClip = computed(() => isMobile ? mobileClip : desktopClip);
+const deviceClip = computed(() => isMobile.value ? mobileClip : desktopClip);
 
 const initialClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceClip.value}, 0% 100%)`);
-const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceFixedHeight.value}, 0% ${deviceFixedHeight.value})`)
+const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`)
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
 const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh')

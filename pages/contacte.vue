@@ -17,7 +17,7 @@ const getImageAlt = () => useImageAlt('contact');
 
 <template>
   <div class="h-full bg-quaternary-500">
-    <div class="xs:h-[72px] lg:h-[87px]"/>
+    <div class="h-[72px] lg:h-[87px]"/>
     <MainContent>
       <template #unwrapped>
         <ContactCard />
