@@ -88,8 +88,8 @@ watchEffect(() => {
     <div
       :class="
         ['layout-cols flex lg:gap-5 flex-col lg:flex-row h-full',
-        { 'min-h-[524px]': !isMobile } 
-      ]">
+         { 'min-h-[524px]': !isMobile } 
+        ]">
       <div
         class="flex flex-col gap-5 w-full lg:w-[22%] p-5 pb-0 lg:p-4 lg:pr-0 lg:py-12 2xl:py-24"
         :class="{ 'pb-0 lg:pb-0': hideImage }"
