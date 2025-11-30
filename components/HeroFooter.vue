@@ -28,14 +28,18 @@ const props = defineProps({
   }
 });
 
-const { isMobile } = useResponsive()
+const { isMobile, isSmallTablet } = useResponsive()
 const { hasReachedBottom } = useScroll()
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
 const mobileHeight = '400px';
+const smallTabletHeight = '600px';
 const desktopHeight = '800px';
-const deviceHeight = computed(() => isMobile.value ? mobileHeight : desktopHeight);
+const deviceHeight = computed(() => {
+  if (isSmallTablet.value) return smallTabletHeight
+  return isMobile.value ? mobileHeight : desktopHeight
+});
 
 const mobileClip = '6%';
 const desktopClip = '9%';

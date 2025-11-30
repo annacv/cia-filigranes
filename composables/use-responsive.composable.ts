@@ -15,10 +15,11 @@ import { useMediaQuery } from '@vueuse/core'
  */
 export function useResponsive() {
   const device = useDevice()
-  const isViewportBelowDesktop = useMediaQuery('(max-width: 1023px)')
+  const isViewportBelowLg = useMediaQuery('(max-width: 1023px)')
+  const isViewportAtLeastMd = useMediaQuery('(min-width: 768px)')
   
   const isMobile = computed(() => {
-    if (isViewportBelowDesktop.value) {
+    if (isViewportBelowLg.value) {
       return true
     }
     // If viewport is desktop-sized but device is mobile, still consider mobile
@@ -27,7 +28,7 @@ export function useResponsive() {
   })
   
   const isMobileOrTablet = computed(() => {
-    if (isViewportBelowDesktop.value) {
+    if (isViewportBelowLg.value) {
       return true
     }
     // If viewport is desktop-sized but device is mobile/tablet, still consider mobile/tablet
@@ -35,9 +36,15 @@ export function useResponsive() {
     return device.isMobileOrTablet
   })
   
+  // Small tablets: >= 768px (md) and < 1024px (lg)
+  const isSmallTablet = computed(() => {
+    return isViewportAtLeastMd.value && isViewportBelowLg.value
+  })
+  
   return {
     isMobile,
     isMobileOrTablet,
+    isSmallTablet,
     device
   }
 }
