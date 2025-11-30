@@ -13,7 +13,7 @@ definePageMeta({
 });
 
 const { t } = useI18n();
-const { isMobile } = useDevice();
+const { isMobile } = useResponsive();
 const imageSrc = useImageUrl('404', '');
 const imageAlt = '404';
 </script>
@@ -25,7 +25,7 @@ const imageAlt = '404';
       <template #wrapped>
         <div class="flex flex-col items-center justify-center h-full bg-primary-500 pt-6 pb-32">
           <img
-            class="h-[150px] md:h-[200px] aspect-square object-cover object-center pointer-events-none"
+            class="h-[150px] lg:h-[200px] aspect-square object-cover object-center pointer-events-none"
             :src="imageSrc"
             :alt="imageAlt"
             style="clip-path: circle(50% at 50% 50%)"
@@ -35,9 +35,9 @@ const imageAlt = '404';
           <h1 class="px-4 my-2 text-center text-white font-bold uppercase text-6xl lg:text-7xl">
             404
           </h1>
-          <p class="font-bold text-center !leading-tight text-lg md:text-xl text-white mb-5"
+          <p class="font-bold text-center !leading-tight text-lg lg:text-xl text-white mb-5"
           >{{ t('404.title') }}</p>
-          <p class="w-[280px] text-center !leading-tight text-lg md:text-xl text-white mb-5"
+          <p class="w-[280px] text-center !leading-tight text-lg lg:text-xl text-white mb-5"
           >{{ t('404.description') }}</p>
           <FiliButton
             href="/"

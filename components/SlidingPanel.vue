@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
   scrollFactor: 1
 })
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const isScrollAtStart = ref(true)
 const isScrollAtEnd = ref(true)
 const scrollContainerRef = ref<HTMLDivElement>()
@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="sliding-panel flex items-center no-wrap relative py-4 xl:py-6 -mr-5 md:mr-0">
+  <div class="sliding-panel flex items-center no-wrap relative py-4 xl:py-6 -mr-5 lg:mr-0">
     <button
       v-if="!isMobile"
       class="sliding-panel__button sliding-panel-button-left right-8"

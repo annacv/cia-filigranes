@@ -26,18 +26,18 @@ const props = defineProps({
 
 const touchedImageIndex = ref<number | null>(null)
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const { gradientColorClass } = useColor(props.contentType);
 const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 
 const handleImageTouchStart = (index: number) => {
-  if (isMobile) {
+  if (isMobile.value) {
     touchedImageIndex.value = index
   }
 }
 
 const handleImageTouchEnd = () => {
-  if (isMobile) {
+  if (isMobile.value) {
     requestAnimationFrame(() => {
       touchedImageIndex.value = null
     })

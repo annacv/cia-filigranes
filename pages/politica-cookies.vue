@@ -15,7 +15,7 @@ useHead({
 })
 
 const { getTranslatedList } = useI18nUtils()
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 
 const sections = getTranslatedList('cookies.sections', ['key', 'title', 'description'])
 const cookieTypes = getTranslatedList('cookies.types.list', ['key', 'title', 'description'])

@@ -26,19 +26,19 @@ const props = defineProps({
 
 const isTouched = ref(false)
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const imageSrc = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { gradientColorClass } = useColor(props.contentType);
 const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 
 const handleTouchStart = () => {
-  if (isMobile) {
+  if (isMobile.value) {
     isTouched.value = true
   }
 }
 
 const handleTouchEnd = () => {
-  if (isMobile) {
+  if (isMobile.value) {
     requestAnimationFrame(() => {
       isTouched.value = false
     })
@@ -88,7 +88,7 @@ const handleTouchEnd = () => {
             :class="isTouched ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
           />
           <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-end gap-4 transition-shadow duration-300'">
-            <h3 class="text-2xl xl:text-3xl text-left font-grotesk font-bold uppercase text-white wrap-break-word hyphens-auto leading-7 max-w-[75%] 2xl:max-w-[73%]">
+            <h3 class="text-2xl xl:text-3xl text-left font-grotesk font-bold uppercase text-white leading-7 max-w-[75%] 2xl:max-w-[73%]">
               {{ title }}
             </h3>
           </div>

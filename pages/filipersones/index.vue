@@ -6,7 +6,7 @@ import { getImageByRoute } from "~/utils/image-by-route";
 const showMoreContent = ref(false);
 const dataSheetRef = ref<HTMLElement | null>(null);
 
-const { isMobile } = useDevice();
+const { isMobile } = useResponsive();
 const { t } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const getImageAlt = (title?: string) => useImageAlt('filipersones', title);

@@ -2,7 +2,7 @@
 import { CONTACT } from "~/constants";
 
 const { t } = useI18n()
-const { isMobileOrTablet } = useDevice()
+const { isMobileOrTablet } = useResponsive()
 
 </script>
 <template>

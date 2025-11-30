@@ -2,7 +2,7 @@
 import { CONTACT } from "~/constants";
 import ArrowRight from "~/assets/icons/arrow-right.svg";	
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const { t, locale } = useI18n()
 const { canLoadGoogleMaps } = useCookies();
 const desktopClip = 'polygon(0% 100%, 80% 100%, 96% 0%, 0% 0%)';
@@ -15,9 +15,9 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
     class="p-0 grid-layout bg-quaternary-500 text-neutral-900"
     :style="{ clipPath: isMobile ? mobileClip : 'none'}"
   >
-    <div class="flex flex-col md:flex-row gap-0 xl:gap-5 layout-cols--to-left">
+    <div class="flex flex-col lg:flex-row gap-0 xl:gap-5 layout-cols--to-left">
       <div
-        class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] order-1 md:order-0"
+        class="w-full h-[400px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] order-1 lg:order-0"
         :style="{
           backgroundPosition: 'center center',
           clipPath: isMobile ? 'none' : desktopClip
@@ -60,7 +60,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           </template>
         </ClientOnly>
       </div>
-      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36 order-0 md:order-1">
+      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36 order-0 lg:order-1">
         <h2 class="font-grotesk text-4xl lg:text-5xl">
           {{ t('contact.info.title') }}
         </h2>

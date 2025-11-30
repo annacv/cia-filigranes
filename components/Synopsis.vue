@@ -64,7 +64,7 @@ const isHovered = ref(false)
 const componentRef = ref<HTMLElement>()
 const imageRef = ref<HTMLElement>()
 
-const { isMobile } = useDevice()
+const { isMobile } = useResponsive()
 const { t } = useI18n()
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { bgColorClass, gradientOverlayValue } = useColor(props.contentType);
@@ -87,7 +87,7 @@ const getColors = computed(() => {
   return 'bg-neutral-0 text-neutral-900';
 })
 
-const hoverState = computed(() => isMobile ? isVisibleAt80Percent.value : isHovered.value)
+const hoverState = computed(() => isMobile.value ? isVisibleAt80Percent.value : isHovered.value)
 const toggleHover = () => isHovered.value = !isHovered.value;
 
 // Setup intersection observer reactively when ref becomes available
@@ -108,8 +108,9 @@ watchEffect(() => {
   >
     <div
       :class="[
-        'flex flex-col md:flex-row gap-0 xl:gap-5',
-        isReversed || isFullReversed ? 'layout-cols--to-left md:flex-row-reverse' : 'layout-cols--to-right']"
+        'flex flex-col lg:flex-row gap-0 xl:gap-5',
+        { 'min-h-[464px]': !isMobile },
+        isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
     >
       <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
         <slot name="content">
@@ -122,7 +123,7 @@ watchEffect(() => {
             :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
             <span
               v-for="item in showFullContent ? description : description.slice(0, 1)"
-              :key="item.paragraph"
+              :key="item.paragraph as string"
             >
               {{ item.paragraph }}
             </span>
@@ -162,7 +163,7 @@ watchEffect(() => {
       </div>
       <div
         ref="imageRef"
-        class="w-full h-[400px] md:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="w-full h-[400px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
           hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"

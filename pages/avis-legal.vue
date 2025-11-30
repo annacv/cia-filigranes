@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import ArrowRight from "assets/icons/arrow-right.svg";
+import { useResponsive } from "~/composables/use-responsive.composable";
 
 definePageMeta({
   headerBackgroundColor: '#c80d0d'
 })
 
 const { t } = useI18n();
-const isMobile = useDevice();
+const { isMobile } = useResponsive();
 const { getTranslatedList } = useI18nUtils();
 
 useHead({
@@ -16,7 +17,7 @@ useHead({
   ]
 })
 
-const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'description'])
+const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'description']) as Array<{ key: string; title: string; description: string }>
 </script>
 
 <template>
@@ -51,7 +52,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
             
             <ul class="list-disc list-inside text-neutral-600 space-y-4">
               <li
-                v-for="category in getTranslatedList('avis-legal.cookies.categories', ['key', 'title', 'description'])" 
+                v-for="category in (getTranslatedList('avis-legal.cookies.categories', ['key', 'title', 'description']) as Array<{ key: string; title: string; description: string }>)" 
                 :key="category.key"
               >
                 <strong>{{ category.title }}</strong>

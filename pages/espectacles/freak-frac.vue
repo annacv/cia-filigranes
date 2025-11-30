@@ -87,7 +87,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_freak-frac-4"
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
-      background-position="center 30%"
+      background-position="center top"
     />
     <HireFili
       :title="t('home.hire.title')"

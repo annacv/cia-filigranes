@@ -28,24 +28,28 @@ const props = defineProps({
   }
 });
 
-const { isMobile } = useDevice()
+const { isMobile, isSmallTablet } = useResponsive()
 const { hasReachedBottom } = useScroll()
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
 const mobileHeight = '400px';
+const smallTabletHeight = '600px';
 const desktopHeight = '800px';
-const deviceHeight = computed(() => isMobile ? mobileHeight : desktopHeight);
+const deviceHeight = computed(() => {
+  if (isSmallTablet.value) return smallTabletHeight
+  return isMobile.value ? mobileHeight : desktopHeight
+});
 
 const mobileClip = '6%';
 const desktopClip = '9%';
-const deviceClip = computed(() => isMobile ? mobileClip : desktopClip);
+const deviceClip = computed(() => isMobile.value ? mobileClip : desktopClip);
 const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 100% 100% , 0% 100%)`);
 </script>
 
 <template>
   <div
-    class="mt-10 md:mt-20 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    class="mt-10 lg:mt-20 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="hasReachedBottom ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
     :style="{
       backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
