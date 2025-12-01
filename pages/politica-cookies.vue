@@ -18,11 +18,15 @@ useHead({
 const { getTranslatedList } = useI18nUtils()
 const { isMobile } = useResponsive()
 
-const sections = getTranslatedList('cookies.sections', ['key', 'title', 'description'])
-const cookieTypes = getTranslatedList('cookies.types.list', ['key', 'title', 'description'])
-const tableHeaders = getTranslatedList('cookies.currentCookies.table.headers', ['key', 'label'])
-const currentCookies = getTranslatedList('cookies.currentCookies.table.rows', ['name', 'purpose', 'responsible', 'duration'])
-const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url'])
+const sections = getTranslatedList('cookies.sections', ['key', 'title', 'description']) as Array<Record<string, string>>
+const cookieTypes = getTranslatedList('cookies.types.list', ['key', 'title', 'description']) as Array<Record<string, string>>
+const tableHeaders = getTranslatedList('cookies.currentCookies.table.headers', ['key', 'label']) as Array<Record<string, string>>
+const currentCookies = getTranslatedList('cookies.currentCookies.table.rows', ['name', 'purpose', 'responsible', 'duration']) as Array<Record<string, string>>
+const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url']) as Array<Record<string, string>>
+
+const getCookieValue = (cookie: Record<string, string>, key: string | undefined): string => {
+  return key ? (cookie[key] ?? '') : ''
+}
 </script>
 
 <template>
@@ -89,7 +93,7 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
                       :key="header.key"
                       class="border border-neutral-300 px-4 py-2"
                     >
-                      {{ cookie[header.key] }}
+                      {{ getCookieValue(cookie, header.key) }}
                     </td>
                   </tr>
                 </tbody>
