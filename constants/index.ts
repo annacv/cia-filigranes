@@ -234,3 +234,6 @@ export const RRSS = [
   { platform: "youtube", url: "https://www.youtube.com/channel/UCaH3Bb7VIiuzwy51TyyKzpg" },
   { platform: "linkedin", url: "https://www.linkedin.com/in/ciafiligranes" }
 ]
+
+export const HEADER_MOBILE_HEIGHT = '72px'
+export const HEADER_DESKTOP_HEIGHT = '87px'

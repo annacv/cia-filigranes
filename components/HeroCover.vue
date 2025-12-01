@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScroll } from "~/composables/use-scroll.composable";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
 const props = defineProps({
@@ -53,9 +54,7 @@ useHead({
   ]
 });
 
-const mobileHeight = '72px';
-const desktopHeight = '87px';
-const deviceFixedHeight = computed(() => isMobile.value ? mobileHeight : desktopHeight);
+const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 
 const mobileClip = '94%';
 const desktopClip = '86%';

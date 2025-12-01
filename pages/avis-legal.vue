@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ArrowRight from "assets/icons/arrow-right.svg";
 import { useResponsive } from "~/composables/use-responsive.composable";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 
 definePageMeta({
   headerBackgroundColor: '#c80d0d'
@@ -22,7 +23,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
 
 <template>
   <div class="h-full">
-    <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"/>
+    <div :style="{ height: isMobile ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT }" class="bg-primary-500"/>
     <MainContent class="mb-20">
       <template #wrapped>
         <h1 class="text-3xl uppercase font-grotesk my-10">
