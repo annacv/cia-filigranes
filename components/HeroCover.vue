@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScroll } from "~/composables/use-scroll.composable";
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
 const props = defineProps({
@@ -65,19 +65,22 @@ const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
 const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh')
+const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`)
 </script>
 
 <template>
   <ClientOnly>
     <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"/>
     <div
-      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+      data-hero-cover
+      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
         backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
         backgroundPosition: isScrolled ? 'center center' : backgroundPosition,
         clipPath: currentClipPath,
-        height: currentHeight
+        height: currentHeight,
+        transitionDuration: transitionDuration
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->

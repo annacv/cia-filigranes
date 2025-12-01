@@ -237,3 +237,4 @@ export const RRSS = [
 
 export const HEADER_MOBILE_HEIGHT = '72px'
 export const HEADER_DESKTOP_HEIGHT = '87px'
+export const HERO_COVER_ANIMATION_DURATION_MS = 1000
