@@ -12,6 +12,7 @@ const scrollMarginTop = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : H
   <main role="main">
     <div 
       id="main-content-anchor" 
+      aria-hidden="true"
       :style="{ scrollMarginTop: scrollMarginTop }"
     ></div>
     <div
