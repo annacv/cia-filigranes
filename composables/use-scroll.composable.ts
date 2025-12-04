@@ -40,13 +40,6 @@ const hasReachedBottom = computed(() => {
   return scrollY.value + windowHeight >= documentHeight - BOTTOM_THRESHOLD
 })
 
-const scrollProgress = computed(() => {
-  if (!enableScrollDetection.value) return 0 // Always 0 during SSR and initial hydration
-  const windowHeight = window.innerHeight
-  const documentHeight = document.documentElement.scrollHeight
-  return Math.min(scrollY.value / (documentHeight - windowHeight), 1)
-})
-
 const scrollToAnchor = () => {
   if (typeof window === 'undefined') return
 
@@ -116,6 +109,7 @@ if (import.meta.client) {
   let isHandlingScrollAnimation = false
   let preventScrollHandler: ((e: Event) => void) | null = null
   let preventScrollEventType: 'wheel' | 'touchmove' | null = null
+  let animationCleanupTimeout: ReturnType<typeof setTimeout> | null = null
 
   /**
    * Extracts deltaY from a wheel event
@@ -151,6 +145,28 @@ if (import.meta.client) {
   }
 
   /**
+   * Cleans up the scroll prevention handler and timeout
+   * @param resetFlag - Whether to reset the isHandlingScrollAnimation flag (default: true)
+   */
+  const cleanupScrollPrevention = (resetFlag = true) => {
+    if (animationCleanupTimeout) {
+      clearTimeout(animationCleanupTimeout)
+      animationCleanupTimeout = null
+    }
+
+    if (preventScrollHandler && preventScrollEventType) {
+      window.removeEventListener(preventScrollEventType, preventScrollHandler, { capture: true })
+      preventScrollHandler = null
+      preventScrollEventType = null
+    }
+
+    if (resetFlag) {
+      isHandlingScrollAnimation = false
+      lastTouchYDuringAnimation = null
+    }
+  }
+
+  /**
    * Handles scroll-to-anchor trigger
    * Prevents default scroll, cleans up handlers, sets up scroll prevention during animation,
    * and triggers the scroll-to-anchor animation
@@ -158,9 +174,9 @@ if (import.meta.client) {
    * @param eventType - The type of event ('wheel' or 'touchmove')
    */
   const handleScrollToAnchor = (e: Event, eventType: 'wheel' | 'touchmove') => {
-    // Prevent default scroll
     e.preventDefault()
     e.stopPropagation()
+    cleanupScrollPrevention(false)
 
     // Clean up main handlers - we only want to trigger once
     if (wheelHandler) {
@@ -199,7 +215,7 @@ if (import.meta.client) {
       } else {
         const touchEvent = preventEvent as TouchEvent
         const currentY = getCurrentTouchY(touchEvent)
-        // Touch: currentY < lastTouchYDuringAnimation means scrolling down (finger moves up on screen)
+
         if (currentY !== null && lastTouchYDuringAnimation !== null && currentY < lastTouchYDuringAnimation) {
           touchEvent.preventDefault()
           touchEvent.stopPropagation()
@@ -214,15 +230,8 @@ if (import.meta.client) {
 
     scrollToAnchor()
 
-    // Clean up after animation
-    setTimeout(() => {
-      isHandlingScrollAnimation = false
-      lastTouchYDuringAnimation = null
-      if (preventScrollHandler && preventScrollEventType) {
-        window.removeEventListener(preventScrollEventType, preventScrollHandler, { capture: true })
-        preventScrollHandler = null
-        preventScrollEventType = null
-      }
+    animationCleanupTimeout = setTimeout(() => {
+      cleanupScrollPrevention()
     }, HERO_COVER_ANIMATION_TIMEOUT_MS)
   }
 
@@ -362,6 +371,11 @@ if (import.meta.client) {
   // Initial setup
   setupWheelHandler()
   setupTouchHandler()
+
+  // Clean up on page unload/navigation to prevent memory leaks
+  window.addEventListener('beforeunload', () => {
+    cleanupScrollHandlers()
+  })
   
   /**
    * Clean up all scroll handlers
@@ -380,13 +394,8 @@ if (import.meta.client) {
       window.removeEventListener('touchmove', touchMoveHandler, { capture: true })
       touchMoveHandler = null
     }
-    if (preventScrollHandler && preventScrollEventType) {
-      window.removeEventListener(preventScrollEventType, preventScrollHandler, { capture: true })
-      preventScrollHandler = null
-      preventScrollEventType = null
-    }
+    cleanupScrollPrevention()
     initialTouchY = null
-    lastTouchYDuringAnimation = null
   }
 
   /**
