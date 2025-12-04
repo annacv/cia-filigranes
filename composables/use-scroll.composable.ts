@@ -68,11 +68,8 @@ const scrollToAnchor = () => {
     const maxAttempts = ANIMATION_FOLLOW_MAX_ATTEMPTS
     const interval = ANIMATION_FOLLOW_INTERVAL_MS
 
-    let lastScrollY = window.scrollY
     let attempts = 0
     let animationInterval: ReturnType<typeof setInterval> | null = null
-    
-    if (animationInterval) clearInterval(animationInterval)
     
     animationInterval = setInterval(() => {
       attempts++
@@ -91,7 +88,6 @@ const scrollToAnchor = () => {
       
       if (scrollDifference > SCROLL_DIFFERENCE_THRESHOLD) {
         window.scrollTo(0, targetScrollY)
-        lastScrollY = targetScrollY
       }
       
       if (!isAnimating || attempts >= maxAttempts) {
@@ -426,9 +422,6 @@ if (import.meta.client) {
 export function useScroll() {
   return {
     isScrolled: readonly(isScrolled),
-    hasReachedBottom: readonly(hasReachedBottom),
-    scrollY: readonly(scrollY),
-    scrollProgress: readonly(scrollProgress),
-    hasHandledFirstScroll: readonly(hasHandledFirstScroll)
+    hasReachedBottom: readonly(hasReachedBottom)
   }
 }
