@@ -203,7 +203,8 @@ if (import.meta.client) {
       } else {
         const touchEvent = preventEvent as TouchEvent
         const currentY = getCurrentTouchY(touchEvent)
-        if (currentY !== null && lastTouchYDuringAnimation !== null && currentY > lastTouchYDuringAnimation) {
+        // Touch: currentY < lastTouchYDuringAnimation means scrolling down (finger moves up on screen)
+        if (currentY !== null && lastTouchYDuringAnimation !== null && currentY < lastTouchYDuringAnimation) {
           touchEvent.preventDefault()
           touchEvent.stopPropagation()
           lastTouchYDuringAnimation = currentY
@@ -244,13 +245,13 @@ if (import.meta.client) {
       return wheelEvent.deltaY > 0
     } else {
       const currentY = getCurrentTouchY(e)
-      return currentY !== null && lastTouchYDuringAnimation !== null && currentY > lastTouchYDuringAnimation
+      return currentY !== null && lastTouchYDuringAnimation !== null && currentY < lastTouchYDuringAnimation
     }
   }
 
   /**
    * Checks if scroll-to-anchor should trigger
-   * Checks if user is at top (scrollY === 0) and scrolling down (deltaY > 0)
+   * Checks if user is at top (scrollY === 0) and scrolling down (deltaY > 0 for wheel, deltaY < 0 for touch)
    * @param e - The scroll event
    * @param eventType - The type of event ('wheel' or 'touchmove')
    * @returns True if scroll-to-anchor should trigger, false otherwise
@@ -264,7 +265,7 @@ if (import.meta.client) {
       return deltaY !== null && deltaY > 0
     } else {
       const deltaY = getTouchDeltaY(e, initialTouchY)
-      return deltaY !== null && deltaY > 0
+      return deltaY !== null && deltaY < 0
     }
   }
 
@@ -319,8 +320,6 @@ if (import.meta.client) {
     lastTouchYDuringAnimation = null
 
     touchStartHandler = (e: Event) => {
-      const touchEvent = e as TouchEvent
-
       if (hasHandledFirstScroll.value) return
       if (!enableScrollDetection.value) return
       if (scrollY.value !== 0) return
