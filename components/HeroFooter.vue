@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
-import { useScroll } from "~/composables/use-scroll.composable";
+import { useScrollState } from "~/composables/use-scroll-state.composable";
 import type { ImageRoute, ContentType } from "~/types";
 import { computed } from "vue";
 
@@ -29,7 +29,7 @@ const props = defineProps({
 });
 
 const { isMobile, isSmallTablet } = useResponsive()
-const { hasReachedBottom } = useScroll()
+const { hasReachedBottom } = useScrollState()
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
