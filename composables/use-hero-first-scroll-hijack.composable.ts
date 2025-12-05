@@ -25,6 +25,7 @@ let preventScrollEventType: 'wheel' | 'touchmove' | null = null
 let animationCleanupTimeout: ReturnType<typeof setTimeout> | null = null
 let scrollWatcherStop: (() => void) | null = null
 let followAnimationInterval: ReturnType<typeof setInterval> | null = null
+let pageFinishUnsubscribe: (() => void) | null = null
 
 /**
  * Global scroll hijack composable for hero first scroll behavior
@@ -151,7 +152,7 @@ export function useHeroFirstScrollHijack(): {
    */
   const getTouchDeltaY = (e: Event, initialY: number | null): number | null => {
     const touchEvent = e as TouchEvent
-    if (!initialY || touchEvent.touches.length === 0 || !touchEvent.touches[0]) return null
+    if (initialY === null || touchEvent.touches.length === 0 || !touchEvent.touches[0]) return null
     return touchEvent.touches[0].clientY - initialY
   }
 
@@ -395,7 +396,7 @@ export function useHeroFirstScrollHijack(): {
     // Hook into page navigation to reset scroll hijack state after navigation
     // Using page:finish ensures this runs after app.vue scrolls to (0, 0)
     const nuxtApp = useNuxtApp()
-    nuxtApp.hook('page:finish', () => {
+    pageFinishUnsubscribe = nuxtApp.hook('page:finish', () => {
       hasHandledFirstScroll.value = false
       setupWheelHandler()
       setupTouchHandler()
@@ -450,6 +451,10 @@ export function useHeroFirstScrollHijack(): {
     if (scrollWatcherStop) {
       scrollWatcherStop()
       scrollWatcherStop = null
+    }
+    if (pageFinishUnsubscribe) {
+      pageFinishUnsubscribe()
+      pageFinishUnsubscribe = null
     }
     hasHandledFirstScroll.value = false
     enableScrollDetection.value = false
