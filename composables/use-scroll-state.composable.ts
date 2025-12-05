@@ -1,6 +1,7 @@
-import { computed, readonly, watch, onMounted, type Ref } from 'vue'
+import { computed, readonly, type Ref } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
+import { tryOnMounted } from '@vueuse/core'
 
 const BOTTOM_THRESHOLD = 200
 
@@ -9,16 +10,13 @@ const BOTTOM_THRESHOLD = 200
  * Provides reactive scroll state that is safe for server-side rendering
  * Uses Nuxt's useState for request-scoped state management
  * 
- * @returns { isScrolled, hasReachedBottom } - Reactive scroll state flags
+ * @returns { isScrolled, hasReachedBottom }
  */
 export function useScrollState(): {
   isScrolled: Readonly<Ref<boolean>>
   hasReachedBottom: Readonly<Ref<boolean>>
 } {
-  // Use Nuxt's useState for SSR-safe, request-scoped state
-  // This ensures state is isolated per request on the server
   const enableScrollDetection = useState('scroll:enableDetection', () => false)
-  const scrollY = useState('scroll:y', () => 0)
 
   // Early return for SSR - return inert refs
   if (import.meta.server) {
@@ -28,16 +26,11 @@ export function useScrollState(): {
     }
   }
 
-  // Sync with VueUse's useWindowScroll on client
+  // Use useWindowScroll directly for reactivity
   const { y: windowScrollY } = useWindowScroll()
-  
-  // Watch and sync scroll position to useState
-  watch(windowScrollY, (newY) => {
-    scrollY.value = newY
-  }, { immediate: true })
 
-  // Enable scroll detection after hydration
-  onMounted(() => {
+  tryOnMounted(() => {
+    // Enable scroll detection after hydration
     setTimeout(() => {
       enableScrollDetection.value = true
     }, 100)
@@ -45,7 +38,7 @@ export function useScrollState(): {
 
   const isScrolled = computed(() => {
     if (!enableScrollDetection.value) return false
-    return scrollY.value > 0
+    return windowScrollY.value > 0
   })
 
   const hasReachedBottom = computed(() => {
@@ -54,7 +47,7 @@ export function useScrollState(): {
     
     const windowHeight = window.innerHeight
     const documentHeight = document.documentElement.scrollHeight
-    return scrollY.value + windowHeight >= documentHeight - BOTTOM_THRESHOLD
+    return windowScrollY.value + windowHeight >= documentHeight - BOTTOM_THRESHOLD
   })
 
   return {

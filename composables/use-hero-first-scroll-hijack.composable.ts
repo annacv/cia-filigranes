@@ -1,5 +1,6 @@
 import { watch, nextTick } from 'vue'
 import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
+import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from '~/constants'
 
@@ -23,6 +24,7 @@ let preventScrollHandler: ((e: Event) => void) | null = null
 let preventScrollEventType: 'wheel' | 'touchmove' | null = null
 let animationCleanupTimeout: ReturnType<typeof setTimeout> | null = null
 let scrollWatcherStop: (() => void) | null = null
+let followAnimationInterval: ReturnType<typeof setInterval> | null = null
 
 /**
  * Global scroll hijack composable for hero first scroll behavior
@@ -30,7 +32,7 @@ let scrollWatcherStop: (() => void) | null = null
  * This composable sets up a singleton scroll hijack that intercepts the first
  * scroll gesture from the top of the page and scrolls to the main content anchor.
  * 
- * @returns { scrollToAnchor } - Function to manually trigger scroll to anchor
+ * @returns { scrollToAnchor }
  */
 export function useHeroFirstScrollHijack(): {
   scrollToAnchor: () => void
@@ -45,8 +47,7 @@ export function useHeroFirstScrollHijack(): {
   // SSR-safe state using useState for request-scoped isolation
   const enableScrollDetection = useState('hero-scroll:enableDetection', () => false)
   const hasHandledFirstScroll = useState('hero-scroll:hasHandledFirstScroll', () => false)
-
-  const scrollY = useState('scroll:y', () => 0)
+  const { y: windowScrollY } = useWindowScroll()
 
   /**
    * Scrolls to the main content anchor and follows the animation
@@ -63,13 +64,7 @@ export function useHeroFirstScrollHijack(): {
     // Find HeroCover to monitor its animation
     const heroCover = document.querySelector('[data-hero-cover]') as HTMLElement | null
     const finalHeroHeight = parseFloat(isMobile ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT)
-    
-    let scrollMarginTop = 0
-    try {
-      scrollMarginTop = parseFloat(window.getComputedStyle(anchor).scrollMarginTop) || 0
-    } catch {
-      // If getComputedStyle fails, continue with 0
-    }
+    const scrollMarginTop = parseFloat(window.getComputedStyle(anchor).scrollMarginTop) || 0
     
     /**
      * Follows the anchor as it moves up during HeroCover animation
@@ -80,49 +75,40 @@ export function useHeroFirstScrollHijack(): {
       const interval = ANIMATION_FOLLOW_INTERVAL_MS
 
       let attempts = 0
-      let animationInterval: ReturnType<typeof setInterval> | null = null
       const initialDocumentHeight = document.documentElement.scrollHeight
       
-      animationInterval = setInterval(() => {
+      const clearFollowInterval = (): void => {
+        if (followAnimationInterval) {
+          clearInterval(followAnimationInterval)
+          followAnimationInterval = null
+        }
+      }
+    
+      clearFollowInterval()
+      
+      followAnimationInterval = setInterval(() => {
         attempts++
         
         // Guard against heroCover disappearing mid-animation
         if (!heroCover || !document.body.contains(heroCover)) {
-          if (animationInterval) {
-            clearInterval(animationInterval)
-            animationInterval = null
-          }
+          clearFollowInterval()
           return
         }
 
         if (!document.body.contains(anchor)) {
-          if (animationInterval) {
-            clearInterval(animationInterval)
-            animationInterval = null
-          }
+          clearFollowInterval()
           return
         }
 
         // Early exit if document height shrinks significantly
         const currentDocumentHeight = document.documentElement.scrollHeight
         if (currentDocumentHeight < initialDocumentHeight * 0.5) {
-          if (animationInterval) {
-            clearInterval(animationInterval)
-            animationInterval = null
-          }
+          clearFollowInterval()
           return
         }
 
-        let currentHeroHeight = 0
-        try {
-          currentHeroHeight = parseFloat(window.getComputedStyle(heroCover).height) || 0
-        } catch {
-          if (animationInterval) {
-            clearInterval(animationInterval)
-            animationInterval = null
-          }
-          return
-        }
+        // Get current hero height (defaults to 0 if fails)
+        const currentHeroHeight = parseFloat(window.getComputedStyle(heroCover).height) || 0
 
         const heightDifference = currentHeroHeight - finalHeroHeight
         const isAnimating = heightDifference > ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD
@@ -138,10 +124,7 @@ export function useHeroFirstScrollHijack(): {
         }
         
         if (!isAnimating || attempts >= maxAttempts) {
-          if (animationInterval) {
-            clearInterval(animationInterval)
-            animationInterval = null
-          }
+          clearFollowInterval()
           
           // Final scroll to ensure we're at the correct position
           const finalAnchorRect = anchor.getBoundingClientRect()
@@ -287,7 +270,7 @@ export function useHeroFirstScrollHijack(): {
    */
   const shouldTriggerScrollToAnchor = (e: Event, eventType: 'wheel' | 'touchmove'): boolean => {
     if (!enableScrollDetection.value) return false
-    if (scrollY.value !== 0) return false
+    if (windowScrollY.value !== 0) return false
 
     if (eventType === 'wheel') {
       const deltaY = getWheelDeltaY(e)
@@ -344,7 +327,7 @@ export function useHeroFirstScrollHijack(): {
     touchStartHandler = (e: Event) => {
       if (hasHandledFirstScroll.value) return
       if (!enableScrollDetection.value) return
-      if (scrollY.value !== 0) return
+      if (windowScrollY.value !== 0) return
 
       // Capture initial touch position
       const currentY = getCurrentTouchY(e)
@@ -360,15 +343,11 @@ export function useHeroFirstScrollHijack(): {
         if (shouldPreventScrollDuringAnimation(e, 'touchmove')) {
           touchEvent.preventDefault()
           touchEvent.stopPropagation()
-          const currentY = getCurrentTouchY(e)
-          if (currentY !== null) {
-            lastTouchYDuringAnimation = currentY
-          }
-        } else {
-          const currentY = getCurrentTouchY(e)
-          if (currentY !== null) {
-            lastTouchYDuringAnimation = currentY
-          }
+        }
+        // Always update lastTouchYDuringAnimation for tracking
+        const currentY = getCurrentTouchY(e)
+        if (currentY !== null) {
+          lastTouchYDuringAnimation = currentY
         }
         return
       }
@@ -401,6 +380,10 @@ export function useHeroFirstScrollHijack(): {
       window.removeEventListener('touchmove', touchMoveHandler, { capture: true })
       touchMoveHandler = null
     }
+    if (followAnimationInterval) {
+      clearInterval(followAnimationInterval)
+      followAnimationInterval = null
+    }
     cleanupScrollPrevention()
     initialTouchY = null
   }
@@ -409,6 +392,15 @@ export function useHeroFirstScrollHijack(): {
    * Sets up scroll hijacking handlers and watchers
    */
   const setupScrollHijacking = (): void => {
+    // Hook into page navigation to reset scroll hijack state after navigation
+    // Using page:finish ensures this runs after app.vue scrolls to (0, 0)
+    const nuxtApp = useNuxtApp()
+    nuxtApp.hook('page:finish', () => {
+      hasHandledFirstScroll.value = false
+      setupWheelHandler()
+      setupTouchHandler()
+    })
+
     // Enable scroll detection after a delay to ensure hydration is complete
     setTimeout(() => {
       enableScrollDetection.value = true
@@ -418,10 +410,10 @@ export function useHeroFirstScrollHijack(): {
     setupWheelHandler()
     setupTouchHandler()
 
-    // Watch for when user returns to top - reset the flag so scroll-to-anchor can trigger again
-    // Also provides fallback for cases where wheel/touch events don't fire (first scroll)
+    // Watch windowScrollY (reactive) for when user returns to top
+    // Reset the flag so scroll-to-anchor can trigger again
     scrollWatcherStop = watch(
-      scrollY,
+      windowScrollY,
       (newScrollY, oldScrollY) => {
         if (!enableScrollDetection.value) return
 
@@ -432,7 +424,7 @@ export function useHeroFirstScrollHijack(): {
           return
         }
         
-        // Fallback: also watch scrollY for cases where wheel/touch events don't fire (first scroll)
+        // Fallback: also watch for cases where wheel/touch events don't fire (first scroll)
         if (!hasHandledFirstScroll.value && oldScrollY === 0 && newScrollY > 0) {
           hasHandledFirstScroll.value = true
           cleanupScrollHandlers()
@@ -451,6 +443,10 @@ export function useHeroFirstScrollHijack(): {
    */
   const teardownScrollHijacking = (): void => {
     cleanupScrollHandlers()
+    if (followAnimationInterval) {
+      clearInterval(followAnimationInterval)
+      followAnimationInterval = null
+    }
     if (scrollWatcherStop) {
       scrollWatcherStop()
       scrollWatcherStop = null
