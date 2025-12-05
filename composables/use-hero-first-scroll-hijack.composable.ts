@@ -12,6 +12,18 @@ const ANIMATION_FOLLOW_INTERVAL_MS = 30
 const ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD = 20
 const SCROLL_DIFFERENCE_THRESHOLD = 5
 
+let activeInstanceCount = 0
+let wheelHandler: ((e: Event) => void) | null = null
+let touchStartHandler: ((e: Event) => void) | null = null
+let touchMoveHandler: ((e: Event) => void) | null = null
+let initialTouchY: number | null = null
+let lastTouchYDuringAnimation: number | null = null
+let isHandlingScrollAnimation = false
+let preventScrollHandler: ((e: Event) => void) | null = null
+let preventScrollEventType: 'wheel' | 'touchmove' | null = null
+let animationCleanupTimeout: ReturnType<typeof setTimeout> | null = null
+let scrollWatcherStop: (() => void) | null = null
+
 /**
  * Global scroll hijack composable for hero first scroll behavior
  * 
@@ -33,18 +45,6 @@ export function useHeroFirstScrollHijack(): {
   // SSR-safe state using useState for request-scoped isolation
   const enableScrollDetection = useState('hero-scroll:enableDetection', () => false)
   const hasHandledFirstScroll = useState('hero-scroll:hasHandledFirstScroll', () => false)
-
-  let activeInstanceCount = 0
-  let wheelHandler: ((e: Event) => void) | null = null
-  let touchStartHandler: ((e: Event) => void) | null = null
-  let touchMoveHandler: ((e: Event) => void) | null = null
-  let initialTouchY: number | null = null
-  let lastTouchYDuringAnimation: number | null = null
-  let isHandlingScrollAnimation = false
-  let preventScrollHandler: ((e: Event) => void) | null = null
-  let preventScrollEventType: 'wheel' | 'touchmove' | null = null
-  let animationCleanupTimeout: ReturnType<typeof setTimeout> | null = null
-  let scrollWatcherStop: (() => void) | null = null
 
   const scrollY = useState('scroll:y', () => 0)
 
@@ -87,7 +87,7 @@ export function useHeroFirstScrollHijack(): {
         attempts++
         
         // Guard against heroCover disappearing mid-animation
-        if (!heroCover) {
+        if (!heroCover || !document.body.contains(heroCover)) {
           if (animationInterval) {
             clearInterval(animationInterval)
             animationInterval = null
@@ -455,9 +455,10 @@ export function useHeroFirstScrollHijack(): {
       scrollWatcherStop()
       scrollWatcherStop = null
     }
+    hasHandledFirstScroll.value = false
+    enableScrollDetection.value = false
   }
 
-  // Singleton pattern: set up listeners on first mount, clean up on last unmount
   tryOnMounted(() => {
     activeInstanceCount++
     if (activeInstanceCount === 1) setupScrollHijacking()
