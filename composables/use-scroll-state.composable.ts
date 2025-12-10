@@ -1,7 +1,7 @@
 import { computed, readonly, ref, type Ref } from 'vue'
-import { useWindowScroll, useWindowSize, useElementSize } from '@vueuse/core'
+import { useWindowScroll, useWindowSize } from '@vueuse/core'
 import { useState } from '#app'
-import { tryOnMounted } from '@vueuse/core'
+import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
 
 const BOTTOM_THRESHOLD = 200
 
@@ -29,16 +29,44 @@ export function useScrollState(): {
   // Use reactive sources for all values that affect bottom detection
   const { y: windowScrollY } = useWindowScroll()
   const { height: windowHeight } = useWindowSize()
-  const documentElementRef = ref<HTMLElement | null>(null)
-  const { height: documentScrollHeight } = useElementSize(documentElementRef)
+  const documentScrollHeight = ref<number>(0)
+
+  let resizeObserver: ResizeObserver | null = null
+  let updateScrollHeight: (() => void) | null = null
 
   tryOnMounted(() => {
-    documentElementRef.value = document.documentElement
+    documentScrollHeight.value = document.documentElement.scrollHeight
+
+    // Use ResizeObserver to track changes to document scrollHeight
+    // This fires when content is added/removed or layout changes
+    resizeObserver = new ResizeObserver(() => {
+      documentScrollHeight.value = document.documentElement.scrollHeight
+    })
+    resizeObserver.observe(document.body)
+
+    // Listen to scroll and resize events to catch dynamic content changes
+    updateScrollHeight = () => {
+      documentScrollHeight.value = document.documentElement.scrollHeight
+    }
+    window.addEventListener('scroll', updateScrollHeight, { passive: true })
+    window.addEventListener('resize', updateScrollHeight, { passive: true })
     
     // Enable scroll detection after hydration
     setTimeout(() => {
       enableScrollDetection.value = true
     }, 100)
+  })
+
+  tryOnBeforeUnmount(() => {
+    if (resizeObserver) {
+      resizeObserver.disconnect()
+      resizeObserver = null
+    }
+    if (updateScrollHeight) {
+      window.removeEventListener('scroll', updateScrollHeight)
+      window.removeEventListener('resize', updateScrollHeight)
+      updateScrollHeight = null
+    }
   })
 
   const isScrolled = computed(() => {
