@@ -10,6 +10,12 @@ const head = useLocaleHead({
 });
 const htmlAttrs = computed(() => head.value.htmlAttrs || {});
 
+// Block browser scroll restoration immediately
+// This must be set before any navigation happens
+if (import.meta.client && typeof history !== 'undefined') {
+  history.scrollRestoration = 'manual'
+}
+
 nuxtApp.hook("page:finish", () => {
   if (import.meta.client) {
     window.scrollTo(0, 0);
