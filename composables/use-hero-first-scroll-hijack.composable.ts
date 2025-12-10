@@ -397,6 +397,8 @@ export function useHeroFirstScrollHijack(): {
     // Using page:finish ensures this runs after app.vue scrolls to (0, 0)
     const nuxtApp = useNuxtApp()
     pageFinishUnsubscribe = nuxtApp.hook('page:finish', () => {
+      // Clean up any ongoing scroll prevention from the previous page
+      cleanupScrollPrevention()
       hasHandledFirstScroll.value = false
       setupWheelHandler()
       setupTouchHandler()
