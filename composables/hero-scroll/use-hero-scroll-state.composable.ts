@@ -3,8 +3,6 @@ import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
 import { heroScrollRuntime } from './runtime'
 
-const SCROLL_DETECTION_ENABLE_DELAY_MS = 100
-
 export interface UseHeroScrollStateReturn {
   enableScrollDetection: ReturnType<typeof useState<boolean>>
   hasHandledFirstScroll: ReturnType<typeof useState<boolean>>
@@ -41,10 +39,19 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
       onScrollToTopReset()
     })
 
-    // Enable scroll detection after a delay to ensure hydration is complete
-    heroScrollRuntime.scrollDetectionEnableTimeout = setTimeout(() => {
-      enableScrollDetection.value = true
-    }, SCROLL_DETECTION_ENABLE_DELAY_MS)
+    // Enable scroll detection after hydration
+    // Wait for 2 frames to ensure browser is ready and scroll position is stable
+    let frameCount = 0
+    const enableDetection = () => {
+      frameCount++
+      if (frameCount < 3) {
+        heroScrollRuntime.scrollDetectionEnableFrameId = requestAnimationFrame(enableDetection)
+      } else {
+        enableScrollDetection.value = true
+        heroScrollRuntime.scrollDetectionEnableFrameId = null
+      }
+    }
+    heroScrollRuntime.scrollDetectionEnableFrameId = requestAnimationFrame(enableDetection)
 
     // Watch windowScrollY (reactive) for when user returns to top
     // Reset the flag so scroll-to-anchor can trigger again
@@ -73,9 +80,9 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
   }
 
   const teardown = (): void => {
-    if (heroScrollRuntime.scrollDetectionEnableTimeout) {
-      clearTimeout(heroScrollRuntime.scrollDetectionEnableTimeout)
-      heroScrollRuntime.scrollDetectionEnableTimeout = null
+    if (heroScrollRuntime.scrollDetectionEnableFrameId !== null) {
+      cancelAnimationFrame(heroScrollRuntime.scrollDetectionEnableFrameId)
+      heroScrollRuntime.scrollDetectionEnableFrameId = null
     }
     if (heroScrollRuntime.scrollWatcherStop) {
       heroScrollRuntime.scrollWatcherStop()

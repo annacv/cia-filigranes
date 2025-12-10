@@ -15,7 +15,7 @@ export interface HeroScrollRuntime {
   preventScrollHandler: ((e: Event) => void) | null
   preventScrollEventType: 'wheel' | 'touchmove' | null
   animationCleanupTimeout: ReturnType<typeof setTimeout> | null
-  scrollDetectionEnableTimeout: ReturnType<typeof setTimeout> | null
+  scrollDetectionEnableFrameId: number | null
   scrollWatcherStop: (() => void) | null
   followAnimationCleanup: (() => void) | null
   pageFinishUnsubscribe: (() => void) | null
@@ -32,7 +32,7 @@ export const heroScrollRuntime: HeroScrollRuntime = {
   preventScrollHandler: null,
   preventScrollEventType: null,
   animationCleanupTimeout: null,
-  scrollDetectionEnableTimeout: null,
+  scrollDetectionEnableFrameId: null,
   scrollWatcherStop: null,
   followAnimationCleanup: null,
   pageFinishUnsubscribe: null,
