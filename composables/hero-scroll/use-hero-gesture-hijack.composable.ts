@@ -1,8 +1,6 @@
 import { heroScrollRuntime } from './runtime'
 import { HERO_COVER_ANIMATION_DURATION_MS } from '~/constants'
 
-const HERO_COVER_ANIMATION_BUFFER_MS = 200
-const HERO_COVER_ANIMATION_TIMEOUT_MS = HERO_COVER_ANIMATION_DURATION_MS + HERO_COVER_ANIMATION_BUFFER_MS
 
 export interface UseHeroGestureHijackOptions {
   enableScrollDetection: { value: boolean }
@@ -17,26 +15,17 @@ export interface UseHeroGestureHijackReturn {
   cleanupScrollPrevention: (resetFlag?: boolean) => void
 }
 
-/**
- * Extracts deltaY from a wheel event
- */
 function getWheelDeltaY(e: Event): number | null {
   const wheelEvent = e as WheelEvent
   return wheelEvent.deltaY
 }
 
-/**
- * Calculates deltaY from a touch event
- */
 function getTouchDeltaY(e: Event, initialY: number | null): number | null {
   const touchEvent = e as TouchEvent
   if (initialY === null || touchEvent.touches.length === 0 || !touchEvent.touches[0]) return null
   return touchEvent.touches[0].clientY - initialY
 }
 
-/**
- * Gets the current touch Y position from a touch event
- */
 function getCurrentTouchY(e: Event): number | null {
   const touchEvent = e as TouchEvent
   if (touchEvent.touches.length === 0 || !touchEvent.touches[0]) return null
@@ -57,9 +46,6 @@ export function useHeroGestureHijack(
 ): UseHeroGestureHijackReturn {
   const { enableScrollDetection, hasHandledFirstScroll, windowScrollY, onScrollToAnchor } = options
 
-  /**
-   * Cleans up the scroll prevention handler and timeout
-   */
   const cleanupScrollPrevention = (resetFlag = true): void => {
     if (heroScrollRuntime.animationCleanupTimeout) {
       clearTimeout(heroScrollRuntime.animationCleanupTimeout)
@@ -79,12 +65,10 @@ export function useHeroGestureHijack(
     if (resetFlag) {
       heroScrollRuntime.isHandlingScrollAnimation = false
       heroScrollRuntime.lastTouchYDuringAnimation = null
+      heroScrollRuntime.animationCompletedAt = null
     }
   }
 
-  /**
-   * Checks if scroll should be prevented during animation
-   */
   const shouldPreventScrollDuringAnimation = (e: Event, eventType: 'wheel' | 'touchmove'): boolean => {
     if (!heroScrollRuntime.isHandlingScrollAnimation) return false
 
@@ -101,9 +85,6 @@ export function useHeroGestureHijack(
     }
   }
 
-  /**
-   * Checks if scroll-to-anchor should trigger
-   */
   const shouldTriggerScrollToAnchor = (e: Event, eventType: 'wheel' | 'touchmove'): boolean => {
     if (!enableScrollDetection.value) return false
     if (windowScrollY.value !== 0) return false
@@ -117,9 +98,6 @@ export function useHeroGestureHijack(
     }
   }
 
-  /**
-   * Handles scroll-to-anchor trigger
-   */
   const handleScrollToAnchor = (e: Event, eventType: 'wheel' | 'touchmove'): void => {
     e.preventDefault()
     e.stopPropagation()
@@ -169,7 +147,6 @@ export function useHeroGestureHijack(
     })
 
     // Clean up main handlers - we only want to trigger once
-    // Now that preventScrollHandler is set up, there's no gap
     if (heroScrollRuntime.wheelHandler) {
       window.removeEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true })
       heroScrollRuntime.wheelHandler = null
@@ -188,12 +165,9 @@ export function useHeroGestureHijack(
 
     heroScrollRuntime.animationCleanupTimeout = setTimeout(() => {
       cleanupScrollPrevention()
-    }, HERO_COVER_ANIMATION_TIMEOUT_MS)
+    }, HERO_COVER_ANIMATION_DURATION_MS)
   }
 
-  /**
-   * Setup wheel event handler
-   */
   const setupWheelHandler = (): void => {
     if (heroScrollRuntime.wheelHandler) {
       window.removeEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true })
@@ -221,9 +195,6 @@ export function useHeroGestureHijack(
     window.addEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true, passive: false })
   }
 
-  /**
-   * Setup touch event handlers
-   */
   const setupTouchHandler = (): void => {
     if (heroScrollRuntime.touchStartHandler) {
       window.removeEventListener('touchstart', heroScrollRuntime.touchStartHandler, { capture: true })
@@ -241,7 +212,6 @@ export function useHeroGestureHijack(
       if (!enableScrollDetection.value) return
       if (windowScrollY.value !== 0) return
 
-      // Capture initial touch position
       const currentY = getCurrentTouchY(e)
       if (currentY !== null) {
         heroScrollRuntime.initialTouchY = currentY
@@ -282,9 +252,6 @@ export function useHeroGestureHijack(
     })
   }
 
-  /**
-   * Clean up all scroll handlers
-   */
   const cleanupScrollHandlers = (): void => {
     if (heroScrollRuntime.wheelHandler) {
       window.removeEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true })

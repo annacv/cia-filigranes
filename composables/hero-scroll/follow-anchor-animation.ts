@@ -1,4 +1,5 @@
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '~/constants'
+import { heroScrollRuntime } from './runtime'
 
 const ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD = 20
 const SCROLL_DIFFERENCE_THRESHOLD = 5
@@ -58,14 +59,12 @@ export function followAnchorAnimation(
       return
     }
 
-    // Get current hero height (defaults to finalHeroHeight if parsing fails)
     const currentHeroHeight = parseFloat(window.getComputedStyle(heroCover).height) || finalHeroHeight
-
     const heightDifference = currentHeroHeight - finalHeroHeight
     const isAnimating = heightDifference > ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD
     const anchorRect = anchor.getBoundingClientRect()
     const currentAnchorTop = anchorRect.top + window.scrollY
-    const targetScrollY = Math.max(0, currentAnchorTop - scrollMarginTop)
+    const targetScrollY = Math.max(1, currentAnchorTop - scrollMarginTop)
     const currentScrollY = window.scrollY
     const scrollDifference = Math.abs(targetScrollY - currentScrollY)
 
@@ -77,10 +76,13 @@ export function followAnchorAnimation(
     if (!isAnimating || frameCount >= maxFrames) {
       cancel()
 
+      heroScrollRuntime.animationCompletedAt = Date.now()
+
       // Final scroll to ensure we're at the correct position
       const finalAnchorRect = anchor.getBoundingClientRect()
       const finalAnchorTop = finalAnchorRect.top + window.scrollY
-      const finalTargetScrollY = Math.max(0, finalAnchorTop - scrollMarginTop)
+      const finalTargetScrollY = Math.max(1, finalAnchorTop - scrollMarginTop)
+      
       window.scrollTo(0, finalTargetScrollY)
       return
     }

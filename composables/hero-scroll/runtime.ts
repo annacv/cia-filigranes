@@ -19,6 +19,7 @@ export interface HeroScrollRuntime {
   scrollWatcherStop: (() => void) | null
   followAnimationCleanup: (() => void) | null
   pageFinishUnsubscribe: (() => void) | null
+  animationCompletedAt: number | null
 }
 
 export const heroScrollRuntime: HeroScrollRuntime = {
@@ -36,4 +37,5 @@ export const heroScrollRuntime: HeroScrollRuntime = {
   scrollWatcherStop: null,
   followAnimationCleanup: null,
   pageFinishUnsubscribe: null,
+  animationCompletedAt: null,
 }

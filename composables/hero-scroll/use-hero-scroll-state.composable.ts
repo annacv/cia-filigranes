@@ -15,13 +15,12 @@ export interface UseHeroScrollStateReturn {
  * Manages hero scroll state and Nuxt lifecycle hooks
  * 
  * Handles:
- * - SSR-safe state using useState
+ * - SSR-safe state using useState for request-scoped isolation
  * - Nuxt page:finish hook for navigation reset
  * - Scroll detection enable delay
  * - Window scroll position watching for reset logic
  */
 export function useHeroScrollState(): UseHeroScrollStateReturn {
-  // SSR-safe state using useState for request-scoped isolation
   const enableScrollDetection = useState('hero-scroll:enableDetection', () => false)
   const hasHandledFirstScroll = useState('hero-scroll:hasHandledFirstScroll', () => false)
   const { y: windowScrollY } = useWindowScroll()

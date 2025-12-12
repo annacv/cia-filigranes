@@ -74,7 +74,6 @@ const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms
 
 <template>
   <ClientOnly>
-    <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"/>
     <div
       data-hero-cover
       class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"

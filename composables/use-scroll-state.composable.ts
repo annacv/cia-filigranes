@@ -1,7 +1,8 @@
-import { computed, readonly, ref, type Ref } from 'vue'
+import { computed, readonly, ref, watch, type Ref } from 'vue'
 import { useWindowScroll, useWindowSize } from '@vueuse/core'
 import { useState } from '#app'
 import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
+import { heroScrollRuntime } from './hero-scroll/runtime'
 
 const BOTTOM_THRESHOLD = 200
 
@@ -30,7 +31,6 @@ export function useScrollState(): {
   const { y: windowScrollY } = useWindowScroll()
   const { height: windowHeight } = useWindowSize()
   const documentScrollHeight = ref<number>(0)
-  // Track initial scroll position at mount to prevent state persistence
   const initialScrollY = ref<number>(0)
 
   let resizeObserver: ResizeObserver | null = null
@@ -72,7 +72,6 @@ export function useScrollState(): {
       if (currentScrollY !== lastScrollY && currentScrollY > 0 && lastScrollY === 0) {
         window.scrollTo(0, 0)
         lastScrollY = 0
-        // Don't update initialScrollY - keep it at 0
       } else {
         lastScrollY = currentScrollY
       }
@@ -81,12 +80,9 @@ export function useScrollState(): {
         enableDetectionFrameId = requestAnimationFrame(enableDetection)
       } else {
         // Final check: if scroll is still not 0, reset it one more time
-        // But keep initialScrollY at 0 (the value we captured at mount)
         if (window.scrollY > 0) {
           window.scrollTo(0, 0)
         }
-        // Keep initialScrollY at the value captured at mount (should be 0)
-        // Don't update it here even if scroll was restored
         enableScrollDetection.value = true
         enableDetectionFrameId = null
       }
@@ -116,8 +112,23 @@ export function useScrollState(): {
     if (!enableScrollDetection.value) {
       return initialScrollY.value > 0
     }
+
+    const currentScrollY = windowScrollY.value
+
+    // Grace period check: prevent isScrolled from becoming false immediately after animation
+    // This fixes light gestures where scroll drifts to 0 right after animation completes
+    if (heroScrollRuntime.animationCompletedAt !== null) {
+      const gracePeriodMs = 300
+      const smallScrollThreshold = 5
+      const timeSinceCompletion = Date.now() - heroScrollRuntime.animationCompletedAt
+
+      if (timeSinceCompletion < gracePeriodMs && currentScrollY < smallScrollThreshold) {
+        return true
+      }
+    }
+
     // After delay, use reactive windowScrollY for real-time updates
-    return windowScrollY.value > 0
+    return currentScrollY > 0
   })
 
   const hasReachedBottom = computed(() => {
