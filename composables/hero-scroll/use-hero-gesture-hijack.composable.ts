@@ -125,21 +125,6 @@ export function useHeroGestureHijack(
     e.stopPropagation()
     cleanupScrollPrevention(false)
 
-    // Clean up main handlers - we only want to trigger once
-    if (heroScrollRuntime.wheelHandler) {
-      window.removeEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true })
-      heroScrollRuntime.wheelHandler = null
-    }
-    if (heroScrollRuntime.touchStartHandler) {
-      window.removeEventListener('touchstart', heroScrollRuntime.touchStartHandler, { capture: true })
-      heroScrollRuntime.touchStartHandler = null
-    }
-    if (heroScrollRuntime.touchMoveHandler) {
-      window.removeEventListener('touchmove', heroScrollRuntime.touchMoveHandler, { capture: true })
-      heroScrollRuntime.touchMoveHandler = null
-    }
-    heroScrollRuntime.initialTouchY = null
-
     // Initialize touch tracking for animation prevention
     if (eventType === 'touchmove') {
       const currentY = getCurrentTouchY(e)
@@ -148,7 +133,8 @@ export function useHeroGestureHijack(
       }
     }
 
-    // Set up scroll prevention during animation
+    // Set up scroll prevention during animation FIRST - before removing main handlers
+    // This ensures there's no gap where heavy gesture events can slip through
     heroScrollRuntime.preventScrollEventType = eventType
     heroScrollRuntime.preventScrollHandler = (preventEvent: Event) => {
       if (!heroScrollRuntime.isHandlingScrollAnimation) return
@@ -181,6 +167,22 @@ export function useHeroGestureHijack(
       capture: true,
       passive: false,
     })
+
+    // Clean up main handlers - we only want to trigger once
+    // Now that preventScrollHandler is set up, there's no gap
+    if (heroScrollRuntime.wheelHandler) {
+      window.removeEventListener('wheel', heroScrollRuntime.wheelHandler, { capture: true })
+      heroScrollRuntime.wheelHandler = null
+    }
+    if (heroScrollRuntime.touchStartHandler) {
+      window.removeEventListener('touchstart', heroScrollRuntime.touchStartHandler, { capture: true })
+      heroScrollRuntime.touchStartHandler = null
+    }
+    if (heroScrollRuntime.touchMoveHandler) {
+      window.removeEventListener('touchmove', heroScrollRuntime.touchMoveHandler, { capture: true })
+      heroScrollRuntime.touchMoveHandler = null
+    }
+    heroScrollRuntime.initialTouchY = null
 
     onScrollToAnchor()
 
