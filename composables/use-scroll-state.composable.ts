@@ -104,6 +104,9 @@ export function useScrollState(): {
       window.removeEventListener('resize', updateScrollHeight)
       updateScrollHeight = null
     }
+    // Reset enableScrollDetection to false so it starts fresh on next navigation
+    // This ensures the protection logic using initialScrollY works correctly
+    enableScrollDetection.value = false
   })
 
   const isScrolled = computed(() => {
