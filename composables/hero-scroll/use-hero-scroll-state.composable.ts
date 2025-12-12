@@ -59,7 +59,24 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
       (newScrollY, oldScrollY) => {
         if (!enableScrollDetection.value) return
 
-        if (newScrollY === 0 && hasHandledFirstScroll.value) {
+        // Only reset hasHandledFirstScroll if user explicitly scrolled UP to reach 0
+        // Prevents reset for very light gestures where scrollY drifts to 0 after animation
+        if (newScrollY === 0 && hasHandledFirstScroll.value && oldScrollY > 0) {
+          // Grace period: don't reset immediately after animation completes
+          const GRACE_PERIOD_AFTER_ANIMATION_MS = 500
+          if (
+            heroScrollRuntime.animationCompletedAt !== null &&
+            Date.now() - heroScrollRuntime.animationCompletedAt < GRACE_PERIOD_AFTER_ANIMATION_MS
+          ) {
+            return
+          }
+
+          // Require meaningful scroll position (not just 1-2px drift)
+          const MIN_SCROLL_FOR_RESET = 10
+          if (oldScrollY < MIN_SCROLL_FOR_RESET) {
+            return
+          }
+
           hasHandledFirstScroll.value = false
           onScrollToTopReset()
           return

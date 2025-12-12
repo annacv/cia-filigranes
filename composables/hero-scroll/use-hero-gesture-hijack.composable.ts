@@ -1,6 +1,8 @@
 import { heroScrollRuntime } from './runtime'
 import { HERO_COVER_ANIMATION_DURATION_MS } from '~/constants'
 
+const HERO_COVER_ANIMATION_BUFFER_MS = 300
+const HERO_COVER_ANIMATION_TIMEOUT_MS = HERO_COVER_ANIMATION_DURATION_MS + HERO_COVER_ANIMATION_BUFFER_MS
 
 export interface UseHeroGestureHijackOptions {
   enableScrollDetection: { value: boolean }
@@ -165,7 +167,7 @@ export function useHeroGestureHijack(
 
     heroScrollRuntime.animationCleanupTimeout = setTimeout(() => {
       cleanupScrollPrevention()
-    }, HERO_COVER_ANIMATION_DURATION_MS)
+    }, HERO_COVER_ANIMATION_TIMEOUT_MS)
   }
 
   const setupWheelHandler = (): void => {

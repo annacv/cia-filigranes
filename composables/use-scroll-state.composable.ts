@@ -18,6 +18,7 @@ export function useScrollState(): {
   hasReachedBottom: Readonly<Ref<boolean>>
 } {
   const enableScrollDetection = useState('scroll:enableDetection', () => false)
+  const hasHandledFirstScroll = useState('hero-scroll:hasHandledFirstScroll', () => false)
 
   // Early return for SSR - return inert refs
   if (import.meta.server) {
@@ -117,6 +118,12 @@ export function useScrollState(): {
     }
 
     const currentScrollY = windowScrollY.value
+
+    // Prevents the cover from recovering its position for very very light gestures
+    // The hasHandledFirstScroll flag is reset when user scrolls back to top (scrollY === 0)
+    if (hasHandledFirstScroll.value) {
+      return true
+    }
 
     // Grace period check: prevent isScrolled from becoming false immediately after animation
     // This fixes light gestures where scroll drifts to 0 right after animation completes
