@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useImageUrl } from "~/composables/use-image-url.composable";
+import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
-import { useScroll } from "~/composables/use-scroll.composable";
+import { useScrollState } from "~/composables/use-scroll-state.composable";
+import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
 const props = defineProps({
@@ -29,13 +31,34 @@ const props = defineProps({
 })
 
 const { isMobile } = useResponsive()
-const { isScrolled } = useScroll()
+const { isScrolled } = useScrollState()
+
+useHeroFirstScrollHijack()
+
 const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
-const mobileHeight = '72px';
-const desktopHeight = '87px';
-const deviceFixedHeight = computed(() => isMobile.value ? mobileHeight : desktopHeight);
+// Preload images for better performance
+const { mobile: mobileImageUrl, desktop: desktopImageUrl } = getImageUrlsForPreload(props.imageName, props.imageRoute);
+
+useHead({
+  link: [
+    ...(mobileImageUrl ? [{
+      rel: 'preload',
+      as: 'image' as const,
+      href: mobileImageUrl,
+      media: '(max-width: 1023px)'
+    }] : []),
+    ...(desktopImageUrl ? [{
+      rel: 'preload',
+      as: 'image' as const,
+      href: desktopImageUrl,
+      media: '(min-width: 1024px)'
+    }] : [])
+  ]
+});
+
+const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 
 const mobileClip = '94%';
 const desktopClip = '86%';
@@ -46,19 +69,21 @@ const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%
 
 const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
 const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh')
+const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`)
 </script>
 
 <template>
   <ClientOnly>
-    <div v-if="isScrolled" class="bg-black" :style="{ height: currentHeight }"/>
     <div
-      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+      data-hero-cover
+      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
         backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
         backgroundPosition: isScrolled ? 'center center' : backgroundPosition,
         clipPath: currentClipPath,
-        height: currentHeight
+        height: currentHeight,
+        transitionDuration: transitionDuration
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->
@@ -72,5 +97,9 @@ const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value 
         </div>
       </div>
     </div>
+    <template #fallback>
+      <!-- Fallback placeholder with same height to prevent layout shift -->
+      <div class="sticky top-0 w-full z-10 bg-black" :style="{ height: '100dvh' }"/>
+    </template>
   </ClientOnly>
 </template>

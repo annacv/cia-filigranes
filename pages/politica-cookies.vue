@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ArrowRight from "assets/icons/arrow-right.svg";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 
 definePageMeta({
   headerBackgroundColor: '#c80d0d'
@@ -17,16 +18,20 @@ useHead({
 const { getTranslatedList } = useI18nUtils()
 const { isMobile } = useResponsive()
 
-const sections = getTranslatedList('cookies.sections', ['key', 'title', 'description'])
-const cookieTypes = getTranslatedList('cookies.types.list', ['key', 'title', 'description'])
-const tableHeaders = getTranslatedList('cookies.currentCookies.table.headers', ['key', 'label'])
-const currentCookies = getTranslatedList('cookies.currentCookies.table.rows', ['name', 'purpose', 'responsible', 'duration'])
-const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url'])
+const sections = getTranslatedList('cookies.sections', ['key', 'title', 'description']) as Array<Record<string, string>>
+const cookieTypes = getTranslatedList('cookies.types.list', ['key', 'title', 'description']) as Array<Record<string, string>>
+const tableHeaders = getTranslatedList('cookies.currentCookies.table.headers', ['key', 'label']) as Array<Record<string, string>>
+const currentCookies = getTranslatedList('cookies.currentCookies.table.rows', ['name', 'purpose', 'responsible', 'duration']) as Array<Record<string, string>>
+const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url']) as Array<Record<string, string>>
+
+const getCookieValue = (cookie: Record<string, string>, key: string | undefined): string => {
+  return key ? (cookie[key] ?? '') : ''
+}
 </script>
 
 <template>
   <div class="h-full">
-    <div :class="isMobile ? 'h-[72px]' : 'h-[87px]'"/>
+    <div :style="{ height: isMobile ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT }"/>
     <MainContent class="mb-20">
       <template #wrapped>
         <h1 class="text-3xl uppercase font-grotesk my-10">
@@ -88,7 +93,7 @@ const browserLinks = getTranslatedList('cookies.disable.browsers', ['name', 'url
                       :key="header.key"
                       class="border border-neutral-300 px-4 py-2"
                     >
-                      {{ cookie[header.key] }}
+                      {{ getCookieValue(cookie, header.key) }}
                     </td>
                   </tr>
                 </tbody>

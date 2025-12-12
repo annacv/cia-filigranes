@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { getImageByRoute } from "~/utils/image-by-route";
+import { useResponsive } from "~/composables/use-responsive.composable";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 
 definePageMeta({
   headerBackgroundColor: '#000'
 })
 
 const { t } = useI18n();
+const { isMobile } = useResponsive();
 
 useHead({
   meta: [
@@ -13,11 +17,13 @@ useHead({
   ]
 })
 const getImageAlt = () => useImageAlt('contact');
+
+const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 </script>
 
 <template>
   <div class="h-full bg-quaternary-500">
-    <div class="h-[72px] lg:h-[87px]"/>
+    <div :style="{ height: headerHeight }"/>
     <MainContent>
       <template #unwrapped>
         <ContactCard />

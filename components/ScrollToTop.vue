@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import ArrowDown from "assets/icons/arrow-down.svg";
+import { useScrollState } from "~/composables/use-scroll-state.composable";
 
-const { hasReachedBottom } = useScroll();
+const { hasReachedBottom } = useScrollState();
 
 const scrollToTop = () => {
   if (typeof window !== 'undefined') {

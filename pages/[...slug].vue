@@ -1,5 +1,7 @@
 <script setup>
+import { computed } from 'vue'
 import ArrowRight from "assets/icons/arrow-right.svg";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 // This is a catch-all route that will match any route not defined.
 // It will show a 404 page for any unknown routes
 
@@ -16,11 +18,13 @@ const { t } = useI18n();
 const { isMobile } = useResponsive();
 const imageSrc = useImageUrl('404', '');
 const imageAlt = '404';
+
+const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 </script>
 
 <template>
   <div>
-    <div :class="[isMobile ? 'h-[72px]' : 'h-[87px]', 'bg-primary-500']"/>
+    <div :style="{ height: headerHeight }" class="bg-primary-500"/>
     <MainContent class="bg-primary-500">
       <template #wrapped>
         <div class="flex flex-col items-center justify-center h-full bg-primary-500 pt-6 pb-32">

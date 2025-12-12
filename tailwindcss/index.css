@@ -139,3 +139,20 @@
     @apply !mb-0;
   }
 }
+
+/* Page Transitions */
+.fade-enter-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-leave-active {
+  transition: opacity 0.25s ease-in;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
