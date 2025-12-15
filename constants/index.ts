@@ -114,64 +114,64 @@ export const LOCALE_ROUTES = {
 
 export const GLOB_IMPORTS = {
   mobileShowImages: import.meta.glob('~/assets/images/mobile/espectacles/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopShowImages: import.meta.glob('~/assets/images/desktop/espectacles/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   mobileTallerImages: import.meta.glob('~/assets/images/mobile/tallers/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopTallerImages: import.meta.glob('~/assets/images/desktop/tallers/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   mobileAnimacionsImages: import.meta.glob('~/assets/images/mobile/animacions/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopAnimacionsImages: import.meta.glob('~/assets/images/desktop/animacions/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   mobileContacteImages: import.meta.glob('~/assets/images/mobile/contacte/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopContacteImages: import.meta.glob('~/assets/images/desktop/contacte/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   mobileFilipersonesImages: import.meta.glob('~/assets/images/mobile/filipersones/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopFilipersonesImages: import.meta.glob('~/assets/images/desktop/filipersones/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>,
+  }) as Record<string, () => Promise<string>>,
 
   desktopImages: import.meta.glob('~/assets/images/desktop/*.webp', {
-    eager: true,
+    eager: false,
     import: 'default',
-  }) as Record<string, string>
+  }) as Record<string, () => Promise<string>>
 };
 
 export const PERFORMANCES_IMG = [

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
@@ -39,23 +39,30 @@ const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
 // Preload images for better performance
-const { mobile: mobileImageUrl, desktop: desktopImageUrl } = getImageUrlsForPreload(props.imageName, props.imageRoute);
+const mobileImageUrl = ref<string | undefined>(undefined);
+const desktopImageUrl = ref<string | undefined>(undefined);
+
+onMounted(async () => {
+  const urls = await getImageUrlsForPreload(props.imageName, props.imageRoute);
+  mobileImageUrl.value = urls.mobile;
+  desktopImageUrl.value = urls.desktop;
+});
 
 useHead({
-  link: [
-    ...(mobileImageUrl ? [{
+  link: computed(() => [
+    ...(mobileImageUrl.value ? [{
       rel: 'preload',
       as: 'image' as const,
-      href: mobileImageUrl,
+      href: mobileImageUrl.value,
       media: '(max-width: 1023px)'
     }] : []),
-    ...(desktopImageUrl ? [{
+    ...(desktopImageUrl.value ? [{
       rel: 'preload',
       as: 'image' as const,
-      href: desktopImageUrl,
+      href: desktopImageUrl.value,
       media: '(min-width: 1024px)'
     }] : [])
-  ]
+  ])
 });
 
 const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
