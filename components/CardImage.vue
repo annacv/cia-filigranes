@@ -75,6 +75,9 @@ const handleTouchEnd = () => {
         : 'group-hover/image:brightness-110 group-hover/image:saturate-110 group-hover/image:scale-105'"
       :src="imageSrc"
       :alt="imageAlt"
+      width="420"
+      height="443"
+      style="aspect-ratio: 420 / 443;"
       loading="lazy"
       draggable="false"
     >

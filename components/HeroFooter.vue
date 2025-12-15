@@ -60,7 +60,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->
-      <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
+      <img :src="imageUrl" :alt="alt" width="1" height="1" style="position: absolute; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
     </div>
     <template #fallback>
       <!-- Fallback placeholder with mobile height to prevent layout shift -->

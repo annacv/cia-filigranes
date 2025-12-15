@@ -54,13 +54,15 @@ useHead({
       rel: 'preload',
       as: 'image' as const,
       href: mobileImageUrl.value,
-      media: '(max-width: 1023px)'
+      media: '(max-width: 1023px)',
+      fetchpriority: 'high' as const
     }] : []),
     ...(desktopImageUrl.value ? [{
       rel: 'preload',
       as: 'image' as const,
       href: desktopImageUrl.value,
-      media: '(min-width: 1024px)'
+      media: '(min-width: 1024px)',
+      fetchpriority: 'high' as const
     }] : [])
   ])
 });
@@ -94,7 +96,7 @@ const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->
-      <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
+      <img :src="imageUrl" :alt="alt" width="1" height="1" style="position: absolute; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       <div
         class="layout-cols transition-opacity duration-500"
         :class="isScrolled ? 'opacity-0' : 'opacity-100'"

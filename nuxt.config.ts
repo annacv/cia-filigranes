@@ -32,4 +32,39 @@ export default defineNuxtConfig({
     vueI18n: "./i18n.config.ts"
   },
   compatibilityDate: "2025-06-27",
+  nitro: {
+    compressPublicAssets: true,
+    routeRules: {
+      '/assets/images/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000',
+        },
+      },
+      '/assets/fonts/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000',
+        },
+      },
+      '/assets/icons/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000',
+        },
+      },
+      '/_nuxt/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
+      '/downloads/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000',
+        },
+      },
+      '/favicon.ico': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000',
+        },
+      },
+    },
+  },
 });
