@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import archivoBlackRegular from '~/assets/fonts/archivo-black/archivo-black-regular.woff2?url';
 
 const nuxtApp = useNuxtApp();
 const { t,locale } = useI18n();
@@ -9,6 +10,18 @@ const head = useLocaleHead({
   seo: true,
 });
 const htmlAttrs = computed(() => head.value.htmlAttrs || {});
+
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      href: archivoBlackRegular,
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'anonymous',
+    },
+  ],
+});
 
 // Block browser scroll restoration immediately
 // This must be set before any navigation happens
