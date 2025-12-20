@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { routePages, localeObjects } from "./locales/index";
+import { routePages, localeObjects } from "./i18n/index";
 
 export default defineNuxtConfig({
   app: {
@@ -25,46 +25,22 @@ export default defineNuxtConfig({
     locales: localeObjects,
     customRoutes: 'config',
     pages: routePages,
-    langDir: "locales",
     strategy: "prefix_except_default",
     defaultLocale: "ca",
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts"
   },
-  compatibilityDate: "2025-06-27",
-  nitro: {
-    compressPublicAssets: true,
-    routeRules: {
-      '/assets/images/**': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000',
-        },
-      },
-      '/assets/fonts/**': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000',
-        },
-      },
-      '/assets/icons/**': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000',
-        },
-      },
-      '/_nuxt/**': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000, immutable',
-        },
-      },
-      '/downloads/**': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000',
-        },
-      },
-      '/favicon.ico': {
-        headers: {
-          'Cache-Control': 'public, max-age=31536000',
-        },
-      },
+  compatibilityDate: "2025-12-20",
+  vite: {
+    css: {
+      devSourcemap: true,
     },
+    build: {
+      cssCodeSplit: true,
+    },
+  },
+  nitro: {
+    preset: 'static',
+    compressPublicAssets: true,
   },
 });
