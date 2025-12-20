@@ -27,9 +27,16 @@ const desktopMap: Record<ImageRoute, Record<string, () => Promise<string>>> = {
  */
 async function loadImageUrl(load: () => Promise<string>): Promise<string | undefined> {
   try {
-    return await load();
+    const url = await load();
+    // Vite/Nuxt processes image imports and returns absolute paths
+    // Just ensure it's a valid string
+    if (typeof url !== 'string') {
+      console.warn('[loadImageUrl] URL is not a string:', typeof url, url);
+      return undefined;
+    }
+    return url;
   } catch (error) {
-    console.warn('Failed to load image:', error);
+    console.warn('[loadImageUrl] Failed to load image:', error);
     return undefined;
   }
 }
@@ -103,4 +110,74 @@ export async function getImageUrlsForPreload(imageName: string, route: ImageRout
     getImageUrlDirect(imageName, route, false)
   ]);
   return { mobile, desktop };
+}
+
+/**
+ * Returns responsive image data with srcset and sizes for optimal image delivery.
+ * @param {string} imageName - The file name, e.g., "avatar-1.jpg"
+ * @param {ImageRoute} route - The route where the image is allocated in the assets' folder.
+ * @param {string} sizes - The sizes attribute for the img tag (default: responsive sizes for card images).
+ * @returns {ComputedRef<{ src: string | undefined, srcset: string | undefined, sizes: string }>} The responsive image data.
+ */
+export function useImageSrcset(imageName: string, route: ImageRoute, sizes: string = '(max-width: 1023px) 100vw, 420px'): ComputedRef<{ src: string | undefined, srcset: string | undefined, sizes: string }> {
+  const mobileUrl = ref<string | undefined>(undefined);
+  const desktopUrl = ref<string | undefined>(undefined);
+  
+  const mobileImages = computed(() => mobileMap[route] || {});
+  const desktopImages = computed(() => desktopMap[route] || {});
+
+  // Load mobile image
+  watchEffect(async () => {
+    const currentImages = mobileImages.value;
+    const imageKeys = Object.keys(currentImages);
+    const imageKey = imageKeys.find(path => {
+      const filename = path.split('/').pop() || path;
+      return filename === `${imageName}.webp` || filename.startsWith(`${imageName}.`);
+    });
+
+    if (!imageKey || !currentImages[imageKey]) {
+      mobileUrl.value = undefined;
+      return;
+    }
+
+    mobileUrl.value = await loadImageUrl(currentImages[imageKey]);
+  });
+
+  // Load desktop image
+  watchEffect(async () => {
+    const currentImages = desktopImages.value;
+    const imageKeys = Object.keys(currentImages);
+    const imageKey = imageKeys.find(path => {
+      const filename = path.split('/').pop() || path;
+      return filename === `${imageName}.webp` || filename.startsWith(`${imageName}.`);
+    });
+
+    if (!imageKey || !currentImages[imageKey]) {
+      desktopUrl.value = undefined;
+      return;
+    }
+
+    desktopUrl.value = await loadImageUrl(currentImages[imageKey]);
+  });
+
+  return computed(() => {
+    const srcsetParts: string[] = [];
+    
+    if (mobileUrl.value) {
+      srcsetParts.push(`${mobileUrl.value} 1023w`);
+    }
+    if (desktopUrl.value) {
+      srcsetParts.push(`${desktopUrl.value} 1024w`);
+    }
+
+    const srcset = srcsetParts.length > 0 ? srcsetParts.join(', ') : undefined;
+    // Use mobile URL as fallback src, or desktop if mobile is not available
+    const src = mobileUrl.value || desktopUrl.value;
+
+    return {
+      src,
+      srcset,
+      sizes
+    };
+  });
 }
