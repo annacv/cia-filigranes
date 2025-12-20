@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, onMounted } from 'vue'
-import { useImageUrl, getImageUrlsForPreload } from "~/composables/use-image-url.composable";
+import { computed } from 'vue'
+import { getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
@@ -32,83 +32,120 @@ const props = defineProps({
 
 const { isMobile } = useResponsive()
 const { isScrolled } = useScrollState()
-
 useHeroFirstScrollHijack()
-
-const imageUrl = useImageUrl(props.imageName, props.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 
-// Preload images for better performance
-const mobileImageUrl = ref<string | undefined>(undefined);
-const desktopImageUrl = ref<string | undefined>(undefined);
+// Resolve image URLs during SSR for LCP optimization
+const { data: imageUrls } = await useAsyncData(
+  `hero-image-${props.imageName}-${props.imageRoute}`,
+  () => getImageUrlsForPreload(props.imageName, props.imageRoute),
+  {
+    server: true,
+    default: () => ({ mobile: undefined, desktop: undefined })
+  }
+);
 
-onMounted(async () => {
-  const urls = await getImageUrlsForPreload(props.imageName, props.imageRoute);
-  mobileImageUrl.value = urls.mobile;
-  desktopImageUrl.value = urls.desktop;
+const mobileImageUrl = computed(() => imageUrls.value?.mobile);
+const desktopImageUrl = computed(() => imageUrls.value?.desktop);
+const currentImageUrl = computed(() => isMobile.value ? mobileImageUrl.value : desktopImageUrl.value);
+const imageSrcset = computed(() => {
+  const parts: string[] = [];
+  if (mobileImageUrl.value) {
+    parts.push(`${mobileImageUrl.value} 1023w`);
+  }
+  if (desktopImageUrl.value) {
+    parts.push(`${desktopImageUrl.value} 1024w`);
+  }
+  return parts.length > 0 ? parts.join(', ') : undefined;
 });
 
+// Preload images in head during SSR
 useHead({
-  link: computed(() => [
-    ...(mobileImageUrl.value ? [{
-      rel: 'preload',
-      as: 'image' as const,
-      href: mobileImageUrl.value,
-      media: '(max-width: 1023px)',
-      fetchpriority: 'high' as const
-    }] : []),
-    ...(desktopImageUrl.value ? [{
-      rel: 'preload',
-      as: 'image' as const,
-      href: desktopImageUrl.value,
-      media: '(min-width: 1024px)',
-      fetchpriority: 'high' as const
-    }] : [])
-  ])
+  link: computed(() => {
+    const links = [];
+    if (mobileImageUrl.value) {
+      links.push({
+        rel: 'preload',
+        as: 'image' as const,
+        href: mobileImageUrl.value,
+        media: '(max-width: 1023px)',
+        fetchpriority: 'high' as const
+      });
+    }
+    if (desktopImageUrl.value) {
+      links.push({
+        rel: 'preload',
+        as: 'image' as const,
+        href: desktopImageUrl.value,
+        media: '(min-width: 1024px)',
+        fetchpriority: 'high' as const
+      });
+    }
+    return links;
+  })
 });
-
-const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 
 const mobileClip = '94%';
 const desktopClip = '86%';
+const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`);
+
+const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 const deviceClip = computed(() => isMobile.value ? mobileClip : desktopClip);
 
 const initialClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceClip.value}, 0% 100%)`);
-const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`)
+const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`);
 
-const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value)
-const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh')
-const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`)
+const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value);
+const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh');
+const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
 </script>
 
 <template>
-  <ClientOnly>
+  <div
+    data-hero-cover
+    class="sticky top-0 w-full z-10 grid-layout items-center shadow transition-all ease-[cubic-bezier(0.4,0,0.2,1)] relative overflow-hidden"
+    :style="{
+      clipPath: currentClipPath,
+      height: currentHeight,
+      transitionDuration: transitionDuration
+    }"
+  >
+    <picture v-if="currentImageUrl" class="absolute inset-0 w-full h-full">
+      <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)" />
+      <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)" />
+      <img
+        :src="currentImageUrl"
+        :alt="alt"
+        :srcset="imageSrcset"
+        sizes="100vw"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
+        :style="{
+          objectPosition: imagePosition,
+          transitionDuration: transitionDuration
+        }"
+      />
+    </picture>
+    
+    <!-- Gradient overlay -->
     <div
-      data-hero-cover
-      class="sticky top-0 w-full z-10 bg-no-repeat bg-cover grid-layout items-center shadow transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
-      :class="isScrolled ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
+      class="absolute inset-0 w-full h-full transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
+      :class="isScrolled ? 'mix-blend-soft-light' : 'mix-blend-hard-light'"
       :style="{
-        backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-        backgroundPosition: isScrolled ? 'center center' : backgroundPosition,
-        clipPath: currentClipPath,
-        height: currentHeight,
+        background: `linear-gradient(to right bottom, ${gradientOverlayValue})`,
         transitionDuration: transitionDuration
       }"
+    />
+    
+    <div
+      class="layout-cols transition-opacity duration-500 relative z-10"
+      :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
-      <!-- Added img tag for Accessibility for screen readers -->
-      <img :src="imageUrl" :alt="alt" width="1" height="1" style="position: absolute; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
-      <div
-        class="layout-cols transition-opacity duration-500"
-        :class="isScrolled ? 'opacity-0' : 'opacity-100'"
-      >
-        <div class="flex justify-end">
-          <slot name="content"/>
-        </div>
+      <div class="flex justify-end">
+        <slot name="content"/>
       </div>
     </div>
-    <template #fallback>
-      <!-- Fallback placeholder with same height to prevent layout shift -->
-      <div class="sticky top-0 w-full z-10 bg-black" :style="{ height: '100dvh' }"/>
-    </template>
-  </ClientOnly>
+  </div>
 </template>

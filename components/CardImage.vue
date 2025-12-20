@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { CardImage, ContentType } from "~/types";
-import { useImageUrl } from "~/composables/use-image-url.composable";
+import { useImageSrcset } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 
 const props = withDefaults(defineProps<{
@@ -24,7 +24,7 @@ const emit = defineEmits<{
 }>();
 
 const { isMobile } = useResponsive();
-const imageSrc = useImageUrl(props.image.imageName, props.image.imageRoute);
+const imageData = useImageSrcset(props.image.imageName, props.image.imageRoute);
 const { gradientColorClass } = useColor(props.contentType);
 
 // Internal touch state (for SmallCard-like usage)
@@ -73,12 +73,15 @@ const handleTouchEnd = () => {
       :class="isMobile 
         ? (isImageTouched ? 'brightness-110 saturate-110 scale-105' : 'brightness-70 saturate-100 scale-100')
         : 'group-hover/image:brightness-110 group-hover/image:saturate-110 group-hover/image:scale-105'"
-      :src="imageSrc"
+      :src="imageData.src"
+      :srcset="imageData.srcset"
+      :sizes="imageData.sizes"
       :alt="imageAlt"
       width="420"
       height="443"
       style="aspect-ratio: 420 / 443;"
       loading="lazy"
+      decoding="async"
       draggable="false"
     >
     <div

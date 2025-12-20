@@ -50,6 +50,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
 <template>
   <ClientOnly>
     <div
+      v-if="imageUrl"
       class="mt-10 lg:mt-20 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="hasReachedBottom ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
