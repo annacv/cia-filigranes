@@ -103,11 +103,11 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
 <template>
   <div
     data-hero-cover
-    class="sticky top-0 w-full z-10 grid-layout items-center shadow transition-all ease-[cubic-bezier(0.4,0,0.2,1)] relative overflow-hidden"
+    class="sticky top-0 w-full z-10 grid-layout items-center shadow relative overflow-hidden transition-[clip-path,height] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[clip-path,height]"
     :style="{
       clipPath: currentClipPath,
       height: currentHeight,
-      transitionDuration: transitionDuration
+      transitionDuration: transitionDuration,
     }"
   >
     <picture v-if="currentImageUrl" class="absolute inset-0 w-full h-full">
@@ -123,26 +123,26 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
         decoding="async"
         width="1920"
         height="1080"
-        class="w-full h-full object-cover transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="w-full h-full object-cover transition-[object-position] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-object-position"
         :style="{
           objectPosition: imagePosition,
-          transitionDuration: transitionDuration
+          transitionDuration: transitionDuration,
         }"
       />
     </picture>
     
     <!-- Gradient overlay -->
     <div
-      class="absolute inset-0 w-full h-full transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
+      class="absolute inset-0 w-full h-full transition-[mix-blend-mode] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-mix-blend-mode"
       :class="isScrolled ? 'mix-blend-soft-light' : 'mix-blend-hard-light'"
       :style="{
         background: `linear-gradient(to right bottom, ${gradientOverlayValue})`,
-        transitionDuration: transitionDuration
+        transitionDuration: transitionDuration,
       }"
     />
     
     <div
-      class="layout-cols transition-opacity duration-500 relative z-10"
+      class="layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
       <div class="flex justify-end">
