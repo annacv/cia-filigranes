@@ -74,7 +74,7 @@ export function useImageUrl(imageName: string, route: ImageRoute): ComputedRef<s
   const imageMap = computed(() => isMobile.value ? mobileMap : desktopMap);
   const images = computed(() => imageMap.value[route] || {});
 
-  watchEffect(async () => {
+  watchEffect(async (onInvalidate) => {
     const currentImages = images.value;
     const imageKeys = Object.keys(currentImages);
     const imageKey = imageKeys.find(path => {
@@ -92,7 +92,16 @@ export function useImageUrl(imageName: string, route: ImageRoute): ComputedRef<s
       return;
     }
 
-    imageUrl.value = await loadImageUrl(currentImages[imageKey]);
+    let isValid = true;
+    onInvalidate(() => {
+      isValid = false;
+    });
+
+    const url = await loadImageUrl(currentImages[imageKey]);
+    
+    if (isValid) {
+      imageUrl.value = url;
+    }
   });
 
   return computed(() => imageUrl.value);
@@ -127,7 +136,7 @@ export function useImageSrcset(imageName: string, route: ImageRoute, sizes: stri
   const desktopImages = computed(() => desktopMap[route] || {});
 
   // Load mobile image
-  watchEffect(async () => {
+  watchEffect(async (onInvalidate) => {
     const currentImages = mobileImages.value;
     const imageKeys = Object.keys(currentImages);
     const imageKey = imageKeys.find(path => {
@@ -140,11 +149,22 @@ export function useImageSrcset(imageName: string, route: ImageRoute, sizes: stri
       return;
     }
 
-    mobileUrl.value = await loadImageUrl(currentImages[imageKey]);
+    // Track if this operation is still valid
+    let isValid = true;
+    onInvalidate(() => {
+      isValid = false;
+    });
+
+    const url = await loadImageUrl(currentImages[imageKey]);
+    
+    // Only update if this operation is still valid (not cancelled by a new watchEffect run)
+    if (isValid) {
+      mobileUrl.value = url;
+    }
   });
 
   // Load desktop image
-  watchEffect(async () => {
+  watchEffect(async (onInvalidate) => {
     const currentImages = desktopImages.value;
     const imageKeys = Object.keys(currentImages);
     const imageKey = imageKeys.find(path => {
@@ -157,7 +177,18 @@ export function useImageSrcset(imageName: string, route: ImageRoute, sizes: stri
       return;
     }
 
-    desktopUrl.value = await loadImageUrl(currentImages[imageKey]);
+    // Track if this operation is still valid
+    let isValid = true;
+    onInvalidate(() => {
+      isValid = false;
+    });
+
+    const url = await loadImageUrl(currentImages[imageKey]);
+    
+    // Only update if this operation is still valid (not cancelled by a new watchEffect run)
+    if (isValid) {
+      desktopUrl.value = url;
+    }
   });
 
   return computed(() => {
