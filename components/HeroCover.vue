@@ -121,6 +121,8 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
         fetchpriority="high"
         loading="eager"
         decoding="async"
+        width="1920"
+        height="1080"
         class="w-full h-full object-cover transition-all ease-[cubic-bezier(0.4,0,0.2,1)]"
         :style="{
           objectPosition: imagePosition,
