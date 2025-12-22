@@ -34,7 +34,8 @@ useHead({
     {
       innerHTML: `
         body.antialiased {
-          font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+          font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-size-adjust: 0.5;
         }
       `,
       key: 'font-fallback',
