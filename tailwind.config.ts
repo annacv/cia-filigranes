@@ -69,11 +69,12 @@ const config: Config = {
   },
   plugins: [],
   safelist: [
-    'text-primary-500', 'border-primary-500',
-    'text-secondary-500', 'border-secondary-500',
-    'text-tertiary-500', 'border-tertiary-500',
-    'text-quaternary-500', 'border-quaternary-500',
-    'w-7', 'h-7', '!w-7', '!h-7',
+    {
+      pattern: /^(text|border)-(primary|secondary|tertiary|quaternary)-(300|500|700)$/,
+    },
+    {
+      pattern: /^(w|h|!w|!h)-7$/,
+    },
   ],
 }
 
