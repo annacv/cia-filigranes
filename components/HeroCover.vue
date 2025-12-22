@@ -120,7 +120,7 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
         sizes="100vw"
         fetchpriority="high"
         loading="eager"
-        decoding="async"
+        decoding="sync"
         width="1920"
         height="1080"
         class="w-full h-full object-cover transition-[object-position] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-object-position"
