@@ -29,12 +29,7 @@ const isTouched = ref(false);
 
 <template>
   <ClientOnly>
-    <div
-      class="relative group"
-      :class="contentType === 'performances'
-        ? 'w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[720px] 2xl:w-[720px] h-[298px] xs:h-[310px] sm:h-[320px] xl:h-[360px] 2xl:h-[420px]'
-        : 'w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square'"
-    >
+    <div class="relative group w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square">
       <NuxtLinkLocale
         :to="link.href"
         class="w-full h-full transition-all duration-800 ease-in-out block"
