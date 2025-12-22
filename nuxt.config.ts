@@ -30,6 +30,10 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts"
   },
+  tailwindcss: {
+    configPath: 'tailwind.config.ts',
+    viewer: false,
+  },
   compatibilityDate: "2025-12-20",
   vite: {
     css: {
@@ -42,5 +46,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     compressPublicAssets: true,
+    minify: true,
   },
 });
