@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import archivoBlackRegular from '~/assets/fonts/archivo-black/archivo-black-regular.woff2?url';
+import ibmPlexSansRegular from '~/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2?url';
 
 const nuxtApp = useNuxtApp();
 const { t,locale } = useI18n();
@@ -19,6 +20,24 @@ useHead({
       as: 'font',
       type: 'font/woff2',
       crossorigin: 'anonymous',
+    },
+    {
+      rel: 'preload',
+      href: ibmPlexSansRegular,
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'anonymous',
+    },
+  ],
+  // Prevent layout shift from font loading
+  style: [
+    {
+      innerHTML: `
+        body.antialiased {
+          font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+        }
+      `,
+      key: 'font-fallback',
     },
   ],
 });
