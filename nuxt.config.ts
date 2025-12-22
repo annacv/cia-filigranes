@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     locales: localeObjects,
     customRoutes: 'config',
     pages: routePages,
+    langDir: "locales",
     strategy: "prefix_except_default",
     defaultLocale: "ca",
     detectBrowserLanguage: false,
