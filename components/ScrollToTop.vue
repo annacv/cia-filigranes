@@ -25,7 +25,7 @@ const scrollToTop = () => {
   >
     <button
       v-if="hasReachedBottom"
-      class="fixed bottom-[516px] right-5 xl:bottom-[250px] xl:right-6 z-50 px-4 py-[13.5px] bg-primary-500 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+      class="fixed w-[40px] h-[40px] bottom-[516px] right-5 xl:bottom-[250px] xl:right-6 z-50 px-4 py-[13.5px] bg-primary-500 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
       :aria-label="$t('button.scrollToTop')"
       type="button"
       @click="scrollToTop"

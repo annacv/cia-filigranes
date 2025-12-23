@@ -50,6 +50,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
 <template>
   <ClientOnly>
     <div
+      v-if="imageUrl"
       class="mt-10 lg:mt-20 w-full bg-no-repeat bg-cover bg-blend-hard-light shadow transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
       :class="hasReachedBottom ? 'bg-blend-soft-light' : 'bg-blend-hard-light'"
       :style="{
@@ -60,7 +61,7 @@ const deviceClipPath = computed(() => `polygon(0 0, 100% ${deviceClip.value}, 10
       }"
     >
       <!-- Added img tag for Accessibility for screen readers -->
-      <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
+      <img :src="imageUrl" :alt="alt" width="1" height="1" style="position: absolute; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
     </div>
     <template #fallback>
       <!-- Fallback placeholder with mobile height to prevent layout shift -->

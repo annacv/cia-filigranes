@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import archivoBlackRegular from '~/assets/fonts/archivo-black/archivo-black-regular.woff2?url';
+import ibmPlexSansRegular from '~/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2?url';
 
 const nuxtApp = useNuxtApp();
 const { t,locale } = useI18n();
@@ -9,6 +11,25 @@ const head = useLocaleHead({
   seo: true,
 });
 const htmlAttrs = computed(() => head.value.htmlAttrs || {});
+
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      href: archivoBlackRegular,
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'anonymous',
+    },
+    {
+      rel: 'preload',
+      href: ibmPlexSansRegular,
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: 'anonymous',
+    },
+  ],
+});
 
 // Block browser scroll restoration immediately
 // This must be set before any navigation happens

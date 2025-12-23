@@ -66,7 +66,6 @@ const mobileClip = 'polygon(0% 0%, 50% 10%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)
 
 const currentClipPath = computed(() => props.isReversed ? reversedClipPath : initialClipPath)
 const buttonText = computed(() => props.showMore ? t('button.goBack') : t('button.viewMore'))
-
 const hoverState = computed(() => isMobile.value ? isVisibleAt80Percent.value : isHovered.value)
 const toggleHover = () => isHovered.value = !isHovered.value;
 
@@ -81,7 +80,7 @@ watchEffect(() => {
 <template>
   <div
     ref="componentRef"
-    class="p-0 grid-layout bg-neutral-0 text-neutral-900"
+    class="p-0 grid-layout bg-neutral-0 text-neutral-900 contain-card"
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >
@@ -115,7 +114,7 @@ watchEffect(() => {
       </div>
     
       <div
-        v-if="!hideImage"
+        v-if="!hideImage && imageUrl"
         ref="imageRef"
         class="w-full lg:w-[55%] h-[500px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[

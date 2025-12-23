@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { routePages, localeObjects } from "./locales/index";
+import { routePages, localeObjects } from "./i18n/index";
 
 export default defineNuxtConfig({
   app: {
@@ -31,5 +31,22 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts"
   },
-  compatibilityDate: "2025-06-27",
+  tailwindcss: {
+    configPath: 'tailwind.config.ts',
+    viewer: false,
+  },
+  compatibilityDate: "2025-12-20",
+  vite: {
+    css: {
+      devSourcemap: true,
+    },
+    build: {
+      cssCodeSplit: true,
+    },
+  },
+  nitro: {
+    preset: 'static',
+    compressPublicAssets: true,
+    minify: true,
+  },
 });

@@ -2,12 +2,12 @@ import type { Config } from 'tailwindcss/types/config'
 
 const config: Config = {
   content: [
-    './index.html',
     './pages/**/*.vue',
     './components/**/*.vue',
     './layouts/**/*.vue',
     './composables/**/*.{js,ts}',
     './plugins/**/*.{js,ts}',
+    './app.vue',
   ],
   theme: {
     screens: {
@@ -64,16 +64,30 @@ const config: Config = {
         'highlight-secondary': 'linear-gradient(to right bottom, var(--color-secondary-500), var(--color-secondary-700))',
         'highlight-tertiary': 'linear-gradient(to right bottom, var(--color-tertiary-500), var(--color-tertiary-700))',
         'highlight-quaternary': 'linear-gradient(to right bottom, var(--color-quaternary-500), var(--color-quaternary-300))',
+      },
+      willChange: {
+        'auto': 'auto',
+        'scroll': 'scroll-position',
+        'contents': 'contents',
+        'transform': 'transform',
+        'opacity': 'opacity',
+        'clip-path': 'clip-path',
+        'height': 'height',
+        'object-position': 'object-position',
+        'mix-blend-mode': 'mix-blend-mode',
+        'bg-color': 'background-color',
+        'color': 'color',
       }
     },
   },
   plugins: [],
   safelist: [
-    'text-primary-500', 'border-primary-500',
-    'text-secondary-500', 'border-secondary-500',
-    'text-tertiary-500', 'border-tertiary-500',
-    'text-quaternary-500', 'border-quaternary-500',
-    'w-7', 'h-7', '!w-7', '!h-7',
+    {
+      pattern: /^(text|border)-(primary|secondary|tertiary|quaternary)-(300|500|700)$/,
+    },
+    {
+      pattern: /^(w|h|!w|!h)-7$/,
+    },
   ],
 }
 

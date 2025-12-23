@@ -101,8 +101,8 @@ watchEffect(() => {
 <template>
   <div
     ref="componentRef"
-    :class="`p-0 grid-layout ${getColors}`"
-    :style="{ clipPath: isMobile ? mobileClip : 'none'}"
+    :class="`p-0 grid-layout ${getColors} contain-card`"
+    :style="{ clipPath: isMobile ? mobileClip : 'none' }"
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >
@@ -162,6 +162,7 @@ watchEffect(() => {
         </div>
       </div>
       <div
+        v-if="imageUrl"
         ref="imageRef"
         class="w-full h-[400px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
