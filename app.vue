@@ -29,18 +29,6 @@ useHead({
       crossorigin: 'anonymous',
     },
   ],
-  // Prevent layout shift from font loading
-  style: [
-    {
-      innerHTML: `
-        body.antialiased {
-          font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          font-size-adjust: 0.5;
-        }
-      `,
-      key: 'font-fallback',
-    },
-  ],
 });
 
 // Block browser scroll restoration immediately
