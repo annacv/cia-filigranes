@@ -101,8 +101,8 @@ watchEffect(() => {
 <template>
   <div
     ref="componentRef"
-    :class="`p-0 grid-layout ${getColors}`"
-    :style="{ clipPath: isMobile ? mobileClip : 'none'}"
+    :class="`p-0 grid-layout ${getColors} contain-card`"
+    :style="{ clipPath: isMobile ? mobileClip : 'none' }"
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >

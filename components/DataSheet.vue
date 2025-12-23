@@ -80,7 +80,7 @@ watchEffect(() => {
 <template>
   <div
     ref="componentRef"
-    class="p-0 grid-layout bg-neutral-0 text-neutral-900"
+    class="p-0 grid-layout bg-neutral-0 text-neutral-900 contain-card"
     @mouseenter="toggleHover()"
     @mouseleave="toggleHover()"
   >

@@ -29,7 +29,7 @@ const isTouched = ref(false);
 
 <template>
   <ClientOnly>
-    <div class="relative group w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square">
+    <div class="relative group w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square contain-card">
       <NuxtLinkLocale
         :to="link.href"
         class="w-full h-full transition-all duration-800 ease-in-out block"
