@@ -55,9 +55,11 @@ const handleTouchEnd = () => {
     if (props.useInternalTouchState) {
       requestAnimationFrame(() => {
         isTouched.value = false;
+        emit('touchEnd');
       });
+    } else {
+      emit('touchEnd');
     }
-    emit('touchEnd');
   }
 };
 </script>
