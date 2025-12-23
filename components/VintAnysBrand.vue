@@ -1,16 +1,10 @@
-<script setup lang="ts">
-const { t } = useI18n()
-</script>
-
 <template>
   <svg
     enable-background="new 0 0 459 379" height="379" viewBox="0 0 459 379" width="459"
     xmlns="http://www.w3.org/2000/svg" 
     class="h-auto"
     role="img"
-    :aria-label="t('routes.vint-anys')"
   >
-    <title>{{ t('routes.vint-anys') }}</title>
     <switch>
       <g>
         <g fill="#fff">
