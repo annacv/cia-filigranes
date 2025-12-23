@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/device",
     "nuxt-svgo",
     "@nuxt/scripts",
-    "@nuxt/eslint",
+    "@nuxt/eslint"
   ],
   svgo: {
     svgoConfig: {},
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     '~/assets/css/fonts.css'
   ],
   i18n: {
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://ciafiligranes.net",
     locales: localeObjects,
     customRoutes: 'config',
     pages: routePages,
