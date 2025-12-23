@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     '~/assets/css/fonts.css'
   ],
   i18n: {
-    baseUrl: "https://ciafiligranes.net",
+    baseUrl: "https://www.ciafiligranes.net",
     locales: localeObjects,
     customRoutes: 'config',
     pages: routePages,
