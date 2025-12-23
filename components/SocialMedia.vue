@@ -19,6 +19,8 @@ const props = withDefaults(defineProps<Props>(), {
   gap: 'gap-2 xl:gap-4'
 })
 
+const { t } = useI18n()
+
 const socialIcons = {
   facebook: FacebookIcon,
   instagram: InstagramIcon,
@@ -46,10 +48,16 @@ const getIconClasses = () => {
 <template>
   <ul :class="`flex flex-row justify-center ${props.gap}`">
     <li v-for="(item, index) in RRSS" :key="index">
-      <a :href="item.url" target="_blank" rel="noopener noreferrer">
+      <a 
+        :href="item.url" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        :aria-label="t(`aria.socialMedia.${item.platform}`)"
+      >
         <Component
           :is="getIcon(item.platform)"
           :class="getIconClasses()"
+          aria-hidden="true"
         />
       </a>
     </li>

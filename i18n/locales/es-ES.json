@@ -43,7 +43,21 @@
     "viewMore": "Ver más",
     "goBack": "Volver atrás",
     "goHome": "Ir al inicio",
-    "scrollToTop": "Ir al principio de la página"
+    "scrollToTop": "Ir al principio de la página",
+    "scrollLeft": "Desplazar hacia la izquierda",
+    "scrollRight": "Desplazar hacia la derecha"
+  },
+  "aria": {
+    "home": "Compañía Filigranes - Ir al inicio",
+    "shows": "Espectáculo - {title}",
+    "workshops": "Taller - {title}",
+    "performances": "Animaciones a la carta",
+    "socialMedia": {
+      "facebook": "Visita nuestra página de Facebook",
+      "instagram": "Visita nuestro perfil de Instagram",
+      "youtube": "Visita nuestro canal de YouTube",
+      "linkedin": "Visita nuestro perfil de LinkedIn"
+    }
   },
   "selectLang": "Elige idioma",
   "footer": {

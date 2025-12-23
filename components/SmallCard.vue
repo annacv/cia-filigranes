@@ -23,6 +23,7 @@ const props = defineProps({
 });
 
 const { isMobile } = useResponsive();
+const { t } = useI18n();
 const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 const isTouched = ref(false);
 </script>
@@ -33,6 +34,7 @@ const isTouched = ref(false);
       <NuxtLinkLocale
         :to="link.href"
         class="w-full h-full transition-all duration-800 ease-in-out block"
+        :aria-label="t(`aria.${props.contentType}`, { title: props.title })"
       >
         <CardImage
           :image="image"

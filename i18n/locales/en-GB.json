@@ -43,7 +43,21 @@
     "viewMore": "View more",
     "goBack": "Go back",
     "goHome": "Go to home",
-    "scrollToTop": "Scroll to top"
+    "scrollToTop": "Scroll to top",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right"
+  },
+  "aria": {
+    "home": "Filigranes Company - Go to home",
+    "shows": "Show - {title}",
+    "workshops": "Workshop - {title}",
+    "performances": "Performances",
+    "socialMedia": {
+      "facebook": "Visit our Facebook page",
+      "instagram": "Visit our Instagram page",
+      "youtube": "Visit our YouTube channel",
+      "linkedin": "Visit our LinkedIn page"
+    }
   },
   "selectLang": "Choose language",
   "footer": {

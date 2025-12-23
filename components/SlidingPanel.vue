@@ -4,6 +4,8 @@ import { useDebounceFn } from '@vueuse/core'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 import ArrowLeft from '~/assets/icons/arrow-left.svg'
 
+const { t } = useI18n()
+
 const props = withDefaults(defineProps<{
   scrollFactor?: number
   buttonClass?: string | object | unknown[]
@@ -69,6 +71,7 @@ onBeforeUnmount(() => {
         buttonClass,
         { '!opacity-100 !pointer-events-auto': !isScrollAtStart }
       ]"
+      :aria-label="t('button.scrollLeft')"
       @click="scrollLeft"
     >
       <ArrowLeft :class="iconClass"/>
@@ -89,6 +92,7 @@ onBeforeUnmount(() => {
         buttonClass,
         { '!opacity-100 !pointer-events-auto': !isScrollAtEnd }
       ]"
+      :aria-label="t('button.scrollRight')"
       @click="scrollRight"
     >
       <ArrowRight :class="iconClass" />
