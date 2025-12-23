@@ -27,7 +27,7 @@ const summaryButton = computed(() => {
   <div class="h-full">
     <HeroCover image-name="hero_cover" image-route="" :alt="t('home.hero.alt')">
       <template #content>
-        <VintAnysBrand class="w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"/>
+        <h1><VintAnysBrand class="w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"/></h1>
       </template>
     </HeroCover>
     <MainContent>
