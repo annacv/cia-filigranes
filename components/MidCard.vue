@@ -22,6 +22,7 @@ const props = defineProps({
   }
 });
 
+const { t } = useI18n();
 const touchedImageIndex = ref<number | null>(null)
 const imageAlt = computed(() => useImageAlt(props.contentType, props.title));
 const handleImageTouchStart = (index?: number) => {
@@ -43,6 +44,7 @@ const handleImageTouchEnd = () => {
       <NuxtLinkLocale
         :to="link.href"
         class="flex gap-1 w-full h-full transition-all duration-800 ease-in-out"
+        :aria-label="t('aria.performances')"
       >
         <CardImage
           v-for="(image, index) in props.images"

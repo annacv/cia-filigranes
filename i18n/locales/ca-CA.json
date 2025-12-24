@@ -43,7 +43,22 @@
     "viewMore": "Veure'n més",
     "goBack": "Tornar enrera",
     "goHome": "Ves a l'inici",
-    "scrollToTop": "Anar al principi de la pàgina"
+    "scrollToTop": "Anar al principi de la pàgina",
+    "scrollLeft": "Desplaçar cap a l'esquerra",
+    "scrollRight": "Desplaçar cap a la dreta",
+    "pdfOpens": "obre un document PDF"
+  },
+  "aria": {
+    "home": "Companyia Filigranes - Anar a l'inici",
+    "shows": "Espectacle - {title}",
+    "workshops": "Taller - {title}",
+    "performances": "Animacions a la carta",
+    "socialMedia": {
+      "facebook": "Visita la nostra pàgina de Facebook",
+      "instagram": "Visita el nostre perfil d'Instagram",
+      "youtube": "Visita el nostre canal de YouTube",
+      "linkedin": "Visita el nostre perfil de LinkedIn"
+    }
   },
   "selectLang": "Escull l'idioma",
   "footer": {

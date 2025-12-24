@@ -61,12 +61,12 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
         </ClientOnly>
       </div>
       <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36 order-0 lg:order-1">
-        <h2 class="font-grotesk text-4xl lg:text-5xl">
+        <h1 class="font-grotesk text-4xl lg:text-5xl">
           {{ t('contact.info.title') }}
-        </h2>
-        <p class="text-3xl lg:text-4xl mb-4">
+        </h1>
+        <h2 class="text-3xl lg:text-4xl mb-4">
           {{ t('contact.info.subtitle') }}
-        </p>
+        </h2>
         <div class=" flex flex-col items-start gap-6 font-semibold">
           <a class="flex gap-2 items-center" :href="`mailto:${CONTACT.email}`">
             <ArrowRight class="self-end !h-4 !w-4"/><span class="hover:opacity-80">{{ CONTACT.email }}</span>

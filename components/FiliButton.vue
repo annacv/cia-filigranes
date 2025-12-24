@@ -16,12 +16,20 @@ const props = withDefaults(defineProps<{
   target: '_blank',
 })
 
+const { t } = useI18n()
 const slots = useSlots()
 
 const hasTextSlot = computed(() => !!slots.text)
 const paddingClass = computed(() => (hasTextSlot.value ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
 const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
 const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLink : 'button'))
+
+const ariaLabel = computed(() => {
+  if (isDownload.value) {
+    return `${props.text} (${t('button.pdfOpens')})`
+  }
+  return props.text
+})
 
 const buttonProps = computed(() =>
   isDownload.value
@@ -52,6 +60,7 @@ const buttonProps = computed(() =>
     class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal gap-2 w-max will-change-[background-color,color]"
     :class="[paddingClass, buttonClass]"
     role="button"
+    :aria-label="ariaLabel"
     @click="onClick"
   >
     <slot name="icon-left" />
