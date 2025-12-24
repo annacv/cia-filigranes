@@ -46,7 +46,7 @@
     "scrollToTop": "Anar al principi de la pàgina",
     "scrollLeft": "Desplaçar cap a l'esquerra",
     "scrollRight": "Desplaçar cap a la dreta",
-    "pdfOpens": "obre un document PDF"
+    "pdf": "descarrega un document PDF"
   },
   "aria": {
     "home": "Companyia Filigranes - Anar a l'inici",
