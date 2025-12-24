@@ -4,7 +4,7 @@ import { useState } from '#app'
 import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
 import { heroScrollRuntime } from './hero-scroll/runtime'
 
-const BOTTOM_THRESHOLD = 200
+const BOTTOM_THRESHOLD = 800
 
 /**
  * SSR-safe scroll state composable

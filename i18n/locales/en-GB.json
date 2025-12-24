@@ -46,7 +46,7 @@
     "scrollToTop": "Scroll to top",
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
-    "pdfOpens": "opens PDF document"
+    "pdf": "download a PDF document"
   },
   "aria": {
     "home": "Filigranes Company - Go to home",

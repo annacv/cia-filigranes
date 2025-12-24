@@ -26,7 +26,7 @@ const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownl
 
 const ariaLabel = computed(() => {
   if (isDownload.value) {
-    return `${props.text} (${t('button.pdfOpens')})`
+    return `${props.text} (${t('button.pdf')})`
   }
   return props.text
 })

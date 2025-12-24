@@ -46,7 +46,7 @@
     "scrollToTop": "Ir al principio de la página",
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
-    "pdfOpens": "abre un documento PDF"
+    "pdf": "descarga un documento PDF"
   },
   "aria": {
     "home": "Compañía Filigranes - Ir al inicio",
