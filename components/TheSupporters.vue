@@ -44,7 +44,7 @@ async function loadLogoUrl(logoName: string): Promise<string | undefined> {
   }
 }
 
-const supportersData = computed<Supporter[]>(() => [
+const supporters = computed<Supporter[]>(() => [
   {
     url: 'https://tubdassaig.com/',
     alt: 'Tub d\'Assaig',
@@ -72,7 +72,7 @@ const { data: logoUrls } = await useAsyncData<Record<string, string | undefined>
   'supporters-logos',
   async () => {
     const urls: Record<string, string | undefined> = {}
-    const logoNames = supportersData.value.map(supporter => supporter.logoName)
+    const logoNames = supporters.value.map(supporter => supporter.logoName)
     for (const logoName of logoNames) {
       urls[logoName] = await loadLogoUrl(logoName)
     }
@@ -83,8 +83,6 @@ const { data: logoUrls } = await useAsyncData<Record<string, string | undefined>
     default: () => ({} as Record<string, string | undefined>)
   }
 )
-
-const supporters = computed<Supporter[]>(() => supportersData.value)
 
 const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
 </script>
