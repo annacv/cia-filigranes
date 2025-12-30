@@ -111,7 +111,9 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
                 :src="getLogoUrl(supporter.logoName)"
                 :alt="supporter.alt"
                 class="w-auto object-contain"
-                :class="supporter.logoName === 'logo-tub' ? 'h-14 xl:h-16': 'h-8 xl:h-10'"
+                loading="lazy"
+                decoding="async"
+                :class="supporter.logoName === 'logo-tub' ? 'h-14 xl:h-16' : 'h-8 xl:h-10'"
               />
             </a>
           </div>
