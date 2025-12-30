@@ -11,6 +11,7 @@ const { isMobileOrTablet } = useResponsive()
     class="min-w-full w-full"
   >
     <FooterNavigation />
+    <TheSupporters />
     <div class="grid-layout bg-black text-white text-center text-sm">
       <div class="layout-cols flex flex-wrap flex-row items-center justify-center gap-2 xl:gap-4 py-12">
         <SocialMedia />
@@ -51,7 +52,7 @@ const { isMobileOrTablet } = useResponsive()
             {{ t('footer.foto.text') }}
             <a
               class="font-bold transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80"
-              href="https://www.linkedin.com/in/gerard-bañó-4283162a"
+              href="https://www.linkedin.com/in/gerard-bf-4283162a/"
               target="_blank"
               rel="noopener nofollow"
             >Gerard Bañó</a>

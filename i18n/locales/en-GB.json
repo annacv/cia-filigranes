@@ -71,6 +71,10 @@
     "legal": {
       "advice": "Legal notice",
       "cookies": "Cookie policy"
+    },
+    "supporters": {
+      "title": "With the support of:",
+      "visit": "Visit"
     }
   },
   "404": {
