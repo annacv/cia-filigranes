@@ -109,7 +109,6 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
             class="flex items-center justify-center"
           >
             <a
-              v-if="supporter.url"
               :href="supporter.url"
               target="_blank"
               rel="noopener noreferrer"
@@ -123,23 +122,6 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
                 :class="supporter.logoName === 'logo-tub' ? 'h-14 xl:h-16': 'h-8 xl:h-10'"
               />
             </a>
-            <div
-              v-else
-              class="flex items-center justify-center"
-            >
-              <img
-                v-if="getLogoUrl(supporter.logoName)"
-                :src="getLogoUrl(supporter.logoName)"
-                :alt="supporter.alt"
-                class="h-8 xl:h-10 w-auto object-contain opacity-60"
-              />
-              <span
-                v-else
-                class="text-xs xl:text-sm text-neutral-400"
-              >
-                {{ supporter.alt }}
-              </span>
-            </div>
           </div>
         </div>
       </div>
