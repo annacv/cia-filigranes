@@ -171,7 +171,12 @@ export const GLOB_IMPORTS = {
   desktopImages: import.meta.glob('~/assets/images/desktop/*.webp', {
     eager: false,
     import: 'default',
-  }) as Record<string, () => Promise<string>>
+  }) as Record<string, () => Promise<string>>,
+
+  commonImages: import.meta.glob('~/assets/images/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
 };
 
 export const PERFORMANCES_IMG = [
