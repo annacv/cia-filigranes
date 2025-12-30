@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { GLOB_IMPORTS } from '~/constants'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 interface Supporter {
   url: string
   alt: string
   logoName: string
 }
-
-const { locale } = useI18n()
 
 const getGeneUrl = (locale: string) => {
   switch (locale) {
