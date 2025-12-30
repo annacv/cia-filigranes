@@ -11,6 +11,7 @@ const { isMobileOrTablet } = useResponsive()
     class="min-w-full w-full"
   >
     <FooterNavigation />
+    <TheSupporters />
     <div class="grid-layout bg-black text-white text-center text-sm">
       <div class="layout-cols flex flex-wrap flex-row items-center justify-center gap-2 xl:gap-4 py-12">
         <SocialMedia />

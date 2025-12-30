@@ -71,6 +71,10 @@
     "legal": {
       "advice": "Avís legal",
       "cookies": "Política de cookies"
+    },
+    "supporters": {
+      "title": "amb el suport de:",
+      "visit": "Visita"
     }
   },
   "404": {
