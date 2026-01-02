@@ -90,7 +90,7 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
 <template>
   <section class="w-full">
     <div class="grid-layout bg-neutral-900 text-white">
-      <div class="layout-cols py-2 xl:py-4 border-t border-neutral-600">
+      <div class="layout-cols py-2 pb-8 md:pb-12 xl:py-4 border-t border-neutral-600">
         <h2 class="flex justify-start text-sm font-semibold mb-2 xl:mb-4">
           {{ t('footer.supporters.title') }}
         </h2>

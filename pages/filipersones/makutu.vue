@@ -101,5 +101,7 @@ const makutuAlt = getImageAlt('makutu')
       :alt="makutuAlt"
       background-position="center 0%"
     />
+    <BottomNavigation />
+    <TheSupporters />
   </div>
 </template>

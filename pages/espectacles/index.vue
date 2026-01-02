@@ -71,6 +71,8 @@ const synopsisItems = computed(() => {
           :title="t('shows.hire.title')"
           description="shows.hire.description"
         />
+        <BottomNavigation />
+        <TheSupporters />
       </template>
     </MainContent>
   </div>

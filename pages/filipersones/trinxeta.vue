@@ -99,5 +99,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
       :alt="trinxetaAlt"
       background-position="center 53%"
     />
+    <BottomNavigation />
+    <TheSupporters />
   </div>
 </template>

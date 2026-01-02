@@ -161,5 +161,7 @@ const showMore = () => {
       :title="t('home.hire.title')"
       description="home.hire.description"
     />
+    <BottomNavigation />
+    <TheSupporters />
   </div>
 </template>
