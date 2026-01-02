@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     configPath: 'tailwind.config.ts',
     viewer: false,
   },
-  compatibilityDate: "2025-12-20",
+  compatibilityDate: "2026-01-02",
   vite: {
     css: {
       devSourcemap: true,
