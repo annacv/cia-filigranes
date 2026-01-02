@@ -35,7 +35,7 @@ const { isMobileOrTablet } = useResponsive()
         <div class="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center gap-1 gap-y-4 text-center text-xs">
           <p class="flex items-center gap-1 font-bold lg:text-xs text-sm">
             <CiaBrand class="text-white !w-8 !h-auto pr-1" />
-            Companyia Filigranes, 2025
+            Companyia Filigranes, 2026
           </p>
           <b v-if="!isMobileOrTablet" class="px-2">·</b>
           <span>
