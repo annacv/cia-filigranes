@@ -4,7 +4,8 @@
   "scripts": {
     "build": "NODE_OPTIONS='--no-deprecation' nuxt build",
     "dev": "NODE_OPTIONS='--no-deprecation' nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "tsx scripts/prepare-robots.ts && NODE_OPTIONS='--no-deprecation' nuxt generate",
+    "generate:preview": "PREVIEW=true tsx scripts/prepare-robots.ts && NODE_OPTIONS='--no-deprecation' nuxt generate",
     "preview": "NODE_OPTIONS='--no-deprecation' nuxt preview",
     "postinstall": "NODE_OPTIONS='--no-deprecation' nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue",
