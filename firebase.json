@@ -8,16 +8,9 @@
       ],
       "rewrites": [
         {
-          "source": "/robots.txt",
-          "function": "robots"
-        },
-        {
           "source": "**",
           "destination": "/index.html"
         }
       ]
-    },
-    "functions": {
-      "source": "functions"
     }
   }
