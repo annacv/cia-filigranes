@@ -17,7 +17,7 @@ const { isRouteActiveExact } = useRouteActive();
           <div class="flex flex-col gap-3">
             <NuxtLinkLocale
               :to="'/'"
-              class="text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
+              class="w-max text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
               :class="{
                 'border-opacity-100': isRouteActiveExact('/'),
                 'border-opacity-0 hover:border-opacity-50 hover:opacity-80': !isRouteActiveExact('/')
@@ -35,7 +35,7 @@ const { isRouteActiveExact } = useRouteActive();
           >
             <NuxtLinkLocale
               :to="routeItem.name"
-              class="text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
+              class="w-max text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
               :class="{
                 'border-opacity-100': isRouteActiveExact(`/${routeItem.name}`),
                 'border-opacity-0 hover:border-opacity-50 hover:opacity-80': !isRouteActiveExact(`/${routeItem.name}`)
@@ -47,7 +47,7 @@ const { isRouteActiveExact } = useRouteActive();
 
             <ul
               v-if="routeItem.children && routeItem.children.length > 0"
-              class="flex flex-col gap-2 pl-0 xl:pl-2"
+              class="flex flex-col gap-2"
             >
               <li
                 v-for="(child, childIndex) in routeItem.children"
@@ -55,7 +55,7 @@ const { isRouteActiveExact } = useRouteActive();
               >
                 <NuxtLinkLocale
                   :to="`/${routeItem.name}/${child}`"
-                  class="text-xs xl:text-sm font-light transition-opacity duration-200 border-b-2 border-white pb-1"
+                  class="w-max text-xs xl:text-sm font-light transition-opacity duration-200 border-b-2 border-white pb-1"
                   :class="{
                     'border-opacity-100': isRouteActiveExact(`/${routeItem.name}/${child}`),
                     'border-opacity-0 hover:border-opacity-50 hover:opacity-80': !isRouteActiveExact(`/${routeItem.name}/${child}`)
