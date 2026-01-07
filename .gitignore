@@ -3,6 +3,7 @@
 .nitro
 .cache
 .output
+.firebase
 dist
 
 # Node dependencies
