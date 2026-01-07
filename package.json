@@ -2,15 +2,15 @@
   "name": "cia-filigranes",
   "private": true,
   "scripts": {
-    "build": "NODE_OPTIONS='--no-deprecation' nuxt build",
-    "dev": "NODE_OPTIONS='--no-deprecation' nuxt dev",
-    "generate": "tsx scripts/prepare-robots.ts && NODE_OPTIONS='--no-deprecation' nuxt generate",
-    "generate:preview": "PREVIEW=true tsx scripts/prepare-robots.ts && NODE_OPTIONS='--no-deprecation' nuxt generate",
-    "preview": "NODE_OPTIONS='--no-deprecation' nuxt preview",
-    "postinstall": "NODE_OPTIONS='--no-deprecation' nuxt prepare",
+    "build": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt build",
+    "dev": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt dev",
+    "generate": "./scripts/run-with-node.sh node_modules/.bin/tsx scripts/prepare-robots.ts && ./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt generate",
+    "generate:preview": "PREVIEW=true ./scripts/run-with-node.sh node_modules/.bin/tsx scripts/prepare-robots.ts && ./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt generate",
+    "preview": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt preview",
+    "postinstall": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue",
     "lint:fix": "eslint --ext .ts,.js,.vue --fix",
-    "optimize:images": "tsx scripts/optimize-images.ts"
+    "optimize:images": "./scripts/run-with-node.sh node_modules/.bin/tsx scripts/optimize-images.ts"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.9.0",
