@@ -24,16 +24,6 @@ const summaryButton = computed(() => {
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
 });
-
-const showVideoModal = ref(false)
-
-const openVideo = () => {
-  showVideoModal.value = true
-}
-
-const closeVideo = () => {
-  showVideoModal.value = false
-}
 </script>
 
 <template>
@@ -56,23 +46,6 @@ const closeVideo = () => {
         />
         <div class="pt-2 pb-12 lg:pt-4 lg:pb-24">
           <YoutubePlayer video-id="TBbBS05njec" />
-          <FiliButton
-            v-if="!isMobile"
-            class="mt-1"
-            button-class="text-neutral-900 rounded-none border-t-0 border-x-0 !p-1 hover:border-black justify-self-end"
-            :text="t('button.fullShow')"
-            @click="openVideo"
-          >
-            <template #text>
-              {{ t('button.fullShow') }}
-            </template>
-          </FiliButton>
-          <BaseModal
-            :is-open="showVideoModal"
-            @close="closeVideo"
-          >
-            <VideoPlayer video-src="/vint-anys-full-show.mp4" />
-          </BaseModal>
         </div>
       </template>
       <template #unwrapped>
