@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { routePages, localeObjects } from "./i18n/index";
-import { cryptoHashPolyfill } from "./plugins/vite-crypto-hash-polyfill";
 
 export default defineNuxtConfig({
   app: {
@@ -44,7 +43,6 @@ export default defineNuxtConfig({
     build: {
       cssCodeSplit: true,
     },
-    plugins: [cryptoHashPolyfill],
   },
   nitro: {
     preset: 'static',
