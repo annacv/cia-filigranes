@@ -48,6 +48,7 @@ const { data: imageUrls } = await useAsyncData(
 const mobileImageUrl = computed(() => imageUrls.value?.mobile);
 const desktopImageUrl = computed(() => imageUrls.value?.desktop);
 const currentImageUrl = computed(() => isMobile.value ? mobileImageUrl.value : desktopImageUrl.value);
+
 const imageSrcset = computed(() => {
   const parts: string[] = [];
   if (mobileImageUrl.value) {
@@ -101,8 +102,9 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
 </script>
 
 <template>
-  <div
+  <section
     data-hero-cover
+    aria-label="Hero section"
     class="sticky top-0 w-full z-10 grid-layout items-center shadow relative overflow-hidden transition-[clip-path,height] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[clip-path,height]"
     :style="{
       clipPath: currentClipPath,
@@ -149,5 +151,5 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
         <slot name="content"/>
       </div>
     </div>
-  </div>
+  </section>
 </template>

@@ -12,7 +12,7 @@ const { isRouteActiveExact } = useRouteActive();
     class="w-full"
   >
     <div class="grid-layout bg-neutral-900 text-white">
-      <div class="layout-cols py-8 xl:py-12">
+      <div class="layout-cols py-8 xl:py-14">
         <div class="grid grid-cols-3 md:grid-cols-6 gap-6 xl:gap-8">
           <div class="flex flex-col gap-3">
             <NuxtLinkLocale

@@ -46,6 +46,8 @@ const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEAD
             </div> 
           </template>
         </Synopsis>
+        <BottomNavigation />
+        <TheSupporters />
       </template>
     </MainContent>
   </div>

@@ -10,10 +10,8 @@ const { isMobileOrTablet } = useResponsive()
     role="contentinfo"
     class="min-w-full w-full"
   >
-    <FooterNavigation />
-    <TheSupporters />
     <div class="grid-layout bg-black text-white text-center text-sm">
-      <div class="layout-cols flex flex-wrap flex-row items-center justify-center gap-2 xl:gap-4 py-12">
+      <div class="layout-cols flex flex-wrap flex-row items-center justify-center gap-2 xl:gap-4 py-8 md:py-12">
         <SocialMedia />
         <b class="md:px-1">·</b>
         <a
@@ -30,12 +28,12 @@ const { isMobileOrTablet } = useResponsive()
         </a>
       </div>
     </div>
-    <div class="grid-layout bg-neutral-900 py-6">
+    <div class="grid-layout bg-neutral-900 py-8 md:py-6">
       <div class="layout-cols text-white m-auto flex flex-col lg:flex-row lg:justify-between w-full items-center gap-1 gap-y-4">
         <div class="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center gap-1 gap-y-4 text-center text-xs">
           <p class="flex items-center gap-1 font-bold lg:text-xs text-sm">
             <CiaBrand class="text-white !w-8 !h-auto pr-1" />
-            Companyia Filigranes, 2025
+            Companyia Filigranes, 2026
           </p>
           <b v-if="!isMobileOrTablet" class="px-2">·</b>
           <span>
