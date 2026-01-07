@@ -91,7 +91,7 @@ nuxtApp.hook("page:finish", () => {
         <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
       </template>
     </Head>
-    <Body class="antialiased">
+    <Body class="antialiased bg-white">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
