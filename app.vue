@@ -4,13 +4,35 @@ import archivoBlackRegular from '~/assets/fonts/archivo-black/archivo-black-regu
 import ibmPlexSansRegular from '~/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2?url';
 
 const nuxtApp = useNuxtApp();
-const { t,locale } = useI18n();
+const { t, locale } = useI18n();
+const route = useRoute();
 
 const head = useLocaleHead({
   dir: true,
   seo: true,
 });
 const htmlAttrs = computed(() => head.value.htmlAttrs || {});
+
+// Open Graph and Twitter Card meta tags
+const baseUrl = 'https://www.ciafiligranes.net';
+useSeoMeta({
+  ogTitle: computed(() => t('title')),
+  ogDescription: computed(() => t('home.metaDescription')),
+  ogImage: computed(() => `${baseUrl}/og_image.jpg`),
+  ogImageAlt: computed(() => t('title')),
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageType: 'image/jpeg',
+  ogType: 'website',
+  ogUrl: computed(() => `${baseUrl}${route.path === '/' ? '' : route.path}`),
+  ogSiteName: computed(() => t('title')),
+  ogLocale: computed(() => locale.value),
+  twitterCard: 'summary_large_image',
+  twitterTitle: computed(() => t('title')),
+  twitterDescription: computed(() => t('home.metaDescription')),
+  twitterImage: computed(() => `${baseUrl}/og_image.jpg`),
+  twitterImageAlt: computed(() => t('title')),
+});
 
 useHead({
   link: [
