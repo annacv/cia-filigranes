@@ -7,6 +7,7 @@ interface Props {
   isOpen: boolean
   closeOnOverlay?: boolean
   closeOnEscape?: boolean
+  ariaLabel: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -70,6 +71,9 @@ watch(() => props.isOpen, (isOpen) => {
     >
       <div
         v-if="isOpen"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="ariaLabel"
         class="fixed inset-0 z-50 flex items-center justify-center p-4"
         @click="handleOverlayClick"
       >

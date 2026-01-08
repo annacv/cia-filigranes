@@ -45,6 +45,7 @@ const synopsisButton = computed(() => {
           :claim-title="t('performances.claimTitle')"
         />
         <Synopsis
+          class="text-white"
           :description="abstract"
           :image="getImageByRoute('animacions', 'cuiners')"
           content-type="performances"
@@ -53,6 +54,7 @@ const synopsisButton = computed(() => {
           :download-button="synopsisButton"
         />
         <Synopsis
+          class="text-white"
           :description="synopsis"
           :image="getImageByRoute('animacions', 'caixes')"
           content-type="performances"

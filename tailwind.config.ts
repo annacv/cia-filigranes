@@ -55,7 +55,7 @@ const config: Config = {
         'neutral-100': '#f7f7f7',
         'neutral-200': '#eee',
         'neutral-400': '#999',
-        'neutral-600': '#777',
+        'neutral-600': '#666',
         'neutral-800': '#333',
         'neutral-900': '#25272c'
       },

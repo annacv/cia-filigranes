@@ -29,7 +29,7 @@ export default defineNuxtPlugin(() => {
   --color-neutral-100: #f7f7f7;
   --color-neutral-200: #eee;
   --color-neutral-400: #999;
-  --color-neutral-600: #777;
+  --color-neutral-600: #666;
   --color-neutral-800: #333;
   --color-neutral-900: #25272c;
   --gradient-overlay-primary: rgb(200 13 13 / 0.72), rgb(20 2 4 / 0.66);
