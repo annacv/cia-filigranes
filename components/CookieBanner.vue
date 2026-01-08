@@ -14,6 +14,8 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
     >
       <div
         v-if="showBanner"
+        role="region"
+        aria-label="Cookies banner"
         class="fixed bottom-0 left-0 right-0 z-20 bg-black/85 backdrop-blur-sm shadow-lg"
       >
         <div class="container mx-auto px-4 py-5">
@@ -37,12 +39,12 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
               />
               <FiliButton
                 :text="$t('cookies.banner.customize')"
-                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-600"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-800 border-neutral-800 hover:bg-neutral-800 hover:border-neutral-800"
                 :on-click="openModal"
               />
               <FiliButton
                 :text="$t('cookies.banner.reject')"
-                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-400"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-600 border-neutral-600 hover:bg-neutral-600 hover:border-neutral-600"
                 :on-click="rejectAll"
               />
             </div>

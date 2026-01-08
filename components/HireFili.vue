@@ -24,7 +24,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="`grid-layout ${bgColor}`">
+  <section :aria-label="`${title} section`" :class="`grid-layout ${bgColor}`">
     <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 text-base md:text-lg">
       <h2 :class="`font-bold ${textColor}`">
         {{ title }}
@@ -53,6 +53,6 @@ const props = defineProps({
         </template>
       </i18n-t>
     </div>
-  </div>
+  </section>
 </template>
 

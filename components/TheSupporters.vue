@@ -88,9 +88,9 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
 </script>
 
 <template>
-  <section class="w-full">
+  <section class="w-full" role="region" aria-label="Supporters">
     <div class="grid-layout bg-neutral-900 text-white">
-      <div class="layout-cols py-2 pb-8 md:pb-12 xl:py-4 border-t border-neutral-600">
+      <div class="layout-cols py-2 pb-8 md:pb-12 xl:py-4 border-t border-neutral-400">
         <h2 class="flex justify-start text-sm font-semibold mb-2 xl:mb-4">
           {{ t('footer.supporters.title') }}
         </h2>

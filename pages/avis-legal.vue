@@ -76,9 +76,9 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
             <ArrowRight class="arrow-right self-start mt-0.5 rotate-180"/>
           </template>
         </FiliButton>
-        <BottomNavigation />
-        <TheSupporters />
       </template>
     </MainContent>
+    <BottomNavigation />
+    <TheSupporters />
   </div>
 </template>

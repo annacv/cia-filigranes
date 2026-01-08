@@ -1,19 +1,7 @@
 <script setup lang="ts">
-interface PlayerVars {
-  autoplay?: 0 | 1;
-  controls?: 0 | 1;
-  loop?: 0 | 1;
-  mute?: 0 | 1;
-  start?: number;
-  end?: number;
-  hl?: string;
-  playlist?: string;
-  [key: string]: unknown;
-}
-
 interface YouTubeProps {
   videoId: string;
-  playerVars?: PlayerVars;
+  playerVars?: YT.PlayerVars;
   width?: number;
   height?: number;
   trigger?: 'visible' | 'mouseover';
@@ -40,9 +28,7 @@ const props = withDefaults(defineProps<YouTubeProps>(), {
 })
 
 const { locale, t } = useI18n()
-
 const { canLoadYouTubeWithCookies } = useCookies()
-const effectiveCookies = computed(() => canLoadYouTubeWithCookies.value)
 
 const dynamicPlayerVars = computed(() => ({
   ...props.playerVars,
@@ -64,12 +50,12 @@ const dynamicPlayerVars = computed(() => ({
       >
         <ScriptYouTubePlayer
           v-if="canLoadYouTubeWithCookies"
-          key="player"
+          :key="`player-${canLoadYouTubeWithCookies}`"
           :video-id="videoId"
           :player-options="{ host: 'https://www.youtube.com' }"
           :above-the-fold="aboveTheFold"
           :trigger="trigger"
-          :cookies="effectiveCookies"
+          :cookies="canLoadYouTubeWithCookies"
           :webp="webp"
           :player-vars="dynamicPlayerVars"
           :width="width"

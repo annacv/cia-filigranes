@@ -25,6 +25,7 @@ const handleSave = () => {
 
 <template>
   <BaseModal
+    :ariaLabel="$t('cookies.modal.title')"
     :is-open="showModal"
     @close="closeModal"
   >
@@ -53,8 +54,11 @@ const handleSave = () => {
           </p>
           <div class="flex items-center">
             <input
+              id="essential-checkbox"
               type="checkbox"
               :checked="preferences.essential"
+              :aria-label="$t('cookies.modal.essential.required')"
+              :aria-checked="preferences.essential"
               disabled
               class="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500"
             >
@@ -78,8 +82,11 @@ const handleSave = () => {
           </p>
           <div class="flex items-center">
             <input
+              id="functional-checkbox"
               v-model="preferences.functional"
               type="checkbox"
+              :aria-label="$t('cookies.modal.functional.optional')"
+              :aria-checked="preferences.functional"
               class="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500"
             >
             <span class="ml-2 text-sm text-neutral-600">
@@ -92,7 +99,7 @@ const handleSave = () => {
       <div class="flex flex-col text-sm xs:flex-row gap-3 justify-end">
         <FiliButton
           :text="$t('cookies.modal.rejectAll')"
-          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-400 hover:bg-neutral-200"
+          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
           :on-click="rejectAll"
         />
         <FiliButton
@@ -102,7 +109,7 @@ const handleSave = () => {
         />
         <FiliButton
           :text="$t('cookies.modal.save')"
-          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+          button-class="px-3 py-2 leading-normal bg-neutral-100 text-neutral-800 hover:bg-neutral-200"
           :on-click="handleSave"
         />
       </div>
