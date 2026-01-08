@@ -159,9 +159,9 @@ const getCookieValue = (cookie: Record<string, string>, key: string | undefined)
             {{ t('button.goHome') }}
           </template>
         </FiliButton>
-        <BottomNavigation />
-        <TheSupporters />
       </template>
     </MainContent>
+    <BottomNavigation />
+    <TheSupporters />
   </div>
 </template>
