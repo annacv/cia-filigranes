@@ -10,9 +10,6 @@ useHead({
     { name: 'description', content: t('filipersones.trinxeta.metaDescription') }
   ]
 })
-
-const { isMobile } = useResponsive()
-
 const abstract = getTranslatedList('filipersones.trinxeta.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('filipersones.trinxeta.list', ['title', 'description'])
 const intro = getTranslatedList('filipersones.trinxeta.intro', ['paragraph'])
@@ -62,7 +59,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           content-type="shows"
           :alt="trinxetaAlt"
           show-full-content
-          :is-reversed="!isMobile"
+          is-reversed
         />
         <Synopsis
           :description="background"
@@ -85,7 +82,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
             href: '/espectacles/circ-trinxeta',
             class: 'button-outline-primary'
           }"
-          :is-reversed="!isMobile"
+          is-reversed
         />
         <HireFili
           class="py-12"

@@ -31,8 +31,6 @@ const props = defineProps({
     required: true
   }
 })
-
-const { isMobile } = useResponsive()
 </script>
 
 <template>
@@ -49,7 +47,7 @@ const { isMobile } = useResponsive()
       :content-type="item.contentType"
       :alt="item.alt"
       :title="item.title"
-      :is-reversed="isMobile ? true : (index + 1) % 2 === 0"
+      :is-reversed="(index + 1) % 2 === 0"
       :info-button="item.buttons.infoButton"
       :download-button="item.buttons.downloadButton"
     />
