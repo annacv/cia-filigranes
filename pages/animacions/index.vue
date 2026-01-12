@@ -11,6 +11,8 @@ useHead({
   ]
 })
 
+const { isMobile } = useResponsive()
+
 const abstract = getTranslatedList('performances.abstract', ['paragraph'])
 const synopsis = getTranslatedList('performances.synopsis', ['paragraph'])
 const techCard = getTranslatedList('performances.techCard', ['title', 'description'])
@@ -60,7 +62,7 @@ const synopsisButton = computed(() => {
           content-type="performances"
           :alt="getImageAlt('animacions')"
           show-full-content
-          is-reversed
+          :is-reversed="!isMobile"
           should-clip
         />
         <DataSheet

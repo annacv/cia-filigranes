@@ -10,6 +10,9 @@ useHead({
     { name: 'description', content: t('filipersones.makutu.metaDescription') }
   ]
 })
+
+const { isMobile } = useResponsive()
+
 const abstract = getTranslatedList('filipersones.makutu.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('filipersones.makutu.list', ['title', 'description'])
 const intro = getTranslatedList('filipersones.makutu.intro', ['paragraph']) as Record<string, PropertyKey>[]
@@ -60,7 +63,7 @@ const makutuAlt = getImageAlt('makutu')
           content-type="shows"
           :alt="makutuAlt"
           show-full-content
-          is-reversed
+          :is-reversed="!isMobile"
         />
         <Synopsis
           :description="learningPath"
@@ -84,7 +87,7 @@ const makutuAlt = getImageAlt('makutu')
             class: 'button-outline-primary'
           }"
           background-position="center 30%"
-          is-reversed
+          :is-reversed="!isMobile"
         />
         <HireFili
           class="py-12"

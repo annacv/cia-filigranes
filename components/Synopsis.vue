@@ -108,7 +108,10 @@ watchEffect(() => {
   >
     <div
       :class="[
-        'flex flex-col lg:flex-row gap-0 xl:gap-5',
+        'flex gap-0 xl:gap-5',
+        { 'flex-col-reverse': isMobile && isReversed },
+        { 'flex-col': isMobile && !isReversed },
+        'lg:flex-row',
         { 'min-h-[464px]': !isMobile },
         isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
     >
