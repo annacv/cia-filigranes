@@ -31,7 +31,7 @@ const titleRows = computed(() => getTitleRows(splitTitle))
 
 <template>
   <h1
-    class="p-5 xs:px-0 sm:px-5 lg:pr-7 flex flex-col font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl drop-shadow-xl"
+    class="py-5 xs:px-0 sm:px-5 lg:pr-7 flex flex-col font-grotesk uppercase text-white text-5xl md:text-6xl lg:text-7xl drop-shadow-xl"
     :class="titleClass"
   >
     <span>{{ titleRows.firstRow }}</span>

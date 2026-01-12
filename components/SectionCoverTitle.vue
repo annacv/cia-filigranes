@@ -13,7 +13,7 @@ const props = defineProps({
 
 <template>
   <h1
-    class="p-5 xs:px-0 sm:px-5 flex flex-col font-grotesk uppercase text-white text-4xl md:text-5xl lg:text-6xl drop-shadow-xl"
+    class="py-5 xs:px-0 sm:px-5 flex flex-col font-grotesk uppercase text-white text-4xl md:text-5xl lg:text-6xl drop-shadow-xl"
     :class="titleClass"
   >
     {{ title }}
