@@ -132,20 +132,6 @@ watchEffect(() => {
 
         <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
           <FiliButton
-            v-if="infoButton"
-            :href="infoButton.href"
-            :button-class="`${infoButton.class} self-start`"
-            :text="t('button.info')"
-            target="_top"
-          >
-            <template #text>
-              {{ t('button.info') }}
-            </template>
-            <template #icon-right>
-              <ArrowRight class="arrow-right self-end"/>
-            </template>
-          </FiliButton>
-          <FiliButton
             v-if="downloadButton"
             :href="downloadButton.href"
             button-class="button-outline-neutral self-start"
@@ -157,6 +143,20 @@ watchEffect(() => {
             </template>
             <template #icon-right>
               <ArrowDown class="arrow-down self-end"/>
+            </template>
+          </FiliButton>
+          <FiliButton
+            v-if="infoButton"
+            :href="infoButton.href"
+            :button-class="`${infoButton.class} self-start`"
+            :text="t('button.info')"
+            target="_top"
+          >
+            <template #text>
+              {{ t('button.info') }}
+            </template>
+            <template #icon-right>
+              <ArrowRight class="arrow-right self-end"/>
             </template>
           </FiliButton>
         </div>
