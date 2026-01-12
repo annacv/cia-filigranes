@@ -13,7 +13,7 @@ const { isRouteActiveExact } = useRouteActive();
   >
     <div class="grid-layout bg-neutral-900 text-white">
       <div class="layout-cols py-8 xl:py-14">
-        <div class="grid grid-cols-3 md:grid-cols-6 gap-6 xl:gap-8">
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-5 md:gap-6 xl:gap-8">
           <div class="flex flex-col gap-3">
             <NuxtLinkLocale
               :to="'/'"
@@ -31,7 +31,7 @@ const { isRouteActiveExact } = useRouteActive();
           <div
             v-for="(routeItem, index) in ROUTES_INDEX"
             :key="index"
-            class="flex flex-col gap-3"
+            class="flex flex-col gap-1 md:gap-3"
           >
             <NuxtLinkLocale
               :to="routeItem.name"
