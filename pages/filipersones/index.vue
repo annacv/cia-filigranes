@@ -110,7 +110,7 @@ const showMore = () => {
           :alt="t('shows.hero.alt')"
           background-position="center 3%"
           show-full-content
-          is-reversed
+          :is-reversed="!isMobile"
         />
         <Synopsis
           :description="filiFriends"
