@@ -108,7 +108,10 @@ watchEffect(() => {
   >
     <div
       :class="[
-        'flex flex-col lg:flex-row gap-0 xl:gap-5',
+        'flex gap-0 xl:gap-5',
+        { 'flex-col-reverse': isMobile && isReversed },
+        { 'flex-col': isMobile && !isReversed },
+        'lg:flex-row',
         { 'min-h-[464px]': !isMobile },
         isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
     >
@@ -132,20 +135,6 @@ watchEffect(() => {
 
         <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
           <FiliButton
-            v-if="infoButton"
-            :href="infoButton.href"
-            :button-class="`${infoButton.class} self-start`"
-            :text="t('button.info')"
-            target="_top"
-          >
-            <template #text>
-              {{ t('button.info') }}
-            </template>
-            <template #icon-right>
-              <ArrowRight class="arrow-right self-end"/>
-            </template>
-          </FiliButton>
-          <FiliButton
             v-if="downloadButton"
             :href="downloadButton.href"
             button-class="button-outline-neutral self-start"
@@ -157,6 +146,20 @@ watchEffect(() => {
             </template>
             <template #icon-right>
               <ArrowDown class="arrow-down self-end"/>
+            </template>
+          </FiliButton>
+          <FiliButton
+            v-if="infoButton"
+            :href="infoButton.href"
+            :button-class="`${infoButton.class} self-start`"
+            :text="t('button.info')"
+            target="_top"
+          >
+            <template #text>
+              {{ t('button.info') }}
+            </template>
+            <template #icon-right>
+              <ArrowRight class="arrow-right self-end"/>
             </template>
           </FiliButton>
         </div>

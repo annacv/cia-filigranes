@@ -71,7 +71,7 @@ const showMore = () => {
       :alt="t('shows.hero.alt')"
     >
       <template #content>
-        <div class="p-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">
+        <div class="py-5 xs:px-0 sm:px-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">
           <h1 class="text-4xl md:text-5xl lg:text-6xl">
             {{ t('routes.filipersones') }}
           </h1>
@@ -110,7 +110,7 @@ const showMore = () => {
           :alt="t('shows.hero.alt')"
           background-position="center 3%"
           show-full-content
-          is-reversed
+          :is-reversed="!isMobile"
         />
         <Synopsis
           :description="filiFriends"

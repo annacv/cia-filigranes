@@ -130,7 +130,7 @@ watchEffect(() => {
         <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       </div>
       <div
-        class="flex flex-col justify-between w-full lg:w-[22%] p-5 lg:p-4 lg:pl-0 lg:py-12 2xl:py-24"
+        class="flex flex-col items-end md:items-start justify-between w-full lg:w-[22%] p-5 lg:p-4 lg:pl-0 lg:py-12 2xl:py-24"
         :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
       >
         <Transition

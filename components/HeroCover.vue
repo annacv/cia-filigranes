@@ -147,7 +147,7 @@ const imagePosition = computed(() => isScrolled.value ? 'center center' : props.
       class="layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
-      <div class="flex justify-end">
+      <div class="flex md:justify-end justify-start">
         <slot name="content"/>
       </div>
     </div>

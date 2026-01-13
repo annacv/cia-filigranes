@@ -5,6 +5,7 @@ import { getItemIndex } from "~/utils/get-item-index";
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
 const getImageAlt = (title?: string) => useImageAlt('workshops', title);
+const { isMobile } = useResponsive()
 
 useHead({
   meta: [
@@ -37,10 +38,19 @@ const summaryButton = computed(() => {
     >
       <template #content>
         <CoverTitle
+          v-if="!isMobile"
           :title="t('workshops.commonTitle', { title: t('routes.maquillatge') })"
           title-class="max-w-[406px] md:max-w-[524px] lg:max-w-[648px]"
           :slice-end="2"
         />
+        <div v-else class="py-5 xs:px-0 sm:px-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">
+          <h1 class="text-5xl">
+            {{ t('workshops.commonTitle') }}
+          </h1>
+          <h2 class="text-4xl">
+            {{ t('routes.maquillatge') }}
+          </h2>
+        </div>
       </template>
     </HeroCover>
     <MainContent>
