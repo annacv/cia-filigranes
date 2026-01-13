@@ -51,7 +51,10 @@ const synopsisItems = computed(() => {
       background-position="center 40%"
     >
       <template #content>
-        <SectionCoverTitle :title="t('shows.hero.title')" />
+        <SectionCoverTitle
+          :title="t('shows.hero.title')"
+          title-class="max-w-[310px] md:max-w-[448px] lg:max-w-[542px]"
+        />
       </template>
     </HeroCover>
     <MainContent>

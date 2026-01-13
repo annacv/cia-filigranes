@@ -36,7 +36,7 @@ const synopsisButton = computed(() => {
       <template #content>
         <SectionCoverTitle
           :title="`${t('performances.title')} ${t('performances.subtitle')}`"
-          title-class="max-w-[300px] md:max-w-[392px] lg:max-w-[480px]"
+          title-class="max-w-[284px] md:max-w-[392px] lg:max-w-[480px]"
         />
       </template>
     </HeroCover>
