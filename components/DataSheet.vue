@@ -116,7 +116,7 @@ watchEffect(() => {
       <div
         v-if="!hideImage && imageUrl"
         ref="imageRef"
-        class="w-full lg:w-[55%] h-[500px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="w-full lg:w-[55%] h-[500px] md:h-[700px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
         :class="[
           hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
         ]"
@@ -130,7 +130,7 @@ watchEffect(() => {
         <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
       </div>
       <div
-        class="flex flex-col items-end md:items-start justify-between w-full lg:w-[22%] p-5 lg:p-4 lg:pl-0 lg:py-12 2xl:py-24"
+        class="flex flex-col items-end md:items-center lg:items-start justify-between w-full lg:w-[22%] p-5 lg:p-4 lg:pl-0 lg:py-12 2xl:py-24"
         :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
       >
         <Transition
