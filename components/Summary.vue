@@ -5,11 +5,11 @@ const { t } = useI18n()
 
 const props = defineProps({
   abstract: {
-    type: Array as () => Record<string, unknown>[],
+    type: Array as () => Record<string, string | unknown>[],
     required: true
   },
   items: {
-    type: Array as () => Record<string, unknown>[],
+    type: Array as () => Record<string, string | unknown>[],
     required: true
   },
   button: {
@@ -59,7 +59,7 @@ const props = defineProps({
           {{ t('button.dossier') }}
         </template>
         <template #icon-right>
-          <ArrowDown class="arrow-down self-end"/>
+          <ArrowDown class="arrow-down"/>
         </template>
       </FiliButton>
     </div>

@@ -69,13 +69,13 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
         </h2>
         <div class=" flex flex-col items-start gap-6 font-semibold">
           <a class="flex gap-2 items-center" :href="`mailto:${CONTACT.email}`">
-            <ArrowRight class="self-end !h-4 !w-4"/><span class="hover:opacity-80">{{ CONTACT.email }}</span>
+            <ArrowRight class="!h-4 !w-4"/><span class="hover:opacity-80">{{ CONTACT.email }}</span>
           </a>
           <a class="flex gap-2 items-center" :href="`tel:${CONTACT.phones.albert}`"> 
-            <ArrowRight class="self-end !h-4 !w-4"/>Albert: <span class="hover:opacity-80">{{ CONTACT.phones.albert }}</span>
+            <ArrowRight class="!h-4 !w-4"/>Albert: <span class="hover:opacity-80">{{ CONTACT.phones.albert }}</span>
           </a>
           <a class="flex gap-2 items-center" :href="`tel:${CONTACT.phones.jordi}`">   
-            <ArrowRight class="self-end !h-4 !w-4"/>Jordi: <span class="hover:opacity-80">{{ CONTACT.phones.jordi }}</span>
+            <ArrowRight class="!h-4 !w-4"/>Jordi: <span class="hover:opacity-80">{{ CONTACT.phones.jordi }}</span>
           </a>
         </div>
       </div>

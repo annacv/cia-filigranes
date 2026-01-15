@@ -40,7 +40,6 @@ const summaryButton = computed(() => {
         <Summary
           :abstract="abstract"
           :items="summaryItems"
-          :button="summaryButton"
         />
       </template>
       <template #unwrapped>
@@ -52,6 +51,10 @@ const summaryButton = computed(() => {
           :info-button="{
             href: '/espectacles/vint-anys',
             class: 'button-outline-primary'
+          }"
+          :download-button="{
+            download: `CiaFiligranes-vint-anys-${locale}.pdf`,
+            href: `/downloads/CiaFiligranes-vint-anys-${locale}.pdf`,
           }"
         />
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
