@@ -30,7 +30,6 @@ const props = defineProps({
   }
 })
 
-const { isMobile } = useResponsive()
 const { isScrolled } = useScrollState()
 useHeroFirstScrollHijack()
 const { gradientOverlayValue } = useColor(props.contentType);
@@ -47,7 +46,7 @@ const { data: imageUrls } = await useAsyncData(
 
 const mobileImageUrl = computed(() => imageUrls.value?.mobile);
 const desktopImageUrl = computed(() => imageUrls.value?.desktop);
-const currentImageUrl = computed(() => isMobile.value ? mobileImageUrl.value : desktopImageUrl.value);
+const fallbackImageUrl = computed(() => desktopImageUrl.value || mobileImageUrl.value);
 
 const imageSrcset = computed(() => {
   const parts: string[] = [];
@@ -86,37 +85,40 @@ useHead({
   })
 });
 
-const mobileClip = '94%';
-const desktopClip = '86%';
 const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`);
-
-const deviceFixedHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
-const deviceClip = computed(() => isMobile.value ? mobileClip : desktopClip);
-
-const initialClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% ${deviceClip.value}, 0% 100%)`);
-const fixedClipPath = computed(() => `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`);
-
-const currentClipPath = computed(() => isScrolled.value ? fixedClipPath.value : initialClipPath.value);
-const currentHeight = computed(() => isScrolled.value ? deviceFixedHeight.value : '100dvh');
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
+
+const scrolledHeight = computed(() => {
+  if (!isScrolled.value) return undefined
+  if (import.meta.client && window.matchMedia('(min-width: 1024px)').matches) {
+    return HEADER_DESKTOP_HEIGHT
+  }
+  return HEADER_MOBILE_HEIGHT
+})
 </script>
 
 <template>
   <section
     data-hero-cover
     :aria-label="`Hero section ${contentType}`"
-    class="sticky top-0 w-full z-10 grid-layout items-center shadow relative overflow-hidden transition-[clip-path,height] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[clip-path,height]"
+    :class="[
+      'sticky top-0 w-full z-10 grid-layout items-center shadow relative overflow-hidden',
+      'transition-[clip-path,height] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[clip-path,height]',
+      isScrolled
+        ? '[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]'
+        : '[clip-path:polygon(0%_0%,100%_0%,100%_94%,0%_100%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_86%,0%_100%)]',
+      { 'h-dvh': !isScrolled }
+    ]"
     :style="{
-      clipPath: currentClipPath,
-      height: currentHeight,
       transitionDuration: transitionDuration,
+      height: isScrolled ? scrolledHeight : undefined,
     }"
   >
-    <picture v-if="currentImageUrl" class="absolute inset-0 w-full h-full">
+    <picture v-if="fallbackImageUrl" class="absolute inset-0 w-full h-full">
       <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)" />
       <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)" />
       <img
-        :src="currentImageUrl"
+        :src="fallbackImageUrl"
         :alt="alt"
         :srcset="imageSrcset"
         sizes="100vw"

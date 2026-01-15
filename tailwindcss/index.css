@@ -130,13 +130,10 @@
   }
 
   /* Button Arrows */
-  .arrow-down {
-    /* stylelint-disable-next-line at-rule-no-unknown */
-    @apply w-3 h-auto;
-  }
+  .arrow-down,
   .arrow-right,
   .arrow-left {
-    @apply w-auto h-3;
+    @apply mt-1;
   }
 
   .nuxt-icon {

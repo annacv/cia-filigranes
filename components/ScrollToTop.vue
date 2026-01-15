@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ArrowDown from "assets/icons/arrow-down.svg";
+import ArrowUp from "assets/icons/arrow-up.svg";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 
 const { hasReachedBottom } = useScrollState();
@@ -25,12 +25,12 @@ const scrollToTop = () => {
   >
     <button
       v-if="hasReachedBottom"
-      class="fixed w-[40px] h-[40px] bottom-[150px] right-5 xl:bottom-[250px] xl:right-6 z-50 px-4 py-[13.5px] bg-primary-500 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+      class="fixed w-[40px] h-[40px] bottom-[200px] right-5 xl:bottom-[250px] xl:right-6 z-50 bg-primary-500 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
       :aria-label="$t('button.scrollToTop')"
       type="button"
       @click="scrollToTop"
     >
-      <ArrowDown class="rotate-180 !w-full !h-full text-white" />
+      <ArrowUp class="text-white" />
     </button>
   </Transition>
 </template>
