@@ -99,87 +99,89 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div
-    ref="componentRef"
-    :class="`p-0 grid-layout ${getColors} contain-card`"
-    :style="{ clipPath: isMobile ? mobileClip : 'none' }"
-    @mouseenter="toggleHover()"
-    @mouseleave="toggleHover()"
-  >
+  <ClientOnly>
     <div
-      :class="[
-        'flex gap-0 xl:gap-5',
-        { 'flex-col-reverse': isMobile && isReversed },
-        { 'flex-col': isMobile && !isReversed },
-        'lg:flex-row',
-        { 'min-h-[464px]': !isMobile },
-        isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
+      ref="componentRef"
+      :class="`p-0 grid-layout ${getColors} contain-card`"
+      :style="{ clipPath: isMobile ? mobileClip : 'none' }"
+      @mouseenter="toggleHover()"
+      @mouseleave="toggleHover()"
     >
-      <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
-        <slot name="content">
-          <h2 v-if="title" class="font-grotesk uppercase text-4xl lg:text-5xl">
-            {{ title }}
-          </h2>
-          <p
-            v-if="description"
-            class="text-lg lg:text-xl"
-            :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
-            <span
-              v-for="item in showFullContent ? description : description.slice(0, 1)"
-              :key="item.paragraph as string"
-            >
-              {{ item.paragraph }}
-            </span>
-          </p>
-        </slot>
+      <div
+        :class="[
+          'flex gap-0 xl:gap-5',
+          { 'flex-col-reverse': isMobile && isReversed },
+          { 'flex-col': isMobile && !isReversed },
+          'lg:flex-row',
+          { 'min-h-[464px]': !isMobile },
+          isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
+      >
+        <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
+          <slot name="content">
+            <h2 v-if="title" class="font-grotesk uppercase text-4xl lg:text-5xl">
+              {{ title }}
+            </h2>
+            <p
+              v-if="description"
+              class="text-lg lg:text-xl"
+              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
+              <span
+                v-for="item in showFullContent ? description : description.slice(0, 1)"
+                :key="item.paragraph as string"
+              >
+                {{ item.paragraph }}
+              </span>
+            </p>
+          </slot>
 
-        <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
-          <FiliButton
-            v-if="downloadButton"
-            :href="downloadButton.href"
-            button-class="button-outline-neutral self-start"
-            :text="t('button.dossier')"
-            :download="downloadButton.download"
-          >
-            <template #text>
-              {{ t('button.dossier') }}
-            </template>
-            <template #icon-right>
-              <ArrowDown class="arrow-down self-end"/>
-            </template>
-          </FiliButton>
-          <FiliButton
-            v-if="infoButton"
-            :href="infoButton.href"
-            :button-class="`${infoButton.class} self-start`"
-            :text="t('button.info')"
-            target="_top"
-          >
-            <template #text>
-              {{ t('button.info') }}
-            </template>
-            <template #icon-right>
-              <ArrowRight class="arrow-right self-end"/>
-            </template>
-          </FiliButton>
+          <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
+            <FiliButton
+              v-if="downloadButton"
+              :href="downloadButton.href"
+              button-class="button-outline-neutral self-start"
+              :text="t('button.dossier')"
+              :download="downloadButton.download"
+            >
+              <template #text>
+                {{ t('button.dossier') }}
+              </template>
+              <template #icon-right>
+                <ArrowDown class="arrow-down"/>
+              </template>
+            </FiliButton>
+            <FiliButton
+              v-if="infoButton"
+              :href="infoButton.href"
+              :button-class="`${infoButton.class} self-start`"
+              :text="t('button.info')"
+              target="_top"
+            >
+              <template #text>
+                {{ t('button.info') }}
+              </template>
+              <template #icon-right>
+                <ArrowRight class="arrow-right"/>
+              </template>
+            </FiliButton>
+          </div>
+        </div>
+        <div
+          v-if="imageUrl"
+          ref="imageRef"
+          class="w-full h-[400px] sm:h-[384px] md:h-[620px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
+          :class="[
+            hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
+          ]"
+          :style="{
+            backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
+            backgroundPosition: backgroundPosition,
+            clipPath: isMobile ? 'none' : currentClipPath
+          }"
+        >
+          <!-- Added img tag for Accessibility for screen readers -->
+          <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
         </div>
       </div>
-      <div
-        v-if="imageUrl"
-        ref="imageRef"
-        class="w-full xs:h-[400px] sm:h-[384px] md:h-[620px] lg:h-auto bg-no-repeat bg-cover items-center shadow transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"
-        :class="[
-          hoverState ? 'bg-blend-soft-light' : 'bg-blend-hard-light'
-        ]"
-        :style="{
-          backgroundImage: `linear-gradient(to right bottom, ${gradientOverlayValue}), url('${imageUrl}')`,
-          backgroundPosition: backgroundPosition,
-          clipPath: isMobile ? 'none' : currentClipPath
-        }"
-      >
-        <!-- Added img tag for Accessibility for screen readers -->
-        <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
-      </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
