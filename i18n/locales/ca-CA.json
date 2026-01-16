@@ -493,7 +493,7 @@
       "metaDescription": "Cercavila Germans Freak Frac - Espectacle itinerant de pallassos i circ per a totes les edats de la Companyia Filigranes. Els Germans Freak Frac ens faran gaudir d'una bona estonaamb sorpreses, xanquers, malabars i música en directe.",
       "abstract": [
         {
-          "paragraph": "Espectacle itinerant amb músics en viu (saxo i/o percussió) i els nostres increïbles xanquers. Ens captivaran amb els seus ritmes en moviment constant! Diferents parades amb rutines de malabars, com maces i diàbolos, salt de corda... acompanyats sempre de música. Ideal per amenitzar fires, mercats, rues... on la interacció amb el públic és el primordial."
+          "paragraph": "Espectacle itinerant amb músics en viu (vents i percussió) i els nostres increïbles xanquers. Ens captivaran amb els seus ritmes en moviment constant! Diferents parades amb rutines de malabars, com maces i diàbolos, salt de corda... acompanyats sempre de música. Ideal per amenitzar fires, mercats, rues... on la interacció amb el públic és el primordial."
         }
       ],
       "list": [
@@ -538,20 +538,28 @@
           "description": "Cia. Filigranes i Tub d'Assaig 7'70"
         },
         {
-          "title": "Els Xanquers",
-          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández i Victor Sánchez"
-        },
-        {
-          "title": "Els Músics",
-          "description": "Victor Sánchez (SAXO), Jordi Torrens (BOMBO), Remy Geoffroy (CAIXA), Tyle Michael Fernández (SAXO i/o CLARINET)"
-        },
-        {
           "title": "Direcció General",
           "description": "Cia. Filigranes"
         },
         {
           "title": "Vestuari",
           "description": "Cia. Filigranes i Tub d'Assaig 7'70"
+        },
+        {
+          "title": "Els Xanquers",
+          "description": "Albert Pérez i Tyle Michael Fernández"
+        },
+        {
+          "title": "El Monocicle Giravolt",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "Els Músics",
+          "description": "Facundo Fernández (PERCUSSIÓ i VIOLÍ), Alián Rodrígues (SAXO i BOMBARDÍ), Tyle Michael Fernández (SAXO i/o CLARINET), Juan Lichter (SAXO i TROMPETA), Stefano Ferraro (TENOR i SAXO ALT), Lucas Raiquen (TROMPETA)"
+        },
+        {
+          "title": "Els Malabaristes",
+          "description": "Jordi Torrens i Albert Pérez"
         },
         {
           "title": "*",
@@ -821,10 +829,13 @@
   "performances": {
     "metaDescription": "Animacions a la carta. S'adapten a diferents temàtiques, ideals per amenitzar convencions, trobades i tot tipus d'events.",
     "commonAlt": "Imatge d'animacions a la carta",
-    "claimTitle": "Una infinitat de personatges interactuaran amb el públic.",
-    "claim": "Ideals per amenitzar aniversaris, convencions, trobades i tot tipus d'esdeveniments!",
-    "title": "Animacions",
-    "subtitle": "a la carta",
+    "claimTitle": "Una infinitat de personatges a punt per entrar en acció!",
+    "claim": "Ideals per amenitzar trobades, convencions, aniversaris i tot tipus d'esdeveniments",
+    "title": "Animacions a la carta",
+    "hero": { 
+      "title": "Animacions a la carta: l'espectacle sense límits!",
+      "alt": "Imatge de l'animació de foc"
+    },
     "hire": {
       "title": "Vols el teu espectacle a mida?",
       "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"

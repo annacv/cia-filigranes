@@ -538,20 +538,28 @@
           "description": "Cia. Filigranes y Tub d'Assaig 7'70"
         },
         {
-          "title": "Los Zanqueros",
-          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández y Victor Sánchez"
-        },
-        {
-          "title": "Los Músicos",
-          "description": "Victor Sánchez (SAXO), Jordi Torrens (BOMBO), Remy Geoffroy (CAJA), Tyle Michael Fernández (SAXO y/o CLARINETE)"
-        },
-        {
           "title": "Dirección General",
           "description": "Cia. Filigranes"
         },
         {
           "title": "Vestuario",
-          "description": "Cia. Filigranes y Asociación de Circo Tub d'Assaig 7'70"
+          "description": "Cia. Filigranes y Tub d'Assaig 7'70"
+        },
+        {
+          "title": "Los Zanqueros",
+          "description": "Albert Pérez y Tyle Michael Fernández"
+        },
+        {
+          "title": "El Monociclo Giravolt",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "Los Músicos",
+          "description": "Facundo Fernández (PERCUSIÓN y VIOLÍN), Alián Rodrígues (SAXO y BOMBARDÍ), Tyle Michael Fernández (SAXO y/o CLARINETE), Juan Lichter (SAXO y TROMPETA), Stefano Ferraro (TENOR y SAXO ALT), Lucas Raiquen (TROMPETA)"
+        },
+        {
+          "title": "Los Malabaristas",
+          "description": "Jordi Torrens y Albert Pérez"
         },
         {
           "title": "*",
@@ -821,10 +829,13 @@
   "performances": {
     "metaDescription": "Animaciones a la carta. Se adaptan a diferentes temáticas, ideales para amenizar convenciones, encuentros y todo tipo de eventos.",
     "commonAlt": "Imagen de animaciones a la carta",
-    "claimTitle": "Una infinidad de personajes caracterizados a medida se interrelacionarán con el público.",
-    "claim": "¡Ideales para amenizar cumpleaños, convenciones, encuentros y todo tipo de eventos!",
-    "title": "Animaciones",
-    "subtitle": "a la carta",
+    "claimTitle": "Una infinidad de personajes a punto de entrar en acción!",
+    "claim": "Ideales para amenizar cumpleaños, convenciones, encuentros y todo tipo de eventos",
+    "title": "Animaciones a la carta",
+    "hero": { 
+      "title": "Animaciones a la carta: ¡el espectáculo sin límites!",
+      "alt": "Imagen de la animación de fuego"
+    },
     "hire": {
       "title": "¿Quieres tu espectáculo a medida?",
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"

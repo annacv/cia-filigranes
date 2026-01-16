@@ -538,20 +538,28 @@
           "description": "Filigranes Company and Tub d'Assaig 7'70"
         },
         {
-          "title": "The Stilt Walkers",
-          "description": "Albert Pérez, Cristhian Uroz, Tyle Michael Fernández and Victor Sánchez"
-        },
-        {
-          "title": "The Musicians",
-          "description": "Victor Sánchez (SAXOPHONE), Jordi Torrens (BASS DRUM), Remy Geoffroy (SNARE DRUM), Tyle Michael Fernández (SAXOPHONE and/or CLARINET)"
-        },
-        {
           "title": "General Direction",
           "description": "Filigranes Company"
         },
         {
           "title": "Costumes",
-          "description": "Filigranes Company and Tub d'Assaig 7'70 Circus Association"
+          "description": "Filigranes Company and Tub d'Assaig 7'70"
+        },
+        {
+          "title": "The Stilt Walkers",
+          "description": "Albert Pérez and Tyle Michael Fernández"
+        },
+        {
+          "title": "The Giravolt Unicycle",
+          "description": "Jordi Torrens"
+        },
+        {
+          "title": "The Musicians",
+          "description": "Facundo Fernández (PERCUSSION and VIOLIN), Alián Rodrígues (SAXOPHONE and BOMBARD), Tyle Michael Fernández (SAXOPHONE and/or CLARINET), Juan Lichter (SAXOPHONE and TRUMPET), Stefano Ferraro (TENOR and ALTO SAXOPHONE), Lucas Raiquen (TRUMPET)"
+        },
+        {
+          "title": "The Jugglers",
+          "description": "Jordi Torrens and Albert Pérez"
         },
         {
           "title": "*",
@@ -821,10 +829,13 @@
   "performances": {
     "metaDescription": "Custom animations. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
     "commonAlt": "Image of custom animations",
-    "claimTitle": "An infinity of characters characterized to measure will interrelate with the public.",
-    "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events!",
-    "title": "Animations",
-    "subtitle": "à la carte",
+    "claimTitle": "An infinity of characters ready to spring into action!",
+    "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events",
+    "title": "Animations à la carte",
+    "hero": { 
+      "title": "Animations à la carte: the show without limits!",
+      "alt": "Image of the fire animation"
+    },
     "hire": {
       "title": "Do you want your custom show?",
       "description": "Write us an email at {email}, or call us at {phone}"
