@@ -24,12 +24,12 @@ const { acceptAll, openModal } = useCookies();
     <div class="flex gap-2">
       <FiliButton
         :text="t('consent.manageCookies')"
-        button-class="px-3 py-1.5 text-sm !border-0 button-outline-neutral"
+        button-class="px-3 py-1.5 text-sm button-outline-neutral"
         :on-click="openModal"
       />
       <FiliButton
         :text="t('consent.acceptCookies')"
-        button-class="px-3 py-1.5 text-sm !border-0 button-outline-primary"
+        button-class="px-3 py-1.5 text-sm button-solid-primary bg-transparent"
         :on-click="acceptAll"
       />
     </div>
