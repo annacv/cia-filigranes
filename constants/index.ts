@@ -97,12 +97,12 @@ export const LOCALE_ROUTES = {
   },
   'filipersones/makutu': {
     ca: '/filipersones/makutu',
-    en: '/about/makutu',
+    en: '/about-us/makutu',
     es: '/filipersonas/makutu'
   },
   'filipersones/trinxeta': {
     ca: '/filipersones/trinxeta',
-    en: '/about/trinxeta',
+    en: '/about-us/trinxeta',
     es: '/filipersonas/trinxeta'
   },
   contacte: {

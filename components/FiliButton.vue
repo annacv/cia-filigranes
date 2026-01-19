@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NuxtLink } from "#components";
+import { NuxtLinkLocale } from "#components";
 
 const props = withDefaults(defineProps<{
   href?: string
@@ -22,7 +22,7 @@ const slots = useSlots()
 const hasTextSlot = computed(() => !!slots.text)
 const paddingClass = computed(() => (hasTextSlot.value ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
 const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
-const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLink : 'button'))
+const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLinkLocale : 'button'))
 
 const ariaLabel = computed(() => {
   if (isDownload.value) {
