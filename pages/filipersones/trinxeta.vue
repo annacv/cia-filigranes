@@ -82,8 +82,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           content-type="shows"
           :alt="getImageAlt('circ-trinxeta')"
           :info-button="{
-            href: '/espectacles/circ-trinxeta',
-            class: 'button-outline-primary'
+            href: '/espectacles/circ-trinxeta'
           }"
           :is-reversed="!isMobile"
         />

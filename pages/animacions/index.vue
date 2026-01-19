@@ -33,10 +33,10 @@ const synopsisButton = computed(() => {
       image-route="animacions"
       :alt="getImageAlt('animacions')"
     >
-      <template #content>
+    <template #content>
         <SectionCoverTitle
-          :title="`${t('performances.title')} ${t('performances.subtitle')}`"
-          title-class="max-w-[284px] md:max-w-[392px] lg:max-w-[480px]"
+          :title="t('performances.hero.title')"
+          title-class="max-w-[324px] md:max-w-[448px] lg:max-w-[510px]"
         />
       </template>
     </HeroCover>

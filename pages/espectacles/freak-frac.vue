@@ -67,6 +67,7 @@ const summaryButton = computed(() => {
           :art-card="artCard"
           :image="getImageByRoute('espectacles', 'freak-frac-2')"
           :alt="getImageAlt('freak-frac')"
+          background-position="center top"
           is-reversed
         />
         <HireFili
@@ -87,7 +88,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_freak-frac-4"
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
-      background-position="center top"
+      background-position="center center"
     />
     <HireFili
       :title="t('home.hire.title')"

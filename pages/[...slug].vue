@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import ArrowRight from "assets/icons/arrow-right.svg";
+import ArrowLeft from "assets/icons/arrow-left.svg";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 // This is a catch-all route that will match any route not defined.
 // It will show a 404 page for any unknown routes
@@ -50,7 +50,7 @@ const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEAD
             :text="t('button.goHome')"
           >
             <template #icon-left>
-              <ArrowRight class="arrow-right self-start rotate-180"/>
+              <ArrowLeft class="arrow-left"/>
             </template>
             <template #text>
               {{ t('button.goHome') }}

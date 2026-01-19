@@ -105,28 +105,68 @@
     @apply bg-black text-white;
   }
 
+   /* Primary Solid Button */
+  .button-solid-primary {
+    @apply border-primary-700 text-primary-700 bg-white;
+  }
+  .button-solid-primary:hover {
+    @apply border-white text-white bg-primary-500;
+  }
+
   /* Primary Outline Button */
   .button-outline-primary {
-    @apply border-primary-700 text-primary-700;
+    @apply border-white text-white;
   }
   .button-outline-primary:hover {
-    @apply bg-primary-700 text-white;
+    @apply bg-white text-primary-700;
+  }
+
+  /* Secondary Solid Button */
+  .button-solid-secondary {
+    @apply border-secondary-700 text-secondary-700 bg-white;
+  }
+  .button-solid-secondary:hover {
+    @apply border-white text-white bg-secondary-500;
   }
 
   /* Secondary Outline Button */
   .button-outline-secondary {
-    @apply border border-secondary-700 text-secondary-700;
+    @apply border-white text-white;
   }
   .button-outline-secondary:hover {
-    @apply bg-secondary-700 text-white;
+    @apply bg-white text-secondary-700;
+  }
+
+  /* Tertiary Solid Button */
+  .button-solid-tertiary {
+    @apply border-tertiary-700 text-tertiary-700 bg-white;
+  }
+  .button-solid-tertiary:hover {
+    @apply border-white text-white bg-tertiary-500;
   }
 
   /* Tertiary Outline Button */
   .button-outline-tertiary {
-    @apply border border-tertiary-700 text-tertiary-700;
+    @apply border-white text-white;
   }
   .button-outline-tertiary:hover {
-    @apply bg-tertiary-700 text-white;
+    @apply bg-white text-tertiary-700;
+  }
+
+  /* Quaternary Solid Button */
+  .button-solid-quaternary {
+    @apply border-quaternary-500 text-quaternary-500 bg-white;
+  }
+  .button-solid-quaternary:hover {
+    @apply border-white text-white bg-quaternary-500;
+  }
+
+  /* Quaternary Outline Button */
+  .button-outline-quaternary {
+    @apply border-white text-white;
+  }
+  .button-outline-quaternary:hover {
+    @apply bg-white text-quaternary-500;
   }
 
   /* Button Arrows */

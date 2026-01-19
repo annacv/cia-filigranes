@@ -46,8 +46,7 @@ const filipersonesItems = computed(() => {
       title: t(`routes.${filipersona}`),
       buttons: {
         infoButton: {
-          href: `/filipersones/${filipersona}`,
-          class: 'button-outline-primary'
+          href: `/filipersones/${filipersona}`
         }
       }
     }

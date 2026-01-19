@@ -29,8 +29,7 @@ const synopsisItems = computed(() => {
       title: t(`routes.${workshop}`),
       buttons: {
         infoButton: {
-          href: `/tallers/${workshop}`,
-          class: 'button-outline-secondary'
+          href: `/tallers/${workshop}`
         },
         downloadButton: {
           download: `CiaFiligranes-${workshop}-${locale.value}.pdf`,

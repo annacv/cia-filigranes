@@ -57,7 +57,7 @@ const buttonProps = computed(() =>
     :is="componentType"
     :type="isDownload ? 'application/pdf' : 'text/html'"
     v-bind="buttonProps"
-    class="flex items-center transition-colors cursor-pointer rounded-full border bg-white font-bold leading-normal gap-2 w-max will-change-[background-color,color]"
+    class="flex items-center transition-colors cursor-pointer rounded-full border font-bold leading-normal gap-2 w-max will-change-[background-color,color]"
     :class="[paddingClass, buttonClass]"
     role="button"
     :aria-label="ariaLabel"
