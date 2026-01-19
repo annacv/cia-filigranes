@@ -14,13 +14,6 @@ useHead({
 const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
-
-const summaryButton = computed(() => {
-  return {
-    download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
-  }
-});
 </script>
 
 <template>
