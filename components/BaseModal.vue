@@ -79,7 +79,7 @@ watch(() => props.isOpen, (isOpen) => {
       >
         <div class="absolute inset-0 backdrop-saturate-150 bg-black/90" />
         <div
-          class="relative w-full max-w-[90vw] md:max-w-[1280px] max-h-[90dvh] min-h-[400px] overflow-hidden bg-white rounded-lg shadow-2xl transform transition-all duration-300 ease-out"
+          class="relative w-full max-w-[90vw] lg:max-w-[80vw] 2xl:max-w-[996px] max-h-[90dvh] min-h-[400px] overflow-hidden bg-white rounded-lg shadow-2xl transform transition-all duration-300 ease-out"
           @click.stop
         >
           <button
