@@ -17,12 +17,12 @@
   "routes": {
     "home": "Inicio",
     "espectacles": "Espectáculos",
-    "circ-filixic": "El circ filixic",
+    "circ-filixic": "El Circo Filixic",
     "freak-frac": "Hermanos Freak Frac",
     "plis-plas": "Plis plas",
     "vint-anys": "20 Años no son nada",
     "circ-makutu": "El Pequeño Circo de Makutu",
-    "circ-trinxeta": "Trinxat no Tremola",
+    "circ-trinxeta": "Trinxat no Tiembla",
     "tallers": "Talleres",
     "bombolles-sabo": "Burbujas de jabón",
     "circ": "Circo",
@@ -30,7 +30,7 @@
     "maquillatge": "Maquillaje",
     "enginys-aigua": "Ingenios de agua",
     "animacions": "Animaciones",
-    "filipersones": "Filipersones",
+    "filipersones": "Filipersonas",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacto"
@@ -272,15 +272,15 @@
       ]
     },
     "circ-filixic": {
-      "metaDescription": "Circ Filixic - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu y Trinxeta nos harán disfrutar de uno de los circos más pequeños del mundo. Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo.",
+      "metaDescription": "El Circo Filixic - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu y Trinxeta nos harán disfrutar de uno de los circos más pequeños del mundo. Una historia llena de sorpresas, obra de payasos, donde se fusionan diferentes disciplinas del mundo del circo.",
       "abstract": [
         {
-          "paragraph": "Estos dos payasos experimentados nos sorprenderán con un espectáculo con diversos números recuperados del histórico Circo Filigranes. El Monociclo Giravolt; el Ale-hop Hula-hop; o los fantásticos malabaristas The Tal Kual Brothers, con su número reconocido internacionalmente con el nombre de Xiguagua: ¡con passing de mazas y un final espectacular encima de las bolas de equilibrio!"
+          "paragraph": "Estos dos payasos experimentados nos sorprenderán con un espectáculo con diversos números recuperados del histórico Circo Filigranes. El Monociclo Giratorio; el Ale-hop Hula-hop; o los fantásticos malabaristas The Tal Kual Brothers con su número reconocido internacionalmente con el nombre de Xiguagua: ¡con passing de mazas y un final espectacular encima de las bolas de equilibrio!"
         }
       ],
       "list": [
         {
-          "title": "Circ Filixic",
+          "title": "El Circo Filixic",
           "description": "Compañía Filigranes, 2017"
         },
         {
@@ -320,7 +320,7 @@
       ],
       "artCard": [
         {
-          "title": "El Circ Filixic",
+          "title": "El Circo Filixic",
           "description": "Cia. Filigranes"
         },
         {
@@ -350,7 +350,7 @@
       ]
     },
     "circ-makutu": {
-      "metaDescription": "Circ Makutu - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu nos hará vibrar con un montón de artistas que tendremos que descubrir entre todos y todas!",
+      "metaDescription": "El Pequeño Circo de Makutu - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Makutu nos hará vibrar con un montón de artistas que tendremos que descubrir entre todos y todas!",
       "abstract": [
         {
           "paragraph": "En esta historia, Makutu nos adentra en el mundo del circo y con la participación del público asistente, podremos ver de cerca diferentes disciplinas circenses, con el humor como protagonista principal. Aquí está un perro, aquí está un gato, y este cuento se ha acabado."
@@ -420,7 +420,7 @@
       ]
     },
     "circ-trinxeta": {
-      "metaDescription": "Circ Trinxeta - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Trinxeta nos hará volar con un viaje galáctico por los diferentes planetas lleno de sorpresas.",
+      "metaDescription": "Trinxat no Tiembla - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Trinxeta nos hará volar con un viaje galáctico por los diferentes planetas lleno de sorpresas.",
       "abstract": [
         {
           "paragraph": "Trinxeta nos invita a hacer un viaje por toda nuestra galaxia y conocer nuevos mundos. Poco a poco descubriremos los secretos de cada planeta, todo jugando con diferentes técnicas de circo, hasta volver a la tierra."
@@ -428,7 +428,7 @@
       ],
       "list": [
         {
-          "title": "Trinxat no Tremola",
+          "title": "Trinxat no Tiembla",
           "description": "Compañía Filigranes, 2019"
         },
         {
@@ -468,7 +468,7 @@
       ],
       "artCard": [
         {
-          "title": "Trinxat no Tremola",
+          "title": "Trinxat no Tiembla",
           "description": "Cia. Filigranes"
         },
         {
@@ -550,7 +550,7 @@
           "description": "Albert Pérez y Tyle Michael Fernández"
         },
         {
-          "title": "El Monociclo Giravolt",
+          "title": "El Monociclo Giratorio",
           "description": "Jordi Torrens"
         },
         {
@@ -666,7 +666,7 @@
       ],
       "synopsis": [
         {
-          "paragraph": "¡¡¿Como es posible?!! ¡¡Una burbuja de jabón más grande que tu cabeza!! ¿Quieres hacerla con tus propias manos?"
+          "paragraph": "¡¡¿Cómo es posible?!! ¡¡Una burbuja de jabón más grande que tu cabeza!! ¿Quieres hacerla con tus propias manos?"
         },
         {
           "paragraph": "¡Lo llenaremos todo de burbujas de jabón de diferentes tamaños! ¡Las haremos bailar y volar! Anímate a descubrir esta técnica tan peculiar."

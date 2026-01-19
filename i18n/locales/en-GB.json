@@ -17,8 +17,8 @@
   "routes": {
     "home": "Home",
     "espectacles": "Shows",
-    "circ-filixic": "El circ filixic",
-    "freak-frac": "Germans Freak Frac Parade",
+    "circ-filixic": "The Filixic Circus",
+    "freak-frac": "The Freak Frac Brothers' Parade",
     "plis-plas": "Plis plas",
     "vint-anys": "20 Years is Nothing",
     "circ-makutu": "Makutu's Little Circus",
@@ -29,7 +29,7 @@
     "pallassos": "Clowns",
     "maquillatge": "Makeup",
     "enginys-aigua": "Water tricks",
-    "animacions": "Animations",
+    "animacions": "Performances",
     "filipersones": "Filipeople",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
@@ -177,7 +177,7 @@
       "metaDescription": "Plis Plas - Clown and circus show for all ages by the Filigranes Company. With a chair, a funnel or a bucket, Makutu and Trinxeta will make us enjoy a constant tug-of-war, combining classic gags with juggling and live music.",
       "abstract": [
         {
-          "paragraph": "The key to this work is a constant game of tug-of-war, which gives rise to a relationship impregnated with fantasy, similar to the real world in which children live, at the same time endearing and conflicting. Between the Clown (Makutu) and the August (Toti) there is a relationship where rivalry and complicity are carefully balanced."
+          "paragraph": "The key to this work is a constant game of tug-of-war, which gives rise to a relationship impregnated with fantasy, similar to the real world in which children live, both endearing and conflictive. Between the Clown (Makutu) and the August (Toti) there is a relationship where rivalry and complicity are carefully balanced."
         }
       ],
       "list": [
@@ -192,10 +192,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "Plis Plas is a show where Toti and Makutu do not stop making the \"knuckle\": they are angry by hook or by crook, but friendship always ends up prevailing."
+          "paragraph": "Plis Plas is a show where Toti and Makutu keep bugging each other: they are angry by hook or by crook, but friendship always ends up prevailing."
         },
         {
-          "paragraph": "With a chair, a funnel or a bucket will make us, with its personal touch, classic gags combined with juggling and live music."
+          "paragraph": "With a chair, a funnel or a bucket, they will treat us to classic gags combined with juggling and live music with their personal touch."
         }
       ],
       "techCard": [
@@ -272,15 +272,15 @@
       ]
     },
     "circ-filixic": {
-      "metaDescription": "Circ Filixic - Clown and circus show for all ages by the Filigranes Company. Makutu and Trinxeta will make us enjoy one of the smallest circuses in the world. A story full of surprises, clown work, where different disciplines from the circus world are fused.",
+      "metaDescription": "The Filixic Circus - Clown and circus show for all ages by the Filigranes Company. Makutu and Trinxeta will make us enjoy one of the smallest circuses in the world. A story full of surprises, clown work, where different disciplines from the circus world are fused.",
       "abstract": [
         {
-          "paragraph": "These two experienced clowns will surprise us with a show with various numbers recovered from the historic Filigranes Circus. The Spinning Monocycle; the Ale-hop Hula-hop; or the fantastic jugglers The Tal Kual Brothers, with their internationally recognized number with the name Xiguagua: with club passing and a spectacular finale on balance balls!"
+          "paragraph": "These two experienced clowns will surprise us with a show with various numbers recovered from the historic Filigranes Circus. The Spinning Monocycle; the Ale-hop Hula-hop; or the fantastic jugglers The Tal Kual Brothers with their internationally recognized number with the name Xiguagua: with club passing and a spectacular finale on balance balls!"
         }
       ],
       "list": [
         {
-          "title": "Circ Filixic",
+          "title": "The Filixic Circus",
           "description": "Filigranes Company, 2017"
         },
         {
@@ -320,7 +320,7 @@
       ],
       "artCard": [
         {
-          "title": "El Circ Filixic",
+          "title": "The Filixic Circus",
           "description": "Filigranes Company"
         },
         {
@@ -350,7 +350,7 @@
       ]
     },
     "circ-makutu": {
-      "metaDescription": "Circ Makutu - Clown and circus show for all ages by the Filigranes Company. Makutu will make us vibrate with a bunch of artists that we will have to discover together!",
+      "metaDescription": "Makutu's Little Circus - Clown and circus show for all ages by the Filigranes Company. Makutu will make us vibrate with a bunch of artists that we will have to discover together!",
       "abstract": [
         {
           "paragraph": "In this story, Makutu takes us into the world of circus and with the participation of the attending audience, we will be able to see different circus disciplines up close, with humor as the main protagonist. Here's a dog, here's a cat, and this tale is over."
@@ -368,10 +368,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "In an small village, between mountains, came an incredible circus, with their carriages, their caravans and..."
+          "paragraph": "In a small village, between mountains, came an incredible circus, with their carriages, their caravans and..."
         },
         {
-          "paragraph": "...an amount of artists that we will have to discover together!"
+          "paragraph": "...a group of artists that we will have to discover together!"
         }
       ],
       "techCard": [
@@ -420,7 +420,7 @@
       ]
     },
     "circ-trinxeta": {
-      "metaDescription": "Circ Trinxeta - Clown and circus show for all ages by the Filigranes Company. Trinxeta will make us fly with a galactic journey through different planets full of surprises.",
+      "metaDescription": "Trinxat doesn't Tremble - Clown and circus show for all ages by the Filigranes Company. Trinxeta will make us fly with a galactic journey through different planets full of surprises.",
       "abstract": [
         {
           "paragraph": "Trinxeta invites us to take a journey through our entire galaxy and discover new worlds. Little by little we will discover the secrets of each planet, all while playing with different circus techniques, until we return to earth."
@@ -490,7 +490,7 @@
       ]
     },
     "freak-frac": {
-      "metaDescription": "Germans Freak Frac Parade - Itinerant clown and circus show for all ages by the Filigranes Company. The Freak Frac Brothers will make us enjoy a good time with surprises, stilt walkers, juggling and live music.",
+      "metaDescription": "The Freak Frac Brothers' Parade - Itinerant clown and circus show for all ages by the Filigranes Company. The Freak Frac Brothers will make us enjoy a good time with surprises, stilt walkers, juggling and live music.",
       "abstract": [
         {
           "paragraph": "Itinerant show with live musicians (saxophone and/or percussion) and our incredible stilt walkers. They will captivate us with their rhythms in constant movement! Different stops with juggling routines, like clubs and diabolos, rope jumping... always accompanied by music. Ideal for enlivening fairs, markets, parades... where interaction with the audience is paramount."
@@ -498,7 +498,7 @@
       ],
       "list": [
         {
-          "title": "Germans Freak Frac Parade",
+          "title": "The Freak Frac Brothers' Parade",
           "description": "Filigranes Company and Tub d'Assaig 7'70, 2013."
         },
         {
@@ -511,7 +511,7 @@
           "paragraph": "Attention!!! Here they are! I feel the rhythm of the music that makes me move..."
         },
         {
-          "paragraph": "Oh!! They're so tall! You can see them coming from far away! Look how the musicians follow the Directore! From the instruments, well cleaned, the notes flow through streets and squares..."
+          "paragraph": "Oh!! They're so tall! You can see them coming from far away! Look how the musicians follow the Directore! From the instruments, brightly polished, the notes flow through streets and squares..."
         }
       ],
       "techCard": [
@@ -550,7 +550,7 @@
           "description": "Albert Pérez and Tyle Michael Fernández"
         },
         {
-          "title": "The Giravolt Unicycle",
+          "title": "The Spinning Unicycle",
           "description": "Jordi Torrens"
         },
         {
@@ -573,7 +573,7 @@
     "commonAlt": "Image of the {title} workshop",
     "commonTitle": "Workshop of {title}",
     "claimTitle": "Courses, monographs, or seasonal workshops...",
-    "claim": "Workshops for little and adult people who want to learn and have fun!",
+    "claim": "Workshops for children and adults who want to learn and have fun!",
     "hero": {
       "title": "Workshops that stimulate the artist within you!",
       "alt": "Image of the Filigranes Company Circus Workshop"
@@ -827,14 +827,14 @@
     }
   },
   "performances": {
-    "metaDescription": "Custom animations. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
+    "metaDescription": "Tailor‑made performances. They adapt to different themes, ideal for enlivening conventions, meetings and all types of events.",
     "commonAlt": "Image of custom animations",
     "claimTitle": "An infinity of characters ready to spring into action!",
     "claim": "Ideal for enlivening birthdays, conventions, meetings and all types of events",
-    "title": "Animations à la carte",
+    "title": "Tailor‑made performances",
     "hero": { 
-      "title": "Animations à la carte: the show without limits!",
-      "alt": "Image of the fire animation"
+      "title": "Tailor‑made performances: the show without limits!",
+      "alt": "Image of the fire performance"
     },
     "hire": {
       "title": "Do you want your custom show?",
@@ -910,7 +910,7 @@
     "metaDescription": "We founded the Filigranes Company in 2004. We are a group linked to performing arts, mainly with the circus world and the fascinating world of clowns. Our main task is the creation and production of shows.",
     "commonAlt": "Image of {title}",
     "hero": {
-      "subtitle": "Makutu and Trinxeta"
+      "subtitle": "Makutu & Trinxeta"
     },
     "claimTitle": "We fill streets and theaters with humor, magic and emotion.",
     "claim": "Get to know the Filigranes Company and let yourself be captivated by the world of clowns and circus!",

@@ -10,7 +10,7 @@
     },
     "hire": {
       "title": "Vols contractar algun dels nostres serveis?",
-      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
@@ -41,7 +41,7 @@
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",
-    "goBack": "Tornar enrera",
+    "goBack": "Tornar enrere",
     "goHome": "Ves a l'inici",
     "scrollToTop": "Anar al principi de la pàgina",
     "scrollLeft": "Desplaçar cap a l'esquerra",
@@ -82,7 +82,7 @@
     "description": "La pàgina que estàs buscant no existeix..."
   },
   "shows": {
-    "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Compayia Filigranes.",
+    "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Companyia Filigranes.",
     "commonAlt": "Imatge de l'espectacle {title}",
     "claimTitle": "A punt per viure emocions i deixar-te sorprendre?",
     "claim": "Vine a gaudir del ritme trepidant dels espectacles de la Compayia Filigranes!",
@@ -93,7 +93,7 @@
     "hire": {
       "title": "Vols contractar algun dels nostres espectacles?",
       "titleSingle": "Vols contractar l'espectacle?",
-      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
     },
     "vint-anys": {
       "metaDescription": "20 anys no són res - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. Un espectacle emotiu que combina humor, malabars i música en directe.",
@@ -114,10 +114,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "En Makutu i en Trinxeta combinen diferents disciplines del circ amb el clown, utilitzant elements de la vida quotidiana que prenen vida d’una manera ben peculiar: traslladant-nos del passat al present i al futur."
+          "paragraph": "En Makutu i en Trinxeta combinen diferents disciplines del circ amb el clown, utilitzant elements de la vida quotidiana que prenen vida d'una manera ben peculiar: traslladant-nos del passat al present i al futur."
         },
         {
-          "paragraph": "En un gest d’ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s’han fet l’un a l’altre."
+          "paragraph": "En un gest d'ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s'han fet l'un a l'altre."
         }
       ],
       "techCard": [
@@ -192,7 +192,7 @@
       ],
       "synopsis": [
         {
-          "paragraph": "Plis Plas és un espectacle on el Toti i el Makutu no paren de fer-se la “punyeta”: s'enfaden a tort i a dret, però l’amistat sempre acaba prevalent."
+          "paragraph": "Plis Plas és un espectacle on el Toti i el Makutu no paren de fer-se la “punyeta”: s'enfaden a tort i a dret, però l'amistat sempre acaba prevalent."
         },
         {
           "paragraph": "Amb una cadira, un embut o una galleda ens faran, amb el seu toc personal, gags clàssics combinats amb malabars i música en directe."
@@ -272,10 +272,10 @@
       ]
     },
     "circ-filixic": {
-      "metaDescription": "Circ Filixic - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu i en Trinxeta ens faran gaudir d'un dels circs més petits del món. Una història plena de sorpreses, obra de pallassos, on es fusionen diferents disciplines del món del circ.",
+      "metaDescription": "El Circ Filixic - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu i en Trinxeta ens faran gaudir d'un dels circs més petits del món. Una història plena de sorpreses, obra de pallassos, on es fusionen diferents disciplines del món del circ.",
       "abstract": [
         {
-          "paragraph": "Aquests dos pallassos experimentats ens sorprendran amb un espectacle amb diversos números recuperats de l'històric Circ Filigranes. El Monocicle Giravolt; l'Ale-hop Hula-hop; o els fantàstics malabaristes The Tal Kual Brothers, amb el seu número reconegut internacionalment amb el nom de Xiguagua: amb passing de maces i un espatarrant final damunt les boles d'equilibri!"
+          "paragraph": "Aquests dos pallassos experimentats ens sorprendran amb un espectacle amb diversos números recuperats de l'històric Circ Filigranes. El Monocicle Giravolt; l'Ale-hop Hula-hop; o els fantàstics malabaristes The Tal Kual Brothers amb el seu número reconegut internacionalment amb el nom de Xiguagua: amb passing de maces i un espatarrant final damunt les boles d'equilibri!"
         }
       ],
       "list": [
@@ -350,10 +350,10 @@
       ]
     },
     "circ-makutu": {
-      "metaDescription": "Circ Makutu - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu ens farà vibrar amb un munt d'artistes que haurem de descobrir entre tots i totes!",
+      "metaDescription": "El Petit Circ de Makutu - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. En Makutu ens farà vibrar amb un munt d'artistes que haurem de descobrir entre tots i totes!",
       "abstract": [
         {
-          "paragraph": "En aquesta història, Makutu ens endinsa en el món del circ i amb la participació del públic assistent, podrem veure de més a prop diferents disciplines circenses, amb l'humor com a principal protagonista. Vet aquí un gos, vet aquí un gat, i aquest conte s'ha acabat."
+          "paragraph": "En aquesta història, en Makutu ens endinsa en el món del circ i amb la participació del públic assistent, podrem veure de més a prop diferents disciplines circenses, amb l'humor com a principal protagonista. Vet aquí un gos, vet aquí un gat, i aquest conte s'ha acabat."
         }
       ],
       "list": [
@@ -490,7 +490,7 @@
       ]
     },
     "freak-frac": {
-      "metaDescription": "Cercavila Germans Freak Frac - Espectacle itinerant de pallassos i circ per a totes les edats de la Companyia Filigranes. Els Germans Freak Frac ens faran gaudir d'una bona estonaamb sorpreses, xanquers, malabars i música en directe.",
+      "metaDescription": "Cercavila Germans Freak Frac - Espectacle itinerant de pallassos i circ per a totes les edats de la Companyia Filigranes. Els Germans Freak Frac ens faran gaudir d'una bona estona amb sorpreses, xanquers, malabars i música en directe.",
       "abstract": [
         {
           "paragraph": "Espectacle itinerant amb músics en viu (vents i percussió) i els nostres increïbles xanquers. Ens captivaran amb els seus ritmes en moviment constant! Diferents parades amb rutines de malabars, com maces i diàbolos, salt de corda... acompanyats sempre de música. Ideal per amenitzar fires, mercats, rues... on la interacció amb el públic és el primordial."
@@ -529,7 +529,7 @@
         },
         {
           "title": "*",
-          "description": "Possibilitat de variació de la durada de la cercavila, en funció de l’espai i del nombre de sortides."
+          "description": "Possibilitat de variació de la durada de la cercavila, en funció de l'espai i del nombre de sortides."
         }
       ],
       "artCard": [
@@ -563,7 +563,7 @@
         },
         {
           "title": "*",
-          "description": "Possibilitat de variació del nombre d’actors"
+          "description": "Possibilitat de variació del nombre d'actors"
         }
       ]
     }
@@ -581,7 +581,7 @@
     "hire": {
       "title": "Vols contractar algun dels nostres tallers?",
       "titleSingle": "Vols contractar el taller?",
-      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
     },
     "circ": {
       "metaDescription": "Taller de Circ - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller podreu conèixer de primera mà les diverses tècniques i disciplines del món del circ.",
@@ -649,7 +649,7 @@
       "techCard": [
         {
           "title": "Espai",
-          "description": "Taller de temporada, es recomana realitzar-lo a l’exterior."
+          "description": "Taller de temporada, es recomana realitzar-lo a l'exterior."
         },
         {
           "title": "Punt d'aigua",
@@ -671,7 +671,7 @@
         },
         {
           "title": "*",
-          "description": "Els/les talleristes faran demostracions i ens guiaran en l'aprenentatge de l’art de fer bombolles mitjançant diversos aparells en contacte amb aigua i sabó."
+          "description": "Els/les talleristes faran demostracions i ens guiaran en l'aprenentatge de l'art de fer bombolles mitjançant diversos aparells en contacte amb aigua i sabó."
         }
       ],
       "synopsis": [
@@ -779,7 +779,7 @@
       "metaDescription": "Taller d'Enginys d'aigua - Taller per a totes les edats de la Companyia Filigranes. Amb aquest taller aprendrem a utilitzar l'aigua per a crear diferents enginys: boles, boleies, boles de sabó, etc.",
       "abstract": [
         {
-          "paragraph": "Aquest taller tant refrescant donarà l’opció de fer girar una roda de molí, crear una cascada d’aigua, jugar amb contrapesos, imaginar-se la feina que requereix treure aigua d’un pou..."
+          "paragraph": "Aquest taller tant refrescant donarà l'opció de fer girar una roda de molí, crear una cascada d'aigua, jugar amb contrapesos, imaginar-se la feina que requereix treure aigua d'un pou..."
         }
       ],
       "list": [
@@ -799,7 +799,7 @@
       "techCard": [
         {
           "title": "Espai",
-          "description": "Taller de temporada, es recomana realitzar-lo a l’exterior."
+          "description": "Taller de temporada, es recomana realitzar-lo a l'exterior."
         },
         {
           "title": "Punt d'aigua",
@@ -821,7 +821,7 @@
         },
         {
           "title": "*",
-          "description": "Les estructures de fusta combinades amb elements reciclats, crearan consciència a grans i petits/es de la importància del reciclatge i l’aprofitament de l’aigua."
+          "description": "Les estructures de fusta combinades amb elements reciclats, crearan consciència a grans i petits/es de la importància del reciclatge i l'aprofitament de l'aigua."
         }
       ]
     }
@@ -838,7 +838,7 @@
     },
     "hire": {
       "title": "Vols el teu espectacle a mida?",
-      "description": "Escriu-nos un email a {email}, o truca’ns al {phone}"
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
     },
     "abstract": [
       {
@@ -847,7 +847,7 @@
     ],
     "synopsis": [
       {
-        "paragraph": "Cuiners, forners, cambrers, bombers, jardiners en tàndem, dones de la neteja, circ d’època... I també xanquers, monociclistes, bola d'equilibri o bé malabaristes de foc."
+        "paragraph": "Cuiners, forners, cambrers, bombers, jardiners en tàndem, dones de la neteja, circ d'època... I també xanquers, monociclistes, bola d'equilibri o bé malabaristes de foc."
       },
       {
         "paragraph": "Tant presenten activitats organitzades com interactúen amb el públic, adequant el vestuari i la caracterització."
@@ -933,7 +933,7 @@
     ],
     "background": [
       {
-        "paragraph": "A banda d'haver actuat en un ventall ampli de Festes Majors, teatres, Festivals, Gales, Cabarets de Circ..., participem activament en d’altres iniciatives: som formadors i membres fundadors de l’Associació de Circ de Terrassa Tub d’Assaig 7’70, i membres de l’Associació de Professionals de Circ de Catalunya i de Pallassos Sense Fronteres."
+        "paragraph": "A banda d'haver actuat en un ventall ampli de Festes Majors, teatres, Festivals, Gales, Cabarets de Circ..., participem activament en d'altres iniciatives: som formadors i membres fundadors de l'Associació de Circ de Terrassa Tub d'Assaig 7'70, i membres de l'Associació de Professionals de Circ de Catalunya i de Pallassos Sense Fronteres."
       }
     ],
     "stories": [
@@ -1027,7 +1027,7 @@
       ],
       "intro": [
         {
-          "paragraph": "En Jordi va néixer a Terrassa (Barcelona) l’any 1975. Des de ben petit ha estat lligat a la cultura popular de la seva ciutat. Fins als 15 anys formà part de l’Esbart Dansaire, Diables de Terrassa, i també de la colla castellera Minyons de Terrassa. Al 1991 comença a vincular-se a col·lectius de teatre al carrer, pallassos i circ."
+          "paragraph": "En Jordi va néixer a Terrassa (Barcelona) l'any 1975. Des de ben petit ha estat lligat a la cultura popular de la seva ciutat. Fins als 15 anys formà part de l'Esbart Dansaire, Diables de Terrassa, i també de la colla castellera Minyons de Terrassa. Al 1991 comença a vincular-se a col·lectius de teatre al carrer, pallassos i circ."
         }
       ],
       "learningPath": [
@@ -1043,7 +1043,7 @@
     }
   },
   "contact": {
-    "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca’ns al {phone}",
+    "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca'ns al {phone}",
     "info": {
       "title": "Informació de contacte",
       "subtitle": "Per a consultes, contractacions i trobades"
