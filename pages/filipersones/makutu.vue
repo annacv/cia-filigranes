@@ -83,8 +83,7 @@ const makutuAlt = getImageAlt('makutu')
           content-type="shows"
           :alt="getImageAlt('circ-makutu')"
           :info-button="{
-            href: '/espectacles/circ-makutu',
-            class: 'button-outline-primary'
+            href: '/espectacles/circ-makutu'
           }"
           background-position="center 30%"
           :is-reversed="!isMobile"

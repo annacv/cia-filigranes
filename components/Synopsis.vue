@@ -90,6 +90,24 @@ const getColors = computed(() => {
 const hoverState = computed(() => isMobile.value ? isVisibleAt80Percent.value : isHovered.value)
 const toggleHover = () => isHovered.value = !isHovered.value;
 
+const getColorVariant = (contentType: ContentType | undefined): string => {
+  const variantMap: Record<string, string> = {
+    shows: 'primary',
+    workshops: 'secondary',
+    performances: 'tertiary',
+    contact: 'quaternary'
+  };
+  return variantMap[contentType || ''] || 'primary';
+};
+
+const getDownloadButtonClass = computed(() => {
+  return `button-outline-${getColorVariant(props.contentType)}`;
+});
+
+const getInfoButtonClass = computed(() => {
+  return `button-solid-${getColorVariant(props.contentType)}`;
+});
+
 // Setup intersection observer reactively when ref becomes available
 watchEffect(() => {
   if (imageRef.value) {
@@ -138,7 +156,7 @@ watchEffect(() => {
             <FiliButton
               v-if="downloadButton"
               :href="downloadButton.href"
-              button-class="button-outline-neutral self-start"
+              :button-class="`${getDownloadButtonClass} self-start`"
               :text="t('button.dossier')"
               :download="downloadButton.download"
             >
@@ -152,7 +170,7 @@ watchEffect(() => {
             <FiliButton
               v-if="infoButton"
               :href="infoButton.href"
-              :button-class="`${infoButton.class} self-start`"
+              :button-class="`${getInfoButtonClass} self-start`"
               :text="t('button.info')"
               target="_top"
             >

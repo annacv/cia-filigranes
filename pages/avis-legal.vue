@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ArrowRight from "assets/icons/arrow-right.svg";
+import ArrowLeft from "assets/icons/arrow-left.svg";
 import { useResponsive } from "~/composables/use-responsive.composable";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 
@@ -65,7 +65,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
         
         <FiliButton
           href="/"
-          button-class="button-outline-primary"
+          button-class="button-outline-neutral"
           target="_top"
           :text="t('button.goHome')"
         >
@@ -73,7 +73,7 @@ const sections = getTranslatedList('avis-legal.sections', ['key', 'title', 'desc
             {{ t('button.goHome') }}
           </template>
           <template #icon-left>
-            <ArrowRight class="arrow-right self-start mt-0.5 rotate-180"/>
+            <ArrowLeft class="arrow-left"/>
           </template>
         </FiliButton>
       </template>

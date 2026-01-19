@@ -42,8 +42,7 @@ const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
           content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{
-            href: '/espectacles/vint-anys',
-            class: 'button-outline-primary'
+            href: '/espectacles/vint-anys'
           }"
           :download-button="{
             download: `CiaFiligranes-vint-anys-${locale}.pdf`,

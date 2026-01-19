@@ -34,7 +34,7 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
             <div class="flex flex-col text-sm xs:flex-row gap-2 w-full lg:w-auto">
               <FiliButton
                 :text="$t('cookies.banner.accept')"
-                button-class="px-3 py-2 button-outline-neutral"
+                button-class="px-3 py-2 button-outline-neutral bg-white"
                 :on-click="acceptAll"
               />
               <FiliButton

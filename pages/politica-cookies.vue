@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ArrowRight from "assets/icons/arrow-right.svg";
+import ArrowLeft from "assets/icons/arrow-left.svg";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 
 definePageMeta({
@@ -148,12 +148,12 @@ const getCookieValue = (cookie: Record<string, string>, key: string | undefined)
         </div>
         <FiliButton
           href="/"
-          button-class="button-outline-primary"
+          button-class="button-outline-neutral"
           target="_top"
           :text="t('button.goHome')"
         >
           <template #icon-left>
-            <ArrowRight class="arrow-right self-start rotate-180"/>
+            <ArrowLeft class="arrow-left"/>
           </template>
           <template #text>
             {{ t('button.goHome') }}
