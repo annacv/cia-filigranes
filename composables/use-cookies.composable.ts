@@ -2,9 +2,18 @@ const showModal = ref(false)
 
 export const useCookies = () => {
   // Only create cookies on client side
+  const isProduction = import.meta.client ? window.location.protocol === 'https:' : false
+  
+  const cookieSecurityConfig = {
+    secure: isProduction, // HTTPS only in production, allows HTTP in development
+    sameSite: 'lax' as const, // CSRF protection while allowing normal navigation
+    httpOnly: false // Required: JS must read/write for consent management (non-sensitive preference cookies)
+  }
+  
   const cookieConsent = import.meta.client ? useCookie<'accepted' | 'rejected' | 'customized' | null>('cookie-consent', {
     default: () => null,
-    maxAge: 60 * 60 * 24 * 365 // 1 year
+    maxAge: 60 * 60 * 24 * 365, // 1 year
+    ...cookieSecurityConfig
   }) : ref(null)
 
   const cookiePreferences = import.meta.client ? useCookie('cookie-preferences', {
@@ -12,7 +21,8 @@ export const useCookies = () => {
       essential: true,
       functional: false
     }),
-    maxAge: 60 * 60 * 24 * 365 // 1 year
+    maxAge: 60 * 60 * 24 * 365, // 1 year
+    ...cookieSecurityConfig
   }) : ref({ essential: true, functional: false })
 
   const showBanner = computed(() => import.meta.client ? cookieConsent.value === null : false)
