@@ -107,11 +107,10 @@ const scrolledHeight = computed(() => {
       isScrolled
         ? '[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]'
         : '[clip-path:polygon(0%_0%,100%_0%,100%_94%,0%_100%)] lg:[clip-path:polygon(0%_0%,100%_0%,100%_86%,0%_100%)]',
-      { 'h-dvh': !isScrolled }
     ]"
     :style="{
       transitionDuration: transitionDuration,
-      height: isScrolled ? scrolledHeight : undefined,
+      height: isScrolled ? scrolledHeight : '100dvh',
     }"
   >
     <picture v-if="fallbackImageUrl" class="absolute inset-0 w-full h-full">
@@ -137,11 +136,10 @@ const scrolledHeight = computed(() => {
     
     <!-- Gradient overlay -->
     <div
-      class="absolute inset-0 w-full h-full transition-[mix-blend-mode] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-mix-blend-mode"
+      class="absolute inset-0 w-full h-full"
       :class="isScrolled ? 'mix-blend-soft-light' : 'mix-blend-hard-light'"
       :style="{
         background: `linear-gradient(to right bottom, ${gradientOverlayValue})`,
-        transitionDuration: transitionDuration,
       }"
     />
     
