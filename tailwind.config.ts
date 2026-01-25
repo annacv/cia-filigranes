@@ -88,9 +88,6 @@ const config: Config = {
     {
       pattern: /^(w|h|!w|!h)-7$/,
     },
-    {
-      pattern: /^button-(outline|solid)-(primary|secondary|tertiary|quaternary|neutral)$/,
-    },
   ],
 }
 
