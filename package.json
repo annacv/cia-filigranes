@@ -1,5 +1,6 @@
 {
   "name": "cia-filigranes",
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt build",
@@ -42,5 +43,11 @@
     "sharp": "^0.33.5",
     "tsx": "^4.21.0",
     "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "tar": "^7.0.0",
+    "vue-i18n": "^11.1.12",
+    "glob": "^10.0.0",
+    "@koa/router": "^15.0.0"
   }
 }
