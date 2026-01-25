@@ -3,7 +3,7 @@ import { heroScrollRuntime } from './runtime'
 
 const ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD = 20
 const SCROLL_DIFFERENCE_THRESHOLD = 5
-const ANIMATION_FOLLOW_MAX_FRAMES = 60 // ~1 second at 60fps
+const ANIMATION_FOLLOW_MAX_FRAMES = 50 // ~833ms at 60fps
 
 export interface FollowAnimationOptions {
   finalHeroHeight: number
