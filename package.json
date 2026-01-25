@@ -1,5 +1,6 @@
 {
   "name": "cia-filigranes",
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "./scripts/run-with-node.sh --no-deprecation node_modules/.bin/nuxt build",
