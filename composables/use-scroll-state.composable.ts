@@ -128,7 +128,7 @@ export function useScrollState(): {
     // Grace period check: prevent isScrolled from becoming false immediately after animation
     // This fixes light gestures where scroll drifts to 0 right after animation completes
     if (heroScrollRuntime.animationCompletedAt !== null) {
-      const gracePeriodMs = 300
+      const gracePeriodMs = 240
       const smallScrollThreshold = 5
       const timeSinceCompletion = Date.now() - heroScrollRuntime.animationCompletedAt
 

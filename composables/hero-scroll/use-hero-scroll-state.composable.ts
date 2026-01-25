@@ -63,7 +63,7 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
         // Prevents reset for very light gestures where scrollY drifts to 0 after animation
         if (newScrollY === 0 && hasHandledFirstScroll.value && oldScrollY > 0) {
           // Grace period: don't reset immediately after animation completes
-          const GRACE_PERIOD_AFTER_ANIMATION_MS = 500
+          const GRACE_PERIOD_AFTER_ANIMATION_MS = 400
           if (
             heroScrollRuntime.animationCompletedAt !== null &&
             Date.now() - heroScrollRuntime.animationCompletedAt < GRACE_PERIOD_AFTER_ANIMATION_MS
