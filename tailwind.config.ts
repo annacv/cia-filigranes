@@ -33,21 +33,26 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['IBM Plex Sans', 'sans-serif'],
-        grotesk: ['Archivo Black', 'sans-serif']
+        grotesk: ['Archivo Black', 'sans-serif'],
+        alternative: ['Inter', 'sans-serif'],
       },
       fontWeight: {
         thin: '100',
         light: '300',
         normal: '400',
         semibold: '600',
-        bold: '700'
+        bold: '700',
+        extrabold: '800',
       },
       colors: {
         'primary-300': '#f6b1bd',
+        'primary-400': '#ec3636',
         'primary-500': '#c80d0d',
         'primary-700': '#bc1b36',
+        'secondary-400': '#795090',
         'secondary-500': '#5c2978',
         'secondary-700': '#491a63',
+        'tertiary-400': '#E9573D',
         'tertiary-500': '#e32906',
         'tertiary-700': '#cb2303',
         'quaternary-300': '#fdf48f',

@@ -14,8 +14,18 @@
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
+  "agenda": {
+    "title": "Agenda",
+    "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
+    "description": "Aquí encontrarás las próximas actuaciones y talleres de la Compañía Filigranes.",
+    "loading": "Cargando eventos...",
+    "empty": "No hay eventos próximos programados.",
+    "error": "No se han podido cargar los eventos. Por favor, inténtalo de nuevo más tarde.",
+    "live": "¡En directo!"
+  },
   "routes": {
     "home": "Inicio",
+    "agenda": "Agenda",
     "espectacles": "Espectáculos",
     "circ-filixic": "El Circo Filixic",
     "freak-frac": "Hermanos Freak Frac",

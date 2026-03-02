@@ -15,11 +15,19 @@ export const ROUTES_INDEX = [
     children: ['trinxeta', 'makutu']
   },
   {
+    name: "agenda"
+  },
+  {
     name: "contacte"
   }
 ]
 
 export const LOCALE_ROUTES = {
+  agenda: {
+    ca: '/agenda',
+    en: '/agenda',
+    es: '/agenda'
+  },
   espectacles: {
     ca: '/espectacles',
     en: '/shows',

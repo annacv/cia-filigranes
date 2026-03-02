@@ -2,6 +2,12 @@
 import { routePages, localeObjects } from "./i18n/index";
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      googleCalendarApiKey: '',
+      googleCalendarId: ''
+    }
+  },
   app: {
     pageTransition: { name: "fade", mode: "out-in" },
     rootId: "cia-filigranes",

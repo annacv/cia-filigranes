@@ -14,8 +14,18 @@
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
+  "agenda": {
+    "title": "Agenda",
+    "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",
+    "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
+    "loading": "Carregant esdeveniments...",
+    "empty": "No hi ha esdeveniments propers programats.",
+    "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
+    "live": "En directe!"
+  },
   "routes": {
     "home": "Inici",
+    "agenda": "Agenda",
     "espectacles": "Espectacles",
     "circ-filixic": "El circ filixic",
     "freak-frac": "Cercavila Germans Freak Frac",

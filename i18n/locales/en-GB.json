@@ -14,8 +14,18 @@
     }
   },
   "commonAlt": "Image of the Filigranes Company",
+  "agenda": {
+    "title": "Agenda",
+    "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
+    "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
+    "loading": "Loading events...",
+    "empty": "No upcoming events scheduled.",
+    "error": "Unable to load events. Please try again later.",
+    "live": "Live!"
+  },
   "routes": {
     "home": "Home",
+    "agenda": "Agenda",
     "espectacles": "Shows",
     "circ-filixic": "The Filixic Circus",
     "freak-frac": "The Freak Frac Brothers' Parade",
