@@ -14,7 +14,7 @@ interface UseCalendarEventsOptions {
   maxResults?: number
 }
 
-// Use the same image keys as highlight components (SmallCard over shows route children)
+// Uses the same image keys as highlightShows
 const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   '20 anys no son res': 'vint-anys',
   'el circ filixic': 'circ-filixic',
@@ -24,7 +24,7 @@ const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'trinxat no tremola': 'circ-trinxeta',
 }
 
-// Use the same base keys as HighlightWorkshops (it calls getImage('tallers', item))
+// Uses the same base keys as HighlightWorkshops
 const WORKSHOPS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'taller de circ': 'circ',
   'circ': 'circ',
@@ -94,6 +94,19 @@ const getEventImageByTitle = (title: string, eventType: ContentType): CardImage 
   return getImageByRoute(imageRoute, matched[1])
 }
 
+const getFallbackImageForType = (eventType: ContentType): CardImage | undefined => {
+  switch (eventType) {
+    case 'shows':
+      return getImageByRoute('espectacles', 'espectacles_fallback')
+    case 'workshops':
+      return getImageByRoute('tallers', 'tallers_fallback')
+    case 'performances':
+      return getImageByRoute('animacions', 'foc')
+    default:
+      return undefined
+  }
+}
+
 /**
  * Transforms a Google Calendar API event to a normalized CalendarEvent format
  */
@@ -116,7 +129,7 @@ const transformEvent = (event: GoogleCalendarEvent): CalendarEvent => {
     title: normalizedSummary,
     description: event.description,
     location: event.location,
-    image: getEventImageByTitle(normalizedSummary, eventType),
+    image: getEventImageByTitle(normalizedSummary, eventType) ?? getFallbackImageForType(eventType),
     start: event.start.dateTime || event.start.date || '',
     end: event.end?.dateTime || event.end?.date || null,
     isAllDay,
