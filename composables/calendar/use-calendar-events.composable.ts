@@ -22,6 +22,15 @@ const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'cercavila germans freak frac': 'freak-frac',
   'el petit circ de makutu': 'circ-makutu',
   'trinxat no tremola': 'circ-trinxeta',
+  // Espectacles "fora de carta" o pendents d'afegir a la web
+  'germans filigranes': 'germans-filigranes',
+  'els germans filigranes': 'germans-filigranes',
+  'vendaval': 'vendaval',
+  // Col·laboracions:
+  'el circ filikrusty': 'circ-filikrusty',
+  'heeelp': 'heeelp',
+  'help': 'heeelp',
+  'fingerlight': 'fingerlight',
 }
 
 // Uses the same base keys as HighlightWorkshops
@@ -38,11 +47,12 @@ const WORKSHOPS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   "enginys d'aigua": 'enginys-aigua',
 }
 
+// Uses the same base keys as HighlightPerformances
 const PERFORMANCES_TITLE_TO_IMAGE_KEY: Record<string, string> = {
-  'animacions a la carta': 'foc',
+  'animacions a la carta': 'caixes-1',
   'animacio amb malabars de foc': 'foc',
   'animacio circ d epoca': 'circ-epoca',
-  'animacio malabars amb caixes': 'caixes',
+  'animacio malabars amb caixes': 'caixes-1',
 }
 
 const normalizeTitle = (value: string): string => {
@@ -97,14 +107,24 @@ const getEventImageByTitle = (title: string, eventType: ContentType): CardImage 
 const getFallbackImageForType = (eventType: ContentType): CardImage | undefined => {
   switch (eventType) {
     case 'shows':
-      return getImageByRoute('espectacles', 'espectacles_fallback')
+      return getImageByRoute('espectacles', 'fallback')
     case 'workshops':
-      return getImageByRoute('tallers', 'tallers_fallback')
+      return getImageByRoute('tallers', 'fallback')
     case 'performances':
-      return getImageByRoute('animacions', 'foc')
+      return getImageByRoute('animacions', 'caixes-1')
     default:
       return undefined
   }
+}
+
+/** Matches first http:// or https:// URL in text; returns { link, raw } so description can be stripped of the exact raw match */
+const extractUrlFromDescription = (description: string | undefined): { link: string; raw: string } | undefined => {
+  if (!description || typeof description !== 'string') return undefined
+  const match = description.match(/https?:\/\/[^\s]+/)
+  if (!match) return undefined
+  const raw = match[0]
+  const link = raw.replace(/[.,;:)\]]+$/, '')
+  return { link, raw }
 }
 
 /**
@@ -113,23 +133,50 @@ const getFallbackImageForType = (eventType: ContentType): CardImage | undefined 
 const transformEvent = (event: GoogleCalendarEvent): CalendarEvent => {
   const isAllDay = !event.start.dateTime
   const normalizedSummary = event.summary.replace(/@/g, 'o')
-  const summaryWords = normalizedSummary.toLowerCase().split(/\s+/)
 
-  const isWorkshop = summaryWords.some((word) => word === 'taller' || word === 'tallers')
-  const isPerformance = summaryWords.some((word) => word === 'animació' || word === 'animacio' || word === 'animacions')
+  // Use a fully normalized version of the summary for type detection so
+  // accents and punctuation don't affect matching.
+  const typeDetectionSource = normalizeTitle(event.summary)
+  const typeWords = typeDetectionSource.split(' ')
 
-  const eventType: ContentType =
-    isWorkshop ? 'workshops'
-    : isPerformance ? 'performances'
-    : 'shows'
+  const hasEspectacle = typeDetectionSource.includes('espectacle') || typeDetectionSource.includes('espectacles')
+  const hasNumero = typeDetectionSource.includes('numero')
+  const hasWorkshopTerm = typeWords.some((word) => word === 'taller' || word === 'tallers')
+  const hasPerformanceTerm = typeDetectionSource.includes('animacio') || typeDetectionSource.includes('animacions')
+
+  // Priority rules:
+  // 1) "espectacle" → shows
+  // 2) "número" (numero) or "animació" → performances
+  // 3) "taller(s)" → workshops
+  // 4) fallback → shows
+  let eventType: ContentType
+  if (hasEspectacle) {
+    eventType = 'shows'
+  } else if (hasNumero || hasPerformanceTerm) {
+    eventType = 'performances'
+  } else if (hasWorkshopTerm) {
+    eventType = 'workshops'
+  } else {
+    eventType = 'shows'
+  }
+
+  const titleForDisplay = hasEspectacle
+    ? normalizedSummary.replace(/^\s*Espectacle\s+/i, '')
+    : normalizedSummary
+
+  const urlResult = extractUrlFromDescription(event.description)
+  const description = event.description
+    ? (urlResult ? event.description.replace(urlResult.raw, '').replace(/\s+/g, ' ').trim() : event.description)
+    : undefined
 
   return {
     id: event.id,
     eventType,
-    title: normalizedSummary,
-    description: event.description,
+    title: titleForDisplay,
+    description: description || undefined,
     location: event.location,
     image: getEventImageByTitle(normalizedSummary, eventType) ?? getFallbackImageForType(eventType),
+    reservationLink: urlResult?.link,
     start: event.start.dateTime || event.start.date || '',
     end: event.end?.dateTime || event.end?.date || null,
     isAllDay,

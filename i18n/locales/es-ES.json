@@ -21,7 +21,9 @@
     "loading": "Cargando eventos...",
     "empty": "No hay eventos próximos programados.",
     "error": "No se han podido cargar los eventos. Por favor, inténtalo de nuevo más tarde.",
-    "live": "¡En directo!"
+    "live": "¡En directo!",
+    "reservationEntry": "Reserva tu entrada",
+    "reservationPlace": "Reserva tu plaza"
   },
   "routes": {
     "home": "Inicio",

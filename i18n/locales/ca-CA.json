@@ -21,7 +21,9 @@
     "loading": "Carregant esdeveniments...",
     "empty": "No hi ha esdeveniments propers programats.",
     "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
-    "live": "En directe!"
+    "live": "En directe!",
+    "reservationEntry": "Reserva la teva entrada",
+    "reservationPlace": "Reserva la teva plaça"
   },
   "routes": {
     "home": "Inici",

@@ -73,6 +73,7 @@ export interface CalendarEvent {
   description?: string
   location?: string
   image?: CardImage
+  reservationLink?: string
   start: string
   end: string | null
   isAllDay: boolean

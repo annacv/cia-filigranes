@@ -5,6 +5,9 @@ import CardImage from '~/components/CardImage.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   event: {
@@ -35,23 +38,35 @@ const getMainColor = computed(() => {
 const getFooterColor = computed(() => {
   return footerColorMap[props.event.eventType as keyof typeof footerColorMap] ?? 'bg-primary-400'
 })
+
+const reservationButtonText = computed(() => {
+  return props.event.eventType === 'workshops'
+    ? t('agenda.reservationPlace')
+    : t('agenda.reservationEntry')
+})
 </script>
 
 <template>
-  <article class="h-full max-w-[338px] relative">
-    <div v-if="event.image" class="w-full aspect-[420/420]">
+  <article class="h-full w-full max-w-[388px] relative">
+    <div v-if="event.image" class="relative w-full aspect-[420/420]">
       <CardImage
         :image="event.image"
         :content-type="event.eventType"
         :image-alt="imageAlt"
       />
+      <FiliButton
+        v-if="event.reservationLink"
+        :href="event.reservationLink"
+        target="_blank"
+        :text="reservationButtonText"
+        :button-class="`absolute bottom-4 right-4 button-solid-neutral`"
+      />
     </div>
-    <header :class="`absolute top-4 left-4 ${getMainColor}`">
+    <header :class="`absolute top-4 left-4 mr-4 ${getMainColor}`">
       <h3 class="uppercase text-xl font-grotesk font-bold text-white !leading-none p-2">
         {{ event.title }}
       </h3>
     </header>
-    <!--add img component-->
 
     <div :class="`p-5 ${getMainColor}`">
       <div class="flex items-center gap-4">
@@ -69,19 +84,20 @@ const getFooterColor = computed(() => {
             :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location)}`"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-white text-base !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90"
+            class="text-white text-base !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90 line-clamp-4"
           >
             {{ event.location }}
           </a>
         </div>
       </div>
     </div>
-    <footer :class="`flex gap-2 px-5 py-1 items-center ${getFooterColor}`">
+    <footer :class="`flex gap-2 px-5 py-1 items-center ${getFooterColor} h-[26px]`">
       <CircleIcon
+        v-if="event.description"
         class="flex-shrink-0 text-white !w-3 !h-3"
         aria-hidden="true"
       />
-      <p class="text-xs mb-0.5 text-white font-medium">
+      <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium">
         {{ event.description }}
       </p>
     </footer>

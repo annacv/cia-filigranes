@@ -21,7 +21,9 @@
     "loading": "Loading events...",
     "empty": "No upcoming events scheduled.",
     "error": "Unable to load events. Please try again later.",
-    "live": "Live!"
+    "live": "Live!",
+    "reservationEntry": "Reserve your ticket",
+    "reservationPlace": "Reserve your spot"
   },
   "routes": {
     "home": "Home",

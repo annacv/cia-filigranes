@@ -30,7 +30,7 @@ const schedule = computed(() => getScheduleParts(props.date));
     </span>
 
     <!-- Visual layout -->
-      <div class="flex flex-col items-center py-3 px-6">
+      <div class="flex flex-col items-center py-3 px-6 md:px-8">
         <span class="text-6xl font-extrabold">
           {{ schedule.day }}
         </span>
@@ -38,7 +38,7 @@ const schedule = computed(() => getScheduleParts(props.date));
           {{ schedule.month }}
         </span>
       </div>
-      <div class="px-6 w-full border-t-2 border-white">
+      <div class="px-6 md:px-8 w-full border-t-2 border-white">
         <p class="text-xl text-center font-extrabold !leading-tight">
           {{ schedule.year }}
         </p>

@@ -108,6 +108,14 @@
     @apply bg-black text-white;
   }
 
+  /* Neutral Solid Uppercased Button */
+  .button-solid-neutral {
+    @apply border-transparent bg-white text-neutral-900 uppercase !font-normal text-sm !px-4;
+  }
+  .button-solid-neutral:hover {
+    @apply text-white bg-black;
+  }
+
    /* Primary Solid Button */
   .button-solid-primary {
     @apply border-primary-700 text-primary-700 bg-white;
