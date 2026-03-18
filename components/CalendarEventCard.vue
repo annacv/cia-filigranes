@@ -12,9 +12,10 @@ const props = defineProps({
     required: true
   }
 })
-
+const { isMobile, isSmallTablet } = useResponsive();
 const { formatEventTime } = useDateFormat()
 const imageAlt = computed(() => useImageAlt(props.event.eventType, props.event.title))
+const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'medium' : 'large'))
 
 const mainColorMap = {
   'shows': 'bg-primary-500',
@@ -38,7 +39,7 @@ const getFooterColor = computed(() => {
 </script>
 
 <template>
-  <article class="h-full w-full max-w-[388px] relative">
+  <article class="h-full w-full relative">
     <div v-if="event.image" class="w-full aspect-[420/420]">
       <CardImage
         :image="event.image"
@@ -46,20 +47,20 @@ const getFooterColor = computed(() => {
         :image-alt="imageAlt"
       />
     </div>
-    <header :class="`absolute top-4 left-4 mr-4 ${getMainColor}`">
-      <h3 class="uppercase text-xl font-grotesk font-bold text-white !leading-none p-2">
+    <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${getMainColor}`">
+      <h3 class="uppercase text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">
         {{ event.title }}
       </h3>
     </header>
     <!--add img component-->
 
     <div :class="`p-5 ${getMainColor}`">
-      <div class="flex items-center gap-4">
-        <CalendarSchedule :date="event.start" />
-        <div class="flex flex-col gap-1">
+      <div class="flex flex-col md:flex-row md:items-center gap-4">
+        <CalendarSchedule :date="event.start" :size="scheduleSize" />
+        <div class="flex flex-col gap-1 w-full">
           <time
             v-if="!event.isAllDay"
-            class="text-white text-4xl font-extrabold font-alternative"
+            :class="`text-white ${scheduleSize === 'large' ? 'text-4xl' : 'text-xl !leading-tight'} font-extrabold font-alternative`"
             :datetime="event.start"
           >
             {{ formatEventTime(event.start) }}
@@ -69,7 +70,7 @@ const getFooterColor = computed(() => {
             :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location)}`"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-white text-base !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90 line-clamp-4"
+            :class="`text-white !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90 ${scheduleSize === 'large' ? 'text-base line-clamp-4' : 'min-h-[36px] text-sm line-clamp-2'}`"
           >
             {{ event.location }}
           </a>
@@ -83,7 +84,7 @@ const getFooterColor = computed(() => {
         aria-hidden="true"
       />
       <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium">
-        {{ event.description }}
+        <span :class="{ 'line-clamp-1': scheduleSize !== 'large' }">{{ event.description }}</span>
       </p>
     </footer>
   </article>
