@@ -31,6 +31,8 @@
       "workshops": "Workshops",
       "performances": "Performances",
       "all": "All events",
+      "dropdownAriaLabel": "Open the event filters menu",
+      "dropdownMenuAriaLabel": "Event filter options",
       "closedGroups": "Show closed groups",
       "closedGroupsAriaLabel": "Turn on to show closed-group events"
     }

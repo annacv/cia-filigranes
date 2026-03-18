@@ -5,9 +5,6 @@ import CardImage from '~/components/CardImage.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
 
 const props = defineProps({
   event: {
@@ -38,28 +35,15 @@ const getMainColor = computed(() => {
 const getFooterColor = computed(() => {
   return footerColorMap[props.event.eventType as keyof typeof footerColorMap] ?? 'bg-primary-400'
 })
-
-const reservationButtonText = computed(() => {
-  return props.event.eventType === 'workshops'
-    ? t('agenda.reservationPlace')
-    : t('agenda.reservationEntry')
-})
 </script>
 
 <template>
   <article class="h-full w-full max-w-[388px] relative">
-    <div v-if="event.image" class="relative w-full aspect-[420/420]">
+    <div v-if="event.image" class="w-full aspect-[420/420]">
       <CardImage
         :image="event.image"
         :content-type="event.eventType"
         :image-alt="imageAlt"
-      />
-      <FiliButton
-        v-if="event.reservationLink"
-        :href="event.reservationLink"
-        target="_blank"
-        :text="reservationButtonText"
-        :button-class="`absolute bottom-4 right-4 button-solid-neutral`"
       />
     </div>
     <header :class="`absolute top-4 left-4 mr-4 ${getMainColor}`">
@@ -67,6 +51,7 @@ const reservationButtonText = computed(() => {
         {{ event.title }}
       </h3>
     </header>
+    <!--add img component-->
 
     <div :class="`p-5 ${getMainColor}`">
       <div class="flex items-center gap-4">

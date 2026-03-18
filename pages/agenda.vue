@@ -108,6 +108,35 @@ const getAllLabelClass = computed(() => {
 const hasActiveFilters = computed(() => {
   return selectedEventType.value !== null || !showClosedGroups.value
 })
+
+const eventTypeDropdownOptions = computed(() => {
+  return [
+    { type: null, label: t('agenda.filters.all'), indicatorClass: 'bg-primary-300' },
+    ...EVENT_TYPE_FILTER_ITEMS.map(item => ({
+      type: item.type,
+      label: t(item.labelKey),
+      indicatorClass: item.inactiveIndicatorClass,
+    })),
+  ]
+})
+
+const selectedEventTypeLabel = computed(() => {
+  if (selectedEventType.value === null) {
+    return t('agenda.filters.all')
+  }
+
+  const selectedItem = EVENT_TYPE_FILTER_ITEMS.find(item => item.type === selectedEventType.value)
+  return selectedItem ? t(selectedItem.labelKey) : t('agenda.filters.all')
+})
+
+const selectedEventTypeIndicatorClass = computed(() => {
+  if (selectedEventType.value === null) {
+    return 'bg-primary-500'
+  }
+
+  const selectedItem = EVENT_TYPE_FILTER_ITEMS.find(item => item.type === selectedEventType.value)
+  return selectedItem ? selectedItem.activeIndicatorClass : 'bg-primary-500'
+})
 </script>
 
 <template>
@@ -120,7 +149,7 @@ const hasActiveFilters = computed(() => {
       <template #content>
         <SectionCoverTitle
           :title="`${t('routes.agenda')} ${currentYear}-${nextYear}`"
-          title-class="max-w-[298px] md:max-w-[378px]"
+          title-class="max-w-[272px] md:max-w-[298px] lg:max-w-[378px]"
         />
       </template>
     </HeroCover>
@@ -134,8 +163,22 @@ const hasActiveFilters = computed(() => {
         />
       </template>
       <template #wrappedBottom>
-        <div class="w-full flex justify-between items-center text-sm lg:text-base xl:text-lg !leading-normal font-neutral-900 mb-7">
-          <nav :aria-label="t('agenda.filters.ariaLabel')">
+        <div class="mb-4 md:mb-7 flex w-full items-center justify-between text-sm font-neutral-900 !leading-normal lg:text-base xl:text-lg">
+          <EventTypeDropdown
+            class="md:hidden"
+            :selected-event-type="selectedEventType"
+            :selected-label="selectedEventTypeLabel"
+            :options="eventTypeDropdownOptions"
+            :toggle-aria-label="t('agenda.filters.dropdownAriaLabel')"
+            :menu-aria-label="t('agenda.filters.dropdownMenuAriaLabel')"
+            :indicator-class="selectedEventTypeIndicatorClass"
+            @select="selectedEventType = $event"
+          />
+
+          <nav
+            class="hidden md:block md:order-1"
+            :aria-label="t('agenda.filters.ariaLabel')"
+          >
             <ul class="flex justify-between items-center gap-4 md:gap-8 lg:gap-14">
               <li
                 v-for="item in EVENT_TYPE_FILTER_ITEMS"
@@ -170,21 +213,19 @@ const hasActiveFilters = computed(() => {
             </ul>
           </nav>
 
-          <div class="flex items-center flex-1 justify-end">
-            <div class="flex items-center gap-3">
-              <label
-                for="closed-groups-toggle"
-                class="leading-none font-normal"
-              >
-                {{ t('agenda.filters.closedGroups') }}
-              </label>
-              <Switch
-                id="closed-groups-toggle"
-                v-model="showClosedGroups"
-                :aria-label="t('agenda.filters.closedGroupsAriaLabel')"
-                class="self-center"
-              />
-            </div>
+          <div class="flex items-center gap-3 md:order-2 md:flex-1 md:justify-end">
+            <label
+              for="closed-groups-toggle"
+              class="leading-none font-normal"
+            >
+              {{ t('agenda.filters.closedGroups') }}
+            </label>
+            <Switch
+              id="closed-groups-toggle"
+              v-model="showClosedGroups"
+              :aria-label="t('agenda.filters.closedGroupsAriaLabel')"
+              class="self-center"
+            />
           </div>
         </div>
         <CalendarEventList

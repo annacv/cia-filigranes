@@ -31,6 +31,8 @@
       "workshops": "Talleres",
       "performances": "Animaciones",
       "all": "Todos los eventos",
+      "dropdownAriaLabel": "Abrir el menú de filtros de eventos",
+      "dropdownMenuAriaLabel": "Opciones de filtro de eventos",
       "closedGroups": "Mostrar grupos cerrados",
       "closedGroupsAriaLabel": "Activa para mostrar los eventos de grupos cerrados"
     }
