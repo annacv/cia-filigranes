@@ -171,6 +171,16 @@ export const GLOB_IMPORTS = {
     import: 'default',
   }) as Record<string, () => Promise<string>>,
 
+  mobileAgendaImages: import.meta.glob('~/assets/images/mobile/agenda/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  desktopAgendaImages: import.meta.glob('~/assets/images/desktop/agenda/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
     eager: false,
     import: 'default',

@@ -15,15 +15,25 @@
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
   "agenda": {
-    "title": "Agenda",
+    "claimTitle": "Properes funcions i tallers",
     "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",
     "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
     "loading": "Carregant esdeveniments...",
     "empty": "No hi ha esdeveniments propers programats.",
+    "emptyFiltered": "No hi ha events amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
     "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
     "live": "En directe!",
     "reservationEntry": "Reserva la teva entrada",
-    "reservationPlace": "Reserva la teva plaça"
+    "reservationPlace": "Reserva la teva plaça",
+    "filters": {
+      "ariaLabel": "Filtrar esdeveniments per tipus",
+      "shows": "Espectacles",
+      "workshops": "Tallers",
+      "performances": "Animacions",
+      "all": "Tots els events",
+      "closedGroups": "Mostrar grups tancats",
+      "closedGroupsAriaLabel": "Activa per mostrar els esdeveniments de grups tancats"
+    }
   },
   "routes": {
     "home": "Inici",

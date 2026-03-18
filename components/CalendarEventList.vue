@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import type { CalendarEvent } from '~/types'
+import type { CalendarEvent, ContentType } from '~/types'
 import CalendarEventCard from '~/components/CalendarEventCard.vue'
+import BaseMessage from '~/components/BaseMessage.vue'
+import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
+import CalendarIcon from '~/assets/icons/calendar.svg'
+import CircleIcon from '~/assets/icons/circle.svg'
 
-defineProps({
+const props = defineProps({
   events: {
     type: Array as PropType<CalendarEvent[]>,
     required: true
@@ -14,78 +18,101 @@ defineProps({
   error: {
     type: Object as PropType<Error | null>,
     default: null
+  },
+  selectedEventType: {
+    type: String as PropType<ContentType | null>,
+    default: null
+  },
+  hasActiveFilters: {
+    type: Boolean,
+    default: false
   }
 })
 
 const { t } = useI18n()
+
+const emptyStateMessageKey = computed(() => {
+  return props.hasActiveFilters ? 'agenda.emptyFiltered' : 'agenda.empty'
+})
+
+const emptyStateIconColorClass = computed(() => {
+  switch (props.selectedEventType) {
+    case 'workshops':
+      return 'text-secondary-300'
+    case 'performances':
+      return 'text-tertiary-300'
+    case 'shows':
+      return 'text-primary-300'
+    default:
+      return 'text-primary-300'
+  }
+})
 </script>
 
 <template>
-  <div class="calendar-event-list">
-    <!-- Loading state -->
-    <div
-      v-if="pending"
-      class="flex flex-col items-center justify-center py-12 text-gray-500"
-    >
-      <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mb-4" />
-      <p class="text-lg">{{ t('agenda.loading') }}</p>
-    </div>
+  <!-- Loading state -->
+  <BaseMessage
+    v-if="pending"
+    :text="t('agenda.loading')"
+    bgClass="bg-white"
+  >
+  <template #icon>
+      <CircleIcon class="animate-spin !w-9 !h-9 text-primary-400"/>
+      <CircleIcon class="animate-spin !w-12 !h-12 text-primary-400"/>
+      <CircleIcon class="animate-spin !w-16 !h-9 text-primary-400"/>
+  </template>
+  </BaseMessage>
 
-    <!-- Error state -->
-    <div
-      v-else-if="error"
-      class="flex flex-col items-center justify-center py-12 text-gray-500"
-    >
-      <svg
-        class="w-12 h-12 text-red-400 mb-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      <p class="text-lg">{{ t('agenda.error') }}</p>
-    </div>
+  <!-- Error state -->
+  <BaseMessage
+    v-else-if="error"
+    :text="t('agenda.error')"
+    :icon="ExclamationMark"
+  />
 
-    <!-- Empty state -->
-    <div
-      v-else-if="events.length === 0"
-      class="flex flex-col items-center justify-center py-12 text-gray-500"
-    >
-      <svg
-        class="w-12 h-12 text-gray-300 mb-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        />
-      </svg>
-      <p class="text-lg">{{ t('agenda.empty') }}</p>
-    </div>
+  <!-- Empty state -->
+  <BaseMessage
+    v-else-if="events.length === 0"
+    :text="t(emptyStateMessageKey)"
+    :icon="CalendarIcon"
+    :icon-class="`mb-4 ${emptyStateIconColorClass}`"
+  />
 
-    <!-- Events list -->
-    <ul
-      v-else
-      class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+  <!-- Events list -->
+  <TransitionGroup
+    tag="ul"
+    name="agenda-cards"
+    appear
+    v-else
+    class="grid gap-x-1 gap-y-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4"
+  >
+    <li
+      v-for="event in events"
+      :key="event.id"
+      class="relative"
     >
-      <li
-        v-for="event in events"
-        :key="event.id"
-      >
-        <CalendarEventCard :event="event" />
-      </li>
-    </ul>
-  </div>
+      <CalendarEventCard :event="event" />
+    </li>
+  </TransitionGroup>
 </template>
+
+<style scoped>
+.agenda-cards-enter-active,
+.agenda-cards-leave-active {
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+
+.agenda-cards-enter-from,
+.agenda-cards-leave-to {
+  opacity: 0;
+  transform: translateY(8px) scale(0.985);
+}
+
+.agenda-cards-move {
+  transition: transform 480ms ease;
+}
+
+.agenda-cards-leave-active {
+  position: absolute;
+}
+</style>

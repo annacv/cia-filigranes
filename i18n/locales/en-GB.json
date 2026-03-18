@@ -15,15 +15,25 @@
   },
   "commonAlt": "Image of the Filigranes Company",
   "agenda": {
-    "title": "Agenda",
+    "claimTitle": "Properes funcions i tallers",
     "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
     "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
     "loading": "Loading events...",
     "empty": "No upcoming events scheduled.",
+    "emptyFiltered": "No events match these filters. Try removing one or more filters to see events.",
     "error": "Unable to load events. Please try again later.",
     "live": "Live!",
     "reservationEntry": "Reserve your ticket",
-    "reservationPlace": "Reserve your spot"
+    "reservationPlace": "Reserve your spot",
+    "filters": {
+      "ariaLabel": "Filter events by type",
+      "shows": "Shows",
+      "workshops": "Workshops",
+      "performances": "Performances",
+      "all": "All events",
+      "closedGroups": "Show closed groups",
+      "closedGroupsAriaLabel": "Turn on to show closed-group events"
+    }
   },
   "routes": {
     "home": "Home",
