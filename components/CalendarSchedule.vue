@@ -26,7 +26,7 @@ const schedule = computed(() => getScheduleParts(props.date));
       {{ t('agenda.live') }}
     </p>
     <div
-      :class="`inline-flex items-center border-2 border-white ${props.size === 'large' ? 'flex-col' : 'flex-row'}`"
+      :class="`w-full inline-flex items-center border-2 border-white ${props.size === 'large' ? 'flex-col' : 'flex-row'}`"
     >
       <!-- Visually hidden, accessible full date -->
       <span class="sr-only">
@@ -36,23 +36,33 @@ const schedule = computed(() => getScheduleParts(props.date));
       </span>
 
       <!-- Visual layout -->
-      <div :class="`flex items-center ${props.size === 'large' ? 'flex-col py-3 px-6 md:px-8' : 'flex-row px-2 gap-2'}`">
+      <div :class="`flex items-center justify-center flex-1 ${props.size === 'large' ? 'flex-col py-3 px-6 md:px-7 min-w-[116px]' : 'flex-row px-2 gap-1.5'}`">
         <span
           :class="[
             'font-extrabold',
             { 'text-6xl': props.size === 'large' },
-            { 'text-3xl !leading-tight': props.size === 'medium' },
-            { 'text-2xl': props.size === 'small' },
+            { 'text-2xl !leading-none': props.size === 'medium' },
+            { 'text-xl': props.size === 'small' },
           ]"
         >
           {{ schedule.day }}
         </span>
-        <span :class="`${props.size === 'large' ? '-mt-1 text-2xl' : 'text-xl !leading-tight'} uppercase font-extrabold`">
+        <span :class="[
+          'uppercase font-extrabold',
+          {'-mt-1 text-2xl' : props.size === 'large'},
+          {'text-base !leading-none' : props.size === 'medium'},
+          {'text-sm !leading-none' : props.size === 'small'},
+        ]">
           {{ schedule.month }}
         </span>
       </div>
-      <div :class="`w-full border-white ${props.size === 'large' ? 'border-t-2 px-6 md:px-8' : 'border-l-2 py-2 px-2'}`">
-        <p class="text-xl text-center font-extrabold !leading-tight">
+      <div :class="`md:w-full border-white ${props.size === 'large' ? 'border-t-2 px-6 md:px-7' : 'border-l-2 p-2'}`">
+        <p :class="[
+          'text-center font-extrabold',
+          {'text-xl !leading-tight' : props.size === 'large'},
+          {'text-base !leading-none' : props.size === 'medium'},
+          {'text-sm !leading-none' : props.size === 'small'},
+        ]">
           {{ schedule.year }}
         </p>
       </div>

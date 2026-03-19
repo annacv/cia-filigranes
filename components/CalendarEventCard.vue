@@ -39,7 +39,7 @@ const getFooterColor = computed(() => {
 </script>
 
 <template>
-  <article class="h-full w-full relative">
+  <article class="relative flex h-full w-full flex-col">
     <div v-if="event.image" class="w-full aspect-[420/420]">
       <CardImage
         :image="event.image"
@@ -48,36 +48,33 @@ const getFooterColor = computed(() => {
       />
     </div>
     <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${getMainColor}`">
-      <h3 class="uppercase text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">
+      <h3 class="uppercase text-base sm:text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">
         {{ event.title }}
       </h3>
     </header>
-    <!--add img component-->
 
-    <div :class="`p-5 ${getMainColor}`">
-      <div class="flex flex-col md:flex-row md:items-center gap-4">
-        <CalendarSchedule :date="event.start" :size="scheduleSize" />
-        <div class="flex flex-col gap-1 w-full">
-          <time
-            v-if="!event.isAllDay"
-            :class="`text-white ${scheduleSize === 'large' ? 'text-4xl' : 'text-xl !leading-tight'} font-extrabold font-alternative`"
-            :datetime="event.start"
-          >
-            {{ formatEventTime(event.start) }}
-          </time>
-          <a
-            v-if="event.location"
-            :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location)}`"
-            target="_blank"
-            rel="noopener noreferrer"
-            :class="`text-white !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90 ${scheduleSize === 'large' ? 'text-base line-clamp-4' : 'min-h-[36px] text-sm line-clamp-2'}`"
-          >
-            {{ event.location }}
-          </a>
-        </div>
+    <div :class="`flex flex-1 flex-col gap-4 p-2 sm:p-5 md:flex-row md:items-center ${getMainColor}`">
+      <CalendarSchedule :date="event.start" :size="scheduleSize" />
+      <div class="flex w-full flex-1 flex-col md:justify-center gap-1">
+        <time
+          v-if="!event.isAllDay"
+          :class="`text-white ${scheduleSize === 'large' ? 'text-4xl' : 'text-xl !leading-tight'} font-extrabold font-alternative`"
+          :datetime="event.start"
+        >
+          {{ formatEventTime(event.start) }}
+        </time>
+        <a
+          v-if="event.location"
+          :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location)}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          :class="`text-white !leading-tight no-underline hover:underline underline-offset-2 hover:opacity-90 ${scheduleSize === 'large' ? 'text-base line-clamp-4' : 'text-sm line-clamp-2'}`"
+        >
+          {{ event.location }}
+        </a>
       </div>
     </div>
-    <footer :class="`flex gap-2 px-5 py-1 items-center ${getFooterColor} h-[26px]`">
+    <footer :class="`flex gap-2 px-2 sm:px-5 py-0.5 md:py-1 items-center ${getFooterColor} h-[22px] md:h-[26px]`">
       <CircleIcon
         v-if="event.description"
         class="flex-shrink-0 text-white !w-3 !h-3"
