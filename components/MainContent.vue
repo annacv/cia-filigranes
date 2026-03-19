@@ -16,6 +16,17 @@ const scrollMarginTop = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : H
       :style="{ scrollMarginTop: scrollMarginTop }"
     ></div>
     <div
+      v-if="$slots.wrappedTop" 
+      class="grid-layout min-w-full w-full h-full"
+    >
+      <div class="layout-cols">
+        <slot name="wrappedTop"/>
+      </div>
+    </div>
+    <template v-if="$slots.unwrappedTop">
+      <slot name="unwrappedTop"/>
+    </template>
+    <div
       v-if="$slots.wrapped" 
       class="grid-layout min-w-full w-full h-full"
     >

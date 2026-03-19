@@ -18,6 +18,7 @@
     "claimTitle": "Properes funcions i tallers",
     "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
     "description": "Aquí encontrarás las próximas actuaciones y talleres de la Compañía Filigranes.",
+    "viewAllEvents": "Ver toda la agenda",
     "loading": "Cargando eventos...",
     "empty": "No hay eventos próximos programados.",
     "emptyFiltered": "No hay eventos con estos filtros. Prueba a desactivar alguno para ver eventos.",
@@ -108,6 +109,7 @@
   "shows": {
     "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
     "commonAlt": "Imagen del espectáculo {title}",
+    "homeClaim": "Descubre nuestros espectáculos, talleres y animaciones hechas a medida",
     "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
     "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
     "hero": {

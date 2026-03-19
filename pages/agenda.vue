@@ -155,7 +155,6 @@ const selectedEventTypeIndicatorClass = computed(() => {
       <template #unwrapped>
         <ClaimTitle
           class="text-center"
-          claim=""
           :claim-title="t('agenda.claimTitle')"
           is-section-title
         />
