@@ -48,8 +48,8 @@ const handleImageTouchEnd = () => {
       >
         <CardImage
           v-for="(image, index) in props.images"
-          class="w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square"
           :key="index"
+          class="w-[298px] xs:w-[310px] sm:w-[320px] xl:w-[360px] 2xl:w-[420px] aspect-square"
           :image="image"
           :content-type="props.contentType"
           :image-alt="imageAlt"

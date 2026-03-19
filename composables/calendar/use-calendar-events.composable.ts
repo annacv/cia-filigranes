@@ -1,5 +1,4 @@
-import type { CalendarEvent, CalendarApiResponse, GoogleCalendarEvent, ContentType } from '~/types'
-import type { CardImage } from '~/types'
+import type { CalendarEvent, CalendarApiResponse, GoogleCalendarEvent, ContentType, CardImage } from '~/types'
 import { getImageByRoute } from '~/utils/image-by-route'
 
 const CACHE_KEY = 'filigranes-calendar-events'
@@ -66,42 +65,44 @@ const normalizeTitle = (value: string): string => {
     .trim()
 }
 
-const getEventImageByTitle = (title: string, eventType: ContentType): CardImage | undefined => {
+const getTitleMapByEventType = (eventType: ContentType): Record<string, string> | null => {
+  return eventType === 'shows'
+    ? SHOWS_TITLE_TO_IMAGE_KEY
+    : eventType === 'workshops'
+      ? WORKSHOPS_TITLE_TO_IMAGE_KEY
+      : eventType === 'performances'
+        ? PERFORMANCES_TITLE_TO_IMAGE_KEY
+        : null
+}
+
+const getImageRouteByEventType = (eventType: ContentType) => {
+  return eventType === 'shows'
+    ? 'espectacles'
+    : eventType === 'workshops'
+      ? 'tallers'
+      : 'animacions'
+}
+
+export const getMatchedContentKeyByTitle = (title: string, eventType: ContentType): string | undefined => {
   const normalizedTitle = normalizeTitle(title)
-  const titleMap =
-    eventType === 'shows'
-      ? SHOWS_TITLE_TO_IMAGE_KEY
-      : eventType === 'workshops'
-        ? WORKSHOPS_TITLE_TO_IMAGE_KEY
-        : eventType === 'performances'
-          ? PERFORMANCES_TITLE_TO_IMAGE_KEY
-          : null
+  const titleMap = getTitleMapByEventType(eventType)
   if (!titleMap) return undefined
 
   const exact = titleMap[normalizedTitle]
-  if (exact) {
-    const imageRoute =
-      eventType === 'shows'
-        ? 'espectacles'
-        : eventType === 'workshops'
-          ? 'tallers'
-          : 'animacions'
-    return getImageByRoute(imageRoute, exact)
-  }
+  if (exact) return exact
 
   const matched = Object.entries(titleMap).find(([candidate]) => {
     return normalizedTitle.includes(candidate)
   })
 
-  if (!matched) return undefined
+  return matched?.[1]
+}
 
-  const imageRoute =
-    eventType === 'shows'
-      ? 'espectacles'
-      : eventType === 'workshops'
-        ? 'tallers'
-        : 'animacions'
-  return getImageByRoute(imageRoute, matched[1])
+const getEventImageByTitle = (title: string, eventType: ContentType): CardImage | undefined => {
+  const matchedContentKey = getMatchedContentKeyByTitle(title, eventType)
+  if (!matchedContentKey) return undefined
+
+  return getImageByRoute(getImageRouteByEventType(eventType), matchedContentKey)
 }
 
 const getFallbackImageForType = (eventType: ContentType): CardImage | undefined => {
@@ -168,7 +169,6 @@ const transformEvent = (event: GoogleCalendarEvent): CalendarEvent => {
   const description = event.description
     ? (urlResult ? event.description.replace(urlResult.raw, '').replace(/\s+/g, ' ').trim() : event.description)
     : undefined
-
   return {
     id: event.id,
     eventType,

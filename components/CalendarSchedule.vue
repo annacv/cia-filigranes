@@ -18,10 +18,10 @@ const schedule = computed(() => getScheduleParts(props.date));
 </script>
 
 <template>
-  <div class="flex flex-col items-start gap-2 text-white font-alternative">
+  <div :class="`flex gap-2 text-white font-alternative ${props.size === 'large' ? 'flex-col items-start' : 'items-center'}`">
     <p
       v-if="showClaim"
-      :class="`font-extrabold !leading-none ${props.size === 'large' ? 'text-lg' : 'text-base'}`"
+      :class="`w-full font-extrabold !leading-none ${props.size === 'large' ? 'text-lg' : 'text-base'}`"
     >
       {{ t('agenda.live') }}
     </p>
@@ -36,13 +36,19 @@ const schedule = computed(() => getScheduleParts(props.date));
       </span>
 
       <!-- Visual layout -->
-      <div :class="`flex items-center justify-center flex-1 ${props.size === 'large' ? 'flex-col py-3 px-6 md:px-7 min-w-[116px]' : 'flex-row px-2 gap-1.5'}`">
+      <div 
+        :class="[
+          'flex items-center justify-center flex-1',
+          {'flex-col py-3 px-6 md:px-7 min-w-[116px]' : props.size === 'large'},
+          {'px-2 gap-1.5' : props.size === 'medium'},
+          {'px-2 gap-1' : props.size === 'small'}
+        ]">
         <span
           :class="[
             'font-extrabold',
             { 'text-6xl': props.size === 'large' },
             { 'text-2xl !leading-none': props.size === 'medium' },
-            { 'text-xl': props.size === 'small' },
+            { 'text-xl !leading-none': props.size === 'small' },
           ]"
         >
           {{ schedule.day }}
