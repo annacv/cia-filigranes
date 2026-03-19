@@ -95,12 +95,13 @@ const slicedEvents = computed(() => {
       </template>
       <template #wrapped>
         <CalendarEventList
+          v-if="events.length > 0"
           :events="slicedEvents"
           :pending="pending"
           :error="error"
         />
         <FiliButton
-          v-if="events.length > maxVisibleEvents"
+          v-if="events.length > 0 && events.length > maxVisibleEvents"
           class="mt-1"
           button-class="text-sm lg:text-base text-neutral-900 border-neutral-900 rounded-none border-t-0 border-x-0 !p-1 hover:border-black justify-self-end"
           :text="t('agenda.viewAllEvents')"
