@@ -35,7 +35,7 @@ const performancesItems = computed(() => {
           v-if="scheduleDate"
           :date="scheduleDate"
           size="small"
-          class="pointer-events-none absolute right-2 top-2 z-20 -skew-y-3"
+          class="pointer-events-none absolute right-0 top-5 md:right-2 md:top-2 z-20 -skew-y-3"
           show-claim
         />
         <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-end gap-4 z-10 pointer-events-none">

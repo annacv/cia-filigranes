@@ -103,7 +103,7 @@ const slicedEvents = computed(() => {
         <FiliButton
           v-if="events.length > 0 && events.length > maxVisibleEvents"
           class="mt-1"
-          button-class="text-sm lg:text-base text-neutral-900 border-neutral-900 rounded-none border-t-0 border-x-0 !p-1 hover:border-black justify-self-end"
+          button-class="button-link-neutral justify-self-end"
           :text="t('agenda.viewAllEvents')"
           href="/agenda"
           target="_top"
@@ -112,7 +112,7 @@ const slicedEvents = computed(() => {
             {{ t('agenda.viewAllEvents') }}
           </template>
           <template #icon-right>
-            <ArrowRight class="arrow-right"/>
+            <ArrowRight class="arrow-right !mt-0"/>
           </template>
         </FiliButton>
 

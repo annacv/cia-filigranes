@@ -102,7 +102,23 @@
     @apply flex-none;
   }
 
-  /* Base Neutral Button */
+  /* Neutral Slim Button Link */
+  .button-link-neutral {
+    @apply text-sm lg:text-base text-neutral-900 border-neutral-400 !rounded-none !border-t-0 !border-x-0 !p-1;
+  }
+  .button-link-neutral:hover {
+    @apply !border-neutral-900;
+  }
+
+  /* Primary Slim Button Link */
+  .button-link-primary {
+    @apply text-sm lg:text-base text-primary-500 border-primary-300 !rounded-none !border-t-0 !border-x-0 !p-1;
+  }
+  .button-link-neutral:hover {
+    @apply border-primary-500;
+  }
+
+  /* Neutral Outline Button */
   .button-outline-neutral {
     @apply border border-black text-black;
   }
