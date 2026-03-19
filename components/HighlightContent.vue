@@ -31,7 +31,7 @@ const title = computed(() => props.title.slice(1))
     <div class="grid-layout">
       <div class="layout-cols">
         <NuxtLinkLocale :to="contentLink">
-          <h2 class="flex text-2xl lg:text-4xl font-sans" :class="titleClasses">
+          <h2 class="flex text-2xl lg:text-3xl 2xl:text-4xl font-sans" :class="titleClasses">
             <span
               v-if="isCurrentContent"
               class="font-thin mr-2">+
