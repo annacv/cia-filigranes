@@ -20,7 +20,7 @@
     "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
     "loading": "Carregant esdeveniments...",
     "empty": "No hi ha esdeveniments propers programats.",
-    "emptyFiltered": "No hi ha events amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
+    "emptyFiltered": "No hi ha esdeveniments amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
     "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
     "live": "En directe!",
     "reservationEntry": "Reserva la teva entrada",
@@ -30,11 +30,11 @@
       "shows": "Espectacles",
       "workshops": "Tallers",
       "performances": "Animacions",
-      "all": "Tots els events",
+      "all": "Tots els esdeveniments",
       "dropdownAriaLabel": "Obrir el menú de filtres d'esdeveniments",
       "dropdownMenuAriaLabel": "Opcions de filtre d'esdeveniments",
-      "closedGroups": "Mostrar grups tancats",
-      "closedGroupsAriaLabel": "Activa per mostrar els esdeveniments de grups tancats"
+      "onlyOpenToPublic": "Només oberts al públic",
+      "onlyOpenToPublicAriaLabel": "Activa per mostrar només els esdeveniments oberts al públic"
     }
   },
   "routes": {

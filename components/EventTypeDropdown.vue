@@ -96,7 +96,7 @@ onClickOutside(dropdownRef, closeDropdown)
       @click="toggleDropdown"
       @keydown="handleTriggerKeydown"
     >
-      <span class="inline-flex items-center gap-2">
+      <span class="inline-flex items-center gap-1.5">
         <span
           class="inline-flex h-4 w-2.5 flex-col items-center justify-between"
           aria-hidden="true"
@@ -106,7 +106,7 @@ onClickOutside(dropdownRef, closeDropdown)
           <span class="h-1 w-1 rounded-full bg-current" />
         </span>
         <span class="inline-flex flex-col items-start">
-          <span class="whitespace-nowrap">{{ selectedLabel }}</span>
+          <span class="whitespace-nowrap text-xs sm:text-sm">{{ selectedLabel }}</span>
           <span
             :class="['mt-0.5 block h-1 w-full rounded-full transition-colors duration-200 ease-out', indicatorClass]"
             aria-hidden="true"
@@ -131,7 +131,7 @@ onClickOutside(dropdownRef, closeDropdown)
       >
         <button
           type="button"
-          class="block w-full px-4 py-2 text-left text-sm text-neutral-800 transition-colors duration-200 ease-out hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:outline-none"
+          class="block w-full px-4 py-2 text-left text-xs sm:text-sm text-neutral-800 transition-colors duration-200 ease-out hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:outline-none"
           role="option"
           :aria-selected="option.type === selectedEventType"
           @click="selectOption(option.type)"

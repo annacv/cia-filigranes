@@ -47,9 +47,7 @@ const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
 ]
 
 const selectedEventType = ref<ContentType | null>(null)
-
-// Switch: ON = show all events (including closed groups). OFF = hide closed-group events.
-const showClosedGroups = ref(true)
+const showOnlyOpenToPublic = ref(false)
 
 const isClosedGroupEvent = (event: CalendarEvent): boolean => {
   const description = event.description ?? ''
@@ -60,7 +58,7 @@ const filteredEvents = computed(() => {
   const source = events.value
   return source.filter((event) => {
     if (selectedEventType.value && event.eventType !== selectedEventType.value) return false
-    if (!showClosedGroups.value && isClosedGroupEvent(event)) return false
+    if (showOnlyOpenToPublic.value && isClosedGroupEvent(event)) return false
     return true
   })
 })
@@ -106,7 +104,7 @@ const getAllLabelClass = computed(() => {
 })
 
 const hasActiveFilters = computed(() => {
-  return selectedEventType.value !== null || !showClosedGroups.value
+  return selectedEventType.value !== null || showOnlyOpenToPublic.value
 })
 
 const eventTypeDropdownOptions = computed(() => {
@@ -163,7 +161,7 @@ const selectedEventTypeIndicatorClass = computed(() => {
         />
       </template>
       <template #wrappedBottom>
-        <div class="mb-4 md:mb-7 flex w-full items-center justify-between text-sm font-neutral-900 !leading-normal lg:text-base xl:text-lg">
+        <div class="mb-4 md:mb-7 flex w-full items-center justify-between gap-4 text-sm font-neutral-900 !leading-normal lg:text-base xl:text-lg">
           <EventTypeDropdown
             class="md:hidden"
             :selected-event-type="selectedEventType"
@@ -213,17 +211,17 @@ const selectedEventTypeIndicatorClass = computed(() => {
             </ul>
           </nav>
 
-          <div class="flex items-center gap-3 md:order-2 md:flex-1 md:justify-end">
+          <div class="flex items-center gap-1.5 md:order-2 md:flex-1 md:justify-end">
             <label
               for="closed-groups-toggle"
-              class="leading-none font-normal"
+              class="leading-none text-right text-xs sm:text-sm md:text-base lg:text-lg"
             >
-              {{ t('agenda.filters.closedGroups') }}
+              {{ t('agenda.filters.onlyOpenToPublic') }}
             </label>
             <Switch
               id="closed-groups-toggle"
-              v-model="showClosedGroups"
-              :aria-label="t('agenda.filters.closedGroupsAriaLabel')"
+              v-model="showOnlyOpenToPublic"
+              :aria-label="t('agenda.filters.onlyOpenToPublicAriaLabel')"
               class="self-center"
             />
           </div>

@@ -36,15 +36,15 @@ const toggle = () => {
     :aria-checked="modelValue"
     :aria-label="ariaLabel"
     :disabled="disabled"
-    class="relative inline-flex h-[16px] w-[26px] lg:h-[16px] lg:w-[30px] xl:h-[18px] xl:w-[34px] flex-shrink-0 items-center rounded-full transition-colors duration-200 ease-out hover:bg-neutral-400 focus:outline-none focus-visible:bg-neutral-400 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+    class="relative inline-flex h-4 w-[26px] lg:h-4 lg:w-[30px] xl:h-[18px] xl:w-[34px] flex-shrink-0 items-center rounded-full transition-colors duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
     :class="modelValue ? 'bg-neutral-900' : 'bg-neutral-200'"
     @click="toggle"
   >
     <span class="sr-only">{{ ariaLabel }}</span>
     <span
       aria-hidden="true"
-      class="inline-block h-[12px] w-[12px] lg:h-[12px] lg:w-[12px] xl:h-[14px] xl:w-[14px] transform rounded-full bg-white shadow transition-transform duration-200 ease-out"
-      :class="modelValue ? 'translate-x-[12px] lg:translate-x-[16px] xl:translate-x-[18px]' : 'translate-x-[2px]'"
+      class="inline-block h-3 w-3 lg:h-3 lg:w-3 xl:h-3.5 xl:w-3.5 transform rounded-full bg-white shadow transition-transform duration-200 ease-out"
+      :class="modelValue ? 'translate-x-3 lg:translate-x-4 xl:translate-x-[18px]' : 'translate-x-0.5'"
     />
   </button>
 </template>
