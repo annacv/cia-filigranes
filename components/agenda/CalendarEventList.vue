@@ -5,6 +5,8 @@ import BaseMessage from '~/components/BaseMessage.vue'
 import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
 import CalendarIcon from '~/assets/icons/calendar.svg'
 import CircleIcon from '~/assets/icons/circle.svg'
+import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
+import CalendarEventLargeCard from './CalendarEventLargeCard.vue'
 
 const props = defineProps({
   events: {
@@ -26,10 +28,15 @@ const props = defineProps({
   hasActiveFilters: {
     type: Boolean,
     default: false
+  },
+  isDedicatedList: {
+    type: Boolean,
+    default: false
   }
 })
 
 const { t } = useI18n()
+const { maxVisibleEvents } = useCalendarLayout()
 
 const emptyStateMessageKey = computed(() => {
   return props.hasActiveFilters ? 'agenda.emptyFiltered' : 'agenda.empty'
@@ -46,6 +53,10 @@ const emptyStateIconColorClass = computed(() => {
     default:
       return 'text-primary-300'
   }
+})
+
+const renderLargeCard = computed(() => {
+  return props.isDedicatedList && props.events.length < maxVisibleEvents.value
 })
 </script>
 
@@ -84,14 +95,23 @@ const emptyStateIconColorClass = computed(() => {
     name="agenda-cards"
     appear
     v-else
-    class="grid gap-x-0.5 md:gap-x-1 gap-y-2 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+    :class="[
+      'grid gap-y-2',
+      renderLargeCard ? 'grid-cols-1' : 'gap-x-0.5 md:gap-x-1 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4']"
   >
     <li
       v-for="event in events"
       :key="event.id"
       class="relative"
     >
-      <CalendarEventCard :event="event" />
+      <CalendarEventLargeCard
+        v-if="renderLargeCard"
+        :event="event"
+      />
+      <CalendarEventCard
+        v-else
+        :event="event"
+      />
     </li>
   </TransitionGroup>
 </template>

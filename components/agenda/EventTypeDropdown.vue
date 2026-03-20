@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import { computed, ref, type PropType } from 'vue'
 import { onClickOutside } from '@vueuse/core'
-import type { ContentType } from '~/types'
-
-type EventTypeDropdownOption = {
-  type: ContentType | null
-  label: string
-  indicatorClass: string
-}
+import type { AgendaPrimaryFilterOption } from '~/types'
 
 const props = defineProps({
-  selectedEventType: {
-    type: String as PropType<ContentType | null>,
+  selectedValue: {
+    type: String as PropType<string | null>,
     default: null,
   },
   selectedLabel: {
@@ -19,7 +13,7 @@ const props = defineProps({
     required: true,
   },
   options: {
-    type: Array as PropType<EventTypeDropdownOption[]>,
+    type: Array as PropType<AgendaPrimaryFilterOption[]>,
     required: true,
   },
   toggleAriaLabel: {
@@ -37,7 +31,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{
-  select: [value: ContentType | null]
+  select: [value: string | null]
 }>()
 
 const isOpen = ref(false)
@@ -47,7 +41,7 @@ const triggerId = 'agenda-event-type-filter-trigger'
 const menuId = 'agenda-event-type-filter-menu'
 
 const availableOptions = computed(() => {
-  return props.options.filter(option => option.type !== props.selectedEventType)
+  return props.options.filter(option => option.value !== props.selectedValue)
 })
 
 const toggleDropdown = () => {
@@ -58,7 +52,7 @@ const closeDropdown = () => {
   isOpen.value = false
 }
 
-const selectOption = (value: ContentType | null) => {
+const selectOption = (value: string | null) => {
   emit('select', value)
   closeDropdown()
 }
@@ -126,20 +120,20 @@ onClickOutside(dropdownRef, closeDropdown)
     >
       <li
         v-for="option in availableOptions"
-        :key="option.type ?? 'all'"
+        :key="option.value ?? 'all'"
         role="presentation"
       >
         <button
           type="button"
           class="block w-full px-4 py-2 text-left text-xs sm:text-sm text-neutral-800 transition-colors duration-200 ease-out hover:bg-neutral-100 focus-visible:bg-neutral-100 focus-visible:outline-none"
           role="option"
-          :aria-selected="option.type === selectedEventType"
-          @click="selectOption(option.type)"
+          :aria-selected="option.value === selectedValue"
+          @click="selectOption(option.value)"
         >
           <span class="inline-flex w-full flex-col items-start">
             <span class="whitespace-nowrap">{{ option.label }}</span>
             <span
-              :class="['mt-0.5 block h-1 w-full rounded-full transition-colors duration-200 ease-out', option.indicatorClass]"
+              :class="['mt-0.5 block h-1 w-full rounded-full transition-colors duration-200 ease-out', option.inactiveIndicatorClass]"
               aria-hidden="true"
             />
           </span>

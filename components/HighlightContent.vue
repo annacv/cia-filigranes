@@ -19,7 +19,11 @@ const props = defineProps({
   titleClasses: {
     type: String,
     required: true
-  }
+  },
+  claimTitle: {
+    type: String,
+    required: false
+  },
 })
 
 const capital = computed(() => props.title.slice(0,1))
@@ -28,6 +32,12 @@ const title = computed(() => props.title.slice(1))
 
 <template>
   <section>
+    <ClaimTitle
+      v-if="claimTitle"
+      class="text-center"
+      :claim-title="claimTitle"
+      is-section-title
+    />
     <div class="grid-layout">
       <div class="layout-cols">
         <NuxtLinkLocale :to="contentLink">

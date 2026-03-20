@@ -4,8 +4,7 @@ import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
 import CardImage from '~/components/CardImage.vue'
 import FiliButton from '~/components/FiliButton.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
-import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
-import { useImageAlt } from '~/composables/use-image-alt.composable'
+import { useCalendarDisplay } from '~/composables/calendar/use-calendar-display.composable'
 
 const props = defineProps({
   event: {
@@ -13,45 +12,27 @@ const props = defineProps({
     required: true
   }
 })
-const { isMobile, isSmallTablet } = useResponsive();
-const { t } = useI18n()
-const { formatEventTime } = useDateFormat()
-const imageAlt = computed(() => useImageAlt(props.event.eventType, props.event.title))
+const { isMobile, isSmallTablet } = useResponsive()
+const event = computed(() => props.event)
+const {
+  footerColor,
+  formatEventTime,
+  imageAlt,
+  mainColor,
+  reservationLabel,
+} = useCalendarDisplay(event)
+
 const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'medium' : 'large'))
-const reservationLabel = computed(() => {
-  return props.event.eventType === 'workshops'
-    ? t('agenda.reservationPlace')
-    : t('agenda.reservationEntry')
-})
-
-const mainColorMap = {
-  'shows': 'bg-primary-500',
-  'workshops': 'bg-secondary-500',
-  'performances': 'bg-tertiary-500',
-}
-
-const footerColorMap = {
-  'shows': 'bg-primary-400',
-  'workshops': 'bg-secondary-400',
-  'performances': 'bg-tertiary-400',
-}
-
-const getMainColor = computed(() => {
-  return mainColorMap[props.event.eventType as keyof typeof mainColorMap] ?? 'bg-primary-500'
-})
-
-const getFooterColor = computed(() => {
-  return footerColorMap[props.event.eventType as keyof typeof footerColorMap] ?? 'bg-primary-400'
-})
 </script>
 
 <template>
   <article class="relative flex h-full w-full flex-col">
-    <div v-if="event.image" class="relative w-full aspect-[420/420]">
+    <div v-if="event.image" class="relative w-full">
       <CardImage
         :image="event.image"
         :content-type="event.eventType"
         :image-alt="imageAlt"
+        class="!aspect-[420/420]"
       />
       <FiliButton
         v-if="event.reservationLink"
@@ -66,13 +47,13 @@ const getFooterColor = computed(() => {
         </template>
       </FiliButton>
     </div>
-    <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${getMainColor}`">
+    <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${mainColor}`">
       <h3 class="uppercase text-base sm:text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">
         {{ event.title }}
       </h3>
     </header>
 
-    <div :class="`flex flex-1 flex-col gap-4 p-2 sm:p-5 md:flex-row md:items-center ${getMainColor}`">
+    <div :class="`flex flex-1 flex-col gap-4 p-2 sm:p-5 md:flex-row md:items-center ${mainColor}`">
       <CalendarSchedule :date="event.start" :size="scheduleSize" />
       <div class="flex w-full flex-1 flex-col md:justify-center gap-1">
         <time
@@ -93,7 +74,7 @@ const getFooterColor = computed(() => {
         </a>
       </div>
     </div>
-    <footer :class="`flex gap-2 px-2 sm:px-5 py-0.5 md:py-1 items-center ${getFooterColor} h-[22px] md:h-[26px]`">
+    <footer :class="`flex gap-2 px-2 sm:px-5 py-0.5 md:py-1 items-center ${footerColor} h-[22px] md:h-[26px]`">
       <CircleIcon
         v-if="event.description"
         class="flex-shrink-0 text-white !w-3 !h-3"

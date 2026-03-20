@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     './pages/**/*.vue',
     './components/**/*.vue',
+    './constants/**/*.{js,ts}',
     './layouts/**/*.vue',
     './composables/**/*.{js,ts}',
     './plugins/**/*.{js,ts}',

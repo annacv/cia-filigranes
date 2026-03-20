@@ -1,9 +1,25 @@
 <script setup lang="ts">
+import { useWorkshopAgenda } from "~/composables/calendar/use-event-agenda.composable"
+import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
+import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
+import ArrowRight from "~/assets/icons/arrow-right.svg"
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
+const {
+  events,
+  pending,
+  error,
+  hasScheduledContent,
+  maxVisibleEvents,
+  selectedWorkshopFilter,
+  showOnlyOpenToPublic,
+  workshopFilterOptions,
+  filteredEvents,
+  hasActiveFilters,
+} = useWorkshopAgenda('circ')
 const getImageAlt = (title?: string) => useImageAlt('workshops', title);
 
 useHead({
@@ -44,14 +60,14 @@ const summaryButton = computed(() => {
       </template>
     </HeroCover>
     <MainContent>
-      <template #wrapped>
+      <template #wrappedTop>
         <Summary
           :abstract="abstract"
           :items="summaryItems"
           :button="summaryButton"
         />
       </template>
-      <template #unwrapped>
+      <template #unwrappedTop>
         <Synopsis
           :description="synopsis"
           :image="getImageByRoute('tallers', 'circ-4')"
@@ -76,10 +92,48 @@ const summaryButton = computed(() => {
           text-color="text-white"
           bg-color="bg-secondary-500"
         />
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightWorkshops is-current-content :reorder-index="getItemIndex('tallers', 'circ')" />
-          <HighlightShows />
-          <HighlightPerformances />
+      </template>
+      <template #wrapped v-if="hasScheduledContent">
+        <ClaimTitle
+          :claim-title="t('workshops.liveClaimTitle', { title: t('workshops.commonTitle', { title: t('routes.circ') }) })"
+          is-section-title
+        />
+        <AgendaFilters
+          v-model:selected-primary-filter="selectedWorkshopFilter"
+          v-model:show-only-open-to-public="showOnlyOpenToPublic"
+          :primary-filter-options="workshopFilterOptions"
+        />
+        <CalendarEventList
+          :events="filteredEvents"
+          :pending="pending"
+          :error="error"
+          selected-event-type="workshops"
+          :has-active-filters="hasActiveFilters"
+          is-dedicated-list
+        />
+        <FiliButton
+          v-if="events.length > 0 && events.length > maxVisibleEvents"
+          class="mt-1"
+          button-class="button-link-neutral justify-self-end"
+          :text="t('agenda.viewAllEvents')"
+          href="/agenda"
+          target="_top"
+        >
+          <template #text>
+            {{ t('agenda.viewAllEvents') }}
+          </template>
+          <template #icon-right>
+            <ArrowRight class="arrow-right !mt-0"/>
+          </template>
+        </FiliButton>
+      </template>
+      <template #unwrapped>
+        <div class="flex flex-col mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
+          <HighlightWorkshops
+            :claim-title="t('workshops.otherWorkshopsClaimTitle')"
+            is-current-content
+            :reorder-index="getItemIndex('tallers', 'circ')"
+          />
         </div>
       </template>
     </MainContent>

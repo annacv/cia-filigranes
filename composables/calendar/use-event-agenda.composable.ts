@@ -1,0 +1,121 @@
+import { EVENT_TYPE_FILTER_ITEMS } from '~/constants'
+import { getMatchedContentKeyByTitle, useCalendarEvents } from '~/composables/calendar/use-calendar-events.composable'
+import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
+import type { AgendaPrimaryFilterOption, CalendarEvent, ContentType } from '~/types'
+
+const ALL_SHOWS_FILTER_VALUE = 'all-shows'
+const ALL_WORKSHOPS_FILTER_VALUE = 'all-workshops'
+
+type AgendaFilterContentType = Extract<ContentType, 'shows' | 'workshops'>
+
+interface UseContentAgendaOptions {
+  allFilterLabelKey: string
+  allFilterValue: string
+  contentKey: string
+  contentType: AgendaFilterContentType
+}
+
+const isClosedGroupEvent = (event: CalendarEvent): boolean => {
+  const description = event.description ?? ''
+  return /\btancats?\b/i.test(description)
+}
+
+const getIndicatorClasses = (contentType: AgendaFilterContentType) => {
+  const filterItem = EVENT_TYPE_FILTER_ITEMS.find((item) => item.type === contentType)
+
+  return {
+    activeIndicatorClass: filterItem?.activeIndicatorClass ?? 'bg-primary-500',
+    inactiveIndicatorClass: filterItem?.inactiveIndicatorClass ?? 'bg-primary-300',
+    interactiveActiveIndicatorClass:
+      filterItem?.interactiveActiveIndicatorClass ?? 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
+  }
+}
+
+const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, contentType }: UseContentAgendaOptions) => {
+  const { t } = useI18n()
+  const { events, pending, error } = useCalendarEvents()
+  const { maxVisibleEvents } = useCalendarLayout()
+  const contentIndicatorClasses = getIndicatorClasses(contentType)
+
+  const selectedPrimaryFilter = ref<string>(contentKey)
+  const showOnlyOpenToPublic = ref(false)
+
+  const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => ([
+    {
+      value: contentKey,
+      label: t(`routes.${contentKey}`),
+      ...contentIndicatorClasses,
+    },
+    {
+      value: allFilterValue,
+      label: t(allFilterLabelKey),
+      ...contentIndicatorClasses,
+    },
+  ]))
+
+  const hasScheduledContent = computed(() => {
+    return events.value.some((event) => {
+      return event.eventType === contentType
+        && getMatchedContentKeyByTitle(event.title, event.eventType) === contentKey
+    })
+  })
+
+  const filteredEvents = computed(() => {
+    return events.value.filter((event) => {
+      if (event.eventType !== contentType) return false
+      if (
+        selectedPrimaryFilter.value === contentKey &&
+        getMatchedContentKeyByTitle(event.title, event.eventType) !== contentKey
+      ) return false
+      if (showOnlyOpenToPublic.value && isClosedGroupEvent(event)) return false
+      return true
+    })
+  })
+
+  const hasActiveFilters = computed(() => {
+    return selectedPrimaryFilter.value !== contentKey || showOnlyOpenToPublic.value
+  })
+
+  return {
+    error,
+    events,
+    filteredEvents,
+    hasActiveFilters,
+    hasScheduledContent,
+    maxVisibleEvents,
+    pending,
+    primaryFilterOptions,
+    selectedPrimaryFilter,
+    showOnlyOpenToPublic,
+  }
+}
+
+export const useShowAgenda = (contentKey: string) => {
+  const agenda = useContentAgenda({
+    contentKey,
+    contentType: 'shows',
+    allFilterLabelKey: 'agenda.filters.allShows',
+    allFilterValue: ALL_SHOWS_FILTER_VALUE,
+  })
+
+  return {
+    ...agenda,
+    liveShowFilterOptions: agenda.primaryFilterOptions,
+    selectedLiveShowFilter: agenda.selectedPrimaryFilter,
+  }
+}
+
+export const useWorkshopAgenda = (contentKey: string) => {
+  const agenda = useContentAgenda({
+    contentKey,
+    contentType: 'workshops',
+    allFilterLabelKey: 'agenda.filters.allWorkshops',
+    allFilterValue: ALL_WORKSHOPS_FILTER_VALUE,
+  })
+
+  return {
+    ...agenda,
+    selectedWorkshopFilter: agenda.selectedPrimaryFilter,
+    workshopFilterOptions: agenda.primaryFilterOptions,
+  }
+}

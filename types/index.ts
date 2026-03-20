@@ -90,3 +90,14 @@ export type EventTypeFilterItem = {
   inactiveIndicatorClass: string
   interactiveActiveIndicatorClass: string
 }
+
+/**
+ * Shared primary agenda filter option configuration
+ */
+export type AgendaPrimaryFilterOption = {
+  value: string | null
+  label: string
+  activeIndicatorClass: string
+  inactiveIndicatorClass: string
+  interactiveActiveIndicatorClass: string
+}

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
-import type { ContentType, CalendarEvent } from "~/types"
+import { EVENT_TYPE_FILTER_ITEMS } from "~/constants"
+import type { AgendaPrimaryFilterOption, ContentType, CalendarEvent } from "~/types"
 import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 
@@ -36,6 +37,25 @@ const filteredEvents = computed(() => {
 const hasActiveFilters = computed(() => {
   return selectedEventType.value !== null || showOnlyOpenToPublic.value
 })
+
+const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
+  return [
+    {
+      value: null,
+      label: t('agenda.filters.all'),
+      activeIndicatorClass: 'bg-primary-500',
+      inactiveIndicatorClass: 'bg-primary-300',
+      interactiveActiveIndicatorClass: 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
+    },
+    ...EVENT_TYPE_FILTER_ITEMS.map(item => ({
+      value: item.type,
+      label: t(item.labelKey),
+      activeIndicatorClass: item.activeIndicatorClass,
+      inactiveIndicatorClass: item.inactiveIndicatorClass,
+      interactiveActiveIndicatorClass: item.interactiveActiveIndicatorClass,
+    })),
+  ]
+})
 </script>
 
 <template>
@@ -63,8 +83,9 @@ const hasActiveFilters = computed(() => {
       </template>
       <template #wrappedBottom>
         <AgendaFilters
-          v-model:selected-event-type="selectedEventType"
+          v-model:selected-primary-filter="selectedEventType"
           v-model:show-only-open-to-public="showOnlyOpenToPublic"
+          :primary-filter-options="primaryFilterOptions"
         />
         <CalendarEventList
           :events="filteredEvents"

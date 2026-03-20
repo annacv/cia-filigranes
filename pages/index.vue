@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { useWindowSize } from '@vueuse/core'
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
+import { useCalendarLayout } from "~/composables/calendar/use-calendar-layout.composable"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import ArrowRight from "assets/icons/arrow-right.svg";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const { events, pending, error } = useCalendarEvents()
-const { width } = useWindowSize()
+const { maxVisibleEvents } = useCalendarLayout()
 
 useHead({
   meta: [
@@ -20,12 +20,6 @@ useHead({
 const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
-
-const maxVisibleEvents = computed(() => {
-  if (width.value >= 1536) return 4
-  if (width.value >= 1024) return 3
-  return 2
-})
 
 const slicedEvents = computed(() => {
   const shows = events.value.filter((event) => event.eventType === 'shows')
@@ -89,6 +83,7 @@ const slicedEvents = computed(() => {
           }"
         />
         <ClaimTitle
+          v-if="events.length > 0"
           class="text-center"
           :claim-title="t('agenda.claimTitle')"
           is-section-title

@@ -32,6 +32,8 @@
       "workshops": "Talleres",
       "performances": "Animaciones",
       "all": "Todos los eventos",
+      "allShows": "Todos los espectáculos",
+      "allWorkshops": "Todos los talleres",
       "dropdownAriaLabel": "Abrir el menú de filtros de eventos",
       "dropdownMenuAriaLabel": "Opciones de filtro de eventos",
       "onlyOpenToPublic": "Solo abiertos al público",
@@ -110,6 +112,8 @@
     "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
     "commonAlt": "Imagen del espectáculo {title}",
     "homeClaim": "Descubre nuestros espectáculos, talleres y animaciones hechas a medida",
+    "liveClaimTitle": "¡{title} en directo!",
+    "otherShowsClaimTitle": "Otros espectáculos de la Cia.Filigranes",
     "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
     "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
     "hero": {
@@ -598,6 +602,8 @@
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
     "commonTitle": "Taller de {title}",
+    "liveClaimTitle": "Próximas fechas para {title}",
+    "otherWorkshopsClaimTitle": "Otros talleres de la Cia.Filigranes",
     "claimTitle": "Cursos, monográficos, o talleres de temporada...",
     "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {
