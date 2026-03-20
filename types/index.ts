@@ -79,3 +79,14 @@ export interface CalendarEvent {
   isAllDay: boolean
   htmlLink?: string
 }
+
+/**
+ * Event type filter item configuration
+ */
+export type EventTypeFilterItem = {
+  type: ContentType
+  labelKey: string
+  activeIndicatorClass: string
+  inactiveIndicatorClass: string
+  interactiveActiveIndicatorClass: string
+}

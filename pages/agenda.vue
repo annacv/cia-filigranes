@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
-import type { ContentType, CalendarEvent } from "~/types"
+import { EVENT_TYPE_FILTER_ITEMS } from "~/constants"
+import type { EventTypeFilterItem, ContentType, CalendarEvent } from "~/types"
 
 const { t } = useI18n()
 const { events, pending, error } = useCalendarEvents()
@@ -13,38 +14,6 @@ useHead({
 
 const currentYear = new Date().getFullYear()
 const nextYear = currentYear + 1
-
-type EventTypeFilterItem = {
-  type: ContentType
-  labelKey: string
-  activeIndicatorClass: string
-  inactiveIndicatorClass: string
-  interactiveActiveIndicatorClass: string
-}
-
-const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
-  {
-    type: 'shows',
-    labelKey: 'agenda.filters.shows',
-    activeIndicatorClass: 'bg-primary-500',
-    inactiveIndicatorClass: 'bg-primary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
-  },
-  {
-    type: 'workshops',
-    labelKey: 'agenda.filters.workshops',
-    activeIndicatorClass: 'bg-secondary-500',
-    inactiveIndicatorClass: 'bg-secondary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-secondary-500 group-focus-visible:bg-secondary-500',
-  },
-  {
-    type: 'performances',
-    labelKey: 'agenda.filters.performances',
-    activeIndicatorClass: 'bg-tertiary-500',
-    inactiveIndicatorClass: 'bg-tertiary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-tertiary-500 group-focus-visible:bg-tertiary-500',
-  },
-]
 
 const selectedEventType = ref<ContentType | null>(null)
 const showOnlyOpenToPublic = ref(false)

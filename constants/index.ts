@@ -1,3 +1,5 @@
+import type { EventTypeFilterItem } from "~/types"
+
 export const ROUTES_INDEX = [
   {
     name: "espectacles",
@@ -261,3 +263,27 @@ export const RRSS = [
 export const HEADER_MOBILE_HEIGHT = '72px'
 export const HEADER_DESKTOP_HEIGHT = '87px'
 export const HERO_COVER_ANIMATION_DURATION_MS = 800
+
+export const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
+  {
+    type: 'shows',
+    labelKey: 'agenda.filters.shows',
+    activeIndicatorClass: 'bg-primary-500',
+    inactiveIndicatorClass: 'bg-primary-300',
+    interactiveActiveIndicatorClass: 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
+  },
+  {
+    type: 'workshops',
+    labelKey: 'agenda.filters.workshops',
+    activeIndicatorClass: 'bg-secondary-500',
+    inactiveIndicatorClass: 'bg-secondary-300',
+    interactiveActiveIndicatorClass: 'group-hover:bg-secondary-500 group-focus-visible:bg-secondary-500',
+  },
+  {
+    type: 'performances',
+    labelKey: 'agenda.filters.performances',
+    activeIndicatorClass: 'bg-tertiary-500',
+    inactiveIndicatorClass: 'bg-tertiary-300',
+    interactiveActiveIndicatorClass: 'group-hover:bg-tertiary-500 group-focus-visible:bg-tertiary-500',
+  },
+]
