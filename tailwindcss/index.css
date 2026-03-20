@@ -128,7 +128,7 @@
 
   /* Neutral Solid Uppercased Button */
   .button-solid-neutral {
-    @apply border-transparent bg-white text-neutral-900 uppercase !font-normal text-sm !px-4;
+    @apply border-transparent bg-white text-neutral-900 uppercase !font-normal !py-1;
   }
   .button-solid-neutral:hover {
     @apply text-white bg-black;

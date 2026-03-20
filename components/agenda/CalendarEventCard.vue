@@ -2,6 +2,7 @@
 import type { CalendarEvent } from '~/types'
 import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
 import CardImage from '~/components/CardImage.vue'
+import FiliButton from '~/components/FiliButton.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
@@ -13,9 +14,15 @@ const props = defineProps({
   }
 })
 const { isMobile, isSmallTablet } = useResponsive();
+const { t } = useI18n()
 const { formatEventTime } = useDateFormat()
 const imageAlt = computed(() => useImageAlt(props.event.eventType, props.event.title))
 const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'medium' : 'large'))
+const reservationLabel = computed(() => {
+  return props.event.eventType === 'workshops'
+    ? t('agenda.reservationPlace')
+    : t('agenda.reservationEntry')
+})
 
 const mainColorMap = {
   'shows': 'bg-primary-500',
@@ -40,12 +47,24 @@ const getFooterColor = computed(() => {
 
 <template>
   <article class="relative flex h-full w-full flex-col">
-    <div v-if="event.image" class="w-full aspect-[420/420]">
+    <div v-if="event.image" class="relative w-full aspect-[420/420]">
       <CardImage
         :image="event.image"
         :content-type="event.eventType"
         :image-alt="imageAlt"
       />
+      <FiliButton
+        v-if="event.reservationLink"
+        :href="event.reservationLink"
+        target="_blank"
+        :text="reservationLabel"
+        button-class="button-solid-neutral text-[10px] md:text-xs !px-2"
+        class="absolute bottom-2 right-2 z-10"
+      >
+        <template #text>
+          {{ reservationLabel }}
+        </template>
+      </FiliButton>
     </div>
     <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${getMainColor}`">
       <h3 class="uppercase text-base sm:text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">

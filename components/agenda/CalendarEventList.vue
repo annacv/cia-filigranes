@@ -84,7 +84,7 @@ const emptyStateIconColorClass = computed(() => {
     name="agenda-cards"
     appear
     v-else
-    class="grid gap-x-1 gap-y-2 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+    class="grid gap-x-0.5 md:gap-x-1 gap-y-2 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
   >
     <li
       v-for="event in events"
