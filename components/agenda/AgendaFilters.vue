@@ -2,6 +2,7 @@
 import { computed, type PropType } from 'vue'
 import { EVENT_TYPE_FILTER_ITEMS } from '~/constants'
 import type { EventTypeFilterItem, ContentType } from '~/types'
+import EventTypeDropdown from '~/components/agenda/EventTypeDropdown.vue'
 
 const props = defineProps({
   selectedEventType: {

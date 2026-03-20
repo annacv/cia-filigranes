@@ -5,6 +5,7 @@ import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
 import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
+import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 

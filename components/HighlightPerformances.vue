@@ -4,6 +4,7 @@ import { useI18n } from "vue-i18n";
 import { reorderItems } from "~/utils/reorder-items";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
 import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
+import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 
 const props = defineProps({
   reorderIndex: {

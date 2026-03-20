@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CalendarEvent, ContentType } from '~/types'
-import CalendarEventCard from '~/components/CalendarEventCard.vue'
+import CalendarEventCard from '~/components/agenda/CalendarEventCard.vue'
 import BaseMessage from '~/components/BaseMessage.vue'
 import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
 import CalendarIcon from '~/assets/icons/calendar.svg'

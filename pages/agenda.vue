@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import type { ContentType, CalendarEvent } from "~/types"
+import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
+import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 
 const { t } = useI18n()
 const { events, pending, error } = useCalendarEvents()

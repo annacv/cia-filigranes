@@ -3,6 +3,7 @@ import { useWindowSize } from '@vueuse/core'
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
+import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import ArrowRight from "assets/icons/arrow-right.svg";
 
 const { t, locale } = useI18n()

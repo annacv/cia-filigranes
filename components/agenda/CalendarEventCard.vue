@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CalendarEvent } from '~/types'
-import CalendarSchedule from '~/components/CalendarSchedule.vue'
+import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
 import CardImage from '~/components/CardImage.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
