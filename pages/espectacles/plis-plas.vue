@@ -32,6 +32,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_plis-plas-1"
       image-route="espectacles"
       :alt="getImageAlt('plis-plas')"
+      schedule-content-key="plis-plas"
     >
       <template #content>
         <CoverTitle

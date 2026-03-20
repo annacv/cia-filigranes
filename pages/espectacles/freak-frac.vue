@@ -32,6 +32,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_freak-frac-1"
       image-route="espectacles"
       :alt="getImageAlt('freak-frac')"
+      schedule-content-key="freak-frac"
     >
       <template #content>
         <CoverTitle

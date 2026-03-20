@@ -32,6 +32,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_circ-makutu_hero"
       image-route="espectacles"
       :alt="getImageAlt('circ-makutu')"
+      schedule-content-key="circ-makutu"
       background-position="center 90%"
     >
       <template #content>

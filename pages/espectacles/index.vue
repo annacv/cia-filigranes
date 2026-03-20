@@ -48,6 +48,7 @@ const synopsisItems = computed(() => {
       image-route="espectacles"
       :alt="t('shows.hero.alt')"
       background-position="center 40%"
+      is-section-cover
     >
       <template #content>
         <SectionCoverTitle

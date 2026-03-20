@@ -4,7 +4,6 @@ import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
-const { isMobile } = useResponsive()
 
 useHead({
   meta: [
@@ -32,6 +31,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_vint-anys-4"
       image-route="espectacles"
       :alt="t('home.hero.alt')"
+      schedule-content-key="vint-anys"
     >
       <template #content>
         <VintAnysBrand class="-scale-x-100 w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"/>

@@ -41,6 +41,7 @@ const titleByLang = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('enginys-aigua')"
       content-type="workshops"
+      schedule-content-key="enginys-aigua"
     >
       <template #content>
         <CoverTitle

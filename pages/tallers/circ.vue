@@ -33,6 +33,7 @@ const summaryButton = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('circ')"
       content-type="workshops"
+      schedule-content-key="circ"
     >
       <template #content>
         <CoverTitle

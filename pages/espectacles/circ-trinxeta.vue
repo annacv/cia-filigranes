@@ -32,6 +32,7 @@ const summaryButton = computed(() => {
       image-name="espectacles_circ-trinxeta_hero"
       image-route="espectacles"
       :alt="getImageAlt('circ-trinxeta')"
+      schedule-content-key="circ-trinxeta"
     >
       <template #content>
         <CoverTitle

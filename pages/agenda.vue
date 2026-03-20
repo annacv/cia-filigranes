@@ -143,6 +143,7 @@ const selectedEventTypeIndicatorClass = computed(() => {
       image-name="agenda_hero"
       image-route="agenda"
       :alt="t('commonAlt')"
+      is-section-cover
     >
       <template #content>
         <SectionCoverTitle

@@ -49,6 +49,7 @@ const synopsisItems = computed(() => {
       :alt="t('workshops.hero.alt')"
       content-type="workshops"
       background-position="center 0%"
+      is-section-cover
     >
       <template #content>
         <SectionCoverTitle

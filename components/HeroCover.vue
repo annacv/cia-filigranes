@@ -4,6 +4,7 @@ import { getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
+import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
@@ -24,15 +25,27 @@ const props = defineProps({
     type: String as PropType<ContentType>,
     default: 'shows'
   },
+  scheduleContentKey: {
+    type: String,
+    default: undefined
+  },
   backgroundPosition: {
     type: String,
     default: 'center 30%'
+  },
+  isSectionCover: {
+    type: Boolean,
+    default: false
   }
 })
 
 const { isScrolled } = useScrollState()
 useHeroFirstScrollHijack()
 const { gradientOverlayValue } = useColor(props.contentType);
+const { isMobile } = useResponsive()
+const { getScheduleDateForContentKey: getShowScheduleDate } = useContentSchedule('shows')
+const { getScheduleDateForContentKey: getWorkshopScheduleDate } = useContentSchedule('workshops')
+const route = useRoute()
 
 // Resolve image URLs during SSR for LCP optimization
 const { data: imageUrls } = await useAsyncData(
@@ -87,6 +100,14 @@ useHead({
 
 const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`);
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
+const scheduleSize = computed(() => isMobile.value ? 'small' : 'large')
+const isHomepage = computed(() => route.path === '/')
+const scheduleDate = computed(() => {
+  if (!props.scheduleContentKey) return undefined
+  if (props.contentType === 'shows') return getShowScheduleDate(props.scheduleContentKey)
+  if (props.contentType === 'workshops') return getWorkshopScheduleDate(props.scheduleContentKey)
+  return undefined
+})
 
 const scrolledHeight = computed(() => {
   if (!isScrolled.value) return undefined
@@ -114,8 +135,8 @@ const scrolledHeight = computed(() => {
     }"
   >
     <picture v-if="fallbackImageUrl" class="absolute inset-0 w-full h-full">
-      <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)" />
-      <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)" />
+      <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)">
+      <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)">
       <img
         :src="fallbackImageUrl"
         :alt="alt"
@@ -131,7 +152,7 @@ const scrolledHeight = computed(() => {
           objectPosition: imagePosition,
           transitionDuration: transitionDuration,
         }"
-      />
+      >
     </picture>
     
     <!-- Gradient overlay -->
@@ -144,12 +165,24 @@ const scrolledHeight = computed(() => {
     />
     
     <div
-      class="layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
+      class="h-full flex flex-col justify-center layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
-      <div class="flex md:justify-end justify-start">
+      <div
+        :class="[
+          'flex justify-start order-1 md:order-2 md:mb-20',
+          { 'md:-mt-12 md:mb-48 2xl:mb-64' : scheduleDate },
+          { 'md:justify-end' : isSectionCover || (isHomepage && !scheduleDate) }
+        ]">
         <slot name="content"/>
       </div>
+      <CalendarSchedule
+        v-if="scheduleDate"
+        :date="scheduleDate"
+        :size="scheduleSize"
+        class="inline-flex pointer-events-none order-2 md:order-1 w-fit md:self-end"
+        show-claim
+      />
     </div>
   </section>
 </template>
