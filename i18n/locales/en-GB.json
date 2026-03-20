@@ -19,6 +19,11 @@
     "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
     "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
     "viewAllEvents": "View the full agenda",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "navigationLabel": "Agenda pagination"
+    },
     "loading": "Loading events...",
     "empty": "No upcoming events scheduled.",
     "emptyFiltered": "No events match these filters. Try removing one or more filters to see events.",

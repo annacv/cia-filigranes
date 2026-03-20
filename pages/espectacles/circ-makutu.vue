@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useShowAgenda } from "~/composables/calendar/use-event-agenda.composable"
+import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import ArrowRight from "~/assets/icons/arrow-right.svg"
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -13,7 +12,6 @@ const {
   pending,
   error,
   hasScheduledContent,
-  maxVisibleEvents,
   selectedLiveShowFilter,
   showOnlyOpenToPublic,
   liveShowFilterOptions,
@@ -91,7 +89,7 @@ const summaryButton = computed(() => {
           bg-color="bg-primary-500"
         />
       </template>
-      <template #wrapped v-if="hasScheduledContent">
+      <template v-if="hasScheduledContent" #wrapped>
         <ClaimTitle
           :claim-title="t('shows.liveClaimTitle', { title: t('routes.circ-makutu') })"
           is-section-title
@@ -105,25 +103,12 @@ const summaryButton = computed(() => {
           :events="filteredEvents"
           :pending="pending"
           :error="error"
+          :total-events="events.length"
           selected-event-type="shows"
           :has-active-filters="hasActiveFilters"
           is-dedicated-list
+          show-view-all-link
         />
-        <FiliButton
-          v-if="events.length > 0 && events.length > maxVisibleEvents"
-          class="mt-1"
-          button-class="button-link-neutral justify-self-end"
-          :text="t('agenda.viewAllEvents')"
-          href="/agenda"
-          target="_top"
-        >
-          <template #text>
-            {{ t('agenda.viewAllEvents') }}
-          </template>
-          <template #icon-right>
-            <ArrowRight class="arrow-right !mt-0"/>
-          </template>
-        </FiliButton>
       </template>
       <template #unwrapped>
         <div class="flex flex-col mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">

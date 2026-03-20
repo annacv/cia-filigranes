@@ -19,6 +19,11 @@
     "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
     "description": "Aquí encontrarás las próximas actuaciones y talleres de la Compañía Filigranes.",
     "viewAllEvents": "Ver toda la agenda",
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "navigationLabel": "Paginación de la agenda"
+    },
     "loading": "Cargando eventos...",
     "empty": "No hay eventos próximos programados.",
     "emptyFiltered": "No hay eventos con estos filtros. Prueba a desactivar alguno para ver eventos.",

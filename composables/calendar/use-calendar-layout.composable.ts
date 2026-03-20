@@ -9,7 +9,12 @@ export const useCalendarLayout = () => {
     return 2
   })
 
+  const eventsPerPage = computed(() => {
+    return maxVisibleEvents.value === 4 ? 8 : 6
+  })
+
   return {
+    eventsPerPage,
     maxVisibleEvents,
   }
 }

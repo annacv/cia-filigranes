@@ -5,6 +5,8 @@ import BaseMessage from '~/components/BaseMessage.vue'
 import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
 import CalendarIcon from '~/assets/icons/calendar.svg'
 import CircleIcon from '~/assets/icons/circle.svg'
+import ArrowRight from '~/assets/icons/arrow-right.svg'
+import CalendarPagination from '~/components/agenda/CalendarPagination.vue'
 import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
 import CalendarEventLargeCard from './CalendarEventLargeCard.vue'
 
@@ -32,88 +34,169 @@ const props = defineProps({
   isDedicatedList: {
     type: Boolean,
     default: false
+  },
+  showViewAllLink: {
+    type: Boolean,
+    default: false
+  },
+  totalEvents: {
+    type: Number,
+    default: undefined
   }
 })
 
 const { t } = useI18n()
-const { maxVisibleEvents } = useCalendarLayout()
+const { eventsPerPage, maxVisibleEvents } = useCalendarLayout()
+const eventListRef = ref<HTMLElement | null>(null)
+const currentPage = ref(1)
 
 const emptyStateMessageKey = computed(() => {
   return props.hasActiveFilters ? 'agenda.emptyFiltered' : 'agenda.empty'
 })
 
 const emptyStateIconColorClass = computed(() => {
-  switch (props.selectedEventType) {
-    case 'workshops':
-      return 'text-secondary-300'
-    case 'performances':
-      return 'text-tertiary-300'
-    case 'shows':
-      return 'text-primary-300'
-    default:
-      return 'text-primary-300'
-  }
+  if (props.selectedEventType === 'workshops') return 'text-secondary-300'
+  if (props.selectedEventType === 'performances') return 'text-tertiary-300'
+  return 'text-primary-300'
 })
 
 const renderLargeCard = computed(() => {
   return props.isDedicatedList && props.events.length < maxVisibleEvents.value
 })
+
+const footerTotalEvents = computed(() => {
+  return props.totalEvents ?? props.events.length
+})
+
+const shouldPaginate = computed(() => {
+  return props.events.length > eventsPerPage.value
+})
+
+const totalPages = computed(() => {
+  return shouldPaginate.value ? Math.ceil(props.events.length / eventsPerPage.value) : 1
+})
+
+const paginatedEvents = computed(() => {
+  if (!shouldPaginate.value) return props.events
+
+  const startIndex = (currentPage.value - 1) * eventsPerPage.value
+  return props.events.slice(startIndex, startIndex + eventsPerPage.value)
+})
+
+const showViewAllButton = computed(() => {
+  return props.showViewAllLink && footerTotalEvents.value > maxVisibleEvents.value
+})
+
+const showFooter = computed(() => {
+  return shouldPaginate.value || showViewAllButton.value
+})
+
+const eventSignature = computed(() => {
+  return props.events.map((event) => event.id).join('|')
+})
+
+watch([eventSignature, eventsPerPage], () => {
+  currentPage.value = 1
+})
+
+const goToPage = async (page: number) => {
+  const nextPage = Math.min(Math.max(page, 1), totalPages.value)
+
+  if (nextPage === currentPage.value) return
+
+  currentPage.value = nextPage
+  await nextTick()
+  eventListRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
 
 <template>
-  <!-- Loading state -->
-  <BaseMessage
-    v-if="pending"
-    :text="t('agenda.loading')"
-    bgClass="bg-white"
+  <div
+    ref="eventListRef"
+    class="scroll-mt-24"
   >
-  <template #icon>
-      <CircleIcon class="animate-spin !w-9 !h-9 text-primary-400"/>
-      <CircleIcon class="animate-spin !w-12 !h-12 text-primary-400"/>
-      <CircleIcon class="animate-spin !w-16 !h-9 text-primary-400"/>
-  </template>
-  </BaseMessage>
-
-  <!-- Error state -->
-  <BaseMessage
-    v-else-if="error"
-    :text="t('agenda.error')"
-    :icon="ExclamationMark"
-  />
-
-  <!-- Empty state -->
-  <BaseMessage
-    v-else-if="events.length === 0"
-    :text="t(emptyStateMessageKey)"
-    :icon="CalendarIcon"
-    :icon-class="`mb-4 ${emptyStateIconColorClass}`"
-  />
-
-  <!-- Events list -->
-  <TransitionGroup
-    tag="ul"
-    name="agenda-cards"
-    appear
-    v-else
-    :class="[
-      'grid gap-y-2',
-      renderLargeCard ? 'grid-cols-1' : 'gap-x-0.5 md:gap-x-1 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4']"
-  >
-    <li
-      v-for="event in events"
-      :key="event.id"
-      class="relative"
+    <!-- Loading state -->
+    <BaseMessage
+      v-if="pending"
+      :text="t('agenda.loading')"
+      bg-class="bg-white"
     >
-      <CalendarEventLargeCard
-        v-if="renderLargeCard"
-        :event="event"
-      />
-      <CalendarEventCard
-        v-else
-        :event="event"
-      />
-    </li>
-  </TransitionGroup>
+      <template #icon>
+        <CircleIcon class="animate-spin !w-9 !h-9 text-primary-400"/>
+        <CircleIcon class="animate-spin !w-12 !h-12 text-primary-400"/>
+        <CircleIcon class="animate-spin !w-16 !h-9 text-primary-400"/>
+      </template>
+    </BaseMessage>
+
+    <!-- Error state -->
+    <BaseMessage
+      v-else-if="error"
+      :text="t('agenda.error')"
+      :icon="ExclamationMark"
+    />
+
+    <!-- Empty state -->
+    <BaseMessage
+      v-else-if="events.length === 0"
+      :text="t(emptyStateMessageKey)"
+      :icon="CalendarIcon"
+      :icon-class="`mb-4 ${emptyStateIconColorClass}`"
+    />
+
+    <!-- Events list -->
+    <template v-else>
+      <TransitionGroup
+        tag="ul"
+        name="agenda-cards"
+        appear
+        :class="[
+          'grid gap-y-2',
+          renderLargeCard ? 'grid-cols-1' : 'gap-x-0.5 md:gap-x-1 grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4']"
+      >
+        <li
+          v-for="event in paginatedEvents"
+          :key="event.id"
+          class="relative"
+        >
+          <CalendarEventLargeCard
+            v-if="renderLargeCard"
+            :event="event"
+          />
+          <CalendarEventCard
+            v-else
+            :event="event"
+          />
+        </li>
+      </TransitionGroup>
+
+      <div
+        v-if="showFooter"
+        class="mt-2 flex gap-2 items-center justify-between"
+      >
+        <CalendarPagination
+          v-if="shouldPaginate"
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @change="goToPage"
+        />
+
+        <FiliButton
+          v-if="showViewAllButton"
+          button-class="button-link-neutral md:ml-auto"
+          :text="t('agenda.viewAllEvents')"
+          href="/agenda"
+          target="_top"
+        >
+          <template #text>
+            {{ t('agenda.viewAllEvents') }}
+          </template>
+          <template #icon-right>
+            <ArrowRight class="!mt-0"/>
+          </template>
+        </FiliButton>
+      </div>
+    </template>
+  </div>
 </template>
 
 <style scoped>
