@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
-import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
+import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";

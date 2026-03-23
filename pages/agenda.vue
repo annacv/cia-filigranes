@@ -2,7 +2,7 @@
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { EVENT_TYPE_FILTER_ITEMS } from "~/constants"
 import type { AgendaPrimaryFilterOption, ContentType, CalendarEvent } from "~/types"
-import AgendaFilters from "~/components/agenda/AgendaFilters.vue"
+import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 
 const { t } = useI18n()
