@@ -47,7 +47,7 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'm
         </template>
       </FiliButton>
     </div>
-    <header :class="`absolute top-2 md:top-4 left-2 md:left-4 mr-2 md:mr-4 ${mainColor}`">
+    <header :class="`absolute top-2 md:top-4 left-1.5 sm:left-2 md:left-4 mr-1.5 sm:mr-2 md:mr-4 ${mainColor}`">
       <h3 class="[word-spacing:-6%] sm:[word-spacing:0%] uppercase text-base sm:text-lg md:text-xl font-grotesk font-bold text-white !leading-none p-1 md:p-2">
         {{ event.title }}
       </h3>
