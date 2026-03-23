@@ -18,6 +18,7 @@ const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'help': 'heeelp',
   'fingerlight': 'fingerlight',
   'vendaval': 'vendaval',
+  'clown de pas': 'clown-de-pas',
 }
 
 // Uses the same base keys as HighlightWorkshops
