@@ -4,7 +4,7 @@ import { getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
-import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
+import { isSchedulableContentType, useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
@@ -44,8 +44,7 @@ const { isScrolled } = useScrollState()
 useHeroFirstScrollHijack()
 const { gradientOverlayValue } = useColor(props.contentType);
 const { isMobile } = useResponsive()
-const { getScheduleDateForContentKey: getShowScheduleDate } = useContentSchedule('shows')
-const { getScheduleDateForContentKey: getWorkshopScheduleDate } = useContentSchedule('workshops')
+const { getScheduleDateForContentKey } = useContentSchedule()
 const route = useRoute()
 
 // Resolve image URLs during SSR for LCP optimization
@@ -103,11 +102,18 @@ const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
 const scheduleSize = computed(() => isMobile.value ? 'small' : 'large')
 const isHomepage = computed(() => route.path === '/')
+const reserveScheduleSpace = computed(() => {
+  return Boolean(props.scheduleContentKey) && isSchedulableContentType(props.contentType)
+})
+const schedulePlaceholderClass = computed(() => {
+  return scheduleSize.value === 'large'
+    ? 'min-h-[180px] min-w-[120px]'
+    : 'min-h-[34px] min-w-[208px]'
+})
 const scheduleDate = computed(() => {
   if (!props.scheduleContentKey) return undefined
-  if (props.contentType === 'shows') return getShowScheduleDate(props.scheduleContentKey)
-  if (props.contentType === 'workshops') return getWorkshopScheduleDate(props.scheduleContentKey)
-  return undefined
+  if (!isSchedulableContentType(props.contentType)) return undefined
+  return getScheduleDateForContentKey(props.scheduleContentKey, props.contentType)
 })
 
 const scrolledHeight = computed(() => {
@@ -172,18 +178,24 @@ const scrolledHeight = computed(() => {
       <div
         :class="[
           'flex justify-start order-1 md:order-2 md:mb-20',
-          { 'md:-mt-12 md:mb-48 2xl:mb-64' : scheduleDate },
+          { 'md:-mt-12 md:mb-48 2xl:mb-64' : reserveScheduleSpace },
           { 'md:justify-end' : isSectionCover || (isHomepage && !scheduleDate) }
         ]">
         <slot name="content"/>
       </div>
-      <CalendarSchedule
-        v-if="scheduleDate"
-        :date="scheduleDate"
-        :size="scheduleSize"
-        class="inline-flex pointer-events-none order-2 md:order-1 w-fit md:self-end"
-        show-claim
-      />
+      <div
+        v-if="reserveScheduleSpace"
+        class="pointer-events-none order-2 md:order-1 w-fit md:self-end"
+        :class="schedulePlaceholderClass"
+      >
+        <CalendarSchedule
+          v-if="scheduleDate"
+          :date="scheduleDate"
+          :size="scheduleSize"
+          class="inline-flex w-fit"
+          show-claim
+        />
+      </div>
     </div>
   </section>
 </template>

@@ -8,8 +8,10 @@ import ArrowRight from "assets/icons/arrow-right.svg";
 
 const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
-const { events, pending, error } = useCalendarEvents()
+const { events, pending, error, ensureLoaded } = useCalendarEvents()
 const { maxVisibleEvents } = useCalendarLayout()
+
+await ensureLoaded()
 
 useHead({
   meta: [

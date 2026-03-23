@@ -33,7 +33,7 @@ const getIndicatorClasses = (contentType: AgendaFilterContentType) => {
 
 const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, contentType }: UseContentAgendaOptions) => {
   const { t } = useI18n()
-  const { events, pending, error } = useCalendarEvents()
+  const { events: sharedEvents, pending, error } = useCalendarEvents()
   const { maxVisibleEvents } = useCalendarLayout()
   const contentIndicatorClasses = getIndicatorClasses(contentType)
 
@@ -53,16 +53,18 @@ const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, conte
     },
   ]))
 
+  const events = computed(() => {
+    return sharedEvents.value.filter((event) => event.eventType === contentType)
+  })
+
   const hasScheduledContent = computed(() => {
     return events.value.some((event) => {
-      return event.eventType === contentType
-        && getMatchedContentKeyByTitle(event.title, event.eventType) === contentKey
+      return getMatchedContentKeyByTitle(event.title, event.eventType) === contentKey
     })
   })
 
   const filteredEvents = computed(() => {
     return events.value.filter((event) => {
-      if (event.eventType !== contentType) return false
       if (
         selectedPrimaryFilter.value === contentKey &&
         getMatchedContentKeyByTitle(event.title, event.eventType) !== contentKey
