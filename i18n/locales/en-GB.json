@@ -19,6 +19,11 @@
     "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
     "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
     "viewAllEvents": "View the full agenda",
+    "trends": {
+      "ariaLabel": "Most scheduled events",
+      "claimTitle": "Filitendencies",
+      "subtitle": "A bit of gossip about what's totally smashing it!"
+    },
     "pagination": {
       "previous": "Previous",
       "next": "Next",
@@ -70,6 +75,7 @@
   "button": {
     "dossier": "Dossier",
     "info": "More info",
+    "teaser": "Watch teaser",
     "fullShow": "Watch the full show",
     "playVideo": "Click to watch the video",
     "viewMore": "View more",

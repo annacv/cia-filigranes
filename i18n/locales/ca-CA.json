@@ -19,6 +19,11 @@
     "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",
     "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
     "viewAllEvents": "Veure tota l'agenda",
+    "trends": {
+      "ariaLabel": "Esdeveniments més programats",
+      "claimTitle": "Filitendències",
+      "subtitle": "Una mica de safareig del que més ho està petant!"
+    },
     "pagination": {
       "previous": "Anterior",
       "next": "Següent",
@@ -70,6 +75,7 @@
   "button": {
     "dossier": "Dossier",
     "info": "Més info",
+    "teaser": "Veure teaser",
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",

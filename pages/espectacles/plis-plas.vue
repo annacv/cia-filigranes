@@ -62,10 +62,9 @@ const summaryButton = computed(() => {
           :items="summaryItems"
           :button="summaryButton"
         />
-        <YoutubePlayer
-          class="pt-2 pb-12 lg:pt-4 lg:pb-24"
-          video-id="VOcQTqZ9C2A"
-        />
+        <div id="video" class="pt-2 pb-12 lg:pt-4 lg:pb-24">
+          <YoutubePlayer video-id="VOcQTqZ9C2A" />
+        </div>
       </template>
       <template #unwrappedTop>
         <Synopsis

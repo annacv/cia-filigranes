@@ -1,4 +1,4 @@
-import type { EventTypeFilterItem } from "~/types"
+import type { ContentType, EventTypeFilterItem } from "~/types"
 
 export const ROUTES_INDEX = [
   {
@@ -264,26 +264,35 @@ export const HEADER_MOBILE_HEIGHT = '72px'
 export const HEADER_DESKTOP_HEIGHT = '87px'
 export const HERO_COVER_ANIMATION_DURATION_MS = 800
 
+export const EVENT_TYPE_COLORS: Record<
+  Extract<ContentType, 'shows' | 'workshops' | 'performances'>,
+  { text: string; bg: string; bgLight: string }
+> = {
+  shows: { text: 'text-primary-500', bg: 'bg-primary-500', bgLight: 'bg-primary-300' },
+  workshops: { text: 'text-secondary-500', bg: 'bg-secondary-500', bgLight: 'bg-secondary-300' },
+  performances: { text: 'text-tertiary-500', bg: 'bg-tertiary-500', bgLight: 'bg-tertiary-300' },
+}
+
 export const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
   {
     type: 'shows',
     labelKey: 'agenda.filters.shows',
-    activeIndicatorClass: 'bg-primary-500',
-    inactiveIndicatorClass: 'bg-primary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
+    activeIndicatorClass: EVENT_TYPE_COLORS.shows.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.shows.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.shows.bg} group-focus-visible:${EVENT_TYPE_COLORS.shows.bg}`,
   },
   {
     type: 'workshops',
     labelKey: 'agenda.filters.workshops',
-    activeIndicatorClass: 'bg-secondary-500',
-    inactiveIndicatorClass: 'bg-secondary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-secondary-500 group-focus-visible:bg-secondary-500',
+    activeIndicatorClass: EVENT_TYPE_COLORS.workshops.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.workshops.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.workshops.bg} group-focus-visible:${EVENT_TYPE_COLORS.workshops.bg}`,
   },
   {
     type: 'performances',
     labelKey: 'agenda.filters.performances',
-    activeIndicatorClass: 'bg-tertiary-500',
-    inactiveIndicatorClass: 'bg-tertiary-300',
-    interactiveActiveIndicatorClass: 'group-hover:bg-tertiary-500 group-focus-visible:bg-tertiary-500',
+    activeIndicatorClass: EVENT_TYPE_COLORS.performances.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.performances.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.performances.bg} group-focus-visible:${EVENT_TYPE_COLORS.performances.bg}`,
   },
 ]

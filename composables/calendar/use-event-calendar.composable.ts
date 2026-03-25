@@ -15,11 +15,6 @@ interface UseContentAgendaOptions {
   contentType: AgendaFilterContentType
 }
 
-const isClosedGroupEvent = (event: CalendarEvent): boolean => {
-  const description = event.description ?? ''
-  return /\btancats?\b/i.test(description)
-}
-
 const getIndicatorClasses = (contentType: AgendaFilterContentType) => {
   const filterItem = EVENT_TYPE_FILTER_ITEMS.find((item) => item.type === contentType)
 
@@ -69,7 +64,7 @@ const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, conte
         selectedPrimaryFilter.value === contentKey &&
         getMatchedContentKeyByTitle(event.title, event.eventType) !== contentKey
       ) return false
-      if (showOnlyOpenToPublic.value && isClosedGroupEvent(event)) return false
+      if (showOnlyOpenToPublic.value && event.isClosedGroupEvent) return false
       return true
     })
   })

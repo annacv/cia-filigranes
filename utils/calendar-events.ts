@@ -1,24 +1,40 @@
-import type { CalendarEvent, GoogleCalendarEvent, ContentType, CardImage } from '~/types'
+import type { CalendarEvent, GoogleCalendarEvent, ContentType, CardImage, EventInfoLink } from '~/types'
 import { getImageByRoute } from '~/utils/image-by-route'
 
-// Uses the same image keys as highlightShows
-const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
+const FILI_SHOWS: Record<string, string> = {
   '20 anys no son res': 'vint-anys',
   'el circ filixic': 'circ-filixic',
   'plis plas': 'plis-plas',
   'cercavila germans freak frac': 'freak-frac',
   'el petit circ de makutu': 'circ-makutu',
   'trinxat no tremola': 'circ-trinxeta',
-  // Espectacles "fora de carta" o pendents d'afegir a la web
+}
+
+const OTHER_FILI_SHOWS: Record<string, string> = {
   'germans filigranes': 'germans-filigranes',
   'els germans filigranes': 'germans-filigranes',
-  // Col·laboracions:
+}
+
+const COLLABORATIONS_SHOWS: Record<string, string> = {
   'el circ filikrusty': 'circ-filikrusty',
   'heeelp': 'heeelp',
   'help': 'heeelp',
   'fingerlight': 'fingerlight',
   'vendaval': 'vendaval',
   'clown de pas': 'clown-de-pas',
+}
+
+export const FILI_SHOWS_IMAGE_KEYS = Object.values(FILI_SHOWS)
+export const OTHER_FILI_SHOWS_IMAGE_KEYS = Object.values(OTHER_FILI_SHOWS)
+export const COLLABORATIONS_SHOWS_IMAGE_KEYS = Object.values(COLLABORATIONS_SHOWS)
+
+// Uses the same image keys as highlightShows
+const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
+  ...FILI_SHOWS,
+  // Espectacles "fora de carta" o pendents d'afegir a la web
+  ...OTHER_FILI_SHOWS,
+  // Col·laboracions:
+  ...COLLABORATIONS_SHOWS
 }
 
 // Uses the same base keys as HighlightWorkshops
@@ -107,6 +123,71 @@ const getFallbackImageForType = (eventType: ContentType): CardImage | undefined 
   }
 }
 
+const INFO_URL_BY_COLLABORATION_CONTENT_KEY: Record<string, string> = {
+  'circ-filikrusty': 'https://improvistos.com/espectacles/espectacle-1/',
+  'heeelp': 'https://improvistos.com/heeelp/',
+  'fingerlight': 'https://improvistos.com/espectacles/espectacle-2/',
+  'vendaval': 'https://youtu.be/HpkRH-YxNXE',
+  'clown-de-pas': 'https://www.albertvinyes.cat/ca/espectacles/clown-de-pas/',
+}
+
+/**
+ * Returns an event "info link" used by the agenda trend cards.
+ *
+ * - For shows with dedicated pages: link to the page video anchor (`#video`)
+ * - For collaborations/special shows without dedicated pages: external URL
+ * - For OTHER_FILI_SHOWS: returns `undefined` (no button)
+ */
+const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink | undefined => {
+  const contentKey = getMatchedContentKeyByTitle(title, eventType)
+
+  if (eventType === 'shows') {
+    if (!contentKey) return undefined
+
+    if (OTHER_FILI_SHOWS_IMAGE_KEYS.includes(contentKey)) return undefined
+
+    if (FILI_SHOWS_IMAGE_KEYS.includes(contentKey)) {
+      return {
+        href: `/espectacles/${contentKey}#video`,
+        target: '_self',
+        text: 'button.teaser',
+      }
+    }
+
+    if (COLLABORATIONS_SHOWS_IMAGE_KEYS.includes(contentKey)) {
+      const href = INFO_URL_BY_COLLABORATION_CONTENT_KEY[contentKey]
+      if (!href) return undefined
+      return {
+        href,
+        target: '_blank',
+        text: 'button.info',
+      }
+    }
+
+    return undefined
+  }
+
+  if (eventType === 'workshops') {
+    return contentKey
+      ? {
+          href: `/tallers/${contentKey}`,
+          target: '_self',
+          text: 'button.info',
+        }
+      : undefined
+  }
+
+  if (eventType === 'performances') {
+    return {
+      href: '/animacions',
+      target: '_self',
+      text: 'button.info',
+    }
+  }
+
+  return undefined
+}
+
 const extractUrlFromDescription = (description: string | undefined): { link: string; raw: string } | undefined => {
   if (!description || typeof description !== 'string') return undefined
   const match = description.match(/https?:\/\/[^\s]+/)
@@ -150,6 +231,8 @@ export const transformGoogleCalendarEvent = (event: GoogleCalendarEvent): Calend
     ? (urlResult ? event.description.replace(urlResult.raw, '').replace(/\s+/g, ' ').trim() : event.description)
     : undefined
 
+  const isClosedGroupEvent = /\btancats?\b/i.test(description ?? '')
+
   return {
     id: event.id,
     eventType,
@@ -157,7 +240,9 @@ export const transformGoogleCalendarEvent = (event: GoogleCalendarEvent): Calend
     description: description || undefined,
     location: event.location,
     image: getEventImageByTitle(normalizedSummary, eventType) ?? getFallbackImageForType(eventType),
+    eventInfoLink: getEventInfoLink(normalizedSummary, eventType),
     reservationLink: urlResult?.link,
+    isClosedGroupEvent,
     start: event.start.dateTime || event.start.date || '',
     end: event.end?.dateTime || event.end?.date || null,
     isAllDay,

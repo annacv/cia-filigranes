@@ -74,10 +74,20 @@ export interface CalendarEvent {
   location?: string
   image?: CardImage
   reservationLink?: string
+  eventInfoLink?: EventInfoLink
+  isClosedGroupEvent: boolean
   start: string
   end: string | null
   isAllDay: boolean
   htmlLink?: string
+}
+
+export type EventInfoLinkTextKey = 'button.teaser' | 'button.info'
+
+export type EventInfoLink = {
+  href: string
+  target: '_self' | '_blank'
+  text: EventInfoLinkTextKey
 }
 
 /**

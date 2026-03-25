@@ -4,6 +4,7 @@ import { EVENT_TYPE_FILTER_ITEMS } from "~/constants"
 import type { AgendaPrimaryFilterOption, ContentType, CalendarEvent } from "~/types"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
+import CalendarTrends from "~/components/agenda/CalendarTrends.vue"
 
 const { t } = useI18n()
 const { events, pending, error } = useCalendarEvents()
@@ -20,16 +21,11 @@ const nextYear = currentYear + 1
 const selectedEventType = ref<ContentType | null>(null)
 const showOnlyOpenToPublic = ref(false)
 
-const isClosedGroupEvent = (event: CalendarEvent): boolean => {
-  const description = event.description ?? ''
-  return /\btancats?\b/i.test(description)
-}
-
 const filteredEvents = computed(() => {
   const source = events.value
   return source.filter((event) => {
     if (selectedEventType.value && event.eventType !== selectedEventType.value) return false
-    if (showOnlyOpenToPublic.value && isClosedGroupEvent(event)) return false
+    if (showOnlyOpenToPublic.value && event.isClosedGroupEvent) return false
     return true
   })
 })
@@ -74,14 +70,14 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
       </template>
     </HeroCover>
     <MainContent>
-      <template #unwrapped>
+      <template #unwrappedTop>
         <ClaimTitle
           class="text-center"
           :claim-title="t('agenda.claimTitle')"
           is-section-title
         />
       </template>
-      <template #wrappedBottom>
+      <template #wrapped>
         <AgendaFilters
           v-model:selected-primary-filter="selectedEventType"
           v-model:show-only-open-to-public="showOnlyOpenToPublic"
@@ -94,6 +90,17 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
           :selected-event-type="selectedEventType"
           :has-active-filters="hasActiveFilters"
         />
+      </template>
+      <template #unwrapped>
+        <ClaimTitle
+          class="text-center md:!mt-16"
+          :claim-title="t('agenda.trends.claimTitle')"
+          :subtitle="t('agenda.trends.subtitle')"
+          is-section-title
+        />
+      </template>
+      <template #wrappedBottom>
+        <CalendarTrends />
       </template>
       <template #unwrappedBottom>
         <HeroFooter

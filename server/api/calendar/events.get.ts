@@ -2,6 +2,7 @@ import type { CalendarApiResponse } from '~/types'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
 
 const DEFAULT_MAX_RESULTS = 20
+const MAX_ALLOWED_RESULTS = 700
 
 const parseMaxResults = (value: unknown) => {
   const normalizedValue = Array.isArray(value) ? value[0] : value
@@ -11,7 +12,17 @@ const parseMaxResults = (value: unknown) => {
     return DEFAULT_MAX_RESULTS
   }
 
-  return parsedValue
+  return Math.min(parsedValue, MAX_ALLOWED_RESULTS)
+}
+
+const parseIncludePast = (value: unknown) => {
+  const normalizedValue = Array.isArray(value) ? value[0] : value
+
+  if (typeof normalizedValue !== 'string') {
+    return false
+  }
+
+  return normalizedValue === 'true' || normalizedValue === '1'
 }
 
 const logFallback = (reason: string, error?: unknown) => {
@@ -27,10 +38,14 @@ const createCalendarApiError = (statusCode: number, statusMessage: string) => {
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
-  const maxResults = parseMaxResults(getQuery(event).maxResults)
+  const query = getQuery(event)
+  const maxResults = parseMaxResults(query.maxResults)
+  const includePast = parseIncludePast(query.includePast)
   const shouldFailSoft = import.meta.prerender
+  const googleCalendarApiKey = config.googleCalendarApiKey || config.public.googleCalendarApiKey
+  const googleCalendarId = config.googleCalendarId || config.public.googleCalendarId
 
-  if (!config.googleCalendarApiKey || !config.googleCalendarId) {
+  if (!googleCalendarApiKey || !googleCalendarId) {
     const message = 'Missing Google Calendar API key or Calendar ID'
 
     if (shouldFailSoft) {
@@ -45,14 +60,17 @@ export default defineEventHandler(async (event) => {
   try {
     const now = new Date().toISOString()
     const params = new URLSearchParams({
-      key: config.googleCalendarApiKey,
+      key: googleCalendarApiKey,
       singleEvents: 'true',
       orderBy: 'startTime',
-      timeMin: now,
       maxResults: String(maxResults),
     })
 
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(config.googleCalendarId)}/events?${params.toString()}`
+    if (!includePast) {
+      params.set('timeMin', now)
+    }
+
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(googleCalendarId)}/events?${params.toString()}`
     const response = await $fetch<CalendarApiResponse>(url)
 
     return transformGoogleCalendarEvents(response.items || [])
