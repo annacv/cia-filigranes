@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, nextTick, watch } from 'vue'
 import { getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
+import { scrollToAnchor } from '~/composables/hero-scroll/follow-anchor-animation'
 import { isSchedulableContentType, useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
@@ -46,6 +47,20 @@ const { gradientOverlayValue } = useColor(props.contentType);
 const { isMobile } = useResponsive()
 const { getScheduleDateForContentKey } = useContentSchedule()
 const route = useRoute()
+
+// If the user navigates directly to "#video", we need to follow the anchor while the hero-cover
+// layout transitions (otherwise layout settles after the hash scroll and lands too far down).
+const maybeScrollToVideo = async () => {
+  if (route.hash !== '#video') return
+  await nextTick()
+  await nextTick()
+  scrollToAnchor('video')
+}
+
+onMounted(maybeScrollToVideo)
+watch(() => route.hash, () => {
+  maybeScrollToVideo()
+})
 
 // Resolve image URLs during SSR for LCP optimization
 const { data: imageUrls } = await useAsyncData(
