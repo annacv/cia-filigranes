@@ -1,5 +1,5 @@
-import type { CalendarApiResponse } from '~/types'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
+import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
 
 const DEFAULT_MAX_RESULTS = 20
 const MAX_ALLOWED_RESULTS = 700
@@ -59,19 +59,12 @@ export default defineEventHandler(async (event) => {
 
   try {
     const now = new Date().toISOString()
-    const params = new URLSearchParams({
-      key: googleCalendarApiKey,
-      singleEvents: 'true',
-      orderBy: 'startTime',
-      maxResults: String(maxResults),
+    const response = await fetchGoogleCalendarEvents({
+      apiKey: googleCalendarApiKey,
+      calendarId: googleCalendarId,
+      maxResults,
+      timeMin: includePast ? undefined : now,
     })
-
-    if (!includePast) {
-      params.set('timeMin', now)
-    }
-
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(googleCalendarId)}/events?${params.toString()}`
-    const response = await $fetch<CalendarApiResponse>(url)
 
     return transformGoogleCalendarEvents(response.items || [])
   } catch (error) {

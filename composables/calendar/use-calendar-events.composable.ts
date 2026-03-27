@@ -1,5 +1,6 @@
-import type { CalendarApiResponse, CalendarEvent } from '~/types'
+import type { CalendarEvent } from '~/types'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
+import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
 
 export { getMatchedContentKeyByTitle } from '~/utils/calendar-events'
 
@@ -103,16 +104,12 @@ export const useCalendarEvents = (options?: UseCalendarEventsOptions) => {
     }
 
     const now = new Date().toISOString()
-    const params = new URLSearchParams({
-      key: apiKey,
-      singleEvents: 'true',
-      orderBy: 'startTime',
+    const response = await fetchGoogleCalendarEvents({
+      apiKey,
+      calendarId,
       timeMin: now,
-      maxResults: String(maxResults),
+      maxResults,
     })
-
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?${params.toString()}`
-    const response = await $fetch<CalendarApiResponse>(url)
 
     return transformGoogleCalendarEvents(response.items || [])
   }
