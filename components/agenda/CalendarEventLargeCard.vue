@@ -16,12 +16,14 @@ const props = defineProps({
 const { isMobile, isSmallTablet } = useResponsive()
 const event = computed(() => props.event)
 const {
+  displayTitle,
   footerColor,
   formatEventTime,
   imageAlt,
   mainColor,
   reservationLabel,
 } = useCalendarDisplay(event)
+
 const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'small' : 'medium'))
 </script>
 
@@ -29,7 +31,7 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 's
   <article class="relative flex h-full w-full overflow-hidden">
     <div
       v-if="event.image"
-      class="relative w-[30%] shrink-0"
+      class="relative w-1/2 md:w-[30%] shrink-0"
     >
       <CardImage
         :image="event.image"
@@ -53,8 +55,8 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 's
 
     <div class="flex min-w-0 flex-1 flex-col">
       <div :class="`flex flex-1 flex-col justify-center gap-4 py-6 px-4 md:px-6 2xl:px-12 ${mainColor}`">
-        <h3 class="font-grotesk text-4xl font-bold uppercase text-white !leading-none">
-          {{ event.title }}
+        <h3 class="font-grotesk text-2xl md:text-4xl font-bold uppercase text-white !leading-none">
+          {{ displayTitle }}
         </h3>
 
         <CalendarSchedule class="w-fit" :date="event.start" :size="scheduleSize" />

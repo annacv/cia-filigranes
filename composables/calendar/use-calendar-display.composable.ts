@@ -1,6 +1,7 @@
 import type { CalendarEvent, ContentType } from '~/types'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
+import { getRouteTranslationKeyByTitle } from '~/utils/calendar-events'
 
 const MAIN_COLOR_MAP: Record<ContentType, string> = {
   shows: 'bg-primary-500',
@@ -18,9 +19,24 @@ const FOOTER_COLOR_MAP: Record<ContentType, string> = {
   contact: 'bg-primary-400',
 }
 
+type CalendarEventTitleSource = Pick<CalendarEvent, 'title' | 'eventType'>
+
 export const useCalendarDisplay = (event?: ComputedRef<CalendarEvent | undefined>) => {
-  const { t } = useI18n()
+  const { t, te } = useI18n()
   const { formatEventTime } = useDateFormat()
+
+  const getDisplayTitle = (eventTitleSource: CalendarEventTitleSource): string => {
+    const routeTranslationKey = getRouteTranslationKeyByTitle(eventTitleSource.title, eventTitleSource.eventType)
+    const translatedBaseTitle = routeTranslationKey && te(routeTranslationKey)
+      ? t(routeTranslationKey)
+      : eventTitleSource.title
+
+    if (eventTitleSource.eventType === 'workshops' && te('workshops.commonTitle')) {
+      return t('workshops.commonTitle', { title: translatedBaseTitle })
+    }
+
+    return translatedBaseTitle
+  }
 
   const imageAlt = computed(() => {
     if (!event?.value) return ''
@@ -48,9 +64,16 @@ export const useCalendarDisplay = (event?: ComputedRef<CalendarEvent | undefined
     return FOOTER_COLOR_MAP[event.value.eventType] ?? 'bg-primary-400'
   })
 
+  const displayTitle = computed(() => {
+    if (!event?.value) return ''
+    return getDisplayTitle(event.value)
+  })
+
   return {
+    displayTitle,
     footerColor,
     formatEventTime,
+    getDisplayTitle,
     imageAlt,
     mainColor,
     reservationLabel,

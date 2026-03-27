@@ -182,7 +182,7 @@ const goToPage = async (page: number) => {
 
         <FiliButton
           v-if="showViewAllButton"
-          button-class="button-link-neutral md:ml-auto"
+          button-class="button-link-neutral ml-auto"
           :text="t('agenda.viewAllEvents')"
           href="/agenda"
           target="_top"

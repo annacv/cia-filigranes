@@ -3,6 +3,7 @@ import CardImage from '~/components/CardImage.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 import { EVENT_TYPE_COLORS } from '~/constants'
+import { useCalendarDisplay } from '~/composables/calendar/use-calendar-display.composable'
 import { useCalendarHistory } from '~/composables/calendar/use-calendar-history.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
 import type { CalendarEvent, ContentType, EventInfoLink } from '~/types'
@@ -28,6 +29,7 @@ type TrendItemBase = Omit<TrendItem, 'imageAlt' | 'button'>
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { events, pending, error } = useCalendarHistory()
+const { getDisplayTitle } = useCalendarDisplay()
 
 const isTrendContentType = (eventType: ContentType): eventType is TrendContentType => {
   return eventType === 'shows' || eventType === 'workshops' || eventType === 'performances'
@@ -54,7 +56,7 @@ const trends = computed<TrendItem[]>(() => {
         id: key,
         eventType: event.eventType,
         image: event.image,
-        title: event.title,
+        title: getDisplayTitle(event),
         totalScheduled: 1,
         events: [event],
       })

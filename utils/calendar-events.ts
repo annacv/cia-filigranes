@@ -103,6 +103,11 @@ export const getMatchedContentKeyByTitle = (title: string, eventType: ContentTyp
   return matched?.[1]
 }
 
+export const getRouteTranslationKeyByTitle = (title: string, eventType: ContentType): string | undefined => {
+  const matchedContentKey = getMatchedContentKeyByTitle(title, eventType)
+  return matchedContentKey ? `routes.${matchedContentKey}` : undefined
+}
+
 const getEventImageByTitle = (title: string, eventType: ContentType): CardImage | undefined => {
   const matchedContentKey = getMatchedContentKeyByTitle(title, eventType)
   if (!matchedContentKey) return undefined
