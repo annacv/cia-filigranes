@@ -613,7 +613,7 @@
     "metaDescription": "Tallers per a totes les edats: de circ, de pallassos, de maquillatge, d'enginys d'aigua, de bombolles de sabó...",
     "commonAlt": "Imatge del taller {title}",
     "commonTitle": "Taller de {title}",
-    "liveClaimTitle": "Properes dates per a {title}",
+    "liveClaimTitle": "Properes dates per al {title}",
     "otherWorkshopsClaimTitle": "Altres tallers de la Cia.Filigranes",
     "claimTitle": "Cursos, monogràfics, o tallers de temporada...",
     "claim": "Tallers per a grans i menudes que volen aprendre i divertir-se!",
