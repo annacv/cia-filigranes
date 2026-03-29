@@ -68,6 +68,7 @@ const showMore = () => {
       image-name="filipersones_hero"
       image-route="filipersones"
       :alt="t('shows.hero.alt')"
+      is-section-cover
     >
       <template #content>
         <div class="py-5 xs:px-0 sm:px-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">

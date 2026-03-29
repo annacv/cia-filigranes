@@ -4,8 +4,10 @@ import { useI18n } from "vue-i18n";
 import { getItemsByRoute } from "~/utils/items-by-route";
 import { reorderItems } from "~/utils/reorder-items";
 import type { CardLink, CardImage, ImageRoute } from "~/types";
+import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 
 const { t, locale } = useI18n()
+const { getScheduleDateForContentKey } = useContentSchedule('workshops')
 
 const props = defineProps({
   isCurrentContent: {
@@ -62,6 +64,7 @@ const getImage = (route: string, item?: string): CardImage => {
               :title="t(`routes.${item}`)"
               :image="getImage('tallers', item)"
               :link="getLink(workshops!.name,item)"
+              :schedule-date="getScheduleDateForContentKey(item)"
             />
           </li>
         </ul>

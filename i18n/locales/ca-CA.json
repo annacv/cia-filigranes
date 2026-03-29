@@ -14,12 +14,50 @@
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
+  "agenda": {
+    "claimTitle": "Properes funcions i tallers",
+    "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",
+    "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
+    "viewAllEvents": "Veure tota l'agenda",
+    "trends": {
+      "ariaLabel": "Esdeveniments més programats",
+      "claimTitle": "Filitendències",
+      "subtitle": "Una mica de safareig del que més ho està petant!"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Següent",
+      "navigationLabel": "Paginació de l'agenda"
+    },
+    "loading": "Carregant esdeveniments...",
+    "empty": "No hi ha esdeveniments propers programats.",
+    "emptyFiltered": "No hi ha esdeveniments amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
+    "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
+    "live": "En directe!",
+    "goToPageSection": "Anar a l'agenda d'aquesta pàgina",
+    "reservationEntry": "Reserva la teva entrada",
+    "reservationPlace": "Reserva la teva plaça",
+    "filters": {
+      "ariaLabel": "Filtrar esdeveniments per tipus",
+      "shows": "Espectacles",
+      "workshops": "Tallers",
+      "performances": "Animacions",
+      "all": "Tots els esdeveniments",
+      "allShows": "Tots els espectacles",
+      "allWorkshops": "Tots els tallers",
+      "dropdownAriaLabel": "Obrir el menú de filtres d'esdeveniments",
+      "dropdownMenuAriaLabel": "Opcions de filtre d'esdeveniments",
+      "onlyOpenToPublic": "Només oberts al públic",
+      "onlyOpenToPublicAriaLabel": "Activa per mostrar només els esdeveniments oberts al públic"
+    }
+  },
   "routes": {
     "home": "Inici",
+    "agenda": "Agenda",
     "espectacles": "Espectacles",
-    "circ-filixic": "El circ filixic",
+    "circ-filixic": "El Circ Filixic",
     "freak-frac": "Cercavila Germans Freak Frac",
-    "plis-plas": "Plis plas",
+    "plis-plas": "Plis Plas",
     "vint-anys": "20 Anys no són res",
     "circ-makutu": "El Petit Circ de Makutu",
     "circ-trinxeta": "Trinxat no Tremola",
@@ -38,6 +76,7 @@
   "button": {
     "dossier": "Dossier",
     "info": "Més info",
+    "teaser": "Veure teaser",
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",
@@ -84,6 +123,9 @@
   "shows": {
     "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Companyia Filigranes.",
     "commonAlt": "Imatge de l'espectacle {title}",
+    "homeClaim": "Descobreix els nostres espectacles, tallers i animacions fetes a mida",
+    "liveClaimTitle": "{title} en directe!",
+    "otherShowsClaimTitle": "Altres espectacles de la Cia.Filigranes",
     "claimTitle": "A punt per viure emocions i deixar-te sorprendre?",
     "claim": "Vine a gaudir del ritme trepidant dels espectacles de la Companyia Filigranes!",
     "hero": {
@@ -572,6 +614,8 @@
     "metaDescription": "Tallers per a totes les edats: de circ, de pallassos, de maquillatge, d'enginys d'aigua, de bombolles de sabó...",
     "commonAlt": "Imatge del taller {title}",
     "commonTitle": "Taller de {title}",
+    "liveClaimTitle": "Properes dates per al {title}",
+    "otherWorkshopsClaimTitle": "Altres tallers de la Cia.Filigranes",
     "claimTitle": "Cursos, monogràfics, o tallers de temporada...",
     "claim": "Tallers per a grans i menudes que volen aprendre i divertir-se!",
     "hero": {

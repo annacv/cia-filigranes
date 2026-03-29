@@ -1,3 +1,5 @@
+import type { ContentType, EventTypeFilterItem } from "~/types"
+
 export const ROUTES_INDEX = [
   {
     name: "espectacles",
@@ -15,11 +17,19 @@ export const ROUTES_INDEX = [
     children: ['trinxeta', 'makutu']
   },
   {
+    name: "agenda"
+  },
+  {
     name: "contacte"
   }
 ]
 
 export const LOCALE_ROUTES = {
+  agenda: {
+    ca: '/agenda',
+    en: '/agenda',
+    es: '/agenda'
+  },
   espectacles: {
     ca: '/espectacles',
     en: '/shows',
@@ -163,6 +173,16 @@ export const GLOB_IMPORTS = {
     import: 'default',
   }) as Record<string, () => Promise<string>>,
 
+  mobileAgendaImages: import.meta.glob('~/assets/images/mobile/agenda/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  desktopAgendaImages: import.meta.glob('~/assets/images/desktop/agenda/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
     eager: false,
     import: 'default',
@@ -243,3 +263,36 @@ export const RRSS = [
 export const HEADER_MOBILE_HEIGHT = '72px'
 export const HEADER_DESKTOP_HEIGHT = '87px'
 export const HERO_COVER_ANIMATION_DURATION_MS = 800
+
+export const EVENT_TYPE_COLORS: Record<
+  Extract<ContentType, 'shows' | 'workshops' | 'performances'>,
+  { text: string; bg: string; bgLight: string }
+> = {
+  shows: { text: 'text-primary-500', bg: 'bg-primary-500', bgLight: 'bg-primary-300' },
+  workshops: { text: 'text-secondary-500', bg: 'bg-secondary-500', bgLight: 'bg-secondary-300' },
+  performances: { text: 'text-tertiary-500', bg: 'bg-tertiary-500', bgLight: 'bg-tertiary-300' },
+}
+
+export const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
+  {
+    type: 'shows',
+    labelKey: 'agenda.filters.shows',
+    activeIndicatorClass: EVENT_TYPE_COLORS.shows.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.shows.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.shows.bg} group-focus-visible:${EVENT_TYPE_COLORS.shows.bg}`,
+  },
+  {
+    type: 'workshops',
+    labelKey: 'agenda.filters.workshops',
+    activeIndicatorClass: EVENT_TYPE_COLORS.workshops.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.workshops.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.workshops.bg} group-focus-visible:${EVENT_TYPE_COLORS.workshops.bg}`,
+  },
+  {
+    type: 'performances',
+    labelKey: 'agenda.filters.performances',
+    activeIndicatorClass: EVENT_TYPE_COLORS.performances.bg,
+    inactiveIndicatorClass: EVENT_TYPE_COLORS.performances.bgLight,
+    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.performances.bg} group-focus-visible:${EVENT_TYPE_COLORS.performances.bg}`,
+  },
+]

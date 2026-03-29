@@ -4,6 +4,7 @@ import { getItemsByRoute } from "~/utils/items-by-route";
 import { reorderItems } from "~/utils/reorder-items";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
+import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 
 const props = defineProps({
   isCurrentContent: {
@@ -18,6 +19,7 @@ const props = defineProps({
 })
 
 const { t } = useI18n()
+const { getScheduleDateForContentKey } = useContentSchedule('shows')
 
 const shows = getItemsByRoute('espectacles');
 
@@ -45,6 +47,7 @@ const showItems = computed(() => {
               :title="t(`routes.${item}`)"
               :image="getImageByRoute('espectacles', item)"
               :link="useLinkByRoute(shows!.name, item).value"
+              :schedule-date="getScheduleDateForContentKey(item)"
             />
           </li>
         </ul>

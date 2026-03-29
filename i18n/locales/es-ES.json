@@ -14,8 +14,46 @@
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
+  "agenda": {
+    "claimTitle": "Próximas funciones y talleres",
+    "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
+    "description": "Aquí encontrarás las próximas actuaciones y talleres de la Compañía Filigranes.",
+    "viewAllEvents": "Ver toda la agenda",
+    "trends": {
+      "ariaLabel": "Eventos más programados",
+      "claimTitle": "Filitendencias",
+      "subtitle": "Un poco de salseo de lo que más lo está petando!"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "navigationLabel": "Paginación de la agenda"
+    },
+    "loading": "Cargando eventos...",
+    "empty": "No hay eventos próximos programados.",
+    "emptyFiltered": "No hay eventos con estos filtros. Prueba a desactivar alguno para ver eventos.",
+    "error": "No se han podido cargar los eventos. Por favor, inténtalo de nuevo más tarde.",
+    "live": "¡En directo!",
+    "goToPageSection": "Ir a la agenda de esta página",
+    "reservationEntry": "Reserva tu entrada",
+    "reservationPlace": "Reserva tu plaza",
+    "filters": {
+      "ariaLabel": "Filtrar eventos por tipo",
+      "shows": "Espectáculos",
+      "workshops": "Talleres",
+      "performances": "Animaciones",
+      "all": "Todos los eventos",
+      "allShows": "Todos los espectáculos",
+      "allWorkshops": "Todos los talleres",
+      "dropdownAriaLabel": "Abrir el menú de filtros de eventos",
+      "dropdownMenuAriaLabel": "Opciones de filtro de eventos",
+      "onlyOpenToPublic": "Solo abiertos al público",
+      "onlyOpenToPublicAriaLabel": "Activa para mostrar solo los eventos abiertos al público"
+    }
+  },
   "routes": {
     "home": "Inicio",
+    "agenda": "Agenda",
     "espectacles": "Espectáculos",
     "circ-filixic": "El Circo Filixic",
     "freak-frac": "Hermanos Freak Frac",
@@ -38,6 +76,7 @@
   "button": {
     "dossier": "Dosier",
     "info": "Más info",
+    "teaser": "Ver teaser",
     "fullShow": "Ver todo el espectáculo",
     "playVideo": "Haz clic para ver el video",
     "viewMore": "Ver más",
@@ -84,6 +123,9 @@
   "shows": {
     "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
     "commonAlt": "Imagen del espectáculo {title}",
+    "homeClaim": "Descubre nuestros espectáculos, talleres y animaciones hechas a medida",
+    "liveClaimTitle": "¡{title} en directo!",
+    "otherShowsClaimTitle": "Otros espectáculos de la Cia.Filigranes",
     "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
     "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
     "hero": {
@@ -572,6 +614,8 @@
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
     "commonTitle": "Taller de {title}",
+    "liveClaimTitle": "Próximas fechas para el {title}",
+    "otherWorkshopsClaimTitle": "Otros talleres de la Cia.Filigranes",
     "claimTitle": "Cursos, monográficos, o talleres de temporada...",
     "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {

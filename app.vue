@@ -92,7 +92,8 @@ if (import.meta.client && typeof history !== 'undefined') {
 
 nuxtApp.hook("page:finish", () => {
   if (import.meta.client) {
-    window.scrollTo(0, 0);
+    const hasHash = window.location.hash && window.location.hash !== '#'
+    if (!hasHash) window.scrollTo(0, 0);
   }
 });
 </script>

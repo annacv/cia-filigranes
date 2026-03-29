@@ -32,6 +32,7 @@ const synopsisButton = computed(() => {
       image-name="animacions_foc_hero"
       image-route="animacions"
       :alt="getImageAlt('animacions')"
+      is-section-cover
     >
     <template #content>
         <SectionCoverTitle

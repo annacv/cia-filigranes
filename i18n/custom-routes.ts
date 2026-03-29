@@ -1,6 +1,11 @@
 import type { CustomRoutePages } from "@nuxtjs/i18n";
 
 export const routePages: CustomRoutePages = {
+  agenda: {
+    ca: '/agenda',
+    en: '/agenda',
+    es: '/agenda'
+  },
   espectacles: {
     ca: '/espectacles',
     en: '/shows',

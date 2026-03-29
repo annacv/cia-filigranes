@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, nextTick, watch } from 'vue'
 import { getImageUrlsForPreload } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
+import { scrollToAnchor } from '~/composables/hero-scroll/follow-anchor-animation'
+import { isSchedulableContentType, useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
+import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
@@ -24,15 +27,53 @@ const props = defineProps({
     type: String as PropType<ContentType>,
     default: 'shows'
   },
+  scheduleContentKey: {
+    type: String,
+    default: undefined
+  },
   backgroundPosition: {
     type: String,
     default: 'center 30%'
+  },
+  isSectionCover: {
+    type: Boolean,
+    default: false
   }
 })
 
 const { isScrolled } = useScrollState()
 useHeroFirstScrollHijack()
 const { gradientOverlayValue } = useColor(props.contentType);
+const { isMobile } = useResponsive()
+const { getScheduleDateForContentKey } = useContentSchedule()
+const route = useRoute()
+const { t } = useI18n()
+
+// If the user navigates directly to "#video" or "#agenda", follow the anchor while the hero-cover
+// layout transitions (otherwise layout settles after the hash scroll and lands too far down).
+const IN_PAGE_SCROLL_HASHES = new Set(['#video', '#agenda'])
+const maybeScrollToInPageAnchor = async () => {
+  if (!IN_PAGE_SCROLL_HASHES.has(route.hash)) return
+  const anchorId = route.hash.slice(1)
+  await nextTick()
+  await nextTick()
+
+  let attempts = 0
+  const maxAttempts = 40
+  const tryScroll = (): void => {
+    const cleanup = scrollToAnchor(anchorId)
+    if (cleanup) return
+    if (attempts >= maxAttempts) return
+    attempts++
+    requestAnimationFrame(tryScroll)
+  }
+  tryScroll()
+}
+
+onMounted(maybeScrollToInPageAnchor)
+watch(() => route.hash, () => {
+  maybeScrollToInPageAnchor()
+})
 
 // Resolve image URLs during SSR for LCP optimization
 const { data: imageUrls } = await useAsyncData(
@@ -87,6 +128,21 @@ useHead({
 
 const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`);
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
+const scheduleSize = computed(() => isMobile.value ? 'small' : 'large')
+const isHomepage = computed(() => route.path === '/')
+const reserveScheduleSpace = computed(() => {
+  return Boolean(props.scheduleContentKey) && isSchedulableContentType(props.contentType)
+})
+const schedulePlaceholderClass = computed(() => {
+  return scheduleSize.value === 'large'
+    ? 'min-h-[180px] min-w-[120px]'
+    : 'min-h-[34px] min-w-[208px]'
+})
+const scheduleDate = computed(() => {
+  if (!props.scheduleContentKey) return undefined
+  if (!isSchedulableContentType(props.contentType)) return undefined
+  return getScheduleDateForContentKey(props.scheduleContentKey, props.contentType)
+})
 
 const scrolledHeight = computed(() => {
   if (!isScrolled.value) return undefined
@@ -114,8 +170,8 @@ const scrolledHeight = computed(() => {
     }"
   >
     <picture v-if="fallbackImageUrl" class="absolute inset-0 w-full h-full">
-      <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)" />
-      <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)" />
+      <source v-if="mobileImageUrl" :srcset="mobileImageUrl" media="(max-width: 1023px)">
+      <source v-if="desktopImageUrl" :srcset="desktopImageUrl" media="(min-width: 1024px)">
       <img
         :src="fallbackImageUrl"
         :alt="alt"
@@ -131,7 +187,7 @@ const scrolledHeight = computed(() => {
           objectPosition: imagePosition,
           transitionDuration: transitionDuration,
         }"
-      />
+      >
     </picture>
     
     <!-- Gradient overlay -->
@@ -144,11 +200,35 @@ const scrolledHeight = computed(() => {
     />
     
     <div
-      class="layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
+      class="h-full flex flex-col justify-center layout-cols transition-opacity duration-500 relative z-10 will-change-opacity"
       :class="isScrolled ? 'opacity-0' : 'opacity-100'"
     >
-      <div class="flex md:justify-end justify-start">
+      <div
+        :class="[
+          'flex justify-start order-1 md:order-2 md:mb-20',
+          { 'md:-mt-12 md:mb-48 2xl:mb-64' : reserveScheduleSpace },
+          { 'md:justify-end' : isSectionCover || (isHomepage && !scheduleDate) }
+        ]">
         <slot name="content"/>
+      </div>
+      <div
+        v-if="reserveScheduleSpace"
+        class="pointer-events-none order-2 md:order-1 w-fit md:self-end"
+        :class="schedulePlaceholderClass"
+      >
+        <NuxtLink
+          v-if="scheduleDate"
+          :to="{ path: route.path, hash: '#agenda' }"
+          class="inline-flex w-fit pointer-events-auto rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          :aria-label="t('agenda.goToPageSection')"
+        >
+          <CalendarSchedule
+            :date="scheduleDate"
+            :size="scheduleSize"
+            class="inline-flex w-fit"
+            show-claim
+          />
+        </NuxtLink>
       </div>
     </div>
   </section>

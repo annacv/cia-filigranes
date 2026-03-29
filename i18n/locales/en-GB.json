@@ -14,12 +14,50 @@
     }
   },
   "commonAlt": "Image of the Filigranes Company",
+  "agenda": {
+    "claimTitle": "Upcoming shows and workshops",
+    "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
+    "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
+    "viewAllEvents": "View the full agenda",
+    "trends": {
+      "ariaLabel": "Most scheduled events",
+      "claimTitle": "Filitendencies",
+      "subtitle": "A bit of gossip about what's totally smashing it!"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "navigationLabel": "Agenda pagination"
+    },
+    "loading": "Loading events...",
+    "empty": "No upcoming events scheduled.",
+    "emptyFiltered": "No events match these filters. Try removing one or more filters to see events.",
+    "error": "Unable to load events. Please try again later.",
+    "live": "Live!",
+    "goToPageSection": "Go to the agenda on this page",
+    "reservationEntry": "Reserve your ticket",
+    "reservationPlace": "Reserve your spot",
+    "filters": {
+      "ariaLabel": "Filter events by type",
+      "shows": "Shows",
+      "workshops": "Workshops",
+      "performances": "Performances",
+      "all": "All events",
+      "allShows": "All shows",
+      "allWorkshops": "All workshops",
+      "dropdownAriaLabel": "Open the event filters menu",
+      "dropdownMenuAriaLabel": "Event filter options",
+      "onlyOpenToPublic": "Only open to the public",
+      "onlyOpenToPublicAriaLabel": "Turn on to show only events open to the public"
+    }
+  },
   "routes": {
     "home": "Home",
+    "agenda": "Agenda",
     "espectacles": "Shows",
     "circ-filixic": "The Filixic Circus",
     "freak-frac": "The Freak Frac Brothers' Parade",
-    "plis-plas": "Plis plas",
+    "plis-plas": "Plis Plas",
     "vint-anys": "20 Years is Nothing",
     "circ-makutu": "Makutu's Little Circus",
     "circ-trinxeta": "Trinxat doesn't Tremble",
@@ -38,6 +76,7 @@
   "button": {
     "dossier": "Dossier",
     "info": "More info",
+    "teaser": "Watch teaser",
     "fullShow": "Watch the full show",
     "playVideo": "Click to watch the video",
     "viewMore": "View more",
@@ -84,6 +123,9 @@
   "shows": {
     "metaDescription": "Discover the thrilling clown and circus shows of the Filigranes Company.",
     "commonAlt": "Image of the show {title}",
+    "homeClaim": "Discover our shows, workshops and tailor-made performances",
+    "liveClaimTitle": "{title} live!",
+    "otherShowsClaimTitle": "Other shows by Cia.Filigranes",
     "claimTitle": "Ready to experience emotions and be surprised?",
     "claim": "Come enjoy the thrilling rhythm of Filigranes Company shows!",
     "hero": {
@@ -572,6 +614,8 @@
     "metaDescription": "Workshops for all ages: circus, clowns, makeup, water tricks, soap bubbles...",
     "commonAlt": "Image of the {title} workshop",
     "commonTitle": "Workshop of {title}",
+    "liveClaimTitle": "Upcoming dates for {title}",
+    "otherWorkshopsClaimTitle": "Other workshops by Cia.Filigranes",
     "claimTitle": "Courses, monographs, or seasonal workshops...",
     "claim": "Workshops for children and adults who want to learn and have fun!",
     "hero": {

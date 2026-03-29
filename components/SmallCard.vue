@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue';
 import type { CardLink, ContentType, CardImage } from "~/types";
 import { useImageAlt } from "~/composables/use-image-alt.composable";
+import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 
 const props = defineProps({
   contentType: {
@@ -15,6 +16,10 @@ const props = defineProps({
   link: {
     type: Object as PropType<CardLink>,
     required: true
+  },
+  scheduleDate: {
+    type: String,
+    default: undefined
   },
   title: {
     type: String,
@@ -36,6 +41,13 @@ const isTouched = ref(false);
         class="w-full h-full transition-all duration-800 ease-in-out block"
         :aria-label="t(`aria.${props.contentType}`, { title: props.title })"
       >
+        <CalendarSchedule
+          v-if="scheduleDate"
+          :date="scheduleDate"
+          size="small"
+          class="pointer-events-none absolute right-2 top-2 z-10"
+          showClaim
+        />
         <CardImage
           :image="image"
           :content-type="contentType"
