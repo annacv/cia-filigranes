@@ -47,19 +47,32 @@ const { gradientOverlayValue } = useColor(props.contentType);
 const { isMobile } = useResponsive()
 const { getScheduleDateForContentKey } = useContentSchedule()
 const route = useRoute()
+const { t } = useI18n()
 
-// If the user navigates directly to "#video", we need to follow the anchor while the hero-cover
+// If the user navigates directly to "#video" or "#agenda", follow the anchor while the hero-cover
 // layout transitions (otherwise layout settles after the hash scroll and lands too far down).
-const maybeScrollToVideo = async () => {
-  if (route.hash !== '#video') return
+const IN_PAGE_SCROLL_HASHES = new Set(['#video', '#agenda'])
+const maybeScrollToInPageAnchor = async () => {
+  if (!IN_PAGE_SCROLL_HASHES.has(route.hash)) return
+  const anchorId = route.hash.slice(1)
   await nextTick()
   await nextTick()
-  scrollToAnchor('video')
+
+  let attempts = 0
+  const maxAttempts = 40
+  const tryScroll = (): void => {
+    const cleanup = scrollToAnchor(anchorId)
+    if (cleanup) return
+    if (attempts >= maxAttempts) return
+    attempts++
+    requestAnimationFrame(tryScroll)
+  }
+  tryScroll()
 }
 
-onMounted(maybeScrollToVideo)
+onMounted(maybeScrollToInPageAnchor)
 watch(() => route.hash, () => {
-  maybeScrollToVideo()
+  maybeScrollToInPageAnchor()
 })
 
 // Resolve image URLs during SSR for LCP optimization
@@ -203,13 +216,19 @@ const scrolledHeight = computed(() => {
         class="pointer-events-none order-2 md:order-1 w-fit md:self-end"
         :class="schedulePlaceholderClass"
       >
-        <CalendarSchedule
+        <NuxtLink
           v-if="scheduleDate"
-          :date="scheduleDate"
-          :size="scheduleSize"
-          class="inline-flex w-fit"
-          show-claim
-        />
+          :to="{ path: route.path, hash: '#agenda' }"
+          class="inline-flex w-fit pointer-events-auto rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          :aria-label="t('agenda.goToPageSection')"
+        >
+          <CalendarSchedule
+            :date="scheduleDate"
+            :size="scheduleSize"
+            class="inline-flex w-fit"
+            show-claim
+          />
+        </NuxtLink>
       </div>
     </div>
   </section>

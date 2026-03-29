@@ -3,6 +3,9 @@ import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
 import { heroScrollRuntime } from './runtime'
 
+/** Hash navigations that scroll deep into the page — must not trigger the "first scroll" fallback to #main-content-anchor */
+const IN_PAGE_ANCHOR_HASHES = new Set(['#agenda', '#video'])
+
 export interface UseHeroScrollStateReturn {
   enableScrollDetection: ReturnType<typeof useState<boolean>>
   hasHandledFirstScroll: ReturnType<typeof useState<boolean>>
@@ -84,6 +87,11 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
 
         // Fallback: also watch for cases where wheel/touch events don't fire (first scroll)
         if (!hasHandledFirstScroll.value && oldScrollY === 0 && newScrollY > 0) {
+          if (import.meta.client && IN_PAGE_ANCHOR_HASHES.has(window.location.hash)) {
+            hasHandledFirstScroll.value = true
+            return
+          }
+
           hasHandledFirstScroll.value = true
 
           nextTick(() => {

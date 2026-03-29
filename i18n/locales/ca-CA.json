@@ -34,6 +34,7 @@
     "emptyFiltered": "No hi ha esdeveniments amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
     "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
     "live": "En directe!",
+    "goToPageSection": "Anar a l'agenda d'aquesta pàgina",
     "reservationEntry": "Reserva la teva entrada",
     "reservationPlace": "Reserva la teva plaça",
     "filters": {

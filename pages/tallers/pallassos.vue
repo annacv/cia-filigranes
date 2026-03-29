@@ -91,6 +91,7 @@ const summaryButton = computed(() => {
         />
       </template>
       <template v-if="hasScheduledContent" #wrapped>
+        <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
         <ClaimTitle
           :claim-title="t('workshops.liveClaimTitle', { title: t('workshops.commonTitle', { title: t('routes.pallassos') }) })"
           is-section-title
@@ -110,6 +111,7 @@ const summaryButton = computed(() => {
           is-dedicated-list
           show-view-all-link
         />
+        </div>
       </template>
       <template #unwrapped>
         <div class="flex flex-col mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">

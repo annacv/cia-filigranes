@@ -34,6 +34,7 @@
     "emptyFiltered": "No events match these filters. Try removing one or more filters to see events.",
     "error": "Unable to load events. Please try again later.",
     "live": "Live!",
+    "goToPageSection": "Go to the agenda on this page",
     "reservationEntry": "Reserve your ticket",
     "reservationPlace": "Reserve your spot",
     "filters": {

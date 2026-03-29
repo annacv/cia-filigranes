@@ -34,6 +34,7 @@
     "emptyFiltered": "No hay eventos con estos filtros. Prueba a desactivar alguno para ver eventos.",
     "error": "No se han podido cargar los eventos. Por favor, inténtalo de nuevo más tarde.",
     "live": "¡En directo!",
+    "goToPageSection": "Ir a la agenda de esta página",
     "reservationEntry": "Reserva tu entrada",
     "reservationPlace": "Reserva tu plaza",
     "filters": {
