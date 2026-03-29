@@ -31,7 +31,7 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 's
   <article class="relative flex h-full w-full overflow-hidden">
     <div
       v-if="event.image"
-      class="relative w-1/2 md:w-[30%] shrink-0"
+      class="relative w-[40%] md:w-[30%] shrink-0"
     >
       <CardImage
         :image="event.image"
