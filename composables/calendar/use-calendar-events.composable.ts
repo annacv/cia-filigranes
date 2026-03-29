@@ -5,7 +5,7 @@ import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
 export { getMatchedContentKeyByTitle } from '~/utils/calendar-events'
 
 const CALENDAR_EVENTS_ENDPOINT = '/api/calendar/events'
-const DEFAULT_MAX_RESULTS = 20
+const DEFAULT_MAX_RESULTS = 80
 const SESSION_CACHE_KEY = 'filigranes-calendar-events'
 
 let inFlightEventsRequest: Promise<void> | null = null
