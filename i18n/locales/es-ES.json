@@ -1183,6 +1183,24 @@
             "duration": "Persistente"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Guarda tu elección de consentimiento (aceptadas, rechazadas o personalizadas)",
+            "responsible": "First-party (nosotros)",
+            "duration": "1 año"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Guarda tus preferencias por finalidad (YouTube y Google Maps)",
+            "responsible": "First-party (nosotros)",
+            "duration": "1 año"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Caché temporal de agenda para acelerar la carga de eventos durante la misma sesión del navegador",
+            "responsible": "First-party (nosotros)",
+            "duration": "Sesión"
+          },
+          {
             "name": "YouTube",
             "purpose": "Preferencias de reproducción de vídeos",
             "responsible": "Google/YouTube",
@@ -1321,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Esenciales (necesarias para el funcionamiento del sitio):",
-          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas."
+          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas. Cookies de consentimiento (first-party): guardan la elección aceptada, rechazada o personalizada y las preferencias por finalidad."
         },
         {
           "key": "funcionals",
           "title": "Funcionales",
-          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Google Maps (third-party, Google): utilizadas para mostrar el mapa de la ubicación de la sede de la Cia.Filigranes. Por defecto, la configuración del web mantiene las cookies de YouTube y Google Maps desactivadas hasta que la usuaria las acepta."
+          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos y se acepta esta finalidad. Incluye cookies para preferencias de reproducción. Google Maps (third-party, Google): utilizadas únicamente si se activa la carga del mapa y se acepta esta finalidad. Por defecto, ambas finalidades permanecen desactivadas hasta que la usuaria las acepta."
         },
         {
           "key": "deshabilitades",
           "title": "Deshabilitadas por defecto / No utilizadas:",
-          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
         },
         {
           "key": "servei-extern",
