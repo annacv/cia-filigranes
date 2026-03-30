@@ -78,7 +78,8 @@ const slicedEvents = computed(() => {
           content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{
-            href: '/espectacles/vint-anys'
+            href: '/espectacles/vint-anys#video',
+            textKey: 'button.teaser'
           }"
           :download-button="{
             download: `CiaFiligranes-vint-anys-${locale}.pdf`,
