@@ -88,14 +88,6 @@ const { openModal, resetConsent } = useCookies()
           >
             {{ t('footer.legal.manageCookies') }}
           </button>
-          <b class="px-2">·</b>
-          <button
-            type="button"
-            class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
-            @click="resetConsent"
-          >
-            {{ t('footer.legal.withdrawConsent') }}
-          </button>
         </p>
       </div>
     </div>
