@@ -49,7 +49,7 @@ const synopsisItems = computed(() => {
       <template #content>
         <SectionCoverTitle
           :title="t('collaborations.hero.title')"
-          title-class="max-w-[310px] md:max-w-[448px] lg:max-w-[542px]"
+          title-class="max-w-[310px] md:max-w-[490px] lg:max-w-[598px]"
         />
       </template>
     </HeroCover>

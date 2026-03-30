@@ -152,7 +152,7 @@ watchEffect(() => {
             <p
               v-if="description"
               class="text-lg lg:text-xl"
-              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-6'">
+              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5 xl:line-clamp-6'">
               <span
                 v-for="item in showFullContent ? description : description.slice(0, 1)"
                 :key="item.paragraph as string"
