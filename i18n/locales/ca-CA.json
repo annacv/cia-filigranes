@@ -71,7 +71,8 @@
     "filipersones": "Filipersones",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contacte"
+    "contacte": "Contacte",
+    "collaboracions": "Col·laboracions"
   },
   "button": {
     "dossier": "Dossier",
@@ -876,7 +877,7 @@
     "claimTitle": "Una infinitat de personatges a punt per entrar en acció!",
     "claim": "Ideals per amenitzar convencions, trobades, aniversaris i tot tipus d'esdeveniments",
     "title": "Animacions a la carta",
-    "hero": { 
+    "hero": {
       "title": "Animacions a la carta: l'espectacle sense límits!",
       "alt": "Imatge de l'animació de foc"
     },
@@ -1241,9 +1242,9 @@
       "rejectAll": "Rebutjar totes"
     }
   },
-    "avis-legal": {
-      "title": "Avís legal",
-      "metaDescription": "Avís legal de Cia Filigranes. Informació sobre la titularitat del lloc web, condicions d'ús, propietat intel·lectual i política de cookies.",
+  "avis-legal": {
+    "title": "Avís legal",
+    "metaDescription": "Avís legal de Cia Filigranes. Informació sobre la titularitat del lloc web, condicions d'ús, propietat intel·lectual i política de cookies.",
     "sections": [
       {
         "key": "titular",
@@ -1324,6 +1325,71 @@
           "key": "gestio",
           "title": "Gestió de cookies:",
           "description": "La persona usuària pot configurar el seu navegador per rebutjar o suprimir cookies. Tanmateix, si es desactiven les cookies essencials, el lloc pot no funcionar correctament. Pots consultar les opcions d'ajuda del teu navegador per obtenir més informació sobre com gestionar-les."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Descobreix els espectacles de la Companyia Filigranes en col·laboració amb altres companyies de pallassos.",
+    "hero": {
+      "title": "Coproduccions i espectacles amb altres companyies",
+      "alt": "Imatge de col·laboracions de la Cia.Filigranes"
+    },
+    "claimTitle": "A punt per descobrir amb qui compartim escenari?",
+    "claim": "Vine a conèixer els espectacles on la Companyia Filigranes actua amb altres artistes i companyies!",
+    "hire": {
+      "title": "Vols contractar algun d'aquests espectacles?",
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER és una troupe de pallassos i pallasses que deambula pels carrers amb el seu peculiar vehicle: una burra de penjar roba carregada de somnis i despropòsits. Juguen amb l'espai, les emocions i el públic, teixint moments d'humor, tendresa i sorpresa. Són amables però una mica gamberros, i necessiten ser acollits. Busquen alguna cosa que els falta… i potser la trobaran entre la gent que els observa."
+        },
+        {
+          "paragraph": "Els pallassos transformen el carrer."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "En un món de relativa foscor, la qual cosa no vol dir ni trist ni tètric, sinó tot el contrari, uns divertits personatges han fet una troballa d'allò més interessant, han descobert la llum. Si aquest món sense llum ja era distret, doncs ara amb aquest descobriment és trepidant."
+        },
+        {
+          "paragraph": "No ens podríem ni imaginar el profit que aquests dinàmics personatges li poden treure a la seva nova joguina. Ens introduïm en el seu món, on hi predomina el passar-s'ho bé; un món poètic, visual i imaginatiu, on tot és possible, fins i tot convertir la llum en foc."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP és un espectacle de tres pallassos que adopten els rols clàssics dins les tipologies socials actuals: el retrobament, la cooperació, la desconfiança i l'amistat. Els pallassos, els éssers més absurds i entranyables de l'univers, inútils i imprescindibles, es troben en un espai desconegut."
+        },
+        {
+          "paragraph": "Aviat descobriran que són totalment diferents, però hi ha una circumstància que els uneix: el fracàs! Perdre-ho tot i haver de començar de zero. Només una poma."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Els nostres entranyables pallassos en Makutu i en Til tornen a la càrrega per tal de demostrar-nos que en el món del circ res és impossible. De la mà dels nostres amics comprovarem que la pista d'un circ és un lloc on tot pot passar: malabarismes increïbles, trucs de màgia incomprensibles, equilibrismes on et pots jugar la integritat física i, com no, un lloc on qualsevol nen en qualsevol moment pot ser una estrella."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "Una brass band itinerant (vents i percussió) amb música en directe dirigida amb senyals, pallassos amb xanques i monocicle, malabars i jocs amb el públic. Una cercavila flexible en temps i número d'artistes que acompanya i activa els fluxos entre escenaris o que funciona com a cercavila autònoma, accessible, i per a totes les edats."
+        },
+        {
+          "paragraph": "Amb atrezzos mariners i jocs participatius, VENDAVAL proposa un viatge festiu, poètic i compartit."
         }
       ]
     }
