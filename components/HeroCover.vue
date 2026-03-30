@@ -128,7 +128,7 @@ useHead({
 const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms`);
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
 const scheduleSize = computed(() => isMobile.value ? 'small' : 'large')
-const isHomepage = computed(() => route.path === '/' || route.path === '/ca' || route.path === '/es' || route.path === '/en')
+const isHomepage = computed(() => String(route.name ?? '').split('___')[0] === 'index')
 const reserveScheduleSpace = computed(() => {
   return Boolean(props.scheduleContentKey) && isSchedulableContentType(props.contentType)
 })
