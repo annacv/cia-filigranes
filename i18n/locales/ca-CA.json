@@ -119,7 +119,9 @@
     },
     "legal": {
       "advice": "Avís legal",
-      "cookies": "Política de cookies"
+      "cookies": "Política de cookies",
+      "manageCookies": "Gestionar cookies",
+      "withdrawConsent": "Retirar consentiment"
     },
     "supporters": {
       "title": "Amb el suport de:",
@@ -1110,11 +1112,11 @@
   "consent": {
     "map": {
       "title": "Mapa de la ubicació de la Cia. Filigranes",
-      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+      "consentRequired": "Per poder veure el mapa, cal acceptar les cookies de Google Maps."
     },
     "youtube": {
       "title": "Video de l'espectacle",
-      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+      "consentRequired": "Per poder reproduir el vídeo, cal acceptar les cookies de YouTube."
     },
     "manageCookies": "Gestionar cookies",
     "acceptCookies": "Acceptar cookies"
@@ -1181,6 +1183,24 @@
             "duration": "Persistent"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Desa la teva elecció de consentiment (acceptades, rebutjades o personalitzades)",
+            "responsible": "First-party (nosaltres)",
+            "duration": "1 any"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Desa les teves preferències per finalitat (YouTube i Google Maps)",
+            "responsible": "First-party (nosaltres)",
+            "duration": "1 any"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Memòria cau temporal d'agenda per accelerar la càrrega d'esdeveniments durant la mateixa sessió del navegador",
+            "responsible": "First-party (nosaltres)",
+            "duration": "Sessió"
+          },
+          {
             "name": "YouTube",
             "purpose": "Preferències de reproducció de vídeos",
             "responsible": "Google/YouTube",
@@ -1227,7 +1247,7 @@
       "description": "En accedir a certs serveis externs com Google Maps, que utilitzen iframes, poden establir-se cookies pròpies d'aquests tercers no controlades directament per nosaltres."
     },
     "banner": {
-      "description": "Només utilitzem cookies per desar les teves preferències d'idioma i millorar la teva experiència de navegació.",
+      "description": "Utilitzem cookies essencials per a desar les teves preferències d'idioma i el teu consentiment, i cookies opcionals per mostrar vídeos de YouTube i la ubicació de la nostra seu a Google Maps.",
       "accept": "Acceptar totes",
       "reject": "Rebutjar",
       "customize": "Personalitzar",
@@ -1238,17 +1258,23 @@
       "description": "Pots activar o desactivar les diferents categories de cookies segons les teves preferències.",
       "essential": {
         "title": "Cookies essencials",
-        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen la preferència d'idioma que recorda la teva selecció.",
+        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen idioma i preferències de consentiment que recorden la teva selecció.",
         "required": "Obligatòries"
       },
-      "functional": {
-        "title": "Cookies funcionals",
-        "description": "Permeten veure el mapa de la ubicació de la seu de la Cia.Filigranes (Google Maps), reproduir els vídeos dels espectacles i milloren la funcionalitat del lloc web. Sense elles, veuràs un missatge en lloc del mapa i dels vídeos.",
+      "youtube": {
+        "title": "Cookies de YouTube",
+        "description": "Permeten reproduir vídeos embeguts de YouTube. Si es desactiven, veuràs un avís en lloc del reproductor.",
+        "optional": "Opcionals"
+      },
+      "maps": {
+        "title": "Cookies de Google Maps",
+        "description": "Permeten carregar el mapa embegut de Google Maps. Si es desactiven, veuràs un avís en lloc del mapa.",
         "optional": "Opcionals"
       },
       "save": "Desar preferències",
       "acceptAll": "Acceptar totes",
-      "rejectAll": "Rebutjar totes"
+      "rejectAll": "Rebutjar totes",
+      "withdraw": "Retirar el consentiment i tornar a triar"
     }
   },
   "avis-legal": {
@@ -1313,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Essencials (necessàries per al funcionament del lloc):",
-          "description": "Cookie de preferència d'idioma (first-party): emmagatzema l'idioma seleccionat (català, castellà, anglès) per mantenir-lo en futures visites."
+          "description": "Cookie de preferència d'idioma (first-party): emmagatzema l'idioma seleccionat (català, castellà, anglès) per mantenir-lo en futures visites. Cookies de consentiment (first-party): desen l'elecció acceptada, rebutjada o personalitzada i les preferències per finalitat."
         },
         {
           "key": "funcionals",
           "title": "Funcionals",
-          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos. Inclou cookies per a preferències de reproducció. Google Maps (third-party, Google): utilitzades per mostrar el mapa de la ubicació de la seu de la Cia.Filigranes. Per defecte, la configuració del web manté les cookies de YouTube i Google Maps desactivades fins que l'usuària les accepta."
+          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos i s'accepta aquesta finalitat. Inclou cookies per a preferències de reproducció. Google Maps (third-party, Google): utilitzades únicament si s'activa la càrrega del mapa i s'accepta aquesta finalitat. Per defecte, ambdues finalitats romanen desactivades fins que l'usuària les accepta."
         },
         {
           "key": "deshabilitades",
           "title": "Deshabilitades per defecte / No utilitzades:",
-          "description": "No es recullen dades mitjançant Google Analytics ni eines similars. No hi ha píxels de seguiment ni cookies publicitàries. No s'utilitza localStorage ni sessionStorage amb finalitats de seguiment. Les tipografies (IBM Plex Sans i Archivo Black) estan auto-hospedades al nostre servidor per evitar cookies de tercers de Google Fonts."
+          "description": "No es recullen dades mitjançant Google Analytics ni eines similars. No hi ha píxels de seguiment ni cookies publicitàries. No s'utilitza localStorage ni sessionStorage amb finalitats de seguiment. Només utilitzem sessionStorage amb finalitats tècniques, com la memòria cau temporal d'agenda, sense perfilat d'usuàries. Les tipografies (IBM Plex Sans i Archivo Black) estan auto-hospedades al nostre servidor per evitar cookies de tercers de Google Fonts."
         },
         {
           "key": "servei-extern",

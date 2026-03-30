@@ -5,12 +5,21 @@ import { useCookies } from "~/composables/use-cookies.composable";
 interface Props {
   title: string;
   description: string;
+  purpose?: 'youtube' | 'maps';
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 
 const { t } = useI18n();
-const { acceptAll, openModal } = useCookies();
+const { acceptByPurpose, acceptAll, openModal } = useCookies();
+
+const handleAccept = () => {
+  if (props.purpose) {
+    acceptByPurpose(props.purpose);
+    return;
+  }
+  acceptAll();
+};
 </script>
 
 <template>
@@ -30,7 +39,7 @@ const { acceptAll, openModal } = useCookies();
       <FiliButton
         :text="t('consent.acceptCookies')"
         button-class="px-3 py-1.5 text-sm button-solid-primary bg-transparent"
-        :on-click="acceptAll"
+        :on-click="handleAccept"
       />
     </div>
   </div>
