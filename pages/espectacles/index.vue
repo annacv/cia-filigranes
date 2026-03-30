@@ -29,7 +29,8 @@ const synopsisItems = computed(() => {
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
-          href: `/espectacles/${show}`
+          href: `/espectacles/${show}#video`,
+          textKey: 'button.teaser'
         },
         downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,
@@ -48,6 +49,7 @@ const synopsisItems = computed(() => {
       image-route="espectacles"
       :alt="t('shows.hero.alt')"
       background-position="center 40%"
+      is-section-cover
     >
       <template #content>
         <SectionCoverTitle

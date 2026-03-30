@@ -5,10 +5,15 @@
 @layer base {
   :root {
     --color-primary-300: #f6b1bd;
+    --color-primary-400: #ec3636;
     --color-primary-500: #c80d0d;
     --color-primary-700: #bc1b36;
+    --color-secondary-300: #a88db7;
+    --color-secondary-400: #795090;
     --color-secondary-500: #5c2978;
     --color-secondary-700: #491a63;
+    --color-tertiary-300: #f29b8d;
+    --color-tertiary-400: #E9573D;
     --color-tertiary-500: #e32906;
     --color-tertiary-700: #cb2303;
     --color-quaternary-300: #fdf48f;
@@ -97,12 +102,58 @@
     @apply flex-none;
   }
 
-  /* Base Neutral Button */
+  /* Calendar Pagination Buttons */
+  .button-calendar-active {
+    @apply text-sm lg:text-sm !font-medium text-neutral-900 border-none !py-0 !px-0 !w-6 !h-6 !min-w-6 !min-h-6 text-center justify-center;
+  }
+  .button-calendar-active:hover {
+    @apply bg-neutral-200 !w-6 !h-6 !min-w-6 !min-h-6;
+  }
+  .button-calendar-disabled {
+    @apply text-sm lg:text-sm text-white !font-medium bg-neutral-900 !py-0 !px-0 pointer-events-none !w-6 !h-6 !min-w-6 !min-h-6 text-center justify-center;
+  }
+  .button-calendar-go {
+    @apply text-sm lg:text-sm !font-medium !border-none !px-0;
+  }
+  .button-calendar-go:hover {
+    @apply bg-transparent text-neutral-400;
+  }
+  .button-calendar-go:disabled {
+    @apply pointer-events-none text-neutral-400;
+  }
+  
+  
+
+  /* Neutral Slim Button Link */
+  .button-link-neutral {
+    @apply text-sm lg:text-base text-neutral-900 border-neutral-400 !rounded-none !border-t-0 !border-x-0 !p-1;
+  }
+  .button-link-neutral:hover {
+    @apply !border-neutral-900;
+  }
+
+  /* Primary Slim Button Link */
+  .button-link-primary {
+    @apply text-sm lg:text-base text-primary-500 border-primary-300 !rounded-none !border-t-0 !border-x-0 !p-1;
+  }
+  .button-link-neutral:hover {
+    @apply border-primary-500;
+  }
+
+  /* Neutral Outline Button */
   .button-outline-neutral {
     @apply border border-black text-black;
   }
   .button-outline-neutral:hover {
     @apply bg-black text-white;
+  }
+
+  /* Neutral Solid Uppercased Button */
+  .button-solid-neutral {
+    @apply border-transparent bg-white text-neutral-900 uppercase !font-normal !py-1;
+  }
+  .button-solid-neutral:hover {
+    @apply text-white bg-black;
   }
 
    /* Primary Solid Button */

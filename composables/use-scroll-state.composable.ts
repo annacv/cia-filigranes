@@ -1,4 +1,4 @@
-import { computed, readonly, ref, watch, type Ref } from 'vue'
+import { computed, readonly, ref, type Ref } from 'vue'
 import { useWindowScroll, useWindowSize } from '@vueuse/core'
 import { useState } from '#app'
 import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
@@ -39,9 +39,13 @@ export function useScrollState(): {
   let enableDetectionFrameId: number | null = null
 
   tryOnMounted(() => {
+    const hasHashAnchor = !!(window.location.hash && window.location.hash !== '#')
+
     // Check actual scroll position at mount before any delays
     // This prevents using stale windowScrollY values from previous route
-    initialScrollY.value = window.scrollY
+    // When arriving via hash anchor we want to avoid triggering "scrolled" cover
+    // states during the short protection delay.
+    initialScrollY.value = hasHashAnchor ? 0 : window.scrollY
 
     documentScrollHeight.value = document.documentElement.scrollHeight
 
@@ -70,7 +74,12 @@ export function useScrollState(): {
       
       // Detect if browser restored scroll position (scroll changed unexpectedly)
       // If scroll was restored, reset it and keep initialScrollY at 0
-      if (currentScrollY !== lastScrollY && currentScrollY > 0 && lastScrollY === 0) {
+      if (
+        !hasHashAnchor &&
+        currentScrollY !== lastScrollY &&
+        currentScrollY > 0 &&
+        lastScrollY === 0
+      ) {
         window.scrollTo(0, 0)
         lastScrollY = 0
       } else {
@@ -81,7 +90,7 @@ export function useScrollState(): {
         enableDetectionFrameId = requestAnimationFrame(enableDetection)
       } else {
         // Final check: if scroll is still not 0, reset it one more time
-        if (window.scrollY > 0) {
+        if (!hasHashAnchor && window.scrollY > 0) {
           window.scrollTo(0, 0)
         }
         enableScrollDetection.value = true

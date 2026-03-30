@@ -3,6 +3,8 @@ import { PERFORMANCES_IMG } from "~/constants";
 import { useI18n } from "vue-i18n";
 import { reorderItems } from "~/utils/reorder-items";
 import { useLinkByRoute } from "~/composables/use-link-by-route.composable";
+import { useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
+import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 
 const props = defineProps({
   reorderIndex: {
@@ -13,6 +15,7 @@ const props = defineProps({
 })
 
 const { t } = useI18n()
+const { scheduleDate } = useContentSchedule('performances')
 
 const performancesItems = computed(() => {
   if (props.reorderIndex !== undefined) return reorderItems(PERFORMANCES_IMG, props.reorderIndex);
@@ -29,8 +32,15 @@ const performancesItems = computed(() => {
   >
     <template #content>
       <div class="relative">
+        <CalendarSchedule
+          v-if="scheduleDate"
+          :date="scheduleDate"
+          size="small"
+          class="pointer-events-none absolute right-0 top-5 md:right-2 md:top-2 z-20 -skew-y-3"
+          show-claim
+        />
         <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-end gap-4 z-10 pointer-events-none">
-          <h3 class="text-2xl xl:text-3xl text-left font-grotesk font-bold uppercase text-white wrap-break-word hyphens-auto leading-7 max-w-[75%] 2xl:max-w-[73%]">
+          <h3 class="-skew-y-3 text-2xl xl:text-3xl text-left font-grotesk font-bold uppercase text-white wrap-break-word hyphens-auto leading-7 max-w-[75%] 2xl:max-w-[73%]">
             {{ t('performances.title') }}
           </h3>
         </div>

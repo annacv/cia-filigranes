@@ -1,9 +1,23 @@
 <script setup lang="ts">
+import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
+import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
+import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
+const {
+  events,
+  pending,
+  error,
+  hasScheduledContent,
+  selectedWorkshopFilter,
+  showOnlyOpenToPublic,
+  workshopFilterOptions,
+  filteredEvents,
+  hasActiveFilters,
+} = useWorkshopAgenda('maquillatge')
 const getImageAlt = (title?: string) => useImageAlt('workshops', title);
 const { isMobile } = useResponsive()
 
@@ -34,6 +48,7 @@ const summaryButton = computed(() => {
       image-route="tallers"
       :alt="getImageAlt('maquillatge')"
       content-type="workshops"
+      schedule-content-key="maquillatge"
       background-position="center 40%"
     >
       <template #content>
@@ -45,7 +60,7 @@ const summaryButton = computed(() => {
         />
         <div v-else class="py-5 xs:px-0 sm:px-5 font-grotesk uppercase text-white max-w-[332px] md:max-w-[432px] lg:max-w-[532px]">
           <h1 class="text-5xl">
-            {{ t('workshops.commonTitle') }}
+            {{ t('workshops.commonTitle', { title: '' }).trim() }}
           </h1>
           <h2 class="text-4xl">
             {{ t('routes.maquillatge') }}
@@ -54,14 +69,14 @@ const summaryButton = computed(() => {
       </template>
     </HeroCover>
     <MainContent>
-      <template #wrapped>
+      <template #wrappedTop>
         <Summary
           :abstract="abstract"
           :items="summaryItems"
           :button="summaryButton"
         />
       </template>
-      <template #unwrapped>
+      <template #unwrappedTop>
         <Synopsis
           :description="synopsis"
           :image="getImageByRoute('tallers', 'maquillatge-4')"
@@ -86,10 +101,37 @@ const summaryButton = computed(() => {
           text-color="text-white"
           bg-color="bg-secondary-500"
         />
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightWorkshops is-current-content :reorder-index="getItemIndex('tallers', 'maquillatge')" />
-          <HighlightShows :reorder-index="2" />
-          <HighlightPerformances :reorder-index="2" />
+      </template>
+      <template v-if="hasScheduledContent" #wrapped>
+        <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
+        <ClaimTitle
+          :claim-title="t('workshops.liveClaimTitle', { title: t('workshops.commonTitle', { title: t('routes.maquillatge') }) })"
+          is-section-title
+        />
+        <AgendaFilters
+          v-model:selected-primary-filter="selectedWorkshopFilter"
+          v-model:show-only-open-to-public="showOnlyOpenToPublic"
+          :primary-filter-options="workshopFilterOptions"
+        />
+        <CalendarEventList
+          :events="filteredEvents"
+          :pending="pending"
+          :error="error"
+          :total-events="events.length"
+          selected-event-type="workshops"
+          :has-active-filters="hasActiveFilters"
+          is-dedicated-list
+          show-view-all-link
+        />
+        </div>
+      </template>
+      <template #unwrapped>
+        <div class="flex flex-col mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
+          <HighlightWorkshops
+            :claim-title="t('workshops.otherWorkshopsClaimTitle')"
+            is-current-content
+            :reorder-index="getItemIndex('tallers', 'maquillatge')"
+          />
         </div>
       </template>
     </MainContent>

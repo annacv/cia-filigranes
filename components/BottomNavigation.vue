@@ -13,25 +13,11 @@ const { isRouteActiveExact } = useRouteActive();
   >
     <div class="grid-layout bg-neutral-900 text-white">
       <div class="layout-cols py-8 xl:py-14">
-        <div class="grid grid-cols-3 md:grid-cols-6 gap-5 md:gap-6 xl:gap-8">
-          <div class="flex flex-col gap-3">
-            <NuxtLinkLocale
-              :to="'/'"
-              class="w-max text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
-              :class="{
-                'border-opacity-100': isRouteActiveExact('/'),
-                'border-opacity-0 hover:border-opacity-50 hover:opacity-80': !isRouteActiveExact('/')
-              }"
-              :aria-current="isRouteActiveExact('/') ? 'page' : undefined"
-            >
-              {{ getLocale('home', 'routes') }}
-            </NuxtLinkLocale>
-          </div>
-
+        <div class="grid grid-cols-4 lg:grid-cols-7 gap-5 md:gap-6 xl:gap-8">
           <div
             v-for="(routeItem, index) in ROUTES_INDEX"
             :key="index"
-            class="flex flex-col gap-1 md:gap-3"
+            class="flex flex-col gap-1"
           >
             <NuxtLinkLocale
               :to="routeItem.name"

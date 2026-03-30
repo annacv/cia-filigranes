@@ -1,6 +1,7 @@
 import { watch, nextTick } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
+import { IN_PAGE_ANCHOR_HASHES } from '~/constants'
 import { heroScrollRuntime } from './runtime'
 
 export interface UseHeroScrollStateReturn {
@@ -84,6 +85,11 @@ export function useHeroScrollState(): UseHeroScrollStateReturn {
 
         // Fallback: also watch for cases where wheel/touch events don't fire (first scroll)
         if (!hasHandledFirstScroll.value && oldScrollY === 0 && newScrollY > 0) {
+          if (import.meta.client && IN_PAGE_ANCHOR_HASHES.has(window.location.hash)) {
+            hasHandledFirstScroll.value = true
+            return
+          }
+
           hasHandledFirstScroll.value = true
 
           nextTick(() => {

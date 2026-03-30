@@ -1,7 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { routePages, localeObjects } from "./i18n/index";
 
+const DEFAULT_LOCALE = "ca";
+const localizedHomeRoutes = localeObjects
+  .filter((locale): locale is typeof locale & { code: string } => {
+    return typeof locale.code === "string" && locale.code !== DEFAULT_LOCALE;
+  })
+  .map(locale => `/${locale.code}`);
+
 export default defineNuxtConfig({
+  runtimeConfig: {
+    googleCalendarApiKey: '',
+    googleCalendarId: '',
+    public: {
+      googleCalendarApiKey: '',
+      googleCalendarId: '',
+    },
+  },
   app: {
     pageTransition: { name: "fade", mode: "out-in" },
     rootId: "cia-filigranes",
@@ -48,5 +63,11 @@ export default defineNuxtConfig({
     preset: 'static',
     compressPublicAssets: true,
     minify: true,
+    prerender: {
+      routes: [
+        '/',
+        ...localizedHomeRoutes,
+      ],
+    },
   },
 });

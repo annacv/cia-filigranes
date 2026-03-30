@@ -11,11 +11,58 @@
     "hire": {
       "title": "¿Quieres contratar alguno de nuestros servicios?",
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "aboutUs": {
+      "title": "Quiénes somos",
+      "buttonText": "Conoce más sobre la Compañía",
+      "description": [
+        {
+          "paragraph": "La Compañía Filigranes la integran Jordi Torrens (Trinxeta) y Albert Pérez (Makutu). Somos una compañía de clown y circo con más de 20 años de oficio, especializada en hacer reír a pequeños y grandes en fiestas, festivales y escuelas."
+        }
+      ]
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
+  "agenda": {
+    "claimTitle": "Próximas funciones y talleres",
+    "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
+    "description": "Aquí encontrarás las próximas actuaciones y talleres de la Compañía Filigranes.",
+    "viewAllEvents": "Ver toda la agenda",
+    "trends": {
+      "ariaLabel": "Eventos más programados",
+      "claimTitle": "Filitendencias",
+      "subtitle": "Un poco de salseo de lo que más lo está petando!"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "navigationLabel": "Paginación de la agenda"
+    },
+    "loading": "Cargando eventos...",
+    "empty": "No hay eventos próximos programados.",
+    "emptyFiltered": "No hay eventos con estos filtros. Prueba a desactivar alguno para ver eventos.",
+    "error": "No se han podido cargar los eventos. Por favor, inténtalo de nuevo más tarde.",
+    "live": "¡En directo!",
+    "goToPageSection": "Ir a la agenda de esta página",
+    "reservationEntry": "Reserva tu entrada",
+    "reservationPlace": "Reserva tu plaza",
+    "filters": {
+      "ariaLabel": "Filtrar eventos por tipo",
+      "shows": "Espectáculos",
+      "workshops": "Talleres",
+      "performances": "Animaciones",
+      "all": "Todos los eventos",
+      "allShows": "Todos los espectáculos",
+      "allWorkshops": "Todos los talleres",
+      "dropdownAriaLabel": "Abrir el menú de filtros de eventos",
+      "dropdownMenuAriaLabel": "Opciones de filtro de eventos",
+      "onlyOpenToPublic": "Solo abiertos al público",
+      "onlyOpenToPublicAriaLabel": "Activa para mostrar solo los eventos abiertos al público"
+    }
+  },
   "routes": {
     "home": "Inicio",
+    "agenda": "Agenda",
     "espectacles": "Espectáculos",
     "circ-filixic": "El Circo Filixic",
     "freak-frac": "Hermanos Freak Frac",
@@ -33,11 +80,13 @@
     "filipersones": "Filipersonas",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contacto"
+    "contacte": "Contacto",
+    "collaboracions": "Colaboraciones"
   },
   "button": {
     "dossier": "Dosier",
     "info": "Más info",
+    "teaser": "Ver teaser",
     "fullShow": "Ver todo el espectáculo",
     "playVideo": "Haz clic para ver el video",
     "viewMore": "Ver más",
@@ -70,7 +119,9 @@
     },
     "legal": {
       "advice": "Aviso legal",
-      "cookies": "Política de cookies"
+      "cookies": "Política de cookies",
+      "manageCookies": "Gestionar cookies",
+      "withdrawConsent": "Retirar consentimiento"
     },
     "supporters": {
       "title": "Con el apoyo de:",
@@ -84,6 +135,9 @@
   "shows": {
     "metaDescription": "Descubre los espectáculos trepidantes de payasos y circo de la Compañía Filigranes.",
     "commonAlt": "Imagen del espectáculo {title}",
+    "homeClaim": "Descubre nuestros espectáculos, talleres y animaciones hechas a medida",
+    "liveClaimTitle": "¡{title} en directo!",
+    "otherShowsClaimTitle": "Otros espectáculos de la Cia.Filigranes",
     "claimTitle": "¿A punto para vivir emociones y dejarte sorprender?",
     "claim": "¡Ven a disfrutar del ritmo trepidante de los espectáculos de la Compañía Filigranes!",
     "hero": {
@@ -572,6 +626,8 @@
     "metaDescription": "Talleres para todas las edades: de circo, de payasos, de maquillaje, de ingenios de agua, de burbujas de jabón...",
     "commonAlt": "Imagen del taller {title}",
     "commonTitle": "Taller de {title}",
+    "liveClaimTitle": "Próximas fechas para el {title}",
+    "otherWorkshopsClaimTitle": "Otros talleres de la Cia.Filigranes",
     "claimTitle": "Cursos, monográficos, o talleres de temporada...",
     "claim": "¡Talleres para personas pequeñas y adultas que quieren aprender y divertirse!",
     "hero": {
@@ -832,7 +888,7 @@
     "claimTitle": "Una infinidad de personajes a punto de entrar en acción!",
     "claim": "Ideales para amenizar convenciones, encuentros, cumpleaños y todo tipo de eventos",
     "title": "Animaciones a la carta",
-    "hero": { 
+    "hero": {
       "title": "Animaciones a la carta: ¡el espectáculo sin límites!",
       "alt": "Imagen de la animación de fuego"
     },
@@ -1051,16 +1107,16 @@
     "rrss": {
       "title": "Y si quieres chafardear un poco, o ver dónde actuamos próximamente...",
       "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también ver grandes momentos de nuestros espectáculos."
-    } 
+    }
   },
   "consent": {
     "map": {
       "title": "Mapa de la ubicación de la Cia. Filigranes",
-      "consentRequired": "Para poder ver el mapa se requiere aceptar las cookies funcionales"
+      "consentRequired": "Para poder ver el mapa, es necesario aceptar las cookies de Google Maps."
     },
     "youtube": {
       "title": "Video del espectáculo",
-      "consentRequired": "Para poder reproducir el vídeo se requiere aceptar las cookies funcionales"
+      "consentRequired": "Para poder reproducir el vídeo, es necesario aceptar las cookies de YouTube."
     },
     "manageCookies": "Gestionar cookies",
     "acceptCookies": "Aceptar cookies"
@@ -1127,6 +1183,24 @@
             "duration": "Persistente"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Guarda tu elección de consentimiento (aceptadas, rechazadas o personalizadas)",
+            "responsible": "First-party (nosotros)",
+            "duration": "1 año"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Guarda tus preferencias por finalidad (YouTube y Google Maps)",
+            "responsible": "First-party (nosotros)",
+            "duration": "1 año"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Caché temporal de agenda para acelerar la carga de eventos durante la misma sesión del navegador",
+            "responsible": "First-party (nosotros)",
+            "duration": "Sesión"
+          },
+          {
             "name": "YouTube",
             "purpose": "Preferencias de reproducción de vídeos",
             "responsible": "Google/YouTube",
@@ -1173,7 +1247,7 @@
       "description": "Al acceder a ciertos servicios externos como Google Maps, que utilizan iframes, pueden establecerse cookies propias de estos terceros no controladas directamente por nosotros."
     },
     "banner": {
-      "description": "Solo utilizamos cookies para almacenar tus preferencias de idioma y mejorar tu experiencia de navegación.",
+      "description": "Usamos cookies esenciales para guardar tus preferencias de idioma y tu consentimiento, y cookies opcionales para mostrar vídeos de YouTube y la ubicación de nuestra sede en Google Maps.",
       "accept": "Aceptar todas",
       "reject": "Rechazar",
       "customize": "Personalizar",
@@ -1184,22 +1258,28 @@
       "description": "Puedes activar o desactivar las diferentes categorías de cookies según tus preferencias.",
       "essential": {
         "title": "Cookies esenciales",
-        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen la preferencia de idioma que recuerda tu selección.",
+        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen preferencias de idioma y de consentimiento que recuerdan tu selección.",
         "required": "Obligatorias"
       },
-      "functional": {
-        "title": "Cookies funcionales",
-        "description": "Permiten ver el mapa de Google Maps, reproducir los vídeos de los espectáculos y mejoran la funcionalidad del sitio web. Sin ellas, verás un mensaje en lugar del mapa y de los vídeos.",
+      "youtube": {
+        "title": "Cookies de YouTube",
+        "description": "Permiten reproducir vídeos incrustados de YouTube. Si se desactivan, verás un aviso en lugar del reproductor.",
+        "optional": "Opcionales"
+      },
+      "maps": {
+        "title": "Cookies de Google Maps",
+        "description": "Permiten cargar el mapa incrustado de Google Maps. Si se desactivan, verás un aviso en lugar del mapa.",
         "optional": "Opcionales"
       },
       "save": "Guardar preferencias",
       "acceptAll": "Aceptar todas",
-      "rejectAll": "Rechazar todas"
+      "rejectAll": "Rechazar todas",
+      "withdraw": "Retirar el consentimiento y volver a elegir"
     }
   },
-    "avis-legal": {
-      "title": "Aviso legal",
-      "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
+  "avis-legal": {
+    "title": "Aviso legal",
+    "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
     "sections": [
       {
         "key": "titular",
@@ -1259,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Esenciales (necesarias para el funcionamiento del sitio):",
-          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas."
+          "description": "Cookie de preferencia de idioma (first-party): almacena el idioma seleccionado (catalán, castellano, inglés) para mantenerlo en futuras visitas. Cookies de consentimiento (first-party): guardan la elección aceptada, rechazada o personalizada y las preferencias por finalidad."
         },
         {
           "key": "funcionals",
           "title": "Funcionales",
-          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos. Incluye cookies para preferencias de reproducción. Google Maps (third-party, Google): utilizadas para mostrar el mapa de la ubicación de la sede de la Cia.Filigranes. Por defecto, la configuración del web mantiene las cookies de YouTube y Google Maps desactivadas hasta que la usuaria las acepta."
+          "description": "YouTube (third-party, Google/YouTube): utilizadas únicamente si se activa la reproducción de vídeos y se acepta esta finalidad. Incluye cookies para preferencias de reproducción. Google Maps (third-party, Google): utilizadas únicamente si se activa la carga del mapa y se acepta esta finalidad. Por defecto, ambas finalidades permanecen desactivadas hasta que la usuaria las acepta."
         },
         {
           "key": "deshabilitades",
           "title": "Deshabilitadas por defecto / No utilizadas:",
-          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
         },
         {
           "key": "servei-extern",
@@ -1280,6 +1360,71 @@
           "key": "gestio",
           "title": "Gestión de cookies:",
           "description": "La persona usuaria puede configurar su navegador para rechazar o suprimir cookies. Sin embargo, si se desactivan las cookies esenciales, el sitio puede no funcionar correctamente. Puedes consultar las opciones de ayuda de tu navegador para obtener más información sobre cómo gestionarlas."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Descubre los espectáculos de la Compañía Filigranes en colaboración con otras compañías de payasos.",
+    "hero": {
+      "title": "Espectáculos con otras compañías",
+      "alt": "Imagen de las colaboraciones de la Cia. Filigranes"
+    },
+    "claimTitle": "¿Listo para descubrir con quién compartimos escenario?",
+    "claim": "¡Ven a conocer los espectáculos en los que la Cia. Filigranes actúa con otros artistas y compañías!",
+    "hire": {
+      "title": "¿Quieres contratar alguno de estos espectáculos?",
+      "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER es una troupe de payasos y payasas que deambula por las calles con su peculiar vehículo: un burro de tender la ropa cargado de sueños y disparates. Juegan con el espacio, las emociones y el público, tejiendo momentos de humor, ternura y sorpresa. Son amables pero un poco gamberros, y necesitan ser acogidos. Buscan algo que les falta… y quizá lo encuentren entre la gente que les observa."
+        },
+        {
+          "paragraph": "Los payasos transforman la calle."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "En un mundo de relativa oscuridad, lo cual no significa ni triste ni tétrico, sino todo lo contrario, unos personajes divertidos han hecho un hallazgo de lo más interesante: han descubierto la luz. Si este mundo sin luz ya era entretenido, ahora con este descubrimiento es apasionante."
+        },
+        {
+          "paragraph": "No podríamos ni imaginar el partido que estos personajes dinámicos pueden sacar a su nuevo juguete. Nos adentramos en su mundo, donde prima pasarlo bien; un mundo poético, visual e imaginativo, donde todo es posible, incluso convertir la luz en fuego."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP es un espectáculo de tres payasos que adoptan los roles clásicos dentro de las tipologías sociales actuales: el reencuentro, la cooperación, la desconfianza y la amistad. Los payasos, los seres más absurdos y entrañables del universo, inútiles e imprescindibles, se encuentran en un espacio desconocido."
+        },
+        {
+          "paragraph": "Pronto descubrirán que son totalmente diferentes, pero hay una circunstancia que les une: ¡el fracaso! Perderlo todo y tener que empezar de cero. Solo una manzana."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Nuestros entrañables payasos Makutu y Til vuelven a la carga para demostrarnos que en el mundo del circo nada es imposible. De la mano de nuestros amigos comprobaremos que la pista de un circo es un lugar donde todo puede pasar: malabarismos increíbles, trucos de magia incomprensibles, equilibrios en los que te juegas la integridad física y, cómo no, un lugar donde cualquier niño en cualquier momento puede ser una estrella."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "Una banda itinerante de metales (vientos y percusión) con música en directo dirigida con señales, payasos con zancos y monociclo, malabares y juegos con el público. Una cercavila flexible en el tiempo y en el número de artistas que acompaña y activa los flujos entre escenarios o que funciona como una cercavila autónoma, accesible y para todas las edades."
+        },
+        {
+          "paragraph": "Con atrezzo marinero y juegos participativos, VENDAVAL propone un viaje festivo, poético y compartido."
         }
       ]
     }

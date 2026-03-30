@@ -11,15 +11,62 @@
     "hire": {
       "title": "Do you want to hire any of our services?",
       "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "aboutUs": {
+      "title": "Who we are",
+      "buttonText": "Learn more about the Company",
+      "description": [
+        {
+          "paragraph": "The Filigranes Company is made up of Jordi Torrens (Trinxeta) and Albert Pérez (Makutu). We are a clown and circus company with over 20 years of experience, specializing in making children and adults laugh at parties, festivals, and schools."
+        }
+      ]
     }
   },
   "commonAlt": "Image of the Filigranes Company",
+  "agenda": {
+    "claimTitle": "Upcoming shows and workshops",
+    "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",
+    "description": "Here you'll find the upcoming performances and workshops by Filigranes Company.",
+    "viewAllEvents": "View the full agenda",
+    "trends": {
+      "ariaLabel": "Most scheduled events",
+      "claimTitle": "Filitendencies",
+      "subtitle": "A bit of gossip about what's totally smashing it!"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "navigationLabel": "Agenda pagination"
+    },
+    "loading": "Loading events...",
+    "empty": "No upcoming events scheduled.",
+    "emptyFiltered": "No events match these filters. Try removing one or more filters to see events.",
+    "error": "Unable to load events. Please try again later.",
+    "live": "Live!",
+    "goToPageSection": "Go to the agenda on this page",
+    "reservationEntry": "Reserve your ticket",
+    "reservationPlace": "Reserve your spot",
+    "filters": {
+      "ariaLabel": "Filter events by type",
+      "shows": "Shows",
+      "workshops": "Workshops",
+      "performances": "Performances",
+      "all": "All events",
+      "allShows": "All shows",
+      "allWorkshops": "All workshops",
+      "dropdownAriaLabel": "Open the event filters menu",
+      "dropdownMenuAriaLabel": "Event filter options",
+      "onlyOpenToPublic": "Only open to the public",
+      "onlyOpenToPublicAriaLabel": "Turn on to show only events open to the public"
+    }
+  },
   "routes": {
     "home": "Home",
+    "agenda": "Agenda",
     "espectacles": "Shows",
     "circ-filixic": "The Filixic Circus",
     "freak-frac": "The Freak Frac Brothers' Parade",
-    "plis-plas": "Plis plas",
+    "plis-plas": "Plis Plas",
     "vint-anys": "20 Years is Nothing",
     "circ-makutu": "Makutu's Little Circus",
     "circ-trinxeta": "Trinxat doesn't Tremble",
@@ -33,11 +80,13 @@
     "filipersones": "Filipeople",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contact"
+    "contacte": "Contact",
+    "collaboracions": "Collaborations"
   },
   "button": {
     "dossier": "Dossier",
     "info": "More info",
+    "teaser": "Watch teaser",
     "fullShow": "Watch the full show",
     "playVideo": "Click to watch the video",
     "viewMore": "View more",
@@ -70,7 +119,9 @@
     },
     "legal": {
       "advice": "Legal notice",
-      "cookies": "Cookie policy"
+      "cookies": "Cookie policy",
+      "manageCookies": "Manage cookies",
+      "withdrawConsent": "Withdraw consent"
     },
     "supporters": {
       "title": "With the support of:",
@@ -84,6 +135,9 @@
   "shows": {
     "metaDescription": "Discover the thrilling clown and circus shows of the Filigranes Company.",
     "commonAlt": "Image of the show {title}",
+    "homeClaim": "Discover our shows, workshops and tailor-made performances",
+    "liveClaimTitle": "{title} live!",
+    "otherShowsClaimTitle": "Other shows by Cia.Filigranes",
     "claimTitle": "Ready to experience emotions and be surprised?",
     "claim": "Come enjoy the thrilling rhythm of Filigranes Company shows!",
     "hero": {
@@ -572,6 +626,8 @@
     "metaDescription": "Workshops for all ages: circus, clowns, makeup, water tricks, soap bubbles...",
     "commonAlt": "Image of the {title} workshop",
     "commonTitle": "Workshop of {title}",
+    "liveClaimTitle": "Upcoming dates for {title}",
+    "otherWorkshopsClaimTitle": "Other workshops by Cia.Filigranes",
     "claimTitle": "Courses, monographs, or seasonal workshops...",
     "claim": "Workshops for children and adults who want to learn and have fun!",
     "hero": {
@@ -832,7 +888,7 @@
     "claimTitle": "An infinity of characters ready to spring into action!",
     "claim": "Ideal for enlivening conventions, meetings, birthdays and all types of events",
     "title": "Tailor‑made performances",
-    "hero": { 
+    "hero": {
       "title": "Tailor‑made performances: the show without limits!",
       "alt": "Image of the fire performance"
     },
@@ -1051,16 +1107,16 @@
     "rrss": {
       "title": "And if you want to chat a bit, or see where we perform next...",
       "description": "Follow us on social networks and you'll find information about news, schedule, images..., and also watch great moments from our shows."
-    } 
+    }
   },
   "consent": {
     "map": {
       "title": "Filigranes Company location map",
-      "consentRequired": "The map requires accepting functional cookies"
+      "consentRequired": "To view the map, you need to accept Google Maps cookies."
     },
     "youtube": {
       "title": "Show video",
-      "consentRequired": "To play the video, functional cookies must be accepted"
+      "consentRequired": "To play the video, you need to accept YouTube cookies."
     },
     "manageCookies": "Manage cookies",
     "acceptCookies": "Accept cookies"
@@ -1127,6 +1183,24 @@
             "duration": "Persistent"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Stores your consent choice (accepted, rejected, or customized)",
+            "responsible": "First-party (us)",
+            "duration": "1 year"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Stores your purpose-based preferences (YouTube and Google Maps)",
+            "responsible": "First-party (us)",
+            "duration": "1 year"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Temporary agenda cache to speed up event loading during the same browser session",
+            "responsible": "First-party (us)",
+            "duration": "Session"
+          },
+          {
             "name": "YouTube",
             "purpose": "Video playback preferences",
             "responsible": "Google/YouTube",
@@ -1173,7 +1247,7 @@
       "description": "When accessing certain external services such as Google Maps, which use iframes, cookies from these third parties not directly controlled by us may be set."
     },
     "banner": {
-      "description": "We only use cookies to store your language preferences and improve your browsing experience.",
+      "description": "We use essential cookies to store your language preferences and your consent, and optional cookies to show YouTube videos and the location of our headquarters on Google Maps.",
       "accept": "Accept all",
       "reject": "Reject",
       "customize": "Customize",
@@ -1184,22 +1258,28 @@
       "description": "You can activate or deactivate the different categories of cookies according to your preferences.",
       "essential": {
         "title": "Essential cookies",
-        "description": "Necessary for the basic functioning of the website. Include language preference that remembers your selection.",
+        "description": "Necessary for the basic functioning of the website. Include language and consent preferences that remember your selection.",
         "required": "Required"
       },
-      "functional": {
-        "title": "Functional cookies",
-        "description": "Allow viewing the Google Maps, playing show videos and improve website functionality. Without them, you'll see a message instead of the map and videos.",
+      "youtube": {
+        "title": "YouTube cookies",
+        "description": "Allow playing embedded YouTube videos. If disabled, you'll see a placeholder instead of the player.",
+        "optional": "Optional"
+      },
+      "maps": {
+        "title": "Google Maps cookies",
+        "description": "Allow loading the embedded Google Map. If disabled, you'll see a placeholder instead of the map.",
         "optional": "Optional"
       },
       "save": "Save preferences",
       "acceptAll": "Accept all",
-      "rejectAll": "Reject all"
+      "rejectAll": "Reject all",
+      "withdraw": "Withdraw consent and choose again"
     }
   },
-    "avis-legal": {
-      "title": "Legal notice",
-      "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
+  "avis-legal": {
+    "title": "Legal notice",
+    "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
     "sections": [
       {
         "key": "titular",
@@ -1259,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Essential (necessary for site operation):",
-          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits."
+          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits. Consent cookies (first-party): store the accepted, rejected, or customized choice and purpose-based preferences."
         },
         {
           "key": "funcionals",
           "title": "Functional",
-          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. Google Maps (third-party, Google): used to display the location map of the Filigranes Company headquarters. By default, the web configuration keeps YouTube and Google Maps cookies disabled until the user accepts them."
+          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated and accepted for this purpose. Includes cookies for playback preferences. Google Maps (third-party, Google): used only if map loading is activated and accepted for this purpose. By default, both purposes remain disabled until the user accepts them."
         },
         {
           "key": "deshabilitades",
           "title": "Disabled by default / Not used:",
-          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
+          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. We only use sessionStorage for technical purposes, such as temporary agenda cache, without user profiling. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
         },
         {
           "key": "servei-extern",
@@ -1280,6 +1360,71 @@
           "key": "gestio",
           "title": "Cookie management:",
           "description": "The user can configure their browser to reject or delete cookies. However, if essential cookies are disabled, the site may not function properly. You can consult your browser's help options for more information on how to manage them."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Discover the shows by Cia. Filigranes in collaboration with other clown companies.",
+    "hero": {
+      "title": "Productions and shows with other companies",
+      "alt": "Image from Cia. Filigranes collaborations"
+    },
+    "claimTitle": "Ready to find out who we share the stage with?",
+    "claim": "Come and explore the shows where Cia. Filigranes performs with other artists and companies!",
+    "hire": {
+      "title": "Would you like to book one of these shows?",
+      "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER is a troupe of clowns who wander the streets with their peculiar vehicle: a clothes horse loaded with dreams and mischief. They play with space, emotions, and the audience, weaving moments of humour, tenderness, and surprise. They are kind but a little mischievous, and they need to be welcomed. They are looking for something they lack… and perhaps they will find it among the people watching them."
+        },
+        {
+          "paragraph": "The clowns transform the street."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "In a world of relative darkness—which does not mean sad or gloomy, but quite the opposite—some playful characters have made a fascinating discovery: they have found light. If this world without light was already entertaining, now that they have made this discovery it is exhilarating."
+        },
+        {
+          "paragraph": "We can barely imagine how much these dynamic characters can get out of their new toy. We enter their world, where having fun comes first—a poetic, visual, and imaginative world where anything is possible, even turning light into fire."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP is a show with three clowns who take on classic roles within today’s social types: reunion, cooperation, mistrust, and friendship. Clowns—the most absurd and endearing beings in the universe, useless and indispensable—find themselves in an unknown space."
+        },
+        {
+          "paragraph": "Soon they will discover that they are completely different, yet one circumstance unites them: failure! Losing everything and having to start from scratch. Only an apple."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Our lovable clowns Makutu and Til are back to show us that in the circus world nothing is impossible. Together with our friends we will see that a circus ring is a place where anything can happen: incredible juggling, baffling magic tricks, balancing acts where you risk life and limb, and of course a place where any child can become a star at any moment."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "An itinerant brass band (winds and percussion) with live music directed with signals, clowns on stilts and unicycles, juggling and games with the audience. A parade flexible in time and number of artists that accompanies and activates the flow between stages, or that works as an autonomous, accessible street parade for all ages."
+        },
+        {
+          "paragraph": "With nautical props and participatory games, VENDAVAL offers a festive, poetic, shared journey."
         }
       ]
     }

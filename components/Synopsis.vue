@@ -50,6 +50,10 @@ const props = defineProps({
     type: Object,
     default: () => null
   },
+  anchorId: {
+    type: String,
+    default: undefined,
+  },
   downloadButton: {
     type: Object,
     default: () => null
@@ -108,6 +112,17 @@ const getInfoButtonClass = computed(() => {
   return `button-solid-${getColorVariant(props.contentType)}`;
 });
 
+const infoButtonTarget = computed(() => {
+  const btn = props.infoButton as { target?: string } | null
+  return btn?.target ?? '_top'
+})
+
+const infoButtonText = computed(() => {
+  const btn = props.infoButton as { text?: string; textKey?: string } | null
+  if (!btn) return t('button.info')
+  return btn.text ?? (btn.textKey ? t(btn.textKey) : t('button.info'))
+})
+
 // Setup intersection observer reactively when ref becomes available
 watchEffect(() => {
   if (imageRef.value) {
@@ -120,7 +135,8 @@ watchEffect(() => {
   <ClientOnly>
     <div
       ref="componentRef"
-      :class="`p-0 grid-layout ${getColors} contain-card`"
+      :id="anchorId"
+      :class="`p-0 grid-layout ${getColors} contain-card ${anchorId ? 'scroll-mt-[72px] lg:scroll-mt-[87px]' : ''}`"
       :style="{ clipPath: isMobile ? mobileClip : 'none' }"
       @mouseenter="toggleHover()"
       @mouseleave="toggleHover()"
@@ -142,7 +158,7 @@ watchEffect(() => {
             <p
               v-if="description"
               class="text-lg lg:text-xl"
-              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5'">
+              :class="showFullContent ? 'flex flex-col gap-4' : 'line-clamp-5 xl:line-clamp-6'">
               <span
                 v-for="item in showFullContent ? description : description.slice(0, 1)"
                 :key="item.paragraph as string"
@@ -171,11 +187,11 @@ watchEffect(() => {
               v-if="infoButton"
               :href="infoButton.href"
               :button-class="`${getInfoButtonClass} self-start`"
-              :text="t('button.info')"
-              target="_top"
+              :text="infoButtonText"
+              :target="infoButtonTarget"
             >
               <template #text>
-                {{ t('button.info') }}
+                {{ infoButtonText }}
               </template>
               <template #icon-right>
                 <ArrowRight class="arrow-right"/>

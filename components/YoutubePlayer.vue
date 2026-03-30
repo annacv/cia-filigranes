@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { YOUTUBE_PLAYLIST_IDS } from '~/constants';
+
 interface YouTubeProps {
   videoId: string;
   playerVars?: YT.PlayerVars;
@@ -19,7 +21,7 @@ const props = withDefaults(defineProps<YouTubeProps>(), {
     mute: 0,
     start: 0,
     controls: 1,
-    playlist: 'TBbBS05njec,VOcQTqZ9C2A,rg3XzGQIPpU,dY4GelzNlRc,GQ67p38vqcY,lU5b5V7U6Wc,D46T_hy1Mck'
+    playlist: YOUTUBE_PLAYLIST_IDS
   }),
   trigger: 'visible',
   aboveTheFold: true,
@@ -67,11 +69,12 @@ const dynamicPlayerVars = computed(() => ({
             </div>
           </template>
         </ScriptYouTubePlayer>
-        <ConsentPlaceholder
+        <LegalConsentPlaceholder
           v-else
           key="placeholder"
           :title="t('consent.youtube.title')"
           :description="t('consent.youtube.consentRequired')"
+          purpose="youtube"
         />
       </Transition>
     </ClientOnly>

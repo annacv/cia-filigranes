@@ -11,15 +11,62 @@
     "hire": {
       "title": "Vols contractar algun dels nostres serveis?",
       "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
+    },
+    "aboutUs": {
+      "title": "Qui som",
+      "buttonText": "Coneix més la Companyia",
+      "description": [
+        {
+          "paragraph": "La Companyia Filigranes la integrem Jordi Torrens (Trinxeta) i Albert Pérez (Makutu). Som una companyia de clown i circ amb més de 20 anys d'ofici, especialitzada en fer riure petits i grans en festes, festivals i escoles."
+        }
+      ]
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
+  "agenda": {
+    "claimTitle": "Properes funcions i tallers",
+    "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",
+    "description": "Aquí trobaràs les properes actuacions i tallers de la Companyia Filigranes.",
+    "viewAllEvents": "Veure tota l'agenda",
+    "trends": {
+      "ariaLabel": "Esdeveniments més programats",
+      "claimTitle": "Filitendències",
+      "subtitle": "Una mica de safareig del que més ho està petant!"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Següent",
+      "navigationLabel": "Paginació de l'agenda"
+    },
+    "loading": "Carregant esdeveniments...",
+    "empty": "No hi ha esdeveniments propers programats.",
+    "emptyFiltered": "No hi ha esdeveniments amb aquests filtres. Prova de desactivar-ne algun per veure'n.",
+    "error": "No s'han pogut carregar els esdeveniments. Si us plau, torna-ho a intentar més tard.",
+    "live": "En directe!",
+    "goToPageSection": "Anar a l'agenda d'aquesta pàgina",
+    "reservationEntry": "Reserva la teva entrada",
+    "reservationPlace": "Reserva la teva plaça",
+    "filters": {
+      "ariaLabel": "Filtrar esdeveniments per tipus",
+      "shows": "Espectacles",
+      "workshops": "Tallers",
+      "performances": "Animacions",
+      "all": "Tots els esdeveniments",
+      "allShows": "Tots els espectacles",
+      "allWorkshops": "Tots els tallers",
+      "dropdownAriaLabel": "Obrir el menú de filtres d'esdeveniments",
+      "dropdownMenuAriaLabel": "Opcions de filtre d'esdeveniments",
+      "onlyOpenToPublic": "Només oberts al públic",
+      "onlyOpenToPublicAriaLabel": "Activa per mostrar només els esdeveniments oberts al públic"
+    }
+  },
   "routes": {
     "home": "Inici",
+    "agenda": "Agenda",
     "espectacles": "Espectacles",
-    "circ-filixic": "El circ filixic",
+    "circ-filixic": "El Circ Filixic",
     "freak-frac": "Cercavila Germans Freak Frac",
-    "plis-plas": "Plis plas",
+    "plis-plas": "Plis Plas",
     "vint-anys": "20 Anys no són res",
     "circ-makutu": "El Petit Circ de Makutu",
     "circ-trinxeta": "Trinxat no Tremola",
@@ -33,11 +80,13 @@
     "filipersones": "Filipersones",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contacte"
+    "contacte": "Contacte",
+    "collaboracions": "Col·laboracions"
   },
   "button": {
     "dossier": "Dossier",
     "info": "Més info",
+    "teaser": "Veure teaser",
     "fullShow": "Veure l'espectacle sencer",
     "playVideo": "Fes clic per veure el video",
     "viewMore": "Veure'n més",
@@ -70,7 +119,9 @@
     },
     "legal": {
       "advice": "Avís legal",
-      "cookies": "Política de cookies"
+      "cookies": "Política de cookies",
+      "manageCookies": "Gestionar cookies",
+      "withdrawConsent": "Retirar consentiment"
     },
     "supporters": {
       "title": "Amb el suport de:",
@@ -84,6 +135,9 @@
   "shows": {
     "metaDescription": "Descobreix els espectacles trepidants de pallassos i circ de la Companyia Filigranes.",
     "commonAlt": "Imatge de l'espectacle {title}",
+    "homeClaim": "Descobreix els nostres espectacles, tallers i animacions fetes a mida",
+    "liveClaimTitle": "{title} en directe!",
+    "otherShowsClaimTitle": "Altres espectacles de la Cia.Filigranes",
     "claimTitle": "A punt per viure emocions i deixar-te sorprendre?",
     "claim": "Vine a gaudir del ritme trepidant dels espectacles de la Companyia Filigranes!",
     "hero": {
@@ -572,6 +626,8 @@
     "metaDescription": "Tallers per a totes les edats: de circ, de pallassos, de maquillatge, d'enginys d'aigua, de bombolles de sabó...",
     "commonAlt": "Imatge del taller {title}",
     "commonTitle": "Taller de {title}",
+    "liveClaimTitle": "Properes dates per al {title}",
+    "otherWorkshopsClaimTitle": "Altres tallers de la Cia.Filigranes",
     "claimTitle": "Cursos, monogràfics, o tallers de temporada...",
     "claim": "Tallers per a grans i menudes que volen aprendre i divertir-se!",
     "hero": {
@@ -832,7 +888,7 @@
     "claimTitle": "Una infinitat de personatges a punt per entrar en acció!",
     "claim": "Ideals per amenitzar convencions, trobades, aniversaris i tot tipus d'esdeveniments",
     "title": "Animacions a la carta",
-    "hero": { 
+    "hero": {
       "title": "Animacions a la carta: l'espectacle sense límits!",
       "alt": "Imatge de l'animació de foc"
     },
@@ -1056,11 +1112,11 @@
   "consent": {
     "map": {
       "title": "Mapa de la ubicació de la Cia. Filigranes",
-      "consentRequired": "Per poder veure el mapa es requereix acceptar les cookies funcionals"
+      "consentRequired": "Per poder veure el mapa, cal acceptar les cookies de Google Maps."
     },
     "youtube": {
       "title": "Video de l'espectacle",
-      "consentRequired": "Per poder reproduir el vídeo es requereix acceptar les cookies funcionals"
+      "consentRequired": "Per poder reproduir el vídeo, cal acceptar les cookies de YouTube."
     },
     "manageCookies": "Gestionar cookies",
     "acceptCookies": "Acceptar cookies"
@@ -1127,6 +1183,24 @@
             "duration": "Persistent"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Desa la teva elecció de consentiment (acceptades, rebutjades o personalitzades)",
+            "responsible": "First-party (nosaltres)",
+            "duration": "1 any"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Desa les teves preferències per finalitat (YouTube i Google Maps)",
+            "responsible": "First-party (nosaltres)",
+            "duration": "1 any"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Memòria cau temporal d'agenda per accelerar la càrrega d'esdeveniments durant la mateixa sessió del navegador",
+            "responsible": "First-party (nosaltres)",
+            "duration": "Sessió"
+          },
+          {
             "name": "YouTube",
             "purpose": "Preferències de reproducció de vídeos",
             "responsible": "Google/YouTube",
@@ -1173,7 +1247,7 @@
       "description": "En accedir a certs serveis externs com Google Maps, que utilitzen iframes, poden establir-se cookies pròpies d'aquests tercers no controlades directament per nosaltres."
     },
     "banner": {
-      "description": "Només utilitzem cookies per desar les teves preferències d'idioma i millorar la teva experiència de navegació.",
+      "description": "Utilitzem cookies essencials per a desar les teves preferències d'idioma i el teu consentiment, i cookies opcionals per mostrar vídeos de YouTube i la ubicació de la nostra seu a Google Maps.",
       "accept": "Acceptar totes",
       "reject": "Rebutjar",
       "customize": "Personalitzar",
@@ -1184,22 +1258,28 @@
       "description": "Pots activar o desactivar les diferents categories de cookies segons les teves preferències.",
       "essential": {
         "title": "Cookies essencials",
-        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen la preferència d'idioma que recorda la teva selecció.",
+        "description": "Necessàries per al funcionament bàsic del lloc web. Inclouen idioma i preferències de consentiment que recorden la teva selecció.",
         "required": "Obligatòries"
       },
-      "functional": {
-        "title": "Cookies funcionals",
-        "description": "Permeten veure el mapa de la ubicació de la seu de la Cia.Filigranes (Google Maps), reproduir els vídeos dels espectacles i milloren la funcionalitat del lloc web. Sense elles, veuràs un missatge en lloc del mapa i dels vídeos.",
+      "youtube": {
+        "title": "Cookies de YouTube",
+        "description": "Permeten reproduir vídeos embeguts de YouTube. Si es desactiven, veuràs un avís en lloc del reproductor.",
+        "optional": "Opcionals"
+      },
+      "maps": {
+        "title": "Cookies de Google Maps",
+        "description": "Permeten carregar el mapa embegut de Google Maps. Si es desactiven, veuràs un avís en lloc del mapa.",
         "optional": "Opcionals"
       },
       "save": "Desar preferències",
       "acceptAll": "Acceptar totes",
-      "rejectAll": "Rebutjar totes"
+      "rejectAll": "Rebutjar totes",
+      "withdraw": "Retirar el consentiment i tornar a triar"
     }
   },
-    "avis-legal": {
-      "title": "Avís legal",
-      "metaDescription": "Avís legal de Cia Filigranes. Informació sobre la titularitat del lloc web, condicions d'ús, propietat intel·lectual i política de cookies.",
+  "avis-legal": {
+    "title": "Avís legal",
+    "metaDescription": "Avís legal de Cia Filigranes. Informació sobre la titularitat del lloc web, condicions d'ús, propietat intel·lectual i política de cookies.",
     "sections": [
       {
         "key": "titular",
@@ -1259,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Essencials (necessàries per al funcionament del lloc):",
-          "description": "Cookie de preferència d'idioma (first-party): emmagatzema l'idioma seleccionat (català, castellà, anglès) per mantenir-lo en futures visites."
+          "description": "Cookie de preferència d'idioma (first-party): emmagatzema l'idioma seleccionat (català, castellà, anglès) per mantenir-lo en futures visites. Cookies de consentiment (first-party): desen l'elecció acceptada, rebutjada o personalitzada i les preferències per finalitat."
         },
         {
           "key": "funcionals",
           "title": "Funcionals",
-          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos. Inclou cookies per a preferències de reproducció. Google Maps (third-party, Google): utilitzades per mostrar el mapa de la ubicació de la seu de la Cia.Filigranes. Per defecte, la configuració del web manté les cookies de YouTube i Google Maps desactivades fins que l'usuària les accepta."
+          "description": "YouTube (third-party, Google/YouTube): utilitzades únicament si s'activa la reproducció de vídeos i s'accepta aquesta finalitat. Inclou cookies per a preferències de reproducció. Google Maps (third-party, Google): utilitzades únicament si s'activa la càrrega del mapa i s'accepta aquesta finalitat. Per defecte, ambdues finalitats romanen desactivades fins que l'usuària les accepta."
         },
         {
           "key": "deshabilitades",
           "title": "Deshabilitades per defecte / No utilitzades:",
-          "description": "No es recullen dades mitjançant Google Analytics ni eines similars. No hi ha píxels de seguiment ni cookies publicitàries. No s'utilitza localStorage ni sessionStorage amb finalitats de seguiment. Les tipografies (IBM Plex Sans i Archivo Black) estan auto-hospedades al nostre servidor per evitar cookies de tercers de Google Fonts."
+          "description": "No es recullen dades mitjançant Google Analytics ni eines similars. No hi ha píxels de seguiment ni cookies publicitàries. No s'utilitza localStorage ni sessionStorage amb finalitats de seguiment. Només utilitzem sessionStorage amb finalitats tècniques, com la memòria cau temporal d'agenda, sense perfilat d'usuàries. Les tipografies (IBM Plex Sans i Archivo Black) estan auto-hospedades al nostre servidor per evitar cookies de tercers de Google Fonts."
         },
         {
           "key": "servei-extern",
@@ -1280,6 +1360,71 @@
           "key": "gestio",
           "title": "Gestió de cookies:",
           "description": "La persona usuària pot configurar el seu navegador per rebutjar o suprimir cookies. Tanmateix, si es desactiven les cookies essencials, el lloc pot no funcionar correctament. Pots consultar les opcions d'ajuda del teu navegador per obtenir més informació sobre com gestionar-les."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Descobreix els espectacles de la Companyia Filigranes en col·laboració amb altres companyies de pallassos.",
+    "hero": {
+      "title": "Coproduccions i espectacles amb altres companyies",
+      "alt": "Imatge de col·laboracions de la Cia.Filigranes"
+    },
+    "claimTitle": "A punt per descobrir amb qui compartim escenari?",
+    "claim": "Vine a conèixer els espectacles on la Companyia Filigranes actua amb altres artistes i companyies!",
+    "hire": {
+      "title": "Vols contractar algun d'aquests espectacles?",
+      "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER és una troupe de pallassos i pallasses que deambula pels carrers amb el seu peculiar vehicle: una burra de penjar roba carregada de somnis i despropòsits. Juguen amb l'espai, les emocions i el públic, teixint moments d'humor, tendresa i sorpresa. Són amables però una mica gamberros, i necessiten ser acollits. Busquen alguna cosa que els falta… i potser la trobaran entre la gent que els observa."
+        },
+        {
+          "paragraph": "Els pallassos transformen el carrer."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "En un món de relativa foscor, la qual cosa no vol dir ni trist ni tètric, sinó tot el contrari, uns divertits personatges han fet una troballa d'allò més interessant, han descobert la llum. Si aquest món sense llum ja era distret, doncs ara amb aquest descobriment és trepidant."
+        },
+        {
+          "paragraph": "No ens podríem ni imaginar el profit que aquests dinàmics personatges li poden treure a la seva nova joguina. Ens introduïm en el seu món, on hi predomina el passar-s'ho bé; un món poètic, visual i imaginatiu, on tot és possible, fins i tot convertir la llum en foc."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP és un espectacle de tres pallassos que adopten els rols clàssics dins les tipologies socials actuals: el retrobament, la cooperació, la desconfiança i l'amistat. Els pallassos, els éssers més absurds i entranyables de l'univers, inútils i imprescindibles, es troben en un espai desconegut."
+        },
+        {
+          "paragraph": "Aviat descobriran que són totalment diferents, però hi ha una circumstància que els uneix: el fracàs! Perdre-ho tot i haver de començar de zero. Només una poma."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Els nostres entranyables pallassos en Makutu i en Til tornen a la càrrega per tal de demostrar-nos que en el món del circ res és impossible. De la mà dels nostres amics comprovarem que la pista d'un circ és un lloc on tot pot passar: malabarismes increïbles, trucs de màgia incomprensibles, equilibrismes on et pots jugar la integritat física i, com no, un lloc on qualsevol nen en qualsevol moment pot ser una estrella."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "Una brass band itinerant (vents i percussió) amb música en directe dirigida amb senyals, pallassos amb xanques i monocicle, malabars i jocs amb el públic. Una cercavila flexible en temps i número d'artistes que acompanya i activa els fluxos entre escenaris o que funciona com a cercavila autònoma, accessible, i per a totes les edats."
+        },
+        {
+          "paragraph": "Amb atrezzos mariners i jocs participatius, VENDAVAL proposa un viatge festiu, poètic i compartit."
         }
       ]
     }
