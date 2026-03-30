@@ -29,7 +29,8 @@ const synopsisItems = computed(() => {
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
-          href: `/espectacles/${show}`
+          href: `/espectacles/${show}#video`,
+          textKey: 'button.teaser'
         },
         downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,

@@ -117,6 +117,12 @@ const infoButtonTarget = computed(() => {
   return btn?.target ?? '_top'
 })
 
+const infoButtonText = computed(() => {
+  const btn = props.infoButton as { text?: string; textKey?: string } | null
+  if (!btn) return t('button.info')
+  return btn.text ?? (btn.textKey ? t(btn.textKey) : t('button.info'))
+})
+
 // Setup intersection observer reactively when ref becomes available
 watchEffect(() => {
   if (imageRef.value) {
@@ -181,11 +187,11 @@ watchEffect(() => {
               v-if="infoButton"
               :href="infoButton.href"
               :button-class="`${getInfoButtonClass} self-start`"
-              :text="t('button.info')"
+              :text="infoButtonText"
               :target="infoButtonTarget"
             >
               <template #text>
-                {{ t('button.info') }}
+                {{ infoButtonText }}
               </template>
               <template #icon-right>
                 <ArrowRight class="arrow-right"/>
