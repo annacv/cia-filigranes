@@ -1,4 +1,5 @@
 import type { ContentType, EventTypeFilterItem } from "~/types"
+import { routePages } from '~/i18n/custom-routes'
 
 export const ROUTES_INDEX = [
   {
@@ -13,6 +14,9 @@ export const ROUTES_INDEX = [
     name: "animacions"
   },
   {
+    name: "collaboracions"
+  },
+  {
     name: "filipersones",
     children: ['trinxeta', 'makutu']
   },
@@ -24,103 +28,10 @@ export const ROUTES_INDEX = [
   }
 ]
 
-export const LOCALE_ROUTES = {
-  agenda: {
-    ca: '/agenda',
-    en: '/agenda',
-    es: '/agenda'
-  },
-  espectacles: {
-    ca: '/espectacles',
-    en: '/shows',
-    es: '/espectaculos'
-  },
-  'espectacles/vint-anys': {
-    ca: '/espectacles/vint-anys',
-    en: '/shows/twenty-years',
-    es: '/espectaculos/vint-anys'
-  },
-  'espectacles/circ-filixic': {
-    ca: '/espectacles/circ-filixic',
-    en: '/shows/filixic-circus',
-    es: '/espectaculos/circo-filixic'
-  },
-  'espectacles/plis-plas': {
-    ca: '/espectacles/plis-plas',
-    en: '/shows/plis-plas',
-    es: '/espectaculos/plis-plas'
-  },
-  'espectacles/freak-frac': {
-    ca: '/espectacles/freak-frac',
-    en: '/shows/freak-frac',
-    es: '/espectaculos/freak-frac'
-  },
-  'espectacles/circ-makutu': {
-    ca: '/espectacles/circ-makutu',
-    en: '/shows/makutu-circus',
-    es: '/espectaculos/circo-makutu'
-  },
-  'espectacles/circ-trinxeta': {
-    ca: '/espectacles/circ-trinxeta',
-    en: '/shows/trinxeta-circus',
-    es: '/espectaculos/circo-trinxeta'
-  },
-  tallers: {
-    ca: '/tallers',
-    en: '/workshops',
-    es: '/talleres'
-  },
-  'tallers/bombolles-sabo': {
-    ca: '/tallers/bombolles-sabo',
-    en: '/workshops/soap-bubbles',
-    es: '/talleres/burbujas-jabon'
-  },
-  'tallers/circ': {
-    ca: '/tallers/circ',
-    en: '/workshops/circus',
-    es: '/talleres/circo'
-  },
-  'tallers/pallassos': {
-    ca: '/tallers/pallassos',
-    en: '/workshops/clowns',
-    es: '/talleres/payasos'
-  },
-  'tallers/maquillatge': {
-    ca: '/tallers/maquillatge',
-    en: '/workshops/makeup',
-    es: '/talleres/maquillaje'
-  },
-  'tallers/enginys-aigua': {
-    ca: '/tallers/enginys-aigua',
-    en: '/workshops/water-tricks',
-    es: '/talleres/ingenios-agua'
-  },
-  animacions: {
-    ca: '/animacions',
-    en: '/performances',
-    es: '/animaciones'
-  },
-  filipersones: {
-    ca: '/filipersones',
-    en: '/about-us',
-    es: '/filipersonas'
-  },
-  'filipersones/makutu': {
-    ca: '/filipersones/makutu',
-    en: '/about-us/makutu',
-    es: '/filipersonas/makutu'
-  },
-  'filipersones/trinxeta': {
-    ca: '/filipersones/trinxeta',
-    en: '/about-us/trinxeta',
-    es: '/filipersonas/trinxeta'
-  },
-  contacte: {
-    ca: '/contacte',
-    en: '/contact',
-    es: '/contacto'
-  }
-}
+export const LOCALE_ROUTES = routePages as Record<
+  keyof typeof routePages,
+  { ca: string; en: string; es: string }
+>
 
 export const GLOB_IMPORTS = {
   mobileShowImages: import.meta.glob('~/assets/images/mobile/espectacles/*.webp', {
@@ -179,6 +90,16 @@ export const GLOB_IMPORTS = {
   }) as Record<string, () => Promise<string>>,
 
   desktopAgendaImages: import.meta.glob('~/assets/images/desktop/agenda/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  mobileCollaboracionsImages: import.meta.glob('~/assets/images/mobile/collaboracions/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  desktopCollaboracionsImages: import.meta.glob('~/assets/images/desktop/collaboracions/*.webp', {
     eager: false,
     import: 'default',
   }) as Record<string, () => Promise<string>>,
@@ -296,3 +217,46 @@ export const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
     interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.performances.bg} group-focus-visible:${EVENT_TYPE_COLORS.performances.bg}`,
   },
 ]
+
+export const COLLABORATION_ENTRIES = [
+  {
+    i18nKey: 'clownDePas',
+    imageSlug: 'clown-de-pas',
+    href: 'https://www.albertvinyes.cat/ca/espectacles/clown-de-pas/',
+  },
+  {
+    i18nKey: 'vendaval',
+    imageSlug: 'vendaval',
+    href: 'https://www.youtube.com/watch?v=HpkRH-YxNXE&feature=youtu.be',
+  },
+  {
+    i18nKey: 'fingerlight',
+    imageSlug: 'fingerlight',
+    href: 'https://improvistos.com/espectacles/espectacle-2/',
+  },
+  {
+    i18nKey: 'heeelp',
+    imageSlug: 'heeelp',
+    href: 'https://improvistos.com/heeelp/',
+  },
+  {
+    i18nKey: 'circFilikrusty',
+    imageSlug: 'circ-filikrusty',
+    href: 'https://improvistos.com/tot-es-possible/',
+  },
+] as const
+
+/**
+ * Hash navigations that scroll deep into the page — must not trigger the
+ * "first scroll" fallback to #main-content-anchor.
+ */
+export const IN_PAGE_ANCHOR_HASHES = new Set([
+  '#agenda',
+  '#video',
+  // Collaborations page anchors (CalendarTrends -> "Més info")
+  '#vendaval',
+  '#heeelp',
+  '#fingerlight',
+  '#clown-de-pas',
+  '#circ-filikrusty',
+])

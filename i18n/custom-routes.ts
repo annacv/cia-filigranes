@@ -76,6 +76,11 @@ export const routePages: CustomRoutePages = {
     en: '/performances',
     es: '/animaciones'
   },
+  collaboracions: {
+    ca: '/collaboracions',
+    en: '/collaborations',
+    es: '/colaboraciones'
+  },
   filipersones: {
     ca: '/filipersones',
     en: '/about-us',
