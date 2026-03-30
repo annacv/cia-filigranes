@@ -262,6 +262,11 @@ export const COLLABORATION_ENTRIES = [
   {
     i18nKey: 'circFilikrusty',
     imageSlug: 'circ-filikrusty',
+    href: 'https://improvistos.com/espectacles/espectacle-1/',
+  },
+  {
+    i18nKey: 'totEsPossible',
+    imageSlug: 'tot-es-possible',
     href: 'https://improvistos.com/tot-es-possible/',
   },
 ] as const
@@ -279,4 +284,5 @@ export const IN_PAGE_ANCHOR_HASHES = new Set([
   '#fingerlight',
   '#clown-de-pas',
   '#circ-filikrusty',
+  '#tot-es-possible',
 ])

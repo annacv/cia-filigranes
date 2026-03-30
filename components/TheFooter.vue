@@ -3,7 +3,7 @@ import { CONTACT } from "~/constants";
 
 const { t } = useI18n()
 const { isMobileOrTablet } = useResponsive()
-const { openModal, resetConsent } = useCookies()
+const { openModal } = useCookies()
 
 </script>
 <template>
@@ -87,14 +87,6 @@ const { openModal, resetConsent } = useCookies()
             @click="openModal"
           >
             {{ t('footer.legal.manageCookies') }}
-          </button>
-          <b class="px-2">·</b>
-          <button
-            type="button"
-            class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
-            @click="resetConsent"
-          >
-            {{ t('footer.legal.withdrawConsent') }}
           </button>
         </p>
       </div>

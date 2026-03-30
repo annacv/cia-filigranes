@@ -120,8 +120,7 @@
     "legal": {
       "advice": "Legal notice",
       "cookies": "Cookie policy",
-      "manageCookies": "Manage cookies",
-      "withdrawConsent": "Withdraw consent"
+      "manageCookies": "Manage cookies"
     },
     "supporters": {
       "title": "With the support of:",
@@ -1410,6 +1409,23 @@
       ]
     },
     "circFilikrusty": {
+      "title": "Filikrusty",
+      "synopsis": [
+        {
+          "paragraph": "Three endearing clowns take us into a tender, playful universe where we can laugh or cry: Trinchof, the white clown, stern and demanding; big-hearted Makutu the sleepyhead; or the tenderness of clumsy Til, the clown who dreams of one day becoming a great juggler. With these three characters we enjoy situations both comic and dramatic, with sensational juggling and balancing acts."
+        },
+        {
+          "paragraph": "Filikrusty, like all our creations, is aimed at all audiences, though in this case it has a marked child-friendly slant."
+        },
+        {
+          "paragraph": "A show where children and adults share feelings and sensations. A participatory performance where the children end up as the stars."
+        },
+        {
+          "paragraph": "In short, 60 minutes of endearing, guaranteed fun with Filikrusty."
+        }
+      ]
+    },
+    "totEsPossible": {
       "title": "Tot és possible",
       "synopsis": [
         {

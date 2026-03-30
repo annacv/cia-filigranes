@@ -120,8 +120,7 @@
     "legal": {
       "advice": "Aviso legal",
       "cookies": "Política de cookies",
-      "manageCookies": "Gestionar cookies",
-      "withdrawConsent": "Retirar consentimiento"
+      "manageCookies": "Gestionar cookies"
     },
     "supporters": {
       "title": "Con el apoyo de:",
@@ -1410,6 +1409,23 @@
       ]
     },
     "circFilikrusty": {
+      "title": "Filikrusty",
+      "synopsis": [
+        {
+          "paragraph": "Tres entrañables payasos nos transportan a un universo tierno y divertido, donde se puede tanto reír como llorar: Trinchof, el payaso blanco, duro y exigente; el gran corazón de Makutu el dormilón, o la ternura del desmanado Til, el payaso que sueña con llegar a ser algún día un gran malabarista. En compañía de estos tres personajes disfrutaremos de situaciones tan cómicas como dramáticas, acompañadas de sensacionales números de malabares y equilibrismo."
+        },
+        {
+          "paragraph": "«Filikrusty», como todas nuestras creaciones, tiene el calificativo de «para todos los públicos», aunque en este caso presenta una marcada tendencia infantil."
+        },
+        {
+          "paragraph": "Una obra en la que pequeños y adultos compartirán sensaciones y sentimientos. Un espectáculo participativo en el que los niños acaban siendo las estrellas."
+        },
+        {
+          "paragraph": "En definitiva, 60 minutos de diversión entrañable y garantizada, con «Filikrusty»."
+        }
+      ]
+    },
+    "totEsPossible": {
       "title": "Tot és possible",
       "synopsis": [
         {

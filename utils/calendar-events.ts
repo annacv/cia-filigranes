@@ -17,6 +17,7 @@ const OTHER_FILI_SHOWS: Record<string, string> = {
 
 const COLLABORATIONS_SHOWS: Record<string, string> = {
   'el circ filikrusty': 'circ-filikrusty',
+  'tot es possible': 'tot-es-possible',
   'heeelp': 'heeelp',
   'help': 'heeelp',
   'fingerlight': 'fingerlight',
