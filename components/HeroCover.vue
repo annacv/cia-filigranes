@@ -7,7 +7,7 @@ import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-fir
 import { scrollToAnchor } from '~/composables/hero-scroll/follow-anchor-animation'
 import { isSchedulableContentType, useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
 import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS } from "~/constants";
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS, IN_PAGE_ANCHOR_HASHES } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 
 const props = defineProps({
@@ -49,11 +49,10 @@ const { getScheduleDateForContentKey } = useContentSchedule()
 const route = useRoute()
 const { t } = useI18n()
 
-// If the user navigates directly to "#video" or "#agenda", follow the anchor while the hero-cover
+// If the user navigates directly to an in-page anchor, follow the anchor while the hero-cover
 // layout transitions (otherwise layout settles after the hash scroll and lands too far down).
-const IN_PAGE_SCROLL_HASHES = new Set(['#video', '#agenda'])
 const maybeScrollToInPageAnchor = async () => {
-  if (!IN_PAGE_SCROLL_HASHES.has(route.hash)) return
+  if (!IN_PAGE_ANCHOR_HASHES.has(route.hash)) return
   const anchorId = route.hash.slice(1)
   await nextTick()
   await nextTick()
