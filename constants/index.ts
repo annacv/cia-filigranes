@@ -181,6 +181,26 @@ export const RRSS = [
   { platform: "linkedin", url: "https://www.linkedin.com/in/ciafiligranes" }
 ]
 
+export const YOUTUBE_VIDEO_IDS = {
+  vintAnys: 'TBbBS05njec',
+  plisPlas: 'VOcQTqZ9C2A',
+  circFilixic: 'rg3XzGQIPpU',
+  freakFrac: 'dY4GelzNlRc',
+  numeroCaixes: 'GQ67p38vqcY',
+  circFilirates: 'lU5b5V7U6Wc',
+  plisPlasAlt: 'D46T_hy1Mck',
+} as const
+
+export const YOUTUBE_PLAYLIST_IDS = [
+  YOUTUBE_VIDEO_IDS.vintAnys,
+  YOUTUBE_VIDEO_IDS.plisPlas,
+  YOUTUBE_VIDEO_IDS.circFilixic,
+  YOUTUBE_VIDEO_IDS.freakFrac,
+  YOUTUBE_VIDEO_IDS.numeroCaixes,
+  YOUTUBE_VIDEO_IDS.circFilirates,
+  YOUTUBE_VIDEO_IDS.plisPlasAlt,
+].join(',')
+
 export const HEADER_MOBILE_HEIGHT = '72px'
 export const HEADER_DESKTOP_HEIGHT = '87px'
 export const HERO_COVER_ANIMATION_DURATION_MS = 800

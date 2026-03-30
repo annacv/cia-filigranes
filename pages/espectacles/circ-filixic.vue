@@ -2,6 +2,7 @@
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
+import { YOUTUBE_VIDEO_IDS } from "~/constants"
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 
@@ -67,7 +68,7 @@ const summaryButton = computed(() => {
           id="video"
           class="mt-2 mb-12 scroll-mt-[72px] lg:scroll-mt-[87px] lg:mt-4 lg:mb-24 bg-black xl:p-28"
         >
-          <YoutubePlayer video-id="rg3XzGQIPpU" />
+          <YoutubePlayer :video-id="YOUTUBE_VIDEO_IDS.circFilixic" />
         </div>
       </template>
       <template #unwrappedTop>
