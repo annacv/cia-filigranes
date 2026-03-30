@@ -58,12 +58,6 @@ export const useCookies = () => {
 
   const showBanner = computed(() => import.meta.client ? cookieConsent.value === null : false)
 
-  const canUseFunctionalCookies = computed(() => {
-    if (!import.meta.client) return false
-    return cookieConsent.value === 'accepted' || 
-           (cookieConsent.value === 'customized' && (cookiePreferences.value?.youtube === true || cookiePreferences.value?.maps === true))
-  })
-
   const canLoadYouTubeWithCookies = computed(() => {
     if (!import.meta.client) return false
     return cookieConsent.value === 'accepted' || 
@@ -142,7 +136,6 @@ export const useCookies = () => {
     cookiePreferences: readonly(cookiePreferences),
     showBanner,
     showModal,
-    canUseFunctionalCookies,
     canLoadYouTubeWithCookies,
     canLoadGoogleMaps,
     acceptAll,
