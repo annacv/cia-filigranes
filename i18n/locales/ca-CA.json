@@ -11,6 +11,15 @@
     "hire": {
       "title": "Vols contractar algun dels nostres serveis?",
       "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
+    },
+    "aboutUs": {
+      "title": "Qui som",
+      "buttonText": "Coneix més la Companyia",
+      "description": [
+        {
+          "paragraph": "La Companyia Filigranes la integrem Jordi Torrens (Trinxeta) i Albert Pérez (Makutu). Som una companyia de clown i circ amb més de 20 anys d'ofici, especialitzada en fer riure petits i grans en festes, festivals i escoles."
+        }
+      ]
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",

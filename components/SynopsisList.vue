@@ -23,6 +23,8 @@ const props = defineProps({
           href: string
           class?: string
           target?: string
+          textKey?: string
+          text?: string
         }
         downloadButton?: {
           href: string
