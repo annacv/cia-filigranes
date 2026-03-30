@@ -12,6 +12,7 @@ const props = defineProps({
   },
   items: {
     type: Array as () => Array<{
+      anchorId?: string
       description: Array<Record<string, unknown>>
       image: CardImage
       contentType: ContentType
@@ -20,7 +21,8 @@ const props = defineProps({
       buttons: {
         infoButton: {
           href: string
-          class: string
+          class?: string
+          target?: string
         }
         downloadButton?: {
           href: string
@@ -44,6 +46,7 @@ const { isMobile } = useResponsive()
     <Synopsis
       v-for="(item, index) in items"
       :key="index"
+      :anchor-id="item.anchorId"
       :description="item.description"
       :image="item.image"
       :content-type="item.contentType"

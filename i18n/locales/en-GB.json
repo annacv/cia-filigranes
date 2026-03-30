@@ -71,7 +71,8 @@
     "filipersones": "Filipeople",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contact"
+    "contacte": "Contact",
+    "collaboracions": "Collaborations"
   },
   "button": {
     "dossier": "Dossier",
@@ -876,7 +877,7 @@
     "claimTitle": "An infinity of characters ready to spring into action!",
     "claim": "Ideal for enlivening conventions, meetings, birthdays and all types of events",
     "title": "Tailor‑made performances",
-    "hero": { 
+    "hero": {
       "title": "Tailor‑made performances: the show without limits!",
       "alt": "Image of the fire performance"
     },
@@ -1095,7 +1096,7 @@
     "rrss": {
       "title": "And if you want to chat a bit, or see where we perform next...",
       "description": "Follow us on social networks and you'll find information about news, schedule, images..., and also watch great moments from our shows."
-    } 
+    }
   },
   "consent": {
     "map": {
@@ -1241,9 +1242,9 @@
       "rejectAll": "Reject all"
     }
   },
-    "avis-legal": {
-      "title": "Legal notice",
-      "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
+  "avis-legal": {
+    "title": "Legal notice",
+    "metaDescription": "Legal notice of Cia Filigranes. Information about website ownership, terms of use, intellectual property and cookie policy.",
     "sections": [
       {
         "key": "titular",
@@ -1324,6 +1325,71 @@
           "key": "gestio",
           "title": "Cookie management:",
           "description": "The user can configure their browser to reject or delete cookies. However, if essential cookies are disabled, the site may not function properly. You can consult your browser's help options for more information on how to manage them."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Discover the shows by Cia. Filigranes in collaboration with other clown companies.",
+    "hero": {
+      "title": "Co-productions and shows with other companies",
+      "alt": "Image from Cia. Filigranes collaborations"
+    },
+    "claimTitle": "Ready to find out who we share the stage with?",
+    "claim": "Come and explore the shows where Cia. Filigranes performs with other artists and companies!",
+    "hire": {
+      "title": "Would you like to book one of these shows?",
+      "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER is a troupe of clowns who wander the streets with their peculiar vehicle: a clothes horse loaded with dreams and mischief. They play with space, emotions, and the audience, weaving moments of humour, tenderness, and surprise. They are kind but a little mischievous, and they need to be welcomed. They are looking for something they lack… and perhaps they will find it among the people watching them."
+        },
+        {
+          "paragraph": "The clowns transform the street."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "In a world of relative darkness—which does not mean sad or gloomy, but quite the opposite—some playful characters have made a fascinating discovery: they have found light. If this world without light was already entertaining, now that they have made this discovery it is exhilarating."
+        },
+        {
+          "paragraph": "We can barely imagine how much these dynamic characters can get out of their new toy. We enter their world, where having fun comes first—a poetic, visual, and imaginative world where anything is possible, even turning light into fire."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP is a show with three clowns who take on classic roles within today’s social types: reunion, cooperation, mistrust, and friendship. Clowns—the most absurd and endearing beings in the universe, useless and indispensable—find themselves in an unknown space."
+        },
+        {
+          "paragraph": "Soon they will discover that they are completely different, yet one circumstance unites them: failure! Losing everything and having to start from scratch. Only an apple."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Our lovable clowns Makutu and Til are back to show us that in the circus world nothing is impossible. Together with our friends we will see that a circus ring is a place where anything can happen: incredible juggling, baffling magic tricks, balancing acts where you risk life and limb, and of course a place where any child can become a star at any moment."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "An itinerant brass band (winds and percussion) with live music directed with signals, clowns on stilts and unicycles, juggling and games with the audience. A parade flexible in time and number of artists that accompanies and activates the flow between stages, or that works as an autonomous, accessible street parade for all ages."
+        },
+        {
+          "paragraph": "With nautical props and participatory games, VENDAVAL offers a festive, poetic, shared journey."
         }
       ]
     }

@@ -71,7 +71,8 @@
     "filipersones": "Filipersonas",
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
-    "contacte": "Contacto"
+    "contacte": "Contacto",
+    "collaboracions": "Colaboraciones"
   },
   "button": {
     "dossier": "Dosier",
@@ -876,7 +877,7 @@
     "claimTitle": "Una infinidad de personajes a punto de entrar en acción!",
     "claim": "Ideales para amenizar convenciones, encuentros, cumpleaños y todo tipo de eventos",
     "title": "Animaciones a la carta",
-    "hero": { 
+    "hero": {
       "title": "Animaciones a la carta: ¡el espectáculo sin límites!",
       "alt": "Imagen de la animación de fuego"
     },
@@ -1095,7 +1096,7 @@
     "rrss": {
       "title": "Y si quieres chafardear un poco, o ver dónde actuamos próximamente...",
       "description": "Síguenos en las redes sociales y encontrarás información sobre actualidad, agenda, imágenes..., y también ver grandes momentos de nuestros espectáculos."
-    } 
+    }
   },
   "consent": {
     "map": {
@@ -1241,9 +1242,9 @@
       "rejectAll": "Rechazar todas"
     }
   },
-    "avis-legal": {
-      "title": "Aviso legal",
-      "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
+  "avis-legal": {
+    "title": "Aviso legal",
+    "metaDescription": "Aviso legal de Cia Filigranes. Información sobre la titularidad del sitio web, condiciones de uso, propiedad intelectual y política de cookies.",
     "sections": [
       {
         "key": "titular",
@@ -1324,6 +1325,71 @@
           "key": "gestio",
           "title": "Gestión de cookies:",
           "description": "La persona usuaria puede configurar su navegador para rechazar o suprimir cookies. Sin embargo, si se desactivan las cookies esenciales, el sitio puede no funcionar correctamente. Puedes consultar las opciones de ayuda de tu navegador para obtener más información sobre cómo gestionarlas."
+        }
+      ]
+    }
+  },
+  "collaborations": {
+    "metaDescription": "Descubre los espectáculos de la Compañía Filigranes en colaboración con otras compañías de payasos.",
+    "hero": {
+      "title": "Coproducciones y espectáculos con otras compañías",
+      "alt": "Imagen de las colaboraciones de la Cia. Filigranes"
+    },
+    "claimTitle": "¿Listo para descubrir con quién compartimos escenario?",
+    "claim": "¡Ven a conocer los espectáculos en los que la Cia. Filigranes actúa con otros artistas y compañías!",
+    "hire": {
+      "title": "¿Quieres contratar alguno de estos espectáculos?",
+      "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "clownDePas": {
+      "title": "Clown de Pas",
+      "synopsis": [
+        {
+          "paragraph": "ALTER es una troupe de payasos y payasas que deambula por las calles con su peculiar vehículo: un burro de tender la ropa cargado de sueños y disparates. Juegan con el espacio, las emociones y el público, tejiendo momentos de humor, ternura y sorpresa. Son amables pero un poco gamberros, y necesitan ser acogidos. Buscan algo que les falta… y quizá lo encuentren entre la gente que les observa."
+        },
+        {
+          "paragraph": "Los payasos transforman la calle."
+        }
+      ]
+    },
+    "fingerlight": {
+      "title": "Fingerlight",
+      "synopsis": [
+        {
+          "paragraph": "En un mundo de relativa oscuridad, lo cual no significa ni triste ni tétrico, sino todo lo contrario, unos personajes divertidos han hecho un hallazgo de lo más interesante: han descubierto la luz. Si este mundo sin luz ya era entretenido, ahora con este descubrimiento es apasionante."
+        },
+        {
+          "paragraph": "No podríamos ni imaginar el partido que estos personajes dinámicos pueden sacar a su nuevo juguete. Nos adentramos en su mundo, donde prima pasarlo bien; un mundo poético, visual e imaginativo, donde todo es posible, incluso convertir la luz en fuego."
+        }
+      ]
+    },
+    "heeelp": {
+      "title": "HEEELP",
+      "synopsis": [
+        {
+          "paragraph": "HEEELP es un espectáculo de tres payasos que adoptan los roles clásicos dentro de las tipologías sociales actuales: el reencuentro, la cooperación, la desconfianza y la amistad. Los payasos, los seres más absurdos y entrañables del universo, inútiles e imprescindibles, se encuentran en un espacio desconocido."
+        },
+        {
+          "paragraph": "Pronto descubrirán que son totalmente diferentes, pero hay una circunstancia que les une: ¡el fracaso! Perderlo todo y tener que empezar de cero. Solo una manzana."
+        }
+      ]
+    },
+    "circFilikrusty": {
+      "title": "Tot és possible",
+      "synopsis": [
+        {
+          "paragraph": "Nuestros entrañables payasos Makutu y Til vuelven a la carga para demostrarnos que en el mundo del circo nada es imposible. De la mano de nuestros amigos comprobaremos que la pista de un circo es un lugar donde todo puede pasar: malabarismos increíbles, trucos de magia incomprensibles, equilibrios en los que te juegas la integridad física y, cómo no, un lugar donde cualquier niño en cualquier momento puede ser una estrella."
+        }
+      ]
+    },
+    "vendaval": {
+      "title": "Vendaval",
+      "synopsis": [
+        {
+          "paragraph": "Una banda itinerante de metales (vientos y percusión) con música en directo dirigida con señales, payasos con zancos y monociclo, malabares y juegos con el público. Una cercavila flexible en el tiempo y en el número de artistas que acompaña y activa los flujos entre escenarios o que funciona como una cercavila autónoma, accesible y para todas las edades."
+        },
+        {
+          "paragraph": "Con atrezzo marinero y juegos participativos, VENDAVAL propone un viaje festivo, poético y compartido."
         }
       ]
     }

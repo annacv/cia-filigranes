@@ -22,13 +22,13 @@ const COLLABORATIONS_SHOWS: Record<string, string> = {
   'fingerlight': 'fingerlight',
   'vendaval': 'vendaval',
   'clown de pas': 'clown-de-pas',
+  'alter': 'clown-de-pas'
 }
 
 export const FILI_SHOWS_IMAGE_KEYS = Object.values(FILI_SHOWS)
 export const OTHER_FILI_SHOWS_IMAGE_KEYS = Object.values(OTHER_FILI_SHOWS)
 export const COLLABORATIONS_SHOWS_IMAGE_KEYS = Object.values(COLLABORATIONS_SHOWS)
 
-// Uses the same image keys as highlightShows
 const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   ...FILI_SHOWS,
   // Espectacles "fora de carta" o pendents d'afegir a la web
@@ -37,7 +37,6 @@ const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   ...COLLABORATIONS_SHOWS
 }
 
-// Uses the same base keys as HighlightWorkshops
 const WORKSHOPS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'taller de circ': 'circ',
   'circ': 'circ',
@@ -128,19 +127,11 @@ const getFallbackImageForType = (eventType: ContentType): CardImage | undefined 
   }
 }
 
-const INFO_URL_BY_COLLABORATION_CONTENT_KEY: Record<string, string> = {
-  'circ-filikrusty': 'https://improvistos.com/espectacles/espectacle-1/',
-  'heeelp': 'https://improvistos.com/heeelp/',
-  'fingerlight': 'https://improvistos.com/espectacles/espectacle-2/',
-  'vendaval': 'https://youtu.be/HpkRH-YxNXE',
-  'clown-de-pas': 'https://www.albertvinyes.cat/ca/espectacles/clown-de-pas/',
-}
-
 /**
  * Returns an event "info link" used by the agenda trend cards.
  *
  * - For shows with dedicated pages: link to the page video anchor (`#video`)
- * - For collaborations/special shows without dedicated pages: external URL
+ * - For collaborations shows: link to the collaborations page section (`#<contentKey>`)
  * - For OTHER_FILI_SHOWS: returns `undefined` (no button)
  */
 const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink | undefined => {
@@ -160,11 +151,9 @@ const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink 
     }
 
     if (COLLABORATIONS_SHOWS_IMAGE_KEYS.includes(contentKey)) {
-      const href = INFO_URL_BY_COLLABORATION_CONTENT_KEY[contentKey]
-      if (!href) return undefined
       return {
-        href,
-        target: '_blank',
+        href: `/collaboracions#${contentKey}`,
+        target: '_self',
         text: 'button.info',
       }
     }

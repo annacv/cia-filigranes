@@ -10,6 +10,7 @@ const mobileMap: Record<ImageRoute, Record<string, () => Promise<string>>> = {
   'contacte': GLOB_IMPORTS.mobileContacteImages,
   'filipersones': GLOB_IMPORTS.mobileFilipersonesImages,
   'agenda': GLOB_IMPORTS.mobileAgendaImages,
+  'collaboracions': GLOB_IMPORTS.mobileCollaboracionsImages,
 };
 
 const desktopMap: Record<ImageRoute, Record<string, () => Promise<string>>> = {
@@ -20,6 +21,7 @@ const desktopMap: Record<ImageRoute, Record<string, () => Promise<string>>> = {
   'contacte': GLOB_IMPORTS.desktopContacteImages,
   'filipersones': GLOB_IMPORTS.desktopFilipersonesImages,
   'agenda': GLOB_IMPORTS.desktopAgendaImages,
+  'collaboracions': GLOB_IMPORTS.desktopCollaboracionsImages,
 };
 
 /**

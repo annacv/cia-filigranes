@@ -35,7 +35,7 @@ const getLink = (route: string, item?: string): CardLink => {
 
   return {
     target: '_top',
-    href: page[locale.value as 'ca' | 'es' | 'en']
+    href: page?.[locale.value as 'ca' | 'es' | 'en'] || '#'
   }
 }
 

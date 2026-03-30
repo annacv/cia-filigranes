@@ -1,10 +1,8 @@
 import { watch, nextTick } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { useState } from '#app'
+import { IN_PAGE_ANCHOR_HASHES } from '~/constants'
 import { heroScrollRuntime } from './runtime'
-
-/** Hash navigations that scroll deep into the page — must not trigger the "first scroll" fallback to #main-content-anchor */
-const IN_PAGE_ANCHOR_HASHES = new Set(['#agenda', '#video'])
 
 export interface UseHeroScrollStateReturn {
   enableScrollDetection: ReturnType<typeof useState<boolean>>
