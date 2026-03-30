@@ -22,6 +22,7 @@ useHead({
 const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
 const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
 const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
+const aboutUs = getTranslatedList('home.aboutUs.description', ['paragraph'])
 
 const slicedEvents = computed(() => {
   const shows = events.value.filter((event) => event.eventType === 'shows')
@@ -77,7 +78,8 @@ const slicedEvents = computed(() => {
           content-type="shows"
           :alt="t('home.hero.alt')"
           :info-button="{
-            href: '/espectacles/vint-anys'
+            href: '/espectacles/vint-anys#video',
+            textKey: 'button.teaser'
           }"
           :download-button="{
             download: `CiaFiligranes-vint-anys-${locale}.pdf`,
@@ -125,6 +127,23 @@ const slicedEvents = computed(() => {
           <HighlightShows :reorder-index="getItemIndex('espectacles', 'vint-anys')" />
           <HighlightWorkshops />
           <HighlightPerformances />
+          <ClaimTitle
+            class="text-center !pb-0 !mb-0 !mt-0 md:!mt-8 xl:!mt-0 xl:!-mb-5"
+            :claim-title="t('home.aboutUs.title')"
+            is-section-title
+          />
+          <Synopsis
+            :description="aboutUs"
+            :image="getImageByRoute('filipersones', 'home')"
+            content-type="shows"
+            :alt="t('home.aboutUs.title')"
+            show-full-content
+            is-reversed
+            :info-button="{
+              href: '/filipersones',
+              textKey: 'home.aboutUs.buttonText'
+            }"
+          />
         </div>
       </template>
       <template #wrappedBottom>
