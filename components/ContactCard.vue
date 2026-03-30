@@ -44,7 +44,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
               />
             </div>
             <div v-else key="placeholder" class="w-full">
-              <ConsentPlaceholder
+              <LegalConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
                 purpose="maps"
@@ -53,7 +53,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           </Transition>
           <template #fallback>
             <div class="w-full aspect-video bg-gray-200 flex flex-col items-center justify-center text-gray-600 p-4 gap-2">
-              <ConsentPlaceholder
+              <LegalConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
                 purpose="maps"
