@@ -34,17 +34,17 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
             <div class="flex flex-col text-sm xs:flex-row gap-2 w-full lg:w-auto">
               <FiliButton
                 :text="$t('cookies.banner.accept')"
-                button-class="px-3 py-2 button-outline-neutral bg-white"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-900 border-neutral-900 hover:bg-neutral-900 hover:border-neutral-900"
                 :on-click="acceptAll"
               />
               <FiliButton
                 :text="$t('cookies.banner.customize')"
-                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-800 border-neutral-800 hover:bg-neutral-800 hover:border-neutral-800"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-900 border-neutral-900 hover:bg-neutral-900 hover:border-neutral-900"
                 :on-click="openModal"
               />
               <FiliButton
                 :text="$t('cookies.banner.reject')"
-                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-600 border-neutral-600 hover:bg-neutral-600 hover:border-neutral-600"
+                button-class="px-3 py-2 button-outline-neutral bg-neutral-100 text-neutral-900 border-neutral-900 hover:bg-neutral-900 hover:border-neutral-900"
                 :on-click="rejectAll"
               />
             </div>

@@ -47,6 +47,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
               <ConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
+                purpose="maps"
               />
             </div>
           </Transition>
@@ -55,6 +56,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
               <ConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
+                purpose="maps"
               />
             </div>
           </template>

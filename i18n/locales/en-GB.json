@@ -119,7 +119,9 @@
     },
     "legal": {
       "advice": "Legal notice",
-      "cookies": "Cookie policy"
+      "cookies": "Cookie policy",
+      "manageCookies": "Manage cookies",
+      "withdrawConsent": "Withdraw consent"
     },
     "supporters": {
       "title": "With the support of:",
@@ -1110,11 +1112,11 @@
   "consent": {
     "map": {
       "title": "Filigranes Company location map",
-      "consentRequired": "The map requires accepting functional cookies"
+      "consentRequired": "To view the map, you need to accept Google Maps cookies."
     },
     "youtube": {
       "title": "Show video",
-      "consentRequired": "To play the video, functional cookies must be accepted"
+      "consentRequired": "To play the video, you need to accept YouTube cookies."
     },
     "manageCookies": "Manage cookies",
     "acceptCookies": "Accept cookies"
@@ -1181,6 +1183,24 @@
             "duration": "Persistent"
           },
           {
+            "name": "cookie-consent",
+            "purpose": "Stores your consent choice (accepted, rejected, or customized)",
+            "responsible": "First-party (us)",
+            "duration": "1 year"
+          },
+          {
+            "name": "cookie-preferences",
+            "purpose": "Stores your purpose-based preferences (YouTube and Google Maps)",
+            "responsible": "First-party (us)",
+            "duration": "1 year"
+          },
+          {
+            "name": "sessionStorage: filigranes-calendar-events",
+            "purpose": "Temporary agenda cache to speed up event loading during the same browser session",
+            "responsible": "First-party (us)",
+            "duration": "Session"
+          },
+          {
             "name": "YouTube",
             "purpose": "Video playback preferences",
             "responsible": "Google/YouTube",
@@ -1227,7 +1247,7 @@
       "description": "When accessing certain external services such as Google Maps, which use iframes, cookies from these third parties not directly controlled by us may be set."
     },
     "banner": {
-      "description": "We only use cookies to store your language preferences and improve your browsing experience.",
+      "description": "We use essential cookies to store your language preferences and your consent, and optional cookies to show YouTube videos and the location of our headquarters on Google Maps.",
       "accept": "Accept all",
       "reject": "Reject",
       "customize": "Customize",
@@ -1238,17 +1258,23 @@
       "description": "You can activate or deactivate the different categories of cookies according to your preferences.",
       "essential": {
         "title": "Essential cookies",
-        "description": "Necessary for the basic functioning of the website. Include language preference that remembers your selection.",
+        "description": "Necessary for the basic functioning of the website. Include language and consent preferences that remember your selection.",
         "required": "Required"
       },
-      "functional": {
-        "title": "Functional cookies",
-        "description": "Allow viewing the Google Maps, playing show videos and improve website functionality. Without them, you'll see a message instead of the map and videos.",
+      "youtube": {
+        "title": "YouTube cookies",
+        "description": "Allow playing embedded YouTube videos. If disabled, you'll see a placeholder instead of the player.",
+        "optional": "Optional"
+      },
+      "maps": {
+        "title": "Google Maps cookies",
+        "description": "Allow loading the embedded Google Map. If disabled, you'll see a placeholder instead of the map.",
         "optional": "Optional"
       },
       "save": "Save preferences",
       "acceptAll": "Accept all",
-      "rejectAll": "Reject all"
+      "rejectAll": "Reject all",
+      "withdraw": "Withdraw consent and choose again"
     }
   },
   "avis-legal": {
@@ -1313,17 +1339,17 @@
         {
           "key": "essencials",
           "title": "Essential (necessary for site operation):",
-          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits."
+          "description": "Language preference cookie (first-party): stores the selected language (Catalan, Spanish, English) to maintain it in future visits. Consent cookies (first-party): store the accepted, rejected, or customized choice and purpose-based preferences."
         },
         {
           "key": "funcionals",
           "title": "Functional",
-          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated. Includes cookies for playback preferences. Google Maps (third-party, Google): used to display the location map of the Filigranes Company headquarters. By default, the web configuration keeps YouTube and Google Maps cookies disabled until the user accepts them."
+          "description": "YouTube (third-party, Google/YouTube): used only if video playback is activated and accepted for this purpose. Includes cookies for playback preferences. Google Maps (third-party, Google): used only if map loading is activated and accepted for this purpose. By default, both purposes remain disabled until the user accepts them."
         },
         {
           "key": "deshabilitades",
           "title": "Disabled by default / Not used:",
-          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
+          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. We only use sessionStorage for technical purposes, such as temporary agenda cache, without user profiling. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
         },
         {
           "key": "servei-extern",

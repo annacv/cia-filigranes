@@ -119,7 +119,9 @@
     },
     "legal": {
       "advice": "Aviso legal",
-      "cookies": "Política de cookies"
+      "cookies": "Política de cookies",
+      "manageCookies": "Gestionar cookies",
+      "withdrawConsent": "Retirar consentimiento"
     },
     "supporters": {
       "title": "Con el apoyo de:",
@@ -1110,11 +1112,11 @@
   "consent": {
     "map": {
       "title": "Mapa de la ubicación de la Cia. Filigranes",
-      "consentRequired": "Para poder ver el mapa se requiere aceptar las cookies funcionales"
+      "consentRequired": "Para poder ver el mapa, es necesario aceptar las cookies de Google Maps."
     },
     "youtube": {
       "title": "Video del espectáculo",
-      "consentRequired": "Para poder reproducir el vídeo se requiere aceptar las cookies funcionales"
+      "consentRequired": "Para poder reproducir el vídeo, es necesario aceptar las cookies de YouTube."
     },
     "manageCookies": "Gestionar cookies",
     "acceptCookies": "Aceptar cookies"
@@ -1227,7 +1229,7 @@
       "description": "Al acceder a ciertos servicios externos como Google Maps, que utilizan iframes, pueden establecerse cookies propias de estos terceros no controladas directamente por nosotros."
     },
     "banner": {
-      "description": "Solo utilizamos cookies para almacenar tus preferencias de idioma y mejorar tu experiencia de navegación.",
+      "description": "Usamos cookies esenciales para guardar tus preferencias de idioma y tu consentimiento, y cookies opcionales para mostrar vídeos de YouTube y la ubicación de nuestra sede en Google Maps.",
       "accept": "Aceptar todas",
       "reject": "Rechazar",
       "customize": "Personalizar",
@@ -1238,17 +1240,23 @@
       "description": "Puedes activar o desactivar las diferentes categorías de cookies según tus preferencias.",
       "essential": {
         "title": "Cookies esenciales",
-        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen la preferencia de idioma que recuerda tu selección.",
+        "description": "Necesarias para el funcionamiento básico del sitio web. Incluyen preferencias de idioma y de consentimiento que recuerdan tu selección.",
         "required": "Obligatorias"
       },
-      "functional": {
-        "title": "Cookies funcionales",
-        "description": "Permiten ver el mapa de Google Maps, reproducir los vídeos de los espectáculos y mejoran la funcionalidad del sitio web. Sin ellas, verás un mensaje en lugar del mapa y de los vídeos.",
+      "youtube": {
+        "title": "Cookies de YouTube",
+        "description": "Permiten reproducir vídeos incrustados de YouTube. Si se desactivan, verás un aviso en lugar del reproductor.",
+        "optional": "Opcionales"
+      },
+      "maps": {
+        "title": "Cookies de Google Maps",
+        "description": "Permiten cargar el mapa incrustado de Google Maps. Si se desactivan, verás un aviso en lugar del mapa.",
         "optional": "Opcionales"
       },
       "save": "Guardar preferencias",
       "acceptAll": "Aceptar todas",
-      "rejectAll": "Rechazar todas"
+      "rejectAll": "Rechazar todas",
+      "withdraw": "Retirar el consentimiento y volver a elegir"
     }
   },
   "avis-legal": {

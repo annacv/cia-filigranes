@@ -72,6 +72,7 @@ const dynamicPlayerVars = computed(() => ({
           key="placeholder"
           :title="t('consent.youtube.title')"
           :description="t('consent.youtube.consentRequired')"
+          purpose="youtube"
         />
       </Transition>
     </ClientOnly>
