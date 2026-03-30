@@ -3,7 +3,7 @@ import { CONTACT } from "~/constants";
 
 const { t } = useI18n()
 const { isMobileOrTablet } = useResponsive()
-const { openModal, resetConsent } = useCookies()
+const { openModal } = useCookies()
 
 </script>
 <template>
