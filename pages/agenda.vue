@@ -7,7 +7,11 @@ import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import CalendarTrends from "~/components/agenda/CalendarTrends.vue"
 
 const { t } = useI18n()
-const { events, pending, error } = useCalendarEvents()
+const { events, pending, error, ensureLoaded } = useCalendarEvents()
+
+if (import.meta.server) {
+  await ensureLoaded()
+}
 
 useHead({
   meta: [
