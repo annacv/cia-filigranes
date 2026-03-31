@@ -144,7 +144,7 @@ const getTrendButton = (trend: TrendItemBase): EventInfoLink | null => {
       </div>
     </div>
 
-    <div class="col-span-5 xl:col-span-8 grid grid-cols-2 xl:grid-cols-6 gap-y-0.5 md:gap-y-2 gap-x-0.5 md:gap-x-1">
+    <div class="col-span-5 xl:col-span-8 grid grid-cols-2 lg:grid-cols-3 gap-y-0.5 md:gap-y-2 gap-x-0.5 md:gap-x-1">
       <article
         v-for="trend in trends"
         :key="trend.id"
@@ -154,7 +154,7 @@ const getTrendButton = (trend: TrendItemBase): EventInfoLink | null => {
           <h3
             :class="[
               getTrendTitleBackgroundClass(trend.eventType),
-              'mb-0 w-full min-w-0 truncate p-2 font-grotesk text-xs md:text-sm font-bold uppercase !leading-none text-white',
+              'mb-0 w-full min-w-0 truncate p-2 font-grotesk text-xs md:text-sm xl:text-base font-bold uppercase !leading-none text-white',
             ]"
           >
             {{ trend.title }}
@@ -173,7 +173,7 @@ const getTrendButton = (trend: TrendItemBase): EventInfoLink | null => {
             :href="trend.button.href"
             :target="trend.button.target"
             :text="t(trend.button.text)"
-            :button-class="[getTrendButtonClass(trend.eventType), '!px-2 !py-0.5 !text-xs md:!text-sm absolute bottom-2 left-2 z-10']"
+            :button-class="[getTrendButtonClass(trend.eventType), '!px-2 !py-0.5 !text-xs md:!text-sm absolute bottom-2 right-2 md:bottom-4 z-10']"
           >
             <template #icon-right>
               <ArrowRight class="!mt-0" />
