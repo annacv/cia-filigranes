@@ -271,7 +271,7 @@ export const COLLABORATION_ENTRIES = [
   {
     i18nKey: 'vendaval',
     imageSlug: 'vendaval',
-    href: 'https://www.youtube.com/watch?v=HpkRH-YxNXE&feature=youtu.be',
+    href: 'https://linktr.ee/cia.VENDAVAL',
   },
   {
     i18nKey: 'fingerlight',
