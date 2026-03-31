@@ -13,7 +13,7 @@ const { isRouteActiveExact } = useRouteActive();
   >
     <div class="grid-layout bg-neutral-900 text-white">
       <div class="layout-cols py-8 xl:py-14">
-        <div class="grid grid-cols-4 lg:grid-cols-7 gap-5 md:gap-6 xl:gap-8">
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5 gap-y-8 sm:gap-6 xl:gap-8">
           <div
             v-for="(routeItem, index) in ROUTES_INDEX"
             :key="index"
@@ -21,7 +21,7 @@ const { isRouteActiveExact } = useRouteActive();
           >
             <NuxtLinkLocale
               :to="routeItem.name"
-              class="w-max text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
+              class="w-max text-xs sm:text-sm xl:text-base font-semibold transition-opacity duration-200 border-b-2 border-white pb-1"
               :class="{
                 'border-opacity-100': isRouteActiveExact(`/${routeItem.name}`),
                 'border-opacity-0 hover:border-opacity-50 hover:opacity-80': !isRouteActiveExact(`/${routeItem.name}`)
