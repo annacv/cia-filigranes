@@ -20,11 +20,8 @@ type TrendItem = {
   title: string
   totalScheduled: number
   events: CalendarEvent[]
-  imageAlt: string
   button: EventInfoLink | null
 }
-
-type TrendItemBase = Omit<TrendItem, 'imageAlt' | 'button'>
 
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -44,7 +41,7 @@ const getTrendKey = (event: CalendarEvent) => {
 }
 
 const trends = computed<TrendItem[]>(() => {
-  const groupedEvents = new Map<string, TrendItemBase>()
+  const groupedEvents = new Map<string, Omit<TrendItem, 'button'>>()
 
   for (const event of events.value) {
     if (!isTrendContentType(event.eventType) || !event.image) continue
@@ -70,7 +67,6 @@ const trends = computed<TrendItem[]>(() => {
   return [...groupedEvents.values()]
     .map((trend): TrendItem => ({
       ...trend,
-      imageAlt: useImageAlt(trend.eventType, trend.title),
       button: getTrendButton(trend),
     }))
     .sort((left, right) => right.totalScheduled - left.totalScheduled)
@@ -91,9 +87,9 @@ const getTrendButtonClass = (eventType: TrendContentType) => {
   return 'button-outline-tertiary'
 }
 
-const getTrendButton = (trend: TrendItemBase): EventInfoLink | null => {
+const getTrendButton = (trend: Pick<TrendItem, 'events'>): EventInfoLink | null => {
   const eventInfoLink = trend.events.find((event) => !!event.eventInfoLink)?.eventInfoLink
-  if (!eventInfoLink) return null
+  if (!eventInfoLink?.href) return null
 
   const isInternal = eventInfoLink.href.startsWith('/')
   const target: '_self' | '_blank' = eventInfoLink.target
@@ -164,7 +160,7 @@ const getTrendButton = (trend: TrendItemBase): EventInfoLink | null => {
           <CardImage
             :image="trend.image"
             :content-type="trend.eventType"
-            :image-alt="trend.imageAlt"
+            :image-alt="useImageAlt(trend.eventType, trend.title)"
             :show-gradient="false"
             class="h-full w-full"
           />

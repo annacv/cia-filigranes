@@ -1,3 +1,4 @@
+import { onMounted } from 'vue'
 import type { CalendarEvent } from '~/types'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
 import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
@@ -163,7 +164,12 @@ export const useCalendarEvents = (options?: UseCalendarEventsOptions) => {
     }
 
     if (!hasExistingEvents) {
-      pending.value = true
+      // Only show blocking loading before any snapshot exists,
+      // or when the user explicitly force-refreshes.
+      const shouldShowBlockingPending = !hasLoadedSharedEvents.value || forceRefresh
+      if (shouldShowBlockingPending) {
+        pending.value = true
+      }
       errorMessage.value = null
     }
 
@@ -193,9 +199,9 @@ export const useCalendarEvents = (options?: UseCalendarEventsOptions) => {
 
   const ensureLoaded = () => fetchEvents(false)
 
-  // Initial fetch on client side when the page was not prerendered with events.
+  // Run after mount so sessionStorage/cache cannot replace SSR payload before hydration.
   if (import.meta.client) {
-    void ensureLoaded()
+    onMounted(() => void ensureLoaded())
   }
 
   return {

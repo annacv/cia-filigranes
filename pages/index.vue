@@ -11,7 +11,9 @@ const { getTranslatedList } = useI18nUtils()
 const { events, pending, error, ensureLoaded } = useCalendarEvents()
 const { maxVisibleEvents } = useCalendarLayout()
 
-await ensureLoaded()
+if (import.meta.server) {
+  await ensureLoaded()
+}
 
 useHead({
   meta: [
