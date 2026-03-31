@@ -3,10 +3,10 @@ import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composa
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { YOUTUBE_VIDEO_IDS } from "~/constants"
-import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
+import { getImageByRoute } from "~/utils/image-by-route"
+import { getItemIndex } from "~/utils/get-item-index"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const {
   events,
@@ -18,27 +18,25 @@ const {
   liveShowFilterOptions,
   filteredEvents,
   hasActiveFilters,
-} = useShowAgenda('plis-plas')
-const getImageAlt = (title?: string) => useImageAlt('shows', title);
+} = useShowAgenda("plis-plas")
+const getImageAlt = (title?: string) => useImageAlt("shows", title)
 
 useHead({
-  meta: [
-    { name: 'description', content: t('shows.plis-plas.metaDescription') }
-  ]
+  meta: [{ name: "description", content: t("shows.plis-plas.metaDescription") }],
 })
 
-const abstract = getTranslatedList('shows.plis-plas.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('shows.plis-plas.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.plis-plas.synopsis', ['paragraph'])
-const techCard = getTranslatedList('shows.plis-plas.techCard', ['title', 'description'])
-const artCard = getTranslatedList('shows.plis-plas.artCard', ['title', 'description'])
+const abstract = getTranslatedList("shows.plis-plas.abstract", ["paragraph"])
+const summaryItems = getTranslatedList("shows.plis-plas.list", ["title", "description"])
+const synopsis = getTranslatedList("shows.plis-plas.synopsis", ["paragraph"])
+const techCard = getTranslatedList("shows.plis-plas.techCard", ["title", "description"])
+const artCard = getTranslatedList("shows.plis-plas.artCard", ["title", "description"])
 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-plis-plas-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-plis-plas-${locale.value}.pdf`,
   }
-});
+})
 </script>
 
 <template>
@@ -50,19 +48,12 @@ const summaryButton = computed(() => {
       schedule-content-key="plis-plas"
     >
       <template #content>
-        <CoverTitle
-          :title="t('routes.plis-plas')"
-          :slice-end="1"
-        />
+        <CoverTitle :title="t('routes.plis-plas')" :slice-end="1" />
       </template>
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
+        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
         <div id="video" class="scroll-mt-[72px] lg:scroll-mt-[87px] pt-2 pb-12 lg:pt-4 lg:pb-24">
           <YoutubePlayer :video-id="YOUTUBE_VIDEO_IDS.plisPlas" />
         </div>
@@ -75,6 +66,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('plis-plas')"
           show-full-content
           should-clip
+          :hire-contract="{ kind: 'show', productKey: 'plis-plas' }"
         />
         <DataSheet
           :tech-card="techCard"
@@ -84,7 +76,6 @@ const summaryButton = computed(() => {
           is-reversed
         />
         <HireFili
-          class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
           text-color="text-white"
@@ -94,25 +85,25 @@ const summaryButton = computed(() => {
       </template>
       <template v-if="hasScheduledContent" #wrapped>
         <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
-        <ClaimTitle
-          :claim-title="t('shows.liveClaimTitle', { title: t('routes.plis-plas') })"
-          is-section-title
-        />
-        <AgendaFilters
-          v-model:selected-primary-filter="selectedLiveShowFilter"
-          v-model:show-only-open-to-public="showOnlyOpenToPublic"
-          :primary-filter-options="liveShowFilterOptions"
-        />
-        <CalendarEventList
-          :events="filteredEvents"
-          :pending="pending"
-          :error="error"
-          :total-events="events.length"
-          selected-event-type="shows"
-          :has-active-filters="hasActiveFilters"
-          is-dedicated-list
-          show-view-all-link
-        />
+          <ClaimTitle
+            :claim-title="t('shows.liveClaimTitle', { title: t('routes.plis-plas') })"
+            is-section-title
+          />
+          <AgendaFilters
+            v-model:selected-primary-filter="selectedLiveShowFilter"
+            v-model:show-only-open-to-public="showOnlyOpenToPublic"
+            :primary-filter-options="liveShowFilterOptions"
+          />
+          <CalendarEventList
+            :events="filteredEvents"
+            :pending="pending"
+            :error="error"
+            :total-events="events.length"
+            selected-event-type="shows"
+            :has-active-filters="hasActiveFilters"
+            is-dedicated-list
+            show-view-all-link
+          />
         </div>
       </template>
       <template #unwrapped>
@@ -124,18 +115,20 @@ const summaryButton = computed(() => {
           />
         </div>
       </template>
+      <template #wrappedBottom>
+        <HireContactSection />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="espectacles_plis-plas-2"
+          image-route="espectacles"
+          :alt="getImageAlt('plis-plas')"
+          background-position="center 30%"
+        />
+        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="espectacles_plis-plas-2"
-      image-route="espectacles"
-      :alt="getImageAlt('plis-plas')"
-      background-position="center 30%"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

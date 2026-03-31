@@ -2,10 +2,10 @@
 import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
+import { getImageByRoute } from "~/utils/image-by-route"
+import { getItemIndex } from "~/utils/get-item-index"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const {
   events,
@@ -17,27 +17,25 @@ const {
   workshopFilterOptions,
   filteredEvents,
   hasActiveFilters,
-} = useWorkshopAgenda('pallassos')
-const getImageAlt = (title?: string) => useImageAlt('workshops', title);
+} = useWorkshopAgenda("pallassos")
+const getImageAlt = (title?: string) => useImageAlt("workshops", title)
 
 useHead({
-  meta: [
-    { name: 'description', content: t('workshops.pallassos.metaDescription') }
-  ]
+  meta: [{ name: "description", content: t("workshops.pallassos.metaDescription") }],
 })
 
-const abstract = getTranslatedList('workshops.pallassos.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('workshops.pallassos.list', ['title', 'description'])
-const synopsis = getTranslatedList('workshops.pallassos.synopsis', ['paragraph'])
-const techCard = getTranslatedList('workshops.pallassos.techCard', ['title', 'description'])
-const artCard = getTranslatedList('workshops.pallassos.artCard', ['title', 'description'])
+const abstract = getTranslatedList("workshops.pallassos.abstract", ["paragraph"])
+const summaryItems = getTranslatedList("workshops.pallassos.list", ["title", "description"])
+const synopsis = getTranslatedList("workshops.pallassos.synopsis", ["paragraph"])
+const techCard = getTranslatedList("workshops.pallassos.techCard", ["title", "description"])
+const artCard = getTranslatedList("workshops.pallassos.artCard", ["title", "description"])
 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-pallassos-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-pallassos-${locale.value}.pdf`,
   }
-});
+})
 </script>
 
 <template>
@@ -58,11 +56,7 @@ const summaryButton = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
+        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
       </template>
       <template #unwrappedTop>
         <Synopsis
@@ -72,6 +66,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('pallassos')"
           show-full-content
           should-clip
+          :hire-contract="{ kind: 'workshop', productKey: 'pallassos' }"
         />
         <DataSheet
           :tech-card="techCard"
@@ -83,7 +78,6 @@ const summaryButton = computed(() => {
           is-reversed
         />
         <HireFili
-          class="py-12"
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
           text-color="text-white"
@@ -92,25 +86,29 @@ const summaryButton = computed(() => {
       </template>
       <template v-if="hasScheduledContent" #wrapped>
         <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
-        <ClaimTitle
-          :claim-title="t('workshops.liveClaimTitle', { title: t('workshops.commonTitle', { title: t('routes.pallassos') }) })"
-          is-section-title
-        />
-        <AgendaFilters
-          v-model:selected-primary-filter="selectedWorkshopFilter"
-          v-model:show-only-open-to-public="showOnlyOpenToPublic"
-          :primary-filter-options="workshopFilterOptions"
-        />
-        <CalendarEventList
-          :events="filteredEvents"
-          :pending="pending"
-          :error="error"
-          :total-events="events.length"
-          selected-event-type="workshops"
-          :has-active-filters="hasActiveFilters"
-          is-dedicated-list
-          show-view-all-link
-        />
+          <ClaimTitle
+            :claim-title="
+              t('workshops.liveClaimTitle', {
+                title: t('workshops.commonTitle', { title: t('routes.pallassos') }),
+              })
+            "
+            is-section-title
+          />
+          <AgendaFilters
+            v-model:selected-primary-filter="selectedWorkshopFilter"
+            v-model:show-only-open-to-public="showOnlyOpenToPublic"
+            :primary-filter-options="workshopFilterOptions"
+          />
+          <CalendarEventList
+            :events="filteredEvents"
+            :pending="pending"
+            :error="error"
+            :total-events="events.length"
+            selected-event-type="workshops"
+            :has-active-filters="hasActiveFilters"
+            is-dedicated-list
+            show-view-all-link
+          />
         </div>
       </template>
       <template #unwrapped>
@@ -122,18 +120,20 @@ const summaryButton = computed(() => {
           />
         </div>
       </template>
+      <template #wrappedBottom>
+        <HireContactSection />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="tallers_pallassos-3"
+          image-route="tallers"
+          :alt="getImageAlt('pallassos')"
+          content-type="workshops"
+        />
+        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="tallers_pallassos-3"
-      image-route="tallers"
-      :alt="getImageAlt('pallassos')"
-      content-type="workshops"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

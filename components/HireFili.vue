@@ -25,7 +25,7 @@ const props = defineProps({
 
 <template>
   <section :aria-label="`${title} section`" :class="`grid-layout ${bgColor}`">
-    <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 text-base md:text-lg">
+    <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 md:py-3.5 text-base md:text-lg">
       <h2 :class="`font-bold ${textColor}`">
         {{ title }}
       </h2>

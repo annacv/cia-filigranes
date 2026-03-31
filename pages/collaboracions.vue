@@ -69,6 +69,8 @@ const synopsisItems = computed(() => {
         <HireFili
           :title="t('collaborations.hire.title')"
           description="collaborations.hire.description"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <BottomNavigation />
         <TheSupporters />

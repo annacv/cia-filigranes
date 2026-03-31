@@ -150,18 +150,20 @@ const showMore = () => {
           :claim-title="t('filipersones.knowMoreTitle')"
         />
       </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="filipersones_footer"
+          image-route="filipersones"
+          :alt="t('shows.hero.alt')"
+          background-position="center top"
+        />
+        <HireFili
+          :title="t('home.hire.title')"
+          description="home.hire.description"
+        />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="filipersones_footer"
-      image-route="filipersones"
-      :alt="t('shows.hero.alt')"
-      background-position="center top"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

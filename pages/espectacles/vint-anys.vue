@@ -3,10 +3,10 @@ import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composa
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { YOUTUBE_VIDEO_IDS } from "~/constants"
-import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
+import { getImageByRoute } from "~/utils/image-by-route"
+import { getItemIndex } from "~/utils/get-item-index"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const {
   events,
@@ -18,27 +18,25 @@ const {
   liveShowFilterOptions,
   filteredEvents,
   hasActiveFilters,
-} = useShowAgenda('vint-anys')
-const getImageAlt = (title?: string) => useImageAlt('shows', title);
+} = useShowAgenda("vint-anys")
+const getImageAlt = (title?: string) => useImageAlt("shows", title)
 
 useHead({
-  meta: [
-    { name: 'description', content: t('shows.vint-anys.metaDescription') }
-  ]
+  meta: [{ name: "description", content: t("shows.vint-anys.metaDescription") }],
 })
 
-const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
-const techCard = getTranslatedList('shows.vint-anys.techCard', ['title', 'description'])
-const artCard = getTranslatedList('shows.vint-anys.artCard', ['title', 'description'])
+const abstract = getTranslatedList("shows.vint-anys.abstract", ["paragraph"])
+const summaryItems = getTranslatedList("shows.vint-anys.list", ["title", "description"])
+const synopsis = getTranslatedList("shows.vint-anys.synopsis", ["paragraph"])
+const techCard = getTranslatedList("shows.vint-anys.techCard", ["title", "description"])
+const artCard = getTranslatedList("shows.vint-anys.artCard", ["title", "description"])
 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
-});
+})
 </script>
 
 <template>
@@ -50,16 +48,14 @@ const summaryButton = computed(() => {
       schedule-content-key="vint-anys"
     >
       <template #content>
-        <VintAnysBrand class="-scale-x-100 w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"/>
+        <VintAnysBrand
+          class="-scale-x-100 w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"
+        />
       </template>
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
+        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
         <div id="video" class="scroll-mt-[72px] lg:scroll-mt-[87px] pt-2 pb-12 lg:pt-4 lg:pb-24">
           <YoutubePlayer :video-id="YOUTUBE_VIDEO_IDS.vintAnys" />
         </div>
@@ -72,6 +68,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('vint-anys')"
           show-full-content
           should-clip
+          :hire-contract="{ kind: 'show', productKey: 'vint-anys' }"
         />
         <DataSheet
           :tech-card="techCard"
@@ -81,7 +78,6 @@ const summaryButton = computed(() => {
           is-reversed
         />
         <HireFili
-          class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
           text-color="text-white"
@@ -90,25 +86,25 @@ const summaryButton = computed(() => {
       </template>
       <template v-if="hasScheduledContent" #wrapped>
         <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
-        <ClaimTitle
-          :claim-title="t('shows.liveClaimTitle', { title: t('routes.vint-anys') })"
-          is-section-title
-        />
-        <AgendaFilters
-          v-model:selected-primary-filter="selectedLiveShowFilter"
-          v-model:show-only-open-to-public="showOnlyOpenToPublic"
-          :primary-filter-options="liveShowFilterOptions"
-        />
-        <CalendarEventList
-          :events="filteredEvents"
-          :pending="pending"
-          :error="error"
-          :total-events="events.length"
-          selected-event-type="shows"
-          :has-active-filters="hasActiveFilters"
-          is-dedicated-list
-          show-view-all-link
-        />
+          <ClaimTitle
+            :claim-title="t('shows.liveClaimTitle', { title: t('routes.vint-anys') })"
+            is-section-title
+          />
+          <AgendaFilters
+            v-model:selected-primary-filter="selectedLiveShowFilter"
+            v-model:show-only-open-to-public="showOnlyOpenToPublic"
+            :primary-filter-options="liveShowFilterOptions"
+          />
+          <CalendarEventList
+            :events="filteredEvents"
+            :pending="pending"
+            :error="error"
+            :total-events="events.length"
+            selected-event-type="shows"
+            :has-active-filters="hasActiveFilters"
+            is-dedicated-list
+            show-view-all-link
+          />
         </div>
       </template>
       <template #unwrapped>
@@ -120,17 +116,15 @@ const summaryButton = computed(() => {
           />
         </div>
       </template>
+      <template #wrappedBottom>
+        <HireContactSection />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter image-name="hero_footer" image-route="" :alt="getImageAlt('vint-anys')" />
+        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="hero_footer"
-      image-route=""
-      :alt="getImageAlt('vint-anys')"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

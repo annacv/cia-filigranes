@@ -2,10 +2,10 @@
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
+import { getImageByRoute } from "~/utils/image-by-route"
+import { getItemIndex } from "~/utils/get-item-index"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const {
   events,
@@ -17,27 +17,25 @@ const {
   liveShowFilterOptions,
   filteredEvents,
   hasActiveFilters,
-} = useShowAgenda('circ-trinxeta')
-const getImageAlt = (title?: string) => useImageAlt('shows', title);
+} = useShowAgenda("circ-trinxeta")
+const getImageAlt = (title?: string) => useImageAlt("shows", title)
 
 useHead({
-  meta: [
-    { name: 'description', content: t('shows.circ-trinxeta.metaDescription') }
-  ]
+  meta: [{ name: "description", content: t("shows.circ-trinxeta.metaDescription") }],
 })
 
-const abstract = getTranslatedList('shows.circ-trinxeta.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('shows.circ-trinxeta.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.circ-trinxeta.synopsis', ['paragraph'])
-const techCard = getTranslatedList('shows.circ-trinxeta.techCard', ['title', 'description'])
-const artCard = getTranslatedList('shows.circ-trinxeta.artCard', ['title', 'description'])
+const abstract = getTranslatedList("shows.circ-trinxeta.abstract", ["paragraph"])
+const summaryItems = getTranslatedList("shows.circ-trinxeta.list", ["title", "description"])
+const synopsis = getTranslatedList("shows.circ-trinxeta.synopsis", ["paragraph"])
+const techCard = getTranslatedList("shows.circ-trinxeta.techCard", ["title", "description"])
+const artCard = getTranslatedList("shows.circ-trinxeta.artCard", ["title", "description"])
 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
   }
-});
+})
 </script>
 
 <template>
@@ -58,11 +56,7 @@ const summaryButton = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
+        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
       </template>
       <template #unwrappedTop>
         <Synopsis
@@ -72,6 +66,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('circ-trinxeta')"
           show-full-content
           should-clip
+          :hire-contract="{ kind: 'show', productKey: 'circ-trinxeta' }"
         />
         <DataSheet
           :tech-card="techCard"
@@ -81,7 +76,6 @@ const summaryButton = computed(() => {
           is-reversed
         />
         <HireFili
-          class="py-12"
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
           text-color="text-white"
@@ -90,25 +84,25 @@ const summaryButton = computed(() => {
       </template>
       <template v-if="hasScheduledContent" #wrapped>
         <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
-        <ClaimTitle
-          :claim-title="t('shows.liveClaimTitle', { title: t('routes.circ-trinxeta') })"
-          is-section-title
-        />
-        <AgendaFilters
-          v-model:selected-primary-filter="selectedLiveShowFilter"
-          v-model:show-only-open-to-public="showOnlyOpenToPublic"
-          :primary-filter-options="liveShowFilterOptions"
-        />
-        <CalendarEventList
-          :events="filteredEvents"
-          :pending="pending"
-          :error="error"
-          :total-events="events.length"
-          selected-event-type="shows"
-          :has-active-filters="hasActiveFilters"
-          is-dedicated-list
-          show-view-all-link
-        />
+          <ClaimTitle
+            :claim-title="t('shows.liveClaimTitle', { title: t('routes.circ-trinxeta') })"
+            is-section-title
+          />
+          <AgendaFilters
+            v-model:selected-primary-filter="selectedLiveShowFilter"
+            v-model:show-only-open-to-public="showOnlyOpenToPublic"
+            :primary-filter-options="liveShowFilterOptions"
+          />
+          <CalendarEventList
+            :events="filteredEvents"
+            :pending="pending"
+            :error="error"
+            :total-events="events.length"
+            selected-event-type="shows"
+            :has-active-filters="hasActiveFilters"
+            is-dedicated-list
+            show-view-all-link
+          />
         </div>
       </template>
       <template #unwrapped>
@@ -120,18 +114,20 @@ const summaryButton = computed(() => {
           />
         </div>
       </template>
+      <template #wrappedBottom>
+        <HireContactSection />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="espectacles_circ-trinxeta-1"
+          image-route="espectacles"
+          :alt="getImageAlt('circ-trinxeta')"
+          background-position="center 100%"
+        />
+        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="espectacles_circ-trinxeta-1"
-      image-route="espectacles"
-      :alt="getImageAlt('circ-trinxeta')"
-      background-position="center 100%"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

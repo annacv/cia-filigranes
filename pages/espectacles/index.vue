@@ -31,11 +31,11 @@ const synopsisItems = computed(() => {
         infoButton: {
           href: `/espectacles/${show}#video`,
           textKey: 'button.teaser'
-        },
-        downloadButton: {
-          download: `CiaFiligranes-${show}-${locale.value}.pdf`,
-          href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
         }
+      },
+      hireContract: {
+        kind: 'show' as const,
+        productKey: show
       }
     }
   }) || []
@@ -64,7 +64,13 @@ const synopsisItems = computed(() => {
           :claim="t('shows.claim')"
           :claim-title="t('shows.claimTitle')"
           :items="synopsisItems"
+          class="!mb-0"
         />
+      </template>
+      <template #wrappedBottom>
+        <HireContactSection />
+      </template>
+      <template #unwrappedBottom>
         <HeroFooter
           image-name="espectacles_footer"
           image-route="espectacles"
@@ -74,6 +80,8 @@ const synopsisItems = computed(() => {
         <HireFili
           :title="t('shows.hire.title')"
           description="shows.hire.description"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <BottomNavigation />
         <TheSupporters />

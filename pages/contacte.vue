@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { getImageByRoute } from "~/utils/image-by-route";
-import { useResponsive } from "~/composables/use-responsive.composable";
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
-
-definePageMeta({
-  headerBackgroundColor: '#000'
-})
 
 const { t } = useI18n();
-const { isMobile } = useResponsive();
 
 useHead({
   meta: [
@@ -17,16 +9,36 @@ useHead({
   ]
 })
 const getImageAlt = () => useImageAlt('contact');
-
-const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEADER_DESKTOP_HEIGHT);
 </script>
 
 <template>
-  <div class="h-full bg-quaternary-500">
-    <div :style="{ height: headerHeight }"/>
+  <div class="h-full">
+    <HeroCover
+      image-name="contacte_hero"
+      image-route="contacte"
+      :alt="t('shows.hero.alt')"
+      background-position="center 60%"
+      is-section-cover
+    >
+      <template #content>
+        <SectionCoverTitle
+          :title="t('contact.hero.title')"
+          title-class="max-w-[310px] md:max-w-[448px] lg:max-w-[524px]"
+        />
+      </template>
+    </HeroCover>
     <MainContent>
+      <template #unwrappedTop>
+        <ContactCard />  
+      </template>
+      <template #wrapped>
+        <HireContactSection
+          class="pt-8"
+          title-class="font-grotesk lg:text-5xl !p-0 !leading-none"
+          :claim-title="t('hire.pageSectionTitleAlternative')"
+         />
+      </template>
       <template #unwrapped>
-        <ContactCard />
         <Synopsis
           :image="getImageByRoute('contacte', 'contacte-1')"
           content-type="contact"
@@ -46,6 +58,8 @@ const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEAD
             </div> 
           </template>
         </Synopsis>
+      </template>
+      <template #unwrappedBottom>
         <BottomNavigation />
         <TheSupporters />
       </template>
