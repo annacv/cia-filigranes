@@ -1,7 +1,7 @@
-import { EVENT_TYPE_FILTER_ITEMS } from '~/constants'
+import { EVENT_TYPE_ITEMS } from '~/constants'
 import { getMatchedContentKeyByTitle, useCalendarEvents } from '~/composables/calendar/use-calendar-events.composable'
 import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
-import type { AgendaPrimaryFilterOption, CalendarEvent, ContentType } from '~/types'
+import type { ContentType, EventTypeItem } from '~/types'
 
 const ALL_SHOWS_FILTER_VALUE = 'all-shows'
 const ALL_WORKSHOPS_FILTER_VALUE = 'all-workshops'
@@ -16,13 +16,11 @@ interface UseContentAgendaOptions {
 }
 
 const getIndicatorClasses = (contentType: AgendaFilterContentType) => {
-  const filterItem = EVENT_TYPE_FILTER_ITEMS.find((item) => item.type === contentType)
+  const filterItem = EVENT_TYPE_ITEMS.find((item) => item.value === contentType)
 
   return {
     activeIndicatorClass: filterItem?.activeIndicatorClass ?? 'bg-primary-500',
     inactiveIndicatorClass: filterItem?.inactiveIndicatorClass ?? 'bg-primary-300',
-    interactiveActiveIndicatorClass:
-      filterItem?.interactiveActiveIndicatorClass ?? 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
   }
 }
 
@@ -35,15 +33,15 @@ const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, conte
   const selectedPrimaryFilter = ref<string>(contentKey)
   const showOnlyOpenToPublic = ref(false)
 
-  const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => ([
+  const primaryFilterOptions = computed<EventTypeItem[]>(() => ([
     {
       value: contentKey,
-      label: t(`routes.${contentKey}`),
+      labelKey: `routes.${contentKey}`,
       ...contentIndicatorClasses,
     },
     {
       value: allFilterValue,
-      label: t(allFilterLabelKey),
+      labelKey: allFilterLabelKey,
       ...contentIndicatorClasses,
     },
   ]))

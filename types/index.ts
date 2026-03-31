@@ -90,24 +90,25 @@ export type EventInfoLink = {
   text: EventInfoLinkTextKey
 }
 
-/**
- * Event type filter item configuration
- */
-export type EventTypeFilterItem = {
-  type: ContentType
+export type BaseDropdownOption = {
+  value: string | null
   labelKey: string
-  activeIndicatorClass: string
-  inactiveIndicatorClass: string
-  interactiveActiveIndicatorClass: string
+  [key: string]: unknown
 }
 
 /**
- * Shared primary agenda filter option configuration
+ * Event type item configuration
  */
-export type AgendaPrimaryFilterOption = {
-  value: string | null
-  label: string
+export interface EventTypeItem extends BaseDropdownOption {
   activeIndicatorClass: string
   inactiveIndicatorClass: string
-  interactiveActiveIndicatorClass: string
+}
+
+/** Show vs workshop when opening the hire contract flow from synopsis */
+export type HireProductKind = 'show' | 'workshop'
+
+export type HireContractContext = {
+  kind: HireProductKind
+  /** Route slug, e.g. plis-plas or circ */
+  productKey: string
 }
