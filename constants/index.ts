@@ -247,7 +247,7 @@ export const COLLABORATION_ENTRIES = [
   {
     i18nKey: 'vendaval',
     imageSlug: 'vendaval',
-    href: 'http://linktr.ee/cia.VENDAVAL',
+    href: 'https://linktr.ee/cia.VENDAVAL',
   },
   {
     i18nKey: 'fingerlight',
