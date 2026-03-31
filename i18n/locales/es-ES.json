@@ -95,7 +95,41 @@
     "scrollToTop": "Ir al principio de la página",
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
-    "pdf": "descarga un documento PDF"
+    "pdf": "descarga un documento PDF",
+    "hire": "Contratar"
+  },
+  "hire": {
+    "modalTitleShow": "Para contratar el espectáculo:",
+    "modalTitleWorkshop": "Para contratar el taller:",
+    "pageSectionTitle": "Contratar",
+    "selectPlaceholder": "Selecciona…",
+    "optgroupShows": "Espectáculos",
+    "optgroupWorkshops": "Talleres",
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "showLabel": "Espectáculo",
+      "workshopLabel": "Taller",
+      "productLabel": "Espectáculo o taller",
+      "fullName": "Nombre y apellidos",
+      "performanceLabel": "Animación",
+      "productTabs": "Espectáculo, Taller, Animación",
+      "comments": "Comentarios",
+      "performanceSelectLabel": "Escoge el tipo de animación que mejor te encaja"
+    },
+    "submit": "Enviar",
+    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
+    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
+    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
+    "placeholders": {
+      "fullName": "Escribe tu nombre y apellidos",
+      "email": "Escribe tu email de contacto",
+      "showSelect": "Selecciona tu espectáculo",
+      "workshopSelect": "Selecciona tu taller",
+      "performanceSelect": "Selecciona tu animación",
+      "comments": "Información adicional que queráis compartir, por ejemplo, fecha y lugar estimados para la realización del espectáculo, taller o animación."
+    }
   },
   "aria": {
     "home": "Compañía Filigranes - Ir al inicio",
@@ -1169,10 +1203,22 @@
       "title": "Cookies utilizadas actualmente",
       "table": {
         "headers": [
-          { "key": "name", "label": "Nombre" },
-          { "key": "purpose", "label": "Finalidad" },
-          { "key": "responsible", "label": "Responsable" },
-          { "key": "duration", "label": "Duración" }
+          {
+            "key": "name",
+            "label": "Nombre"
+          },
+          {
+            "key": "purpose",
+            "label": "Finalidad"
+          },
+          {
+            "key": "responsible",
+            "label": "Responsable"
+          },
+          {
+            "key": "duration",
+            "label": "Duración"
+          }
         ],
         "rows": [
           {

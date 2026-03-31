@@ -95,7 +95,41 @@
     "scrollToTop": "Scroll to top",
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
-    "pdf": "download a PDF document"
+    "pdf": "download a PDF document",
+    "hire": "Hire"
+  },
+  "hire": {
+    "modalTitleShow": "To hire the show:",
+    "modalTitleWorkshop": "To hire the workshop:",
+    "pageSectionTitle": "Hire",
+    "selectPlaceholder": "Select…",
+    "optgroupShows": "Shows",
+    "optgroupWorkshops": "Workshops",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "showLabel": "Show",
+      "workshopLabel": "Workshop",
+      "productLabel": "Show or workshop",
+      "fullName": "Full name",
+      "performanceLabel": "Performance",
+      "productTabs": "Show, Workshop, Performance",
+      "comments": "Comments",
+      "performanceSelectLabel": "Choose the type of performance that suits you best"
+    },
+    "submit": "Send",
+    "pageSectionTitleAlternative": "Book us for your next event",
+    "pageSectionSubtitle": "And fill your festival, school or local celebration with emotion and laughter",
+    "pageSectionSubtitlePerformances": "Tell us what you have in mind and we will prepare a tailored proposal.",
+    "placeholders": {
+      "fullName": "Write your full name",
+      "email": "Write your contact email",
+      "showSelect": "Select your show",
+      "workshopSelect": "Select your workshop",
+      "performanceSelect": "Select your performance",
+      "comments": "Additional information you would like to share, for example, estimated date and place for the show, workshop or performance."
+    }
   },
   "aria": {
     "home": "Filigranes Company - Go to home",
@@ -1169,10 +1203,22 @@
       "title": "Cookies currently used",
       "table": {
         "headers": [
-          { "key": "name", "label": "Name" },
-          { "key": "purpose", "label": "Purpose" },
-          { "key": "responsible", "label": "Responsible" },
-          { "key": "duration", "label": "Duration" }
+          {
+            "key": "name",
+            "label": "Name"
+          },
+          {
+            "key": "purpose",
+            "label": "Purpose"
+          },
+          {
+            "key": "responsible",
+            "label": "Responsible"
+          },
+          {
+            "key": "duration",
+            "label": "Duration"
+          }
         ],
         "rows": [
           {

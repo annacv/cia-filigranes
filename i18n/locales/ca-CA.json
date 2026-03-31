@@ -95,7 +95,41 @@
     "scrollToTop": "Anar al principi de la pàgina",
     "scrollLeft": "Desplaçar cap a l'esquerra",
     "scrollRight": "Desplaçar cap a la dreta",
-    "pdf": "descarrega un document PDF"
+    "pdf": "descarrega un document PDF",
+    "hire": "Contractar"
+  },
+  "hire": {
+    "modalTitleShow": "Per contractar l'espectacle:",
+    "modalTitleWorkshop": "Per contractar el taller:",
+    "pageSectionTitle": "Contacta'ns per al teu pròxim esdeveniment",
+    "pageSectionTitleAlternative": "Reserva'ns per al teu pròxim esdeveniment",
+    "pageSectionSubtitle": "I omple d'emocions i rialles el teu festival, escola o festa popular",
+    "pageSectionSubtitlePerformances": "Explica'ns què tens al cap i prepararem una proposta a mida.",
+    "selectPlaceholder": "Selecciona…",
+    "optgroupShows": "Espectacles",
+    "optgroupWorkshops": "Tallers",
+    "fields": {
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "message": "Missatge",
+      "showLabel": "Espectacle",
+      "workshopLabel": "Taller",
+      "productLabel": "Espectacle o taller",
+      "fullName": "Nom i cognoms",
+      "performanceLabel": "Animació",
+      "productTabs": "Espectacle, Taller, Animació",
+      "comments": "Comentaris",
+      "performanceSelectLabel": "Escull el tipus d'animació que més t'escau"
+    },
+    "submit": "Enviar",
+    "placeholders": {
+      "fullName": "Escriu el teu com i cognoms",
+      "email": "Escriu el teu email de contacte",
+      "showSelect": "Selecciona el teu espectacle",
+      "workshopSelect": "Selecciona el teu taller",
+      "performanceSelect": "Selecciona la teva animació",
+      "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació."
+    }
   },
   "aria": {
     "home": "Companyia Filigranes - Anar a l'inici",
@@ -1099,6 +1133,9 @@
   },
   "contact": {
     "metaDescription": "Contacte - Contacta amb la Companyia Filigranes, tant si vols contractar els nostres serveis, veure'ns d'aprop o resoldre algun dubte.... Escriu-nos un email a {email}, o truca'ns al {phone}",
+    "hero": {
+      "title": "Contacta'ns per al teu pròxim show"
+    },
     "info": {
       "title": "Informació de contacte",
       "subtitle": "Per a consultes, contractacions i trobades"
@@ -1169,10 +1206,22 @@
       "title": "Cookies utilitzades actualment",
       "table": {
         "headers": [
-          { "key": "name", "label": "Nom" },
-          { "key": "purpose", "label": "Finalitat" },
-          { "key": "responsible", "label": "Responsable" },
-          { "key": "duration", "label": "Durada" }
+          {
+            "key": "name",
+            "label": "Nom"
+          },
+          {
+            "key": "purpose",
+            "label": "Finalitat"
+          },
+          {
+            "key": "responsible",
+            "label": "Responsable"
+          },
+          {
+            "key": "duration",
+            "label": "Durada"
+          }
         ],
         "rows": [
           {
