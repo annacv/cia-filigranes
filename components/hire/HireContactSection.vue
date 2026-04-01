@@ -3,7 +3,6 @@ const props = defineProps<{
   claimTitle?: string
   claimSubtitle?: string
   titleClass?: string
-  fieldColor?: string
   pageType?: 'default' | 'performances'
 }>()
 
@@ -11,7 +10,6 @@ const { t } = useI18n()
 
 const claimTitle = computed(() => props.claimTitle ?? t('hire.pageSectionTitle'))
 const claimSubtitle = computed(() => props.claimSubtitle ?? t('hire.pageSectionSubtitle'))
-const fieldColor = computed(() => props.fieldColor ?? 'bg-neutral-400')
 const pageType = computed(() => props.pageType ?? 'default')
 </script>
 
@@ -28,11 +26,9 @@ const pageType = computed(() => props.pageType ?? 'default')
         :title-class="titleClass"
         is-section-title
       />
-      <HireContractForm
-        variant="page"
-        class="py-8 px-9"
+      <HireContractFormPage
+        class="py-8 px-20"
         :page-type="pageType"
-        :field-color="fieldColor"
       />
     </div>
   </section>

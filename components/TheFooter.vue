@@ -81,9 +81,13 @@ const { openModal } = useCookies()
             {{ t('footer.legal.cookies') }}
           </NuxtLinkLocale>
           <b class="px-2">·</b>
+          <NuxtLinkLocale to="/politica-privacitat" class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer">
+            {{ t('footer.legal.privacy') }}
+          </NuxtLinkLocale>
+          <b class="hidden 2xl:block px-2">·</b>
           <button
             type="button"
-            class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
+            class="hidden 2xl:block transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
             @click="openModal"
           >
             {{ t('footer.legal.manageCookies') }}

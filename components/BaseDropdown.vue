@@ -12,6 +12,7 @@ const props = defineProps<{
   menuAriaLabel: string
   indicatorClass?: string
   optionClass?: string
+  menuClass?: string | object | unknown[]
 }>()
 
 const emit = defineEmits<{
@@ -79,7 +80,7 @@ onClickOutside(dropdownRef, closeDropdown)
             aria-hidden="true"
           />
         </span>
-        <slot name="trigger-trailing" />
+        <slot name="trigger-trailing" :is-open="isOpen" />
       </span>
     </button>
 
@@ -94,7 +95,10 @@ onClickOutside(dropdownRef, closeDropdown)
       <ul
         v-if="isOpen"
         :id="menuId"
-        class="absolute left-0 top-full z-30 mt-1 w-max max-w-[calc(100vw-2rem)] origin-top-left rounded-md border border-neutral-300 bg-white py-1 shadow-md"
+        :class="[
+          'absolute left-0 top-full z-30 w-max max-w-[calc(100vw-2rem)] origin-top-left rounded-md border border-neutral-300 bg-white py-1 shadow-md',
+          menuClass ?? 'mt-1',
+        ]"
         role="listbox"
         :aria-label="menuAriaLabel"
         @keydown="handleMenuKeydown"

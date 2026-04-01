@@ -26,9 +26,8 @@ const ariaLabel = computed(() => modalTitle.value)
       <h2 class="font-grotesk text-2xl uppercase lg:text-3xl mb-6 pr-8">
         {{ modalTitle }}
       </h2>
-      <HireContractForm
+      <HireContractFormModal
         :key="`${productKey}-${isOpen}`"
-        variant="modal"
         :product-kind="productKind"
         :default-product-key="productKey"
       />

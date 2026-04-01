@@ -96,12 +96,16 @@
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
     "pdf": "descarga un documento PDF",
-    "hire": "Contratar"
+    "hire": "Contratar",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
   },
   "hire": {
     "modalTitleShow": "Para contratar el espectáculo:",
     "modalTitleWorkshop": "Para contratar el taller:",
     "pageSectionTitle": "Contratar",
+    "requiredFields": "Campos obligatorios",
+    "privacyNote": "No te preocupes: usaremos tus datos solo para responderte. Sin publicidad.",
     "selectPlaceholder": "Selecciona…",
     "optgroupShows": "Espectáculos",
     "optgroupWorkshops": "Talleres",
@@ -118,7 +122,6 @@
       "comments": "Comentarios",
       "performanceSelectLabel": "Escoge el tipo de animación que mejor te encaja"
     },
-    "submit": "Enviar",
     "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
     "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
     "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
@@ -154,12 +157,49 @@
     "legal": {
       "advice": "Aviso legal",
       "cookies": "Política de cookies",
+      "privacy": "Política de privacidad",
       "manageCookies": "Gestionar cookies"
     },
     "supporters": {
       "title": "Con el apoyo de:",
       "visit": "Visitar"
     }
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "metaDescription": "Información sobre cómo la Compañía Filigranes trata los datos personales enviados a través del formulario de contacto.",
+    "sections": [
+      {
+        "key": "controller",
+        "title": "Responsable del tratamiento",
+        "description": "El responsable del tratamiento es Compañía Filigranes. Para cualquier consulta sobre privacidad, puedes escribirnos a la dirección de contacto publicada en la web."
+      },
+      {
+        "key": "data",
+        "title": "Datos que tratamos",
+        "description": "Tratamos los datos que facilitas en el formulario de contacto, como nombre, correo electrónico y mensaje."
+      },
+      {
+        "key": "purpose",
+        "title": "Finalidad",
+        "description": "Usamos estos datos únicamente para responder tu consulta y gestionar el contacto relacionado con nuestros servicios."
+      },
+      {
+        "key": "legalBasis",
+        "title": "Base legal",
+        "description": "La base legal es la aplicación de medidas precontractuales a petición tuya y el interés legítimo en gestionar las consultas recibidas."
+      },
+      {
+        "key": "retention",
+        "title": "Conservación",
+        "description": "Conservaremos los datos solo el tiempo necesario para atender la consulta."
+      },
+      {
+        "key": "rights",
+        "title": "Derechos",
+        "description": "Puedes ejercer tus derechos de protección de datos (acceso, rectificación, supresión, oposición, limitación y, cuando sea aplicable, portabilidad) escribiéndonos a la dirección de contacto de la web."
+      }
+    ]
   },
   "404": {
     "title": "¡Ups!",
@@ -1161,7 +1201,7 @@
       {
         "key": "objective",
         "title": "Objetivo",
-        "description": "La Compañía Filigranes utiliza cookies para guardar las preferencias de idioma. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
+        "description": "La Compañía Filigranes utiliza cookies esenciales para el funcionamiento del sitio (como la preferencia de idioma y el consentimiento) y cookies opcionales de terceros (YouTube y Google Maps) solo si las aceptas. También utilizamos sessionStorage con finalidades técnicas para la caché temporal de la agenda. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
       },
       {
         "key": "acceptance",
@@ -1263,7 +1303,7 @@
     },
     "selfHosted": {
       "title": "Fuentes auto-hospedadas",
-      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
+      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans, Inter y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
     },
     "disable": {
       "title": "Cómo desactivar o bloquear las cookies",
@@ -1329,7 +1369,7 @@
       {
         "key": "titular",
         "title": "Información del Titular",
-        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{at}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
+        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{'@'}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
       },
       {
         "key": "condicions",
@@ -1344,7 +1384,7 @@
       {
         "key": "propietat",
         "title": "Propiedad intelectual e industrial",
-        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{at}gmail.com."
+        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{'@'}gmail.com."
       },
       {
         "key": "continguts",
@@ -1364,7 +1404,7 @@
       {
         "key": "privacitat",
         "title": "Privacidad y protección de datos personales",
-        "description": "Los datos personales que se puedan facilitar mediante correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. Este sitio web no recopila datos personales mediante formularios, quedando a criterio de la persona usuaria contactar o no por los canales disponibles."
+        "description": "Los datos personales facilitados mediante el formulario de contacto, correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. La persona usuaria decide libremente si quiere contactar o no por los canales disponibles."
       },
       {
         "key": "llei",
@@ -1394,7 +1434,7 @@
         {
           "key": "deshabilitades",
           "title": "Deshabilitadas por defecto / No utilizadas:",
-          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans, Inter y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
         },
         {
           "key": "servei-extern",

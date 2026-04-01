@@ -96,12 +96,16 @@
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
     "pdf": "download a PDF document",
-    "hire": "Hire"
+    "hire": "Hire",
+    "submit": "Send",
+    "cancel": "Cancel"
   },
   "hire": {
     "modalTitleShow": "To hire the show:",
     "modalTitleWorkshop": "To hire the workshop:",
     "pageSectionTitle": "Hire",
+    "requiredFields": "Required fields",
+    "privacyNote": "Don't worry: we will only use your data to reply. No marketing.",
     "selectPlaceholder": "Select…",
     "optgroupShows": "Shows",
     "optgroupWorkshops": "Workshops",
@@ -118,7 +122,6 @@
       "comments": "Comments",
       "performanceSelectLabel": "Choose the type of performance that suits you best"
     },
-    "submit": "Send",
     "pageSectionTitleAlternative": "Book us for your next event",
     "pageSectionSubtitle": "And fill your festival, school or local celebration with emotion and laughter",
     "pageSectionSubtitlePerformances": "Tell us what you have in mind and we will prepare a tailored proposal.",
@@ -154,12 +157,49 @@
     "legal": {
       "advice": "Legal notice",
       "cookies": "Cookie policy",
+      "privacy": "Privacy policy",
       "manageCookies": "Manage cookies"
     },
     "supporters": {
       "title": "With the support of:",
       "visit": "Visit"
     }
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "metaDescription": "Information about how Filigranes Company processes personal data submitted through the contact form.",
+    "sections": [
+      {
+        "key": "controller",
+        "title": "Data controller",
+        "description": "The data controller is Filigranes Company. For any privacy-related question, you can contact us using the contact details published on this website."
+      },
+      {
+        "key": "data",
+        "title": "Data we process",
+        "description": "We process the data you provide in the contact form, such as your name, email address and message."
+      },
+      {
+        "key": "purpose",
+        "title": "Purpose",
+        "description": "We use this data only to reply to your enquiry and manage contact related to our services."
+      },
+      {
+        "key": "legalBasis",
+        "title": "Legal basis",
+        "description": "The legal basis is taking steps at your request before entering into a contract, and our legitimate interest in managing incoming enquiries."
+      },
+      {
+        "key": "retention",
+        "title": "Retention",
+        "description": "We keep the data only for as long as needed to handle your enquiry."
+      },
+      {
+        "key": "rights",
+        "title": "Your rights",
+        "description": "You can exercise your data protection rights (access, rectification, erasure, objection, restriction and, where applicable, portability) by contacting us through the website contact details."
+      }
+    ]
   },
   "404": {
     "title": "Oops!",
@@ -1161,7 +1201,7 @@
       {
         "key": "objective",
         "title": "Objective",
-        "description": "Cia Filigranes uses cookies to save language preferences. We recognize the importance of complying with current privacy and data protection regulations, especially Spanish law (LSSI and LOPDGDD) and Regulation (EU) 2016/679 (GDPR). This policy describes in detail the use we make of cookies on our website."
+        "description": "Cia Filigranes uses essential cookies for site operation (such as language preference and consent) and optional third-party cookies (YouTube and Google Maps) only if you accept them. We also use sessionStorage for technical purposes, specifically temporary agenda cache. We recognize the importance of complying with current privacy and data protection regulations, especially Spanish law (LSSI and LOPDGDD) and Regulation (EU) 2016/679 (GDPR). This policy describes in detail the use we make of cookies on our website."
       },
       {
         "key": "acceptance",
@@ -1263,7 +1303,7 @@
     },
     "selfHosted": {
       "title": "Self-hosted fonts",
-      "description": "We use self-hosted fonts (IBM Plex Sans and Archivo Black) on our server to avoid third-party Google Fonts cookies, thus improving privacy and loading speed."
+      "description": "We use self-hosted fonts (IBM Plex Sans, Inter and Archivo Black) on our server to avoid third-party Google Fonts cookies, thus improving privacy and loading speed."
     },
     "disable": {
       "title": "How to disable or block cookies",
@@ -1329,7 +1369,7 @@
       {
         "key": "titular",
         "title": "Information about the Owner",
-        "description": "In accordance with article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, the user is informed that the ownership of this website corresponds to the Filigranes Company, member of the Sociocultural Circus Association of Terrassa Tub d'Assaig 7'70, with address at Sant Leopold street, no. 63, Local 5, 08221 Terrassa (Barcelona), with NIF G-65190431 and email ciafiligranes{at}gmail.com. Its members are registered in the Registry of the Association of Circus Professionals of Catalonia with membership numbers 0397 and 0237."
+        "description": "In accordance with article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, the user is informed that the ownership of this website corresponds to the Filigranes Company, member of the Sociocultural Circus Association of Terrassa Tub d'Assaig 7'70, with address at Sant Leopold street, no. 63, Local 5, 08221 Terrassa (Barcelona), with NIF G-65190431 and email ciafiligranes{'@'}gmail.com. Its members are registered in the Registry of the Association of Circus Professionals of Catalonia with membership numbers 0397 and 0237."
       },
       {
         "key": "condicions",
@@ -1344,7 +1384,7 @@
       {
         "key": "propietat",
         "title": "Intellectual and industrial property",
-        "description": "All exploitation rights are reserved. This website is governed by Spanish laws and is protected by national and international legislation on intellectual and industrial property. Total or partial reproduction, use, exploitation, distribution and commercialization requires in any case prior written authorization from the Filigranes Company. Any unauthorized use will be considered a serious breach of intellectual and industrial property rights. The designs, logos, texts or graphics from third parties that may appear on the web belong to their respective owners, these being responsible for any possible controversy about them. To report possible breaches of rights, you can do so via email: ciafiligranes{at}gmail.com."
+        "description": "All exploitation rights are reserved. This website is governed by Spanish laws and is protected by national and international legislation on intellectual and industrial property. Total or partial reproduction, use, exploitation, distribution and commercialization requires in any case prior written authorization from the Filigranes Company. Any unauthorized use will be considered a serious breach of intellectual and industrial property rights. The designs, logos, texts or graphics from third parties that may appear on the web belong to their respective owners, these being responsible for any possible controversy about them. To report possible breaches of rights, you can do so via email: ciafiligranes{'@'}gmail.com."
       },
       {
         "key": "continguts",
@@ -1364,7 +1404,7 @@
       {
         "key": "privacitat",
         "title": "Privacy and protection of personal data",
-        "description": "Personal data that may be provided via email or phone will only be used to manage inquiries or bookings of shows, workshops or animations with the Filigranes Company. This website does not collect personal data through forms, leaving it to the user's discretion to contact or not through the available channels."
+        "description": "Personal data provided through the contact form, email or phone will only be used to manage enquiries or bookings of shows, workshops or performances with Filigranes Company. Users freely decide whether to contact us through the available channels."
       },
       {
         "key": "llei",
@@ -1394,7 +1434,7 @@
         {
           "key": "deshabilitades",
           "title": "Disabled by default / Not used:",
-          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. We only use sessionStorage for technical purposes, such as temporary agenda cache, without user profiling. The fonts (IBM Plex Sans and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
+          "description": "No data is collected through Google Analytics or similar tools. There are no tracking pixels or advertising cookies. localStorage or sessionStorage is not used for tracking purposes. We only use sessionStorage for technical purposes, such as temporary agenda cache, without user profiling. The fonts (IBM Plex Sans, Inter and Archivo Black) are self-hosted on our server to avoid third-party Google Fonts cookies."
         },
         {
           "key": "servei-extern",
