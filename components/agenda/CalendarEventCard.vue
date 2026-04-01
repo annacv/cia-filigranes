@@ -41,7 +41,7 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'm
         target="_blank"
         :text="reservationLabel"
         button-class="button-solid-neutral text-[10px] md:text-xs !px-2"
-        class="absolute bottom-2 right-2 z-10"
+        class="absolute bottom-2 right-2 z-2"
       >
         <template #text>
           {{ reservationLabel }}
