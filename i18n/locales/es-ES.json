@@ -103,6 +103,8 @@
   "hire": {
     "modalTitleShow": "Para contratar el espectáculo:",
     "modalTitleWorkshop": "Para contratar el taller:",
+    "modalDescription": "Rellena el siguiente formulario y te responderemos lo antes posible. O, si lo prefieres, puedes llamarnos directamente al {phone}, o enviarnos un correo electrónico a {email}.",
+    "modalFormTitle": "Detalles de la contratación",
     "pageSectionTitle": "Contratar",
     "requiredFields": "Campos obligatorios",
     "privacyNote": "No te preocupes: usaremos tus datos solo para responderte. Sin publicidad.",

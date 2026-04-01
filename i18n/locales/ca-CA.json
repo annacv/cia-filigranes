@@ -103,6 +103,8 @@
   "hire": {
     "modalTitleShow": "Per contractar l'espectacle:",
     "modalTitleWorkshop": "Per contractar el taller:",
+    "modalDescription": "Omple el següent formulari i et respondrem tan aviat com ens sigui possible. O, si ho prefereixes, ens pots trucar directament al {phone}, o enviar-nos un correu electrònic a l'adreça {email}.",
+    "modalFormTitle": "Detalls de la contractació",
     "pageSectionTitle": "Contacta'ns per al teu pròxim esdeveniment",
     "pageSectionTitleAlternative": "Reserva'ns per al teu pròxim esdeveniment",
     "pageSectionSubtitle": "I omple d'emocions i rialles el teu festival, escola o festa popular",

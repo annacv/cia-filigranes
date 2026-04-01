@@ -14,7 +14,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="mt-10 bg-neutral-100 h-0.5 rounded-full" />
+  <div class="bg-neutral-100 h-0.5 rounded-full" />
   <div class="flex gap-4 justify-between">
     <p class="flex gap-2 items-baseline text-neutral-900">
       <sub class="font-bold text-base !leading-none">*</sub>

@@ -86,6 +86,7 @@ const {
       />
     </div>
     <FormButtons
+      class="mb-10"
       :submit-button-class="submitButtonClass"
       :cancel-button-class="cancelButtonClass"
       @cancel="resetForm"

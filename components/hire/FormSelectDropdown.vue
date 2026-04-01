@@ -12,10 +12,6 @@ const props = defineProps({
   selectedType: {
     type: String as PropType<'shows' | 'workshops' | 'performances'>,
     required: true,
-  },
-  menuClass: {
-    type: String,
-    default: 'mt-1',
   }
 })
 
@@ -73,7 +69,7 @@ const isPlaceholderSelected = computed(() =>
     :toggle-aria-label="t(placeholderKey)"
     :menu-aria-label="t(placeholderKey)"
     trigger-class="focus-visible:outline-none"
-    menu-class="!w-full mt-4"
+    menu-class="!w-full mt-4 overflow-y-auto max-h-36"
     option-class="!text-sm"
     @select="(value) => emit('select', value)"
   >
@@ -94,7 +90,7 @@ const isPlaceholderSelected = computed(() =>
           isOpen ? 'rotate-180 scale-110' : 'rotate-0 scale-100',
         ]"
       >
-        <ChevronDown aria-hidden="true" class="block" />
+        <ChevronDown aria-hidden="true" class="block !w-3.5 !h-3.5" />
       </span>
     </template>
   </BaseDropdown>

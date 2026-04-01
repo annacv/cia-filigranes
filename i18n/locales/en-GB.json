@@ -103,6 +103,8 @@
   "hire": {
     "modalTitleShow": "To hire the show:",
     "modalTitleWorkshop": "To hire the workshop:",
+    "modalDescription": "Fill out the following form and we will get back to you as soon as possible. Or, if you prefer, you can call us directly at {phone}, or send us an email at {email}.",
+    "modalFormTitle": "Hiring details",
     "pageSectionTitle": "Hire",
     "requiredFields": "Required fields",
     "privacyNote": "Don't worry: we will only use your data to reply. No marketing.",
