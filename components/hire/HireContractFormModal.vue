@@ -47,7 +47,7 @@ const {
 
 <template>
   <form class="flex flex-col gap-6" @submit="onSubmit">
-    <div :class="labelContainerClass">
+    <div :class="[labelContainerClass, 'group']">
       <span :class="labelClass">
         {{
           productKind === 'workshop'

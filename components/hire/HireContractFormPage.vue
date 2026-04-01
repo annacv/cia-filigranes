@@ -58,7 +58,7 @@ const {
           @update:full-name="(value: string) => { fullName = value }"
           @update:email="(value: string) => { email = value }"
         />
-        <div :class="labelContainerClass">
+        <div :class="[labelContainerClass, 'group']">
           <span v-if="pageType === 'performances'" :class="labelClass">{{ t('hire.fields.performanceSelectLabel') }}</span>
           <BaseTabs
             v-else

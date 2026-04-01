@@ -18,8 +18,8 @@ const labelClass = 'text-neutral-900'
 const labelContainerClass = 'flex flex-col gap-2 text-left'
 const markerClass = 'text-base !leading-none text-neutral-900'
 const fieldClass =
-  'py-1 w-full rounded-lg bg-white text-base !leading-tight text-neutral-900 placeholder:text-neutral-400 placeholder:italic outline-none focus:ring-1 focus:ring-neutral-400'
-const fieldBorderClass = 'h-[2px] w-full rounded-full bg-neutral-400'
+  'py-1 w-full rounded-lg bg-white text-base !leading-tight text-neutral-900 placeholder:text-neutral-400 placeholder:italic outline-none'
+const fieldBorderClass = 'h-[2px] w-full rounded-full bg-neutral-400 transition-colors duration-150 group-focus-within:bg-neutral-900'
 
 export const useHireContractForm = (options: UseHireContractFormOptions) => {
   const { t } = useI18n()

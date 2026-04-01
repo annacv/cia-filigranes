@@ -15,7 +15,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <label :class="labelContainerClass">
+  <label :class="[labelContainerClass, 'group']">
     <span :class="labelClass">{{ t('hire.fields.comments') }}</span>
     <textarea
       :value="comments"

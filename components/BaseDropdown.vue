@@ -13,6 +13,7 @@ const props = defineProps<{
   indicatorClass?: string
   optionClass?: string
   menuClass?: string | object | unknown[]
+  triggerClass?: string | object | unknown[]
 }>()
 
 const emit = defineEmits<{
@@ -60,7 +61,10 @@ onClickOutside(dropdownRef, closeDropdown)
   <div ref="dropdownRef" class="relative">
     <button
       type="button"
-      class="group w-full flex flex-col items-start rounded-md px-0 py-1 text-neutral-900 transition-colors duration-200 ease-out hover:text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+      :class="[
+        'group w-full flex flex-col items-start rounded-md px-0 py-1 text-neutral-900 transition-colors duration-200 ease-out hover:text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900',
+        triggerClass,
+      ]"
       :aria-label="toggleAriaLabel"
       aria-haspopup="listbox"
       :aria-controls="menuId"

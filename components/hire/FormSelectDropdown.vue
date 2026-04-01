@@ -72,6 +72,7 @@ const isPlaceholderSelected = computed(() =>
     :options="options"
     :toggle-aria-label="t(placeholderKey)"
     :menu-aria-label="t(placeholderKey)"
+    trigger-class="focus-visible:outline-none"
     menu-class="!w-full mt-4"
     option-class="!text-sm"
     @select="(value) => emit('select', value)"

@@ -18,7 +18,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <label :class="labelContainerClass">
+  <label :class="[labelContainerClass, 'group']">
     <span :class="labelClass">{{ t('hire.fields.fullName') }}</span>
     <input
       :value="fullName"
@@ -33,7 +33,7 @@ const { t } = useI18n()
     <div :class="fieldBorderClass" />
     <span :class="markerClass">*</span>
   </label>
-  <label :class="labelContainerClass">
+  <label :class="[labelContainerClass, 'group']">
     <span :class="labelClass">{{ t('hire.fields.email') }}</span>
     <input
       :value="email"
