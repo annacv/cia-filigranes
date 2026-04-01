@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { HireProductKind } from '~/types'
+import type { ContentType, HireProductKind } from '~/types'
+import { useHireFormDisplay } from '~/composables/use-hire-form-display.composable'
 import { CONTACT } from "~/constants";
 import FormSelectDropdown from '~/components/hire/FormSelectDropdown.vue'
 import FormInputs from '~/components/hire/FormInputs.vue'
@@ -11,20 +12,26 @@ const props = withDefaults(
   defineProps<{
     productKind?: HireProductKind
     productKey: string
-    defaultProductKey?: string | null
-    submitButtonClass?: string
-    cancelButtonClass?: string
-    circleIconClass?: string
+    contentType?: ContentType
     isOpen: boolean
   }>(),
   {
     productKind: undefined,
-    defaultProductKey: null,
-    submitButtonClass: 'button-outline-primary bg-primary-500 hover:border-primary-500',
-    cancelButtonClass: 'button-solid-primary',
-    circleIconClass: 'text-primary-500'
+    contentType: undefined
   }
 )
+
+const {
+  appearance,
+  labelClass,
+  labelContainerClass,
+  fieldClass,
+  fieldBorderClass,
+  markerClass
+} = useHireFormDisplay({
+  variant: 'modal',
+  contentType: toRef(props, 'contentType')
+})
 
 const emit = defineEmits<{
   close: []
@@ -37,19 +44,21 @@ const {
   email,
   comments,
   contractType,
-  labelClass,
-  labelContainerClass,
-  fieldClass,
-  fieldBorderClass,
-  markerClass,
   setSelectedKey,
   resetForm,
   onSubmit
 } = useHireContractForm({
   variant: 'modal',
   productKind: toRef(props, 'productKind'),
-  defaultProductKey: toRef(props, 'defaultProductKey')
+  productKey: toRef(props, 'productKey')
 })
+
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) resetForm()
+  }
+)
 
 const modalTitle = computed(() =>
   props.productKind === 'show' ? t('hire.modalTitleShow') : t('hire.modalTitleWorkshop')
@@ -131,11 +140,11 @@ const ariaLabel = computed(() => modalTitle.value)
     <template #footer>
       <FormButtons
         class="mt-4 mb-2 !gap-3"
-        :submit-button-class="`text-sm !py-1.5 !px-2 ${submitButtonClass}`"
-        :cancel-button-class="`text-sm !py-1.5 !px-2 ${cancelButtonClass}`"
+        :submit-button-class="`text-sm !py-1.5 !px-2 ${appearance.submitButtonClass}`"
+        :cancel-button-class="`text-sm !py-1.5 !px-2 ${appearance.cancelButtonClass}`"
         @cancel="resetForm"
       />
-      <FormFooter :circle-icon-class="circleIconClass" />
+      <FormFooter :circle-icon-class="appearance.circleIconClass" />
     </template>
 </BaseModal>
 </template>

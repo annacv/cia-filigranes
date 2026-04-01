@@ -125,7 +125,7 @@ const titleByLang = computed(() => {
         </div>
       </template>
       <template #wrappedBottom>
-        <HireContactSection />
+        <HireContactSection content-type="workshops" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter

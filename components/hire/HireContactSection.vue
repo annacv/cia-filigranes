@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import type { ContentType } from '~/types'
+
 const props = defineProps<{
   claimTitle?: string
   claimSubtitle?: string
   titleClass?: string
   pageType?: 'default' | 'performances'
+  contentType?: ContentType
 }>()
 
 const { t } = useI18n()
@@ -29,6 +32,7 @@ const pageType = computed(() => props.pageType ?? 'default')
       <HireContractFormPage
         class="py-8 px-20"
         :page-type="pageType"
+        :content-type="contentType"
       />
     </div>
   </section>

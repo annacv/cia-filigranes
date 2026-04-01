@@ -68,7 +68,7 @@ const synopsisItems = computed(() => {
         />
       </template>
       <template #wrappedBottom>
-        <HireContactSection />
+        <HireContactSection content-type="shows" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter

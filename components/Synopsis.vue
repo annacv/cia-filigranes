@@ -248,6 +248,7 @@ watchEffect(() => {
         :is-open="isHireModalOpen"
         :product-kind="hireContract.kind"
         :product-key="hireContract.productKey"
+        :content-type="contentType"
         @close="closeHireModal"
       />
     </div>

@@ -146,7 +146,7 @@ const slicedEvents = computed(() => {
         </div>
       </template>
       <template #wrappedBottom>
-        <HireContactSection />
+        <HireContactSection content-type="shows" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter

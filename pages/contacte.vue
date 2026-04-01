@@ -36,7 +36,8 @@ const getImageAlt = () => useImageAlt('contact');
           class="pt-8"
           title-class="font-grotesk lg:text-5xl !p-0 !leading-none"
           :claim-title="t('hire.pageSectionTitleAlternative')"
-         />
+          content-type="contact"
+        />
       </template>
       <template #unwrapped>
         <Synopsis

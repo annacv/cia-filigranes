@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ContentType } from '~/types'
+import { useHireFormDisplay } from '~/composables/use-hire-form-display.composable'
 import FormSelectDropdown from '~/components/hire/FormSelectDropdown.vue'
 import FormInputs from '~/components/hire/FormInputs.vue'
 import FormTextArea from '~/components/hire/FormTextArea.vue'
@@ -8,17 +10,27 @@ import FormFooter from '~/components/hire/FormFooter.vue'
 const props = withDefaults(
   defineProps<{
     pageType?: 'default' | 'performances'
-    submitButtonClass?: string
-    cancelButtonClass?: string
-    circleIconClass?: string
+    /** When set, drives button/footer colors. Falls back to `pageType === 'performances'` → performances palette. */
+    contentType?: ContentType
   }>(),
   {
     pageType: 'default',
-    submitButtonClass: 'button-outline-primary bg-primary-500 hover:border-primary-500',
-    cancelButtonClass: 'button-solid-primary',
-    circleIconClass: 'text-primary-500'
+    contentType: undefined
   }
 )
+
+const {
+  appearance,
+  labelClass,
+  labelContainerClass,
+  fieldClass,
+  fieldBorderClass,
+  markerClass
+} = useHireFormDisplay({
+  variant: 'page',
+  contentType: toRef(props, 'contentType'),
+  pageType: toRef(props, 'pageType')
+})
 
 const {
   t,
@@ -29,11 +41,6 @@ const {
   comments,
   pageTabOptions,
   contractType,
-  labelClass,
-  labelContainerClass,
-  fieldClass,
-  fieldBorderClass,
-  markerClass,
   setSelectedKey,
   resetForm,
   onSubmit
@@ -87,10 +94,10 @@ const {
     </div>
     <FormButtons
       class="mb-10"
-      :submit-button-class="submitButtonClass"
-      :cancel-button-class="cancelButtonClass"
+      :submit-button-class="appearance.submitButtonClass"
+      :cancel-button-class="appearance.cancelButtonClass"
       @cancel="resetForm"
     />
-    <FormFooter :circle-icon-class="circleIconClass" />
+    <FormFooter :circle-icon-class="appearance.circleIconClass" />
   </form>
 </template>
