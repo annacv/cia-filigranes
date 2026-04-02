@@ -169,7 +169,7 @@
   },
   "privacy": {
     "title": "Política de privacitat",
-    "metaDescription": "Informació sobre com la Companyia Filigranes tracta les dades personals enviades a través del formulari de contacte.",
+    "metaDescription": "Informació sobre com la Companyia Filigranes tracta les dades personals enviades a través del formulari de contacte o de contractació.",
     "sections": [
       {
         "key": "controller",
@@ -179,12 +179,12 @@
       {
         "key": "data",
         "title": "Dades que tractem",
-        "description": "Tractem les dades que ens facilites al formulari de contacte, com ara nom, correu electrònic i missatge."
+        "description": "Tractem les dades que ens facilites al formulari de contacte o de contractació, com ara nom, correu electrònic i missatge. Aquestes dades es transmeten al nostre backend amb Google Apps Script, s'emmagatzemen a Google Sheets i s'utilitzen per enviar notificacions per correu electrònic mitjançant Gmail."
       },
       {
         "key": "purpose",
         "title": "Finalitat",
-        "description": "Fem servir aquestes dades únicament per respondre la teva consulta i gestionar el contacte relacionat amb els nostres serveis."
+        "description": "Fem servir aquestes dades únicament per respondre la teva consulta i gestionar el contacte relacionat amb els nostres serveis. Aquest tractament es realitza a través de Google Apps Script (amb emmagatzematge a Google Sheets) i s'envien correus de notificació mitjançant Gmail."
       },
       {
         "key": "legalBasis",

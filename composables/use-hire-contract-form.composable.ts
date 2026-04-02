@@ -79,7 +79,10 @@ export const useHireContractForm = (options: UseHireContractFormOptions) => {
 
   const onSubmit = (e: Event) => {
     e.preventDefault()
-    // Form fields will be wired in a follow-up step
+    // When wiring the submission to the Google Apps Script backend in the future:
+    // - Send only the minimal form payload needed to reply (no marketing/tracking).
+    // - Apps Script should append the row to Google Sheets and send a notification email via Gmail.
+    // - Return a simple JSON status so the UI can show success/error feedback.
   }
 
   return {

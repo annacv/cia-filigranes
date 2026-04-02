@@ -169,7 +169,7 @@
   },
   "privacy": {
     "title": "Privacy policy",
-    "metaDescription": "Information about how Filigranes Company processes personal data submitted through the contact form.",
+    "metaDescription": "Information about how Filigranes Company processes personal data submitted through the contact or hiring form.",
     "sections": [
       {
         "key": "controller",
@@ -179,12 +179,12 @@
       {
         "key": "data",
         "title": "Data we process",
-        "description": "We process the data you provide in the contact form, such as your name, email address and message."
+        "description": "We process the data you provide in the contact or hiring form, such as your name, email address and message. This data is transmitted to our backend using Google Apps Script, stored in Google Sheets and used to send notification emails via Gmail."
       },
       {
         "key": "purpose",
         "title": "Purpose",
-        "description": "We use this data only to reply to your enquiry and manage contact related to our services."
+        "description": "We use this data only to reply to your enquiry and manage contact related to our services. This processing is carried out via Google Apps Script (with storage in Google Sheets) and notification emails are sent via Gmail."
       },
       {
         "key": "legalBasis",
