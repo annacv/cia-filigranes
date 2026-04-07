@@ -30,10 +30,10 @@ const { openModal } = useCookies()
       </div>
     </div>
     <div class="grid-layout bg-neutral-900 py-8 md:py-6">
-      <div class="layout-cols text-white m-auto flex flex-col lg:flex-row lg:justify-between w-full items-center gap-1 gap-y-4">
+      <div class="layout-cols text-white m-auto flex flex-col 2xl:flex-row lg:justify-between w-full items-center gap-1 gap-y-4">
         <div class="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center gap-1 gap-y-4 text-center text-xs">
           <p class="flex items-center gap-1 font-bold lg:text-xs text-sm">
-            <CiaBrand class="text-white !w-8 !h-auto pr-1" />
+            <CiaBrand class="text-white !w-8 md:!w-6 !h-auto pr-1" />
             Companyia Filigranes, 2026
           </p>
           <b v-if="!isMobileOrTablet" class="px-2">·</b>
@@ -84,10 +84,10 @@ const { openModal } = useCookies()
           <NuxtLinkLocale to="/politica-privacitat" class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer">
             {{ t('footer.legal.privacy') }}
           </NuxtLinkLocale>
-          <b class="hidden 2xl:block px-2">·</b>
+          <b class="px-2">·</b>
           <button
             type="button"
-            class="hidden 2xl:block transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
+            class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
             @click="openModal"
           >
             {{ t('footer.legal.manageCookies') }}
