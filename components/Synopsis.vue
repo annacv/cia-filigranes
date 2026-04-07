@@ -105,21 +105,28 @@ const getColorVariant = (contentType: ContentType | undefined): string => {
     shows: 'primary',
     workshops: 'secondary',
     performances: 'tertiary',
-    contact: 'quaternary'
+    contact: 'neutral'
   };
   return variantMap[contentType || ''] || 'primary';
 };
+
+const getSolidButtonClass = (contentType: ContentType | undefined): string => {
+  if (contentType === 'contact') return 'button-solid-neutral'
+  return `button-solid-${getColorVariant(contentType)}`
+}
 
 const getDownloadButtonClass = computed(() => {
   return `button-outline-${getColorVariant(props.contentType)}`;
 });
 
 const getInfoButtonClass = computed(() => {
-  return `button-solid-${getColorVariant(props.contentType)}`;
+  return getSolidButtonClass(props.contentType);
 });
 
 const getContractButtonClass = computed(() => {
-  return props.downloadButton ? `button-solid-${getColorVariant(props.contentType)}` : `button-outline-${getColorVariant(props.contentType)}`;
+  return props.downloadButton
+    ? getSolidButtonClass(props.contentType)
+    : `button-outline-${getColorVariant(props.contentType)}`;
 });
 
 const infoButtonTarget = computed(() => {

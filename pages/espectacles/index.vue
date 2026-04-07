@@ -31,12 +31,12 @@ const synopsisItems = computed(() => {
         infoButton: {
           href: `/espectacles/${show}#video`,
           textKey: 'button.teaser'
-        }
+        },
+        downloadButton: {
+          download: `CiaFiligranes-${show}-${locale.value}.pdf`,
+          href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
+        },
       },
-      hireContract: {
-        kind: 'show' as const,
-        productKey: show
-      }
     }
   }) || []
 })
@@ -77,7 +77,7 @@ const synopsisItems = computed(() => {
           :alt="t('shows.hero.alt')"
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('shows.hire.title')"
           description="shows.hire.description"
           text-color="text-white"

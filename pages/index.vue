@@ -155,7 +155,7 @@ const slicedEvents = computed(() => {
           image-route=""
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

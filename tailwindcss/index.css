@@ -122,7 +122,6 @@
     @apply pointer-events-none text-neutral-400;
   }
   
-  
 
   /* Neutral Slim Button Link */
   .button-link-neutral {
@@ -148,12 +147,20 @@
     @apply bg-black text-white;
   }
 
-  /* Neutral Solid Uppercased Button */
-  .button-solid-neutral {
+  /* Light Neutral Solid Uppercased Button */
+  .button-solid-light-neutral {
     @apply border-transparent bg-white text-neutral-900 uppercase !font-normal !py-1;
   }
-  .button-solid-neutral:hover {
+  .button-solid-light-neutral:hover {
     @apply text-white bg-black;
+  }
+
+  /* Neutral Solid Button */
+  .button-solid-neutral {
+    @apply border-transparent bg-black border-neutral-900 text-white;
+  }
+  .button-solid-neutral:hover {
+    @apply text-neutral-900 bg-white border-neutral-900;
   }
 
    /* Primary Solid Button */
@@ -202,24 +209,6 @@
   }
   .button-outline-tertiary:hover {
     @apply bg-white text-tertiary-700;
-  }
-
-  /* Quaternary Solid Button */
-  .button-solid-quaternary {
-    @apply border-quaternary-500 bg-quaternary-500 text-neutral-900;
-  }
-  .button-solid-quaternary:hover,
-  .button-solid-quaternary:active {
-    @apply border-neutral-900 bg-neutral-900 text-quaternary-500;
-  }
-
-  /* Quaternary Outline Button */
-  .button-outline-quaternary {
-    @apply border-neutral-900 bg-transparent text-neutral-900;
-  }
-  .button-outline-quaternary:hover,
-  .button-outline-quaternary:active {
-    @apply border-neutral-900 bg-neutral-900 text-white;
   }
 
   /* Button Arrows */

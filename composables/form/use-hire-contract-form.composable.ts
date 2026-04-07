@@ -1,5 +1,5 @@
 import { EVENT_TYPE_ITEMS } from '~/constants'
-import type { HireProductKind } from '~/types'
+import type { ContentType, HireProductKind } from '~/types'
 import type { Ref } from 'vue'
 import type { HireFormSubmissionPayload } from '~/composables/form/use-form-submission.composable'
 import { useFormSubmission } from '~/composables/form/use-form-submission.composable'
@@ -9,6 +9,7 @@ type HireContractType = 'shows' | 'workshops' | 'performances'
 type UseHireContractFormOptions = {
   variant: 'modal' | 'page'
   pageType?: Ref<'default' | 'performances'>
+  contentType?: Ref<ContentType | undefined>
   productKind?: Ref<HireProductKind | undefined>
   productKey?: Ref<string | null | undefined>
 }
@@ -25,8 +26,12 @@ export const useHireContractForm = (options: UseHireContractFormOptions) => {
       ? options.productKey.value
       : ''
   )
-  const getInitialCategory = (): HireContractType =>
-    options.pageType?.value === 'performances' ? 'performances' : 'shows'
+  const getInitialCategory = (): HireContractType => {
+    const pageType = options.pageType?.value ?? 'default'
+    if (pageType === 'performances') return 'performances'
+    if (options.contentType?.value === 'workshops') return 'workshops'
+    return 'shows'
+  }
 
   const selectedKey = ref(getInitialSelectedKey())
   const selectedCategory = ref<HireContractType>(getInitialCategory())
@@ -51,14 +56,13 @@ export const useHireContractForm = (options: UseHireContractFormOptions) => {
   })
 
   watch(
-    options.pageType ?? ref('default'),
-    (pageType) => {
-      if (pageType === 'performances') {
-        selectedCategory.value = 'performances'
-        selectedKey.value = ''
-      }
+    () => [options.pageType?.value ?? 'default', options.contentType?.value] as const,
+    () => {
+      if (options.variant === 'modal') return
+      selectedCategory.value = getInitialCategory()
+      selectedKey.value = ''
     },
-    { immediate: true }
+    { immediate: true },
   )
 
   const contractType = computed<HireContractType>(() => {

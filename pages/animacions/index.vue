@@ -101,7 +101,7 @@ const synopsisButton = computed(() => {
           content-type="performances"
           :alt="getImageAlt('animacions')"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('performances.hire.title')"
           description="performances.hire.description"
           text-color="text-white"

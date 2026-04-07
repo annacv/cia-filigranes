@@ -53,7 +53,7 @@ const summaryButton = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
+        <Summary :abstract="abstract" :items="summaryItems" />
         <div id="video" class="scroll-mt-[72px] lg:scroll-mt-[87px] pt-2 pb-12 lg:pt-4 lg:pb-24">
           <YoutubePlayer :video-id="YOUTUBE_VIDEO_IDS.plisPlas" />
         </div>
@@ -66,6 +66,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('plis-plas')"
           show-full-content
           should-clip
+          :download-button="summaryButton"
           :hire-contract="{ kind: 'show', productKey: 'plis-plas' }"
         />
         <DataSheet
@@ -75,12 +76,11 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('plis-plas')"
           is-reversed
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('shows.hire.titleSingle')"
           description="shows.hire.description"
           text-color="text-white"
           bg-color="bg-primary-500"
-          should-clip
         />
       </template>
       <template v-if="hasScheduledContent" #wrapped>
@@ -125,7 +125,12 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('plis-plas')"
           background-position="center 30%"
         />
-        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <HireFiliBanner
+          :title="t('shows.hire.title')"
+          description="shows.hire.description"
+          text-color="text-white"
+          bg-color="bg-primary-500"
+        />
         <BottomNavigation />
         <TheSupporters />
       </template>

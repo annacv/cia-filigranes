@@ -30,12 +30,12 @@ const synopsisItems = computed(() => {
       buttons: {
         infoButton: {
           href: `/tallers/${workshop}`
-        }
+        },
+        downloadButton: {
+          download: `CiaFiligranes-${workshop}-${locale.value}.pdf`,
+          href: `/downloads/CiaFiligranes-${workshop}-${locale.value}.pdf`,
+        },
       },
-      hireContract: {
-        kind: 'workshop' as const,
-        productKey: workshop
-      }
     }
   }) || []
 })
@@ -76,7 +76,7 @@ const synopsisItems = computed(() => {
           :alt="t('workshops.hero.alt')"
           content-type="workshops"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('workshops.hire.title')"
           description="workshops.hire.description"
           text-color="text-white"

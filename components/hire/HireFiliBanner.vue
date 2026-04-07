@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CONTACT } from "~/constants";
+import { CONTACT } from '~/constants'
 
 const props = defineProps({
   title: {
@@ -20,7 +20,7 @@ const props = defineProps({
     required: false,
     default: 'bg-quaternary-500'
   }
-});
+})
 </script>
 
 <template>
@@ -55,4 +55,3 @@ const props = defineProps({
     </div>
   </section>
 </template>
-

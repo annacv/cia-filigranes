@@ -65,7 +65,7 @@ const titleByLang = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
+        <Summary :abstract="abstract" :items="summaryItems" />
       </template>
       <template #unwrappedTop>
         <Synopsis
@@ -75,6 +75,7 @@ const titleByLang = computed(() => {
           :alt="getImageAlt('enginys-aigua')"
           show-full-content
           should-clip
+          :download-button="summaryButton"
           :hire-contract="{ kind: 'workshop', productKey: 'enginys-aigua' }"
         />
         <DataSheet
@@ -85,7 +86,7 @@ const titleByLang = computed(() => {
           content-type="workshops"
           is-reversed
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
           text-color="text-white"
@@ -135,7 +136,12 @@ const titleByLang = computed(() => {
           content-type="workshops"
           background-position="center bottom"
         />
-        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <HireFiliBanner
+          :title="t('workshops.hire.title')"
+          description="workshops.hire.description"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
+        />
         <BottomNavigation />
         <TheSupporters />
       </template>

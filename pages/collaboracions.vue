@@ -66,7 +66,7 @@ const synopsisItems = computed(() => {
           :alt="t('collaborations.hero.alt')"
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('collaborations.hire.title')"
           description="collaborations.hire.description"
           text-color="text-white"

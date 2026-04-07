@@ -55,7 +55,8 @@ const {
   isSubmitting,
 } = useHireContractForm({
   variant: 'page',
-  pageType: toRef(props, 'pageType')
+  pageType: toRef(props, 'pageType'),
+  contentType: toRef(props, 'contentType'),
 })
 
 /** Feedback overlay; cleared when the user dismisses the message (X or auto-dismiss). */

@@ -56,7 +56,7 @@ const summaryButton = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary :abstract="abstract" :items="summaryItems" :button="summaryButton" />
+        <Summary :abstract="abstract" :items="summaryItems" />
       </template>
       <template #unwrappedTop>
         <Synopsis
@@ -66,6 +66,7 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('pallassos')"
           show-full-content
           should-clip
+          :download-button="summaryButton"
           :hire-contract="{ kind: 'workshop', productKey: 'pallassos' }"
         />
         <DataSheet
@@ -77,7 +78,7 @@ const summaryButton = computed(() => {
           background-position="center 10%"
           is-reversed
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
           text-color="text-white"
@@ -130,7 +131,12 @@ const summaryButton = computed(() => {
           :alt="getImageAlt('pallassos')"
           content-type="workshops"
         />
-        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <HireFiliBanner
+          :title="t('workshops.hire.title')"
+          description="workshops.hire.description"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
+        />
         <BottomNavigation />
         <TheSupporters />
       </template>

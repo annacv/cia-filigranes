@@ -157,7 +157,7 @@ const showMore = () => {
           :alt="t('shows.hero.alt')"
           background-position="center top"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

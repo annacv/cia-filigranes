@@ -95,7 +95,7 @@ const trinxetaAlt = getImageAlt('trinxeta')
           :alt="trinxetaAlt"
           background-position="center 53%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

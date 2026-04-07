@@ -97,7 +97,7 @@ const makutuAlt = getImageAlt('makutu')
           :alt="makutuAlt"
           background-position="center 0%"
         />
-        <HireFili :title="t('home.hire.title')" description="home.hire.description" />
+        <HireFiliBanner :title="t('home.hire.title')" description="home.hire.description" />
         <BottomNavigation />
         <TheSupporters />
       </template>
