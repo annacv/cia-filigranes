@@ -7,7 +7,6 @@ type HireFormVariant = 'modal' | 'page'
 type HireFormButtonFooterClasses = {
   submitButtonClass: string
   cancelButtonClass: string
-  circleIconClass: string
 }
 
 type HireFormFieldClasses = {
@@ -29,29 +28,24 @@ type UseHireFormDisplayOptions = {
 /** Submit / cancel / footer icon classes by synopsis or page section palette. */
 const BUTTON_FOOTER_BY_CONTENT: Record<ContentType, HireFormButtonFooterClasses> = {
   workshops: {
-    submitButtonClass: 'button-outline-secondary bg-secondary-500',
+    submitButtonClass: 'button-outline-secondary bg-secondary-500 hover:border-secondary-500',
     cancelButtonClass: 'button-solid-secondary',
-    circleIconClass: 'text-secondary-500'
   },
   performances: {
-    submitButtonClass: 'button-outline-tertiary bg-tertiary-500',
+    submitButtonClass: 'button-outline-tertiary bg-tertiary-500 hover:border-tertiary-500',
     cancelButtonClass: 'button-solid-tertiary',
-    circleIconClass: 'text-tertiary-500'
   },
   contact: {
-    submitButtonClass: 'button-outline-tertiary bg-quaternary-500',
+    submitButtonClass: 'button-outline-tertiary bg-quaternary-500 hover:border-quaternary-500',
     cancelButtonClass: 'button-solid-quaternary',
-    circleIconClass: 'text-quaternary-500'
   },
   shows: {
-    submitButtonClass: 'button-outline-primary bg-primary-500',
+    submitButtonClass: 'button-outline-primary bg-primary-500 hover:border-primary-500',
     cancelButtonClass: 'button-solid-primary',
-    circleIconClass: 'text-primary-500'
   },
   filipersones: {
-    submitButtonClass: 'button-outline-primary bg-primary-500',
+    submitButtonClass: 'button-outline-primary bg-primary-500 hover:border-primary-500',
     cancelButtonClass: 'button-solid-primary',
-    circleIconClass: 'text-primary-500'
   }
 }
 
@@ -67,10 +61,10 @@ function hireFormAppearanceFromContentType(
 function fieldClassesForVariant(variant: HireFormVariant): HireFormFieldClasses {
   const isModal = variant === 'modal'
   return {
-    labelClass: `text-neutral-900 ${isModal ? 'text-sm' : ''}`,
+    labelClass: `text-black ${isModal ? 'text-sm' : ''}`,
     labelContainerClass: 'flex flex-col gap-2 text-left',
     markerClass: 'text-base !leading-none text-neutral-900',
-    fieldClass: `py-1 w-full rounded-lg bg-white text-base !leading-tight text-neutral-900 placeholder:text-neutral-400 placeholder:italic outline-none ${isModal ? 'text-sm' : ''}`,
+    fieldClass: `py-1 w-full rounded-lg bg-white text-base !leading-tight text-neutral-900 font-semibold placeholder:font-normal placeholder:text-neutral-400 placeholder:italic outline-none ${isModal ? 'text-sm' : ''}`,
     fieldBorderClass:
       'h-[2px] w-full rounded-full bg-neutral-400 transition-colors duration-150 group-focus-within:bg-neutral-900'
   }

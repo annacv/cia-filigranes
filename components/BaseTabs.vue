@@ -36,7 +36,7 @@ const setValue = (value: string | null) => {
               'text-sm !leading-normal lg:text-base xl:text-lg pb-1 whitespace-nowrap transition-colors duration-200 ease-out',
               textClass,
               modelValue === option.value
-                ? 'text-neutral-900'
+                ? 'text-black'
                 : 'text-neutral-600 group-hover:text-neutral-900 group-focus-visible:text-neutral-900'
             ]"
           >

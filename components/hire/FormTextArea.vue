@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps<{
+import { useHireFormDisplay } from '~/composables/form/use-hire-form-display.composable'
+
+const props = defineProps<{
   comments: string
-  labelContainerClass: string
-  labelClass: string
-  fieldClass: string
-  fieldBorderClass: string | string[]
+  variant: 'modal' | 'page'
 }>()
 
 const emit = defineEmits<{
@@ -12,6 +11,10 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
+const { labelContainerClass, labelClass, fieldClass, fieldBorderClass } = useHireFormDisplay({
+  variant: props.variant,
+  contentType: undefined
+})
 </script>
 
 <template>

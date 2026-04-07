@@ -10,6 +10,7 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+const { isMobile } = useResponsive()
 
 const claimTitle = computed(() => props.claimTitle ?? t('hire.pageSectionTitle'))
 const claimSubtitle = computed(() => props.claimSubtitle ?? t('hire.pageSectionSubtitle'))
@@ -23,14 +24,14 @@ const pageType = computed(() => props.pageType ?? 'default')
   >
     <div class="flex flex-col gap-y-7 w-full">
       <ClaimTitle
-        class="text-center !pb-0 !mb-0 !mt-0 md:!mt-6 xl:!mt-0 xl:!-mb-5"
+        class="text-center !pb-0 !mb-0 !mt-0 md:!mt-6 xl:!mt-0"
         :claim-title="claimTitle"
-        :subtitle="claimSubtitle"
+        :subtitle="isMobile ? undefined : claimSubtitle"
         :title-class="titleClass"
         is-section-title
       />
       <HireContractFormPage
-        class="py-8 px-20"
+        class="py-6 md:py-8 px-4 md:px-20"
         :page-type="pageType"
         :content-type="contentType"
       />

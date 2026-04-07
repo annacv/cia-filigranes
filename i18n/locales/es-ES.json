@@ -48,9 +48,6 @@
     "reservationPlace": "Reserva tu plaza",
     "filters": {
       "ariaLabel": "Filtrar eventos por tipo",
-      "shows": "Espectáculos",
-      "workshops": "Talleres",
-      "performances": "Animaciones",
       "all": "Todos los eventos",
       "allShows": "Todos los espectáculos",
       "allWorkshops": "Todos los talleres",
@@ -98,16 +95,16 @@
     "pdf": "descarga un documento PDF",
     "hire": "Contratar",
     "submit": "Enviar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "close": "Cerrar"
   },
   "hire": {
     "modalTitleShow": "Para contratar el espectáculo:",
     "modalTitleWorkshop": "Para contratar el taller:",
     "modalDescription": "Rellena el siguiente formulario y te responderemos lo antes posible. O, si lo prefieres, puedes llamarnos directamente al {phone}, o enviarnos un correo electrónico a {email}.",
-    "modalFormTitle": "Detalles de la contratación",
     "pageSectionTitle": "Contratar",
     "requiredFields": "Campos obligatorios",
-    "privacyNote": "No te preocupes: usaremos tus datos solo para responderte. Sin publicidad.",
+    "privacyNote": "No enviamos publicidad.",
     "selectPlaceholder": "Selecciona…",
     "optgroupShows": "Espectáculos",
     "optgroupWorkshops": "Talleres",
@@ -124,6 +121,12 @@
       "comments": "Comentarios",
       "performanceSelectLabel": "Escoge el tipo de animación que mejor te encaja"
     },
+    "performanceOptions": {
+      "circEpoca": "Circo de época",
+      "malabars": "Malabaristas",
+      "oficis": "Oficios (camareros, panaderos...)",
+      "convenir": "A convenir"
+    },
     "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
     "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
     "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
@@ -134,6 +137,17 @@
       "workshopSelect": "Selecciona tu taller",
       "performanceSelect": "Selecciona tu animación",
       "comments": "Información adicional que queráis compartir, por ejemplo, fecha y lugar estimados para la realización del espectáculo, taller o animación."
+    },
+    "submission": {
+      "sending": "Enviando…",
+      "success": "¡Gracias! Hemos recibido tu mensaje.",
+      "error": "No se ha podido enviar el formulario. Inténtalo de nuevo.",
+      "errorNetwork": "Error de conexión. Comprueba la red e inténtalo de nuevo.",
+      "errorParse": "La respuesta del servidor no es válida. Inténtalo más tarde.",
+      "errorConfig": "No se ha podido enviar el formulario en este momento. Vuelve a intentarlo en unos minutos.",
+      "validationSelect": "Selecciona un espectáculo, taller o animación.",
+      "validationName": "Introduce tu nombre y apellidos.",
+      "validationEmail": "Introduce un correo electrónico válido."
     }
   },
   "aria": {
@@ -179,12 +193,12 @@
       {
         "key": "data",
         "title": "Datos que tratamos",
-        "description": "Tratamos los datos que facilitas en el formulario de contacto o de contratación, como nombre, correo electrónico y mensaje. Estos datos se transmiten a nuestro backend con Google Apps Script, se almacenan en Google Sheets y se utilizan para enviar notificaciones por correo electrónico a través de Gmail."
+        "description": "Tratamos los datos que facilitas en el formulario de contacto o de contratación, como nombre, correo electrónico y mensaje. Estos datos se envían a StaticForms para gestionar el envío de formularios y las notificaciones al buzón de contacto."
       },
       {
         "key": "purpose",
         "title": "Finalidad",
-        "description": "Usamos estos datos únicamente para responder tu consulta y gestionar el contacto relacionado con nuestros servicios. Este tratamiento se realiza a través de Google Apps Script (con almacenamiento en Google Sheets) y se envían correos de notificación mediante Gmail."
+        "description": "Usamos estos datos únicamente para responder tu consulta y gestionar el contacto relacionado con nuestros servicios. StaticForms actúa como proveedor de procesamiento de formularios para esta finalidad."
       },
       {
         "key": "legalBasis",

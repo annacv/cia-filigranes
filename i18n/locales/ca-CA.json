@@ -48,9 +48,6 @@
     "reservationPlace": "Reserva la teva plaça",
     "filters": {
       "ariaLabel": "Filtrar esdeveniments per tipus",
-      "shows": "Espectacles",
-      "workshops": "Tallers",
-      "performances": "Animacions",
       "all": "Tots els esdeveniments",
       "allShows": "Tots els espectacles",
       "allWorkshops": "Tots els tallers",
@@ -98,19 +95,19 @@
     "pdf": "descarrega un document PDF",
     "hire": "Contractar",
     "submit": "Enviar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "close": "Tancar"
   },
   "hire": {
     "modalTitleShow": "Per contractar l'espectacle:",
     "modalTitleWorkshop": "Per contractar el taller:",
     "modalDescription": "Omple el següent formulari i et respondrem tan aviat com ens sigui possible. O, si ho prefereixes, ens pots trucar directament al {phone}, o enviar-nos un correu electrònic a l'adreça {email}.",
-    "modalFormTitle": "Detalls de la contractació",
     "pageSectionTitle": "Contacta'ns per al teu pròxim esdeveniment",
     "pageSectionTitleAlternative": "Reserva'ns per al teu pròxim esdeveniment",
     "pageSectionSubtitle": "I omple d'emocions i rialles el teu festival, escola o festa popular",
     "pageSectionSubtitlePerformances": "Explica'ns què tens al cap i prepararem una proposta a mida.",
     "requiredFields": "Camps requerits",
-    "privacyNote": "No t'amoïnis: farem servir les teves dades només per respondre't. Sense publicitat.",
+    "privacyNote": "No enviem publicitat.",
     "selectPlaceholder": "Selecciona…",
     "optgroupShows": "Espectacles",
     "optgroupWorkshops": "Tallers",
@@ -127,6 +124,12 @@
       "comments": "Comentaris",
       "performanceSelectLabel": "Escull el tipus d'animació que més t'escau"
     },
+    "performanceOptions": {
+      "circEpoca": "Circ d'època",
+      "malabars": "Malabaristes",
+      "oficis": "Oficis (cambrers, forners...)",
+      "convenir": "A convenir"
+    },
     "placeholders": {
       "fullName": "Escriu el teu com i cognoms",
       "email": "Escriu el teu email de contacte",
@@ -134,6 +137,17 @@
       "workshopSelect": "Selecciona el teu taller",
       "performanceSelect": "Selecciona la teva animació",
       "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació."
+    },
+    "submission": {
+      "sending": "Enviant…",
+      "success": "Gràcies! Hem rebut el teu missatge.",
+      "error": "No s'ha pogut enviar el formulari. Torna-ho a provar.",
+      "errorNetwork": "Error de connexió. Comprova la xarxa i torna-ho a provar.",
+      "errorParse": "La resposta del servidor no és vàlida. Torna-ho a provar més tard.",
+      "errorConfig": "No s'ha pogut enviar el formulari en aquest moment. Torna-ho a provar d'aquí a uns minuts.",
+      "validationSelect": "Selecciona un espectacle, taller o animació.",
+      "validationName": "Introdueix el teu nom i cognoms.",
+      "validationEmail": "Introdueix un correu electrònic vàlid."
     }
   },
   "aria": {
@@ -179,12 +193,12 @@
       {
         "key": "data",
         "title": "Dades que tractem",
-        "description": "Tractem les dades que ens facilites al formulari de contacte o de contractació, com ara nom, correu electrònic i missatge. Aquestes dades es transmeten al nostre backend amb Google Apps Script, s'emmagatzemen a Google Sheets i s'utilitzen per enviar notificacions per correu electrònic mitjançant Gmail."
+        "description": "Tractem les dades que ens facilites al formulari de contacte o de contractació, com ara nom, correu electrònic i missatge. Aquestes dades s'envien a StaticForms per gestionar l'enviament dels formularis i les notificacions a la bústia de contacte."
       },
       {
         "key": "purpose",
         "title": "Finalitat",
-        "description": "Fem servir aquestes dades únicament per respondre la teva consulta i gestionar el contacte relacionat amb els nostres serveis. Aquest tractament es realitza a través de Google Apps Script (amb emmagatzematge a Google Sheets) i s'envien correus de notificació mitjançant Gmail."
+        "description": "Fem servir aquestes dades únicament per respondre la teva consulta i gestionar el contacte relacionat amb els nostres serveis. StaticForms actua com a proveïdor de processament de formularis per a aquesta finalitat."
       },
       {
         "key": "legalBasis",
