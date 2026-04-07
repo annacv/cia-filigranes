@@ -206,18 +206,20 @@
 
   /* Quaternary Solid Button */
   .button-solid-quaternary {
-    @apply border-quaternary-500 text-quaternary-500 bg-white;
+    @apply border-quaternary-500 bg-quaternary-500 text-neutral-900;
   }
-  .button-solid-quaternary:hover {
-    @apply border-white text-white bg-quaternary-500;
+  .button-solid-quaternary:hover,
+  .button-solid-quaternary:active {
+    @apply border-neutral-900 bg-neutral-900 text-quaternary-500;
   }
 
   /* Quaternary Outline Button */
   .button-outline-quaternary {
-    @apply border-white text-white;
+    @apply border-neutral-900 bg-transparent text-neutral-900;
   }
-  .button-outline-quaternary:hover {
-    @apply bg-white text-quaternary-500;
+  .button-outline-quaternary:hover,
+  .button-outline-quaternary:active {
+    @apply border-neutral-900 bg-neutral-900 text-white;
   }
 
   /* Button Arrows */

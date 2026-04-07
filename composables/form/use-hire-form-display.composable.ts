@@ -36,8 +36,8 @@ const BUTTON_FOOTER_BY_CONTENT: Record<ContentType, HireFormButtonFooterClasses>
     cancelButtonClass: 'button-solid-tertiary',
   },
   contact: {
-    submitButtonClass: 'button-outline-tertiary bg-quaternary-500 hover:border-quaternary-500',
-    cancelButtonClass: 'button-solid-quaternary',
+    submitButtonClass: 'button-solid-quaternary',
+    cancelButtonClass: 'button-outline-quaternary',
   },
   shows: {
     submitButtonClass: 'button-outline-primary bg-primary-500 hover:border-primary-500',
