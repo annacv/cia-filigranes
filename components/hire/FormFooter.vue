@@ -5,7 +5,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col gap-2">
     <div class="bg-neutral-100 h-0.5 rounded-full" />
     <div class="flex gap-4 justify-between">
       <p class="flex gap-2 items-baseline text-neutral-900">
