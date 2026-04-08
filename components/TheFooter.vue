@@ -36,7 +36,7 @@ const { openModal } = useCookies()
             <CiaBrand class="text-white !w-8 md:!w-6 !h-auto pr-1" />
             Companyia Filigranes, 2026
           </p>
-          <span v-if="!isMobile || !isSmallTablet" class="text-bold leading-none px-2">·</span>
+          <span v-if="!isMobile && !isSmallTablet" class="text-bold leading-none px-2">·</span>
           <span>
             {{ t('footer.design.text') }}
             <a
@@ -46,7 +46,7 @@ const { openModal } = useCookies()
               rel="noopener nofollow"
             >Anna Condal</a>
           </span>
-          <span v-if="!isMobile ||!isSmallTablet" class="text-bold leading-none px-1">·</span>
+          <span v-if="!isMobile && !isSmallTablet" class="text-bold leading-none px-1">·</span>
           <span>
             {{ t('footer.foto.text') }}
             <a
@@ -79,15 +79,15 @@ const { openModal } = useCookies()
             <NuxtLinkLocale to="/avis-legal" class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer">
               {{ t('footer.legal.advice') }}
             </NuxtLinkLocale>
-            <span class="lg:pb-0.5 text-bold leading-none px-2">·</span>
+            <span class="md:pb-0.5 text-bold leading-none px-2">·</span>
             <NuxtLinkLocale to="/politica-cookies" class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer">
               {{ t('footer.legal.cookies') }}
             </NuxtLinkLocale>
-            <span class="lg:pb-0.5 text-bold leading-none px-2">·</span>
+            <span class="md:pb-0.5 text-bold leading-none px-2">·</span>
             <NuxtLinkLocale to="/politica-privacitat" class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer">
               {{ t('footer.legal.privacy') }}
             </NuxtLinkLocale>
-            <span class="lg:pb-0.5 text-bold leading-none px-2">·</span>
+            <span class="md:pb-0.5 text-bold leading-none px-2">·</span>
             <button
               type="button"
               class="transition-opacity duration-200 border-b-2 border-white pb-1 border-opacity-0 hover:border-opacity-50 hover:opacity-80 cursor-pointer"
