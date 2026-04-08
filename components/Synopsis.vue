@@ -174,7 +174,7 @@ watchEffect(() => {
           { 'min-h-[464px]': !isMobile },
           isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
       >
-        <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
+        <div class="w-full xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
           <slot name="content">
             <h2 v-if="title" class="font-grotesk uppercase text-4xl lg:text-5xl">
               {{ title }}

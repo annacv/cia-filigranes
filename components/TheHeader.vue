@@ -30,12 +30,12 @@ const toggleSideNav = () => {
   >
     <NuxtLinkLocale 
       :to="('/')" 
-      class="col-start-1 col-span-3 xl:col-start-2 xl:col-span-2"
+      class="col-start-1 col-span-3 lg:col-start-2 xl:col-start-2 xl:col-span-2"
       :aria-label="t('aria.home')"
     >
       <CiaLogo :color="logoColor" class="w-[174px] hover:opacity-85"/>
     </NuxtLinkLocale>
-    <div class="flex items-start col-start-6 xl:col-start-11 col-span-1 xl:col-span-1 justify-self-end">
+    <div class="flex items-start col-start-6 lg:col-start-13 xl:col-start-13 col-span-1 xl:col-span-1 justify-self-end">
       <TheBurger :is-open="isOpen" :color="burgerColor" @toggle="toggleSideNav" />
     </div>
     <div class="w-full h-full">

@@ -20,6 +20,16 @@ const config: Config = {
       '2xl': '1536px',
     },
     extend: {
+      gridTemplateColumns: {
+        14: 'repeat(14, minmax(0, 1fr))',
+      },
+      gridColumn: {
+        'span-13': 'span 13 / span 13',
+      },
+      gridColumnStart: {
+        13: '13',
+        14: '14',
+      },
       perspective: {
         '1000': '1000px',
       },
