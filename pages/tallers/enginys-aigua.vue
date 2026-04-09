@@ -2,10 +2,10 @@
 import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
+import { getImageByRoute } from "~/utils/image-by-route"
+import { getItemIndex } from "~/utils/get-item-index"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const {
   events,
@@ -17,34 +17,32 @@ const {
   workshopFilterOptions,
   filteredEvents,
   hasActiveFilters,
-} = useWorkshopAgenda('enginys-aigua')
-const getImageAlt = (title?: string) => useImageAlt('workshops', title);
+} = useWorkshopAgenda("enginys-aigua")
+const getImageAlt = (title?: string) => useImageAlt("workshops", title)
 
 useHead({
-  meta: [
-    { name: 'description', content: t('workshops.enginys-aigua.metaDescription') }
-  ]
+  meta: [{ name: "description", content: t("workshops.enginys-aigua.metaDescription") }],
 })
 
-const abstract = getTranslatedList('workshops.enginys-aigua.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('workshops.enginys-aigua.list', ['title', 'description'])
-const synopsis = getTranslatedList('workshops.enginys-aigua.synopsis', ['paragraph'])
-const techCard = getTranslatedList('workshops.enginys-aigua.techCard', ['title', 'description'])
-const artCard = getTranslatedList('workshops.enginys-aigua.artCard', ['title', 'description'])
+const abstract = getTranslatedList("workshops.enginys-aigua.abstract", ["paragraph"])
+const summaryItems = getTranslatedList("workshops.enginys-aigua.list", ["title", "description"])
+const synopsis = getTranslatedList("workshops.enginys-aigua.synopsis", ["paragraph"])
+const techCard = getTranslatedList("workshops.enginys-aigua.techCard", ["title", "description"])
+const artCard = getTranslatedList("workshops.enginys-aigua.artCard", ["title", "description"])
 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
     href: `/downloads/CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
   }
-});
+})
 
 const titleByLang = computed(() => {
-  const title = t('workshops.commonTitle', { title: t('routes.enginys-aigua') })
-  if (locale.value === 'ca') {
-    return title.replace('de ', 'd\'')
+  const title = t("workshops.commonTitle", { title: t("routes.enginys-aigua") })
+  if (locale.value === "ca") {
+    return title.replace("de ", "d'")
   }
-  return title;
+  return title
 })
 </script>
 
@@ -67,11 +65,7 @@ const titleByLang = computed(() => {
     </HeroCover>
     <MainContent>
       <template #wrappedTop>
-        <Summary
-          :abstract="abstract"
-          :items="summaryItems"
-          :button="summaryButton"
-        />
+        <Summary :abstract="abstract" :items="summaryItems" />
       </template>
       <template #unwrappedTop>
         <Synopsis
@@ -81,6 +75,8 @@ const titleByLang = computed(() => {
           :alt="getImageAlt('enginys-aigua')"
           show-full-content
           should-clip
+          :download-button="summaryButton"
+          :hire-contract="{ kind: 'workshop', productKey: 'enginys-aigua' }"
         />
         <DataSheet
           :tech-card="techCard"
@@ -90,8 +86,7 @@ const titleByLang = computed(() => {
           content-type="workshops"
           is-reversed
         />
-        <HireFili
-          class="py-12"
+        <HireFiliBanner
           :title="t('workshops.hire.titleSingle')"
           description="workshops.hire.description"
           text-color="text-white"
@@ -100,25 +95,25 @@ const titleByLang = computed(() => {
       </template>
       <template v-if="hasScheduledContent" #wrapped>
         <div id="agenda" class="scroll-mt-[72px] lg:scroll-mt-[87px]">
-        <ClaimTitle
-          :claim-title="t('workshops.liveClaimTitle', { title: titleByLang })"
-          is-section-title
-        />
-        <AgendaFilters
-          v-model:selected-primary-filter="selectedWorkshopFilter"
-          v-model:show-only-open-to-public="showOnlyOpenToPublic"
-          :primary-filter-options="workshopFilterOptions"
-        />
-        <CalendarEventList
-          :events="filteredEvents"
-          :pending="pending"
-          :error="error"
-          :total-events="events.length"
-          selected-event-type="workshops"
-          :has-active-filters="hasActiveFilters"
-          is-dedicated-list
-          show-view-all-link
-        />
+          <ClaimTitle
+            :claim-title="t('workshops.liveClaimTitle', { title: titleByLang })"
+            is-section-title
+          />
+          <AgendaFilters
+            v-model:selected-primary-filter="selectedWorkshopFilter"
+            v-model:show-only-open-to-public="showOnlyOpenToPublic"
+            :primary-filter-options="workshopFilterOptions"
+          />
+          <CalendarEventList
+            :events="filteredEvents"
+            :pending="pending"
+            :error="error"
+            :total-events="events.length"
+            selected-event-type="workshops"
+            :has-active-filters="hasActiveFilters"
+            is-dedicated-list
+            show-view-all-link
+          />
         </div>
       </template>
       <template #unwrapped>
@@ -130,19 +125,26 @@ const titleByLang = computed(() => {
           />
         </div>
       </template>
+      <template #wrappedBottom>
+        <HireContactSection content-type="workshops" />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="tallers_enginys-aigua-4"
+          image-route="tallers"
+          :alt="getImageAlt('enginys-aigua')"
+          content-type="workshops"
+          background-position="center bottom"
+        />
+        <HireFiliBanner
+          :title="t('workshops.hire.title')"
+          description="workshops.hire.description"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
+        />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="tallers_enginys-aigua-4"
-      image-route="tallers"
-      :alt="getImageAlt('enginys-aigua')"
-      content-type="workshops"
-      background-position="center bottom"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

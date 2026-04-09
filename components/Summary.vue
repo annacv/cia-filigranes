@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import ArrowDown from "assets/icons/arrow-down.svg";
-
-const { t } = useI18n()
-
-const props = defineProps({
+defineProps({
   abstract: {
     type: Array as () => Record<string, string | unknown>[],
     required: true
@@ -11,10 +7,6 @@ const props = defineProps({
   items: {
     type: Array as () => Record<string, string | unknown>[],
     required: true
-  },
-  button: {
-    type: Object,
-    default: () => {}
   }
 })
 </script>
@@ -24,7 +16,7 @@ const props = defineProps({
     <div class="flex flex-col gap-4 lg:w-[68%] md:mb-6">
       <p
         v-for="item in abstract"
-        :key="item.paragraph"
+        :key="item.paragraph as string"
         class="text-lg lg:text-xl"
       >
         {{ item.paragraph }}
@@ -37,7 +29,7 @@ const props = defineProps({
       >
         <li
           v-for="item in items"
-          :key="item.title"
+          :key="item.title as string"
           class="flex flex-col gap-2 text-sm lg:text-base"
         >
           <p class="font-bold">
@@ -48,20 +40,6 @@ const props = defineProps({
           </p>
         </li>
       </ul>
-      <FiliButton
-        v-if="button"
-        :href="button.href"
-        button-class="button-outline-neutral self-end"
-        :text="t('button.dossier')"
-        :download="button.download"
-      >
-        <template #text>
-          {{ t('button.dossier') }}
-        </template>
-        <template #icon-right>
-          <ArrowDown class="arrow-down"/>
-        </template>
-      </FiliButton>
     </div>
   </div>
 </template>

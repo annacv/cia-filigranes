@@ -69,9 +69,9 @@ body.antialiased {
 
 /* Critical utility classes for above-the-fold content */
 .grid-layout{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;padding-left:1.25rem;padding-right:1.25rem;padding-top:0.75rem;padding-bottom:0.75rem}
-@media (min-width:1280px){.grid-layout{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.25rem;padding-top:1.25rem;padding-bottom:1.25rem}}
+@media (min-width:1280px){.grid-layout{grid-template-columns:repeat(14,minmax(0,1fr));gap:1.25rem;padding-top:1.25rem;padding-bottom:1.25rem}}
 .layout-cols{grid-column-start:1;grid-column-end:span 6}
-@media (min-width:1280px){.layout-cols{grid-column-start:2;grid-column-end:span 10}}
+@media (min-width:1280px){.layout-cols{grid-column-start:2;grid-column-end:span 12}}
 
 /* Grid column utilities - Critical for header */
 .col-start-1{grid-column-start:1}
@@ -82,7 +82,7 @@ body.antialiased {
 .col-span-3{grid-column:span 3/span 3}
 .col-span-6{grid-column:span 6/span 6}
 @media (min-width:1280px){.xl\\:col-start-2{grid-column-start:2}}
-@media (min-width:1280px){.xl\\:col-start-11{grid-column-start:11}}
+@media (min-width:1280px){.xl\\:col-start-13{grid-column-start:13}}
 @media (min-width:1280px){.xl\\:col-span-1{grid-column:span 1/span 1}}
 @media (min-width:1280px){.xl\\:col-span-2{grid-column:span 2/span 2}}
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CONTACT } from "~/constants";
+import { CONTACT } from '~/constants'
 
 const props = defineProps({
   title: {
@@ -20,12 +20,12 @@ const props = defineProps({
     required: false,
     default: 'bg-quaternary-500'
   }
-});
+})
 </script>
 
 <template>
   <section :aria-label="`${title} section`" :class="`grid-layout ${bgColor}`">
-    <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 text-base md:text-lg">
+    <div class="w-full text-center layout-cols justify-center content-center flex flex-wrap gap-x-4 md:py-3.5 text-base lg:text-lg">
       <h2 :class="`font-bold ${textColor}`">
         {{ title }}
       </h2>
@@ -55,4 +55,3 @@ const props = defineProps({
     </div>
   </section>
 </template>
-

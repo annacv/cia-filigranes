@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CardImage, ContentType } from "~/types";
+import type { CardImage, ContentType, HireContractContext } from "~/types";
 
 const props = defineProps({
   claim: {
@@ -31,6 +31,7 @@ const props = defineProps({
           download: string
         }
       }
+      hireContract?: HireContractContext
     }>,
     required: true
   }
@@ -57,6 +58,7 @@ const { isMobile } = useResponsive()
       :is-reversed="isMobile ? true : (index + 1) % 2 === 0"
       :info-button="item.buttons.infoButton"
       :download-button="item.buttons.downloadButton"
+      :hire-contract="item.hireContract"
     />
   </div>
 </template>

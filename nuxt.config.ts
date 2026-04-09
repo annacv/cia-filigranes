@@ -15,6 +15,8 @@ export default defineNuxtConfig({
     public: {
       googleCalendarApiKey: '',
       googleCalendarId: '',
+      staticFormsApiUrl: '',
+      staticFormsAccessKey: '',
     },
   },
   app: {

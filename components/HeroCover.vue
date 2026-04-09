@@ -157,7 +157,7 @@ const scrolledHeight = computed(() => {
     data-hero-cover
     :aria-label="`Hero section ${contentType}`"
     :class="[
-      'sticky top-0 w-full z-10 grid-layout items-center shadow relative overflow-hidden',
+      'sticky top-0 w-full z-50 grid-layout items-center shadow relative overflow-hidden',
       'transition-[clip-path,height] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[clip-path,height]',
       isScrolled
         ? '[clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_100%)]'

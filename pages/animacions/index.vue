@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getImageByRoute } from "~/utils/image-by-route";
+import { PERFORMANCES_GALLERY_IMG } from "~/constants";
 
 const { t, locale } = useI18n();
 const { getTranslatedList } = useI18nUtils()
@@ -73,30 +74,42 @@ const synopsisButton = computed(() => {
           :alt="getImageAlt('animacions')"
           is-reversed
         />
-        <HireFili
-          class="py-12"
+        <div class="grid-layout bg-highlight-tertiary py-5 lg:py-12">
+          <div class="layout-cols">
+            <SlidingPanel>
+              <MidCard
+                content-type="performances"
+                :title="t('performances.title')"
+                :images="PERFORMANCES_GALLERY_IMG"
+                :link="useLinkByRoute('animacions').value"
+              />
+            </SlidingPanel>
+          </div>
+        </div>
+      </template>
+      <template #wrappedBottom>
+        <HireContactSection
+          :claim-title="t('hire.pageSectionTitleAlternative')"
+          :claim-subtitle="t('hire.pageSectionSubtitlePerformances')"
+          page-type="performances"
+        />
+      </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="animacions_domador"
+          image-route="animacions"
+          content-type="performances"
+          :alt="getImageAlt('animacions')"
+        />
+        <HireFiliBanner
           :title="t('performances.hire.title')"
           description="performances.hire.description"
           text-color="text-white"
           bg-color="bg-tertiary-500"
         />
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 my-8 lg:my-12 xl:my-24 2xl:my-32">
-          <HighlightShows />
-          <HighlightWorkshops />
-        </div>
+        <BottomNavigation />
+        <TheSupporters />
       </template>
     </MainContent>
-    <HeroFooter
-      image-name="animacions_domador"
-      image-route="animacions"
-      content-type="performances"
-      :alt="getImageAlt('animacions')"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

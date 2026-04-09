@@ -65,16 +65,16 @@
 
 @layer components {
   .grid-layout {
-    @apply grid grid-cols-6 xl:grid-cols-12 gap-0 xl:gap-5 px-5 py-3 xl:py-5;
+    @apply grid grid-cols-6 lg:grid-cols-14 xl:grid-cols-14 gap-0 lg:gap-5 xl:gap-5 px-5 py-3 lg:py-5 xl:py-5;
   }
   .layout-cols {
-    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-10;
+    @apply col-start-1 col-span-6 lg:col-start-2 lg:col-span-12 xl:col-start-2 xl:col-span-12;
   }
   .layout-cols--to-right {
-    @apply col-start-1 col-span-6 xl:col-start-2 xl:col-span-11;
+    @apply col-start-1 col-span-6 lg:col-start-2 lg:col-span-13 xl:col-start-2 xl:col-span-13;
   }
   .layout-cols--to-left {
-    @apply col-start-1 col-span-6 xl:col-start-1 xl:col-span-11;
+    @apply col-start-1 col-span-6 lg:col-start-1 lg:col-span-13 xl:col-start-1 xl:col-span-13;
   }
   .highlight-content--1 {
     @apply bg-highlight-primary -skew-y-3;
@@ -122,7 +122,6 @@
     @apply pointer-events-none text-neutral-400;
   }
   
-  
 
   /* Neutral Slim Button Link */
   .button-link-neutral {
@@ -148,12 +147,20 @@
     @apply bg-black text-white;
   }
 
-  /* Neutral Solid Uppercased Button */
-  .button-solid-neutral {
+  /* Light Neutral Solid Uppercased Button */
+  .button-solid-light-neutral {
     @apply border-transparent bg-white text-neutral-900 uppercase !font-normal !py-1;
   }
-  .button-solid-neutral:hover {
+  .button-solid-light-neutral:hover {
     @apply text-white bg-black;
+  }
+
+  /* Neutral Solid Button */
+  .button-solid-neutral {
+    @apply border-transparent bg-black border-neutral-900 text-white;
+  }
+  .button-solid-neutral:hover {
+    @apply text-neutral-900 bg-white border-neutral-900;
   }
 
    /* Primary Solid Button */
@@ -202,22 +209,6 @@
   }
   .button-outline-tertiary:hover {
     @apply bg-white text-tertiary-700;
-  }
-
-  /* Quaternary Solid Button */
-  .button-solid-quaternary {
-    @apply border-quaternary-500 text-quaternary-500 bg-white;
-  }
-  .button-solid-quaternary:hover {
-    @apply border-white text-white bg-quaternary-500;
-  }
-
-  /* Quaternary Outline Button */
-  .button-outline-quaternary {
-    @apply border-white text-white;
-  }
-  .button-outline-quaternary:hover {
-    @apply bg-white text-quaternary-500;
   }
 
   /* Button Arrows */

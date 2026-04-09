@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
-import type { AgendaPrimaryFilterOption } from '~/types'
+import type { EventTypeItem } from '~/types'
 import EventTypeDropdown from '~/components/agenda/EventTypeDropdown.vue'
 
 const props = defineProps({
@@ -9,7 +9,7 @@ const props = defineProps({
     default: null,
   },
   primaryFilterOptions: {
-    type: Array as PropType<AgendaPrimaryFilterOption[]>,
+    type: Array as PropType<EventTypeItem[]>,
     required: true,
   },
   showOnlyOpenToPublic: {
@@ -40,41 +40,26 @@ const selectedPrimaryFilterOption = computed(() => {
     ?? props.primaryFilterOptions[0]
 })
 
-const getEventTypeButtonClass = () => {
-  return [
-    'pr-4 font-normal',
-    'transition-all duration-200 ease-out',
-  ]
-}
-
-const getPrimaryFilterLabelClass = (option: AgendaPrimaryFilterOption) => {
-  const isActive = selectedPrimaryFilterModel.value === option.value
-  return [
-    'whitespace-nowrap transition-colors duration-200 ease-out',
-    isActive ? 'text-neutral-900' : 'text-neutral-600 group-hover:text-neutral-900 group-focus-visible:text-neutral-900',
-  ]
-}
-
-const getPrimaryFilterIndicatorClass = (option: AgendaPrimaryFilterOption) => {
-  const isActive = selectedPrimaryFilterModel.value === option.value
-  return [
-    'block h-1 w-full rounded-full transition-colors duration-200 ease-out',
-    isActive ? option.activeIndicatorClass : option.inactiveIndicatorClass,
-    option.interactiveActiveIndicatorClass,
-  ]
-}
+const desktopTabOptions = computed(() => {
+  return props.primaryFilterOptions.map(option => ({
+    value: option.value,
+    label: t(option.labelKey),
+    activeIndicatorClass: option.activeIndicatorClass,
+    inactiveIndicatorClass: option.inactiveIndicatorClass,
+  }))
+})
 
 const dropdownOptions = computed(() => {
   return props.primaryFilterOptions.map(option => ({
-    ...option,
-    inactiveIndicatorClass: selectedPrimaryFilterModel.value === option.value
-      ? option.activeIndicatorClass
-      : option.inactiveIndicatorClass,
+    value: option.value,
+    labelKey: option.labelKey,
+    activeIndicatorClass: option.activeIndicatorClass,
+    inactiveIndicatorClass: option.inactiveIndicatorClass,
   }))
 })
 
 const selectedPrimaryFilterLabel = computed(() => {
-  return selectedPrimaryFilterOption.value?.label ?? ''
+  return selectedPrimaryFilterOption.value ? t(selectedPrimaryFilterOption.value.labelKey) : ''
 })
 
 const selectedPrimaryFilterIndicatorClass = computed(() => {
@@ -99,28 +84,12 @@ const updateSelectedPrimaryFilter = (value: string | null) => {
       @select="updateSelectedPrimaryFilter"
     />
 
-    <nav
+    <BaseTabs
+      v-model="selectedPrimaryFilterModel"
       class="hidden md:block md:order-1"
+      :options="desktopTabOptions"
       :aria-label="t('agenda.filters.ariaLabel')"
-    >
-      <ul class="flex justify-between items-center gap-4 md:gap-8 lg:gap-14">
-        <li
-          v-for="option in primaryFilterOptions"
-          :key="option.value ?? option.label"
-          class="flex"
-        >
-          <button
-            type="button"
-            :class="['group flex flex-col items-start', getEventTypeButtonClass()]"
-            :aria-pressed="selectedPrimaryFilterModel === option.value"
-            @click="updateSelectedPrimaryFilter(option.value)"
-          >
-            <span :class="['pb-1', getPrimaryFilterLabelClass(option)]">{{ option.label }}</span>
-            <span :class="getPrimaryFilterIndicatorClass(option)" aria-hidden="true" />
-          </button>
-        </li>
-      </ul>
-    </nav>
+    />
 
     <div class="flex items-center gap-1.5 md:order-2 md:flex-1 md:justify-end">
       <label

@@ -79,13 +79,10 @@ const slicedEvents = computed(() => {
           :image="getImageByRoute('espectacles', 'vint-anys-5')"
           content-type="shows"
           :alt="t('home.hero.alt')"
+          :hire-contract="{ kind: 'show', productKey: 'vint-anys' }"
           :info-button="{
             href: '/espectacles/vint-anys#video',
             textKey: 'button.teaser'
-          }"
-          :download-button="{
-            download: `CiaFiligranes-vint-anys-${locale}.pdf`,
-            href: `/downloads/CiaFiligranes-vint-anys-${locale}.pdf`,
           }"
         />
         <ClaimTitle
@@ -149,7 +146,7 @@ const slicedEvents = computed(() => {
         </div>
       </template>
       <template #wrappedBottom>
-        <!-- TODO: Add contact form here-->
+        <HireContactSection content-type="shows" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter
@@ -158,7 +155,7 @@ const slicedEvents = computed(() => {
           image-route=""
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

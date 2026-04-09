@@ -2,9 +2,9 @@
 import type { CalendarEvent, ContentType } from '~/types'
 import CalendarEventCard from '~/components/agenda/CalendarEventCard.vue'
 import BaseMessage from '~/components/BaseMessage.vue'
+import BaseLoadingDots from '~/components/BaseLoadingDots.vue'
 import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
 import CalendarIcon from '~/assets/icons/calendar.svg'
-import CircleIcon from '~/assets/icons/circle.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 import CalendarPagination from '~/components/agenda/CalendarPagination.vue'
 import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
@@ -122,9 +122,7 @@ const goToPage = async (page: number) => {
       bg-class="bg-white"
     >
       <template #icon>
-        <CircleIcon class="animate-spin !w-9 !h-9 text-primary-400"/>
-        <CircleIcon class="animate-spin !w-12 !h-12 text-primary-400"/>
-        <CircleIcon class="animate-spin !w-16 !h-9 text-primary-400"/>
+        <BaseLoadingDots />
       </template>
     </BaseMessage>
 

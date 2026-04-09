@@ -35,8 +35,8 @@ const synopsisItems = computed(() => {
         downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,
           href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
-        }
-      }
+        },
+      },
     }
   }) || []
 })
@@ -64,16 +64,24 @@ const synopsisItems = computed(() => {
           :claim="t('shows.claim')"
           :claim-title="t('shows.claimTitle')"
           :items="synopsisItems"
+          class="!mb-0"
         />
+      </template>
+      <template #wrappedBottom>
+        <HireContactSection content-type="shows" />
+      </template>
+      <template #unwrappedBottom>
         <HeroFooter
           image-name="espectacles_footer"
           image-route="espectacles"
           :alt="t('shows.hero.alt')"
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('shows.hire.title')"
           description="shows.hire.description"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <BottomNavigation />
         <TheSupporters />
