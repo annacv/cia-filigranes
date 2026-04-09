@@ -11,23 +11,23 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
-const { labelContainerClass, labelClass, fieldClass, fieldBorderClass } = useHireFormDisplay({
+const { fieldClasses } = useHireFormDisplay({
   variant: props.variant,
   contentType: undefined
 })
 </script>
 
 <template>
-  <label :class="[labelContainerClass, 'group']">
-    <span :class="labelClass">{{ t('hire.fields.comments') }}</span>
+  <label :class="[fieldClasses.labelContainerClass, 'group']">
+    <span :class="fieldClasses.labelClass">{{ t('hire.fields.comments') }}</span>
     <textarea
       :value="comments"
       name="comments"
       rows="5"
       :placeholder="t('hire.placeholders.comments')"
-      :class="fieldClass"
+      :class="fieldClasses.fieldClass"
       @input="emit('update:comments', ($event.target as HTMLTextAreaElement).value)"
     />
-    <div :class="fieldBorderClass" />
+    <div :class="fieldClasses.fieldBorderClass" />
   </label>
 </template>

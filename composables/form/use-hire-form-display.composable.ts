@@ -81,8 +81,10 @@ export function useHireFormDisplay(options: UseHireFormDisplayOptions) {
     return hireFormAppearanceFromContentType(undefined)
   })
 
+  const fieldClasses = fieldClassesForVariant(options.variant)
+
   return {
     appearance,
-    ...fieldClassesForVariant(options.variant)
+    fieldClasses,
   }
 }

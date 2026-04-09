@@ -30,11 +30,7 @@ const emit = defineEmits<{
   close: []
 }>()
 
-const {
-  appearance,
-  labelClass,
-  labelContainerClass,
-} = useHireFormDisplay({
+const { appearance, fieldClasses } = useHireFormDisplay({
   variant: 'modal',
   contentType: toRef(props, 'contentType')
 })
@@ -160,8 +156,8 @@ function closeStatusMessage() {
             :disabled="isSubmitting"
           >
             <div class="flex flex-col gap-6">
-              <div :class="[labelContainerClass, 'group']">
-                <span :class="labelClass">
+              <div :class="[fieldClasses.labelContainerClass, 'group']">
+                <span :class="fieldClasses.labelClass">
                   {{
                     productKind === 'workshop'
                       ? t('hire.placeholders.workshopSelect')

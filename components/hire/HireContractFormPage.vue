@@ -23,11 +23,7 @@ const props = withDefaults(
   }
 )
 
-const {
-  appearance,
-  labelClass,
-  labelContainerClass,
-} = useHireFormDisplay({
+const { appearance, fieldClasses } = useHireFormDisplay({
   variant: 'page',
   contentType: toRef(props, 'contentType'),
   pageType: toRef(props, 'pageType')
@@ -109,8 +105,8 @@ function closeStatusMessage() {
               @blur:full-name="onFullNameBlur"
               @blur:email="onEmailBlur"
             />
-            <div :class="[labelContainerClass, 'group']">
-              <span v-if="pageType === 'performances'" :class="labelClass">{{ t('hire.fields.performanceSelectLabel') }}</span>
+            <div :class="[fieldClasses.labelContainerClass, 'group']">
+              <span v-if="pageType === 'performances'" :class="fieldClasses.labelClass">{{ t('hire.fields.performanceSelectLabel') }}</span>
               <BaseTabs
                 v-else
                 v-model="selectedCategory"

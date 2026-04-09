@@ -17,7 +17,7 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
-const { labelContainerClass, labelClass, fieldClass, fieldBorderClass, markerClass } = useHireFormDisplay({
+const { fieldClasses } = useHireFormDisplay({
   variant: props.variant,
   contentType: undefined
 })
@@ -92,9 +92,9 @@ function errorId(key: FieldKey): string {
   <label
     v-for="field in fields"
     :key="field.key"
-    :class="[labelContainerClass, 'group']"
+    :class="[fieldClasses.labelContainerClass, 'group']"
   >
-    <span :class="labelClass">{{ t(field.labelKey) }}</span>
+    <span :class="fieldClasses.labelClass">{{ t(field.labelKey) }}</span>
     <input
       :id="inputId(field.key)"
       :value="getFieldValue(field.key)"
@@ -102,16 +102,16 @@ function errorId(key: FieldKey): string {
       :name="field.name"
       :autocomplete="field.autocomplete"
       :placeholder="t(field.placeholderKey)"
-      :class="fieldClass"
+      :class="fieldClasses.fieldClass"
       :aria-invalid="Boolean(getFieldError(field.key))"
       :aria-describedby="getFieldError(field.key) ? errorId(field.key) : undefined"
       required
       @input="onFieldInput(field.key, $event)"
       @blur="onFieldBlur(field.key)"
     >
-    <div :class="[fieldBorderClass, {'!bg-red-500 group-focus-within:!bg-red-500' : getFieldError(field.key)}]" />
+    <div :class="[fieldClasses.fieldBorderClass, {'!bg-red-500 group-focus-within:!bg-red-500' : getFieldError(field.key)}]" />
     <div class="flex items-center gap-1 min-h-4">
-      <span :class="[markerClass, {'!text-red-500' : getFieldError(field.key)}]">*</span>
+      <span :class="[fieldClasses.markerClass, {'!text-red-500' : getFieldError(field.key)}]">*</span>
       <span
         v-if="getFieldError(field.key)"
         :id="errorId(field.key)"

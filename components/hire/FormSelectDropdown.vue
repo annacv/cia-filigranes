@@ -29,7 +29,7 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
-const { labelContainerClass, fieldBorderClass, markerClass } = useHireFormDisplay({
+const { fieldClasses } = useHireFormDisplay({
   variant: props.variant,
   contentType: undefined
 })
@@ -76,7 +76,7 @@ const isPlaceholderSelected = computed(() =>
 </script>
 
 <template>
-  <div :class="labelContainerClass">
+  <div :class="fieldClasses.labelContainerClass">
     <BaseDropdown
       :selected-value="selectedValue"
       :selected-label="selectedLabel"
@@ -109,7 +109,7 @@ const isPlaceholderSelected = computed(() =>
         </span>
       </template>
     </BaseDropdown>
-    <div :class="fieldBorderClass" />
-    <span v-if="required" :class="markerClass">*</span>
+    <div :class="fieldClasses.fieldBorderClass" />
+    <span v-if="required" :class="fieldClasses.markerClass">*</span>
   </div>
 </template>
