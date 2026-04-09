@@ -26,6 +26,10 @@ const props = withDefaults(
   },
 )
 
+const emit = defineEmits<{
+  close: []
+}>()
+
 const {
   appearance,
   labelClass,
@@ -34,10 +38,6 @@ const {
   variant: 'modal',
   contentType: toRef(props, 'contentType')
 })
-
-const emit = defineEmits<{
-  close: []
-}>()
 
 const modalFormId = useId()
 const { t } = useI18n()
@@ -71,7 +71,6 @@ const modalTitle = computed(() =>
     : t('hire.modalTitleShow'),
 )
 
-/** Form + title + footer; `false` while loading / success / error panel is shown. */
 const showForm = ref(true)
 
 const baseModalAttrs = computed(() => ({
@@ -80,7 +79,6 @@ const baseModalAttrs = computed(() => ({
   title: showForm.value ? modalTitle.value : undefined,
 }))
 
-/** After success, keep the message visible briefly, then tell the parent to close the modal. */
 const SUCCESS_MODAL_CLOSE_DELAY_MS = 2500
 
 let successCloseTimer: ReturnType<typeof setTimeout> | undefined
@@ -122,7 +120,6 @@ function closeStatusMessage() {
   showForm.value = true
   resetForm()
 }
-
 </script>
 
 <template>
