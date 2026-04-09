@@ -40,9 +40,9 @@ const emit = defineEmits<{
 }>()
 
 const modalFormId = useId()
+const { t } = useI18n()
 
 const {
-  t,
   selectedKey,
   fullName,
   email,

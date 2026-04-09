@@ -33,8 +33,9 @@ const {
   pageType: toRef(props, 'pageType')
 })
 
+const { t } = useI18n()
+
 const {
-  t,
   selectedKey,
   selectedCategory,
   fullName,

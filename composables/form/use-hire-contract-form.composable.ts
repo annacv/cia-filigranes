@@ -172,7 +172,6 @@ export const useHireContractForm = (options: UseHireContractFormOptions) => {
   })
 
   return {
-    t,
     selectedKey,
     selectedCategory,
     fullName,
