@@ -41,6 +41,8 @@ export const useFormSubmission = () => {
   }
 
   const submit = async (payload: HireFormSubmissionPayload): Promise<boolean> => {
+    if (status.value === 'submitting') return false
+
     const apiUrl = (config.public.staticFormsApiUrl as string | undefined)?.trim() || ''
     const accessKey = (config.public.staticFormsAccessKey as string | undefined)?.trim() || ''
 
