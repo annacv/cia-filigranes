@@ -114,6 +114,7 @@ function closeStatusMessage() {
                 v-else
                 v-model="selectedCategory"
                 :options="pageTabOptions"
+                :aria-label="t('hire.fields.productTabs')"
                 text-class="!text-base !pb-0"
                 class="max-w-xs mb-2"
               />

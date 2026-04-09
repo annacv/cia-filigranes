@@ -90,6 +90,7 @@ const updateSelectedPrimaryFilter = (value: string | null) => {
       v-model="selectedPrimaryFilterModel"
       class="hidden md:block md:order-1"
       :options="desktopTabOptions"
+      :aria-label="t('agenda.filters.ariaLabel')"
     />
 
     <div class="flex items-center gap-1.5 md:order-2 md:flex-1 md:justify-end">

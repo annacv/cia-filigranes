@@ -10,7 +10,11 @@ const props = withDefaults(defineProps<{
   modelValue: string | null
   options: BaseTabOption[]
   textClass?: string
-}>(), {})
+  ariaLabel?: string
+}>(), {
+  textClass: undefined,
+  ariaLabel: undefined,
+})
 
 const emit = defineEmits<{
   'update:modelValue': [value: string | null]
@@ -22,7 +26,7 @@ const setValue = (value: string | null) => {
 </script>
 
 <template>
-  <nav aria-label="Tabs navigation">
+  <nav v-bind="ariaLabel ? { 'aria-label': ariaLabel } : {}">
     <ul class="flex justify-between items-center gap-4 md:gap-8 lg:gap-14">
       <li v-for="option in options" :key="option.value ?? option.label" class="flex">
         <button
