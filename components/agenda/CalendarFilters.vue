@@ -54,9 +54,7 @@ const dropdownOptions = computed(() => {
     value: option.value,
     labelKey: option.labelKey,
     activeIndicatorClass: option.activeIndicatorClass,
-    inactiveIndicatorClass: selectedPrimaryFilterModel.value === option.value
-      ? option.activeIndicatorClass
-      : option.inactiveIndicatorClass,
+    inactiveIndicatorClass: option.inactiveIndicatorClass,
   }))
 })
 
