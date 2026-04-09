@@ -78,7 +78,8 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacte",
-    "collaboracions": "Col·laboracions"
+    "collaboracions": "Col·laboracions",
+    "descarregues": "Descàrregues"
   },
   "button": {
     "dossier": "Dossier",
@@ -1548,6 +1549,15 @@
           "paragraph": "Amb atrezzos mariners i jocs participatius, VENDAVAL proposa un viatge festiu, poètic i compartit."
         }
       ]
+    }
+  },
+  "descarregues": {
+    "metaDescription": "Àrea de descàrregues de la Companyia Filigranes: dossiers, imatges i logotip de la companyia.",
+    "claimTitle": "Tot el material que necessites al teu abast",
+    "claimSubtitle": "I si hi ha alguna cosa que et manca no dubtis en posar-te en contacte",
+    "logoHeading": "Logotip",
+    "hero": {
+      "title": "Benvingudes a l'àrea de descàrregues"
     }
   }
 }

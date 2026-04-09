@@ -78,7 +78,8 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacto",
-    "collaboracions": "Colaboraciones"
+    "collaboracions": "Colaboraciones",
+    "descarregues": "Descargas"
   },
   "button": {
     "dossier": "Dosier",
@@ -102,7 +103,10 @@
     "modalTitleShow": "Para contratar el espectáculo:",
     "modalTitleWorkshop": "Para contratar el taller:",
     "modalDescription": "Rellena el siguiente formulario y te responderemos lo antes posible. O, si lo prefieres, puedes llamarnos directamente al {phone}, o enviarnos un correo electrónico a {email}.",
-    "pageSectionTitle": "Contratar",
+    "pageSectionTitle": "Contáctanos para tu próximo evento",
+    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
+    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
+    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
     "requiredFields": "Campos obligatorios",
     "privacyNote": "No enviamos publicidad.",
     "selectPlaceholder": "Selecciona…",
@@ -127,9 +131,6 @@
       "oficis": "Oficios (camareros, panaderos...)",
       "convenir": "A convenir"
     },
-    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
-    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
-    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
     "placeholders": {
       "fullName": "Escribe tu nombre y apellidos",
       "email": "Escribe tu email de contacto",
@@ -1189,6 +1190,9 @@
   },
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
+    "hero": {
+      "title": "Contáctanos para tu próximo show"
+    },
     "info": {
       "title": "Información de contacto",
       "subtitle": "Para consultas, contrataciones y encuentros"
@@ -1545,6 +1549,15 @@
           "paragraph": "Con atrezzo marinero y juegos participativos, VENDAVAL propone un viaje festivo, poético y compartido."
         }
       ]
+    }
+  },
+  "descarregues": {
+    "metaDescription": "Área de descargas de la Compañía Filigranes: dosieres, imágenes y logotipo de la compañía.",
+    "claimTitle": "Todo el material que necesitas a tu alcance",
+    "claimSubtitle": "Y si te falta algo, no dudes en ponerte en contacto",
+    "logoHeading": "Logotipo",
+    "hero": {
+      "title": "Bienvenidos al área de descargas"
     }
   }
 }

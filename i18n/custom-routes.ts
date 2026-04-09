@@ -101,6 +101,11 @@ export const routePages: CustomRoutePages = {
     en: '/contact',
     es: '/contacto'
   },
+  descarregues: {
+    ca: '/descarregues',
+    en: '/downloads',
+    es: '/descargas'
+  },
   'avis-legal': {
     ca: '/avis-legal',
     en: '/legal-notice',
