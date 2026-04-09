@@ -29,11 +29,11 @@ const messageText = computed(() =>
 )
 
 const bgClass = computed(() => {
-  if (showLoadingState.value) return 'bg-white rounded-sm'
+  if (showLoadingState.value) return 'bg-white'
   if (props.submissionStatus === 'success') {
-    return 'bg-green-50 rounded-sm border border-green-200 shadow-sm'
+    return 'bg-green-50 border border-green-200 shadow-sm'
   }
-  return 'bg-red-50 rounded-sm border border-red-200 shadow-sm'
+  return 'bg-red-50 border border-red-200 shadow-sm'
 })
 
 const icon = computed(() => {
@@ -70,7 +70,7 @@ const dismissible = computed(
     <div v-if="visible" class="relative w-full">
       <BaseMessage
         :text="messageText"
-        :bg-class="bgClass"
+        :bg-class="`${bgClass} rounded-sm`"
         :icon="icon"
         :icon-class="iconClass"
         :hide-close-button="variant === 'modal'"
