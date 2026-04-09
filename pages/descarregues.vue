@@ -1,12 +1,83 @@
 <script setup lang="ts">
-import { getItemIndex } from "~/utils/get-item-index";
+import { ROUTES_INDEX } from '~/constants'
+import { getItemIndex } from '~/utils/get-item-index'
+import DownloadCard from '~/components/downloads/DownloadCard.vue'
+import FormMultiselectDropdown from '~/components/downloads/FormMultiselectDropdown.vue'
 
 const { t } = useI18n()
 
 useHead({
   meta: [
-    { name: 'description', content: t('descarregues.metaDescription') }
-  ]
+    { name: 'description', content: t('descarregues.metaDescription') },
+  ],
+})
+
+type MultiselectContentType = 'shows' | 'workshops'
+
+type DownloadCardDef = {
+  id: string
+  titleKey: string
+  actions: { labelKey: string }[]
+  descriptionKey?: string
+  multiselect?: {
+    contentType: MultiselectContentType
+    i18nPrefix: string
+  }
+}
+
+const DOSSIER_IMAGES_ACTIONS: { labelKey: string }[] = [
+  { labelKey: 'button.dossier' },
+  { labelKey: 'button.images' },
+]
+
+const LOGO_ACTIONS: { labelKey: string }[] = [{ labelKey: 'descarregues.logoHeading' }]
+
+const downloadCards: DownloadCardDef[] = [
+  {
+    id: 'shows',
+    titleKey: 'routes.espectacles',
+    actions: DOSSIER_IMAGES_ACTIONS,
+    multiselect: {
+      contentType: 'shows',
+      i18nPrefix: 'descarregues.cards.shows',
+    },
+  },
+  {
+    id: 'workshops',
+    titleKey: 'routes.tallers',
+    actions: DOSSIER_IMAGES_ACTIONS,
+    multiselect: {
+      contentType: 'workshops',
+      i18nPrefix: 'descarregues.cards.workshops',
+    },
+  },
+  {
+    id: 'performances',
+    titleKey: 'routes.animacions',
+    actions: DOSSIER_IMAGES_ACTIONS,
+    descriptionKey: 'descarregues.cards.performances.description',
+  },
+  {
+    id: 'logo',
+    titleKey: 'descarregues.logoHeading',
+    actions: LOGO_ACTIONS,
+    descriptionKey: 'descarregues.cards.logo.description',
+  },
+]
+
+function routeChildrenOptions(routeName: string) {
+  const children = ROUTES_INDEX.find((r) => r.name === routeName)?.children ?? []
+  return children.map((value) => ({ value, labelKey: `routes.${value}` }))
+}
+
+const multiselectOptions = computed(() => ({
+  shows: routeChildrenOptions('espectacles'),
+  workshops: routeChildrenOptions('tallers'),
+}))
+
+const multiselectModel = reactive({
+  shows: [] as string[],
+  workshops: [] as string[],
 })
 </script>
 
@@ -37,20 +108,27 @@ useHead({
                 :subtitle="t('descarregues.claimSubtitle')"
                 is-section-title
               />
-              <ul class="grid grid-cols-2 md:grid-cols-4 text-white">
-                <li>
-                  <h2>{{ t('routes.espectacles') }}</h2>
-                </li>
-                <li>
-                  <h2>{{ t('routes.tallers') }}</h2>
-                </li>
-                <li>
-                  <h2>{{ t('routes.animacions') }}</h2>
-                </li>
-                <li>
-                  <h2>{{ t('descarregues.logoHeading') }}</h2>
-                </li>
-              </ul>
+              <div class="mt-10 grid w-full grid-cols-2 gap-6 md:grid-cols-4">
+                <DownloadCard
+                  v-for="card in downloadCards"
+                  :key="card.id"
+                  :title="t(card.titleKey)"
+                  :actions="card.actions"
+                >
+                  <template v-if="card.descriptionKey" #description>
+                    <p>{{ t(card.descriptionKey) }}</p>
+                  </template>
+                  <template v-if="card.multiselect" #dropdown>
+                    <FormMultiselectDropdown
+                      v-model="multiselectModel[card.multiselect.contentType]"
+                      :options="multiselectOptions[card.multiselect.contentType]"
+                      :content-type="card.multiselect.contentType"
+                      :label-key="`${card.multiselect.i18nPrefix}.selectLabel`"
+                      :select-all-label-key="`${card.multiselect.i18nPrefix}.optionAll`"
+                    />
+                  </template>
+                </DownloadCard>
+              </div>
             </div>
           </div>
         </div>

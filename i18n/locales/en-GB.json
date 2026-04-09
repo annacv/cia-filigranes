@@ -94,6 +94,7 @@
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
     "pdf": "download a PDF document",
+    "images": "Images",
     "hire": "Hire",
     "submit": "Send",
     "cancel": "Cancel",
@@ -1556,6 +1557,22 @@
     "claimTitle": "All the materials you need within reach",
     "claimSubtitle": "If anything is missing, please do not hesitate to get in touch",
     "logoHeading": "Logo",
+    "cards": {
+      "shows": {
+        "selectLabel": "Select one or more shows:",
+        "optionAll": "All shows"
+      },
+      "workshops": {
+        "selectLabel": "Select one or more workshops:",
+        "optionAll": "All workshops"
+      },
+      "performances": {
+        "description": "Download the information dossier and promotional images for our tailor-made performances."
+      },
+      "logo": {
+        "description": "The download includes three versions of the logo in .png and .svg: white, corporate red, and white on a corporate red background."
+      }
+    },
     "hero": {
       "title": "Welcome to the downloads area"
     }

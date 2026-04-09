@@ -94,6 +94,7 @@
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
     "pdf": "descarga un documento PDF",
+    "images": "Imágenes",
     "hire": "Contratar",
     "submit": "Enviar",
     "cancel": "Cancelar",
@@ -1556,6 +1557,22 @@
     "claimTitle": "Todo el material que necesitas a tu alcance",
     "claimSubtitle": "Y si te falta algo, no dudes en ponerte en contacto",
     "logoHeading": "Logotipo",
+    "cards": {
+      "shows": {
+        "selectLabel": "Selecciona uno o más espectáculos:",
+        "optionAll": "Todos los espectáculos"
+      },
+      "workshops": {
+        "selectLabel": "Selecciona uno o más talleres:",
+        "optionAll": "Todos los talleres"
+      },
+      "performances": {
+        "description": "Accede al dosier informativo y a las imágenes promocionales de nuestras Animaciones a la carta."
+      },
+      "logo": {
+        "description": "La descarga contiene tres versiones del logotipo en formato .png y .svg: en blanco, en rojo corporativo, y en blanco con el fondo rojo corporativo."
+      }
+    },
     "hero": {
       "title": "Bienvenidos al área de descargas"
     }

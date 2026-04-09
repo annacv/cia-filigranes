@@ -94,6 +94,7 @@
     "scrollLeft": "Desplaçar cap a l'esquerra",
     "scrollRight": "Desplaçar cap a la dreta",
     "pdf": "descarrega un document PDF",
+    "images": "Imatges",
     "hire": "Contractar",
     "submit": "Enviar",
     "cancel": "Cancelar",
@@ -1556,6 +1557,22 @@
     "claimTitle": "Tot el material que necessites al teu abast",
     "claimSubtitle": "I si hi ha alguna cosa que et manca no dubtis en posar-te en contacte",
     "logoHeading": "Logotip",
+    "cards": {
+      "shows": {
+        "selectLabel": "Selecciona un o més espectacles:",
+        "optionAll": "Tots els espectacles"
+      },
+      "workshops": {
+        "selectLabel": "Selecciona un o més tallers:",
+        "optionAll": "Tots els tallers"
+      },
+      "performances": {
+        "description": "Accedeix al dossier informatiu i a les imatges promocionals de les nostres Animacions a la Carta."
+      },
+      "logo": {
+        "description": "La descàrrega conté tres versions del logotip en format .png i .svg: en blanc, en vermell corporatiu, i en blanc amb el fons vermell corporatiu."
+      }
+    },
     "hero": {
       "title": "Benvingudes a l'àrea de descàrregues"
     }
