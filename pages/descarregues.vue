@@ -2,7 +2,7 @@
 import { ROUTES_INDEX } from '~/constants'
 import { getItemIndex } from '~/utils/get-item-index'
 import DownloadCard from '~/components/downloads/DownloadCard.vue'
-import FormMultiselectDropdown from '~/components/downloads/FormMultiselectDropdown.vue'
+import FormMultiselectDropdown from '~/components/form/FormMultiselectDropdown.vue'
 
 const { t } = useI18n()
 
@@ -14,7 +14,7 @@ useHead({
 
 type MultiselectContentType = 'shows' | 'workshops'
 
-type DownloadCardDef = {
+type DownloadCard = {
   id: string
   titleKey: string
   actions: { labelKey: string }[]
@@ -32,7 +32,7 @@ const DOSSIER_IMAGES_ACTIONS: { labelKey: string }[] = [
 
 const LOGO_ACTIONS: { labelKey: string }[] = [{ labelKey: 'descarregues.logoHeading' }]
 
-const downloadCards: DownloadCardDef[] = [
+const downloadCards: DownloadCard[] = [
   {
     id: 'shows',
     titleKey: 'routes.espectacles',
@@ -87,7 +87,7 @@ const multiselectModel = reactive({
       image-name="descarregues_hero"
       image-route="descarregues"
       :alt="t('commonAlt')"
-      background-position="center center"
+      background-position="center bottom"
       is-section-cover
     >
       <template #content>
@@ -99,36 +99,34 @@ const multiselectModel = reactive({
     </HeroCover>
     <MainContent>
       <template #unwrapped>
-        <div class="py-10">
-          <div class="grid-layout bg-gradient-primary">
-            <div class="layout-cols">
-              <ClaimTitle
-                class="text-center"
-                :claim-title="t('descarregues.claimTitle')"
-                :subtitle="t('descarregues.claimSubtitle')"
-                is-section-title
-              />
-              <div class="mt-10 grid w-full grid-cols-2 gap-6 md:grid-cols-4">
-                <DownloadCard
-                  v-for="card in downloadCards"
-                  :key="card.id"
-                  :title="t(card.titleKey)"
-                  :actions="card.actions"
-                >
-                  <template v-if="card.descriptionKey" #description>
-                    <p>{{ t(card.descriptionKey) }}</p>
-                  </template>
-                  <template v-if="card.multiselect" #dropdown>
-                    <FormMultiselectDropdown
-                      v-model="multiselectModel[card.multiselect.contentType]"
-                      :options="multiselectOptions[card.multiselect.contentType]"
-                      :content-type="card.multiselect.contentType"
-                      :label-key="`${card.multiselect.i18nPrefix}.selectLabel`"
-                      :select-all-label-key="`${card.multiselect.i18nPrefix}.optionAll`"
-                    />
-                  </template>
-                </DownloadCard>
-              </div>
+        <div class="grid-layout bg-gradient-primary pb-20 md:pb-36">
+          <div class="layout-cols">
+            <ClaimTitle
+              class="text-center !text-white py-0"
+              :claim-title="t('descarregues.claimTitle')"
+              :subtitle="t('descarregues.claimSubtitle')"
+              is-section-title
+            />
+            <div class="pb-5 grid w-full grid-cols-2 gap-5 md:grid-cols-4">
+              <DownloadCard
+                v-for="card in downloadCards"
+                :key="card.id"
+                :title="t(card.titleKey)"
+                :actions="card.actions"
+              >
+                <template v-if="card.descriptionKey" #description>
+                  <p>{{ t(card.descriptionKey) }}</p>
+                </template>
+                <template v-if="card.multiselect" #dropdown>
+                  <FormMultiselectDropdown
+                    v-model="multiselectModel[card.multiselect.contentType]"
+                    :options="multiselectOptions[card.multiselect.contentType]"
+                    :content-type="card.multiselect.contentType"
+                    :label-key="`${card.multiselect.i18nPrefix}.selectLabel`"
+                    :select-all-label-key="`${card.multiselect.i18nPrefix}.optionAll`"
+                  />
+                </template>
+              </DownloadCard>
             </div>
           </div>
         </div>
