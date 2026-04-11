@@ -5,7 +5,7 @@ import { useIntersection80 } from "~/composables/use-intersection-percentage.com
 import type { CardImage, ContentType, HireContractContext } from "~/types";
 import ArrowRight from "~/assets/icons/arrow-right.svg";
 import ArrowDown from "~/assets/icons/arrow-down.svg";
-import HireContractFormModal from "~/components/hire/HireContractFormModal.vue";
+import HireFormModal from "~/components/hire/HireFormModal.vue";
 
 const props = defineProps({
   alt: {
@@ -250,7 +250,7 @@ watchEffect(() => {
           <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
         </div>
       </div>
-      <HireContractFormModal
+      <HireFormModal
         v-if="hireContract"
         :is-open="isHireModalOpen"
         :product-kind="hireContract.kind"

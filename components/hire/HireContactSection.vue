@@ -30,7 +30,7 @@ const pageType = computed(() => props.pageType ?? 'default')
         :title-class="titleClass"
         is-section-title
       />
-      <HireContractFormPage
+      <HireFormPage
         class="py-6 md:py-8 px-4 xl:px-20"
         :page-type="pageType"
         :content-type="contentType"
