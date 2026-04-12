@@ -20,6 +20,25 @@
           "paragraph": "The Filigranes Company is made up of Jordi Torrens (Trinxeta) and Albert Pérez (Makutu). We are a clown and circus company with over 20 years of experience, specializing in making children and adults laugh at parties, festivals, and schools."
         }
       ]
+    },
+    "organizers": {
+      "claimTitle": "For programmers and organisers",
+      "claimSubtitle": "We offer clear materials, professional teams and reliable shows for your programme.",
+      "downloads": {
+        "title": "Downloads",
+        "content": [
+          { "paragraph": "Press kits with technical sheets" },
+          { "paragraph": "Photographs and logo" }
+        ],
+        "button": "Downloads area"
+      },
+      "contact": {
+        "title": "Contact us",
+        "content": [
+          { "paragraph": "Whether you need family shows, workshops, or bespoke creations for your event." }
+        ],
+        "button": "Contact"
+      }
     }
   },
   "commonAlt": "Image of the Filigranes Company",

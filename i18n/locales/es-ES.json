@@ -20,6 +20,25 @@
           "paragraph": "La Compañía Filigranes la integran Jordi Torrens (Trinxeta) y Albert Pérez (Makutu). Somos una compañía de clown y circo con más de 20 años de oficio, especializada en hacer reír a pequeños y grandes en fiestas, festivales y escuelas."
         }
       ]
+    },
+    "organizers": {
+      "claimTitle": "Para programadores y organizadores",
+      "claimSubtitle": "Te ofrecemos materiales claros, equipos profesionales y espectáculos fiables para tu programación.",
+      "downloads": {
+        "title": "Descargas",
+        "content": [
+          { "paragraph": "Dossiers con fichas técnicas" },
+          { "paragraph": "Fotografías y logotipo" }
+        ],
+        "button": "Área de descargas"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "content": [
+          { "paragraph": "Ya sea para espectáculos familiares, talleres o creaciones a medida para tu evento." }
+        ],
+        "button": "Contactar"
+      }
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",

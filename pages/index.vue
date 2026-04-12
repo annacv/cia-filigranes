@@ -6,7 +6,7 @@ import { useCalendarLayout } from "~/composables/calendar/use-calendar-layout.co
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import ArrowRight from "assets/icons/arrow-right.svg";
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const { events, pending, error, ensureLoaded } = useCalendarEvents()
 const { maxVisibleEvents } = useCalendarLayout()
@@ -85,14 +85,14 @@ const slicedEvents = computed(() => {
             textKey: 'button.teaser'
           }"
         />
+      </template>
+      <template #wrapped>
         <ClaimTitle
           v-if="events.length > 0"
           class="text-center"
           :claim-title="t('agenda.claimTitle')"
           is-section-title
         />
-      </template>
-      <template #wrapped>
         <CalendarEventList
           v-if="events.length > 0"
           :events="slicedEvents"
@@ -122,31 +122,31 @@ const slicedEvents = computed(() => {
         />
       </template>
       <template #unwrapped>
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
+        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24">
           <HighlightShows :reorder-index="getItemIndex('espectacles', 'vint-anys')" />
           <HighlightWorkshops />
           <HighlightPerformances />
-          <ClaimTitle
-            class="text-center !pb-0 !mb-0 !mt-0 md:!mt-8 xl:!mt-0 xl:!-mb-5"
-            :claim-title="t('home.aboutUs.title')"
-            is-section-title
-          />
-          <Synopsis
-            :description="aboutUs"
-            :image="getImageByRoute('filipersones', 'home')"
-            content-type="shows"
-            :alt="t('home.aboutUs.title')"
-            show-full-content
-            is-reversed
-            :info-button="{
-              href: '/filipersones',
-              textKey: 'home.aboutUs.buttonText'
-            }"
-          />
         </div>
+        <HireOrganizersSection />
+        <ClaimTitle
+          :claim-title="t('home.aboutUs.title')"
+          is-section-title
+        />
+        <Synopsis
+          :description="aboutUs"
+          :image="getImageByRoute('filipersones', 'home')"
+          content-type="shows"
+          :alt="t('home.aboutUs.title')"
+          show-full-content
+          is-reversed
+          :info-button="{
+            href: '/filipersones',
+            textKey: 'home.aboutUs.buttonText'
+          }"
+        />
       </template>
       <template #wrappedBottom>
-        <HireContactSection content-type="shows" />
+        <HireContactSection id="#home-contact" content-type="shows" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter

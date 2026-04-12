@@ -139,7 +139,7 @@ const multiselectModel = reactive({
             />
           </div>
         </div>
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
+        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24">
           <HighlightShows :reorder-index="getItemIndex('espectacles', 'plis-plas')" />
           <HighlightWorkshops :reorder-index="getItemIndex('tallers', 'bombolles-sabo')" />
           <HighlightPerformances :reorder-index="4" />

@@ -24,7 +24,7 @@ const pageType = computed(() => props.pageType ?? 'default')
   >
     <div class="flex flex-col gap-y-7 w-full">
       <ClaimTitle
-        class="text-center !pb-0 !mb-0 !mt-0 md:!mt-6 xl:!mt-0"
+        class="text-center !pb-0 !mb-0"
         :claim-title="claimTitle"
         :subtitle="isMobile ? undefined : claimSubtitle"
         :title-class="titleClass"
