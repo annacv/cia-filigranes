@@ -1,4 +1,5 @@
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '~/constants'
+import { scrollWindowY } from '~/utils/scroll-window'
 import { heroScrollRuntime } from './runtime'
 
 const ANIMATION_HEIGHT_DIFFERENCE_THRESHOLD = 20
@@ -70,7 +71,7 @@ export function followAnchorAnimation(
 
     // Only scroll if target is different from current and we're not too far ahead
     if (scrollDifference > SCROLL_DIFFERENCE_THRESHOLD) {
-      window.scrollTo(0, targetScrollY)
+      scrollWindowY(targetScrollY)
     }
 
     if (!isAnimating || frameCount >= maxFrames) {
@@ -83,7 +84,7 @@ export function followAnchorAnimation(
       const finalAnchorTop = finalAnchorRect.top + window.scrollY
       const finalTargetScrollY = Math.max(1, finalAnchorTop - scrollMarginTop)
       
-      window.scrollTo(0, finalTargetScrollY)
+      scrollWindowY(finalTargetScrollY)
       return
     }
 

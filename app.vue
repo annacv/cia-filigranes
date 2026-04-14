@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { scrollWindowY } from "~/utils/scroll-window";
 import archivoBlackRegular from '~/assets/fonts/archivo-black/archivo-black-regular.woff2?url';
 import ibmPlexSansRegular from '~/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2?url';
 
@@ -93,7 +94,7 @@ if (import.meta.client && typeof history !== 'undefined') {
 nuxtApp.hook("page:finish", () => {
   if (import.meta.client) {
     const hasHash = window.location.hash && window.location.hash !== '#'
-    if (!hasHash) window.scrollTo(0, 0);
+    if (!hasHash) scrollWindowY(0);
   }
 });
 </script>

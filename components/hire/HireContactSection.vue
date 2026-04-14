@@ -7,6 +7,7 @@ const props = defineProps<{
   titleClass?: string
   pageType?: 'default' | 'performances'
   contentType?: ContentType
+  id?: string
 }>()
 
 const { t } = useI18n()
@@ -19,10 +20,14 @@ const pageType = computed(() => props.pageType ?? 'default')
 
 <template>
   <section
+    
     class="bg-neutral-0 text-neutral-900"
     :aria-label="t('hire.pageSectionTitle')"
   >
-    <div class="flex flex-col gap-y-7 w-full">
+    <div
+      :id="id"
+      class="flex flex-col gap-y-7 w-full"
+    >
       <ClaimTitle
         class="text-center !pb-0 !mb-0"
         :claim-title="claimTitle"

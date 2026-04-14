@@ -2,6 +2,7 @@
 import OrganizersCard from './OrganizersCard.vue'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -27,7 +28,7 @@ const { t } = useI18n()
           gradient-class="bg-gradient-primary-reverse"
           :title="t('home.organizers.contact.title')"
           :button-text="t('home.organizers.contact.button')"
-          href="/#home-contact"
+          :href="`${localePath('/')}#home-contact`"
           content-path="home.organizers.contact.content"
         />
       </div>
