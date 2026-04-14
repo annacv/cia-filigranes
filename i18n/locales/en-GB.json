@@ -157,7 +157,8 @@
       "showSelect": "Select your show",
       "workshopSelect": "Select your workshop",
       "performanceSelect": "Select your performance",
-      "comments": "Additional information you would like to share, for example, estimated date and place for the show, workshop or performance."
+      "comments": "Additional information you would like to share, for example, estimated date and place for the show, workshop or performance.",
+      "commentsPerformances": "Additional information you would like to share, for example, the type of event where the animation would take place, the estimated date and venue..."
     },
     "submission": {
       "sending": "Sending…",

@@ -157,7 +157,8 @@
       "showSelect": "Selecciona el teu espectacle",
       "workshopSelect": "Selecciona el teu taller",
       "performanceSelect": "Selecciona la teva animació",
-      "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació."
+      "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació.",
+      "commentsPerformances": "Informació adicional que volgueu compartir, per exemple, el tipus d'esdeveniment on es realitzaria l'animació, la data i el lloc estimats..."
     },
     "submission": {
       "sending": "Enviant…",

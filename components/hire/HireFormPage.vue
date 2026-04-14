@@ -127,6 +127,7 @@ function closeStatusMessage() {
           <FormTextArea
             :comments="comments"
             variant="page"
+            :is-performances="pageType === 'performances'"
             @update:comments="(value: string) => { comments = value }"
           />
         </div>

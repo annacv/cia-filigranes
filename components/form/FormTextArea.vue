@@ -1,16 +1,25 @@
 <script setup lang="ts">
 import { useHireFormDisplay } from '~/composables/form/use-hire-form-display.composable'
 
-const props = defineProps<{
-  comments: string
-  variant: 'modal' | 'page'
-}>()
+const props = withDefaults(
+  defineProps<{
+    comments: string
+    variant: 'modal' | 'page'
+    isPerformances?: boolean
+  }>(),
+  { isPerformances: false }
+)
 
 const emit = defineEmits<{
   'update:comments': [value: string]
 }>()
 
 const { t } = useI18n()
+const commentsPlaceholderKey = computed(() =>
+  props.isPerformances
+    ? 'hire.placeholders.commentsPerformances'
+    : 'hire.placeholders.comments'
+)
 const { fieldClasses } = useHireFormDisplay({
   variant: props.variant,
   contentType: undefined
@@ -24,7 +33,7 @@ const { fieldClasses } = useHireFormDisplay({
       :value="comments"
       name="comments"
       rows="5"
-      :placeholder="t('hire.placeholders.comments')"
+      :placeholder="t(commentsPlaceholderKey)"
       :class="fieldClasses.fieldClass"
       @input="emit('update:comments', ($event.target as HTMLTextAreaElement).value)"
     />
