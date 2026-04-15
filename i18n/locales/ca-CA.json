@@ -1590,7 +1590,7 @@
         "description": "Accedeix al dossier informatiu i a les imatges promocionals de les nostres Animacions a la Carta."
       },
       "logo": {
-        "description": "La descàrrega conté tres versions del logotip en format .png i .svg: en blanc, en vermell corporatiu, i en blanc amb el fons vermell corporatiu."
+        "description": "La descàrrega conté el logotip en els formats svg i png, i en les seves tres variants: blanc amb fons transparent, blanc amb fons en vermell, i blanc amb fons en negre."
       }
     },
     "hero": {

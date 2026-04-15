@@ -1590,7 +1590,7 @@
         "description": "Download the information dossier and promotional images for our tailor-made performances."
       },
       "logo": {
-        "description": "The download includes three versions of the logo in .png and .svg: white, corporate red, and white on a corporate red background."
+        "description": "The download includes the logo in svg and png formats, and in its three variants: white with a transparent background, white on a red background, and white on a black background."
       }
     },
     "hero": {

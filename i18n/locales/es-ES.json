@@ -1590,7 +1590,7 @@
         "description": "Accede al dosier informativo y a las imágenes promocionales de nuestras Animaciones a la carta."
       },
       "logo": {
-        "description": "La descarga contiene tres versiones del logotipo en formato .png y .svg: en blanco, en rojo corporativo, y en blanco con el fondo rojo corporativo."
+        "description": "La descarga contiene el logotipo en formato svg y png, y en sus tres variantes: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
       }
     },
     "hero": {
