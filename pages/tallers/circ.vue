@@ -33,7 +33,7 @@ const artCard = getTranslatedList("workshops.circ.artCard", ["title", "descripti
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-circ-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-circ-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-circ-${locale.value}.pdf`,
   }
 })
 </script>

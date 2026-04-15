@@ -34,7 +34,7 @@ const artCard = getTranslatedList("shows.circ-filixic.artCard", ["title", "descr
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-circ-filixic-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-circ-filixic-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-circ-filixic-${locale.value}.pdf`,
   }
 })
 </script>

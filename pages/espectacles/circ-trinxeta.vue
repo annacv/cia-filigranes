@@ -33,7 +33,7 @@ const artCard = getTranslatedList("shows.circ-trinxeta.artCard", ["title", "desc
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-circ-trinxeta-${locale.value}.pdf`,
   }
 })
 </script>

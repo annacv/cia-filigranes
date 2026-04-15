@@ -34,7 +34,7 @@ const artCard = getTranslatedList("workshops.maquillatge.artCard", ["title", "de
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-maquillatge-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-maquillatge-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-maquillatge-${locale.value}.pdf`,
   }
 })
 </script>

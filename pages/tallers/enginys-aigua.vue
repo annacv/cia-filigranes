@@ -33,7 +33,7 @@ const artCard = getTranslatedList("workshops.enginys-aigua.artCard", ["title", "
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-enginys-aigua-${locale.value}.pdf`,
   }
 })
 
