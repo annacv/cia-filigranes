@@ -3,6 +3,7 @@ import { getImageUrlsForPreload } from '~/composables/use-image-url.composable'
 import { useClientZip } from '~/composables/use-client-zip.composable'
 import {
   contentToImageRoute,
+  getAllSelectionZipFilename,
   getSelectionMode,
   resolveDossiersPlan,
   resolvePartialImagesPlan,
@@ -22,12 +23,6 @@ type SpecificDownloadsParams = {
   locale: Ref<string>
   selection: { shows: string[]; workshops: string[] }
   options: ComputedRef<OptionMap>
-}
-
-function getAllModeZipFilename(contentType: MultiselectContentType, action: SpecificActionId): string {
-  const route = contentToImageRoute(contentType)
-  const suffix = action === 'dossier' ? 'dossiers' : 'images'
-  return `CiaFiligranes-${route}-${suffix}.zip`
 }
 
 function withZipFilename(plan: DownloadPlan, zipFilename: string): DownloadPlan {
@@ -135,7 +130,7 @@ export function useSpecificDownloads({
       const plan = action === 'dossier'
         ? resolveDossiersPlan(contentType, slugs, toDownloadLocale(locale.value))
         : await resolvePartialImagesPlanFromSlugs(contentType, slugs)
-      await executeDownloadPlan(withZipFilename(plan, getAllModeZipFilename(contentType, action)))
+      await executeDownloadPlan(withZipFilename(plan, getAllSelectionZipFilename(contentType, action)))
       return
     }
 

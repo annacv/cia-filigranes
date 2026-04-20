@@ -59,6 +59,25 @@ export function resolveBulkAsset(cardId: BulkCardId, locale: DownloadLocale): Do
   return BULK_ZIPS[cardId][locale]
 }
 
+function getZipFilenameStem(
+  contentType: MultiselectContentType,
+  action: SpecificActionId,
+): string {
+  const route = contentToImageRoute(contentType)
+  const suffix = action === 'dossier' ? 'dossiers' : 'images'
+  return `CiaFiligranes-${route}-${suffix}`
+}
+
+/**
+ * Returns the filename used when all items for a content type are downloaded.
+ */
+export function getAllSelectionZipFilename(
+  contentType: MultiselectContentType,
+  action: SpecificActionId,
+): string {
+  return `${getZipFilenameStem(contentType, action)}.zip`
+}
+
 /**
  * Returns the filename used for ad-hoc ZIPs generated on the client.
  */
@@ -67,10 +86,8 @@ export function getGeneratedZipFilename(
   action: SpecificActionId,
   slugs: string[],
 ): string {
-  const route = contentToImageRoute(contentType)
-  const suffix = action === 'dossier' ? 'dossiers' : 'images'
   const sorted = [...slugs].sort().join('-')
-  return `CiaFiligranes-${route}-${suffix}-${sorted}.zip`
+  return `${getZipFilenameStem(contentType, action)}-${sorted}.zip`
 }
 
 /**
