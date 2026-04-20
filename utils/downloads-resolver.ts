@@ -12,7 +12,7 @@ import type {
 /**
  * Maps a `MultiselectContentType` to its image-route folder name.
  */
-export function contentTypeToImageRoute(contentType: MultiselectContentType): 'espectacles' | 'tallers' {
+export function contentToImageRoute(contentType: MultiselectContentType): 'espectacles' | 'tallers' {
   return contentType === 'shows' ? 'espectacles' : 'tallers'
 }
 
@@ -107,7 +107,7 @@ export function resolveSingleItemImagePlan(
   slug: string,
   urls: { mobile?: string; desktopDetail?: string },
 ): DownloadPlan {
-  const route = contentTypeToImageRoute(contentType)
+  const route = contentToImageRoute(contentType)
   const baseName = `${route}_${slug}`
   const assets: DownloadAsset[] = []
 
@@ -129,7 +129,7 @@ export function resolvePartialImagesPlan(
   contentType: MultiselectContentType,
   entries: Array<{ slug: string; mobile?: string }>,
 ): DownloadPlan {
-  const route = contentTypeToImageRoute(contentType)
+  const route = contentToImageRoute(contentType)
   const assets: DownloadAsset[] = entries
     .filter((e): e is { slug: string; mobile: string } => !!e.mobile)
     .map(({ slug, mobile }) => ({

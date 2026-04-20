@@ -2,7 +2,7 @@
 import { ROUTES_INDEX } from '~/constants'
 import { BULK_CARD_IDS } from '~/constants/downloads'
 import { useSpecificDownloads } from '~/composables/use-specific-downloads.composable'
-import { contentTypeToImageRoute, resolveBulkAsset, toDownloadLocale } from '~/utils/downloads-resolver'
+import { contentToImageRoute, resolveBulkAsset, toDownloadLocale } from '~/utils/downloads-resolver'
 import { getImageByRoute } from '~/utils/image-by-route'
 import BulkDownloadCard from '~/components/downloads/BulkDownloadCard.vue'
 import MultiselectDownloadCard from '~/components/downloads/MultiselectDownloadCard.vue'
@@ -63,14 +63,14 @@ const SPECIFIC_ROWS: Array<{
     contentType: 'shows',
     titleKey: 'routes.espectacles',
     i18nPrefix: 'descarregues.cards.shows',
-    imageRoute: contentTypeToImageRoute('shows'),
+    imageRoute: contentToImageRoute('shows'),
     backgroundClass: 'bg-primary-500',
   },
   {
     contentType: 'workshops',
     titleKey: 'routes.tallers',
     i18nPrefix: 'descarregues.cards.workshops',
-    imageRoute: contentTypeToImageRoute('workshops'),
+    imageRoute: contentToImageRoute('workshops'),
     backgroundClass: 'bg-secondary-500',
   },
 ]

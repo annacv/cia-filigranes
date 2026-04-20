@@ -2,7 +2,7 @@ import { computed, type ComputedRef, type Ref } from 'vue'
 import { getImageUrlsForPreload } from '~/composables/use-image-url.composable'
 import { useClientZip } from '~/composables/use-client-zip.composable'
 import {
-  contentTypeToImageRoute,
+  contentToImageRoute,
   getSelectionMode,
   resolveDossiersPlan,
   resolvePartialImagesPlan,
@@ -24,13 +24,8 @@ type SpecificDownloadsParams = {
   options: ComputedRef<OptionMap>
 }
 
-const CONTENT_TO_ROUTE: Record<MultiselectContentType, 'espectacles' | 'tallers'> = {
-  shows: 'espectacles',
-  workshops: 'tallers',
-}
-
 function getAllModeZipFilename(contentType: MultiselectContentType, action: SpecificActionId): string {
-  const route = CONTENT_TO_ROUTE[contentType]
+  const route = contentToImageRoute(contentType)
   const suffix = action === 'dossier' ? 'dossiers' : 'images'
   return `Cia-Filigranes-${route}-${suffix}.zip`
 }
@@ -66,7 +61,7 @@ export function useSpecificDownloads({
     contentType: MultiselectContentType,
     slug: string,
   ): Promise<DownloadPlan> {
-    const route = contentTypeToImageRoute(contentType)
+    const route = contentToImageRoute(contentType)
     const baseName = `${route}_${slug}`
 
     const [highlight, detail] = await Promise.all([
@@ -84,7 +79,7 @@ export function useSpecificDownloads({
     contentType: MultiselectContentType,
     slugs: string[],
   ): Promise<DownloadPlan> {
-    const route = contentTypeToImageRoute(contentType)
+    const route = contentToImageRoute(contentType)
     const entries = await Promise.all(
       slugs.map(async (slug) => {
         const { mobile } = await getImageUrlsForPreload(`${route}_${slug}`, route)
