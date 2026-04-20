@@ -9,7 +9,10 @@ type ClientZipItem = {
 function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob)
   downloadFromUrl(url, filename)
-  URL.revokeObjectURL(url)
+  // Defer revocation so the browser can register the download first.
+  setTimeout(() => {
+    URL.revokeObjectURL(url)
+  }, 0)
 }
 
 function downloadFromUrl(url: string, filename: string) {
