@@ -13,11 +13,12 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    env:
+      CODEQL_ACTION_FILE_COVERAGE_ON_PRS: true
     permissions:
       actions: read
       contents: read
       security-events: write
-
     strategy:
       fail-fast: false
       matrix:
@@ -25,23 +26,23 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
         queries: +security-and-quality
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
-        node-version: 20
+        node-version: 22
 
     - name: Install dependencies
       run: npm ci
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
       with:
         category: "/language:${{matrix.language}}"
