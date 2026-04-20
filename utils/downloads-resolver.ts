@@ -60,14 +60,6 @@ export function resolveBulkAsset(cardId: BulkCardId, locale: DownloadLocale): Do
 }
 
 /**
- * Resolves the bulk-download plan for a bulk card (used by the specific
- * selection flow when the user picks every item in a row).
- */
-export function resolveBulkPlan(cardId: BulkCardId, locale: DownloadLocale): DownloadPlan {
-  return { mode: 'prebuiltZip', asset: resolveBulkAsset(cardId, locale) }
-}
-
-/**
  * Returns the filename used for ad-hoc ZIPs generated on the client.
  */
 export function getGeneratedZipFilename(

@@ -128,7 +128,7 @@ function disabledGroupFor(contentType: MultiselectContentType) {
         <div class="grid-layout bg-gradient-primary pb-20 md:pb-36">
           <div class="layout-cols">
             <ClaimTitle
-              class="text-center !text-white lg:py-0 !px-0 !md:px-5"
+              class="text-center !text-white lg:py-0 !px-0"
               :claim-title="t('descarregues.claimTitle')"
               :subtitle="isMobile ? undefined : t('descarregues.claimSubtitle')"
               is-section-title

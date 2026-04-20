@@ -24,9 +24,6 @@ const buttonClass = computed(() =>
     : 'button-solid-primary hover:bg-primary-500'
 )
 
-const mainColor = computed(() =>
-  props.contentType === 'workshops' ? 'bg-secondary-500' : 'bg-primary-500'
-)
 </script>
 
 <template>
