@@ -18,7 +18,7 @@ const props = defineProps({
   },
   titleClass: {
     type: String,
-    required: false
+    default: ''
   }
 })
 </script>

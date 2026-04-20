@@ -20,7 +20,6 @@ const pageType = computed(() => props.pageType ?? 'default')
 
 <template>
   <section
-    
     class="bg-neutral-0 text-neutral-900"
     :aria-label="t('hire.pageSectionTitle')"
   >
@@ -36,7 +35,7 @@ const pageType = computed(() => props.pageType ?? 'default')
         is-section-title
       />
       <HireFormPage
-        class="py-6 md:py-8 px-4 xl:px-20"
+        class="py-6 md:py-8 px-0 sm:px-4 xl:px-20"
         :page-type="pageType"
         :content-type="contentType"
       />

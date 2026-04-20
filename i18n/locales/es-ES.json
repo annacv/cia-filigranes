@@ -102,6 +102,7 @@
   },
   "button": {
     "dossier": "Dosier",
+    "dossierSelection": "Dosier | Dosieres",
     "info": "Más info",
     "teaser": "Ver teaser",
     "fullShow": "Ver todo el espectáculo",
@@ -113,6 +114,7 @@
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
     "pdf": "descarga un documento PDF",
+    "zip": "descarga un archivo ZIP",
     "images": "Imágenes",
     "hire": "Contratar",
     "submit": "Enviar",
@@ -1574,23 +1576,38 @@
   },
   "descarregues": {
     "metaDescription": "Área de descargas de la Compañía Filigranes: dosieres, imágenes y logotipo de la compañía.",
-    "claimTitle": "Todo el material que necesitas a tu alcance",
-    "claimSubtitle": "Y si te falta algo, no dudes en ponerte en contacto",
+    "claimTitle": "El material que necesitas a tu alcance",
+    "claimSubtitle": "Si te falta algo, no dudes en ponerte en contacto",
     "logoHeading": "Logotipo",
+    "bulk": {
+      "download": "Dosieres e imágenes",
+      "espectacles": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los espectáculos de la Compañía en un solo archivo zip."
+      },
+      "tallers": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los talleres de la Compañía en un solo archivo zip."
+      },
+      "animacions": {
+        "description": "Accede al dosier informativo y a imágenes de nuestras Animaciones a la Carta en un solo archivo zip."
+      },
+      "logo": {
+        "description": "La descarga es un archivo zip que contiene tres versiones del logotipo en formato .png y .svg: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
+      }
+    },
+    "specific": {
+      "claimTitle": "Selección específica de materiales",
+      "claimSubtitle": "De cada espectáculo o taller elige lo que necesites"
+    },
     "cards": {
       "shows": {
         "selectLabel": "Selecciona uno o más espectáculos:",
-        "optionAll": "Todos los espectáculos"
+        "optionAll": "Todos los espectáculos",
+        "selectionHint": "Selecciona algún espectáculo para poder descargar"
       },
       "workshops": {
         "selectLabel": "Selecciona uno o más talleres:",
-        "optionAll": "Todos los talleres"
-      },
-      "performances": {
-        "description": "Accede al dosier informativo y a las imágenes promocionales de nuestras Animaciones a la carta."
-      },
-      "logo": {
-        "description": "La descarga contiene el logotipo en formato svg y png, y en sus tres variantes: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
+        "optionAll": "Todos los talleres",
+        "selectionHint": "Selecciona algún taller para poder descargar"
       }
     },
     "hero": {

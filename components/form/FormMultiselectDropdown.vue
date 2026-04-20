@@ -18,23 +18,9 @@ const { fieldClasses } = useHireFormDisplay({
   contentType: props.contentType,
 })
 
-const selectAll = ref(true)
+const selectAll = ref(false)
 
 const allValues = computed(() => props.options.map((o) => o.value))
-
-function syncModel() {
-  if (selectAll.value) {
-    model.value = [...allValues.value]
-  }
-}
-
-watch(
-  allValues,
-  () => {
-    syncModel()
-  },
-  { immediate: true }
-)
 
 watch(selectAll, (on) => {
   if (on) {
@@ -66,6 +52,16 @@ const selectedLabel = computed(() => {
 const isPlaceholderStyle = computed(
   () => !selectAll.value && model.value.length === 0
 )
+
+const checkedColorClass = computed(() =>
+  props.contentType === 'shows' ? 'bg-primary-500' : 'bg-secondary-500'
+)
+
+const checkboxAccentClass = computed(() =>
+  props.contentType === 'shows'
+    ? 'accent-primary-500 focus:ring-primary-500'
+    : 'accent-secondary-500 focus:ring-secondary-500'
+)
 </script>
 
 <template>
@@ -86,7 +82,7 @@ const isPlaceholderStyle = computed(
           :class="[
             'block w-full min-w-0 truncate text-left !leading-tight',
             isPlaceholderStyle
-              ? 'text-base text-neutral-400 italic'
+              ? 'text-sm text-neutral-200 italic'
               : 'uppercase text-sm text-white',
           ]"
         >
@@ -121,7 +117,7 @@ const isPlaceholderStyle = computed(
               role="switch"
               :aria-checked="selectAll"
               class="relative h-5 w-9 shrink-0 rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
-              :class="selectAll ? 'bg-primary-500' : 'bg-neutral-300'"
+              :class="selectAll ? checkedColorClass : 'bg-neutral-300'"
               @click.stop="toggleSelectAll"
             >
               <span
@@ -144,7 +140,8 @@ const isPlaceholderStyle = computed(
               <input
                 v-model="model"
                 type="checkbox"
-                class="h-4 w-4 shrink-0 rounded border-neutral-400 text-primary-500 focus:ring-primary-500"
+                class="h-4 w-4 shrink-0 rounded border-neutral-400"
+                :class="checkboxAccentClass"
                 :value="opt.value"
                 :disabled="selectAll"
               >

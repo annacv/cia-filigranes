@@ -102,6 +102,7 @@
   },
   "button": {
     "dossier": "Dossier",
+    "dossierSelection": "Dossier | Dossiers",
     "info": "More info",
     "teaser": "Watch teaser",
     "fullShow": "Watch the full show",
@@ -113,6 +114,7 @@
     "scrollLeft": "Scroll left",
     "scrollRight": "Scroll right",
     "pdf": "download a PDF document",
+    "zip": "download a ZIP archive",
     "images": "Images",
     "hire": "Hire",
     "submit": "Send",
@@ -1574,23 +1576,38 @@
   },
   "descarregues": {
     "metaDescription": "Downloads area of Filigranes Company: dossiers, images and company logo.",
-    "claimTitle": "All the materials you need within reach",
-    "claimSubtitle": "If anything is missing, please do not hesitate to get in touch",
+    "claimTitle": "The material you need within reach",
+    "claimSubtitle": "If something is missing, please do not hesitate to get in touch",
     "logoHeading": "Logo",
+    "bulk": {
+      "download": "Dossiers and images",
+      "espectacles": {
+        "description": "Download all dossiers, technical sheets and images of every show by the Company in a single zip file."
+      },
+      "tallers": {
+        "description": "Download all dossiers, technical sheets and images of every workshop by the Company in a single zip file."
+      },
+      "animacions": {
+        "description": "Get the information dossier and images of our tailor-made performances in a single zip file."
+      },
+      "logo": {
+        "description": "The download is a zip file containing three versions of the logo in .png and .svg formats: white with a transparent background, white with a red background, and white with a black background."
+      }
+    },
+    "specific": {
+      "claimTitle": "Specific material selection",
+      "claimSubtitle": "For each show or workshop, pick what you need"
+    },
     "cards": {
       "shows": {
         "selectLabel": "Select one or more shows:",
-        "optionAll": "All shows"
+        "optionAll": "All shows",
+        "selectionHint": "Select a show to enable downloads"
       },
       "workshops": {
         "selectLabel": "Select one or more workshops:",
-        "optionAll": "All workshops"
-      },
-      "performances": {
-        "description": "Download the information dossier and promotional images for our tailor-made performances."
-      },
-      "logo": {
-        "description": "The download includes the logo in svg and png formats, and in its three variants: white with a transparent background, white on a red background, and white on a black background."
+        "optionAll": "All workshops",
+        "selectionHint": "Select a workshop to enable downloads"
       }
     },
     "hero": {

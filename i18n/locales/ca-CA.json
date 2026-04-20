@@ -102,6 +102,7 @@
   },
   "button": {
     "dossier": "Dossier",
+    "dossierSelection": "Dossier | Dossiers",
     "info": "Més info",
     "teaser": "Veure teaser",
     "fullShow": "Veure l'espectacle sencer",
@@ -113,6 +114,7 @@
     "scrollLeft": "Desplaçar cap a l'esquerra",
     "scrollRight": "Desplaçar cap a la dreta",
     "pdf": "descarrega un document PDF",
+    "zip": "descarrega un arxiu ZIP",
     "images": "Imatges",
     "hire": "Contractar",
     "submit": "Enviar",
@@ -1574,23 +1576,38 @@
   },
   "descarregues": {
     "metaDescription": "Àrea de descàrregues de la Companyia Filigranes: dossiers, imatges i logotip de la companyia.",
-    "claimTitle": "Tot el material que necessites al teu abast",
-    "claimSubtitle": "I si hi ha alguna cosa que et manca no dubtis en posar-te en contacte",
+    "claimTitle": "El material que necessites al teu abast",
+    "claimSubtitle": "Si hi ha alguna cosa que et manca no dubtis en posar-te en contacte",
     "logoHeading": "Logotip",
+    "bulk": {
+      "download": "Dossiers i imatges",
+      "espectacles": {
+        "description": "Descarrega tots els dossiers, fitxes tècniques i imatges de tots els espectacles de la Companyia en un sol arxiu zip."
+      },
+      "tallers": {
+        "description": "Descarrega tots els dossiers, fitxes tècniques i imatges de tots els tallers de la Companyia en un sol arxiu zip."
+      },
+      "animacions": {
+        "description": "Accedeix al dossier informatiu i a imatges de les nostres Animacions a la Carta en un sol arxiu zip."
+      },
+      "logo": {
+        "description": "La descàrrega és un arxiu zip que conté tres versions del logotip en format .png i .svg: blanc amb fons transparent, blanc amb fons vermell, i blanc amb fons negre."
+      }
+    },
+    "specific": {
+      "claimTitle": "Selecció específica de materials",
+      "claimSubtitle": "De cada espectacle o taller tria el que necessitis"
+    },
     "cards": {
       "shows": {
         "selectLabel": "Selecciona un o més espectacles:",
-        "optionAll": "Tots els espectacles"
+        "optionAll": "Tots els espectacles",
+        "selectionHint": "Selecciona algun espectacle per poder descarregar"
       },
       "workshops": {
         "selectLabel": "Selecciona un o més tallers:",
-        "optionAll": "Tots els tallers"
-      },
-      "performances": {
-        "description": "Accedeix al dossier informatiu i a les imatges promocionals de les nostres Animacions a la Carta."
-      },
-      "logo": {
-        "description": "La descàrrega conté el logotip en els formats svg i png, i en les seves tres variants: blanc amb fons transparent, blanc amb fons en vermell, i blanc amb fons en negre."
+        "optionAll": "Tots els tallers",
+        "selectionHint": "Selecciona algun taller per poder descarregar"
       }
     },
     "hero": {

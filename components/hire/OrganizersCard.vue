@@ -21,7 +21,7 @@ const isList = computed(() => description.value.length > 1)
 </script>
 
 <template>
-  <article :class="`${gradientClass} flex w-full h-full md:h-[402px] flex-col items-start gap-10 py-10 px-14 text-white`">
+  <article :class="`${gradientClass} flex w-full h-full md:h-[402px] flex-col items-start gap-10 py-6 px-6 md:py-10 md:px-14 text-white`">
     <h3 class="text-left text-2xl font-semibold">
       {{ title }}
     </h3>
