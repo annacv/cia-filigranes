@@ -4,14 +4,12 @@ import { useClientZip } from '~/composables/use-client-zip.composable'
 import {
   contentTypeToImageRoute,
   getSelectionMode,
-  resolveBulkPlan,
   resolveDossiersPlan,
   resolvePartialImagesPlan,
   resolveSingleItemImagePlan,
   toDownloadLocale,
 } from '~/utils/downloads-resolver'
 import type {
-  BulkCardId,
   DownloadAsset,
   DownloadPlan,
   MultiselectContentType,
@@ -26,9 +24,20 @@ type SpecificDownloadsParams = {
   options: ComputedRef<OptionMap>
 }
 
-const CONTENT_TO_BULK: Record<MultiselectContentType, Extract<BulkCardId, 'espectacles' | 'tallers'>> = {
+const CONTENT_TO_ROUTE: Record<MultiselectContentType, 'espectacles' | 'tallers'> = {
   shows: 'espectacles',
   workshops: 'tallers',
+}
+
+function getAllModeZipFilename(contentType: MultiselectContentType, action: SpecificActionId): string {
+  const route = CONTENT_TO_ROUTE[contentType]
+  const suffix = action === 'dossier' ? 'dossiers' : 'images'
+  return `Cia-Filigranes-${route}-${suffix}.zip`
+}
+
+function withZipFilename(plan: DownloadPlan, zipFilename: string): DownloadPlan {
+  if (plan.mode !== 'generatedZip') return plan
+  return { ...plan, zipFilename }
 }
 
 /**
@@ -36,7 +45,7 @@ const CONTENT_TO_BULK: Record<MultiselectContentType, Extract<BulkCardId, 'espec
  *
  * - `downloadItem` handles a single show/workshop (per-card button).
  * - `downloadGroup` branches on the current selection mode (none / single /
- *   partial / all) and delegates to the bulk plan when the user selected all.
+ *   partial / all) and resolves plans according to the requested action.
  */
 export function useSpecificDownloads({
   locale,
@@ -110,7 +119,7 @@ export function useSpecificDownloads({
 
   /**
    * Dropdown action: branches on selection mode.
-   * - `all` → bulk prebuilt ZIP.
+   * - `all` → action-aware plan with fixed ZIP naming.
    * - `single` → same flow as `downloadItem`.
    * - `partial` → per-item direct dossiers / highlight images (ZIPed if >1).
    * - `none` → noop.
@@ -128,7 +137,10 @@ export function useSpecificDownloads({
     }
 
     if (mode === 'all') {
-      await executeDownloadPlan(resolveBulkPlan(CONTENT_TO_BULK[contentType], toDownloadLocale(locale.value)))
+      const plan = action === 'dossier'
+        ? resolveDossiersPlan(contentType, slugs, toDownloadLocale(locale.value))
+        : await resolvePartialImagesPlanFromSlugs(contentType, slugs)
+      await executeDownloadPlan(withZipFilename(plan, getAllModeZipFilename(contentType, action)))
       return
     }
 

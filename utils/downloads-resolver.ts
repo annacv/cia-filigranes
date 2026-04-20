@@ -75,9 +75,10 @@ export function getGeneratedZipFilename(
   action: SpecificActionId,
   slugs: string[],
 ): string {
+  const route = contentToImageRoute(contentType)
   const suffix = action === 'dossier' ? 'dossiers' : 'images'
   const sorted = [...slugs].sort().join('-')
-  return `CiaFiligranes-${contentType}-${suffix}-${sorted}.zip`
+  return `CiaFiligranes-${route}-${suffix}-${sorted}.zip`
 }
 
 /**
