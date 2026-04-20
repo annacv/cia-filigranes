@@ -165,10 +165,10 @@ const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink 
   if (eventType === 'workshops') {
     return contentKey
       ? {
-          href: `/tallers/${contentKey}`,
-          target: '_self',
-          text: 'button.info',
-        }
+        href: `/tallers/${contentKey}`,
+        target: '_self',
+        text: 'button.info',
+      }
       : undefined
   }
 

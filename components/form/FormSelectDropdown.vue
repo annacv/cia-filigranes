@@ -88,7 +88,7 @@ const isPlaceholderSelected = computed(() =>
       option-class="!text-sm"
       @select="(value) => emit('select', value)"
     >
-      <template #trigger-label="{ selectedLabel }">
+      <template #trigger-label>
         <span
           :class="[
             'whitespace-nowrap !leading-tight',

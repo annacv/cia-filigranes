@@ -53,22 +53,24 @@ const schedule = computed(() => getScheduleParts(props.date));
         >
           {{ schedule.day }}
         </span>
-        <span :class="[
-          'uppercase font-extrabold',
-          {'-mt-1 text-2xl' : props.size === 'large'},
-          {'text-base !leading-none' : props.size === 'medium'},
-          {'text-sm !leading-none' : props.size === 'small'},
-        ]">
+        <span
+          :class="[
+            'uppercase font-extrabold',
+            {'-mt-1 text-2xl' : props.size === 'large'},
+            {'text-base !leading-none' : props.size === 'medium'},
+            {'text-sm !leading-none' : props.size === 'small'},
+          ]">
           {{ schedule.month }}
         </span>
       </div>
       <div :class="`md:w-full border-white ${props.size === 'large' ? 'border-t-2 px-6 md:px-7' : 'border-l-2 p-2'}`">
-        <p :class="[
-          'text-center font-extrabold',
-          {'text-xl !leading-tight' : props.size === 'large'},
-          {'text-base !leading-none' : props.size === 'medium'},
-          {'text-sm !leading-none' : props.size === 'small'},
-        ]">
+        <p
+          :class="[
+            'text-center font-extrabold',
+            {'text-xl !leading-tight' : props.size === 'large'},
+            {'text-base !leading-none' : props.size === 'medium'},
+            {'text-sm !leading-none' : props.size === 'small'},
+          ]">
           {{ schedule.year }}
         </p>
       </div>

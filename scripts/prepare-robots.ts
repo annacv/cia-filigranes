@@ -11,7 +11,7 @@
  *   npm run generate (production)
  */
 
-import { copyFile, readFile, writeFile } from 'fs/promises';
+import { copyFile } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 

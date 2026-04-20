@@ -158,8 +158,8 @@ watchEffect(() => {
 <template>
   <ClientOnly>
     <div
-      ref="componentRef"
       :id="anchorId"
+      ref="componentRef"
       :class="`p-0 grid-layout ${getColors} contain-card ${anchorId ? 'scroll-mt-[72px] lg:scroll-mt-[87px]' : ''}`"
       :style="{ clipPath: isMobile ? mobileClip : 'none' }"
       @mouseenter="toggleHover()"
@@ -211,7 +211,7 @@ watchEffect(() => {
               v-if="hireContract"
               :button-class="`${getContractButtonClass} self-start`"
               :text="t('button.hire')"
-              :onClick="openHireModal"
+              :on-click="openHireModal"
             >
               <template #text>
                 {{ t('button.hire') }}

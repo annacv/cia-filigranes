@@ -14,7 +14,7 @@ const scrollMarginTop = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : H
       id="main-content-anchor" 
       aria-hidden="true"
       :style="{ scrollMarginTop: scrollMarginTop }"
-    ></div>
+    />
     <div
       v-if="$slots.wrappedTop" 
       class="grid-layout min-w-full w-full h-full"

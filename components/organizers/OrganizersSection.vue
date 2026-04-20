@@ -2,7 +2,6 @@
 import OrganizersCard from './OrganizersCard.vue'
 
 const { t } = useI18n()
-const localePath = useLocalePath()
 const { isMobile } = useResponsive()
 </script>
 
@@ -29,7 +28,7 @@ const { isMobile } = useResponsive()
           gradient-class="bg-gradient-primary-reverse"
           :title="t('home.organizers.contact.title')"
           :button-text="t('home.organizers.contact.button')"
-          :href="`${localePath('/')}#home-contact`"
+          href="/#home-contact"
           content-path="home.organizers.contact.content"
         />
       </div>
