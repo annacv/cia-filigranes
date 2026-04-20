@@ -108,8 +108,6 @@ export function useClientZip() {
   }
 
   return {
-    createZipFromUrls,
-    downloadAsset,
     executeDownloadPlan,
     isDownloading,
     lastError,
