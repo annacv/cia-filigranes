@@ -3,6 +3,10 @@ import { ROUTES_INDEX } from '~/constants';
 
 const { getLocale } = useI18nUtils();
 const { isRouteActiveExact } = useRouteActive();
+
+const bottomNavRoutes = computed(() =>
+  ROUTES_INDEX.filter((routeItem) => routeItem.name !== 'descarregues')
+);
 </script>
 
 <template>
@@ -15,7 +19,7 @@ const { isRouteActiveExact } = useRouteActive();
       <div class="layout-cols py-8 xl:py-14">
         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5 gap-y-8 sm:gap-6 xl:gap-8">
           <div
-            v-for="(routeItem, index) in ROUTES_INDEX"
+            v-for="(routeItem, index) in bottomNavRoutes"
             :key="index"
             class="flex flex-col gap-1"
           >

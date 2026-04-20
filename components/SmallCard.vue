@@ -46,7 +46,7 @@ const isTouched = ref(false);
           :date="scheduleDate"
           size="small"
           class="pointer-events-none absolute right-2 top-2 z-10"
-          showClaim
+          show-claim
         />
         <CardImage
           :image="image"

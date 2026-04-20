@@ -34,7 +34,7 @@ const artCard = getTranslatedList("shows.plis-plas.artCard", ["title", "descript
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-plis-plas-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-plis-plas-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-plis-plas-${locale.value}.pdf`,
   }
 })
 </script>

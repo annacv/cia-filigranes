@@ -28,14 +28,24 @@ const props = withDefaults(defineProps<{
 const { t } = useI18n()
 const slots = useSlots()
 
+const DOWNLOADABLE_EXTENSIONS = ['.pdf', '.zip'] as const
+type DownloadableExtension = typeof DOWNLOADABLE_EXTENSIONS[number]
+
 const paddingClass = computed(() => (slots.text ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
-const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
+const downloadExtension = computed<DownloadableExtension | undefined>(() => {
+  if (!props.download || !props.href) return undefined
+  return DOWNLOADABLE_EXTENSIONS.find((ext) => props.href!.toLowerCase().includes(ext))
+})
+const isDownload = computed(() => !!downloadExtension.value)
 const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLinkLocale : 'button'))
 const isNativeButton = computed(() => componentType.value === 'button')
 
 const ariaLabel = computed(() => {
-  if (isDownload.value) {
+  if (downloadExtension.value === '.pdf') {
     return `${props.text} (${t('button.pdf')})`
+  }
+  if (downloadExtension.value === '.zip') {
+    return `${props.text} (${t('button.zip')})`
   }
   return props.text
 })

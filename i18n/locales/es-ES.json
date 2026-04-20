@@ -20,6 +20,25 @@
           "paragraph": "La Compañía Filigranes la integran Jordi Torrens (Trinxeta) y Albert Pérez (Makutu). Somos una compañía de clown y circo con más de 20 años de oficio, especializada en hacer reír a pequeños y grandes en fiestas, festivales y escuelas."
         }
       ]
+    },
+    "organizers": {
+      "claimTitle": "Para programadores y organizadores",
+      "claimSubtitle": "Te ofrecemos materiales claros, equipos profesionales y espectáculos fiables para tu programación.",
+      "downloads": {
+        "title": "Descargas",
+        "content": [
+          { "paragraph": "Dossiers con fichas técnicas" },
+          { "paragraph": "Fotografías y logotipo" }
+        ],
+        "button": "Área de descargas"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "content": [
+          { "paragraph": "Ya sea para espectáculos familiares, talleres o creaciones a medida para tu evento." }
+        ],
+        "button": "Contactar"
+      }
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
@@ -78,10 +97,12 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacto",
-    "collaboracions": "Colaboraciones"
+    "collaboracions": "Colaboraciones",
+    "descarregues": "Descargas"
   },
   "button": {
     "dossier": "Dosier",
+    "dossierSelection": "Dosier | Dosieres",
     "info": "Más info",
     "teaser": "Ver teaser",
     "fullShow": "Ver todo el espectáculo",
@@ -93,6 +114,8 @@
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
     "pdf": "descarga un documento PDF",
+    "zip": "descarga un archivo ZIP",
+    "images": "Imágenes",
     "hire": "Contratar",
     "submit": "Enviar",
     "cancel": "Cancelar",
@@ -102,7 +125,10 @@
     "modalTitleShow": "Para contratar el espectáculo:",
     "modalTitleWorkshop": "Para contratar el taller:",
     "modalDescription": "Rellena el siguiente formulario y te responderemos lo antes posible. O, si lo prefieres, puedes llamarnos directamente al {phone}, o enviarnos un correo electrónico a {email}.",
-    "pageSectionTitle": "Contratar",
+    "pageSectionTitle": "Contáctanos para tu próximo evento",
+    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
+    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
+    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
     "requiredFields": "Campos obligatorios",
     "privacyNote": "No enviamos publicidad.",
     "selectPlaceholder": "Selecciona…",
@@ -127,16 +153,14 @@
       "oficis": "Oficios (camareros, panaderos...)",
       "convenir": "A convenir"
     },
-    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
-    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
-    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
     "placeholders": {
       "fullName": "Escribe tu nombre y apellidos",
       "email": "Escribe tu email de contacto",
       "showSelect": "Selecciona tu espectáculo",
       "workshopSelect": "Selecciona tu taller",
       "performanceSelect": "Selecciona tu animación",
-      "comments": "Información adicional que queráis compartir, por ejemplo, fecha y lugar estimados para la realización del espectáculo, taller o animación."
+      "comments": "Información adicional que queráis compartir, por ejemplo, fecha y lugar estimados para la realización del espectáculo, taller o animación.",
+      "commentsPerformances": "Información adicional que queráis compartir, por ejemplo, el tipo de evento donde se realizaría la animación, la fecha y el lugar estimados..."
     },
     "submission": {
       "sending": "Enviando…",
@@ -1189,6 +1213,9 @@
   },
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
+    "hero": {
+      "title": "Contáctanos para tu próximo show"
+    },
     "info": {
       "title": "Información de contacto",
       "subtitle": "Para consultas, contrataciones y encuentros"
@@ -1545,6 +1572,46 @@
           "paragraph": "Con atrezzo marinero y juegos participativos, VENDAVAL propone un viaje festivo, poético y compartido."
         }
       ]
+    }
+  },
+  "descarregues": {
+    "metaDescription": "Área de descargas de la Compañía Filigranes: dosieres, imágenes y logotipo de la compañía.",
+    "claimTitle": "El material que necesitas a tu alcance",
+    "claimSubtitle": "Si te falta algo, no dudes en ponerte en contacto",
+    "logoHeading": "Logotipo",
+    "bulk": {
+      "download": "Dosieres e imágenes",
+      "espectacles": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los espectáculos de la Compañía en un solo archivo zip."
+      },
+      "tallers": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los talleres de la Compañía en un solo archivo zip."
+      },
+      "animacions": {
+        "description": "Accede al dosier informativo y a imágenes de nuestras Animaciones a la Carta en un solo archivo zip."
+      },
+      "logo": {
+        "description": "La descarga es un archivo zip que contiene tres versiones del logotipo en formato .png y .svg: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
+      }
+    },
+    "specific": {
+      "claimTitle": "Selección específica de materiales",
+      "claimSubtitle": "De cada espectáculo o taller elige lo que necesites"
+    },
+    "cards": {
+      "shows": {
+        "selectLabel": "Selecciona uno o más espectáculos:",
+        "optionAll": "Todos los espectáculos",
+        "selectionHint": "Selecciona algún espectáculo para poder descargar"
+      },
+      "workshops": {
+        "selectLabel": "Selecciona uno o más talleres:",
+        "optionAll": "Todos los talleres",
+        "selectionHint": "Selecciona algún taller para poder descargar"
+      }
+    },
+    "hero": {
+      "title": "Bienvenidos al área de descargas"
     }
   }
 }

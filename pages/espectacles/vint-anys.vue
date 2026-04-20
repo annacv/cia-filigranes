@@ -34,7 +34,7 @@ const artCard = getTranslatedList("shows.vint-anys.artCard", ["title", "descript
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-vint-anys-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-vint-anys-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-vint-anys-${locale.value}.pdf`,
   }
 })
 </script>

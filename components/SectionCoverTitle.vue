@@ -6,7 +6,7 @@ const props = defineProps({
   },
   titleClass: {
     type: String,
-    default: 'max-w-[342px] md:max-w-[448px] lg:max-w-[542px]'
+    default: 'max-w-[310px] sm:max-w-[342px] md:max-w-[448px] lg:max-w-[542px]'
   }
 })
 </script>

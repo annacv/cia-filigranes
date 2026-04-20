@@ -14,7 +14,7 @@ export interface UseHeroGestureHijackOptions {
 export interface UseHeroGestureHijackReturn {
   setup: () => void
   teardown: () => void
-  cleanupScrollPrevention: (resetFlag?: boolean) => void
+  cleanupScrollPrevention: (_resetFlag?: boolean) => void
 }
 
 function getWheelDeltaY(e: Event): number | null {

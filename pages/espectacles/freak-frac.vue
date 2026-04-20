@@ -34,7 +34,7 @@ const artCard = getTranslatedList("shows.freak-frac.artCard", ["title", "descrip
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-freak-frac-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-freak-frac-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-freak-frac-${locale.value}.pdf`,
   }
 })
 </script>

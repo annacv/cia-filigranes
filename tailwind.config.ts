@@ -82,6 +82,9 @@ const config: Config = {
         'highlight-secondary': 'linear-gradient(to right bottom, var(--color-secondary-500), var(--color-secondary-700))',
         'highlight-tertiary': 'linear-gradient(to right bottom, var(--color-tertiary-500), var(--color-tertiary-700))',
         'highlight-quaternary': 'linear-gradient(to right bottom, var(--color-quaternary-500), var(--color-quaternary-300))',
+        'gradient-primary': 'linear-gradient(95deg, var(--color-primary-500) 65%, var(--color-secondary-500) 100%)',
+        'gradient-primary-reverse': 'linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-primary-500) 100%)',
+        'gradient-primary-bottom': 'linear-gradient(-170deg, var(--color-primary-500) 15%, var(--color-secondary-500) 100%)'
       },
       willChange: {
         'auto': 'auto',

@@ -14,6 +14,7 @@ const props = defineProps<{
   optionClass?: string
   menuClass?: string | object | unknown[]
   triggerClass?: string | object | unknown[]
+  includeSelectedOption?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -24,7 +25,9 @@ const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 const menuId = useId()
 const availableOptions = computed(() =>
-  props.options.filter(option => option.value !== props.selectedValue)
+  props.includeSelectedOption
+    ? props.options
+    : props.options.filter(option => option.value !== props.selectedValue)
 )
 
 const toggleDropdown = () => {
@@ -72,11 +75,11 @@ onClickOutside(dropdownRef, closeDropdown)
       @click="toggleDropdown"
       @keydown="handleTriggerKeydown"
     >
-      <span class="w-full inline-flex items-center justify-between gap-1.5">
+      <span class="flex w-full min-w-0 items-center justify-between gap-1.5">
         <slot name="trigger-icon" />
-        <span class="inline-flex flex-col items-start">
+        <span class="flex min-w-0 flex-1 flex-col items-stretch text-left">
           <slot name="trigger-label" :selected-label="selectedLabel">
-            <span class="whitespace-nowrap text-xs sm:text-sm">{{ selectedLabel }}</span>
+            <span class="block w-full min-w-0 truncate text-left text-xs sm:text-sm">{{ selectedLabel }}</span>
           </slot>
           <span
             v-if="indicatorClass"
@@ -96,8 +99,15 @@ onClickOutside(dropdownRef, closeDropdown)
       leave-from-class="translate-y-0 scale-100 opacity-100"
       leave-to-class="translate-y-1 scale-95 opacity-0"
     >
+      <slot
+        v-if="isOpen && $slots.menu"
+        name="menu"
+        :menu-id="menuId"
+        :is-open="isOpen"
+        :close-dropdown="closeDropdown"
+      />
       <ul
-        v-if="isOpen"
+        v-else-if="isOpen"
         :id="menuId"
         :class="[
           'absolute left-0 top-full z-30 w-max max-w-[calc(100vw-2rem)] origin-top-left rounded-md border border-neutral-300 bg-white py-1 shadow-md',

@@ -22,7 +22,7 @@ const artCard = getTranslatedList('performances.artCard', ['title', 'description
 const synopsisButton = computed(() => {
   return {
     download: `CiaFiligranes-animacions-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-animacions-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-animacions-${locale.value}.pdf`,
   }
 });
 </script>
@@ -35,7 +35,7 @@ const synopsisButton = computed(() => {
       :alt="getImageAlt('animacions')"
       is-section-cover
     >
-    <template #content>
+      <template #content>
         <SectionCoverTitle
           :title="t('performances.hero.title')"
           title-class="max-w-[324px] md:max-w-[448px] lg:max-w-[510px]"

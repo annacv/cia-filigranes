@@ -20,6 +20,25 @@
           "paragraph": "La Companyia Filigranes la integrem Jordi Torrens (Trinxeta) i Albert Pérez (Makutu). Som una companyia de clown i circ amb més de 20 anys d'ofici, especialitzada en fer riure petits i grans en festes, festivals i escoles."
         }
       ]
+    },
+    "organizers": {
+      "claimTitle": "Per a programadors i organitzadors",
+      "claimSubtitle": "T'oferim materials clars, equips professionals i espectacles fiables per al teu programa.",
+      "downloads": {
+        "title": "Descàrregues",
+        "content": [
+          { "paragraph": "Dossiers amb fitxes tècniques" },
+          { "paragraph": "Fotografies i logotip" }
+        ],
+        "button": "Àrea de descàrregues"
+      },
+      "contact": {
+        "title": "Contacta'ns",
+        "content": [
+          { "paragraph": "Ja sigui per espectacles familiars, tallers, o creacions a mida per al teu esdeveniment." }
+        ],
+        "button": "Contactar"
+      }
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
@@ -78,10 +97,12 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacte",
-    "collaboracions": "Col·laboracions"
+    "collaboracions": "Col·laboracions",
+    "descarregues": "Descàrregues"
   },
   "button": {
     "dossier": "Dossier",
+    "dossierSelection": "Dossier | Dossiers",
     "info": "Més info",
     "teaser": "Veure teaser",
     "fullShow": "Veure l'espectacle sencer",
@@ -93,6 +114,8 @@
     "scrollLeft": "Desplaçar cap a l'esquerra",
     "scrollRight": "Desplaçar cap a la dreta",
     "pdf": "descarrega un document PDF",
+    "zip": "descarrega un arxiu ZIP",
+    "images": "Imatges",
     "hire": "Contractar",
     "submit": "Enviar",
     "cancel": "Cancelar",
@@ -136,7 +159,8 @@
       "showSelect": "Selecciona el teu espectacle",
       "workshopSelect": "Selecciona el teu taller",
       "performanceSelect": "Selecciona la teva animació",
-      "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació."
+      "comments": "Informació adicional que volgueu compartir, per exemple, data i lloc estimats per a la realització de l'espectacle, taller o animació.",
+      "commentsPerformances": "Informació adicional que volgueu compartir, per exemple, el tipus d'esdeveniment on es realitzaria l'animació, la data i el lloc estimats..."
     },
     "submission": {
       "sending": "Enviant…",
@@ -1548,6 +1572,46 @@
           "paragraph": "Amb atrezzos mariners i jocs participatius, VENDAVAL proposa un viatge festiu, poètic i compartit."
         }
       ]
+    }
+  },
+  "descarregues": {
+    "metaDescription": "Àrea de descàrregues de la Companyia Filigranes: dossiers, imatges i logotip de la companyia.",
+    "claimTitle": "El material que necessites al teu abast",
+    "claimSubtitle": "Si hi ha alguna cosa que et manca no dubtis en posar-te en contacte",
+    "logoHeading": "Logotip",
+    "bulk": {
+      "download": "Dossiers i imatges",
+      "espectacles": {
+        "description": "Descarrega tots els dossiers, fitxes tècniques i imatges de tots els espectacles de la Companyia en un sol arxiu zip."
+      },
+      "tallers": {
+        "description": "Descarrega tots els dossiers, fitxes tècniques i imatges de tots els tallers de la Companyia en un sol arxiu zip."
+      },
+      "animacions": {
+        "description": "Accedeix al dossier informatiu i a imatges de les nostres Animacions a la Carta en un sol arxiu zip."
+      },
+      "logo": {
+        "description": "La descàrrega és un arxiu zip que conté tres versions del logotip en format .png i .svg: blanc amb fons transparent, blanc amb fons vermell, i blanc amb fons negre."
+      }
+    },
+    "specific": {
+      "claimTitle": "Selecció específica de materials",
+      "claimSubtitle": "De cada espectacle o taller tria el que necessitis"
+    },
+    "cards": {
+      "shows": {
+        "selectLabel": "Selecciona un o més espectacles:",
+        "optionAll": "Tots els espectacles",
+        "selectionHint": "Selecciona algun espectacle per poder descarregar"
+      },
+      "workshops": {
+        "selectLabel": "Selecciona un o més tallers:",
+        "optionAll": "Tots els tallers",
+        "selectionHint": "Selecciona algun taller per poder descarregar"
+      }
+    },
+    "hero": {
+      "title": "Benvingudes a l'àrea de descàrregues"
     }
   }
 }

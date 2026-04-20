@@ -33,7 +33,7 @@ const artCard = getTranslatedList("workshops.pallassos.artCard", ["title", "desc
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-pallassos-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-pallassos-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-pallassos-${locale.value}.pdf`,
   }
 })
 </script>

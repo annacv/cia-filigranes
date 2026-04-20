@@ -71,8 +71,8 @@ onBeforeUnmount(() => {
     <div :class="`flex flex-col items-center justify-center text-neutral-600 py-8 px-4 md:py-12 md:px-6 mb-2 md:mb-14 ${bgClass}`">
       <slot name="icon">
         <Component
-          v-if="typeof icon === 'object'"
           :is="icon"
+          v-if="typeof icon === 'object'"
           :class="`!w-7 !h-7 md:!w-9 md:!h-9 text-primary-300 !fill-none ${iconClass}`"
         />
         <img
@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
           :src="icon"
           :class="`!w-7 !h-7 md:!w-9 md:!h-9 text-primary-300 !fill-none ${iconClass}`"
           alt=""
-        />
+        >
       </slot>
       <p class="text-xl !leading-normal max-w-md text-center p-4 md:p-7">{{ text }}</p>
     </div>

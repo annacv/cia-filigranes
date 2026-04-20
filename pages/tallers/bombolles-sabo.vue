@@ -33,7 +33,7 @@ const artCard = getTranslatedList("workshops.bombolles-sabo.artCard", ["title", 
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-bombolles-sabo-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-bombolles-sabo-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-bombolles-sabo-${locale.value}.pdf`,
   }
 })
 </script>

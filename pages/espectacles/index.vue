@@ -34,7 +34,7 @@ const synopsisItems = computed(() => {
         },
         downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,
-          href: `/downloads/CiaFiligranes-${show}-${locale.value}.pdf`,
+          href: `/downloads/dossiers/CiaFiligranes-${show}-${locale.value}.pdf`,
         },
       },
     }

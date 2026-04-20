@@ -25,7 +25,6 @@ const getIndicatorClasses = (contentType: AgendaFilterContentType) => {
 }
 
 const useContentAgenda = ({ allFilterLabelKey, allFilterValue, contentKey, contentType }: UseContentAgendaOptions) => {
-  const { t } = useI18n()
   const { events: sharedEvents, pending, error } = useCalendarEvents()
   const { maxVisibleEvents } = useCalendarLayout()
   const contentIndicatorClasses = getIndicatorClasses(contentType)

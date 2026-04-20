@@ -51,13 +51,13 @@ onMounted(() => {
     <ul>
       <li :class="menuItemClasses">
         <div class="flex py-4">
-            <NuxtLinkLocale
-              :to="'/'"
-              :class="[menuItemLinkClasses, { 'border-b-2': isRouteActiveExact('/') }]"
-              @click="emit('toggle')"
-            >
-              {{ getLocale('home', 'routes') }}
-            </NuxtLinkLocale>
+          <NuxtLinkLocale
+            :to="'/'"
+            :class="[menuItemLinkClasses, { 'border-b-2': isRouteActiveExact('/') }]"
+            @click="emit('toggle')"
+          >
+            {{ getLocale('home', 'routes') }}
+          </NuxtLinkLocale>
         </div>
       </li>
       <component

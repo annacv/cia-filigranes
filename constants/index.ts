@@ -25,7 +25,10 @@ export const ROUTES_INDEX = [
   },
   {
     name: "contacte"
-  }
+  },
+  {
+    name: "descarregues"
+  },
 ]
 
 export const LOCALE_ROUTES = routePages as Record<
@@ -100,6 +103,16 @@ export const GLOB_IMPORTS = {
   }) as Record<string, () => Promise<string>>,
 
   desktopCollaboracionsImages: import.meta.glob('~/assets/images/desktop/collaboracions/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  mobileDescarreguesImages: import.meta.glob('~/assets/images/mobile/descarregues/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  desktopDescarreguesImages: import.meta.glob('~/assets/images/desktop/descarregues/*.webp', {
     eager: false,
     import: 'default',
   }) as Record<string, () => Promise<string>>,

@@ -36,7 +36,7 @@ const artCard = getTranslatedList("shows.circ-makutu.artCard", ["title", "descri
 const summaryButton = computed(() => {
   return {
     download: `CiaFiligranes-circ-makutu-${locale.value}.pdf`,
-    href: `/downloads/CiaFiligranes-circ-makutu-${locale.value}.pdf`,
+    href: `/downloads/dossiers/CiaFiligranes-circ-makutu-${locale.value}.pdf`,
   }
 })
 </script>

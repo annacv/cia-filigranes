@@ -19,7 +19,7 @@ type HireFormFieldClasses = {
 
 type UseHireFormDisplayOptions = {
   variant: HireFormVariant
-  /** Explicit section palette (synopsis / HireContactSection). */
+  /** Explicit section palette (synopsis / hire contact form section). */
   contentType: MaybeRefOrGetter<ContentType | undefined>
   /** Page only: when `contentType` is unset, `performances` uses the performances palette. */
   pageType?: MaybeRefOrGetter<'default' | 'performances'>
