@@ -27,7 +27,7 @@ type SpecificDownloadsParams = {
 function getAllModeZipFilename(contentType: MultiselectContentType, action: SpecificActionId): string {
   const route = contentToImageRoute(contentType)
   const suffix = action === 'dossier' ? 'dossiers' : 'images'
-  return `Cia-Filigranes-${route}-${suffix}.zip`
+  return `CiaFiligranes-${route}-${suffix}.zip`
 }
 
 function withZipFilename(plan: DownloadPlan, zipFilename: string): DownloadPlan {
