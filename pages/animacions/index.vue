@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HeroCover from "~/components/cover/HeroCover.vue";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { PERFORMANCES_GALLERY_IMG } from "~/constants";
 

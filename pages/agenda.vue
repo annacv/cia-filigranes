@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { EVENT_TYPE_ITEMS } from "~/constants"
 import type { ContentType, EventTypeItem } from "~/types"

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
@@ -47,10 +49,10 @@ const summaryButton = computed(() => {
       schedule-content-key="circ-trinxeta"
     >
       <template #content>
-        <CoverTitle
-          :title="t('routes.circ-trinxeta')"
-          title-class="lg:max-w-[548px]"
-          :slice-end="2"
+        <BaseBrand
+          slug="circ-trinxeta"
+          fallback-title-class="lg:max-w-[548px]"
+          :fallback-slice-end="2"
         />
       </template>
     </HeroCover>

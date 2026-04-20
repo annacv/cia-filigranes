@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
@@ -51,10 +53,10 @@ const summaryButton = computed(() => {
       background-position="center 90%"
     >
       <template #content>
-        <CoverTitle
-          :title="t('routes.circ-makutu')"
-          title-class="max-w-[282px] md:max-w-[340px] lg:max-w-[408px]"
-          :slice-end="2"
+        <BaseBrand
+          slug="circ-makutu"
+          fallback-title-class="max-w-[282px] md:max-w-[340px] lg:max-w-[408px]"
+          :fallback-slice-end="2"
         />
       </template>
     </HeroCover>

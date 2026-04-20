@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HeroCover from "~/components/cover/HeroCover.vue";
 import { COLLABORATION_ENTRIES } from "~/constants";
 import type { ContentType, ImageRoute } from "~/types";
 

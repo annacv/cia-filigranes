@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HeroCover from '~/components/cover/HeroCover.vue'
 import { BULK_CARD_IDS } from '~/constants/downloads'
 import { useSpecificDownloads } from '~/composables/use-specific-downloads.composable'
 import { contentToImageRoute, resolveBulkAsset, toDownloadLocale } from '~/utils/downloads-resolver'

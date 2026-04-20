@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
@@ -48,10 +50,10 @@ const summaryButton = computed(() => {
       schedule-content-key="freak-frac"
     >
       <template #content>
-        <CoverTitle
-          :title="t('routes.freak-frac')"
-          title-class="md:max-w-[466px] lg:max-w-[560px]"
-          :slice-end="2"
+        <BaseBrand
+          slug="freak-frac"
+          fallback-title-class="md:max-w-[466px] lg:max-w-[560px]"
+          :fallback-slice-end="2"
         />
       </template>
     </HeroCover>

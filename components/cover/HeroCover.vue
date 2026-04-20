@@ -129,14 +129,6 @@ const transitionDuration = computed(() => `${HERO_COVER_ANIMATION_DURATION_MS}ms
 const imagePosition = computed(() => isScrolled.value ? 'center center' : props.backgroundPosition);
 const scheduleSize = computed(() => isMobile.value ? 'small' : 'large')
 const isHomepage = computed(() => String(route.name ?? '').split('___')[0] === 'index')
-const reserveScheduleSpace = computed(() => {
-  return Boolean(props.scheduleContentKey) && isSchedulableContentType(props.contentType)
-})
-const schedulePlaceholderClass = computed(() => {
-  return scheduleSize.value === 'large'
-    ? 'min-h-[180px] min-w-[120px]'
-    : 'min-h-[34px] min-w-[208px]'
-})
 const scheduleDate = computed(() => {
   if (!props.scheduleContentKey) return undefined
   if (!isSchedulableContentType(props.contentType)) return undefined
@@ -205,18 +197,15 @@ const scrolledHeight = computed(() => {
       <div
         :class="[
           'flex justify-start order-1 md:order-2 md:mb-20',
-          { 'md:-mt-12 md:mb-48 2xl:mb-64' : reserveScheduleSpace },
           { 'md:justify-end' : isSectionCover || (isHomepage && !scheduleDate) }
         ]">
         <slot name="content"/>
       </div>
       <div
-        v-if="reserveScheduleSpace"
-        class="pointer-events-none order-2 md:order-1 w-fit md:self-end"
-        :class="schedulePlaceholderClass"
+        v-if="scheduleDate"
+        class="pointer-events-none order-2 w-fit md:absolute md:top-20 md:right-0"
       >
         <NuxtLink
-          v-if="scheduleDate"
           :to="{ path: route.path, hash: '#agenda' }"
           class="inline-flex w-fit pointer-events-auto rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           :aria-label="t('agenda.goToPageSection')"

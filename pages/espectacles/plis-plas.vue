@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
@@ -48,7 +50,7 @@ const summaryButton = computed(() => {
       schedule-content-key="plis-plas"
     >
       <template #content>
-        <CoverTitle :title="t('routes.plis-plas')" :slice-end="1" />
+        <BaseBrand slug="plis-plas" :fallback-slice-end="1" />
       </template>
     </HeroCover>
     <MainContent>
