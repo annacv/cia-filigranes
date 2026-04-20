@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { DownloadAsset, DownloadPlan } from '~/types/downloads'
 
 type ClientZipItem = {
@@ -31,7 +31,8 @@ function downloadFromUrl(url: string, filename: string) {
 }
 
 export function useClientZip() {
-  const isDownloading = ref(false)
+  const activeDownloads = ref(0)
+  const isDownloading = computed(() => activeDownloads.value > 0)
   const lastError = ref<Error | null>(null)
 
   function downloadAsset(asset: DownloadAsset) {
@@ -67,14 +68,15 @@ export function useClientZip() {
    * - `generatedZip` → builds a ZIP on the client from the listed URLs.
    * - `noop` → nothing happens.
    *
-   * Handles `isDownloading` and falls back to direct downloads if ZIP
+   * Tracks concurrent executions so `isDownloading` stays true until every
+   * active plan finishes, and falls back to direct downloads if ZIP
    * generation fails, surfacing the error via `lastError` for callers.
    */
   async function executeDownloadPlan(plan: DownloadPlan): Promise<void> {
     if (plan.mode === 'noop') return
 
     lastError.value = null
-    isDownloading.value = true
+    activeDownloads.value += 1
 
     try {
       if (plan.mode === 'prebuiltZip') {
@@ -101,7 +103,7 @@ export function useClientZip() {
         }
       }
     } finally {
-      isDownloading.value = false
+      activeDownloads.value = Math.max(0, activeDownloads.value - 1)
     }
   }
 
