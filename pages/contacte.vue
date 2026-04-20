@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CoverTitle from "~/components/cover/CoverTitle.vue";
 import HeroCover from "~/components/cover/HeroCover.vue";
 import { getImageByRoute } from "~/utils/image-by-route";
 
@@ -22,7 +23,8 @@ const getImageAlt = () => useImageAlt('contact');
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('contact.hero.title')"
           title-class="max-w-[310px] md:max-w-[448px] lg:max-w-[524px]"
         />

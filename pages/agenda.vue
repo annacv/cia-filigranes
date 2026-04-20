@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CoverTitle from "~/components/cover/CoverTitle.vue"
 import HeroCover from "~/components/cover/HeroCover.vue"
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { EVENT_TYPE_ITEMS } from "~/constants"
@@ -66,7 +67,8 @@ const primaryFilterOptions = computed<EventTypeItem[]>(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="`${t('routes.agenda')} ${currentYear}-${nextYear}`"
           title-class="max-w-[272px] md:max-w-[298px] lg:max-w-[378px]"
         />
