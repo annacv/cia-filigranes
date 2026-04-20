@@ -21,14 +21,14 @@ const isList = computed(() => description.value.length > 1)
 </script>
 
 <template>
-  <article :class="`${gradientClass} flex w-full h-full md:h-[402px] flex-col items-start gap-10 py-6 px-6 md:py-10 md:px-14 text-white`">
-    <h3 class="text-left text-2xl font-semibold">
+  <article :class="`${gradientClass} flex w-full h-full xl:h-[402px] flex-col items-start gap-10 py-6 px-6 lg:py-10 lg:px-14 text-white`">
+    <h3 class="text-left text-xl lg:text-2xl font-semibold">
       {{ title }}
     </h3>
     <div class="flex min-h-0 w-full flex-1 flex-col">
       <component
         :is="isList ? 'ul' : 'p'"
-        :class="['text-lg md:text-xl text-left', {'!leading-normal mt-1.5': !isList}]"
+        :class="['text-lg lg:text-xl text-left', {'!leading-normal mt-1.5': !isList}]"
         :role="isList ? 'list' : undefined"
       >
         <component

@@ -92,7 +92,7 @@ function closeStatusMessage() {
         class="min-w-0 border-0 p-0 m-0 flex flex-col gap-2"
         :disabled="isSubmitting"
       >
-        <div class="grid gap-4 md:gap-8 lg:gap-14 md:grid-cols-2 xl:gap-20">
+        <div class="grid gap-8 lg:gap-14 md:grid-cols-2 xl:gap-20">
           <div class="flex flex-col gap-6">
             <FormInputs
               :full-name="fullName"

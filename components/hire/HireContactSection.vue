@@ -28,14 +28,14 @@ const pageType = computed(() => props.pageType ?? 'default')
       class="flex flex-col gap-y-7 w-full"
     >
       <ClaimTitle
-        class="text-center !pb-0 !mb-0"
+        class="text-center !pb-0 !mb-0 px-0"
         :claim-title="claimTitle"
         :subtitle="isMobile ? undefined : claimSubtitle"
         :title-class="titleClass"
         is-section-title
       />
       <HireFormPage
-        class="py-6 md:py-8 px-0 sm:px-4 xl:px-20"
+        class="py-6 md:py-8 px-0 sm:px-4 lg:px-0 xl:px-20"
         :page-type="pageType"
         :content-type="contentType"
       />

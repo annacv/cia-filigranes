@@ -3,6 +3,7 @@ import OrganizersCard from './OrganizersCard.vue'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { isMobile } = useResponsive()
 </script>
 
 <template>
@@ -11,7 +12,7 @@ const localePath = useLocalePath()
       <ClaimTitle
         class="text-center px-0"
         :claim-title="t('home.organizers.claimTitle')"
-        :subtitle="t('home.organizers.claimSubtitle')"
+        :subtitle="isMobile ? undefined : t('home.organizers.claimSubtitle')"
         is-section-title
       />
       <div

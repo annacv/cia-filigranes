@@ -127,7 +127,7 @@ const slicedEvents = computed(() => {
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>
-        <HireOrganizersSection />
+        <OrganizersSection />
         <ClaimTitle
           :claim-title="t('home.aboutUs.title')"
           is-section-title
