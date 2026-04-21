@@ -18,20 +18,20 @@ export default defineNuxtPlugin(() => {
 /* CSS Variables - Critical for theming */
 :root {
   --color-primary-300: #f6b1bd;
-  --color-primary-400: #ec3636;
+  --color-primary-400: #e03136;
   --color-primary-500: #c80d0d;
   --color-primary-700: #bc1b36;
   --color-secondary-400: #795090;
   --color-secondary-500: #5c2978;
   --color-secondary-700: #491a63;
-  --color-tertiary-400: #E9573D;
+  --color-tertiary-400: #d4433b;
   --color-tertiary-500: #e32906;
   --color-tertiary-700: #cb2303;
   --color-quaternary-300: #fdf48f;
   --color-quaternary-500: #fbdd0b;
   --color-neutral-100: #f7f7f7;
   --color-neutral-200: #eee;
-  --color-neutral-400: #999;
+  --color-neutral-400: #767676;
   --color-neutral-600: #666;
   --color-neutral-800: #333;
   --color-neutral-900: #25272c;
