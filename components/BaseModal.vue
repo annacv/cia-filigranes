@@ -78,7 +78,7 @@ watch(() => props.isOpen, (isOpen) => {
         role="dialog"
         aria-modal="true"
         :aria-label="ariaLabel"
-        class="fixed inset-0 z-100 flex items-center justify-center p-4"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4"
         @click="handleOverlayClick"
       >
         <div class="absolute inset-0 backdrop-saturate-150 bg-black/90" />
@@ -103,7 +103,7 @@ watch(() => props.isOpen, (isOpen) => {
             </button>
           </header>
 
-          <div class="overflow-y-scroll flex-1 px-6 md:px-10 2xl:px-10">
+          <div class="overflow-y-scroll md:overflow-y-hidden flex-1 px-6 md:px-10 2xl:px-10">
             <slot name="content" />
           </div>
 
