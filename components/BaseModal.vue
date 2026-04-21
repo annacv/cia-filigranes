@@ -78,7 +78,7 @@ watch(() => props.isOpen, (isOpen) => {
         role="dialog"
         aria-modal="true"
         :aria-label="ariaLabel"
-        class="fixed inset-0 z-100 flex items-center justify-center p-4"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4"
         @click="handleOverlayClick"
       >
         <div class="absolute inset-0 backdrop-saturate-150 bg-black/90" />
