@@ -42,6 +42,10 @@
     }
   },
   "commonAlt": "Image of the Filigranes Company",
+  "dataSheet": {
+    "leftTitle": "Artistic sheet",
+    "rightTitle": "Technical sheet"
+  },
   "agenda": {
     "claimTitle": "Upcoming shows and workshops",
     "metaDescription": "Check the schedule of shows and workshops by Filigranes Company. Find out where and when you can see us live.",

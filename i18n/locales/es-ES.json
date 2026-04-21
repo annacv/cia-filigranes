@@ -42,6 +42,10 @@
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
+  "dataSheet": {
+    "leftTitle": "Ficha artística",
+    "rightTitle": "Ficha técnica"
+  },
   "agenda": {
     "claimTitle": "Próximas funciones y talleres",
     "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",

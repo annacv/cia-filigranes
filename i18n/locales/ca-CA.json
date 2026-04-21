@@ -42,6 +42,10 @@
     }
   },
   "commonAlt": "Imatge de la Companyia Filigranes",
+  "dataSheet": {
+    "leftTitle": "Fitxa artística",
+    "rightTitle": "Fitxa tècnica"
+  },
   "agenda": {
     "claimTitle": "Properes funcions i tallers",
     "metaDescription": "Consulta l'agenda d'espectacles i tallers de la Companyia Filigranes. Descobreix on i quan pots veure'ns en directe.",

@@ -45,6 +45,10 @@ const props = defineProps({
   hideImage: {
     type: Boolean,
     default: false
+  },
+  showHeadings: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -99,12 +103,15 @@ watchEffect(() => {
         >
           <ul
             :key="`art-${showMore ? 'more' : 'less'}`"
-            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0"
+            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0 text-center lg:text-left"
           >
+            <h3 v-if="showHeadings" class="uppercase text-xs lg:text-sm font-light text-neutral-400">
+              {{ t('dataSheet.leftTitle') }}
+            </h3>
             <li
               v-for="(item, index) in artCard"
               :key="`art-${index}`"
-              class="flex flex-col gap-2 text-sm lg:text-base text-center lg:text-left"
+              class="flex flex-col gap-2 text-sm lg:text-base"
             >
               <p class="font-bold">{{ item.title }}</p>
               <p class="font-light">{{ item.description }}</p>
@@ -139,12 +146,15 @@ watchEffect(() => {
         >
           <ul
             :key="`tech-${showMore ? 'more' : 'less'}`"
-            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0"
+            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0 text-center lg:text-left"
           >
+            <h3 v-if="showHeadings" class="uppercase text-xs lg:text-sm font-light text-neutral-400">
+              {{ t('dataSheet.rightTitle') }}
+            </h3>
             <li
               v-for="(item, index) in techCard"
               :key="`tech-${index}`"
-              class="flex flex-col text-sm lg:text-base text-center lg:text-left"
+              class="flex flex-col text-sm lg:text-base"
               :class="{ 'gap-2': !hideImage }"
             >
               <p class="font-bold">{{ item.title }}</p>

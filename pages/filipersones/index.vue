@@ -97,6 +97,7 @@ const showMore = () => {
           should-clip
         />
         <DataSheet
+          :show-headings="false"
           :tech-card="prices"
           :art-card="stories"
           :image="getImageByRoute('filipersones', 'filigranes-2')"
@@ -123,6 +124,7 @@ const showMore = () => {
         />
         <DataSheet
           ref="dataSheetRef"
+          :show-headings="false"
           :tech-card="currentScenariosRight"
           :art-card="currentScenariosLeft"
           :image="getImageByRoute('filipersones', 'filigranes-5')"
