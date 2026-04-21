@@ -9,6 +9,12 @@ const localizedHomeRoutes = localeObjects
   .map(locale => `/${locale.code}`);
 
 export default defineNuxtConfig({
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   runtimeConfig: {
     googleCalendarApiKey: '',
     googleCalendarId: '',
