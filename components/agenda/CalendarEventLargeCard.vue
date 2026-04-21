@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CalendarEvent } from '~/types'
+import type { CalendarEvent } from '~/types/agenda'
 import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
 import CardImage from '~/components/CardImage.vue'
 import FiliButton from '~/components/FiliButton.vue'

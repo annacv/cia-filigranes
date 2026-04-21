@@ -6,7 +6,8 @@ import { EVENT_TYPE_COLORS } from '~/constants'
 import { useCalendarDisplay } from '~/composables/calendar/use-calendar-display.composable'
 import { useCalendarHistory } from '~/composables/calendar/use-calendar-history.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
-import type { CalendarEvent, ContentType, EventInfoLink } from '~/types'
+import type { ContentType } from '~/types'
+import type { CalendarEvent, EventInfoLink } from '~/types/agenda'
 import { getMatchedContentKeyByTitle } from '~/utils/calendar-events'
 
 const MAX_TRENDS = 6

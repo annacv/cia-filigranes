@@ -1,4 +1,5 @@
-import type { CalendarEvent, GoogleCalendarEvent, ContentType, CardImage, EventInfoLink } from '~/types'
+import type { ContentType, CardImage } from '~/types'
+import type { CalendarEvent, EventInfoLink, GoogleCalendarEvent } from '~/types/agenda'
 import { getImageByRoute } from '~/utils/image-by-route'
 
 const FILI_SHOWS: Record<string, string> = {

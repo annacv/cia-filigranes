@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
-import type { EventTypeItem } from '~/types'
+import type { EventTypeItem } from '~/types/agenda'
 import EventTypeDropdown from '~/components/agenda/EventTypeDropdown.vue'
 
 const props = defineProps({

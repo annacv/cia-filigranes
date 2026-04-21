@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { CalendarEvent, ContentType } from '~/types'
+import type { ContentType } from '~/types'
+import type { CalendarEvent } from '~/types/agenda'
 import CalendarEventCard from '~/components/agenda/CalendarEventCard.vue'
 import BaseMessage from '~/components/BaseMessage.vue'
 import BaseLoadingDots from '~/components/BaseLoadingDots.vue'
