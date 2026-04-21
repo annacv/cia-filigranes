@@ -78,7 +78,7 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'm
         class="flex-shrink-0 text-white !w-3 !h-3"
         aria-hidden="true"
       />
-      <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium">
+      <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium truncate">
         <span :class="{ 'line-clamp-1': scheduleSize !== 'large' }">{{ event.description }}</span>
       </p>
     </footer>
