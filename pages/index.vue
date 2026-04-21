@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue";
+import HeroCover from "~/components/cover/HeroCover.vue";
 import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
@@ -60,9 +62,7 @@ const slicedEvents = computed(() => {
       <template #content>
         <h1>
           <span class="sr-only">{{ t('routes.vint-anys') }}</span>
-          <VintAnysBrand
-            class="w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"
-          />
+          <BaseBrand slug="vint-anys" />
         </h1>
       </template>
     </HeroCover>

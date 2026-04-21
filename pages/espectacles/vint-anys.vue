@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseBrand from "~/components/cover/BaseBrand.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
@@ -48,9 +50,7 @@ const summaryButton = computed(() => {
       schedule-content-key="vint-anys"
     >
       <template #content>
-        <VintAnysBrand
-          class="-scale-x-100 w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"
-        />
+        <BaseBrand slug="vint-anys" />
       </template>
     </HeroCover>
     <MainContent>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CoverTitle from "~/components/cover/CoverTitle.vue";
+import HeroCover from "~/components/cover/HeroCover.vue";
 import type { ContentType, ImageRoute } from "~/types";
 import { getItemsByRoute } from "~/utils/items-by-route";
 
@@ -52,7 +54,8 @@ const synopsisItems = computed(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('workshops.hero.title')"
           title-class="max-w-[324px] md:max-w-[448px] lg:max-w-[504px]"
         />

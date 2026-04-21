@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CoverTitle from '~/components/cover/CoverTitle.vue'
+import HeroCover from '~/components/cover/HeroCover.vue'
 import { BULK_CARD_IDS } from '~/constants/downloads'
 import { useSpecificDownloads } from '~/composables/use-specific-downloads.composable'
 import { contentToImageRoute, resolveBulkAsset, toDownloadLocale } from '~/utils/downloads-resolver'
@@ -117,7 +119,8 @@ function disabledGroupFor(contentType: MultiselectContentType) {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('descarregues.hero.title')"
           title-class="max-w-[312px] md:max-w-[456px] lg:max-w-[538px]"
         />

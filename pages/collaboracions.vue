@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CoverTitle from "~/components/cover/CoverTitle.vue";
+import HeroCover from "~/components/cover/HeroCover.vue";
 import { COLLABORATION_ENTRIES } from "~/constants";
 import type { ContentType, ImageRoute } from "~/types";
 
@@ -47,7 +49,8 @@ const synopsisItems = computed(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('collaborations.hero.title')"
           title-class="max-w-[310px] md:max-w-[490px] lg:max-w-[598px]"
         />

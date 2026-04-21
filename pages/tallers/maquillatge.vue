@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CoverTitle from "~/components/cover/CoverTitle.vue"
+import HeroCover from "~/components/cover/HeroCover.vue"
 import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
 import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
 import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
