@@ -50,7 +50,7 @@ const summaryButton = computed(() => {
       schedule-content-key="plis-plas"
     >
       <template #content>
-        <BaseBrand slug="plis-plas" :fallback-slice-end="1" />
+        <BaseBrand slug="plis-plas" />
       </template>
     </HeroCover>
     <MainContent>

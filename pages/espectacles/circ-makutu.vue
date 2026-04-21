@@ -53,11 +53,7 @@ const summaryButton = computed(() => {
       background-position="center 90%"
     >
       <template #content>
-        <BaseBrand
-          slug="circ-makutu"
-          fallback-title-class="max-w-[282px] md:max-w-[340px] lg:max-w-[408px]"
-          :fallback-slice-end="2"
-        />
+        <BaseBrand slug="circ-makutu" />
       </template>
     </HeroCover>
     <MainContent>

@@ -49,11 +49,7 @@ const summaryButton = computed(() => {
       schedule-content-key="circ-trinxeta"
     >
       <template #content>
-        <BaseBrand
-          slug="circ-trinxeta"
-          fallback-title-class="lg:max-w-[548px]"
-          :fallback-slice-end="2"
-        />
+        <BaseBrand slug="circ-trinxeta" />
       </template>
     </HeroCover>
     <MainContent>

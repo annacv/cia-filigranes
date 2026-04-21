@@ -50,11 +50,7 @@ const summaryButton = computed(() => {
       schedule-content-key="freak-frac"
     >
       <template #content>
-        <BaseBrand
-          slug="freak-frac"
-          fallback-title-class="md:max-w-[466px] lg:max-w-[560px]"
-          :fallback-slice-end="2"
-        />
+        <BaseBrand slug="freak-frac" />
       </template>
     </HeroCover>
     <MainContent>

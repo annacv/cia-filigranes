@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { LocaleCode } from '~/types'
-import CoverTitle from '~/components/cover/CoverTitle.vue'
 
 import CircFilixicBrand from '~/assets/brands/circ-filixic-brand.svg?raw'
 import CircFilixicBrandEn from '~/assets/brands/circ-filixic-brand-en.svg?raw'
@@ -35,8 +34,6 @@ const DEFAULT_SIZE_CLASS = 'w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl
 
 const props = defineProps<{
   slug: BrandSlug
-  fallbackTitleClass?: string
-  fallbackSliceEnd?: number
 }>()
 
 const { locale, t } = useI18n()
@@ -82,6 +79,7 @@ const brandMarkup = computed(() => {
   const selectedBrand = brandBySlug[props.slug] as { ca: string; en?: string; es?: string }
   const markup = selectedBrand[localeCode.value] ?? selectedBrand.ca
 
+  // This avoids inheriting nuxt icon classes
   return markup.replace(
     '<svg',
     '<svg aria-hidden="true" focusable="false"',
@@ -92,18 +90,10 @@ const brandMarkup = computed(() => {
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <span
-    v-if="brandMarkup"
     :class="[DEFAULT_SIZE_CLASS, 'block h-auto md:mt-8 lg:mt-0']"
     role="img"
     :aria-label="brandAlt"
     v-html="brandMarkup"
-  />
-  <!-- eslint-enable vue/no-v-html -->
-  <CoverTitle
-    v-else
-    :title="brandAlt"
-    :title-class="fallbackTitleClass"
-    :slice-end="fallbackSliceEnd"
   />
 </template>
 
