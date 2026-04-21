@@ -45,8 +45,8 @@ const primaryFilterOptions = computed<EventTypeItem[]>(() => {
     {
       value: null,
       labelKey: 'agenda.filters.all',
-      activeIndicatorClass: 'bg-primary-500',
-      inactiveIndicatorClass: 'bg-primary-300',
+      activeIndicatorClass: 'bg-gradient-primary',
+      inactiveIndicatorClass: 'bg-gradient-primary opacity-50',
     },
     ...EVENT_TYPE_ITEMS.map(item => ({
       value: item.value,
