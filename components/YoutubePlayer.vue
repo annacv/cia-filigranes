@@ -69,7 +69,7 @@ const dynamicPlayerVars = computed(() => ({
             </div>
           </template>
         </ScriptYouTubePlayer>
-        <LegalConsentPlaceholder
+        <ConsentPlaceholder
           v-else
           key="placeholder"
           :title="t('consent.youtube.title')"

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import HeroCover from "~/components/cover/HeroCover.vue";
 import { getImageByRoute } from "~/utils/image-by-route";
 
 const { t } = useI18n();

@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import BaseBrand from "~/components/cover/BaseBrand.vue"
-import HeroCover from "~/components/cover/HeroCover.vue"
 import { useShowAgenda } from "~/composables/calendar/use-event-calendar.composable"
-import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
-import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { getImageByRoute } from "~/utils/image-by-route"
 import { getItemIndex } from "~/utils/get-item-index"
 
@@ -87,7 +83,7 @@ const summaryButton = computed(() => {
             :claim-title="t('shows.liveClaimTitle', { title: t('routes.circ-trinxeta') })"
             is-section-title
           />
-          <AgendaFilters
+          <CalendarFilters
             v-model:selected-primary-filter="selectedLiveShowFilter"
             v-model:show-only-open-to-public="showOnlyOpenToPublic"
             :primary-filter-options="liveShowFilterOptions"

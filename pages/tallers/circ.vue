@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import CoverTitle from "~/components/cover/CoverTitle.vue"
-import HeroCover from "~/components/cover/HeroCover.vue"
 import { useWorkshopAgenda } from "~/composables/calendar/use-event-calendar.composable"
-import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
-import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import { getImageByRoute } from "~/utils/image-by-route"
 import { getItemIndex } from "~/utils/get-item-index"
 
@@ -98,7 +94,7 @@ const summaryButton = computed(() => {
             "
             is-section-title
           />
-          <AgendaFilters
+          <CalendarFilters
             v-model:selected-primary-filter="selectedWorkshopFilter"
             v-model:show-only-open-to-public="showOnlyOpenToPublic"
             :primary-filter-options="workshopFilterOptions"

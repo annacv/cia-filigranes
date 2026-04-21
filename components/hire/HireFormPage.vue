@@ -2,13 +2,6 @@
 import type { ContentType } from '~/types'
 import { useHireFormDisplay } from '~/composables/form/use-hire-form-display.composable'
 import { useHireContractForm } from '~/composables/form/use-hire-contract-form.composable'
-import FormMessages from '~/components/form/FormMessages.vue'
-import FormSelectDropdown from '~/components/form/FormSelectDropdown.vue'
-import FormInputs from '~/components/form/FormInputs.vue'
-import FormTextArea from '~/components/form/FormTextArea.vue'
-import FormButtons from '~/components/form/FormButtons.vue'
-import FormFooter from '~/components/form/FormFooter.vue'
-import FormHoneypot from '~/components/form/FormHoneypot.vue'
 
 const props = withDefaults(
   defineProps<{

@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import CoverTitle from "~/components/cover/CoverTitle.vue"
-import HeroCover from "~/components/cover/HeroCover.vue"
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { EVENT_TYPE_ITEMS } from "~/constants"
 import type { ContentType } from "~/types"
 import type { EventTypeItem } from "~/types/agenda"
-import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
-import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import CalendarTrends from "~/components/agenda/CalendarTrends.vue"
 
 const { t } = useI18n()
 const { events, pending, error, ensureLoaded } = useCalendarEvents()
@@ -84,7 +79,7 @@ const primaryFilterOptions = computed<EventTypeItem[]>(() => {
         />
       </template>
       <template #wrapped>
-        <AgendaFilters
+        <CalendarFilters
           v-model:selected-primary-filter="selectedEventType"
           v-model:show-only-open-to-public="showOnlyOpenToPublic"
           :primary-filter-options="primaryFilterOptions"

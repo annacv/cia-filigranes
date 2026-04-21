@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import CardImage from '~/components/CardImage.vue'
 import CircleIcon from '~/assets/icons/circle.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 import { EVENT_TYPE_COLORS } from '~/constants'

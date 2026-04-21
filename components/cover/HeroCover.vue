@@ -6,7 +6,6 @@ import { useScrollState } from "~/composables/use-scroll-state.composable";
 import { useHeroFirstScrollHijack } from "~/composables/hero-scroll/use-hero-first-scroll-hijack.composable";
 import { scrollToAnchor } from '~/composables/hero-scroll/follow-anchor-animation'
 import { isSchedulableContentType, useContentSchedule } from "~/composables/calendar/use-content-schedule.composable";
-import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, HERO_COVER_ANIMATION_DURATION_MS, IN_PAGE_ANCHOR_HASHES } from "~/constants";
 import type { ImageRoute, ContentType } from "~/types";
 

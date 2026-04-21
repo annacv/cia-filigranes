@@ -5,7 +5,6 @@ import { useIntersection80 } from "~/composables/use-intersection-percentage.com
 import type { CardImage, ContentType, HireContractContext } from "~/types";
 import ArrowRight from "~/assets/icons/arrow-right.svg";
 import ArrowDown from "~/assets/icons/arrow-down.svg";
-import HireFormModal from "~/components/hire/HireFormModal.vue";
 
 const props = defineProps({
   alt: {
