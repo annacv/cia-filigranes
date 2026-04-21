@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import ChevronDown from '~/assets/icons/chevron-down.svg'
 import { useHireFormDisplay } from '~/composables/form/use-hire-form-display.composable'
-import type { EventTypeItem, } from '~/types'
+import type { EventTypeItem } from '~/types/agenda'
 import { EVENT_TYPE_COLORS, ROUTES_INDEX } from '~/constants'
 
 const props = defineProps({

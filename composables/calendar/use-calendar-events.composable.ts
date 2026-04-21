@@ -1,5 +1,5 @@
 import { onMounted } from 'vue'
-import type { CalendarEvent } from '~/types'
+import type { CalendarEvent } from '~/types/agenda'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
 import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
 

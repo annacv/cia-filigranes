@@ -1,4 +1,4 @@
-import type { CalendarApiResponse } from '~/types'
+import type { CalendarApiResponse } from '~/types/agenda'
 
 interface FetchGoogleCalendarEventsOptions {
   apiKey: string

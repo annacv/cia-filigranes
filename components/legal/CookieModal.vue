@@ -26,7 +26,7 @@ const handleSave = () => {
 
 <template>
   <BaseModal
-    :aria-label="$t('cookies.modal.title')"
+    :ariaLabel="$t('cookies.modal.title')"
     :is-open="showModal"
     :title="$t('cookies.modal.title')"
     @close="closeModal"

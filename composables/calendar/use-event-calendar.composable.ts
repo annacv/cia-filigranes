@@ -1,7 +1,8 @@
 import { EVENT_TYPE_ITEMS } from '~/constants'
 import { getMatchedContentKeyByTitle, useCalendarEvents } from '~/composables/calendar/use-calendar-events.composable'
 import { useCalendarLayout } from '~/composables/calendar/use-calendar-layout.composable'
-import type { ContentType, EventTypeItem } from '~/types'
+import type { ContentType } from '~/types'
+import type { EventTypeItem } from '~/types/agenda'
 
 const ALL_SHOWS_FILTER_VALUE = 'all-shows'
 const ALL_WORKSHOPS_FILTER_VALUE = 'all-workshops'

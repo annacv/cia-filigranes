@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import CoverTitle from '~/components/cover/CoverTitle.vue'
-import HeroCover from '~/components/cover/HeroCover.vue'
 import { BULK_CARD_IDS } from '~/constants/downloads'
 import { useSpecificDownloads } from '~/composables/use-specific-downloads.composable'
 import { contentToImageRoute, resolveBulkAsset, toDownloadLocale } from '~/utils/downloads-resolver'
 import { getImageByRoute } from '~/utils/image-by-route'
 import { getItemsByRoute } from '~/utils/items-by-route'
-import BulkDownloadCard from '~/components/downloads/BulkDownloadCard.vue'
-import MultiselectDownloadCard from '~/components/downloads/MultiselectDownloadCard.vue'
-import ItemDownloadCard from '~/components/downloads/ItemDownloadCard.vue'
 import type { BulkCardId, MultiselectContentType } from '~/types/downloads'
 
 const { t, locale } = useI18n()

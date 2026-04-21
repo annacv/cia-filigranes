@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ArrowDown from '~/assets/icons/arrow-down.svg'
-import FormMultiselectDropdown from '~/components/form/FormMultiselectDropdown.vue'
 import type { MultiselectContentType, SpecificActionId } from '~/types/downloads'
 
 const props = defineProps<{

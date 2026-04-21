@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import CoverTitle from "~/components/cover/CoverTitle.vue";
-import HeroCover from "~/components/cover/HeroCover.vue";
 import { COLLABORATION_ENTRIES } from "~/constants";
 import type { ContentType, ImageRoute } from "~/types";
 

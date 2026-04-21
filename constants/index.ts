@@ -1,4 +1,5 @@
-import type { ContentType, EventTypeItem } from "~/types"
+import type { ContentType } from "~/types"
+import type { EventTypeItem } from "~/types/agenda"
 import { routePages } from '~/i18n/custom-routes'
 
 export const ROUTES_INDEX = [

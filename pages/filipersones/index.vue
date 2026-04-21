@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import HeroCover from "~/components/cover/HeroCover.vue";
 import { useElementSize } from '@vueuse/core';
 import type { ContentType, ImageRoute } from "~/types";
 import { getImageByRoute } from "~/utils/image-by-route";

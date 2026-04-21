@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import type { FormSubmissionStatus } from '~/composables/form/use-form-submission.composable'
-import BaseMessage from '~/components/BaseMessage.vue'
 import ExclamationMark from '~/assets/icons/exclamation-mark.svg'
 import SuccessMark from '~/assets/icons/success-mark.svg'
-import BaseLoadingDots from '~/components/BaseLoadingDots.vue'
 
 const props = withDefaults(
   defineProps<{

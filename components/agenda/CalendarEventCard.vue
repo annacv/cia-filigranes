@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import type { CalendarEvent } from '~/types'
-import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
-import CardImage from '~/components/CardImage.vue'
-import FiliButton from '~/components/FiliButton.vue'
+import type { CalendarEvent } from '~/types/agenda'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useCalendarDisplay } from '~/composables/calendar/use-calendar-display.composable'
 

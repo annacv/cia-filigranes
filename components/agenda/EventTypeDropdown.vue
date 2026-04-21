@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { EventTypeItem } from '~/types'
+import type { EventTypeItem } from '~/types/agenda'
 
 const { t } = useI18n()
 

@@ -103,7 +103,7 @@ watch(() => props.isOpen, (isOpen) => {
             </button>
           </header>
 
-          <div class="overflow-y-scroll md:overflow-y-hidden flex-1 px-6 md:px-10 2xl:px-10">
+          <div class="overflow-y-scroll flex-1 px-6 md:px-10 2xl:px-10">
             <slot name="content" />
           </div>
 

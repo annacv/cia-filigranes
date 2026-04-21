@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
-import type { EventTypeItem } from '~/types'
-import EventTypeDropdown from '~/components/agenda/EventTypeDropdown.vue'
+import type { EventTypeItem } from '~/types/agenda'
 
 const props = defineProps({
   selectedPrimaryFilter: {

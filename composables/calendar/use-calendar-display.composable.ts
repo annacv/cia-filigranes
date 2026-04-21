@@ -1,4 +1,5 @@
-import type { CalendarEvent, ContentType } from '~/types'
+import type { ContentType } from '~/types'
+import type { CalendarEvent } from '~/types/agenda'
 import { useDateFormat } from '~/composables/calendar/use-date-format.composable'
 import { useImageAlt } from '~/composables/use-image-alt.composable'
 import { getRouteTranslationKeyByTitle } from '~/utils/calendar-events'
