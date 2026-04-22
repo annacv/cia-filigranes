@@ -35,7 +35,7 @@ const getImageAlt = () => useImageAlt('contact');
       <template #wrapped>
         <HireContactSection
           class="pt-8"
-          title-class="font-grotesk lg:text-5xl !p-0 !leading-none"
+          title-class="lg:text-5xl !p-0 !leading-none"
           :claim-title="t('hire.pageSectionTitleAlternative')"
           content-type="contact"
         />
@@ -50,7 +50,7 @@ const getImageAlt = () => useImageAlt('contact');
         >
           <template #content>
             <div class="flex flex-col items-start gap-8 py-5 lg:py-20">
-              <h2 class="font-grotesk text-3xl lg:text-5xl">
+              <h2 class="font-bold text-3xl lg:text-5xl">
                 {{ t('contact.rrss.title') }}
               </h2>
               <p class="text-lg lg:text-xl">
