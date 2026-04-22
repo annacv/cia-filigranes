@@ -20,8 +20,8 @@ const { t } = useI18n()
 
 const buttonClass = computed(() =>
   props.contentType === 'workshops'
-    ? 'button-solid-secondary hover:bg-secondary-500'
-    : 'button-solid-primary hover:bg-primary-500'
+    ? 'button-solid-secondary hover:bg-secondary-500 hover:border-secondary-500'
+    : 'button-solid-primary hover:bg-primary-500 hover:border-primary-500'
 )
 
 </script>
