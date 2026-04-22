@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="h-full flex flex-col gap-4 items-start border border-white p-6 text-white">
+  <article class="h-full flex flex-col gap-4 items-start border border-white p-6 text-white md:min-h-[277px]">
     <h3 class="mx-auto text-center text-xl font-semibold">
       {{ title }}
     </h3>
