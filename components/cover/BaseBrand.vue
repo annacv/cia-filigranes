@@ -31,6 +31,7 @@ type BrandSlug =
   | 'vint-anys'
 
 const DEFAULT_SIZE_CLASS = 'w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[648px]'
+const FREAK_FRAC_SIZE_CLASS = 'w-[350px] md:w-[422px] lg:w-[522px] xl:w-[622px] 2xl:w-[722px]'
 
 const props = defineProps<{
   slug: BrandSlug
@@ -90,7 +91,7 @@ const brandMarkup = computed(() => {
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <span
-    :class="[DEFAULT_SIZE_CLASS, 'block h-auto md:mt-8 lg:mt-0']"
+    :class="[props.slug === 'freak-frac' ? FREAK_FRAC_SIZE_CLASS : DEFAULT_SIZE_CLASS, 'block h-auto md:mt-8 lg:mt-0']"
     role="img"
     :aria-label="brandAlt"
     v-html="brandMarkup"
