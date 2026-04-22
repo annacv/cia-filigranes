@@ -169,7 +169,7 @@ const getTrendButton = (trend: Pick<TrendItem, 'events'>): EventInfoLink | null 
             :href="trend.button.href"
             :target="trend.button.target"
             :text="t(trend.button.text)"
-            :button-class="[getTrendButtonClass(trend.eventType), '!px-2 !py-0.5 !text-xs md:!text-sm absolute bottom-2 right-2 md:bottom-4 z-10']"
+            :button-class="[getTrendButtonClass(trend.eventType), '!px-2 !py-0.5 !text-xs md:!text-sm absolute bottom-2 right-2 md:bottom-4 z-2']"
           >
             <template #icon-right>
               <ArrowRight class="!mt-0" />
