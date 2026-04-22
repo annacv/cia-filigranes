@@ -88,7 +88,7 @@ useHead({
 // Block browser scroll restoration immediately
 // This must be set before any navigation happens
 if (import.meta.client && typeof history !== 'undefined') {
-  history.scrollRestoration = 'manual'
+  history.scrollRestoration = 'manual';
 }
 
 nuxtApp.hook("page:finish", () => {
