@@ -1595,7 +1595,7 @@
         "description": "Get the information dossier and images of our tailor-made performances in a single zip file."
       },
       "logo": {
-        "description": "The download is a zip file containing three versions of the logo in .png and .svg formats: white with a transparent background, white with a red background, and white with a black background."
+        "description": "The download is a zip file containing three versions of the logo in png and svg formats: white with a transparent background, white with a red background, and white with a black background."
       }
     },
     "specific": {

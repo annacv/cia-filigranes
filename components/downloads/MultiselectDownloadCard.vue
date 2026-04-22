@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <article class="h-full flex flex-col gap-4 items-start border border-white p-6 text-white">
+  <article class="h-full flex flex-col gap-4 items-start border border-white p-6 md:px-4 lg:px-3.5 xl:px-5 2xl:px-6 text-white md:max-h-[277px]">
     <h3 class="mx-auto text-center text-xl font-semibold mb-4">
       {{ title }}
     </h3>

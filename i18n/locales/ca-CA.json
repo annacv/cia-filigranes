@@ -1595,7 +1595,7 @@
         "description": "Accedeix al dossier informatiu i a imatges de les nostres Animacions a la Carta en un sol arxiu zip."
       },
       "logo": {
-        "description": "La descàrrega és un arxiu zip que conté tres versions del logotip en format .png i .svg: blanc amb fons transparent, blanc amb fons vermell, i blanc amb fons negre."
+        "description": "La descàrrega és un arxiu zip que conté tres versions del logotip en format png i svg: blanc amb fons transparent, blanc amb fons vermell, i blanc amb fons negre."
       }
     },
     "specific": {

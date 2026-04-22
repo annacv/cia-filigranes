@@ -131,7 +131,7 @@ function disabledGroupFor(contentType: MultiselectContentType) {
               :subtitle="isMobile ? undefined : t('descarregues.claimSubtitle')"
               is-section-title
             />
-            <div class="pb-5 grid w-full grid-cols-1 gap-3 2xl:gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div class="pb-5 grid w-full grid-cols-1 gap-3 lg:gap-1 xl:gap-3 2xl:gap-5 sm:grid-cols-2 lg:grid-cols-4">
               <BulkDownloadCard
                 v-for="cardId in BULK_CARD_IDS"
                 :key="cardId"
@@ -156,10 +156,10 @@ function disabledGroupFor(contentType: MultiselectContentType) {
           <section
             v-for="row in SPECIFIC_ROWS"
             :key="row.contentType"
-            :class="['w-full py-6 md:py-16', row.backgroundClass]"
+            :class="['w-full py-6 sm:py-16', row.backgroundClass]"
           >
             <div class="grid-layout">
-              <div class="layout-cols grid grid-cols-1 gap-3 2xl:gap-5 md:grid-cols-8 lg:grid-cols-6 xl:grid-cols-4 md:items-stretch">
+              <div class="layout-cols grid grid-cols-1 gap-3 2xl:gap-5 sm:grid-cols-8 lg:grid-cols-6 xl:grid-cols-11 2xl:grid-cols-4 sm:items-stretch">
                 <MultiselectDownloadCard
                   v-model="selection[row.contentType]"
                   :title="t(row.titleKey)"
@@ -168,12 +168,12 @@ function disabledGroupFor(contentType: MultiselectContentType) {
                   :i18n-prefix="row.i18nPrefix"
                   :busy="specificBusy"
                   :disabled="disabledGroupFor(row.contentType)"
-                  class="md:col-span-3 lg:col-span-2 xl:col-span-1"
+                  class="sm:col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-3 2xl:col-span-1"
                   @download="(action) => downloadGroup(row.contentType, action)"
                 />
-                <div class="min-w-0 md:col-span-5 lg:col-span-4 xl:col-span-3">
+                <div class="min-w-0 sm:col-span-4 md:col-span-5 lg:col-span-4 xl:col-span-8 2xl:col-span-3">
                   <SlidingPanel button-class="-top-4 xl:-top-6" class="h-full !py-0">
-                    <ul class="flex gap-3 md:gap-1">
+                    <ul class="flex gap-3 sm:gap-1">
                       <li
                         v-for="option in multiselectOptions[row.contentType]"
                         :key="option.value"

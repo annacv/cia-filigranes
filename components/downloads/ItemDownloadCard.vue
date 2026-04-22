@@ -27,7 +27,7 @@ const buttonClass = computed(() =>
 </script>
 
 <template>
-  <article class="relative group w-[277px] 2xl:w-[320px] aspect-square contain-card">
+  <article class="relative group w-[277px] aspect-square contain-card">
     <CardImage
       :image="image"
       :content-type="contentType"

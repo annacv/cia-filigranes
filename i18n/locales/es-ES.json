@@ -1595,7 +1595,7 @@
         "description": "Accede al dosier informativo y a imágenes de nuestras Animaciones a la Carta en un solo archivo zip."
       },
       "logo": {
-        "description": "La descarga es un archivo zip que contiene tres versiones del logotipo en formato .png y .svg: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
+        "description": "La descarga es un archivo zip que contiene tres versiones del logotipo en formato png y svg: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
       }
     },
     "specific": {
