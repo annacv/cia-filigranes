@@ -1,5 +1,5 @@
 import { onMounted } from 'vue'
-import type { CalendarEvent } from '~/types'
+import type { CalendarEvent } from '~/types/agenda'
 import { transformGoogleCalendarEvents } from '~/utils/calendar-events'
 import { fetchGoogleCalendarEvents } from '~/utils/google-calendar'
 
@@ -19,6 +19,26 @@ interface SessionCachedData {
   events: CalendarEvent[]
   maxResults?: number
   timestamp: number
+}
+
+const toSerializableError = (error: unknown) => {
+  if (error instanceof Error) {
+    return {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+    }
+  }
+
+  if (typeof error === 'object' && error !== null) {
+    try {
+      return JSON.parse(JSON.stringify(error))
+    } catch {
+      return String(error)
+    }
+  }
+
+  return error
 }
 
 const getSessionCachedEvents = (): SessionCachedData | null => {
@@ -129,8 +149,10 @@ export const useCalendarEvents = (options?: UseCalendarEventsOptions) => {
         const response = await fetchPrerenderSnapshot()
         applySharedEvents(response, maxResults)
       } catch (e) {
-        console.error('[useCalendarEvents] Failed to fetch prerender snapshot:', e)
-        errorMessage.value = e instanceof Error ? e.message : 'Failed to fetch calendar events'
+        // On SSR, snapshot fetch can fail due to external API limits/referrer rules.
+        // Keep this non-blocking so hydration can retry from the browser and recover.
+        console.warn('[useCalendarEvents] Failed to fetch prerender snapshot; deferring to client fetch:', toSerializableError(e))
+        errorMessage.value = null
       } finally {
         pending.value = false
       }
@@ -179,7 +201,7 @@ export const useCalendarEvents = (options?: UseCalendarEventsOptions) => {
         applySharedEvents(response, maxResults, true)
         setSessionCachedEvents(response, maxResults)
       } catch (e) {
-        console.error('[useCalendarEvents] Failed to fetch events:', e)
+        console.error('[useCalendarEvents] Failed to fetch events:', toSerializableError(e))
         if (!hasExistingEvents) {
           errorMessage.value = e instanceof Error ? e.message : 'Failed to fetch calendar events'
         }

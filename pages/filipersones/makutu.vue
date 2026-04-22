@@ -87,23 +87,20 @@ const makutuAlt = getImageAlt('makutu')
           }"
           background-position="center 30%"
           :is-reversed="!isMobile"
-        />
-        <HireFili
-          class="py-12"
-          :title="t('shows.hire.titleSingle')"
-          description="shows.hire.description"
-          text-color="text-white"
-          bg-color="bg-highlight-primary"
+          :hire-contract="{ kind: 'show', productKey: 'circ-makutu' }"
         />
       </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="filipersones_makutu-3"
+          image-route="filipersones"
+          :alt="makutuAlt"
+          background-position="center 0%"
+        />
+        <HireFiliBanner :title="t('home.hire.title')" description="home.hire.description" />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="filipersones_makutu-3"
-      image-route="filipersones"
-      :alt="makutuAlt"
-      background-position="center 0%"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

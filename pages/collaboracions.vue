@@ -47,7 +47,8 @@ const synopsisItems = computed(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('collaborations.hero.title')"
           title-class="max-w-[310px] md:max-w-[490px] lg:max-w-[598px]"
         />
@@ -66,9 +67,11 @@ const synopsisItems = computed(() => {
           :alt="t('collaborations.hero.alt')"
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('collaborations.hire.title')"
           description="collaborations.hire.description"
+          text-color="text-white"
+          bg-color="bg-primary-500"
         />
         <BottomNavigation />
         <TheSupporters />

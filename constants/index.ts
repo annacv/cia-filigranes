@@ -1,4 +1,5 @@
-import type { ContentType, EventTypeFilterItem } from "~/types"
+import type { ContentType } from "~/types"
+import type { EventTypeItem } from "~/types/agenda"
 import { routePages } from '~/i18n/custom-routes'
 
 export const ROUTES_INDEX = [
@@ -25,7 +26,10 @@ export const ROUTES_INDEX = [
   },
   {
     name: "contacte"
-  }
+  },
+  {
+    name: "descarregues"
+  },
 ]
 
 export const LOCALE_ROUTES = routePages as Record<
@@ -104,6 +108,16 @@ export const GLOB_IMPORTS = {
     import: 'default',
   }) as Record<string, () => Promise<string>>,
 
+  mobileDescarreguesImages: import.meta.glob('~/assets/images/mobile/descarregues/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
+  desktopDescarreguesImages: import.meta.glob('~/assets/images/desktop/descarregues/*.webp', {
+    eager: false,
+    import: 'default',
+  }) as Record<string, () => Promise<string>>,
+
   mobileImages: import.meta.glob('~/assets/images/mobile/*.webp', {
     eager: false,
     import: 'default',
@@ -163,6 +177,33 @@ export const PERFORMANCES_IMG = [
   }
 ]
 
+export const PERFORMANCES_GALLERY_IMG = [
+  {
+    imageName: 'animacions_foc-2',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_circ-epoca',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_forner',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_foc-3',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_cuiners-2',
+    imageRoute: 'animacions' as const
+  },
+  {
+    imageName: 'animacions_foc',
+    imageRoute: 'animacions' as const
+  },
+]
+
 export const CONTACT = {
   "email": "ciafiligranes@gmail.com",
   "adress": "Carrer de Sant Leopold, 63. Local 5. 08221. Terrassa (Barcelona)",
@@ -214,27 +255,24 @@ export const EVENT_TYPE_COLORS: Record<
   performances: { text: 'text-tertiary-500', bg: 'bg-tertiary-500', bgLight: 'bg-tertiary-300' },
 }
 
-export const EVENT_TYPE_FILTER_ITEMS: EventTypeFilterItem[] = [
+export const EVENT_TYPE_ITEMS: EventTypeItem[] = [
   {
-    type: 'shows',
-    labelKey: 'agenda.filters.shows',
+    value: 'shows',
+    labelKey: 'routes.espectacles',
     activeIndicatorClass: EVENT_TYPE_COLORS.shows.bg,
     inactiveIndicatorClass: EVENT_TYPE_COLORS.shows.bgLight,
-    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.shows.bg} group-focus-visible:${EVENT_TYPE_COLORS.shows.bg}`,
   },
   {
-    type: 'workshops',
-    labelKey: 'agenda.filters.workshops',
+    value: 'workshops',
+    labelKey: 'routes.tallers',
     activeIndicatorClass: EVENT_TYPE_COLORS.workshops.bg,
     inactiveIndicatorClass: EVENT_TYPE_COLORS.workshops.bgLight,
-    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.workshops.bg} group-focus-visible:${EVENT_TYPE_COLORS.workshops.bg}`,
   },
   {
-    type: 'performances',
-    labelKey: 'agenda.filters.performances',
+    value: 'performances',
+    labelKey: 'routes.animacions',
     activeIndicatorClass: EVENT_TYPE_COLORS.performances.bg,
     inactiveIndicatorClass: EVENT_TYPE_COLORS.performances.bgLight,
-    interactiveActiveIndicatorClass: `group-hover:${EVENT_TYPE_COLORS.performances.bg} group-focus-visible:${EVENT_TYPE_COLORS.performances.bg}`,
   },
 ]
 

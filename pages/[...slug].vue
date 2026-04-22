@@ -8,10 +8,7 @@ import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from "~/constants";
 definePageMeta({
   name: 'catch-all',
   path: '/:pathMatch(.*)*',
-  meta: {
-    layout: 'error',
-    headerBackgroundColor: '#c80d0d'
-  }
+  headerBackgroundColor: '#c80d0d'
 });
 
 const { t } = useI18n();
@@ -41,7 +38,7 @@ const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEAD
           </h1>
           <p class="font-bold text-center !leading-tight text-lg lg:text-xl text-white mb-5"
           >{{ t('404.title') }}</p>
-          <p class="w-[280px] text-center !leading-tight text-lg lg:text-xl text-white mb-5"
+          <p class="text-center !leading-tight text-lg lg:text-xl text-white mb-5"
           >{{ t('404.description') }}</p>
           <FiliButton
             href="/"
@@ -57,6 +54,10 @@ const headerHeight = computed(() => isMobile.value ? HEADER_MOBILE_HEIGHT : HEAD
             </template>
           </FiliButton>
         </div>
+      </template>
+      <template #unwrappedBottom>
+        <BottomNavigation />
+        <TheSupporters />
       </template>
     </MainContent>
   </div>

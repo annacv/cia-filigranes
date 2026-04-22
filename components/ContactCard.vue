@@ -44,7 +44,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
               />
             </div>
             <div v-else key="placeholder" class="w-full">
-              <LegalConsentPlaceholder
+              <ConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
                 purpose="maps"
@@ -53,7 +53,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
           </Transition>
           <template #fallback>
             <div class="w-full aspect-video bg-gray-200 flex flex-col items-center justify-center text-gray-600 p-4 gap-2">
-              <LegalConsentPlaceholder
+              <ConsentPlaceholder
                 :title="t('consent.map.title')"
                 :description="t('consent.map.consentRequired')"
                 purpose="maps"
@@ -63,7 +63,7 @@ const mobileClip = 'polygon(0% 0%, 100% 0%, 100% 96%, 50% 100%, 0% 96%)';
         </ClientOnly>
       </div>
       <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 lg:pr-0 py-10 lg:py-20 2xl:py-36 order-0 lg:order-1">
-        <h1 class="font-grotesk text-4xl lg:text-5xl">
+        <h1 class="font-bold text-4xl lg:text-5xl">
           {{ t('contact.info.title') }}
         </h1>
         <h2 class="text-3xl lg:text-4xl mb-4">

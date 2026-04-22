@@ -85,23 +85,23 @@ const trinxetaAlt = getImageAlt('trinxeta')
             href: '/espectacles/circ-trinxeta'
           }"
           :is-reversed="!isMobile"
-        />
-        <HireFili
-          class="py-12"
-          :title="t('shows.hire.titleSingle')"
-          description="shows.hire.description"
-          text-color="text-white"
-          bg-color="bg-highlight-primary"
+          :hire-contract="{ kind: 'show', productKey: 'circ-trinxeta' }"
         />
       </template>
-    </MainContent>
-    <HeroFooter
-      image-name="filipersones_trinxeta-3"
-      image-route="filipersones"
-      :alt="trinxetaAlt"
-      background-position="center 53%"
-    />
-    <BottomNavigation />
-    <TheSupporters />
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="filipersones_trinxeta-3"
+          image-route="filipersones"
+          :alt="trinxetaAlt"
+          background-position="center 53%"
+        />
+        <HireFiliBanner
+          :title="t('home.hire.title')"
+          description="home.hire.description"
+        />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
+    </MainContent>    
   </div>
 </template>

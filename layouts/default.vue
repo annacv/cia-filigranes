@@ -13,7 +13,7 @@ const headerBackgroundColor = computed(() => {
   <TheFooter />
   <ScrollToTop />
   <ClientOnly>
-    <LegalCookieBanner v-if="showBanner"/>
-    <LegalCookieModal v-if="showModal"/>
+    <CookieBanner v-if="showBanner"/>
+    <CookieModal v-if="showModal"/>
   </ClientOnly>
 </template>

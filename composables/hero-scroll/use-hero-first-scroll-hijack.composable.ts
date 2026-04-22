@@ -63,7 +63,7 @@ import { scrollToAnchor } from './follow-anchor-animation'
  */
 export function useHeroFirstScrollHijack(): {
   scrollToAnchor: () => void
-} {
+  } {
   // Early return for SSR - return no-op function
   if (import.meta.server) {
     return {

@@ -33,9 +33,9 @@ const synopsisItems = computed(() => {
         },
         downloadButton: {
           download: `CiaFiligranes-${workshop}-${locale.value}.pdf`,
-          href: `/downloads/CiaFiligranes-${workshop}-${locale.value}.pdf`,
-        }
-      }
+          href: `/downloads/dossiers/CiaFiligranes-${workshop}-${locale.value}.pdf`,
+        },
+      },
     }
   }) || []
 })
@@ -52,7 +52,8 @@ const synopsisItems = computed(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="t('workshops.hero.title')"
           title-class="max-w-[324px] md:max-w-[448px] lg:max-w-[504px]"
         />
@@ -64,16 +65,23 @@ const synopsisItems = computed(() => {
           :claim="t('workshops.claim')"
           :claim-title="t('workshops.claimTitle')"
           :items="synopsisItems"
-        />
+        />        
+      </template>
+      <template #wrappedBottom>
+        <HireContactSection content-type="workshops" />
+      </template>
+      <template #unwrappedBottom>
         <HeroFooter
           image-name="tallers_footer"
           image-route="tallers"
           :alt="t('workshops.hero.alt')"
           content-type="workshops"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('workshops.hire.title')"
           description="workshops.hire.description"
+          text-color="text-white"
+          bg-color="bg-secondary-500"
         />
         <BottomNavigation />
         <TheSupporters />

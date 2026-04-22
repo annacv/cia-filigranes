@@ -9,6 +9,7 @@ interface Supporter {
   logoName: string
 }
 
+/* eslint-disable vue/script-indent */
 const getGeneUrl = (locale: string) => {
   switch (locale) {
     case 'ca':
@@ -20,6 +21,7 @@ const getGeneUrl = (locale: string) => {
   }
   return `https://cultura.gencat.cat/ca/inici/`
 }
+/* eslint-enable vue/script-indent */
 
 /**
  * Loads an image URL from commonImages
@@ -116,7 +118,7 @@ const getLogoUrl = (logoName: string) => logoUrls.value?.[logoName]
                   'w-auto object-contain',
                   supporter.logoName === 'logo-tub' ? 'h-16 xl:h-20' : 'h-14 xl:h-16'
                 ]"
-              />
+              >
             </a>
           </div>
         </div>

@@ -16,7 +16,7 @@ const { showBanner, acceptAll, rejectAll, openModal } = useCookies()
         v-if="showBanner"
         role="region"
         aria-label="Cookies banner"
-        class="fixed bottom-0 left-0 right-0 z-20 bg-black/85 backdrop-blur-sm shadow-lg"
+        class="fixed bottom-0 left-0 right-0 z-[100] bg-black/85 backdrop-blur-sm shadow-lg"
       >
         <div class="container mx-auto px-4 py-5">
           <div class="flex flex-col lg:flex-row items-start lg:items-center gap-4">

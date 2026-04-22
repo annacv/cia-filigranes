@@ -19,7 +19,7 @@ export type RouteItem = {
  * Image route types for asset organization
  * Set in ca to match the image route in the assets' folder
  */
-export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte' | 'filipersones' | 'agenda' | 'collaboracions'
+export type ImageRoute = '' | 'espectacles' | 'tallers' | 'animacions' | 'contacte' | 'filipersones' | 'agenda' | 'collaboracions' | 'descarregues'
 
 /**
  * Content type for the Filigranes project
@@ -43,71 +43,17 @@ export type CardImage = {
   imageRoute: ImageRoute;
 }
 
-/**
- * Google Calendar API response event structure
- */
-export interface GoogleCalendarEvent {
-  id: string
-  summary: string
-  description: string
-  location: string
-  start: { dateTime?: string; date?: string }
-  end?: { dateTime?: string; date?: string }
-  htmlLink: string
-}
-
-/**
- * Google Calendar API response structure
- */
-export interface CalendarApiResponse {
-  items: GoogleCalendarEvent[]
-}
-
-/**
- * Normalized calendar event for frontend use
- */
-export interface CalendarEvent {
-  id: string
-  eventType: ContentType
-  title: string
-  description?: string
-  location?: string
-  image?: CardImage
-  reservationLink?: string
-  eventInfoLink?: EventInfoLink
-  isClosedGroupEvent: boolean
-  start: string
-  end: string | null
-  isAllDay: boolean
-  htmlLink?: string
-}
-
-export type EventInfoLinkTextKey = 'button.teaser' | 'button.info'
-
-export type EventInfoLink = {
-  href: string
-  target: '_self' | '_blank'
-  text: EventInfoLinkTextKey
-}
-
-/**
- * Event type filter item configuration
- */
-export type EventTypeFilterItem = {
-  type: ContentType
-  labelKey: string
-  activeIndicatorClass: string
-  inactiveIndicatorClass: string
-  interactiveActiveIndicatorClass: string
-}
-
-/**
- * Shared primary agenda filter option configuration
- */
-export type AgendaPrimaryFilterOption = {
+export type BaseDropdownOption = {
   value: string | null
-  label: string
-  activeIndicatorClass: string
-  inactiveIndicatorClass: string
-  interactiveActiveIndicatorClass: string
+  labelKey: string
+  [key: string]: unknown
+}
+
+/** Show vs workshop when opening the hire contract flow from synopsis */
+export type HireProductKind = 'show' | 'workshop'
+
+export type HireContractContext = {
+  kind: HireProductKind
+  /** Route slug, e.g. plis-plas or circ */
+  productKey: string
 }

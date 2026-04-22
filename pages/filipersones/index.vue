@@ -96,6 +96,7 @@ const showMore = () => {
           should-clip
         />
         <DataSheet
+          :show-headings="false"
           :tech-card="prices"
           :art-card="stories"
           :image="getImageByRoute('filipersones', 'filigranes-2')"
@@ -122,6 +123,7 @@ const showMore = () => {
         />
         <DataSheet
           ref="dataSheetRef"
+          :show-headings="false"
           :tech-card="currentScenariosRight"
           :art-card="currentScenariosLeft"
           :image="getImageByRoute('filipersones', 'filigranes-5')"
@@ -150,18 +152,20 @@ const showMore = () => {
           :claim-title="t('filipersones.knowMoreTitle')"
         />
       </template>
+      <template #unwrappedBottom>
+        <HeroFooter
+          image-name="filipersones_footer"
+          image-route="filipersones"
+          :alt="t('shows.hero.alt')"
+          background-position="center top"
+        />
+        <HireFiliBanner
+          :title="t('home.hire.title')"
+          description="home.hire.description"
+        />
+        <BottomNavigation />
+        <TheSupporters />
+      </template>
     </MainContent>
-    <HeroFooter
-      image-name="filipersones_footer"
-      image-route="filipersones"
-      :alt="t('shows.hero.alt')"
-      background-position="center top"
-    />
-    <HireFili
-      :title="t('home.hire.title')"
-      description="home.hire.description"
-    />
-    <BottomNavigation />
-    <TheSupporters />
   </div>
 </template>

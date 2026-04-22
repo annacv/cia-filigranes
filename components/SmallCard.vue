@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue';
 import type { CardLink, ContentType, CardImage } from "~/types";
 import { useImageAlt } from "~/composables/use-image-alt.composable";
-import CalendarSchedule from "~/components/agenda/CalendarSchedule.vue";
 
 const props = defineProps({
   contentType: {
@@ -46,7 +45,7 @@ const isTouched = ref(false);
           :date="scheduleDate"
           size="small"
           class="pointer-events-none absolute right-2 top-2 z-10"
-          showClaim
+          show-claim
         />
         <CardImage
           :image="image"

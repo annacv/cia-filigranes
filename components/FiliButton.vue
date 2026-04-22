@@ -8,25 +8,44 @@ const props = withDefaults(defineProps<{
   buttonClass?: string | object | unknown[]
   text: string,
   onClick?: (_event?: MouseEvent) => void
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
+  /** Associates a submit button with a form by id */
+  form?: string
+  ariaBusy?: boolean
 }>(), {
   href: undefined,
   download: undefined,
   buttonClass: undefined,
   onClick: undefined,
-  target: '_blank',
+  target: undefined,
+  type: 'button',
+  disabled: false,
+  form: undefined,
+  ariaBusy: false,
 })
 
 const { t } = useI18n()
 const slots = useSlots()
 
-const hasTextSlot = computed(() => !!slots.text)
-const paddingClass = computed(() => (hasTextSlot.value ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
-const isDownload = computed(() => !!props.download && props.href?.includes('.pdf'))
+const DOWNLOADABLE_EXTENSIONS = ['.pdf', '.zip'] as const
+type DownloadableExtension = typeof DOWNLOADABLE_EXTENSIONS[number]
+
+const paddingClass = computed(() => (slots.text ? 'px-3  py-2' : 'p-1 px-2 h-8 w-8'))
+const downloadExtension = computed<DownloadableExtension | undefined>(() => {
+  if (!props.download || !props.href) return undefined
+  return DOWNLOADABLE_EXTENSIONS.find((ext) => props.href!.toLowerCase().includes(ext))
+})
+const isDownload = computed(() => !!downloadExtension.value)
 const componentType = computed(() => (isDownload.value ? 'a' as const : !isDownload.value && props.href ? NuxtLinkLocale : 'button'))
+const isNativeButton = computed(() => componentType.value === 'button')
 
 const ariaLabel = computed(() => {
-  if (isDownload.value) {
+  if (downloadExtension.value === '.pdf') {
     return `${props.text} (${t('button.pdf')})`
+  }
+  if (downloadExtension.value === '.zip') {
+    return `${props.text} (${t('button.zip')})`
   }
   return props.text
 })
@@ -34,33 +53,36 @@ const ariaLabel = computed(() => {
 const buttonProps = computed(() =>
   isDownload.value
     ? {
-      alt: props.text,
       download: props.download,
       href: props.href,
-      rel: 'noopener noreferrer',
-      target: props.target
+      rel: props.target === '_blank' ? 'noopener noreferrer' : undefined,
+      target: props.target || undefined
     }
-    : !isDownload.value && props.href ? 
+    : !isDownload.value && props.href ?
       {
-        alt: props.text,
         to: props.href,
-        target: props.target
+        target: props.target || undefined
       }
-      : {
-        alt: props.text
-      }
+      : {}
 )
 </script>
 
 <template>
   <component
     :is="componentType"
-    :type="isDownload ? 'application/pdf' : 'text/html'"
+    :type="isNativeButton ? type : undefined"
     v-bind="buttonProps"
-    class="flex items-center transition-colors cursor-pointer rounded-full border font-bold leading-normal gap-2 w-max will-change-[background-color,color]"
-    :class="[paddingClass, buttonClass]"
-    role="button"
+    class="flex items-center transition-colors rounded-full border font-bold leading-normal gap-2 w-max will-change-[background-color,color]"
+    :class="[
+      paddingClass,
+      buttonClass,
+      {'cursor-pointer': (!isNativeButton || !disabled)},
+      {'cursor-not-allowed opacity-60': isNativeButton && disabled},
+    ]"
     :aria-label="ariaLabel"
+    :aria-busy="isNativeButton && ariaBusy ? true : undefined"
+    :disabled="isNativeButton ? disabled : undefined"
+    :form="isNativeButton && form ? form : undefined"
     @click="onClick"
   >
     <slot name="icon-left" />

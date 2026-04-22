@@ -1,4 +1,5 @@
-import type { CalendarEvent, GoogleCalendarEvent, ContentType, CardImage, EventInfoLink } from '~/types'
+import type { ContentType, CardImage } from '~/types'
+import type { CalendarEvent, EventInfoLink, GoogleCalendarEvent } from '~/types/agenda'
 import { getImageByRoute } from '~/utils/image-by-route'
 
 const FILI_SHOWS: Record<string, string> = {
@@ -165,10 +166,10 @@ const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink 
   if (eventType === 'workshops') {
     return contentKey
       ? {
-          href: `/tallers/${contentKey}`,
-          target: '_self',
-          text: 'button.info',
-        }
+        href: `/tallers/${contentKey}`,
+        target: '_self',
+        text: 'button.info',
+      }
       : undefined
   }
 

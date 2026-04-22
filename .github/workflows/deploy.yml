@@ -8,15 +8,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm ci
@@ -26,6 +25,8 @@ jobs:
         env:
           NUXT_PUBLIC_GOOGLE_CALENDAR_API_KEY: ${{ secrets.NUXT_PUBLIC_GOOGLE_CALENDAR_API_KEY }}
           NUXT_PUBLIC_GOOGLE_CALENDAR_ID: ${{ secrets.NUXT_PUBLIC_GOOGLE_CALENDAR_ID }}
+          NUXT_PUBLIC_STATIC_FORMS_API_URL: ${{ secrets.NUXT_PUBLIC_STATIC_FORMS_API_URL }}
+          NUXT_PUBLIC_STATIC_FORMS_ACCESS_KEY: ${{ secrets.NUXT_PUBLIC_STATIC_FORMS_ACCESS_KEY }}
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6

@@ -3,10 +3,9 @@ import { getImageByRoute } from "~/utils/image-by-route";
 import { getItemIndex } from "~/utils/get-item-index";
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { useCalendarLayout } from "~/composables/calendar/use-calendar-layout.composable"
-import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
 import ArrowRight from "assets/icons/arrow-right.svg";
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const { getTranslatedList } = useI18nUtils()
 const { events, pending, error, ensureLoaded } = useCalendarEvents()
 const { maxVisibleEvents } = useCalendarLayout()
@@ -60,9 +59,7 @@ const slicedEvents = computed(() => {
       <template #content>
         <h1>
           <span class="sr-only">{{ t('routes.vint-anys') }}</span>
-          <VintAnysBrand
-            class="w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[748px] md:mt-8 lg:mt-0"
-          />
+          <BaseBrand slug="vint-anys" />
         </h1>
       </template>
     </HeroCover>
@@ -79,23 +76,20 @@ const slicedEvents = computed(() => {
           :image="getImageByRoute('espectacles', 'vint-anys-5')"
           content-type="shows"
           :alt="t('home.hero.alt')"
+          :hire-contract="{ kind: 'show', productKey: 'vint-anys' }"
           :info-button="{
             href: '/espectacles/vint-anys#video',
             textKey: 'button.teaser'
           }"
-          :download-button="{
-            download: `CiaFiligranes-vint-anys-${locale}.pdf`,
-            href: `/downloads/CiaFiligranes-vint-anys-${locale}.pdf`,
-          }"
         />
+      </template>
+      <template #wrapped>
         <ClaimTitle
           v-if="events.length > 0"
           class="text-center"
           :claim-title="t('agenda.claimTitle')"
           is-section-title
         />
-      </template>
-      <template #wrapped>
         <CalendarEventList
           v-if="events.length > 0"
           :events="slicedEvents"
@@ -125,31 +119,31 @@ const slicedEvents = computed(() => {
         />
       </template>
       <template #unwrapped>
-        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24 mb-8 lg:mb-12 xl:mb-24 2xl:mb-32">
+        <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24">
           <HighlightShows :reorder-index="getItemIndex('espectacles', 'vint-anys')" />
           <HighlightWorkshops />
           <HighlightPerformances />
-          <ClaimTitle
-            class="text-center !pb-0 !mb-0 !mt-0 md:!mt-8 xl:!mt-0 xl:!-mb-5"
-            :claim-title="t('home.aboutUs.title')"
-            is-section-title
-          />
-          <Synopsis
-            :description="aboutUs"
-            :image="getImageByRoute('filipersones', 'home')"
-            content-type="shows"
-            :alt="t('home.aboutUs.title')"
-            show-full-content
-            is-reversed
-            :info-button="{
-              href: '/filipersones',
-              textKey: 'home.aboutUs.buttonText'
-            }"
-          />
         </div>
+        <OrganizersSection />
+        <ClaimTitle
+          :claim-title="t('home.aboutUs.title')"
+          is-section-title
+        />
+        <Synopsis
+          :description="aboutUs"
+          :image="getImageByRoute('filipersones', 'home')"
+          content-type="shows"
+          :alt="t('home.aboutUs.title')"
+          show-full-content
+          is-reversed
+          :info-button="{
+            href: '/filipersones',
+            textKey: 'home.aboutUs.buttonText'
+          }"
+        />
       </template>
       <template #wrappedBottom>
-        <!-- TODO: Add contact form here-->
+        <HireContactSection id="home-contact" content-type="shows" />
       </template>
       <template #unwrappedBottom>
         <HeroFooter
@@ -158,7 +152,7 @@ const slicedEvents = computed(() => {
           image-route=""
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

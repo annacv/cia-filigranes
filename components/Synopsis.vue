@@ -2,7 +2,7 @@
 import { useImageUrl } from "~/composables/use-image-url.composable";
 import { useColor } from "~/composables/use-color.composable";
 import { useIntersection80 } from "~/composables/use-intersection-percentage.composable";
-import type { CardImage, ContentType } from "~/types";
+import type { CardImage, ContentType, HireContractContext } from "~/types";
 import ArrowRight from "~/assets/icons/arrow-right.svg";
 import ArrowDown from "~/assets/icons/arrow-down.svg";
 
@@ -61,10 +61,15 @@ const props = defineProps({
   shouldClip: {
     type: Boolean,
     default: false
+  },
+  hireContract: {
+    type: Object as PropType<HireContractContext | null>,
+    default: null
   }
 })
 
 const isHovered = ref(false)
+const isHireModalOpen = ref(false)
 const componentRef = ref<HTMLElement>()
 const imageRef = ref<HTMLElement>()
 
@@ -99,17 +104,28 @@ const getColorVariant = (contentType: ContentType | undefined): string => {
     shows: 'primary',
     workshops: 'secondary',
     performances: 'tertiary',
-    contact: 'quaternary'
+    contact: 'neutral'
   };
   return variantMap[contentType || ''] || 'primary';
 };
+
+const getSolidButtonClass = (contentType: ContentType | undefined): string => {
+  if (contentType === 'contact') return 'button-solid-neutral'
+  return `button-solid-${getColorVariant(contentType)}`
+}
 
 const getDownloadButtonClass = computed(() => {
   return `button-outline-${getColorVariant(props.contentType)}`;
 });
 
 const getInfoButtonClass = computed(() => {
-  return `button-solid-${getColorVariant(props.contentType)}`;
+  return getSolidButtonClass(props.contentType);
+});
+
+const getContractButtonClass = computed(() => {
+  return props.downloadButton
+    ? getSolidButtonClass(props.contentType)
+    : `button-outline-${getColorVariant(props.contentType)}`;
 });
 
 const infoButtonTarget = computed(() => {
@@ -123,6 +139,13 @@ const infoButtonText = computed(() => {
   return btn.text ?? (btn.textKey ? t(btn.textKey) : t('button.info'))
 })
 
+const openHireModal = () => {
+  isHireModalOpen.value = true
+}
+const closeHireModal = () => {
+  isHireModalOpen.value = false
+}
+
 // Setup intersection observer reactively when ref becomes available
 watchEffect(() => {
   if (imageRef.value) {
@@ -134,8 +157,8 @@ watchEffect(() => {
 <template>
   <ClientOnly>
     <div
-      ref="componentRef"
       :id="anchorId"
+      ref="componentRef"
       :class="`p-0 grid-layout ${getColors} contain-card ${anchorId ? 'scroll-mt-[72px] lg:scroll-mt-[87px]' : ''}`"
       :style="{ clipPath: isMobile ? mobileClip : 'none' }"
       @mouseenter="toggleHover()"
@@ -150,7 +173,7 @@ watchEffect(() => {
           { 'min-h-[464px]': !isMobile },
           isReversed || isFullReversed ? 'layout-cols--to-left lg:flex-row-reverse' : 'layout-cols--to-right']"
       >
-        <div class="w-full lg:w-[50%] xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
+        <div class="w-full xl:w-[36%] flex flex-col gap-4 px-5 py-10 lg:py-20 2xl:py-36">
           <slot name="content">
             <h2 v-if="title" class="font-grotesk uppercase text-4xl lg:text-5xl">
               {{ title }}
@@ -168,7 +191,7 @@ watchEffect(() => {
             </p>
           </slot>
 
-          <div v-if="infoButton || downloadButton" class="flex mt-4 gap-4">
+          <div v-if="infoButton || downloadButton || hireContract" class="flex flex-wrap mt-4 gap-4">
             <FiliButton
               v-if="downloadButton"
               :href="downloadButton.href"
@@ -181,6 +204,16 @@ watchEffect(() => {
               </template>
               <template #icon-right>
                 <ArrowDown class="arrow-down"/>
+              </template>
+            </FiliButton>
+            <FiliButton
+              v-if="hireContract"
+              :button-class="`${getContractButtonClass} self-start`"
+              :text="t('button.hire')"
+              :on-click="openHireModal"
+            >
+              <template #text>
+                {{ t('button.hire') }}
               </template>
             </FiliButton>
             <FiliButton
@@ -216,6 +249,14 @@ watchEffect(() => {
           <img :src="imageUrl" :alt="alt" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;" aria-hidden="false" >
         </div>
       </div>
+      <HireFormModal
+        v-if="hireContract"
+        :is-open="isHireModalOpen"
+        :product-kind="hireContract.kind"
+        :product-key="hireContract.productKey"
+        :content-type="contentType"
+        @close="closeHireModal"
+      />
     </div>
   </ClientOnly>
 </template>

@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
-import { EVENT_TYPE_FILTER_ITEMS } from "~/constants"
-import type { AgendaPrimaryFilterOption, ContentType, CalendarEvent } from "~/types"
-import AgendaFilters from "~/components/agenda/CalendarFilters.vue"
-import CalendarEventList from "~/components/agenda/CalendarEventList.vue"
-import CalendarTrends from "~/components/agenda/CalendarTrends.vue"
+import { EVENT_TYPE_ITEMS } from "~/constants"
+import type { ContentType } from "~/types"
+import type { EventTypeItem } from "~/types/agenda"
 
 const { t } = useI18n()
 const { events, pending, error, ensureLoaded } = useCalendarEvents()
@@ -38,21 +36,19 @@ const hasActiveFilters = computed(() => {
   return selectedEventType.value !== null || showOnlyOpenToPublic.value
 })
 
-const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
+const primaryFilterOptions = computed<EventTypeItem[]>(() => {
   return [
     {
       value: null,
-      label: t('agenda.filters.all'),
-      activeIndicatorClass: 'bg-primary-500',
-      inactiveIndicatorClass: 'bg-primary-300',
-      interactiveActiveIndicatorClass: 'group-hover:bg-primary-500 group-focus-visible:bg-primary-500',
+      labelKey: 'agenda.filters.all',
+      activeIndicatorClass: 'bg-gradient-primary',
+      inactiveIndicatorClass: 'bg-gradient-primary opacity-50',
     },
-    ...EVENT_TYPE_FILTER_ITEMS.map(item => ({
-      value: item.type,
-      label: t(item.labelKey),
+    ...EVENT_TYPE_ITEMS.map(item => ({
+      value: item.value,
+      labelKey: item.labelKey,
       activeIndicatorClass: item.activeIndicatorClass,
       inactiveIndicatorClass: item.inactiveIndicatorClass,
-      interactiveActiveIndicatorClass: item.interactiveActiveIndicatorClass,
     })),
   ]
 })
@@ -67,7 +63,8 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
       is-section-cover
     >
       <template #content>
-        <SectionCoverTitle
+        <CoverTitle
+          is-section
           :title="`${t('routes.agenda')} ${currentYear}-${nextYear}`"
           title-class="max-w-[272px] md:max-w-[298px] lg:max-w-[378px]"
         />
@@ -82,7 +79,7 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
         />
       </template>
       <template #wrapped>
-        <AgendaFilters
+        <CalendarFilters
           v-model:selected-primary-filter="selectedEventType"
           v-model:show-only-open-to-public="showOnlyOpenToPublic"
           :primary-filter-options="primaryFilterOptions"
@@ -105,6 +102,7 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
       </template>
       <template #wrappedBottom>
         <CalendarTrends />
+        <HireContactSection />
       </template>
       <template #unwrappedBottom>
         <HeroFooter
@@ -113,7 +111,7 @@ const primaryFilterOptions = computed<AgendaPrimaryFilterOption[]>(() => {
           image-route=""
           background-position="center 30%"
         />
-        <HireFili
+        <HireFiliBanner
           :title="t('home.hire.title')"
           description="home.hire.description"
         />

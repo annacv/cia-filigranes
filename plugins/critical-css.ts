@@ -18,20 +18,20 @@ export default defineNuxtPlugin(() => {
 /* CSS Variables - Critical for theming */
 :root {
   --color-primary-300: #f6b1bd;
-  --color-primary-400: #ec3636;
+  --color-primary-400: #e03136;
   --color-primary-500: #c80d0d;
   --color-primary-700: #bc1b36;
   --color-secondary-400: #795090;
   --color-secondary-500: #5c2978;
   --color-secondary-700: #491a63;
-  --color-tertiary-400: #E9573D;
+  --color-tertiary-400: #d4433b;
   --color-tertiary-500: #e32906;
   --color-tertiary-700: #cb2303;
   --color-quaternary-300: #fdf48f;
   --color-quaternary-500: #fbdd0b;
   --color-neutral-100: #f7f7f7;
   --color-neutral-200: #eee;
-  --color-neutral-400: #999;
+  --color-neutral-400: #767676;
   --color-neutral-600: #666;
   --color-neutral-800: #333;
   --color-neutral-900: #25272c;
@@ -69,8 +69,10 @@ body.antialiased {
 
 /* Critical utility classes for above-the-fold content */
 .grid-layout{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;padding-left:1.25rem;padding-right:1.25rem;padding-top:0.75rem;padding-bottom:0.75rem}
+@media (min-width:1024px){.grid-layout{grid-template-columns:repeat(14,minmax(0,1fr));gap:1.25rem;padding-top:1.25rem;padding-bottom:1.25rem}}
 @media (min-width:1280px){.grid-layout{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.25rem;padding-top:1.25rem;padding-bottom:1.25rem}}
 .layout-cols{grid-column-start:1;grid-column-end:span 6}
+@media (min-width:1024px){.layout-cols{grid-column-start:2;grid-column-end:span 12}}
 @media (min-width:1280px){.layout-cols{grid-column-start:2;grid-column-end:span 10}}
 
 /* Grid column utilities - Critical for header */
@@ -81,6 +83,8 @@ body.antialiased {
 .col-span-2{grid-column:span 2/span 2}
 .col-span-3{grid-column:span 3/span 3}
 .col-span-6{grid-column:span 6/span 6}
+@media (min-width:1024px){.lg\\:col-start-2{grid-column-start:2}}
+@media (min-width:1024px){.lg\\:col-start-13{grid-column-start:13}}
 @media (min-width:1280px){.xl\\:col-start-2{grid-column-start:2}}
 @media (min-width:1280px){.xl\\:col-start-11{grid-column-start:11}}
 @media (min-width:1280px){.xl\\:col-span-1{grid-column:span 1/span 1}}
@@ -93,23 +97,50 @@ body.antialiased {
 .sticky{position:sticky}
 .inset-0{top:0;right:0;bottom:0;left:0}
 .top-0{top:0}
+.right-0{right:0}
 .left-0{left:0}
 .w-full{width:100%}
 .h-full{height:100%}
 .z-10{z-index:10}
-.z-100{z-index:100}
+.z-20{z-index:20}
+.z-50{z-index:50}
+.z-\\[1\\]{z-index:1}
+.z-\\[100\\]{z-index:100}
+@media (min-width:768px){.md\\:absolute{position:absolute}}
+@media (min-width:768px){.md\\:top-20{top:5rem}}
+@media (min-width:768px){.md\\:right-0{right:0}}
 
 /* Critical display utilities */
+.block{display:block}
 .flex{display:flex}
 .grid{display:grid}
+.inline-flex{display:inline-flex}
+.flex-col{flex-direction:column}
 .items-center{align-items:center}
 .items-start{align-items:flex-start}
+.justify-center{justify-content:center}
 .justify-end{justify-content:flex-end}
+.justify-start{justify-content:flex-start}
+.justify-between{justify-content:space-between}
 .justify-self-end{justify-self:end}
+@media (min-width:768px){.md\\:justify-end{justify-content:flex-end}}
 
 /* Critical overflow and object utilities */
 .overflow-hidden{overflow:hidden}
 .object-cover{object-fit:cover}
+.h-auto{height:auto}
+.w-fit{width:fit-content}
+.pointer-events-none{pointer-events:none}
+.pointer-events-auto{pointer-events:auto}
+
+/* Critical spacing utilities */
+.py-5{padding-top:1.25rem;padding-bottom:1.25rem}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+@media (min-width:425px){.xs\\:px-0{padding-left:0;padding-right:0}}
+@media (min-width:640px){.sm\\:px-5{padding-left:1.25rem;padding-right:1.25rem}}
+@media (min-width:768px){.md\\:mt-8{margin-top:2rem}}
+@media (min-width:1024px){.lg\\:mt-0{margin-top:0}}
+@media (min-width:1024px){.lg\\:pr-7{padding-right:1.75rem}}
 
 /* Critical transition utilities */
 .transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}
@@ -122,6 +153,41 @@ body.antialiased {
 /* Critical opacity utilities */
 .opacity-0{opacity:0}
 .opacity-100{opacity:1}
+
+/* Critical typography utilities */
+.text-white{color:#fff}
+.uppercase{text-transform:uppercase}
+.text-4xl{font-size:2.25rem;line-height:2.5rem}
+.text-5xl{font-size:3rem;line-height:1}
+@media (min-width:768px){.md\\:text-5xl{font-size:3rem;line-height:1}}
+@media (min-width:768px){.md\\:text-6xl{font-size:3.75rem;line-height:1}}
+@media (min-width:1024px){.lg\\:text-6xl{font-size:3.75rem;line-height:1}}
+@media (min-width:1024px){.lg\\:text-7xl{font-size:4.5rem;line-height:1}}
+.font-grotesk{font-family:'Archivo Black',sans-serif}
+
+/* Critical sizing utilities */
+.w-4{width:1rem}
+.w-8{width:2rem}
+.w-\\[24px\\]{width:24px}
+.w-\\[32px\\]{width:32px}
+.w-\\[174px\\]{width:174px}
+.w-\\[310px\\]{width:310px}
+.h-\\[24px\\]{height:24px}
+.h-\\[32px\\]{height:32px}
+@media (min-width:768px){.md\\:w-\\[348px\\]{width:348px}}
+@media (min-width:1024px){.lg\\:w-\\[448px\\]{width:448px}}
+@media (min-width:1280px){.xl\\:w-\\[548px\\]{width:548px}}
+@media (min-width:1536px){.\\32 xl\\:w-\\[648px\\]{width:648px}}
+.max-w-\\[310px\\]{max-width:310px}
+@media (min-width:640px){.sm\\:max-w-\\[342px\\]{max-width:342px}}
+@media (min-width:768px){.md\\:max-w-\\[448px\\]{max-width:448px}}
+@media (min-width:1024px){.lg\\:max-w-\\[542px\\]{max-width:542px}}
+@media (min-width:1024px){.lg\\:max-w-\\[543px\\]{max-width:543px}}
+
+/* Critical effects utilities */
+.rounded{border-radius:0.25rem}
+.rounded-full{border-radius:9999px}
+.drop-shadow-xl{filter:drop-shadow(0 9px 7px rgb(0 0 0 / 0.1)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))}
 
 /* Critical mix-blend-mode utilities */
 .mix-blend-soft-light{mix-blend-mode:soft-light}

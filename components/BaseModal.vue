@@ -8,12 +8,16 @@ interface Props {
   closeOnOverlay?: boolean
   closeOnEscape?: boolean
   ariaLabel: string
+  title?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   closeOnOverlay: true,
-  closeOnEscape: true
+  closeOnEscape: true,
+  title: undefined,
 })
+
+const slots = useSlots()
 
 const emit = defineEmits<{
   close: []
@@ -74,25 +78,41 @@ watch(() => props.isOpen, (isOpen) => {
         role="dialog"
         aria-modal="true"
         :aria-label="ariaLabel"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4"
         @click="handleOverlayClick"
       >
         <div class="absolute inset-0 backdrop-saturate-150 bg-black/90" />
         <div
-          class="relative w-full max-w-[90vw] lg:max-w-[80vw] 2xl:max-w-[996px] max-h-[90dvh] min-h-[400px] overflow-hidden bg-white rounded-lg shadow-2xl transform transition-all duration-300 ease-out"
+          class="bg-white relative w-full h-fit max-w-[90vw] md:max-w-2xl max-h-[90dvh] min-h-[316px] overflow-hidden bg-white rounded-md shadow-2xl transform transition-all duration-300 ease-out flex flex-col"
           @click.stop
         >
-          <button
-            class="absolute top-4 right-4 z-10 w-8 h-8 bg-black/50 hover:opacity-75 rounded-full flex items-center justify-center transition-colors duration-200"
-            :aria-label="t('modal.close')"
-            @click="closeModal"
-          >
-            <CrossIcon class="!w-5 !h-5 text-white !mb-0" />
-          </button>
-          
-          <div class="overflow-auto max-h-[90dvh]">
-            <slot />
+          <header class="sticky top-0 z-10 pt-10 pb-6 px-6 md:px-10 2xl:pt-12">
+            <h2
+              v-if="title?.trim()"
+              class="!leading-none font-sans font-semibold text-neutral-900 text-lg xl:text-xl pr-6 md:pr-10"
+            >
+              {{ title }}
+            </h2>
+            <button
+              type="button"
+              class="absolute top-2 right-2 md:top-5 md:right-5 z-10 w-8 h-8 hover:opacity-75 rounded-full flex items-center justify-center transition-colors duration-200"
+              :aria-label="t('modal.close')"
+              @click="closeModal"
+            >
+              <CrossIcon class="!w-5 !h-5 md:!w-7 md:!h-7 text-neutral-900 !mb-0" />
+            </button>
+          </header>
+
+          <div class="overflow-y-scroll flex-1 px-6 md:px-10 2xl:px-10">
+            <slot name="content" />
           </div>
+
+          <footer
+            v-if="Boolean(slots.footer)"
+            class="flex flex-col gap-2 sticky bottom-0 z-10 bg-white border-t border-neutral-200 py-4 md:border-none md:pt-0 px-6 md:px-10"
+          >
+            <slot name="footer" />
+          </footer>
         </div>
       </div>
     </Transition>

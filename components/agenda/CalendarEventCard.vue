@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import type { CalendarEvent } from '~/types'
-import CalendarSchedule from '~/components/agenda/CalendarSchedule.vue'
-import CardImage from '~/components/CardImage.vue'
-import FiliButton from '~/components/FiliButton.vue'
+import type { CalendarEvent } from '~/types/agenda'
 import CircleIcon from '~/assets/icons/circle.svg'
 import { useCalendarDisplay } from '~/composables/calendar/use-calendar-display.composable'
 
@@ -40,8 +37,8 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'm
         :href="event.reservationLink"
         target="_blank"
         :text="reservationLabel"
-        button-class="button-solid-neutral text-[10px] md:text-xs !px-2"
-        class="absolute bottom-2 right-2 z-2"
+        button-class="button-solid-light-neutral text-[10px] md:text-xs !px-2"
+        class="absolute bottom-2 right-2 z-10"
       >
         <template #text>
           {{ reservationLabel }}
@@ -81,8 +78,8 @@ const scheduleSize = computed(() => (isMobile.value && !isSmallTablet.value ? 'm
         class="flex-shrink-0 text-white !w-3 !h-3"
         aria-hidden="true"
       />
-      <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium">
-        <span :class="{ 'line-clamp-1': scheduleSize !== 'large' }">{{ event.description }}</span>
+      <p v-if="event.description" class="text-xs mb-0.5 text-white font-medium truncate">
+        {{ event.description }}
       </p>
     </footer>
   </article>

@@ -8,7 +8,7 @@ export interface UseHeroScrollStateReturn {
   enableScrollDetection: ReturnType<typeof useState<boolean>>
   hasHandledFirstScroll: ReturnType<typeof useState<boolean>>
   windowScrollY: ReturnType<typeof useWindowScroll>['y']
-  setup: (onScrollToTopReset: () => void, onScrollDetected: () => void) => void
+  setup: (_onScrollToTopReset: () => void, _onScrollDetected: () => void) => void
   teardown: () => void
 }
 

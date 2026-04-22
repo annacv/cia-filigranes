@@ -1,8 +1,8 @@
 import { computed, readonly, ref, type Ref } from 'vue'
-import { useWindowScroll, useWindowSize } from '@vueuse/core'
+import { useWindowScroll, useWindowSize, tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
 import { useState } from '#app'
-import { tryOnMounted, tryOnBeforeUnmount } from '@vueuse/core'
 import { heroScrollRuntime } from './hero-scroll/runtime'
+import { scrollWindowY } from '~/utils/scroll-window'
 
 const BOTTOM_THRESHOLD = 1300
 
@@ -16,7 +16,7 @@ const BOTTOM_THRESHOLD = 1300
 export function useScrollState(): {
   isScrolled: Readonly<Ref<boolean>>
   hasReachedBottom: Readonly<Ref<boolean>>
-} {
+  } {
   const enableScrollDetection = useState('scroll:enableDetection', () => false)
   const hasHandledFirstScroll = useState('hero-scroll:hasHandledFirstScroll', () => false)
 
@@ -80,7 +80,7 @@ export function useScrollState(): {
         currentScrollY > 0 &&
         lastScrollY === 0
       ) {
-        window.scrollTo(0, 0)
+        scrollWindowY(0)
         lastScrollY = 0
       } else {
         lastScrollY = currentScrollY
@@ -91,7 +91,7 @@ export function useScrollState(): {
       } else {
         // Final check: if scroll is still not 0, reset it one more time
         if (!hasHashAnchor && window.scrollY > 0) {
-          window.scrollTo(0, 0)
+          scrollWindowY(0)
         }
         enableScrollDetection.value = true
         enableDetectionFrameId = null

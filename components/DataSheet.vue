@@ -45,6 +45,10 @@ const props = defineProps({
   hideImage: {
     type: Boolean,
     default: false
+  },
+  showHeadings: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -59,6 +63,10 @@ const { t } = useI18n()
 const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 const { isVisibleAt80Percent, setupIntersectionObserver } = useIntersection80()
+
+const sideContentClass = 'flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0 text-center lg:text-left'
+const sectionHeadingClass = 'uppercase text-xs lg:text-sm font-light text-neutral-400'
+const listClass = 'flex flex-col gap-5'
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
@@ -93,24 +101,29 @@ watchEffect(() => {
         class="flex flex-col gap-5 w-full lg:w-[22%] p-5 pb-0 lg:p-4 lg:pr-0 lg:py-12 2xl:py-24"
         :class="{ 'pb-0 lg:pb-0': hideImage }"
       >
-        <Transition
-          name="fade"
-          mode="out-in"
-        >
-          <ul
-            :key="`art-${showMore ? 'more' : 'less'}`"
-            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0"
+        <div :class="sideContentClass">
+          <h3 v-if="showHeadings" :class="sectionHeadingClass">
+            {{ t('dataSheet.leftTitle') }}
+          </h3>
+          <Transition
+            name="fade"
+            mode="out-in"
           >
-            <li
-              v-for="(item, index) in artCard"
-              :key="`art-${index}`"
-              class="flex flex-col gap-2 text-sm lg:text-base text-center lg:text-left"
+            <ul
+              :key="`art-${showMore ? 'more' : 'less'}`"
+              :class="listClass"
             >
-              <p class="font-bold">{{ item.title }}</p>
-              <p class="font-light">{{ item.description }}</p>
-            </li>
-          </ul>
-        </Transition>
+              <li
+                v-for="(item, index) in artCard"
+                :key="`art-${index}`"
+                class="flex flex-col gap-2 text-sm lg:text-base"
+              >
+                <p class="font-bold">{{ item.title }}</p>
+                <p class="font-light">{{ item.description }}</p>
+              </li>
+            </ul>
+          </Transition>
+        </div>
       </div>
     
       <div
@@ -133,25 +146,30 @@ watchEffect(() => {
         class="flex flex-col items-end md:items-center lg:items-start justify-between w-full lg:w-[22%] p-5 lg:p-4 lg:pl-0 lg:py-12 2xl:py-24"
         :class="hideImage ? 'gap-0 h-full' : 'gap-5'"
       >
-        <Transition
-          name="fade"
-          mode="out-in"
-        >
-          <ul
-            :key="`tech-${showMore ? 'more' : 'less'}`"
-            class="flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0"
+        <div :class="sideContentClass">
+          <h3 v-if="showHeadings" :class="sectionHeadingClass">
+            {{ t('dataSheet.rightTitle') }}
+          </h3>
+          <Transition
+            name="fade"
+            mode="out-in"
           >
-            <li
-              v-for="(item, index) in techCard"
-              :key="`tech-${index}`"
-              class="flex flex-col text-sm lg:text-base text-center lg:text-left"
-              :class="{ 'gap-2': !hideImage }"
+            <ul
+              :key="`tech-${showMore ? 'more' : 'less'}`"
+              :class="listClass"
             >
-              <p class="font-bold">{{ item.title }}</p>
-              <p class="font-light">{{ item.description }}</p>
-            </li>
-          </ul>
-        </Transition>
+              <li
+                v-for="(item, index) in techCard"
+                :key="`tech-${index}`"
+                class="flex flex-col text-sm lg:text-base"
+                :class="{ 'gap-2': !hideImage }"
+              >
+                <p class="font-bold">{{ item.title }}</p>
+                <p class="font-light">{{ item.description }}</p>
+              </li>
+            </ul>
+          </Transition>
+        </div>
         <FiliButton
           v-if="extraContent"
           class="mt-1"

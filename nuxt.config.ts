@@ -9,12 +9,20 @@ const localizedHomeRoutes = localeObjects
   .map(locale => `/${locale.code}`);
 
 export default defineNuxtConfig({
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   runtimeConfig: {
     googleCalendarApiKey: '',
     googleCalendarId: '',
     public: {
       googleCalendarApiKey: '',
       googleCalendarId: '',
+      staticFormsApiUrl: '',
+      staticFormsAccessKey: '',
     },
   },
   app: {
@@ -62,7 +70,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     compressPublicAssets: true,
-    minify: true,
+    // Nitro's terser minify step hangs in worker threads with @rollup/plugin-terser >= 1.0.0
+    // (serialize-javascript@7 regression). For the `static` preset the shipped client JS is
+    // already minified by Vite (esbuild), so this only skips minifying the unused server bundle.
+    minify: false,
     prerender: {
       routes: [
         '/',

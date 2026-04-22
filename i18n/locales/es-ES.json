@@ -20,9 +20,32 @@
           "paragraph": "La Compañía Filigranes la integran Jordi Torrens (Trinxeta) y Albert Pérez (Makutu). Somos una compañía de clown y circo con más de 20 años de oficio, especializada en hacer reír a pequeños y grandes en fiestas, festivales y escuelas."
         }
       ]
+    },
+    "organizers": {
+      "claimTitle": "Para programadores y organizadores",
+      "claimSubtitle": "Te ofrecemos materiales claros, equipos profesionales y espectáculos fiables para tu programación.",
+      "downloads": {
+        "title": "Descargas",
+        "content": [
+          { "paragraph": "Dossiers con fichas técnicas" },
+          { "paragraph": "Fotografías y logotipo" }
+        ],
+        "button": "Área de descargas"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "content": [
+          { "paragraph": "Ya sea para espectáculos familiares, talleres o creaciones a medida para tu evento." }
+        ],
+        "button": "Contactar"
+      }
     }
   },
   "commonAlt": "Imagen de la Compañía Filigranes",
+  "dataSheet": {
+    "leftTitle": "Ficha artística",
+    "rightTitle": "Ficha técnica"
+  },
   "agenda": {
     "claimTitle": "Próximas funciones y talleres",
     "metaDescription": "Consulta la agenda de espectáculos y talleres de la Compañía Filigranes. Descubre dónde y cuándo puedes vernos en directo.",
@@ -48,9 +71,6 @@
     "reservationPlace": "Reserva tu plaza",
     "filters": {
       "ariaLabel": "Filtrar eventos por tipo",
-      "shows": "Espectáculos",
-      "workshops": "Talleres",
-      "performances": "Animaciones",
       "all": "Todos los eventos",
       "allShows": "Todos los espectáculos",
       "allWorkshops": "Todos los talleres",
@@ -65,7 +85,7 @@
     "agenda": "Agenda",
     "espectacles": "Espectáculos",
     "circ-filixic": "El Circo Filixic",
-    "freak-frac": "Hermanos Freak Frac",
+    "freak-frac": "Pasacalle Hermanos Freak Frac",
     "plis-plas": "Plis plas",
     "vint-anys": "20 Años no son nada",
     "circ-makutu": "El Pequeño Circo de Makutu",
@@ -81,10 +101,12 @@
     "makutu": "Makutu",
     "trinxeta": "Trinxeta",
     "contacte": "Contacto",
-    "collaboracions": "Colaboraciones"
+    "collaboracions": "Colaboraciones",
+    "descarregues": "Descargas"
   },
   "button": {
     "dossier": "Dosier",
+    "dossierSelection": "Dosier | Dosieres",
     "info": "Más info",
     "teaser": "Ver teaser",
     "fullShow": "Ver todo el espectáculo",
@@ -95,7 +117,66 @@
     "scrollToTop": "Ir al principio de la página",
     "scrollLeft": "Desplazar hacia la izquierda",
     "scrollRight": "Desplazar hacia la derecha",
-    "pdf": "descarga un documento PDF"
+    "pdf": "descarga un documento PDF",
+    "zip": "descarga un archivo ZIP",
+    "images": "Imágenes",
+    "hire": "Contratar",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar"
+  },
+  "hire": {
+    "modalTitleShow": "Para contratar el espectáculo:",
+    "modalTitleWorkshop": "Para contratar el taller:",
+    "modalDescription": "Rellena el siguiente formulario y te responderemos lo antes posible. O, si lo prefieres, puedes llamarnos directamente al {phone}, o enviarnos un correo electrónico a {email}.",
+    "pageSectionTitle": "Contáctanos para tu próximo evento",
+    "pageSectionTitleAlternative": "Resérvanos para tu próximo evento",
+    "pageSectionSubtitle": "Y llena de emoción y risas tu festival, escuela o fiesta popular",
+    "pageSectionSubtitlePerformances": "Cuéntanos qué tienes en mente y prepararemos una propuesta a medida.",
+    "requiredFields": "Campos obligatorios",
+    "privacyNote": "No enviamos publicidad.",
+    "selectPlaceholder": "Selecciona…",
+    "optgroupShows": "Espectáculos",
+    "optgroupWorkshops": "Talleres",
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "showLabel": "Espectáculo",
+      "workshopLabel": "Taller",
+      "productLabel": "Espectáculo o taller",
+      "fullName": "Nombre y apellidos",
+      "performanceLabel": "Animación",
+      "productTabs": "Espectáculos, Talleres, Animaciones",
+      "comments": "Comentarios",
+      "performanceSelectLabel": "Escoge el tipo de animación que mejor te encaja"
+    },
+    "performanceOptions": {
+      "circEpoca": "Circo de época",
+      "malabars": "Malabaristas",
+      "oficis": "Oficios (camareros, panaderos...)",
+      "convenir": "A convenir"
+    },
+    "placeholders": {
+      "fullName": "Escribe tu nombre y apellidos",
+      "email": "Escribe tu email de contacto",
+      "showSelect": "Selecciona tu espectáculo",
+      "workshopSelect": "Selecciona tu taller",
+      "performanceSelect": "Selecciona tu animación",
+      "comments": "Información adicional que queráis compartir, por ejemplo, fecha y lugar estimados para la realización del espectáculo, taller o animación.",
+      "commentsPerformances": "Información adicional que queráis compartir, por ejemplo, el tipo de evento donde se realizaría la animación, la fecha y el lugar estimados..."
+    },
+    "submission": {
+      "sending": "Enviando…",
+      "success": "¡Gracias! Hemos recibido tu mensaje.",
+      "error": "No se ha podido enviar el formulario. Inténtalo de nuevo.",
+      "errorNetwork": "Error de conexión. Comprueba la red e inténtalo de nuevo.",
+      "errorParse": "La respuesta del servidor no es válida. Inténtalo más tarde.",
+      "errorConfig": "No se ha podido enviar el formulario en este momento. Vuelve a intentarlo en unos minutos.",
+      "validationSelect": "Selecciona un espectáculo, taller o animación.",
+      "validationName": "Introduce tu nombre y apellidos.",
+      "validationEmail": "Introduce un correo electrónico válido."
+    }
   },
   "aria": {
     "home": "Compañía Filigranes - Ir al inicio",
@@ -112,7 +193,7 @@
   "selectLang": "Elige idioma",
   "footer": {
     "design": {
-      "text": "Diseño y desarrollo web:"
+      "text": "Diseño y dev web:"
     },
     "foto": {
       "text": "Fotografía:"
@@ -120,12 +201,49 @@
     "legal": {
       "advice": "Aviso legal",
       "cookies": "Política de cookies",
+      "privacy": "Política de privacidad",
       "manageCookies": "Gestionar cookies"
     },
     "supporters": {
       "title": "Con el apoyo de:",
       "visit": "Visitar"
     }
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "metaDescription": "Información sobre cómo la Compañía Filigranes trata los datos personales enviados a través del formulario de contacto o de contratación.",
+    "sections": [
+      {
+        "key": "controller",
+        "title": "Responsable del tratamiento",
+        "description": "El responsable del tratamiento es Compañía Filigranes. Para cualquier consulta sobre privacidad, puedes escribirnos a la dirección de contacto publicada en la web."
+      },
+      {
+        "key": "data",
+        "title": "Datos que tratamos",
+        "description": "Tratamos los datos que facilitas en el formulario de contacto o de contratación, como nombre, correo electrónico y mensaje. Estos datos se envían a StaticForms para gestionar el envío de formularios y las notificaciones al buzón de contacto."
+      },
+      {
+        "key": "purpose",
+        "title": "Finalidad",
+        "description": "Usamos estos datos únicamente para responder tu consulta y gestionar el contacto relacionado con nuestros servicios. StaticForms actúa como proveedor de procesamiento de formularios para esta finalidad."
+      },
+      {
+        "key": "legalBasis",
+        "title": "Base legal",
+        "description": "La base legal es la aplicación de medidas precontractuales a petición tuya y el interés legítimo en gestionar las consultas recibidas."
+      },
+      {
+        "key": "retention",
+        "title": "Conservación",
+        "description": "Conservaremos los datos solo el tiempo necesario para atender la consulta."
+      },
+      {
+        "key": "rights",
+        "title": "Derechos",
+        "description": "Puedes ejercer tus derechos de protección de datos (acceso, rectificación, supresión, oposición, limitación y, cuando sea aplicable, portabilidad) escribiéndonos a la dirección de contacto de la web."
+      }
+    ]
   },
   "404": {
     "title": "¡Ups!",
@@ -1099,6 +1217,9 @@
   },
   "contact": {
     "metaDescription": "Contacto - Contacta con la Compañía Filigranes, tanto si quieres contratar nuestros servicios, vernos de cerca o resolver alguna duda.... Escríbenos un email a {email}, o llámanos al {phone}",
+    "hero": {
+      "title": "Contáctanos para tu próximo show"
+    },
     "info": {
       "title": "Información de contacto",
       "subtitle": "Para consultas, contrataciones y encuentros"
@@ -1127,7 +1248,7 @@
       {
         "key": "objective",
         "title": "Objetivo",
-        "description": "La Compañía Filigranes utiliza cookies para guardar las preferencias de idioma. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
+        "description": "La Compañía Filigranes utiliza cookies esenciales para el funcionamiento del sitio (como la preferencia de idioma y el consentimiento) y cookies opcionales de terceros (YouTube y Google Maps) solo si las aceptas. También utilizamos sessionStorage con finalidades técnicas para la caché temporal de la agenda. Reconocemos la importancia de cumplir la normativa vigente en materia de privacidad y protección de datos, especialmente la ley española (LSSI y LOPDGDD) y el Reglamento (UE) 2016/679 (RGPD). Esta política describe con detalle el uso que hacemos de las cookies en nuestro sitio web."
       },
       {
         "key": "acceptance",
@@ -1169,10 +1290,22 @@
       "title": "Cookies utilizadas actualmente",
       "table": {
         "headers": [
-          { "key": "name", "label": "Nombre" },
-          { "key": "purpose", "label": "Finalidad" },
-          { "key": "responsible", "label": "Responsable" },
-          { "key": "duration", "label": "Duración" }
+          {
+            "key": "name",
+            "label": "Nombre"
+          },
+          {
+            "key": "purpose",
+            "label": "Finalidad"
+          },
+          {
+            "key": "responsible",
+            "label": "Responsable"
+          },
+          {
+            "key": "duration",
+            "label": "Duración"
+          }
         ],
         "rows": [
           {
@@ -1217,7 +1350,7 @@
     },
     "selfHosted": {
       "title": "Fuentes auto-hospedadas",
-      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
+      "description": "Utilizamos fuentes auto-hospedadas (IBM Plex Sans, Inter y Archivo Black) en nuestro servidor para evitar cookies de terceros de Google Fonts, mejorando así la privacidad y la velocidad de carga."
     },
     "disable": {
       "title": "Cómo desactivar o bloquear las cookies",
@@ -1283,7 +1416,7 @@
       {
         "key": "titular",
         "title": "Información del Titular",
-        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{at}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
+        "description": "A efectos del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa a la persona usuaria que la titularidad de este sitio web corresponde a la Compañía Filigranes, miembro de la Asociación Sociocultural de Circo de Terrassa Tub d'Assaig 7'70, con domicilio en la calle Sant Leopold núm. 63, Local 5, 08221 Terrassa (Barcelona), con NIF G-65190431 y correo electrónico ciafiligranes{'@'}gmail.com. Sus miembros están inscritos en el Registro de la Asociación de Profesionales de Circo de Cataluña con los números de socios 0397 y 0237."
       },
       {
         "key": "condicions",
@@ -1298,7 +1431,7 @@
       {
         "key": "propietat",
         "title": "Propiedad intelectual e industrial",
-        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{at}gmail.com."
+        "description": "Quedan reservados todos los derechos de explotación. Este sitio web se rige por las leyes españolas y está protegido por la legislación nacional e internacional sobre propiedad intelectual e industrial. La reproducción total o parcial, uso, explotación, distribución y comercialización requiere en todo caso la autorización escrita previa de la Compañía Filigranes. Cualquier uso no autorizado será considerado un incumplimiento grave de los derechos de propiedad intelectual e industrial. Los diseños, logotipos, textos o gráficos ajenos que puedan aparecer en la web pertenecen a sus respectivos propietarios, siendo estos los responsables de cualquier posible controversia sobre ellos. Para comunicar posibles incumplimientos de derechos, puedes hacerlo mediante el correo electrónico: ciafiligranes{'@'}gmail.com."
       },
       {
         "key": "continguts",
@@ -1318,7 +1451,7 @@
       {
         "key": "privacitat",
         "title": "Privacidad y protección de datos personales",
-        "description": "Los datos personales que se puedan facilitar mediante correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. Este sitio web no recopila datos personales mediante formularios, quedando a criterio de la persona usuaria contactar o no por los canales disponibles."
+        "description": "Los datos personales facilitados mediante el formulario de contacto, correo electrónico o teléfono solo se utilizarán para gestionar consultas o contrataciones de espectáculos, talleres o animaciones con la Compañía Filigranes. La persona usuaria decide libremente si quiere contactar o no por los canales disponibles."
       },
       {
         "key": "llei",
@@ -1348,7 +1481,7 @@
         {
           "key": "deshabilitades",
           "title": "Deshabilitadas por defecto / No utilizadas:",
-          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
+          "description": "No se recopilan datos mediante Google Analytics ni herramientas similares. No hay píxeles de seguimiento ni cookies publicitarias. No se utiliza localStorage ni sessionStorage con finalidades de seguimiento. Solo utilizamos sessionStorage con finalidades técnicas, como la caché temporal de agenda, sin perfilado de usuarias. Las tipografías (IBM Plex Sans, Inter y Archivo Black) están auto-hospedadas en nuestro servidor para evitar cookies de terceros de Google Fonts."
         },
         {
           "key": "servei-extern",
@@ -1443,6 +1576,46 @@
           "paragraph": "Con atrezzo marinero y juegos participativos, VENDAVAL propone un viaje festivo, poético y compartido."
         }
       ]
+    }
+  },
+  "descarregues": {
+    "metaDescription": "Área de descargas de la Compañía Filigranes: dosieres, imágenes y logotipo de la compañía.",
+    "claimTitle": "El material que necesitas a tu alcance",
+    "claimSubtitle": "Si te falta algo, no dudes en ponerte en contacto",
+    "logoHeading": "Logotipo",
+    "bulk": {
+      "download": "Dosieres e imágenes",
+      "espectacles": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los espectáculos de la Compañía en un solo archivo zip."
+      },
+      "tallers": {
+        "description": "Descarga todos los dosieres, fichas técnicas e imágenes de todos los talleres de la Compañía en un solo archivo zip."
+      },
+      "animacions": {
+        "description": "Accede al dosier informativo y a imágenes de nuestras Animaciones a la Carta en un solo archivo zip."
+      },
+      "logo": {
+        "description": "La descarga es un archivo zip que contiene tres versiones del logotipo en formato png y svg: blanco con fondo transparente, blanco con fondo rojo y blanco con fondo negro."
+      }
+    },
+    "specific": {
+      "claimTitle": "Selección específica de materiales",
+      "claimSubtitle": "De cada espectáculo o taller elige lo que necesites"
+    },
+    "cards": {
+      "shows": {
+        "selectLabel": "Selecciona uno o más espectáculos:",
+        "optionAll": "Todos los espectáculos",
+        "selectionHint": "Selecciona algún espectáculo para poder descargar"
+      },
+      "workshops": {
+        "selectLabel": "Selecciona uno o más talleres:",
+        "optionAll": "Todos los talleres",
+        "selectionHint": "Selecciona algún taller para poder descargar"
+      }
+    },
+    "hero": {
+      "title": "Bienvenidos al área de descargas"
     }
   }
 }
