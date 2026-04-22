@@ -202,7 +202,7 @@ const scrolledHeight = computed(() => {
       </div>
       <div
         v-if="scheduleDate"
-        class="pointer-events-none order-2 w-fit md:absolute md:top-20 md:right-0"
+        class="pointer-events-none order-2 w-fit ml-6 -mt-8 md:mt-0 md:ml-0 md:absolute md:top-20 md:right-0"
       >
         <NuxtLink
           :to="{ path: route.path, hash: '#agenda' }"
