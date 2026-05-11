@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ContentType, ImageRoute } from "~/types";
+import { SHOWS_WITHOUT_VIDEO } from "~/constants";
 import { getItemsByRoute } from "~/utils/items-by-route";
 
 const { t, locale } = useI18n()
@@ -29,8 +30,12 @@ const synopsisItems = computed(() => {
       title: t(`routes.${show}`),
       buttons: {
         infoButton: {
-          href: `/espectacles/${show}#video`,
-          textKey: 'button.teaser'
+          href: SHOWS_WITHOUT_VIDEO.has(show)
+            ? `/espectacles/${show}`
+            : `/espectacles/${show}#video`,
+          textKey: SHOWS_WITHOUT_VIDEO.has(show)
+            ? 'button.info'
+            : 'button.teaser',
         },
         downloadButton: {
           download: `CiaFiligranes-${show}-${locale.value}.pdf`,

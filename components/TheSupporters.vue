@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { GLOB_IMPORTS } from '~/constants'
+import { GLOB_IMPORTS } from '~/constants/glob-imports'
 
 const { t, locale } = useI18n()
 
