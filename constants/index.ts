@@ -5,7 +5,7 @@ import { routePages } from '~/i18n/custom-routes'
 export const ROUTES_INDEX = [
   {
     name: "espectacles",
-    children: [ 'vint-anys', 'plis-plas', 'circ-filixic', 'circ-makutu', 'circ-trinxeta', 'freak-frac']
+    children: [ 'vint-anys', 'plis-plas', 'circ-filixic', 'germans-filigranes', 'circ-makutu', 'circ-trinxeta', 'freak-frac']
   },
   {
     name: "tallers",

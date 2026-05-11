@@ -41,6 +41,11 @@ export const routePages: CustomRoutePages = {
     en: '/shows/trinxeta-circus',
     es: '/espectaculos/circo-trinxeta'
   },
+  'espectacles/germans-filigranes': {
+    ca: '/espectacles/germans-filigranes',
+    en: '/shows/filigranes-brothers',
+    es: '/espectaculos/hermanos-filigranes'
+  },
   tallers: {
     ca: '/tallers',
     en: '/workshops',

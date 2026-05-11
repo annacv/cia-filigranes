@@ -13,6 +13,9 @@ import CircTrinxetaBrandEs from '~/assets/brands/circ-trinxeta-brand-es.svg?raw'
 import FreakFracBrand from '~/assets/brands/freak-frac-brand.svg?raw'
 import FreakFracBrandEn from '~/assets/brands/freak-frac-brand-en.svg?raw'
 import FreakFracBrandEs from '~/assets/brands/freak-frac-brand-es.svg?raw'
+import GermansFiligranesBrand from '~/assets/brands/germans filigranes-brand.svg?raw'
+import GermansFiligranesBrandEn from '~/assets/brands/germans filigranes-brand-en.svg?raw'
+import GermansFiligranesBrandEs from '~/assets/brands/germans filigranes-brand-es.svg?raw'
 import PlisPlasBrand from '~/assets/brands/plis-plas-brand.svg?raw'
 import VintAnysBrand from '~/assets/brands/vint-anys-brand.svg?raw'
 import VintAnysBrandEn from '~/assets/brands/vint-anys-brand-en.svg?raw'
@@ -27,6 +30,7 @@ type BrandSlug =
   | 'circ-makutu'
   | 'circ-trinxeta'
   | 'freak-frac'
+  | 'germans-filigranes'
   | 'plis-plas'
   | 'vint-anys'
 
@@ -59,6 +63,11 @@ const brandBySlug = {
     ca: FreakFracBrand,
     en: FreakFracBrandEn,
     es: FreakFracBrandEs,
+  },
+  'germans-filigranes': {
+    ca: GermansFiligranesBrand,
+    en: GermansFiligranesBrandEn,
+    es: GermansFiligranesBrandEs,
   },
   'plis-plas': {
     ca: PlisPlasBrand,
