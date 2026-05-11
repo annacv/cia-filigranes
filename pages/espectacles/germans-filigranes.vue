@@ -42,7 +42,7 @@ const summaryButton = computed(() => {
 <template>
   <div class="h-full">
     <HeroCover
-      image-name="espectacles_germans-filigranes"
+      image-name="espectacles_germans-filigranes-1"
       image-route="espectacles"
       :alt="getImageAlt('germans-filigranes')"
       schedule-content-key="germans-filigranes"
@@ -59,13 +59,14 @@ const summaryButton = computed(() => {
       <template #unwrappedTop>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'germans-filigranes-1')"
+          :image="getImageByRoute('espectacles', 'germans-filigranes')"
           content-type="shows"
           :alt="getImageAlt('germans-filigranes')"
           show-full-content
           should-clip
           :download-button="summaryButton"
           :hire-contract="{ kind: 'show', productKey: 'germans-filigranes' }"
+          background-position="center top"
         />
         <DataSheet
           :tech-card="techCard"
