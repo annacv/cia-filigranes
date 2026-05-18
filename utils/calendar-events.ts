@@ -1,5 +1,6 @@
 import type { ContentType, CardImage } from '~/types'
 import type { CalendarEvent, EventInfoLink, GoogleCalendarEvent } from '~/types/agenda'
+import { SHOWS_WITHOUT_VIDEO } from '~/constants'
 import { getImageByRoute } from '~/utils/image-by-route'
 
 const FILI_SHOWS: Record<string, string> = {
@@ -9,9 +10,6 @@ const FILI_SHOWS: Record<string, string> = {
   'cercavila germans freak frac': 'freak-frac',
   'el petit circ de makutu': 'circ-makutu',
   'trinxat no tremola': 'circ-trinxeta',
-}
-
-const OTHER_FILI_SHOWS: Record<string, string> = {
   'germans filigranes': 'germans-filigranes',
   'els germans filigranes': 'germans-filigranes',
 }
@@ -28,13 +26,10 @@ const COLLABORATIONS_SHOWS: Record<string, string> = {
 }
 
 export const FILI_SHOWS_IMAGE_KEYS = Object.values(FILI_SHOWS)
-export const OTHER_FILI_SHOWS_IMAGE_KEYS = Object.values(OTHER_FILI_SHOWS)
 export const COLLABORATIONS_SHOWS_IMAGE_KEYS = Object.values(COLLABORATIONS_SHOWS)
 
 const SHOWS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   ...FILI_SHOWS,
-  // Espectacles "fora de carta" o pendents d'afegir a la web
-  ...OTHER_FILI_SHOWS,
   // Col·laboracions:
   ...COLLABORATIONS_SHOWS
 }
@@ -132,9 +127,9 @@ const getFallbackImageForType = (eventType: ContentType): CardImage | undefined 
 /**
  * Returns an event "info link" used by the agenda trend cards.
  *
- * - For shows with dedicated pages: link to the page video anchor (`#video`)
+ * - For shows with a teaser: link to the page video anchor (`#video`)
+ * - For shows without video: link to the show page with `button.info`
  * - For collaborations shows: link to the collaborations page section (`#<contentKey>`)
- * - For OTHER_FILI_SHOWS: returns `undefined` (no button)
  */
 const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink | undefined => {
   const contentKey = getMatchedContentKeyByTitle(title, eventType)
@@ -142,9 +137,14 @@ const getEventInfoLink = (title: string, eventType: ContentType): EventInfoLink 
   if (eventType === 'shows') {
     if (!contentKey) return undefined
 
-    if (OTHER_FILI_SHOWS_IMAGE_KEYS.includes(contentKey)) return undefined
-
     if (FILI_SHOWS_IMAGE_KEYS.includes(contentKey)) {
+      if (SHOWS_WITHOUT_VIDEO.has(contentKey)) {
+        return {
+          href: `/espectacles/${contentKey}`,
+          target: '_self',
+          text: 'button.info',
+        }
+      }
       return {
         href: `/espectacles/${contentKey}#video`,
         target: '_self',

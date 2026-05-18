@@ -90,6 +90,7 @@
     "vint-anys": "20 Años no son nada",
     "circ-makutu": "El Pequeño Circo de Makutu",
     "circ-trinxeta": "Trinxat no Tiembla",
+    "germans-filigranes": "Hermanos Filigranes",
     "tallers": "Talleres",
     "bombolles-sabo": "Burbujas de jabón",
     "circ": "Circo",
@@ -735,6 +736,76 @@
         {
           "title": "*",
           "description": "Posibilidad de variación del número de actores"
+        }
+      ]
+    },
+    "germans-filigranes": {
+      "metaDescription": "Hermanos Filigranes - Espectáculo de malabares y payasos para todas las edades de la Compañía Filigranes. Makutu y Trinxeta nos adentrarán en su mundo particular con malabares, magia cómica y mucho humor.",
+      "abstract": [
+        {
+          "paragraph": "Mazas, cajas, pelotas… ¡arriba, bien arriba! La imaginación de estos dos payasos nos cautivará, haciendo que todo tipo de objetos cobren vida, con sus salidas tan peculiares y el humor siempre presente."
+        }
+      ],
+      "list": [
+        {
+          "title": "Hermanos Filigranes",
+          "description": "Compañía Filigranes"
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "Uno, dos, tres, cuatro... ¡Uiiiiiii! Uno, dos, tres, cuatro, ¡cinco! ¡Seis! Los hermanos Filigranes aprendieron a contar jugando con malabares. Poco a poco fueron inventando nuevas maneras de jugar… ¡y de hacerse travesuras como buenos hermanos!"
+        },
+        {
+          "paragraph": "Makutu y Trinxeta nos adentrarán en su mundo particular ofreciéndonos diferentes números de manipulación de objetos y malabares con la figura de los payasos como principal protagonista."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje: 30min. Desmontaje: 30min."
+        },
+        {
+          "title": "Medidas",
+          "description": "Espacio mínimo: 6m (ancho) x 8m (fondo). Superficie plana."
+        },
+        {
+          "title": "Luz y sonido",
+          "description": "Toma de luz de 250v al pie del escenario para equipo de sonido de 1000 vatios y 2 micros sin cable."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Hermanos Filigranes",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payasos",
+          "description": "Albert Pérez y Jordi Torrens"
+        },
+        {
+          "title": "Dirección General y Dramaturgia",
+          "description": "Walter Velázquez"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Técnico de sonido",
+          "description": "Franc Pascual"
         }
       ]
     }

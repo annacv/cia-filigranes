@@ -1,6 +1,6 @@
 import { ref, computed, watchEffect, type ComputedRef } from "vue";
 import type { ImageRoute } from "~/types";
-import { GLOB_IMPORTS } from "~/constants";
+import { GLOB_IMPORTS } from "~/constants/glob-imports";
 
 const mobileMap: Record<ImageRoute, Record<string, () => Promise<string>>> = {
   '': GLOB_IMPORTS.mobileImages,

@@ -90,6 +90,7 @@
     "vint-anys": "20 Years is Nothing",
     "circ-makutu": "Makutu's Little Circus",
     "circ-trinxeta": "Trinxat doesn't Tremble",
+    "germans-filigranes": "Filigranes Brothers",
     "tallers": "Workshops",
     "bombolles-sabo": "Soap bubbles",
     "circ": "Circus",
@@ -735,6 +736,76 @@
         {
           "title": "*",
           "description": "Possibility of varying the number of actors"
+        }
+      ]
+    },
+    "germans-filigranes": {
+      "metaDescription": "Filigranes Brothers - Juggling and clown show for all ages by the Filigranes Company. Makutu and Trinxeta will take us into their unique world with juggling, comic magic and lots of humor!",
+      "abstract": [
+        {
+          "paragraph": "Clubs, boxes, balls… up, way up! The imagination of these two clowns will captivate us, bringing all kinds of objects to life with their very peculiar antics and humor always present!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Filigranes Brothers",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "One, two, three, four... Ooops! One, two, three, four, five! Six!!!! The Filigranes brothers learned to count by playing with juggling. Little by little they came up with new ways to play… and to tease each other like good brothers!"
+        },
+        {
+          "paragraph": "Makutu and Trinxeta will take us into their particular world, offering us different acts of object manipulation and juggling with clowns as the main protagonists."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "50 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup: 30min. Breakdown: 30min."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Minimum space: 6m (width) x 8m (depth). Flat surface."
+        },
+        {
+          "title": "Light and sound",
+          "description": "250v power outlet at stage level for 1000 watt sound equipment and 2 wireless microphones."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Filigranes Brothers",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clowns",
+          "description": "Albert Pérez and Jordi Torrens"
+        },
+        {
+          "title": "General Direction and Dramaturgy",
+          "description": "Walter Velázquez"
+        },
+        {
+          "title": "Set design",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Costumes",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Sound technician",
+          "description": "Franc Pascual"
         }
       ]
     }

@@ -90,6 +90,7 @@
     "vint-anys": "20 Anys no són res",
     "circ-makutu": "El Petit Circ de Makutu",
     "circ-trinxeta": "Trinxat no Tremola",
+    "germans-filigranes": "Germans Filigranes",
     "tallers": "Tallers",
     "bombolles-sabo": "Bombolles de sabó",
     "circ": "Circ",
@@ -735,6 +736,76 @@
         {
           "title": "*",
           "description": "Possibilitat de variació del nombre d'actors"
+        }
+      ]
+    },
+    "germans-filigranes": {
+      "metaDescription": "Germans Filigranes - Espectacle de malabars i pallassos per a totes les edats de la Companyia Filigranes. En Makutu i en Trinxeta ens endinsaran en el seu món particular amb malabars, màgia còmica i molt humor!",
+      "abstract": [
+        {
+          "paragraph": "Maces, caixes, boles…. amunt, ben amunt! La imaginació d'aquests dos pallassos ens captivarà fent que tot tipus d'objectes prenguin vida, amb les seves sortides ben peculiars i l'humor sempre present!"
+        }
+      ],
+      "list": [
+        {
+          "title": "Germans Filigranes",
+          "description": "Companyia Filigranes"
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "Un, dos, tres, quatre... Uiiiiiii! Un, dos tres quatre, cinc! Sis!!!! Els germans Filigranes van aprendre a comptar jugant amb malabars. Mica en mica es van inventant noves maneres de jugar....i de fer-se la guitza com a bons germans!"
+        },
+        {
+          "paragraph": "En Makutu i en Trinxeta ens endinsaran en el seu món particular oferint-nos diferents números de manipulació d'objectes i malabars amb la figura dels pallassos com a principal protagonista."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge: 30min. Desmuntatge: 30min."
+        },
+        {
+          "title": "Mides",
+          "description": "Espai mínim: 6m (ample) x 8m (fons). Superfície plana."
+        },
+        {
+          "title": "Llum i so",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros sense fil."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Germans Filigranes",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallassos",
+          "description": "Albert Pérez i Jordi Torrens"
+        },
+        {
+          "title": "Direcció General i Dramatúrgia",
+          "description": "Walter Velázquez"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Tècnic de so",
+          "description": "Franc Pascual"
         }
       ]
     }
