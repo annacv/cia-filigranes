@@ -50,6 +50,7 @@ const WORKSHOPS_TITLE_TO_IMAGE_KEY: Record<string, string> = {
 // Uses the same base keys as HighlightPerformances
 const PERFORMANCES_TITLE_TO_IMAGE_KEY: Record<string, string> = {
   'animacions a la carta': 'caixes-1',
+  'animacio amb foc i llum': 'foc',
   'animacio amb malabars de foc': 'foc',
   'animacio circ d epoca': 'circ-epoca',
   'animacio malabars amb caixes': 'caixes-1',
