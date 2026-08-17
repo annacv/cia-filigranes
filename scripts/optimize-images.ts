@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 /**
  * Image Optimization Script
- * 
+ *
  * Re-compresses WebP images in assets/images/ with better compression settings.
  * Quality: 75-85 (configurable via WEBP_QUALITY env var, default: 80)
- * 
+ *
  * Usage:
  *   npm run optimize:images
+ *   npm run optimize:images -- espectacles_my-slug
+ *   npm run optimize:images -- hero_cover desktop/espectacles/espectacles_my-slug
  *   WEBP_QUALITY=75 npm run optimize:images
+ *
+ * Optional CLI args (after `--`) are substrings matched against each file's
+ * path relative to assets/images/. When provided, only matching files run.
+ * Prefer filters when adding new show images so unrelated assets are left alone.
  */
 
 import sharp from 'sharp';
@@ -117,27 +123,49 @@ function formatBytes(bytes: number): string {
 async function main() {
   const imagesDir = join(__dirname, '..', 'assets', 'images');
   const quality = parseInt(process.env.WEBP_QUALITY || '80', 10);
-  
+  const pathFilters = process.argv.slice(2).filter((arg) => arg !== '--');
+
   // Validate quality
   if (quality < 1 || quality > 100) {
     console.error('Error: WEBP_QUALITY must be between 1 and 100');
     process.exit(1);
   }
-  
+
   console.log(`\n🖼️  Image Optimization Script`);
   console.log(`📁 Directory: ${imagesDir}`);
   console.log(`🎯 Quality: ${quality}`);
+  if (pathFilters.length > 0) {
+    console.log(`🔎 Filters: ${pathFilters.join(', ')}`);
+  }
   console.log(`\n🔍 Finding WebP images...\n`);
-  
-  // Find all WebP files
-  const webpFiles = await findWebPFiles(imagesDir);
-  
-  if (webpFiles.length === 0) {
+
+  // Find all WebP files (optionally narrowed by path substring filters)
+  const allWebpFiles = await findWebPFiles(imagesDir);
+  const webpFiles =
+    pathFilters.length === 0
+      ? allWebpFiles
+      : allWebpFiles.filter((filePath) => {
+          const relativePath = filePath.slice(imagesDir.length + 1);
+          return pathFilters.some((filter) => relativePath.includes(filter));
+        });
+
+  if (allWebpFiles.length === 0) {
     console.log('No WebP files found.');
     return;
   }
-  
-  console.log(`Found ${webpFiles.length} WebP file(s) to optimize.\n`);
+
+  if (webpFiles.length === 0) {
+    console.log(
+      `No WebP files matched the provided filter(s): ${pathFilters.join(', ')}`,
+    );
+    return;
+  }
+
+  console.log(
+    pathFilters.length > 0
+      ? `Found ${webpFiles.length} matching WebP file(s) of ${allWebpFiles.length} total.\n`
+      : `Found ${webpFiles.length} WebP file(s) to optimize.\n`,
+  );
   
   // Process images
   const results: ImageStats[] = [];
