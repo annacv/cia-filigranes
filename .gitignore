@@ -17,7 +17,9 @@ logs
 .fleet
 .idea
 .cursor
-docs
+docs/*
+!docs/adding-a-new-show.md
+!docs/adding-new-images.md
 
 # Local env files
 .env
