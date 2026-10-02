@@ -6,7 +6,7 @@
   "home": {
     "metaDescription": "¡Bienvenidas a la web de la Compañía de payasos Filigranes! Encuentra espectáculos, talleres y animaciones a medida.",
     "hero": {
-      "alt": "Imagen del espectáculo 20 años no son nada"
+      "alt": "Imagen del espectáculo Xiu-xiu"
     },
     "hire": {
       "title": "¿Quieres contratar alguno de nuestros servicios?",
@@ -87,6 +87,7 @@
     "circ-filixic": "El Circo Filixic",
     "freak-frac": "Pasacalle Hermanos Freak Frac",
     "plis-plas": "Plis plas",
+    "xiu-xiu": "Xiu-xiu",
     "vint-anys": "20 Años no son nada",
     "circ-makutu": "El Pequeño Circo de Makutu",
     "circ-trinxeta": "Trinxat no Tiembla",
@@ -266,6 +267,100 @@
       "title": "¿Quieres contratar alguno de nuestros espectáculos?",
       "titleSingle": "¿Quieres contratar el espectáculo?",
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
+    },
+    "xiu-xiu": {
+      "metaDescription": "Xiu-xiu - Espectáculo de payasos y circo de la Compañía Filigranes. Tres payasos caídos en desgracia viven en la calle, viven para sobrevivir, con peripecias, manipulación de objetos abandonados y mucho humor.",
+      "abstract": [
+        {
+          "paragraph": "Una historia de fragilidad y, a la vez, de fuerza vital. Tres personajes, con una mano delante y otra detrás, están condenados a vivir en la calle: tienen el estómago vacío y un poco de esperanza que les ayuda a afrontar la adversidad. Son payasos de circo que, tras caer en desgracia, viven para sobrevivir. Con peripecias y humor luchan por su dignidad y por sentirse parte de un rincón del mundo."
+        }
+      ],
+      "list": [
+        {
+          "title": "Xiu-xiu",
+          "description": "Espectáculo de payasos con música en directo, manipulación de objetos y mucho humor y ternura."
+        },
+        {
+          "title": "Duración del espectáculo",
+          "description": "50 minutos"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "En la sombra de la ciudad, objetos encontrados entre los residuos toman vida de la mano de tres payasos que construyen momentos de magia y ternura."
+        },
+        {
+          "paragraph": "Las payasas luchan por ser vistas, ser escuchadas, sentirse seguras. Porque, al final, todas las personas, independientemente de su situación u origen, buscan dignidad y sentido en sus vidas."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duración",
+          "description": "50 minutos."
+        },
+        {
+          "title": "Montaje y desmontaje",
+          "description": "Montaje con grada: 3h. Sin grada: 2h. Desmontaje con grada: 2h. Sin grada: 1h."
+        },
+        {
+          "title": "Medidas",
+          "description": "Exterior con grada: 12m (fondo) x 12m (ancho). Sin grada: 9m (fondo) x 7m (ancho)."
+        },
+        {
+          "title": "Escenografía",
+          "description": "Fondo de escena y cubierta de pista. Se requiere el suelo liso y plano."
+        },
+        {
+          "title": "Sonido",
+          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios. 4 micros sin hilos."
+        },
+        {
+          "title": "Personal",
+          "description": "3 artistas, 2 en escena y 1 músico/técnico."
+        },
+        {
+          "title": "Vehículo",
+          "description": "Renault Master (longitud: 5075 mm y altura exterior: 2310 mm)."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Xiu-xiu",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Payasos",
+          "description": "Jordi Torrens, Albert Pérez y Tyle Michel Fernández"
+        },
+        {
+          "title": "Músico y técnico de sonido",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Dirección",
+          "description": "Ton Muntané"
+        },
+        {
+          "title": "Arreglos musicales",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Escenografía",
+          "description": "Cia. Filigranes y SoulArt"
+        },
+        {
+          "title": "Vestuario",
+          "description": "Idoia Pascual"
+        },
+        {
+          "title": "Fotografía y vídeo",
+          "description": "Cia.Filigranes"
+        },
+        {
+          "title": "Diseño y web",
+          "description": "Anna Condal"
+        }
+      ]
     },
     "vint-anys": {
       "metaDescription": "20 años no son nada - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. Un espectáculo emotivo que combina humor, malabares y música en directo.",

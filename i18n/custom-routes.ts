@@ -11,6 +11,11 @@ export const routePages: CustomRoutePages = {
     en: '/shows',
     es: '/espectaculos'
   },
+  'espectacles/xiu-xiu': {
+    ca: '/espectacles/xiu-xiu',
+    en: '/shows/xiu-xiu',
+    es: '/espectaculos/xiu-xiu'
+  },
   'espectacles/vint-anys': {
     ca: '/espectacles/vint-anys',
     en: '/shows/twenty-years',

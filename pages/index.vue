@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { getImageByRoute } from "~/utils/image-by-route";
-import { getItemIndex } from "~/utils/get-item-index";
 import { useCalendarEvents } from "~/composables/calendar/use-calendar-events.composable"
 import { useCalendarLayout } from "~/composables/calendar/use-calendar-layout.composable"
 import ArrowRight from "assets/icons/arrow-right.svg";
@@ -20,9 +19,9 @@ useHead({
   ]
 })
 
-const abstract = getTranslatedList('shows.vint-anys.abstract', ['paragraph'])
-const summaryItems = getTranslatedList('shows.vint-anys.list', ['title', 'description'])
-const synopsis = getTranslatedList('shows.vint-anys.synopsis', ['paragraph'])
+const abstract = getTranslatedList('shows.xiu-xiu.abstract', ['paragraph'])
+const summaryItems = getTranslatedList('shows.xiu-xiu.list', ['title', 'description'])
+const synopsis = getTranslatedList('shows.xiu-xiu.synopsis', ['paragraph'])
 const aboutUs = getTranslatedList('home.aboutUs.description', ['paragraph'])
 
 const slicedEvents = computed(() => {
@@ -58,8 +57,8 @@ const slicedEvents = computed(() => {
     <HeroCover image-name="hero_cover" image-route="" :alt="t('home.hero.alt')">
       <template #content>
         <h1>
-          <span class="sr-only">{{ t('routes.vint-anys') }}</span>
-          <BaseBrand slug="vint-anys" />
+          <span class="sr-only">{{ t('routes.xiu-xiu') }}</span>
+          <BaseBrand slug="xiu-xiu" />
         </h1>
       </template>
     </HeroCover>
@@ -73,13 +72,13 @@ const slicedEvents = computed(() => {
       <template #unwrappedTop>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'vint-anys-5')"
+          :image="getImageByRoute('espectacles', 'xiu-xiu-5')"
           content-type="shows"
           :alt="t('home.hero.alt')"
-          :hire-contract="{ kind: 'show', productKey: 'vint-anys' }"
+          :hire-contract="{ kind: 'show', productKey: 'xiu-xiu' }"
           :info-button="{
-            href: '/espectacles/vint-anys#video',
-            textKey: 'button.teaser'
+            href: '/espectacles/xiu-xiu',
+            textKey: 'button.info'
           }"
         />
       </template>
@@ -120,7 +119,7 @@ const slicedEvents = computed(() => {
       </template>
       <template #unwrapped>
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24">
-          <HighlightShows :reorder-index="getItemIndex('espectacles', 'vint-anys')" />
+          <HighlightShows />
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>

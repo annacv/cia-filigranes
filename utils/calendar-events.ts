@@ -4,6 +4,8 @@ import { SHOWS_WITHOUT_VIDEO } from '~/constants'
 import { getImageByRoute } from '~/utils/image-by-route'
 
 const FILI_SHOWS: Record<string, string> = {
+  'xiu-xiu': 'xiu-xiu',
+  'xiu xiu': 'xiu-xiu',
   '20 anys no son res': 'vint-anys',
   'el circ filixic': 'circ-filixic',
   'plis plas': 'plis-plas',

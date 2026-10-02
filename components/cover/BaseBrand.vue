@@ -17,6 +17,7 @@ import GermansFiligranesBrand from '~/assets/brands/germans filigranes-brand.svg
 import GermansFiligranesBrandEn from '~/assets/brands/germans filigranes-brand-en.svg?raw'
 import GermansFiligranesBrandEs from '~/assets/brands/germans filigranes-brand-es.svg?raw'
 import PlisPlasBrand from '~/assets/brands/plis-plas-brand.svg?raw'
+import XiuXiuBrand from '~/assets/brands/xiu-xiu-brand.svg?raw'
 import VintAnysBrand from '~/assets/brands/vint-anys-brand.svg?raw'
 import VintAnysBrandEn from '~/assets/brands/vint-anys-brand-en.svg?raw'
 import VintAnysBrandEs from '~/assets/brands/vint-anys-brand-es.svg?raw'
@@ -33,6 +34,7 @@ type BrandSlug =
   | 'germans-filigranes'
   | 'plis-plas'
   | 'vint-anys'
+  | 'xiu-xiu'
 
 const DEFAULT_SIZE_CLASS = 'w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[648px]'
 const FREAK_FRAC_SIZE_CLASS = 'w-[350px] md:w-[422px] lg:w-[522px] xl:w-[622px] 2xl:w-[722px]'
@@ -76,6 +78,9 @@ const brandBySlug = {
     ca: VintAnysBrand,
     en: VintAnysBrandEn,
     es: VintAnysBrandEs,
+  },
+  'xiu-xiu': {
+    ca: XiuXiuBrand,
   },
 } satisfies Record<BrandSlug, { ca: unknown; en?: unknown; es?: unknown }>
 
