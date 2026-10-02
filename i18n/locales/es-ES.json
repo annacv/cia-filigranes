@@ -1579,17 +1579,6 @@
       "title": "¿Quieres contratar alguno de estos espectáculos?",
       "description": "Escríbenos un email a {email}, o llámanos al {phone}"
     },
-    "clownDePas": {
-      "title": "Clown de Pas",
-      "synopsis": [
-        {
-          "paragraph": "ALTER es una troupe de payasos y payasas que deambula por las calles con su peculiar vehículo: un burro de tender la ropa cargado de sueños y disparates. Juegan con el espacio, las emociones y el público, tejiendo momentos de humor, ternura y sorpresa. Son amables pero un poco gamberros, y necesitan ser acogidos. Buscan algo que les falta… y quizá lo encuentren entre la gente que les observa."
-        },
-        {
-          "paragraph": "Los payasos transforman la calle."
-        }
-      ]
-    },
     "fingerlight": {
       "title": "Fingerlight",
       "synopsis": [

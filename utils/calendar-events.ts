@@ -21,8 +21,6 @@ const COLLABORATIONS_SHOWS: Record<string, string> = {
   'help': 'heeelp',
   'fingerlight': 'fingerlight',
   'vendaval': 'vendaval',
-  'clown de pas': 'clown-de-pas',
-  'alter': 'clown-de-pas'
 }
 
 export const FILI_SHOWS_IMAGE_KEYS = Object.values(FILI_SHOWS)

@@ -181,11 +181,6 @@ export const EVENT_TYPE_ITEMS: EventTypeItem[] = [
 
 export const COLLABORATION_ENTRIES = [
   {
-    i18nKey: 'clownDePas',
-    imageSlug: 'clown-de-pas',
-    href: 'https://www.albertvinyes.cat/ca/espectacles/clown-de-pas/',
-  },
-  {
     i18nKey: 'vendaval',
     imageSlug: 'vendaval',
     href: 'https://linktr.ee/cia.VENDAVAL',
@@ -223,7 +218,6 @@ export const IN_PAGE_ANCHOR_HASHES = new Set([
   '#vendaval',
   '#heeelp',
   '#fingerlight',
-  '#clown-de-pas',
   '#circ-filikrusty',
   '#tot-es-possible',
 ])

@@ -1579,17 +1579,6 @@
       "title": "Would you like to book one of these shows?",
       "description": "Write us an email at {email}, or call us at {phone}"
     },
-    "clownDePas": {
-      "title": "Clown de Pas",
-      "synopsis": [
-        {
-          "paragraph": "ALTER is a troupe of clowns who wander the streets with their peculiar vehicle: a clothes horse loaded with dreams and mischief. They play with space, emotions, and the audience, weaving moments of humour, tenderness, and surprise. They are kind but a little mischievous, and they need to be welcomed. They are looking for something they lack… and perhaps they will find it among the people watching them."
-        },
-        {
-          "paragraph": "The clowns transform the street."
-        }
-      ]
-    },
     "fingerlight": {
       "title": "Fingerlight",
       "synopsis": [
