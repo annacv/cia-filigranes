@@ -181,6 +181,8 @@
   },
   "aria": {
     "home": "Filigranes Company - Go to home",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
     "shows": "Show - {title}",
     "workshops": "Workshop - {title}",
     "performances": "Performances",

@@ -181,6 +181,8 @@
   },
   "aria": {
     "home": "Companyia Filigranes - Anar a l'inici",
+    "menuOpen": "Obrir el menú de navegació",
+    "menuClose": "Tancar el menú de navegació",
     "shows": "Espectacle - {title}",
     "workshops": "Taller - {title}",
     "performances": "Animacions a la carta",
