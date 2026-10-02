@@ -119,7 +119,7 @@ const slicedEvents = computed(() => {
       </template>
       <template #unwrapped>
         <div class="flex flex-col gap-y-8 lg:gap-y-12 xl:gap-y-24">
-          <HighlightShows />
+          <HighlightShows :reorder-index="getItemIndex('espectacles', 'xiu-xiu')" />
           <HighlightWorkshops />
           <HighlightPerformances />
         </div>
