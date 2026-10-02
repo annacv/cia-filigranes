@@ -41,7 +41,7 @@ const showItems = computed(() => {
     <template #content>
       <SlidingPanel class="-skew-y-3">
         <ul class="flex w-full gap-1">
-          <li v-for="item in showItems" :key="item">
+          <li v-for="(item, index) in showItems" :key="index">
             <SmallCard
               content-type="shows"
               :title="t(`routes.${item}`)"
