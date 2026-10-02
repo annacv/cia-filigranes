@@ -59,7 +59,7 @@ const summaryButton = computed(() => {
       <template #unwrappedTop>
         <Synopsis
           :description="synopsis"
-          :image="getImageByRoute('espectacles', 'germans-filigranes')"
+          :image="getImageByRoute('espectacles', 'germans-filigranes-3')"
           content-type="shows"
           :alt="getImageAlt('germans-filigranes')"
           show-full-content

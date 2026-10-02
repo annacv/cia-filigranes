@@ -88,8 +88,7 @@
     "freak-frac": "Pasacalle Hermanos Freak Frac",
     "plis-plas": "Plis plas",
     "xiu-xiu": "Xiu-xiu",
-    "vint-anys": "20 Años no son nada",
-    "circ-makutu": "El Pequeño Circo de Makutu",
+        "circ-makutu": "El Pequeño Circo de Makutu",
     "circ-trinxeta": "Trinxat no Tiembla",
     "germans-filigranes": "Hermanos Filigranes",
     "tallers": "Talleres",
@@ -182,6 +181,8 @@
   },
   "aria": {
     "home": "Compañía Filigranes - Ir al inicio",
+    "menuOpen": "Abrir el menú de navegación",
+    "menuClose": "Cerrar el menú de navegación",
     "shows": "Espectáculo - {title}",
     "workshops": "Taller - {title}",
     "performances": "Animaciones a la carta",
@@ -362,85 +363,7 @@
         }
       ]
     },
-    "vint-anys": {
-      "metaDescription": "20 años no son nada - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. Un espectáculo emotivo que combina humor, malabares y música en directo.",
-      "abstract": [
-        {
-          "paragraph": "Dos compañeros inseparables recuerdan y escenifican sus 20 años de trayectoria en los escenarios. La ilusión, la fraternidad y el paso del tiempo adquieren una fuerza especial, así como las relaciones humanas, las competencias y las complicidades."
-        }
-      ],
-      "list": [
-        {
-          "title": "20 años no son nada",
-          "description": "Espectáculo de payasos para todos los públicos, con trucos y travesuras constantes."
-        },
-        {
-          "title": "Duración del espectáculo",
-          "description": "50 minutos"
-        }
-      ],
-      "synopsis": [
-        {
-          "paragraph": "Makutu y Trinxeta combinan diferentes disciplinas del circo con el clown, utilizando elementos de la vida cotidiana que cobran vida de una manera muy peculiar: trasladándonos del pasado al presente y al futuro."
-        },
-        {
-          "paragraph": "En un gesto de ironía y a la vez afecto hacia el paso del tiempo, la Compañía Filigranes hace un autorretrato vivo, incisivo y sincero, de dos payasos que han crecido y se han hecho el uno al otro."
-        }
-      ],
-      "techCard": [
-        {
-          "title": "Duración",
-          "description": "50 minutos."
-        },
-        {
-          "title": "Montaje y desmontaje",
-          "description": "Montaje: 2h. Desmontaje: 1h."
-        },
-        {
-          "title": "Medidas",
-          "description": "Exterior mínima: 9,5m x 6m. Teatro mínima: 8m x 6m. Exterior o teatro ideal: 11m x 8m."
-        },
-        {
-          "title": "Escenografía",
-          "description": "Fondo de escena y pista circular. Carpa detrás del escenario para exterior."
-        },
-        {
-          "title": "Luz y sonido",
-          "description": "Toma de luz de 250v a pie de escenario para equipo de sonido de 1000 vatios y 2 micros inalámbricos."
-        }
-      ],
-      "artCard": [
-        {
-          "title": "20 años no son nada",
-          "description": "Cia. Filigranes"
-        },
-        {
-          "title": "Payasos",
-          "description": "Jordi Torrens y Albert Pérez"
-        },
-        {
-          "title": "Dirección",
-          "description": "Walter Velázquez"
-        },
-        {
-          "title": "Técnico de luces y sonido",
-          "description": "Franc Pascual"
-        },
-        {
-          "title": "Escenografía",
-          "description": "Cia. Filigranes"
-        },
-        {
-          "title": "Fotografía",
-          "description": "Gerard Banyó"
-        },
-        {
-          "title": "Diseño gráfico",
-          "description": "Anna Condal"
-        }
-      ]
-    },
-    "plis-plas": {
+        "plis-plas": {
       "metaDescription": "Plis Plas - Espectáculo de payasos y circo para todas las edades de la Compañía Filigranes. Con una silla, un embudo o un cubo, Makutu y Trinxeta nos harán disfrutar de un tira y afloja constante, combinando gags clásicos con malabares y música en directo.",
       "abstract": [
         {
@@ -853,10 +776,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "Uno, dos, tres, cuatro... ¡Uiiiiiii! Uno, dos, tres, cuatro, ¡cinco! ¡Seis! Los hermanos Filigranes aprendieron a contar jugando con malabares. Poco a poco fueron inventando nuevas maneras de jugar… ¡y de hacerse travesuras como buenos hermanos!"
+          "paragraph": "Uno, dos tres cuatro, ¡cinco! ¡Seis!!!! Los hermanos Filigranes aprendieron a contar jugando con malabares. Poco a poco fueron inventando nuevas maneras de jugar… ¡y de hacerse travesuras como buenos hermanos!"
         },
         {
-          "paragraph": "Makutu y Trinxeta nos adentrarán en su mundo particular ofreciéndonos diferentes números de manipulación de objetos y malabares con la figura de los payasos como principal protagonista."
+          "paragraph": "Makutu y Trinxeta nos adentrarán en su mundo particular ofreciéndonos diferentes números de manipulación de objetos y malabares."
         }
       ],
       "techCard": [
@@ -1262,7 +1185,7 @@
     ],
     "history": [
       {
-        "paragraph": "En 2004 fundamos la Compañía Filigranes. Desde entonces, nuestra tarea principal ha sido la creación y producción de espectáculos: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\"..."
+        "paragraph": "En 2004 fundamos la Compañía Filigranes. Desde entonces, nuestra tarea principal ha sido la creación y producción de espectáculos: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\", \"Xiu-xiu\"..."
       }
     ],
     "filiFriends": [

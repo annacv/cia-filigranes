@@ -88,8 +88,7 @@
     "freak-frac": "The Freak Frac Brothers' Parade",
     "plis-plas": "Plis Plas",
     "xiu-xiu": "Xiu-xiu",
-    "vint-anys": "20 Years is Nothing",
-    "circ-makutu": "Makutu's Little Circus",
+        "circ-makutu": "Makutu's Little Circus",
     "circ-trinxeta": "Trinxat doesn't Tremble",
     "germans-filigranes": "Filigranes Brothers",
     "tallers": "Workshops",
@@ -182,6 +181,8 @@
   },
   "aria": {
     "home": "Filigranes Company - Go to home",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
     "shows": "Show - {title}",
     "workshops": "Workshop - {title}",
     "performances": "Performances",
@@ -362,85 +363,7 @@
         }
       ]
     },
-    "vint-anys": {
-      "metaDescription": "20 years is nothing - Clown and circus show for all ages by the Filigranes Company. Two inseparable companions remember and stage their 20 years of career on stage. An emotional show that combines humor, juggling and live music.",
-      "abstract": [
-        {
-          "paragraph": "Two inseparable companions remember and stage their 20 years of career on stage. Illusion, fraternity and the passage of time acquire a special strength, as do human relationships, skills and complicity."
-        }
-      ],
-      "list": [
-        {
-          "title": "20 years is nothing",
-          "description": "Clown show for all audiences, with constant tricks and mischief."
-        },
-        {
-          "title": "Show duration",
-          "description": "50 minutes"
-        }
-      ],
-      "synopsis": [
-        {
-          "paragraph": "Makutu and Trinxeta combine different circus disciplines with clowning, using elements from everyday life that come to life in a very peculiar way: taking us from the past to the present and the future."
-        },
-        {
-          "paragraph": "In a gesture of irony and at the same time affection towards the passage of time, the Filigranes Company makes a living, incisive and sincere self-portrait of two clowns who have grown up and made each other."
-        }
-      ],
-      "techCard": [
-        {
-          "title": "Duration",
-          "description": "50 minutes."
-        },
-        {
-          "title": "Setup and breakdown",
-          "description": "Setup: 2h. Breakdown: 1h."
-        },
-        {
-          "title": "Dimensions",
-          "description": "Outdoor minimum: 9.5m x 6m. Theatre minimum: 8m x 6m. Outdoor or theatre ideal: 11m x 8m."
-        },
-        {
-          "title": "Scenography",
-          "description": "Backdrop and circular stage. Tent behind stage for outdoor."
-        },
-        {
-          "title": "Light and sound",
-          "description": "250v power outlet at stage level for 1000 watt sound equipment and 2 wireless microphones."
-        }
-      ],
-      "artCard": [
-        {
-          "title": "20 years is nothing",
-          "description": "Filigranes Company"
-        },
-        {
-          "title": "Clowns",
-          "description": "Jordi Torrens and Albert Pérez"
-        },
-        {
-          "title": "Direction",
-          "description": "Walter Velázquez"
-        },
-        {
-          "title": "Light and sound technician",
-          "description": "Franc Pascual"
-        },
-        {
-          "title": "Scenography",
-          "description": "Filigranes Company"
-        },
-        {
-          "title": "Photography",
-          "description": "Gerard Banyó"
-        },
-        {
-          "title": "Graphic design",
-          "description": "Anna Condal"
-        }
-      ]
-    },
-    "plis-plas": {
+        "plis-plas": {
       "metaDescription": "Plis Plas - Clown and circus show for all ages by the Filigranes Company. With a chair, a funnel or a bucket, Makutu and Trinxeta will make us enjoy a constant tug-of-war, combining classic gags with juggling and live music.",
       "abstract": [
         {
@@ -853,10 +776,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "One, two, three, four... Ooops! One, two, three, four, five! Six!!!! The Filigranes brothers learned to count by playing with juggling. Little by little they came up with new ways to play… and to tease each other like good brothers!"
+          "paragraph": "One, two three four, five! Six!!!! The Filigranes brothers learned to count by playing with juggling. Little by little they came up with new ways to play… and to tease each other like good brothers!"
         },
         {
-          "paragraph": "Makutu and Trinxeta will take us into their particular world, offering us different acts of object manipulation and juggling with clowns as the main protagonists."
+          "paragraph": "Makutu and Trinxeta will take us into their particular world, offering us different acts of object manipulation and juggling."
         }
       ],
       "techCard": [
@@ -1262,7 +1185,7 @@
     ],
     "history": [
       {
-        "paragraph": "In 2004 we founded the Filigranes Company. Since then, our main task has been the creation and production of shows: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\"..."
+        "paragraph": "In 2004 we founded the Filigranes Company. Since then, our main task has been the creation and production of shows: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\", \"Xiu-xiu\"..."
       }
     ],
     "filiFriends": [

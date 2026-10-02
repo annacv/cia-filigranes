@@ -7,7 +7,7 @@ import { useI18n } from "vue-i18n";
 /**
  * Composable for generating localized links based on route and optional item
  * @param route - The base route (e.g., 'espectacles', 'tallers')
- * @param item - Optional item to append to the route (e.g., 'vint-anys')
+ * @param item - Optional item to append to the route (e.g., 'xiu-xiu')
  * @returns ComputedRef containing the CardLink object with target and href
  */
 export function useLinkByRoute(route: string, item?: string): ComputedRef<CardLink> {

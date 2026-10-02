@@ -88,7 +88,6 @@
     "freak-frac": "Cercavila Germans Freak Frac",
     "plis-plas": "Plis Plas",
     "xiu-xiu": "Xiu-xiu",
-    "vint-anys": "20 Anys no són res",
     "circ-makutu": "El Petit Circ de Makutu",
     "circ-trinxeta": "Trinxat no Tremola",
     "germans-filigranes": "Germans Filigranes",
@@ -182,6 +181,8 @@
   },
   "aria": {
     "home": "Companyia Filigranes - Anar a l'inici",
+    "menuOpen": "Obrir el menú de navegació",
+    "menuClose": "Tancar el menú de navegació",
     "shows": "Espectacle - {title}",
     "workshops": "Taller - {title}",
     "performances": "Animacions a la carta",
@@ -362,85 +363,7 @@
         }
       ]
     },
-    "vint-anys": {
-      "metaDescription": "20 anys no són res - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. Un espectacle emotiu que combina humor, malabars i música en directe.",
-      "abstract": [
-        {
-          "paragraph": "Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. La il·lusió, la fraternitat i el pas del temps adquireixen una força especial, així com les relacions humanes, les competències i les complicitats."
-        }
-      ],
-      "list": [
-        {
-          "title": "20 anys no són res",
-          "description": "Espectacle de pallassos per a tots els públics, amb trucs i entremaliadures constants."
-        },
-        {
-          "title": "Durada de l'espectacle",
-          "description": "50 minuts"
-        }
-      ],
-      "synopsis": [
-        {
-          "paragraph": "En Makutu i en Trinxeta combinen diferents disciplines del circ amb el clown, utilitzant elements de la vida quotidiana que prenen vida d'una manera ben peculiar: traslladant-nos del passat al present i al futur."
-        },
-        {
-          "paragraph": "En un gest d'ironia i a la vegada afecte envers el pas del temps, la Companyia Filigranes fa un autoretrat viu, incisiu i sincer, de dos pallassos que han crescut i s'han fet l'un a l'altre."
-        }
-      ],
-      "techCard": [
-        {
-          "title": "Durada",
-          "description": "50 minuts."
-        },
-        {
-          "title": "Muntatge i desmuntatge",
-          "description": "Muntatge: 2h. Desmuntatge: 1h."
-        },
-        {
-          "title": "Mides",
-          "description": "Exterior mínima: 9,5m x 6m. Teatre mínima: 8m x 6m. Exterior o teatre ideal: 11m x 8m."
-        },
-        {
-          "title": "Escenografia",
-          "description": "Fons d'escena i pista circular. Carpa darrera escena per exterior."
-        },
-        {
-          "title": "Llum i so",
-          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts i 2 micros sense fils."
-        }
-      ],
-      "artCard": [
-        {
-          "title": "20 anys no són res",
-          "description": "Cia. Filigranes"
-        },
-        {
-          "title": "Pallassos",
-          "description": "Jordi Torrens i Albert Pérez"
-        },
-        {
-          "title": "Direcció",
-          "description": "Walter Velázquez"
-        },
-        {
-          "title": "Tècnic de llums i so",
-          "description": "Franc Pascual"
-        },
-        {
-          "title": "Escenografia",
-          "description": "Cia. Filigranes"
-        },
-        {
-          "title": "Fotografia",
-          "description": "Gerard Banyó"
-        },
-        {
-          "title": "Disseny gràfic",
-          "description": "Anna Condal"
-        }
-      ]
-    },
-    "plis-plas": {
+        "plis-plas": {
       "metaDescription": "Plis Plas - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Amb una cadira, un embut o una galleda, en Makutu i en Trinxeta ens faran gaudir d'un estira i arronsa constant, combinant gags clàssics amb malabars i música en directe.",
       "abstract": [
         {
@@ -853,10 +776,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "Un, dos, tres, quatre... Uiiiiiii! Un, dos tres quatre, cinc! Sis!!!! Els germans Filigranes van aprendre a comptar jugant amb malabars. Mica en mica es van inventant noves maneres de jugar....i de fer-se la guitza com a bons germans!"
+          "paragraph": "Un, dos tres quatre, cinc! Sis!!!! Els germans Filigranes van aprendre a comptar jugant amb malabars. Mica en mica es van inventant noves maneres de jugar....i de fer-se la guitza com a bons germans!"
         },
         {
-          "paragraph": "En Makutu i en Trinxeta ens endinsaran en el seu món particular oferint-nos diferents números de manipulació d'objectes i malabars amb la figura dels pallassos com a principal protagonista."
+          "paragraph": "En Makutu i en Trinxeta ens endinsaran en el seu món particular oferint-nos diferents números de manipulació d'objectes i malabars."
         }
       ],
       "techCard": [
@@ -1262,7 +1185,7 @@
     ],
     "history": [
       {
-        "paragraph": "Al 2004 vam fundar la Companyia Filigranes. Des d'aleshores, la nostra tasca principal ha estat la creació i producció d'espectacles: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\"..."
+        "paragraph": "Al 2004 vam fundar la Companyia Filigranes. Des d'aleshores, la nostra tasca principal ha estat la creació i producció d'espectacles: \"Embolics a bord\", \"El Circ Filixic\", \"El Circ Filirates\", \"Desencaixats\", \"Germans Freak Frac\", \"Plis Plas\", \"El petit circ de Makutu\", \"Trinxat no tremola\", \"20 anys no són res\", \"Germans Filigranes\", \"Xiu-xiu\"..."
       }
     ],
     "filiFriends": [
