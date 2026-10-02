@@ -116,7 +116,7 @@ watchEffect(() => {
               <li
                 v-for="(item, index) in artCard"
                 :key="`art-${index}`"
-                class="flex flex-col gap-1 text-sm lg:text-base leading-tight"
+                class="flex flex-col gap-1 text-sm lg:text-base"
               >
                 <p class="font-bold">{{ item.title }}</p>
                 <p class="font-light">{{ item.description }}</p>
