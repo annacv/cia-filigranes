@@ -5,7 +5,7 @@ import { routePages } from '~/i18n/custom-routes'
 export const ROUTES_INDEX = [
   {
     name: "espectacles",
-    children: [ 'vint-anys', 'plis-plas', 'circ-filixic', 'germans-filigranes', 'circ-makutu', 'circ-trinxeta', 'freak-frac']
+    children: [ 'xiu-xiu', 'plis-plas', 'circ-filixic', 'germans-filigranes', 'circ-makutu', 'circ-trinxeta', 'freak-frac', 'vint-anys']
   },
   {
     name: "tallers",
@@ -224,6 +224,7 @@ export const IN_PAGE_ANCHOR_HASHES = new Set([
 
 /** Slugs under /espectacles whose pages do not include a #video block (no teaser). */
 export const SHOWS_WITHOUT_VIDEO = new Set([
+  'xiu-xiu',
   'germans-filigranes',
   'circ-makutu',
   'circ-trinxeta',

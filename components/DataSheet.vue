@@ -64,9 +64,9 @@ const imageUrl = useImageUrl(props.image.imageName, props.image.imageRoute);
 const { gradientOverlayValue } = useColor(props.contentType);
 const { isVisibleAt80Percent, setupIntersectionObserver } = useIntersection80()
 
-const sideContentClass = 'flex flex-col gap-5 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0 text-center lg:text-left'
+const sideContentClass = 'flex flex-col gap-4 w-full max-w-[300px] mx-auto md:max-w-[500px] lg:max-w-none lg:mx-0 text-center lg:text-left'
 const sectionHeadingClass = 'uppercase text-xs lg:text-sm font-light text-neutral-400'
-const listClass = 'flex flex-col gap-5'
+const listClass = 'flex flex-col gap-4'
 
 const initialClipPath = 'polygon(80% 100%, 0% 100%, 20% 0, 100% 0)';
 const reversedClipPath = 'polygon(20% 100%, 100% 100%, 80% 0, 0% 0)';
@@ -94,11 +94,11 @@ watchEffect(() => {
   >
     <div
       :class="
-        ['layout-cols flex lg:gap-5 flex-col lg:flex-row h-full',
+        ['layout-cols flex lg:gap-4 flex-col lg:flex-row h-full',
          { 'min-h-[524px]': !isMobile } 
         ]">
       <div
-        class="flex flex-col gap-5 w-full lg:w-[22%] p-5 pb-0 lg:p-4 lg:pr-0 lg:py-12 2xl:py-24"
+        class="flex flex-col gap-4 w-full lg:w-[22%] p-5 pb-0 lg:p-4 lg:pr-0 lg:py-12 2xl:py-24"
         :class="{ 'pb-0 lg:pb-0': hideImage }"
       >
         <div :class="sideContentClass">
@@ -116,7 +116,7 @@ watchEffect(() => {
               <li
                 v-for="(item, index) in artCard"
                 :key="`art-${index}`"
-                class="flex flex-col gap-2 text-sm lg:text-base"
+                class="flex flex-col gap-1 text-sm lg:text-base"
               >
                 <p class="font-bold">{{ item.title }}</p>
                 <p class="font-light">{{ item.description }}</p>
@@ -162,7 +162,7 @@ watchEffect(() => {
                 v-for="(item, index) in techCard"
                 :key="`tech-${index}`"
                 class="flex flex-col text-sm lg:text-base"
-                :class="{ 'gap-2': !hideImage }"
+                :class="{ 'gap-1': !hideImage }"
               >
                 <p class="font-bold">{{ item.title }}</p>
                 <p class="font-light">{{ item.description }}</p>

@@ -6,7 +6,7 @@
   "home": {
     "metaDescription": "Welcome to the Filigranes Clown Company website! Find shows, workshops, and custom-made animations.",
     "hero": {
-      "alt": "Image of the show 20 years is nothing"
+      "alt": "Image of the show Xiu-xiu"
     },
     "hire": {
       "title": "Do you want to hire any of our services?",
@@ -87,6 +87,7 @@
     "circ-filixic": "The Filixic Circus",
     "freak-frac": "The Freak Frac Brothers' Parade",
     "plis-plas": "Plis Plas",
+    "xiu-xiu": "Xiu-xiu",
     "vint-anys": "20 Years is Nothing",
     "circ-makutu": "Makutu's Little Circus",
     "circ-trinxeta": "Trinxat doesn't Tremble",
@@ -266,6 +267,100 @@
       "title": "Do you want to hire any of our shows?",
       "titleSingle": "Do you want to hire the show?",
       "description": "Write us an email at {email}, or call us at {phone}"
+    },
+    "xiu-xiu": {
+      "metaDescription": "Xiu-xiu - Clown and circus show by the Filigranes Company. Three clowns fallen from grace live on the street and live in order to survive, through mishaps, the handling of abandoned objects and plenty of humour.",
+      "abstract": [
+        {
+          "paragraph": "A story of fragility and, at the same time, of vital strength. Three characters, with one hand in front and the other behind, are condemned to live on the street: they have an empty stomach and a little hope that helps them face adversity. They are circus clowns who, after falling from grace, live in order to survive. Through mishaps and humour they fight for their dignity and to feel part of a corner of the world."
+        }
+      ],
+      "list": [
+        {
+          "title": "Xiu-xiu",
+          "description": "A clown show with live music, object manipulation and plenty of humour and tenderness."
+        },
+        {
+          "title": "Show duration",
+          "description": "50 minutes"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "In the shadow of the city, objects found among the rubbish come to life in the hands of three clowns who build moments of magic and tenderness."
+        },
+        {
+          "paragraph": "The clowns fight to be seen, to be heard, to feel safe. Because, in the end, all people, whatever their situation or origin, seek dignity and meaning in their lives."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Duration",
+          "description": "50 minutes."
+        },
+        {
+          "title": "Setup and breakdown",
+          "description": "Setup with bleachers: 3h. Without bleachers: 2h. Breakdown with bleachers: 2h. Without bleachers: 1h."
+        },
+        {
+          "title": "Dimensions",
+          "description": "Outdoor with bleachers: 12m (depth) x 12m (width). Without bleachers: 9m (depth) x 7m (width)."
+        },
+        {
+          "title": "Scenography",
+          "description": "Backdrop and ring canopy. A smooth, level floor is required."
+        },
+        {
+          "title": "Sound",
+          "description": "250v power outlet at stage level for 1000-watt sound equipment. 4 wireless microphones."
+        },
+        {
+          "title": "Staff",
+          "description": "3 artists, 2 on stage and 1 musician/technician."
+        },
+        {
+          "title": "Vehicle",
+          "description": "Renault Master (length: 5075 mm and exterior height: 2310 mm)."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Xiu-xiu",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Clowns",
+          "description": "Jordi Torrens, Albert Pérez and Tyle Michel Fernández"
+        },
+        {
+          "title": "Direction",
+          "description": "Ton Muntané"
+        },
+        {
+          "title": "Musician and sound technician",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Musical arrangements",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Scenography",
+          "description": "Filigranes Company and SoulArt"
+        },
+        {
+          "title": "Costume",
+          "description": "Idoia Pascual"
+        },
+        {
+          "title": "Photography and video",
+          "description": "Filigranes Company"
+        },
+        {
+          "title": "Design and web",
+          "description": "Anna Condal"
+        }
+      ]
     },
     "vint-anys": {
       "metaDescription": "20 years is nothing - Clown and circus show for all ages by the Filigranes Company. Two inseparable companions remember and stage their 20 years of career on stage. An emotional show that combines humor, juggling and live music.",

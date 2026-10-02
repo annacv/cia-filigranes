@@ -6,7 +6,7 @@
   "home": {
     "metaDescription": "Benvingudes a la web de la Companyia de pallassos Filigranes! Troba espectacles, tallers i animacions fetes a mida.",
     "hero": {
-      "alt": "Imatge de l'espectacle 20 anys no són res"
+      "alt": "Imatge de l'espectacle Xiu-xiu"
     },
     "hire": {
       "title": "Vols contractar algun dels nostres serveis?",
@@ -87,6 +87,7 @@
     "circ-filixic": "El Circ Filixic",
     "freak-frac": "Cercavila Germans Freak Frac",
     "plis-plas": "Plis Plas",
+    "xiu-xiu": "Xiu-xiu",
     "vint-anys": "20 Anys no són res",
     "circ-makutu": "El Petit Circ de Makutu",
     "circ-trinxeta": "Trinxat no Tremola",
@@ -266,6 +267,100 @@
       "title": "Vols contractar algun dels nostres espectacles?",
       "titleSingle": "Vols contractar l'espectacle?",
       "description": "Escriu-nos un email a {email}, o truca'ns al {phone}"
+    },
+    "xiu-xiu": {
+      "metaDescription": "Xiu-xiu - Espectacle de pallassos i circ de la Companyia Filigranes. Tres pallassos caiguts en desgràcia viuen al carrer, viuen per sobreviure, amb peripècies, manipulació d’objectes abandonats i molt d’humor",
+      "abstract": [
+        {
+          "paragraph": "Una història de fragilitat i alhora de força vital. Tres personatges, amb una mà al davant i una altra al darrere, estan condemnats a viure al carrer: tenen la panxa buida i una mica d’esperança que els ajuda a afrontar l’adversitat. Són pallassis de circ que  després de caure en desgràcia viuen per sobreviure. Amb peripècies i humor lluiten per la seva dignitat i per sentir-se part d’un racó del món."
+        }
+      ],
+      "list": [
+        {
+          "title": "Xiu-xiu",
+          "description": "Espectacle de pallassis amb música en directe, manipulació d’objectes i molt d’humor i tendresa."
+        },
+        {
+          "title": "Durada de l'espectacle",
+          "description": "50 minuts"
+        }
+      ],
+      "synopsis": [
+        {
+          "paragraph": "En l’ombra de la ciutat, objectes trobats entre residus prenen vida de la mà de tres pallassis que contrueixen moments de màgia i tendresa."
+        },
+        {
+          "paragraph": "Les pallassis lluiten per ser vistes, ser escoltades, sentir-se segures. Perquè, al final, totes les persones, independentment de la seva situació o origen, busquen dignitat i sentit a les seves vides."
+        }
+      ],
+      "techCard": [
+        {
+          "title": "Durada",
+          "description": "50 minuts."
+        },
+        {
+          "title": "Muntatge i desmuntatge",
+          "description": "Muntatge amb grada: 3h. Sense grada: 2h. Desmuntatge amb grada: 2h. Sense grada: 1h."
+        },
+        {
+          "title": "Mides",
+          "description": "Exterior amb grada: 12m (fons) x 12m (ample). Sense grada: 9m (fons) x 7m (ample)."
+        },
+        {
+          "title": "Escenografia",
+          "description": "Fons d'escena i vol de pista. Es requereix el terra llis i pla."
+        },
+        {
+          "title": "So",
+          "description": "Presa de llum de 250v a peu d'escenari per a equip de so de 1000 watts. 4 micros sense fils."
+        },
+        {
+          "title": "Personal",
+          "description": "3 artistes, 2 en escena i 1 músic/tècnic."
+        },
+        {
+          "title": "Vehicle",
+          "description": "Renault Master (longitud: 5075 mm i alçada exterior: 2310 mm)."
+        }
+      ],
+      "artCard": [
+        {
+          "title": "Xiu-xiu",
+          "description": "Cia. Filigranes"
+        },
+        {
+          "title": "Pallassos",
+          "description": "Jordi Torrens, Albert Pérez i Tyle Michel Fernández"
+        },
+        {
+          "title": "Direcció",
+          "description": "Ton Muntané"
+        },
+        {
+          "title": "Músic i tècnic de so",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Arranjaments musicals",
+          "description": "Tyle Michel Fernández"
+        },
+        {
+          "title": "Escenografia",
+          "description": "Cia. Filigranes i SoulArt"
+        },
+        {
+          "title": "Vestuari",
+          "description": "Idoia Pascual"
+        },
+        {
+          "title": "Fotografia i vídeo",
+          "description": "Cia.Filigranes"
+        },
+        {
+          "title": "Disseny i web",
+          "description": "Anna Condal"
+        }
+      ]
     },
     "vint-anys": {
       "metaDescription": "20 anys no són res - Espectacle de pallassos i circ per a totes les edats de la Companyia Filigranes. Dos companys inseparables recorden i escenifiquen els seus 20 anys de trajectòria als escenaris. Un espectacle emotiu que combina humor, malabars i música en directe.",
