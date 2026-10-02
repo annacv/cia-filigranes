@@ -6,7 +6,6 @@ import { getImageByRoute } from '~/utils/image-by-route'
 const FILI_SHOWS: Record<string, string> = {
   'xiu-xiu': 'xiu-xiu',
   'xiu xiu': 'xiu-xiu',
-  '20 anys no son res': 'vint-anys',
   'el circ filixic': 'circ-filixic',
   'plis plas': 'plis-plas',
   'cercavila germans freak frac': 'freak-frac',

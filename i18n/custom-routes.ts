@@ -16,11 +16,6 @@ export const routePages: CustomRoutePages = {
     en: '/shows/xiu-xiu',
     es: '/espectaculos/xiu-xiu'
   },
-  'espectacles/vint-anys': {
-    ca: '/espectacles/vint-anys',
-    en: '/shows/twenty-years',
-    es: '/espectaculos/vint-anys'
-  },
   'espectacles/circ-filixic': {
     ca: '/espectacles/circ-filixic',
     en: '/shows/filixic-circus',

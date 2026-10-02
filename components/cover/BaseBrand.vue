@@ -18,9 +18,6 @@ import GermansFiligranesBrandEn from '~/assets/brands/germans filigranes-brand-e
 import GermansFiligranesBrandEs from '~/assets/brands/germans filigranes-brand-es.svg?raw'
 import PlisPlasBrand from '~/assets/brands/plis-plas-brand.svg?raw'
 import XiuXiuBrand from '~/assets/brands/xiu-xiu-brand.svg?raw'
-import VintAnysBrand from '~/assets/brands/vint-anys-brand.svg?raw'
-import VintAnysBrandEn from '~/assets/brands/vint-anys-brand-en.svg?raw'
-import VintAnysBrandEs from '~/assets/brands/vint-anys-brand-es.svg?raw'
 
 defineOptions({
   inheritAttrs: false
@@ -33,7 +30,6 @@ type BrandSlug =
   | 'freak-frac'
   | 'germans-filigranes'
   | 'plis-plas'
-  | 'vint-anys'
   | 'xiu-xiu'
 
 const DEFAULT_SIZE_CLASS = 'w-[310px] md:w-[348px] lg:w-[448px] xl:w-[548px] 2xl:w-[648px]'
@@ -73,11 +69,6 @@ const brandBySlug = {
   },
   'plis-plas': {
     ca: PlisPlasBrand,
-  },
-  'vint-anys': {
-    ca: VintAnysBrand,
-    en: VintAnysBrandEn,
-    es: VintAnysBrandEs,
   },
   'xiu-xiu': {
     ca: XiuXiuBrand,

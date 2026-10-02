@@ -4,7 +4,7 @@ import { ROUTES_INDEX } from "~/constants";
  * Gets the index of an item within its root route's children array in ROUTES_INDEX
  * 
  * @param rootRoute - The root route name (e.g., 'espectacles', 'tallers')
- * @param item - The item name to find the index for (e.g., 'vint-anys', 'circ')
+ * @param item - The item name to find the index for (e.g., 'xiu-xiu', 'circ')
  * @returns The index of the item in the children array, or -1 if not found
  */
 export function getItemIndex(rootRoute: string, item: string): number {

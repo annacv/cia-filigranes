@@ -5,7 +5,7 @@ import { routePages } from '~/i18n/custom-routes'
 export const ROUTES_INDEX = [
   {
     name: "espectacles",
-    children: [ 'xiu-xiu', 'plis-plas', 'circ-filixic', 'germans-filigranes', 'circ-makutu', 'circ-trinxeta', 'freak-frac', 'vint-anys']
+    children: [ 'xiu-xiu', 'plis-plas', 'circ-filixic', 'germans-filigranes', 'circ-makutu', 'circ-trinxeta', 'freak-frac']
   },
   {
     name: "tallers",
@@ -136,13 +136,13 @@ export const YOUTUBE_VIDEO_IDS = {
 } as const
 
 export const YOUTUBE_PLAYLIST_IDS = [
-  YOUTUBE_VIDEO_IDS.vintAnys,
   YOUTUBE_VIDEO_IDS.plisPlas,
   YOUTUBE_VIDEO_IDS.circFilixic,
   YOUTUBE_VIDEO_IDS.freakFrac,
   YOUTUBE_VIDEO_IDS.numeroCaixes,
   YOUTUBE_VIDEO_IDS.circFilirates,
   YOUTUBE_VIDEO_IDS.plisPlasAlt,
+  YOUTUBE_VIDEO_IDS.vintAnys
 ].join(',')
 
 export const HEADER_MOBILE_HEIGHT = '72px'
