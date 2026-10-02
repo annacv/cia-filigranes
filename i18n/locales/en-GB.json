@@ -315,7 +315,7 @@
           "description": "250v power outlet at stage level for 1000-watt sound equipment. 4 wireless microphones."
         },
         {
-          "title": "Personnel",
+          "title": "Staff",
           "description": "3 artists, 2 on stage and 1 musician/technician."
         },
         {
@@ -333,12 +333,12 @@
           "description": "Jordi Torrens, Albert Pérez and Tyle Michel Fernández"
         },
         {
-          "title": "Musician and sound technician",
-          "description": "Tyle Michel Fernández"
-        },
-        {
           "title": "Direction",
           "description": "Ton Muntané"
+        },
+        {
+          "title": "Musician and sound technician",
+          "description": "Tyle Michel Fernández"
         },
         {
           "title": "Musical arrangements",

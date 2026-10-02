@@ -278,7 +278,7 @@
       "list": [
         {
           "title": "Xiu-xiu",
-          "description": "Espectáculo de payasos con música en directo, manipulación de objetos y mucho humor y ternura."
+          "description": "Espectáculo de payasis con música en directo, manipulación de objetos y mucho humor y ternura."
         },
         {
           "title": "Duración del espectáculo",
@@ -287,10 +287,10 @@
       ],
       "synopsis": [
         {
-          "paragraph": "En la sombra de la ciudad, objetos encontrados entre los residuos toman vida de la mano de tres payasos que construyen momentos de magia y ternura."
+          "paragraph": "En la sombra de la ciudad, objetos encontrados entre los residuos toman vida de la mano de tres payasis que construyen momentos de magia y ternura."
         },
         {
-          "paragraph": "Las payasas luchan por ser vistas, ser escuchadas, sentirse seguras. Porque, al final, todas las personas, independientemente de su situación u origen, buscan dignidad y sentido en sus vidas."
+          "paragraph": "Las payasis luchan por ser vistas, ser escuchadas, sentirse seguras. Porque, al final, todas las personas, independientemente de su situación u origen, buscan dignidad y sentido en sus vidas."
         }
       ],
       "techCard": [
@@ -333,12 +333,12 @@
           "description": "Jordi Torrens, Albert Pérez y Tyle Michel Fernández"
         },
         {
-          "title": "Músico y técnico de sonido",
-          "description": "Tyle Michel Fernández"
-        },
-        {
           "title": "Dirección",
           "description": "Ton Muntané"
+        },
+        {
+          "title": "Músico y técnico de sonido",
+          "description": "Tyle Michel Fernández"
         },
         {
           "title": "Arreglos musicales",
